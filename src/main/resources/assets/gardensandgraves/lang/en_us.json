@@ -1,0 +1,41 @@
+{
+  "item.gardensandgraves.seed_packet_sunflower": "Sunflower Seed Packet",
+  "item.gardensandgraves.seed_packet_marigold": "Marigold Seed Packet",
+
+  "item.gardensandgraves.seed_packet_peashooter": "Peashooter Seed Packet",
+  "item.gardensandgraves.seed_packet_repeater": "Repeater Seed Packet",
+  "item.gardensandgraves.seed_packet_snow_pea": "Snow Pea Seed Packet",
+
+  "item.gardensandgraves.seed_packet_potato_mine": "Potato Mine Seed Packet",
+  "item.gardensandgraves.seed_packet_jalapeno": "Jalapeno Seed Packet",
+  "item.gardensandgraves.seed_packet_chomper": "Chomper Seed Packet",
+  "item.gardensandgraves.seed_packet_bonk_choy": "Bonk Choy Seed Packet",
+
+  "item.gardensandgraves.seed_packet_sun_shroom": "Sun-shroom Seed Packet",
+  "item.gardensandgraves.seed_packet_puff_shroom": "Puff-shroom Seed Packet",
+  "item.gardensandgraves.seed_packet_fume_shroom": "Fume-shroom Seed Packet",
+  "item.gardensandgraves.seed_packet_doom_shroom": "Doom-shroom Seed Packet",
+
+  "item.gardensandgraves.brainz_banner_pattern": "Brainz Banner Pattern",
+  "item.gardensandgraves.music_disc_wabby_wabbo": "Music Disc",
+  "item.gardensandgraves.music_disc_wabby_wabbo.desc": "Cray-Z - Wabby Wabbo",
+
+  "block.minecraft.banner.gardensandgraves.brainz.black": "Black Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.blue": "Blue Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.brown": "Brown Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.cyan": "Cyan Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.gray": "Gray Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.green": "Green Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.light_blue": "Light Blue Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.light_gray": "Light Gray Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.lime": "Lime Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.magenta": "Magenta Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.orange": "Orange Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.pink": "Pink Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.purple": "Purple Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.red": "Red Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.white": "White Brainz",
+  "block.minecraft.banner.gardensandgraves.brainz.yellow": "Yellow Brainz",
+
+  "creativetab.gardensandgraves.items": "Gardens And Graves Items"
+}

@@ -1,0 +1,10 @@
+{
+  "wabby_wabbo": {
+    "sounds": [
+      {
+        "name": "gardensandgraves:records/wabby_wabbo",
+        "stream": true
+      }
+    ]
+  }
+}
