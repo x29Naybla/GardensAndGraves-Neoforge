@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gardensandgraves:item/seed_packet_wall_nut"
+  }
+}

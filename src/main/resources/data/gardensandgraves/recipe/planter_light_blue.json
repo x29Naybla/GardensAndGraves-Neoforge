@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "planters",
+  "key": {
+    "#": {
+      "item": "minecraft:light_blue_terracotta"
+    }
+  },
+  "pattern": [
+    "# #",
+    "# #",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gardensandgraves:planter_light_blue"
+  }
+}
