@@ -1,18 +1,22 @@
 package com.x29naybla.gardensandgraves.block.custom;
 
+import com.x29naybla.gardensandgraves.block.entity.PlanterBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.Stream;
 
-public class PlanterBlock extends Block {
+public class PlanterBlock extends Block implements EntityBlock {
     public static final VoxelShape SHAPE = Shapes.join(Stream.of(
             Block.box(1, 0, 1, 15, 1, 15),
             Block.box(2, 1, 1, 14, 12, 2),
@@ -38,5 +42,11 @@ public class PlanterBlock extends Block {
     @Override
     protected RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
+    }
+
+
+    @Override
+    public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new PlanterBlockEntity(pos, state);
     }
 }

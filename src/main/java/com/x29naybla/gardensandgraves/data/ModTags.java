@@ -2,19 +2,16 @@ package com.x29naybla.gardensandgraves.data;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BannerPatternTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
-import net.minecraft.world.level.block.entity.BannerPatterns;
 
 public class ModTags {
-
+    //Gardens and Graves Tags
     public static class Blocks {
         public static final TagKey<Block> PLANTERS = createTag("planters");
 
@@ -33,6 +30,8 @@ public class ModTags {
 
     public static class Items {
         //Gardens and Graves Tags
+        public static final TagKey<Item> PLANTER_SUBSTRATES = createTag("planter_substrates");
+
         public static final TagKey<Item> SEED_PACKET_PEASHOOTERS = createTag("seed_packet_peashooters");
         public static final TagKey<Item> SEED_PACKET_MUSHROOMS = createTag("seed_packet_mushrooms");
 
@@ -50,6 +49,7 @@ public class ModTags {
     }
 
     public static class BannerPatterns{
+        //Gardens and Graves tags
         public static final TagKey<BannerPattern> BRAINZ = createTag("pattern_item/brainz");
 
         private static TagKey<BannerPattern> createTag(String name){
