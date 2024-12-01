@@ -3,7 +3,7 @@
 	"render_type": "minecraft:cutout",
 	"textures": {
 		"0": "gardensandgraves:block/planter",
-		"particle": "gardensandgraves:block/planter"
+		"particle": "#0"
 	},
 	"elements": [
 		{

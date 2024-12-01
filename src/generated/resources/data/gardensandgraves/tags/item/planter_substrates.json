@@ -1,6 +1,16 @@
 {
   "values": [
+    "minecraft:mycelium",
+    "minecraft:moss_block",
+    "minecraft:grass_block",
+    "minecraft:mud",
     "minecraft:dirt",
-    "minecraft:sand"
+    "minecraft:coarse_dirt",
+    "minecraft:sand",
+    "minecraft:red_sand",
+    "minecraft:soul_sand",
+    "minecraft:soul_soil",
+    "minecraft:crimson_nylium",
+    "minecraft:warped_nylium"
   ]
 }

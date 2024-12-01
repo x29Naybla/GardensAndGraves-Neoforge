@@ -121,6 +121,13 @@ repositories {
         filter { includeGroupAndSubgroups "maven.modrinth" }
     }
     maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroup("software.bernie.geckolib")
+        }
+    }
+    maven {
         url = "https://www.cursemaven.com"
         content {
             includeGroup "curse.maven"
@@ -132,6 +139,7 @@ repositories {
 }
 
 dependencies {
+    implementation "software.bernie.geckolib:geckolib-neoforge-1.21.1:${geckolib_version}"
     implementation "maven.modrinth:jade:${jade_version}+neoforge"
 }
 

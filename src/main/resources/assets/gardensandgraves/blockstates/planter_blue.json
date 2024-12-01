@@ -1,7 +1,9 @@
 {
-  "variants": {
-    "": {
-      "model": "gardensandgraves:block/planter_blue"
+  "multipart": [
+    {
+      "apply": {
+        "model": "gardensandgraves:block/planter_blue"
+      }
     }
-  }
+  ]
 }
