@@ -31,8 +31,10 @@
   "item.gardensandgraves.seed_packet_fume_shroom.desc": "Custo em sol:",
   "item.gardensandgraves.seed_packet_hypno_shroom": "Pacote de sementes de hypnogumelo",
   "item.gardensandgraves.seed_packet_hypno_shroom.desc": "Custo em sol:",
-  "item.gardensandgraves.seed_packet_doom_shroom": "Pacote de sementes de ruínagumelo",
+  "item.gardensandgraves.seed_packet_doom_shroom": "Pacote de sementes de ruinagumelo",
   "item.gardensandgraves.seed_packet_doom_shroom.desc": "Custo em sol:",
+
+  "item.gardensandgraves.sun": "Sol",
 
   "item.gardensandgraves.brainz_banner_pattern": "Figura para estandarte",
   "item.gardensandgraves.brainz_banner_pattern.desc": "Mioloz",
@@ -74,6 +76,6 @@
   "block.minecraft.banner.gardensandgraves.brainz.magenta": "Mioloz magenta",
   "block.minecraft.banner.gardensandgraves.brainz.pink": "Mioloz rosa",
 
-  "creativetab.gardensandgraves.blocks": "Gardens And Graves blocos",
-  "creativetab.gardensandgraves.items": "Gardens And Graves itens"
+  "creativetab.gardensandgraves.blocks": "G&G blocos",
+  "creativetab.gardensandgraves.items": "G&G itens"
 }

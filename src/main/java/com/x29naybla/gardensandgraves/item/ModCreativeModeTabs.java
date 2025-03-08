@@ -16,9 +16,10 @@ public class ModCreativeModeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GardensAndGraves.MOD_ID);
 
     public static final Supplier<CreativeModeTab> GARDENSANDGRAVES_ITEMS_TAB = CREATIVE_MODE_TAB.register("bloomingdefense_items_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SEED_PACKET_SUNFLOWER.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SUN.get()))
                     .title(Component.translatable("creativetab.gardensandgraves.items"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.SUN);
                         output.accept(ModItems.SEED_PACKET_SUNFLOWER);
                         output.accept(ModItems.SEED_PACKET_MARIGOLD);
                         output.accept(ModItems.SEED_PACKET_PEASHOOTER);

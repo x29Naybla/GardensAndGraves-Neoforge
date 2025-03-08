@@ -34,6 +34,11 @@ public class ModBlockEntities {
 
             ).build(null));
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SunflowerBlockEntity>> SUNFLOWER = BLOCK_ENTITIES
+            .register("sunflower", () -> BlockEntityType.Builder.of(SunflowerBlockEntity::new,
+                    ModBlocks.SUNFLOWER.get()
+            ).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

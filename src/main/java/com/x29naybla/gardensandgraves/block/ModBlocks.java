@@ -1,7 +1,7 @@
 package com.x29naybla.gardensandgraves.block;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
-import com.x29naybla.gardensandgraves.block.custom.PlanterBlock;
+import com.x29naybla.gardensandgraves.block.custom.*;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -51,6 +51,19 @@ public class ModBlocks {
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MAGENTA_TERRACOTTA).noOcclusion()));
     public static final DeferredBlock<Block> PLANTER_PINK = registerBlock("planter_pink",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_TERRACOTTA).noOcclusion()));
+
+    public static final Supplier<Block> SUNFLOWER = BLOCKS.register("sunflower",
+            () -> new SunflowerBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final Supplier<Block> MARIGOLD = BLOCKS.register("marigold",
+            () -> new MarigoldBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final Supplier<Block> PEASHOOTER = BLOCKS.register("peashooter",
+            () -> new PeashooterBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final Supplier<Block> REPEATER = BLOCKS.register("repeater",
+            () -> new PeashooterBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final Supplier<Block> SNOW_PEA = BLOCKS.register("snow_pea",
+            () -> new PeashooterBlock(BlockBehaviour.Properties.of().noOcclusion()));
+    public static final Supplier<Block> WALL_NUT = BLOCKS.register("wall_nut",
+            () -> new WallNutBlock(BlockBehaviour.Properties.of().noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

@@ -1,69 +1,131 @@
 package com.x29naybla.gardensandgraves.block.entity;
 
-import com.x29naybla.gardensandgraves.data.ModTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.Container;
-import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.RandomizableContainer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.ticks.ContainerSingleItem;
 
-public class PlanterBlockEntity extends BlockEntity implements ContainerSingleItem.BlockContainerSingleItem {
-    private ItemStack item;
+import javax.annotation.Nullable;
+import java.util.List;
 
-    public PlanterBlockEntity(BlockPos pos, BlockState blockState) {
-        super(ModBlockEntities.PLANTER.get(), pos, blockState);
-        this.item = ItemStack.EMPTY;
+public class PlanterBlockEntity extends BlockEntity implements RandomizableContainer, ContainerSingleItem.BlockContainerSingleItem{
+    public static final String TAG_ITEM = "item";
+    private ItemStack item = ItemStack.EMPTY;
+    @Nullable
+    protected ResourceKey<LootTable> lootTable;
+    protected long lootTableSeed;
+
+    public PlanterBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.PLANTER.get(), pos, state);
     }
 
-    public void popOutTheItem() {
-        if (this.level != null && !this.level.isClientSide) {
-            BlockPos blockpos = this.getBlockPos();
-            ItemStack itemstack = this.getTheItem();
-            if (!itemstack.isEmpty()) {
-                this.removeTheItem();
-                Vec3 vec3 = Vec3.atLowerCornerWithOffset(blockpos, (double)0.5F, 1.01, (double)0.5F).offsetRandom(this.level.random, 0.7F);
-                ItemStack itemstack1 = itemstack.copy();
-                ItemEntity itementity = new ItemEntity(this.level, vec3.x(), vec3.y(), vec3.z(), itemstack1);
-                itementity.setDefaultPickUpDelay();
-                this.level.addFreshEntity(itementity);
+    @Override
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.saveAdditional(tag, registries);
+        if (!this.trySaveLootTable(tag) && !this.item.isEmpty()) {
+            tag.put("item", this.item.save(registries));
+        }
+    }
+
+    @Override
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.loadAdditional(tag, registries);
+        if (!this.tryLoadLootTable(tag)) {
+            if (tag.contains("item", 10)) {
+                this.item = ItemStack.parse(registries, tag.getCompound("item")).orElse(ItemStack.EMPTY);
+            } else {
+                this.item = ItemStack.EMPTY;
             }
         }
-
     }
 
-    public int getMaxStackSize() {
-        return 1;
+    public ClientboundBlockEntityDataPacket getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        return this.saveCustomOnly(registries);
+    }
+
+    public void setFromItem(ItemStack item) {
+        this.applyComponentsFromItemStack(item);
+    }
+
+    @Nullable
+    @Override
+    public ResourceKey<LootTable> getLootTable() {
+        return this.lootTable;
+    }
+
+    @Override
+    public void setLootTable(@Nullable ResourceKey<LootTable> lootTable) {
+        this.lootTable = lootTable;
+    }
+
+    @Override
+    public long getLootTableSeed() {
+        return this.lootTableSeed;
+    }
+
+    @Override
+    public void setLootTableSeed(long seed) {
+        this.lootTableSeed = seed;
+    }
+
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.Builder components) {
+        super.collectImplicitComponents(components);
+        components.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(List.of(this.item)));
+    }
+
+    @Override
+    protected void applyImplicitComponents(BlockEntity.DataComponentInput componentInput) {
+        super.applyImplicitComponents(componentInput);
+        this.item = componentInput.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY).copyOne();
+    }
+
+    @Override
+    public void removeComponentsFromTag(CompoundTag tag) {
+        super.removeComponentsFromTag(tag);
+        tag.remove("item");
+    }
+
+    @Override
+    public ItemStack getTheItem() {
+        this.unpackLootTable(null);
+        return this.item;
+    }
+
+    @Override
+    public ItemStack splitTheItem(int amount) {
+        this.unpackLootTable(null);
+        ItemStack itemstack = this.item.split(amount);
+        if (this.item.isEmpty()) {
+            this.item = ItemStack.EMPTY;
+        }
+
+        return itemstack;
+    }
+
+    @Override
+    public void setTheItem(ItemStack item) {
+        this.unpackLootTable(null);
+        this.item = item;
     }
 
     @Override
     public BlockEntity getContainerBlockEntity() {
         return this;
-    }
-
-    @Override
-    public ItemStack getTheItem() {
-        return this.item;
-    }
-
-    public ItemStack splitTheItem(int amount) {
-        ItemStack itemstack = this.item;
-        this.setTheItem(ItemStack.EMPTY);
-        return itemstack;
-    }
-
-    @Override
-    public void setTheItem(ItemStack itemStack) {
-        this.item = item;
-    }
-
-    public boolean canPlaceItem(int slot, ItemStack stack) {
-        return stack.is(ModTags.Items.PLANTER_SUBSTRATES) && this.getItem(slot).isEmpty();
-    }
-
-    public boolean canTakeItem(Container target, int slot, ItemStack stack) {
-        return target.hasAnyMatching(ItemStack::isEmpty);
     }
 }
