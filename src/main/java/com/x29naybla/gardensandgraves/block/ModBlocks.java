@@ -59,9 +59,9 @@ public class ModBlocks {
     public static final Supplier<Block> PEASHOOTER = BLOCKS.register("peashooter",
             () -> new PeashooterBlock(BlockBehaviour.Properties.of().noOcclusion()));
     public static final Supplier<Block> REPEATER = BLOCKS.register("repeater",
-            () -> new PeashooterBlock(BlockBehaviour.Properties.of().noOcclusion()));
+            () -> new RepeaterBlock(BlockBehaviour.Properties.of().noOcclusion()));
     public static final Supplier<Block> SNOW_PEA = BLOCKS.register("snow_pea",
-            () -> new PeashooterBlock(BlockBehaviour.Properties.of().noOcclusion()));
+            () -> new SnowPeaBlock(BlockBehaviour.Properties.of().noOcclusion()));
     public static final Supplier<Block> WALL_NUT = BLOCKS.register("wall_nut",
             () -> new WallNutBlock(BlockBehaviour.Properties.of().noOcclusion()));
 

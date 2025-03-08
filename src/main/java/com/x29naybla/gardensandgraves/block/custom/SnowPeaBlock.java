@@ -1,7 +1,7 @@
 package com.x29naybla.gardensandgraves.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import com.x29naybla.gardensandgraves.block.entity.WallNutBlockEntity;
+import com.x29naybla.gardensandgraves.block.entity.SnowPeaBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -9,20 +9,25 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class WallNutBlock extends Block implements EntityBlock {
-    public static final MapCodec<WallNutBlock> CODEC = simpleCodec(WallNutBlock::new);
+public class SnowPeaBlock extends Block implements EntityBlock {
+    public static final MapCodec<SnowPeaBlock> CODEC = simpleCodec(SnowPeaBlock::new);
 
-    public MapCodec<WallNutBlock> codec() {
+    public MapCodec<SnowPeaBlock> codec() {
         return CODEC;
     }
 
-    public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 20, 15);
+    public static final VoxelShape SHAPE = Shapes.join(
+            Block.box(7, 0, 7, 9, 11, 9),
+            Block.box(4.5, 7, 0.5, 11.5, 15, 11.5),
+            BooleanOp.OR);
 
-    public WallNutBlock(Properties properties) {
+    public SnowPeaBlock(Properties properties) {
         super(properties);
     }
 
@@ -38,6 +43,6 @@ public class WallNutBlock extends Block implements EntityBlock {
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new WallNutBlockEntity(pos, state);
+        return new SnowPeaBlockEntity(pos, state);
     }
 }

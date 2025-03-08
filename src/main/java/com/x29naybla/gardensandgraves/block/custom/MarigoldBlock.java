@@ -1,17 +1,21 @@
 package com.x29naybla.gardensandgraves.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import com.x29naybla.gardensandgraves.block.entity.MarigoldBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.Nullable;
 
-public class MarigoldBlock extends Block {
+public class MarigoldBlock extends Block implements EntityBlock {
     public static final MapCodec<MarigoldBlock> CODEC = simpleCodec(MarigoldBlock::new);
 
     public MapCodec<MarigoldBlock> codec() {
@@ -35,5 +39,10 @@ public class MarigoldBlock extends Block {
     @Override
     public RenderShape getRenderShape(BlockState state) {
         return RenderShape.ENTITYBLOCK_ANIMATED;
+    }
+
+    @Override
+    public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new MarigoldBlockEntity(pos, state);
     }
 }
