@@ -1,0 +1,27 @@
+package com.x29naybla.gardensandgraves.client.event;
+
+import com.x29naybla.gardensandgraves.GardensAndGraves;
+import com.x29naybla.gardensandgraves.entity.ModEntities;
+import com.x29naybla.gardensandgraves.client.renderer.entity.*;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+
+@EventBusSubscriber(modid = GardensAndGraves.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+public class ClientSetUpEvents {
+
+    @SubscribeEvent
+    public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event){
+        event.registerEntityRenderer(ModEntities.SUNFLOWER.get(), SunflowerRenderer::new);
+        event.registerEntityRenderer(ModEntities.MARIGOLD.get(), MarigoldRenderer::new);
+        event.registerEntityRenderer(ModEntities.PEASHOOTER.get(), PeashooterRenderer::new);
+        event.registerEntityRenderer(ModEntities.REPEATER.get(), RepeaterRenderer::new);
+        event.registerEntityRenderer(ModEntities.SNOW_PEASHOOTER.get(), SnowPeaRenderer::new);
+        event.registerEntityRenderer(ModEntities.WALL_NUT.get(), WallNutRenderer::new);
+
+        event.registerEntityRenderer(ModEntities.PEA.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(ModEntities.PROJECTILE_SNOW_PEA.get(), ThrownItemRenderer::new);
+    }
+}

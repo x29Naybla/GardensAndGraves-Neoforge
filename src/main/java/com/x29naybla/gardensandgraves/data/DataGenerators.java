@@ -30,5 +30,7 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), bannerPatternTagsProvider);
 
         generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+
+        generator.addProvider(event.includeServer(), new ModEntityTagsProvider(packOutput, lookupProvider, existingFileHelper));
     }
 }

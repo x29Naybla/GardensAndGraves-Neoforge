@@ -52,19 +52,6 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PLANTER_PINK = registerBlock("planter_pink",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_TERRACOTTA).noOcclusion()));
 
-    public static final Supplier<Block> SUNFLOWER = BLOCKS.register("sunflower",
-            () -> new SunflowerBlock(BlockBehaviour.Properties.of().noOcclusion()));
-    public static final Supplier<Block> MARIGOLD = BLOCKS.register("marigold",
-            () -> new MarigoldBlock(BlockBehaviour.Properties.of().noOcclusion()));
-    public static final Supplier<Block> PEASHOOTER = BLOCKS.register("peashooter",
-            () -> new PeashooterBlock(BlockBehaviour.Properties.of().noOcclusion()));
-    public static final Supplier<Block> REPEATER = BLOCKS.register("repeater",
-            () -> new RepeaterBlock(BlockBehaviour.Properties.of().noOcclusion()));
-    public static final Supplier<Block> SNOW_PEA = BLOCKS.register("snow_pea",
-            () -> new SnowPeaBlock(BlockBehaviour.Properties.of().noOcclusion()));
-    public static final Supplier<Block> WALL_NUT = BLOCKS.register("wall_nut",
-            () -> new WallNutBlock(BlockBehaviour.Properties.of().noOcclusion()));
-
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

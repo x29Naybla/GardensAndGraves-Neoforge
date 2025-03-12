@@ -35,6 +35,8 @@
   "item.gardensandgraves.seed_packet_doom_shroom.desc": "Sun Cost:",
 
   "item.gardensandgraves.sun": "Sun",
+  "item.gardensandgraves.pea": "Pea",
+  "item.gardensandgraves.snow_pea": "Snow Pea",
 
   "item.gardensandgraves.brainz_banner_pattern": "Banner Pattern",
   "item.gardensandgraves.brainz_banner_pattern.desc": "Brainz",
@@ -59,20 +61,6 @@
   "block.gardensandgraves.planter_magenta": "Magenta Planter",
   "block.gardensandgraves.planter_pink": "Pink Planter",
 
-  "block.gardensandgraves.sunflower": "Sunflower",
-  "block.gardensandgraves.marigold": "Marigold",
-
-  "block.gardensandgraves.peashooter": "Peashooter",
-  "block.gardensandgraves.repeater": "Repeater",
-  "block.gardensandgraves.snow_pea": "Snow Pea",
-
-  "block.gardensandgraves.wall_nut": "Wall-nut",
-
-  "block.gardensandgraves.potato_mine": "Potato Mine",
-  "block.gardensandgraves.jalapeno": "Jalapeno",
-  "block.gardensandgraves.chomper": "Chomper",
-  "block.gardensandgraves.bonk_choy": "Bonk Choy",
-
   "block.minecraft.banner.gardensandgraves.brainz.white": "White Brainz",
   "block.minecraft.banner.gardensandgraves.brainz.light_gray": "Light Gray Brainz",
   "block.minecraft.banner.gardensandgraves.brainz.gray": "Gray Brainz",
@@ -89,6 +77,20 @@
   "block.minecraft.banner.gardensandgraves.brainz.purple": "Purple Brainz",
   "block.minecraft.banner.gardensandgraves.brainz.magenta": "Magenta Brainz",
   "block.minecraft.banner.gardensandgraves.brainz.pink": "Pink Brainz",
+
+  "entity.gardensandgraves.sunflower": "Sunflower",
+  "entity.gardensandgraves.marigold": "Marigold",
+
+  "entity.gardensandgraves.peashooter": "Peashooter",
+  "entity.gardensandgraves.repeater": "Repeater",
+  "entity.gardensandgraves.snow_peashooter": "Snow Pea",
+
+  "entity.gardensandgraves.wall_nut": "Wall-nut",
+
+  "entity.gardensandgraves.potato_mine": "Potato Mine",
+  "entity.gardensandgraves.jalapeno": "Jalapeno",
+  "entity.gardensandgraves.chomper": "Chomper",
+  "entity.gardensandgraves.bonk_choy": "Bonk Choy",
 
   "creativetab.gardensandgraves.blocks": "G&G Blocks",
   "creativetab.gardensandgraves.items": "G&G Items"

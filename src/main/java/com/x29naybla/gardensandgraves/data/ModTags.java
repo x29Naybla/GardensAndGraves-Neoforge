@@ -4,16 +4,21 @@ import com.x29naybla.gardensandgraves.GardensAndGraves;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
+import net.neoforged.neoforge.common.Tags;
 
 public class ModTags {
     //Gardens and Graves Tags
     public static class Blocks {
         public static final TagKey<Block> PLANTERS = createTag("planters");
+        public static final TagKey<Block> SUPPORTS_PLANTS = createTag("supports_plants");
 
         private static TagKey<Block> createTag(String name){
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));
@@ -45,6 +50,16 @@ public class ModTags {
 
         private static TagKey<Item> externalItemTag(String modId, String path) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(modId, path));
+        }
+    }
+
+    public static class Entities {
+        //Gardens and Graves Tags
+        public static final TagKey<EntityType<?>> PLANTS = createTag("plants");
+        public static final TagKey<EntityType<?>> PEASHOOTERS = createTag("peashooters");
+
+        private static TagKey<EntityType<?>> createTag(String name) {
+            return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));
         }
     }
 

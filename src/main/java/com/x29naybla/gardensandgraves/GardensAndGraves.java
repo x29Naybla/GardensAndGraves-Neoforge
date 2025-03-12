@@ -2,6 +2,7 @@ package com.x29naybla.gardensandgraves;
 
 import com.x29naybla.gardensandgraves.block.ModBlocks;
 import com.x29naybla.gardensandgraves.block.entity.ModBlockEntities;
+import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.ModCreativeModeTabs;
 import com.x29naybla.gardensandgraves.item.ModItems;
 
@@ -33,7 +34,7 @@ public class GardensAndGraves {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
-        //EntityRegistry.ENTITY_TYPES.register(modEventBus);
+        ModEntities.ENTITY_TYPES.register(modEventBus);
         ModSounds.register(modEventBus);
         ModBlockEntities.register(modEventBus);
 

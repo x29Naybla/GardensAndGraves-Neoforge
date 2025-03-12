@@ -53,81 +53,83 @@ public class PlanterBlock extends Block implements EntityBlock {
             Block.box(14, 12, 0, 16, 16, 16)
     ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get(), BooleanOp.OR);
 
+    public static final VoxelShape TEMPORARY_SHAPE = Shapes.join(Block.box(1, 0, 1, 15, 12, 15), Block.box(0, 12, 0, 16, 16, 16), BooleanOp.OR);
+
     public PlanterBlock(BlockBehaviour.Properties properties) {
         super(properties);
     }
 
+    //@Override
+    //protected ItemInteractionResult useItemOn(
+    //        ItemStack p_316569_, BlockState p_316562_, Level p_316177_, BlockPos p_316898_, Player p_316632_, InteractionHand p_316424_, BlockHitResult p_316345_
+    //) {
+    //    if (p_316177_.getBlockEntity(p_316898_) instanceof PlanterBlockEntity planterblockentity) {
+    //        if (p_316177_.isClientSide) {
+    //            return ItemInteractionResult.CONSUME;
+    //        } else {
+    //            ItemStack itemstack1 = planterblockentity.getTheItem();
+    //            if (!p_316569_.isEmpty()
+    //                    && (
+    //                    itemstack1.isEmpty()
+    //                            || ItemStack.isSameItemSameComponents(itemstack1, p_316569_) && itemstack1.getCount() < itemstack1.getMaxStackSize()
+    //            )) {
+    //                p_316632_.awardStat(Stats.ITEM_USED.get(p_316569_.getItem()));
+    //                ItemStack itemstack = p_316569_.consumeAndReturn(1, p_316632_);
+    //                float f;
+    //                if (planterblockentity.isEmpty()) {
+    //                    planterblockentity.setTheItem(itemstack);
+    //                    f = (float)itemstack.getCount() / (float)itemstack.getMaxStackSize();
+    //                } else {
+    //                    itemstack1.grow(1);
+    //                    f = (float)itemstack1.getCount() / (float)itemstack1.getMaxStackSize();
+    //                }
+    //
+    //                p_316177_.playSound(null, p_316898_, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * f);
+    //
+    //                planterblockentity.setChanged();
+    //                p_316177_.gameEvent(p_316632_, GameEvent.BLOCK_CHANGE, p_316898_);
+    //                return ItemInteractionResult.SUCCESS;
+    //            } else {
+    //                return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    //            }
+    //        }
+    //    } else {
+    //        return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
+    //    }
+    //}
+
+    //@Override
+    //protected InteractionResult useWithoutItem(BlockState p_316866_, Level p_316544_, BlockPos p_316541_, Player p_316732_, BlockHitResult p_316860_) {
+    //    if (p_316544_.getBlockEntity(p_316541_) instanceof PlanterBlockEntity planterblockentity) {
+    //        p_316544_.playSound(null, p_316541_, SoundEvents.DECORATED_POT_INSERT_FAIL, SoundSource.BLOCKS, 1.0F, 1.0F);
+    //        p_316544_.gameEvent(p_316732_, GameEvent.BLOCK_CHANGE, p_316541_);
+    //        return InteractionResult.SUCCESS;
+    //    } else {
+    //        return InteractionResult.PASS;
+    //    }
+    //}
+
     @Override
-    protected ItemInteractionResult useItemOn(
-            ItemStack p_316569_, BlockState p_316562_, Level p_316177_, BlockPos p_316898_, Player p_316632_, InteractionHand p_316424_, BlockHitResult p_316345_
-    ) {
-        if (p_316177_.getBlockEntity(p_316898_) instanceof PlanterBlockEntity planterblockentity) {
-            if (p_316177_.isClientSide) {
-                return ItemInteractionResult.CONSUME;
-            } else {
-                ItemStack itemstack1 = planterblockentity.getTheItem();
-                if (!p_316569_.isEmpty()
-                        && (
-                        itemstack1.isEmpty()
-                                || ItemStack.isSameItemSameComponents(itemstack1, p_316569_) && itemstack1.getCount() < itemstack1.getMaxStackSize()
-                )) {
-                    p_316632_.awardStat(Stats.ITEM_USED.get(p_316569_.getItem()));
-                    ItemStack itemstack = p_316569_.consumeAndReturn(1, p_316632_);
-                    float f;
-                    if (planterblockentity.isEmpty()) {
-                        planterblockentity.setTheItem(itemstack);
-                        f = (float)itemstack.getCount() / (float)itemstack.getMaxStackSize();
-                    } else {
-                        itemstack1.grow(1);
-                        f = (float)itemstack1.getCount() / (float)itemstack1.getMaxStackSize();
-                    }
-
-                    p_316177_.playSound(null, p_316898_, SoundEvents.DECORATED_POT_INSERT, SoundSource.BLOCKS, 1.0F, 0.7F + 0.5F * f);
-
-                    planterblockentity.setChanged();
-                    p_316177_.gameEvent(p_316632_, GameEvent.BLOCK_CHANGE, p_316898_);
-                    return ItemInteractionResult.SUCCESS;
-                } else {
-                    return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-                }
-            }
-        } else {
-            return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
-        }
-    }
-
-    @Override
-    protected InteractionResult useWithoutItem(BlockState p_316866_, Level p_316544_, BlockPos p_316541_, Player p_316732_, BlockHitResult p_316860_) {
-        if (p_316544_.getBlockEntity(p_316541_) instanceof PlanterBlockEntity planterblockentity) {
-            p_316544_.playSound(null, p_316541_, SoundEvents.DECORATED_POT_INSERT_FAIL, SoundSource.BLOCKS, 1.0F, 1.0F);
-            p_316544_.gameEvent(p_316732_, GameEvent.BLOCK_CHANGE, p_316541_);
-            return InteractionResult.SUCCESS;
-        } else {
-            return InteractionResult.PASS;
-        }
-    }
-
-    @Override
-    protected boolean isPathfindable(BlockState p_276295_, PathComputationType p_276303_) {
+    protected boolean isPathfindable(BlockState state, PathComputationType p_276303_) {
         return false;
     }
 
     @Override
-    protected void onRemove(BlockState p_305821_, Level p_306245_, BlockPos p_305894_, BlockState p_306294_, boolean p_306159_) {
-        Containers.dropContentsOnDestroy(p_305821_, p_306294_, p_306245_, p_305894_);
-        super.onRemove(p_305821_, p_306245_, p_305894_, p_306294_, p_306159_);
+    protected void onRemove(BlockState p_305821_, Level level, BlockPos pos, BlockState p_306294_, boolean p_306159_) {
+        Containers.dropContentsOnDestroy(p_305821_, p_306294_, level, pos);
+        super.onRemove(p_305821_, level, pos, p_306294_, p_306159_);
     }
 
     @Override
-    public BlockState playerWillDestroy(Level p_273590_, BlockPos p_273343_, BlockState p_272869_, Player p_273002_) {
-        BlockState blockstate = p_272869_;
+    public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+        BlockState blockstate = state;
 
-        return super.playerWillDestroy(p_273590_, p_273343_, blockstate, p_273002_);
+        return super.playerWillDestroy(level, pos, blockstate, player);
     }
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        return TEMPORARY_SHAPE;
     }
 
     @Override

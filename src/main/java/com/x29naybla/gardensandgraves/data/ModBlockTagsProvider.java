@@ -4,6 +4,7 @@ import com.x29naybla.gardensandgraves.GardensAndGraves;
 import com.x29naybla.gardensandgraves.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -37,6 +38,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.PLANTER_PURPLE.get())
                 .add(ModBlocks.PLANTER_MAGENTA.get())
                 .add(ModBlocks.PLANTER_PINK.get());
+
+        tag(ModTags.Blocks.SUPPORTS_PLANTS)
+                .addTags(BlockTags.DIRT)
+                .addTags(BlockTags.SAND)
+                .addTags(BlockTags.PLANKS)
+                .addTags(BlockTags.RAILS)
+                .addTags(ModTags.Blocks.PLANTERS);
 
         //C Tags
         tag(Tags.Blocks.DYED_WHITE)

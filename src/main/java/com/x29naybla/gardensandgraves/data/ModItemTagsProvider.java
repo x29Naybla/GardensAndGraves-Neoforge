@@ -23,20 +23,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         //Gardens and Graves Tags
-        tag(ModTags.Items.PLANTER_SUBSTRATES)
-                .add(Items.MYCELIUM)
-                .add(Items.MOSS_BLOCK)
-                .add(Items.GRASS_BLOCK)
-                .add(Items.MUD)
-                .add(Items.DIRT)
-                .add(Items.COARSE_DIRT)
-                .add(Items.SAND)
-                .add(Items.RED_SAND)
-                .add(Items.SOUL_SAND)
-                .add(Items.SOUL_SOIL)
-                .add(Items.CRIMSON_NYLIUM)
-                .add(Items.WARPED_NYLIUM);
-
         tag(ModTags.Items.SEED_PACKET_PEASHOOTERS)
                 .add(ModItems.SEED_PACKET_PEASHOOTER.get())
                 .add(ModItems.SEED_PACKET_REPEATER.get())

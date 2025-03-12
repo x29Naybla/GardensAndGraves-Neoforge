@@ -35,6 +35,7 @@
   "item.gardensandgraves.seed_packet_doom_shroom.desc": "Custo em sol:",
 
   "item.gardensandgraves.sun": "Sol",
+  "item.gardensandgraves.pea": "Ervilha",
 
   "item.gardensandgraves.brainz_banner_pattern": "Figura para estandarte",
   "item.gardensandgraves.brainz_banner_pattern.desc": "Mioloz",
@@ -59,20 +60,6 @@
   "block.gardensandgraves.planter_magenta": "Germinador magenta",
   "block.gardensandgraves.planter_pink": "Germinador rosa",
 
-  "block.gardensandgraves.sunflower": "Girassol",
-  "block.gardensandgraves.marigold": "Calêndula",
-
-  "block.gardensandgraves.peashooter": "Disparervilha",
-  "block.gardensandgraves.repeater": "Duplervilha",
-  "block.gardensandgraves.snow_pea": "Gelervilha",
-
-  "block.gardensandgraves.wall_nut": "Noz-obstáculo",
-
-  "block.gardensandgraves.potato_mine": "Batatamina",
-  "block.gardensandgraves.jalapeno": "Pimenta",
-  "block.gardensandgraves.chomper": "Carnívora",
-  "block.gardensandgraves.bonk_choy": "Repolho-boxeador",
-
   "block.minecraft.banner.gardensandgraves.brainz.white": "Mioloz branco",
   "block.minecraft.banner.gardensandgraves.brainz.light_gray": "Mioloz cinza-claro",
   "block.minecraft.banner.gardensandgraves.brainz.gray": "Mioloz cinza",
@@ -89,6 +76,20 @@
   "block.minecraft.banner.gardensandgraves.brainz.purple": "Mioloz roxo",
   "block.minecraft.banner.gardensandgraves.brainz.magenta": "Mioloz magenta",
   "block.minecraft.banner.gardensandgraves.brainz.pink": "Mioloz rosa",
+
+  "entity.gardensandgraves.sunflower": "Girassol",
+  "entity.gardensandgraves.marigold": "Calêndula",
+
+  "entity.gardensandgraves.peashooter": "Disparervilha",
+  "entity.gardensandgraves.repeater": "Duplervilha",
+  "entity.gardensandgraves.snow_peashooter": "Gelervilha",
+
+  "entity.gardensandgraves.wall_nut": "Noz-obstáculo",
+
+  "entity.gardensandgraves.potato_mine": "Batatamina",
+  "entity.gardensandgraves.jalapeno": "Pimenta",
+  "entity.gardensandgraves.chomper": "Carnívora",
+  "entity.gardensandgraves.bonk_choy": "Repolho-boxeador",
 
   "creativetab.gardensandgraves.blocks": "G&G blocos",
   "creativetab.gardensandgraves.items": "G&G itens"

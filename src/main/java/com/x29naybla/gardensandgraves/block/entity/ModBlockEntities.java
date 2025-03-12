@@ -34,36 +34,6 @@ public class ModBlockEntities {
 
             ).build(null));
 
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MarigoldBlockEntity>> MARIGOLD = BLOCK_ENTITIES
-            .register("marigold", () -> BlockEntityType.Builder.of(MarigoldBlockEntity::new,
-                    ModBlocks.MARIGOLD.get()
-            ).build(null));
-
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SunflowerBlockEntity>> SUNFLOWER = BLOCK_ENTITIES
-            .register("sunflower", () -> BlockEntityType.Builder.of(SunflowerBlockEntity::new,
-                    ModBlocks.SUNFLOWER.get()
-            ).build(null));
-
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<PeashooterBlockEntity>> PEASHOOTER = BLOCK_ENTITIES
-            .register("peashooter", () -> BlockEntityType.Builder.of(PeashooterBlockEntity::new,
-                    ModBlocks.PEASHOOTER.get()
-            ).build(null));
-
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<RepeaterBlockEntity>> REPEATER = BLOCK_ENTITIES
-            .register("repeater", () -> BlockEntityType.Builder.of(RepeaterBlockEntity::new,
-                    ModBlocks.REPEATER.get()
-            ).build(null));
-
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SnowPeaBlockEntity>> SNOW_PEA = BLOCK_ENTITIES
-            .register("snow_pea", () -> BlockEntityType.Builder.of(SnowPeaBlockEntity::new,
-                    ModBlocks.SNOW_PEA.get()
-            ).build(null));
-
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<WallNutBlockEntity>> WALL_NUT = BLOCK_ENTITIES
-            .register("wall_nut", () -> BlockEntityType.Builder.of(WallNutBlockEntity::new,
-                    ModBlocks.WALL_NUT.get()
-            ).build(null));
-
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

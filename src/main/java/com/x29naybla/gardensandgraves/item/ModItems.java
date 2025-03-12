@@ -2,6 +2,7 @@ package com.x29naybla.gardensandgraves.item;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
 import com.x29naybla.gardensandgraves.block.ModBlocks;
+import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.custom.SeedPacketItem;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.world.item.*;
@@ -19,19 +20,19 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_SUNFLOWER = ITEMS.register("seed_packet_sunflower",
-            () -> new SeedPacketItem(ModBlocks.SUNFLOWER.get(), new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.SUNFLOWER.get(), 2, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_MARIGOLD = ITEMS.register("seed_packet_marigold",
-            () -> new SeedPacketItem(ModBlocks.MARIGOLD.get(), new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.MARIGOLD.get(), 2, new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_PEASHOOTER = ITEMS.register("seed_packet_peashooter",
-            () -> new SeedPacketItem(ModBlocks.PEASHOOTER.get(), new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.PEASHOOTER.get(), 4, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_REPEATER = ITEMS.register("seed_packet_repeater",
-            () -> new SeedPacketItem(ModBlocks.REPEATER.get(), new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.REPEATER.get(), 8, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_SNOW_PEA = ITEMS.register("seed_packet_snow_pea",
-            () -> new SeedPacketItem(ModBlocks.SNOW_PEA.get(), new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.SNOW_PEASHOOTER.get(), 6, new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_WALL_NUT = ITEMS.register("seed_packet_wall_nut",
-            () -> new SeedPacketItem(ModBlocks.WALL_NUT.get(), new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.WALL_NUT.get(), 4, new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_POTATO_MINE = ITEMS.register("seed_packet_potato_mine",
             () -> new Item(new Item.Properties()));
@@ -51,6 +52,11 @@ public class ModItems {
     public static final DeferredItem<Item> SEED_PACKET_HYPNO_SHROOM = ITEMS.register("seed_packet_hypno_shroom",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_DOOM_SHROOM = ITEMS.register("seed_packet_doom_shroom",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> PEA = ITEMS.register("pea",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> SNOW_PEA = ITEMS.register("snow_pea",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> BRAINZ_BANNER_PATTERN = ITEMS.register("brainz_banner_pattern",

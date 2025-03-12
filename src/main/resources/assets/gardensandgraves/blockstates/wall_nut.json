@@ -1,9 +1,0 @@
-{
-  "multipart": [
-    {
-      "apply": {
-        "model": "gardensandgraves:block/wall_nut"
-      }
-    }
-  ]
-}
