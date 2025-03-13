@@ -2,6 +2,7 @@ package com.x29naybla.gardensandgraves.item.custom;
 
 import com.mojang.serialization.MapCodec;
 import com.x29naybla.gardensandgraves.data.ModTags;
+import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -15,10 +16,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.CustomData;
@@ -32,6 +30,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class SeedPacketItem extends Item {
     private static final MapCodec<EntityType<?>> ENTITY_TYPE_FIELD_CODEC;
@@ -57,34 +56,39 @@ public class SeedPacketItem extends Item {
     }
 
     public InteractionResult useOn(UseOnContext context) {
-        Direction direction = context.getClickedFace();
-        Level level = context.getLevel();
-        BlockPlaceContext blockplacecontext = new BlockPlaceContext(context);
-        BlockPos blockpos = blockplacecontext.getClickedPos();
-        if (direction == Direction.DOWN) {
-            return InteractionResult.FAIL;
-        } else if (onSubstrate(level, blockpos)) {
-            ItemStack itemstack = context.getItemInHand();
-            Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
-            AABB aabb = this.getType(itemstack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
-            if (level.noCollision((Entity)null, aabb) && level.getEntities((Entity)null, aabb).isEmpty()) {
-                if (level instanceof ServerLevel) {
-                    ServerLevel serverlevel = (ServerLevel)level;
-                    Entity plant = this.getType(itemstack).create(serverlevel, EntityType.createDefaultStackConfig(serverlevel, itemstack, context.getPlayer()), blockpos, MobSpawnType.SPAWN_EGG, true, true);
-                    if (plant == null) {
-                        return InteractionResult.FAIL;
+        if ((context.getPlayer().getInventory().countItem(ModItems.SUN.get()) >= sunAmount) || context.getPlayer().isCreative()){
+            Direction direction = context.getClickedFace();
+            Level level = context.getLevel();
+            BlockPlaceContext blockplacecontext = new BlockPlaceContext(context);
+            BlockPos blockpos = blockplacecontext.getClickedPos();
+            if (direction == Direction.DOWN) {
+                return InteractionResult.FAIL;
+            } else if (onSubstrate(level, blockpos)) {
+                ItemStack itemstack = context.getItemInHand();
+                Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
+                AABB aabb = this.getType(itemstack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
+                if (level.noCollision((Entity)null, aabb) && level.getEntities((Entity)null, aabb).isEmpty()) {
+                    if (level instanceof ServerLevel) {
+                        ServerLevel serverlevel = (ServerLevel)level;
+                        Entity plant = this.getType(itemstack).create(serverlevel, EntityType.createDefaultStackConfig(serverlevel, itemstack, context.getPlayer()), blockpos, MobSpawnType.SPAWN_EGG, true, true);
+                        if (plant == null) {
+                            return InteractionResult.FAIL;
+                        }
+                        float f = (float)Mth.floor((Mth.wrapDegrees(context.getRotation() - 180.0F) + 22.5F) / 45.0F) * 45.0F;
+                        plant.moveTo(plant.getX(), plant.getY(), plant.getZ(), f, 0.0F);
+                        serverlevel.addFreshEntityWithPassengers(plant);
+                        level.playSound((Player)null, plant.getX(), plant.getY(), plant.getZ(), SoundEvents.ARMOR_STAND_PLACE, SoundSource.BLOCKS, 0.75F, 0.8F);
+                        plant.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
                     }
-
-                    float f = (float)Mth.floor((Mth.wrapDegrees(context.getRotation() - 180.0F) + 22.5F) / 45.0F) * 45.0F;
-                    plant.moveTo(plant.getX(), plant.getY(), plant.getZ(), f, 0.0F);
-                    serverlevel.addFreshEntityWithPassengers(plant);
-                    level.playSound((Player)null, plant.getX(), plant.getY(), plant.getZ(), SoundEvents.ARMOR_STAND_PLACE, SoundSource.BLOCKS, 0.75F, 0.8F);
-                    plant.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
+                    itemstack.shrink(1);
+                    if(!(context.getPlayer().isCreative())){
+                        context.getPlayer().getInventory().removeItem(context.getPlayer().getInventory().findSlotMatchingItem(ModItems.SUN.toStack(sunAmount)), sunAmount);
+                    }
+                    return InteractionResult.sidedSuccess(level.isClientSide);
+                } else {
+                    return InteractionResult.FAIL;
                 }
-
-                itemstack.shrink(1);
-                return InteractionResult.sidedSuccess(level.isClientSide);
-            } else {
+            }else {
                 return InteractionResult.FAIL;
             }
         }else {
