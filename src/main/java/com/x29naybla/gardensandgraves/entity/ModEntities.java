@@ -67,7 +67,7 @@ public class ModEntities {
 
         AttributeSupplier.Builder wallNutAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 6)
+                .add(Attributes.MAX_HEALTH, 80)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99);
 
         event.put(ModEntities.SUNFLOWER.get(), sunflowerAttributes.build());

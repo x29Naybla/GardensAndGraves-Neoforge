@@ -22,6 +22,7 @@ public class PeashooterEntity extends TamableAnimal implements GeoEntity, Ranged
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.peashooter.idle");
     protected static final RawAnimation SHOOT = RawAnimation.begin().thenLoop("animation.peashooter.shoot");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
+    public boolean isShooting = false;
 
     public PeashooterEntity(EntityType<? extends PeashooterEntity> entityType, Level level) {
         super(entityType, level);
@@ -61,7 +62,10 @@ public class PeashooterEntity extends TamableAnimal implements GeoEntity, Ranged
     }
 
     protected <E extends PeashooterEntity> PlayState animController(final AnimationState<E> event) {
-        event.setAnimation(IDLE);
+        if(isShooting){
+            event.setAnimation(SHOOT);
+        }else
+            event.setAnimation(IDLE);
 
         return PlayState.CONTINUE;
     }

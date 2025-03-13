@@ -12,6 +12,7 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
@@ -92,9 +93,25 @@ public class MarigoldEntity extends TamableAnimal implements GeoEntity {
     @Override
     public void aiStep() {
         super.aiStep();
-        if (!this.level().isClientSide && this.isAlive() && !this.level().isNight() && !this.isBaby() && --this.rewardTime <= 0) {
+        if (!this.level().isClientSide && this.isAlive() && !this.isBaby() && --this.rewardTime <= 0) {
             this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-            this.spawnAtLocation(ModItems.SUN);
+            if(this.random.nextInt(1, 4) <= 1){
+                this.spawnAtLocation(Items.GOLD_NUGGET);
+                if(this.random.nextInt(1, 4) <= 2){
+                    this.spawnAtLocation(Items.GOLD_NUGGET);
+                    if(this.random.nextInt(1, 4) <= 1){
+                        this.spawnAtLocation(Items.GOLD_NUGGET);
+                    }
+                }
+            }else{
+                this.spawnAtLocation(Items.IRON_NUGGET);
+                if(this.random.nextInt(1, 4) <= 2){
+                    this.spawnAtLocation(Items.IRON_NUGGET);
+                    if(this.random.nextInt(1, 4) <= 1){
+                        this.spawnAtLocation(Items.IRON_NUGGET);
+                    }
+                }
+            }
             this.gameEvent(GameEvent.ENTITY_PLACE);
             this.rewardTime = 6000;
         }

@@ -13,6 +13,7 @@ import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 
@@ -56,6 +57,7 @@ public class ProjectileSnowPea extends ThrowableItemProjectile {
         Entity entity = result.getEntity();
         if (!(entity.getType().is(ModTags.Entities.PLANTS))){
             entity.hurt(this.damageSources().thrown(this, this.getOwner()), 2);
+            this.level().broadcastEntityEvent(this, (byte)3);
             shouldBreak = true;
         }
     }
@@ -63,9 +65,12 @@ public class ProjectileSnowPea extends ThrowableItemProjectile {
     protected void onHit(HitResult result) {
         super.onHit(result);
         if (!this.level().isClientSide && shouldBreak == true) {
-            this.level().broadcastEntityEvent(this, (byte)3);
             this.discard();
         }
-        shouldBreak = true;
+    }
+
+    @Override
+    protected void onHitBlock(BlockHitResult result){
+        this.level().broadcastEntityEvent(this, (byte)3);
     }
 }
