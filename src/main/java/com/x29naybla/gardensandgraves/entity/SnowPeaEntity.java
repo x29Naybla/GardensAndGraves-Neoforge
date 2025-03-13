@@ -72,7 +72,7 @@ public class SnowPeaEntity extends TamableAnimal implements GeoEntity, RangedAtt
     }
 
     protected void registerGoals(){
-        this.goalSelector.addGoal(0, new RangedAttackGoal(this, (double)1.25F, 30, 4.0F));
+        this.goalSelector.addGoal(0, new RangedAttackGoal(this, (double)1.25F, 30, 8.5F));
         this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (p_29932_) -> p_29932_ instanceof Enemy));
     }

@@ -18,10 +18,11 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 
 public class Pea extends ThrowableItemProjectile {
+    public Boolean shouldBreak = false;
+
     public Pea(EntityType<? extends Pea> entityType, Level level) {
         super(entityType, level);
     }
-    public Boolean shouldBreak = false;
 
     public Pea(Level level, LivingEntity shooter) {
         super(ModEntities.PEA.get(), shooter, level);
@@ -45,7 +46,7 @@ public class Pea extends ThrowableItemProjectile {
             ParticleOptions particleoptions = this.getParticle();
 
             for(int i = 0; i < 8; ++i) {
-                this.level().addParticle(particleoptions, this.getX(), this.getY(), this.getZ(), (double)0.0F, (double)0.0F, (double)0.0F);
+                this.level().addParticle(particleoptions, this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F, 0.0F);
             }
         }
 
@@ -54,7 +55,7 @@ public class Pea extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
-        if (!(entity.getTags().contains(ModTags.Entities.PLANTS))){
+        if (!(entity.getType().is(ModTags.Entities.PLANTS))){
             entity.hurt(this.damageSources().thrown(this, this.getOwner()), 2);
             shouldBreak = true;
         }
