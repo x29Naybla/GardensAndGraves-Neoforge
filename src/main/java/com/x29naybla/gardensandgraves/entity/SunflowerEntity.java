@@ -9,7 +9,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -20,14 +19,18 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class SunflowerEntity extends TamableAnimal implements GeoEntity {
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.sunflower.idle");
-    protected static final RawAnimation GENERATE_SUN = RawAnimation.begin().thenLoop("animation.sunflower.generate_sun");
+    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.flower.idle");
+    protected static final RawAnimation GENERATE = RawAnimation.begin().thenLoop("animation.flower.generate");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public int sunTime;
 
     public SunflowerEntity(EntityType<? extends SunflowerEntity> entityType, Level level) {
         super(entityType, level);
         this.sunTime = 6000;
+    }
+
+    public boolean canBeLeashed() {
+        return false;
     }
 
     @Override
@@ -54,8 +57,8 @@ public class SunflowerEntity extends TamableAnimal implements GeoEntity {
     }
 
     @Override
-    public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return null;
+    public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherparent) {;
+        return ModEntities.SUNFLOWER.get().create(level);
     }
 
     @Override
@@ -65,7 +68,7 @@ public class SunflowerEntity extends TamableAnimal implements GeoEntity {
 
     protected <E extends SunflowerEntity> PlayState animController(final AnimationState<E> event) {
         if (sunTime <= 20) {
-            event.setAnimation(GENERATE_SUN);
+            event.setAnimation(GENERATE);
         } else {
             event.setAnimation(IDLE);
         }

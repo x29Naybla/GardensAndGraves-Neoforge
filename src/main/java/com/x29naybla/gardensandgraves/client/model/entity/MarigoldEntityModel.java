@@ -8,7 +8,7 @@ import software.bernie.geckolib.model.GeoModel;
 public class MarigoldEntityModel extends GeoModel {
     private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "geo/entity/marigold.geo.json");
     private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "textures/entity/marigold.png");
-    private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "animations/entity/sunflower.animation.json");
+    private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "animations/entity/flower.animation.json");
 
     @Override
     public ResourceLocation getModelResource(GeoAnimatable animatable) {

@@ -1,6 +1,5 @@
 package com.x29naybla.gardensandgraves.entity;
 
-import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
@@ -23,14 +22,18 @@ import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class MarigoldEntity extends TamableAnimal implements GeoEntity {
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.sunflower.idle");
-    protected static final RawAnimation GENERATE_REWARD = RawAnimation.begin().thenLoop("animation.sunflower.generate_sun");
+    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.flower.idle");
+    protected static final RawAnimation GENERATE = RawAnimation.begin().thenLoop("animation.flower.generate");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public int rewardTime;
 
     public MarigoldEntity(EntityType<? extends MarigoldEntity> entityType, Level level) {
         super(entityType, level);
         this.rewardTime = 6000;
+    }
+
+    public boolean canBeLeashed() {
+        return false;
     }
 
     @Override
@@ -57,8 +60,8 @@ public class MarigoldEntity extends TamableAnimal implements GeoEntity {
     }
 
     @Override
-    public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return null;
+    public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherparent) {;
+        return ModEntities.MARIGOLD.get().create(level);
     }
 
     @Override
@@ -68,7 +71,7 @@ public class MarigoldEntity extends TamableAnimal implements GeoEntity {
 
     protected <E extends MarigoldEntity> PlayState animController(final AnimationState<E> event) {
         if (rewardTime <= 20) {
-            event.setAnimation(GENERATE_REWARD);
+            event.setAnimation(GENERATE);
         } else {
             event.setAnimation(IDLE);
         }

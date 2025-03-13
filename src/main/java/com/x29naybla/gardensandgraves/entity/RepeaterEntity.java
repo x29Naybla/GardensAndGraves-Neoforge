@@ -7,6 +7,8 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.item.ItemStack;
@@ -25,6 +27,10 @@ public class RepeaterEntity extends TamableAnimal implements GeoEntity, RangedAt
 
     public RepeaterEntity(EntityType<? extends RepeaterEntity> entityType, Level level) {
         super(entityType, level);
+    }
+
+    public boolean canBeLeashed() {
+        return false;
     }
 
     @Override
@@ -51,8 +57,8 @@ public class RepeaterEntity extends TamableAnimal implements GeoEntity, RangedAt
     }
 
     @Override
-    public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return null;
+    public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherparent) {;
+        return ModEntities.REPEATER.get().create(level);
     }
 
     @Override
@@ -67,9 +73,9 @@ public class RepeaterEntity extends TamableAnimal implements GeoEntity, RangedAt
     }
 
     protected void registerGoals(){
-        this.goalSelector.addGoal(0, new RangedAttackGoal(this, (double)1.25F, 30, 8.5F));
+        this.goalSelector.addGoal(0, new RangedAttackGoal(this, 1.25F, 30, 8.5F));
         this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (p_29932_) -> p_29932_ instanceof Enemy));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (p_29932_) -> p_29932_ instanceof Enemy && !(p_29932_ instanceof Creeper || p_29932_ instanceof EnderMan)));
     }
 
     @Override

@@ -1,19 +1,16 @@
 package com.x29naybla.gardensandgraves.entity;
 
-import com.x29naybla.gardensandgraves.entity.projectile.Pea;
 import com.x29naybla.gardensandgraves.entity.projectile.ProjectileSnowPea;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.RangedAttackMob;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.Snowball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -30,6 +27,10 @@ public class SnowPeaEntity extends TamableAnimal implements GeoEntity, RangedAtt
 
     public SnowPeaEntity(EntityType<? extends SnowPeaEntity> entityType, Level level) {
         super(entityType, level);
+    }
+
+    public boolean canBeLeashed() {
+        return false;
     }
 
     @Override
@@ -56,8 +57,8 @@ public class SnowPeaEntity extends TamableAnimal implements GeoEntity, RangedAtt
     }
 
     @Override
-    public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return null;
+    public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherparent) {;
+        return ModEntities.SNOW_PEASHOOTER.get().create(level);
     }
 
     @Override
@@ -72,9 +73,9 @@ public class SnowPeaEntity extends TamableAnimal implements GeoEntity, RangedAtt
     }
 
     protected void registerGoals(){
-        this.goalSelector.addGoal(0, new RangedAttackGoal(this, (double)1.25F, 30, 8.5F));
+        this.goalSelector.addGoal(0, new RangedAttackGoal(this, 1.25F, 30, 8.5F));
         this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (p_29932_) -> p_29932_ instanceof Enemy));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (p_29932_) -> p_29932_ instanceof Enemy && !(p_29932_ instanceof Creeper || p_29932_ instanceof EnderMan)));
     }
 
     @Override

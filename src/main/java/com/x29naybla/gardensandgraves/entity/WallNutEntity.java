@@ -6,9 +6,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -23,6 +21,10 @@ public class WallNutEntity extends TamableAnimal implements GeoEntity {
 
     public WallNutEntity(EntityType<? extends WallNutEntity> entityType, Level level) {
         super(entityType, level);
+    }
+
+    public boolean canBeLeashed() {
+        return false;
     }
 
     @Override
@@ -49,8 +51,8 @@ public class WallNutEntity extends TamableAnimal implements GeoEntity {
     }
 
     @Override
-    public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return null;
+    public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherparent) {;
+        return ModEntities.WALL_NUT.get().create(level);
     }
 
     @Override
