@@ -6,10 +6,10 @@
 
   "item.gardensandgraves.seed_packet_peashooter": "Pacote de sementes de disparervilha",
   "item.gardensandgraves.seed_packet_peashooter.desc": "Custo em sol: 4",
-  "item.gardensandgraves.seed_packet_repeater": "Pacote de sementes de duplaervilha",
-  "item.gardensandgraves.seed_packet_repeater.desc": "Custo em sol: 8",
   "item.gardensandgraves.seed_packet_snow_pea": "Pacote de sementes de gelervilha",
   "item.gardensandgraves.seed_packet_snow_pea.desc": "Custo em sol: 6",
+  "item.gardensandgraves.seed_packet_repeater": "Pacote de sementes de duplaervilha",
+  "item.gardensandgraves.seed_packet_repeater.desc": "Custo em sol: 8",
 
   "item.gardensandgraves.seed_packet_wall_nut": "Pacote de sementes de noz-obstáculo",
   "item.gardensandgraves.seed_packet_wall_nut.desc": "Custo em sol: 2",
@@ -36,6 +36,7 @@
 
   "item.gardensandgraves.sun": "Sol",
   "item.gardensandgraves.pea": "Ervilha",
+  "item.gardensandgraves.snow_pea": "Ervilha congelada",
 
   "item.gardensandgraves.brainz_banner_pattern": "Figura para estandarte",
   "item.gardensandgraves.brainz_banner_pattern.desc": "Mioloz",
@@ -81,8 +82,8 @@
   "entity.gardensandgraves.marigold": "Calêndula",
 
   "entity.gardensandgraves.peashooter": "Disparervilha",
-  "entity.gardensandgraves.repeater": "Duplervilha",
   "entity.gardensandgraves.snow_peashooter": "Gelervilha",
+  "entity.gardensandgraves.repeater": "Duplervilha",
 
   "entity.gardensandgraves.wall_nut": "Noz-obstáculo",
 

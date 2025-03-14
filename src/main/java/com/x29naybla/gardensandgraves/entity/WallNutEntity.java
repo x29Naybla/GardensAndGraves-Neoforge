@@ -5,8 +5,16 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.animal.Turtle;
+import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.monster.ZombifiedPiglin;
+import net.minecraft.world.entity.monster.warden.AngerManagement;
+import net.minecraft.world.entity.npc.AbstractVillager;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -43,6 +51,18 @@ public class WallNutEntity extends TamableAnimal implements GeoEntity {
 
     @Override
     protected void doPush(Entity entity) {
+    }
+
+    public boolean canCollideWith(Entity entity) {
+        return canWallNutCollide(this, entity);
+    }
+
+    public static boolean canWallNutCollide(Entity wall_nut, Entity entity) {
+        return (entity.canBeCollidedWith() || entity.isPushable());
+    }
+
+    public boolean canBeCollidedWith() {
+        return true;
     }
 
     @Override

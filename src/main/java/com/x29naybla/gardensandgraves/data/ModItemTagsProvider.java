@@ -6,7 +6,6 @@ import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -26,7 +25,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModTags.Items.SEED_PACKET_PEASHOOTERS)
                 .add(ModItems.SEED_PACKET_PEASHOOTER.get())
                 .add(ModItems.SEED_PACKET_REPEATER.get())
-                .add(ModItems.SEED_PACKET_SNOW_PEA.get());
+                .add(ModItems.SEED_PACKET_SNOW_PEASHOOTER.get());
 
         tag(ModTags.Items.SEED_PACKET_MUSHROOMS)
                 .add(ModItems.SEED_PACKET_SUN_SHROOM.get())

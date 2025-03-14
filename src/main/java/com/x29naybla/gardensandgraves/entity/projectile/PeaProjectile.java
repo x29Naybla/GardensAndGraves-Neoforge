@@ -6,7 +6,6 @@ import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,19 +17,19 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 
-public class Pea extends ThrowableItemProjectile {
+public class PeaProjectile extends ThrowableItemProjectile {
     public Boolean shouldBreak = false;
 
-    public Pea(EntityType<? extends Pea> entityType, Level level) {
+    public PeaProjectile(EntityType<? extends PeaProjectile> entityType, Level level) {
         super(entityType, level);
     }
 
-    public Pea(Level level, LivingEntity shooter) {
-        super(ModEntities.PEA.get(), shooter, level);
+    public PeaProjectile(Level level, LivingEntity shooter) {
+        super(ModEntities.PEA_PROJECTILE.get(), shooter, level);
     }
 
-    public Pea(Level level, double x, double y, double z) {
-        super(ModEntities.PEA.get(), x, y, z, level);
+    public PeaProjectile(Level level, double x, double y, double z) {
+        super(ModEntities.PEA_PROJECTILE.get(), x, y, z, level);
     }
 
     protected Item getDefaultItem() {
@@ -39,7 +38,7 @@ public class Pea extends ThrowableItemProjectile {
 
     private ParticleOptions getParticle() {
         ItemStack itemstack = this.getItem();
-        return (ParticleOptions)(!itemstack.isEmpty() && !itemstack.is(this.getDefaultItem()) ? new ItemParticleOption(ParticleTypes.ITEM, itemstack) : ParticleTypes.ITEM_SNOWBALL);
+        return (ParticleOptions)(!itemstack.isEmpty() && !itemstack.is(this.getDefaultItem()) ? new ItemParticleOption(ParticleTypes.ITEM, itemstack) : new ItemParticleOption(ParticleTypes.ITEM, ModItems.PEA.toStack()));
     }
 
     public void handleEntityEvent(byte id) {

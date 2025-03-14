@@ -1,19 +1,19 @@
 package com.x29naybla.gardensandgraves.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.x29naybla.gardensandgraves.client.model.entity.SnowPeaEntityModel;
-import com.x29naybla.gardensandgraves.entity.SnowPeaEntity;
+import com.x29naybla.gardensandgraves.client.model.entity.SnowPeashooterEntityModel;
+import com.x29naybla.gardensandgraves.entity.SnowPeashooterEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class SnowPeaRenderer extends GeoEntityRenderer<SnowPeaEntity> {
-    public SnowPeaRenderer(EntityRendererProvider.Context context) {
-        super(context, new SnowPeaEntityModel());
+public class SnowPeashooterRenderer extends GeoEntityRenderer<SnowPeashooterEntity> {
+    public SnowPeashooterRenderer(EntityRendererProvider.Context context) {
+        super(context, new SnowPeashooterEntityModel());
     }
 
     @Override
-    public void render(SnowPeaEntity animatable, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    public void render(SnowPeashooterEntity animatable, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
         if (animatable.isBaby()) {
             poseStack.scale(0.6F, 0.6F, 0.6F);
         } else {

@@ -23,8 +23,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SEED_PACKET_SUNFLOWER);
                         output.accept(ModItems.SEED_PACKET_MARIGOLD);
                         output.accept(ModItems.SEED_PACKET_PEASHOOTER);
+                        output.accept(ModItems.SEED_PACKET_SNOW_PEASHOOTER);
                         output.accept(ModItems.SEED_PACKET_REPEATER);
-                        output.accept(ModItems.SEED_PACKET_SNOW_PEA);
                         output.accept(ModItems.SEED_PACKET_WALL_NUT);
                         output.accept(ModItems.SEED_PACKET_POTATO_MINE);
                         output.accept(ModItems.SEED_PACKET_JALAPENO);
@@ -37,6 +37,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SEED_PACKET_DOOM_SHROOM);
                         output.accept(ModItems.BRAINZ_BANNER_PATTERN);
                         output.accept(ModItems.MUSIC_DISC_WABBY_WABBO);
+                        output.accept(ModItems.PEA);
+                        output.accept(ModItems.SNOW_PEA);
 
                     }).build());
 

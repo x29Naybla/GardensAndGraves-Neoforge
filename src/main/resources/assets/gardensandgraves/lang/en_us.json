@@ -6,10 +6,10 @@
 
   "item.gardensandgraves.seed_packet_peashooter": "Peashooter Seed Packet",
   "item.gardensandgraves.seed_packet_peashooter.desc": "Sun Cost: 4",
-  "item.gardensandgraves.seed_packet_repeater": "Repeater Seed Packet",
-  "item.gardensandgraves.seed_packet_repeater.desc": "Sun Cost: 8",
   "item.gardensandgraves.seed_packet_snow_pea": "Snow Pea Seed Packet",
   "item.gardensandgraves.seed_packet_snow_pea.desc": "Sun Cost: 6",
+  "item.gardensandgraves.seed_packet_repeater": "Repeater Seed Packet",
+  "item.gardensandgraves.seed_packet_repeater.desc": "Sun Cost: 8",
 
   "item.gardensandgraves.seed_packet_wall_nut": "Wall-nut Seed Packet",
   "item.gardensandgraves.seed_packet_wall_nut.desc": "Sun Cost: 2",
@@ -82,8 +82,8 @@
   "entity.gardensandgraves.marigold": "Marigold",
 
   "entity.gardensandgraves.peashooter": "Peashooter",
-  "entity.gardensandgraves.repeater": "Repeater",
   "entity.gardensandgraves.snow_peashooter": "Snow Pea",
+  "entity.gardensandgraves.repeater": "Repeater",
 
   "entity.gardensandgraves.wall_nut": "Wall-nut",
 

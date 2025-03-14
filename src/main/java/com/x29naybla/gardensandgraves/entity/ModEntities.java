@@ -1,8 +1,8 @@
 package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
-import com.x29naybla.gardensandgraves.entity.projectile.Pea;
-import com.x29naybla.gardensandgraves.entity.projectile.ProjectileSnowPea;
+import com.x29naybla.gardensandgraves.entity.projectile.PeaProjectile;
+import com.x29naybla.gardensandgraves.entity.projectile.SnowPeaProjectile;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -25,8 +25,8 @@ public class ModEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<SunflowerEntity>> SUNFLOWER = register("sunflower", SunflowerEntity::new, 0.7f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<MarigoldEntity>> MARIGOLD = register("marigold", MarigoldEntity::new, 0.7f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<PeashooterEntity>> PEASHOOTER = register("peashooter", PeashooterEntity::new, 0.5f, 0.9f);
+    public static final DeferredHolder<EntityType<?>, EntityType<SnowPeashooterEntity>> SNOW_PEASHOOTER = register("snow_peashooter", SnowPeashooterEntity::new, 0.5f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<RepeaterEntity>> REPEATER = register("repeater", RepeaterEntity::new, 0.5f, 0.9f);
-    public static final DeferredHolder<EntityType<?>, EntityType<SnowPeaEntity>> SNOW_PEASHOOTER = register("snow_peashooter", SnowPeaEntity::new, 0.5f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<WallNutEntity>> WALL_NUT = register("wall_nut", WallNutEntity::new, 0.8f, 1.3f);
 
     @SubscribeEvent
@@ -49,7 +49,7 @@ public class ModEntities {
                 .add(Attributes.ATTACK_DAMAGE, 2)
                 .add(Attributes.FOLLOW_RANGE,  8.5);
 
-        AttributeSupplier.Builder repeaterAttributes = PathfinderMob.createMobAttributes()
+        AttributeSupplier.Builder snowPeashooterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
                 .add(Attributes.MAX_HEALTH, 6)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
@@ -57,7 +57,7 @@ public class ModEntities {
                 .add(Attributes.ATTACK_DAMAGE, 2)
                 .add(Attributes.FOLLOW_RANGE,  8.5);
 
-        AttributeSupplier.Builder snowPeashooterAttributes = PathfinderMob.createMobAttributes()
+        AttributeSupplier.Builder repeaterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
                 .add(Attributes.MAX_HEALTH, 6)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
@@ -73,19 +73,19 @@ public class ModEntities {
         event.put(ModEntities.SUNFLOWER.get(), sunflowerAttributes.build());
         event.put(ModEntities.MARIGOLD.get(), marigoldAttributes.build());
         event.put(ModEntities.PEASHOOTER.get(), peashooterAttributes.build());
-        event.put(ModEntities.REPEATER.get(), repeaterAttributes.build());
         event.put(ModEntities.SNOW_PEASHOOTER.get(), snowPeashooterAttributes.build());
+        event.put(ModEntities.REPEATER.get(), repeaterAttributes.build());
         event.put(ModEntities.WALL_NUT.get(), wallNutAttributes.build());
     }
 
-    public static final Supplier<EntityType<Pea>> PEA = ENTITY_TYPES.register("pea", () -> (
-            EntityType.Builder.<Pea>of(Pea::new, MobCategory.MISC)
+    public static final Supplier<EntityType<PeaProjectile>> PEA_PROJECTILE = ENTITY_TYPES.register("pea", () -> (
+            EntityType.Builder.<PeaProjectile>of(PeaProjectile::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F)
                     .clientTrackingRange(16)
                     .build("pea")));
 
-    public static final Supplier<EntityType<ProjectileSnowPea>> PROJECTILE_SNOW_PEA = ENTITY_TYPES.register("projectile_snow_pea", () -> (
-            EntityType.Builder.<ProjectileSnowPea>of(ProjectileSnowPea::new, MobCategory.MISC)
+    public static final Supplier<EntityType<SnowPeaProjectile>> SNOW_PEA_PROJECTILE = ENTITY_TYPES.register("projectile_snow_pea", () -> (
+            EntityType.Builder.<SnowPeaProjectile>of(SnowPeaProjectile::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F)
                     .clientTrackingRange(16)
                     .build("projectile_snow_pea")));

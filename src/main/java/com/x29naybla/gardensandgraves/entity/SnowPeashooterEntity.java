@@ -1,6 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
-import com.x29naybla.gardensandgraves.entity.projectile.ProjectileSnowPea;
+import com.x29naybla.gardensandgraves.entity.projectile.SnowPeaProjectile;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.*;
@@ -20,12 +20,12 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class SnowPeaEntity extends TamableAnimal implements GeoEntity, RangedAttackMob {
+public class SnowPeashooterEntity extends TamableAnimal implements GeoEntity, RangedAttackMob {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.peashooter.idle");
     protected static final RawAnimation SHOOT = RawAnimation.begin().thenLoop("animation.peashooter.shoot");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
-    public SnowPeaEntity(EntityType<? extends SnowPeaEntity> entityType, Level level) {
+    public SnowPeashooterEntity(EntityType<? extends SnowPeashooterEntity> entityType, Level level) {
         super(entityType, level);
     }
 
@@ -66,7 +66,7 @@ public class SnowPeaEntity extends TamableAnimal implements GeoEntity, RangedAtt
         controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::animController));
     }
 
-    protected <E extends SnowPeaEntity> PlayState animController(final AnimationState<E> event) {
+    protected <E extends SnowPeashooterEntity> PlayState animController(final AnimationState<E> event) {
         event.setAnimation(IDLE);
 
         return PlayState.CONTINUE;
@@ -90,13 +90,13 @@ public class SnowPeaEntity extends TamableAnimal implements GeoEntity, RangedAtt
 
     @Override
     public void performRangedAttack(LivingEntity target, float distanceFactor) {
-        ProjectileSnowPea pea = new ProjectileSnowPea(this.level(), this);
+        SnowPeaProjectile pea = new SnowPeaProjectile(this.level(), this);
         double d0 = target.getEyeY() - (double)1.1F;
         double d1 = target.getX() - this.getX();
         double d2 = d0 - pea.getY();
         double d3 = target.getZ() - this.getZ();
         double d4 = Math.sqrt(d1 * d1 + d3 * d3) * (double)0.2F;
-        pea.shoot(d1, d2 + d4, d3, 1.6F, 12.0F);
+        pea.shoot(d1, d2 + d4, d3, 1.6F, 6.0F);
         this.playSound(SoundEvents.SNOW_GOLEM_SHOOT, 1.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level().addFreshEntity(pea);
     }
