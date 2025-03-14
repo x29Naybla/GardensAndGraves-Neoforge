@@ -39,6 +39,7 @@ public class ModTags {
 
         public static final TagKey<Item> SEED_PACKET_PEASHOOTERS = createTag("seed_packet_peashooters");
         public static final TagKey<Item> SEED_PACKET_MUSHROOMS = createTag("seed_packet_mushrooms");
+        public static final TagKey<Item> SEED_PACKET_FLOWERS = createTag("seed_packet_flowers");
 
         private static TagKey<Item> createTag(String name){
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));
@@ -57,6 +58,7 @@ public class ModTags {
         //Gardens and Graves Tags
         public static final TagKey<EntityType<?>> PLANTS = createTag("plants");
         public static final TagKey<EntityType<?>> PEASHOOTERS = createTag("peashooters");
+        public static final TagKey<EntityType<?>> FLOWERS = createTag("flowers");
 
         private static TagKey<EntityType<?>> createTag(String name) {
             return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));

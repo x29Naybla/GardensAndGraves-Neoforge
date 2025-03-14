@@ -33,6 +33,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.SEED_PACKET_FUME_SHROOM.get())
                 .add(ModItems.SEED_PACKET_DOOM_SHROOM.get());
 
+        tag(ModTags.Items.SEED_PACKET_FLOWERS)
+                .add(ModItems.SEED_PACKET_SUNFLOWER.get())
+                .add(ModItems.SEED_PACKET_MARIGOLD.get());
+
         //C Tags
         tag(Tags.Items.DYED_WHITE)
                 .add(ModBlocks.PLANTER_WHITE.asItem());

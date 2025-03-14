@@ -1,7 +1,6 @@
 {
   "values": [
-    "gardensandgraves:sunflower",
-    "gardensandgraves:marigold",
+    "#gardensandgraves:flowers",
     "#gardensandgraves:peashooters",
     "gardensandgraves:wall_nut"
   ]

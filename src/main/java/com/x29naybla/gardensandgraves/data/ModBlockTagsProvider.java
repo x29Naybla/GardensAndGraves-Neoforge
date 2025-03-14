@@ -5,6 +5,7 @@ import com.x29naybla.gardensandgraves.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -42,8 +43,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.SUPPORTS_PLANTS)
                 .addTags(BlockTags.DIRT)
                 .addTags(BlockTags.SAND)
+                .add(Blocks.SANDSTONE)
+                .add(Blocks.RED_SANDSTONE)
                 .addTags(BlockTags.PLANKS)
-                .addTags(BlockTags.RAILS)
+                .addTags(BlockTags.LOGS)
+                .add(Blocks.LILY_PAD)
+                .add(Blocks.GRAVEL)
+                .add(Blocks.SUSPICIOUS_GRAVEL)
                 .addTags(ModTags.Blocks.PLANTERS);
 
         //C Tags

@@ -23,9 +23,12 @@ public class ModEntityTagsProvider extends EntityTypeTagsProvider {
                 .add(ModEntities.SNOW_PEASHOOTER.get())
                 .add(ModEntities.REPEATER.get());
 
-        tag(ModTags.Entities.PLANTS)
+        tag(ModTags.Entities.FLOWERS)
                 .add(ModEntities.SUNFLOWER.get())
-                .add(ModEntities.MARIGOLD.get())
+                .add(ModEntities.MARIGOLD.get());
+
+        tag(ModTags.Entities.PLANTS)
+                .addTag(ModTags.Entities.FLOWERS)
                 .addTag(ModTags.Entities.PEASHOOTERS)
                 .add(ModEntities.WALL_NUT.get());
 
