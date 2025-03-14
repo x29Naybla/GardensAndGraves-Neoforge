@@ -2,8 +2,13 @@
   "values": [
     "#minecraft:dirt",
     "#minecraft:sand",
+    "minecraft:sandstone",
+    "minecraft:red_sandstone",
     "#minecraft:planks",
-    "#minecraft:rails",
+    "#minecraft:logs",
+    "minecraft:lily_pad",
+    "minecraft:gravel",
+    "minecraft:suspicious_gravel",
     "#gardensandgraves:planters"
   ]
 }
