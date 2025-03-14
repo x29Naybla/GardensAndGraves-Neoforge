@@ -1,4 +1,4 @@
-package com.x29naybla.gardensandgraves.client.event;
+package com.x29naybla.gardensandgraves.event;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
 import com.x29naybla.gardensandgraves.entity.ModEntities;

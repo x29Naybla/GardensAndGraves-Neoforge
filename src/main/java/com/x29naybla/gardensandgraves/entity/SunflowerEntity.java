@@ -5,11 +5,8 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
@@ -18,7 +15,7 @@ import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class SunflowerEntity extends TamableAnimal implements GeoEntity {
+public class SunflowerEntity extends Plant implements GeoEntity {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.flower.idle");
     protected static final RawAnimation GENERATE = RawAnimation.begin().thenLoop("animation.flower.generate");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
@@ -27,33 +24,6 @@ public class SunflowerEntity extends TamableAnimal implements GeoEntity {
     public SunflowerEntity(EntityType<? extends SunflowerEntity> entityType, Level level) {
         super(entityType, level);
         this.sunTime = 6000;
-    }
-
-    public boolean canBeLeashed() {
-        return false;
-    }
-
-    @Override
-    public void refreshDimensions() {
-        double d0 = this.getX();
-        double d1 = this.getY();
-        double d2 = this.getZ();
-        super.refreshDimensions();
-        this.setPos(d0, d1, d2);
-    }
-
-    @Override
-    public boolean isPushable() {
-        return false;
-    }
-
-    @Override
-    protected void doPush(Entity entity) {
-    }
-
-    @Override
-    public boolean isFood(ItemStack itemStack) {
-        return false;
     }
 
     @Override

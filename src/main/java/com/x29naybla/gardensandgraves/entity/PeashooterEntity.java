@@ -11,7 +11,6 @@ import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.RangedAttackMob;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -20,7 +19,7 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class PeashooterEntity extends TamableAnimal implements GeoEntity, RangedAttackMob {
+public class PeashooterEntity extends Plant implements GeoEntity, RangedAttackMob {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.peashooter.idle");
     protected static final RawAnimation SHOOT = RawAnimation.begin().thenLoop("animation.peashooter.shoot");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
@@ -28,33 +27,6 @@ public class PeashooterEntity extends TamableAnimal implements GeoEntity, Ranged
 
     public PeashooterEntity(EntityType<? extends PeashooterEntity> entityType, Level level) {
         super(entityType, level);
-    }
-
-    public boolean canBeLeashed() {
-        return false;
-    }
-
-    @Override
-    public void refreshDimensions() {
-        double d0 = this.getX();
-        double d1 = this.getY();
-        double d2 = this.getZ();
-        super.refreshDimensions();
-        this.setPos(d0, d1, d2);
-    }
-
-    @Override
-    public boolean isPushable() {
-        return false;
-    }
-
-    @Override
-    protected void doPush(Entity entity) {
-    }
-
-    @Override
-    public boolean isFood(ItemStack itemStack) {
-        return false;
     }
 
     @Override
