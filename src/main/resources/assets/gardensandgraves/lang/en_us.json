@@ -6,8 +6,8 @@
 
   "item.gardensandgraves.seed_packet_peashooter": "Peashooter Seed Packet",
   "item.gardensandgraves.seed_packet_peashooter.desc": "Sun Cost: 4",
-  "item.gardensandgraves.seed_packet_snow_pea": "Snow Pea Seed Packet",
-  "item.gardensandgraves.seed_packet_snow_pea.desc": "Sun Cost: 6",
+  "item.gardensandgraves.seed_packet_snow_peashooter": "Snow Pea Seed Packet",
+  "item.gardensandgraves.seed_packet_snow_peashooter.desc": "Sun Cost: 6",
   "item.gardensandgraves.seed_packet_repeater": "Repeater Seed Packet",
   "item.gardensandgraves.seed_packet_repeater.desc": "Sun Cost: 8",
 
