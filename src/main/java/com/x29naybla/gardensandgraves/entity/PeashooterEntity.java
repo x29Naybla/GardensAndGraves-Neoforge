@@ -58,7 +58,7 @@ public class PeashooterEntity extends Plant implements GeoEntity, RangedAttackMo
     protected void registerGoals(){
         this.goalSelector.addGoal(0, new RangedAttackGoal(this, 1.25F, 30, 8.5F));
         this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (p_29932_) -> p_29932_ instanceof Enemy && !(p_29932_ instanceof Creeper || p_29932_ instanceof EnderMan)));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (target) -> target instanceof Enemy && !(target instanceof Creeper || target instanceof EnderMan)));
     }
 
     @Override
@@ -74,7 +74,7 @@ public class PeashooterEntity extends Plant implements GeoEntity, RangedAttackMo
         double d2 = d0 - pea.getY();
         double d3 = target.getZ() - this.getZ();
         double d4 = Math.sqrt(d1 * d1 + d3 * d3) * (double)0.2F;
-        pea.shoot(d1, d2 + d4, d3, 1.6F, 6.0F);
+        pea.shoot(d1, d2 + d4, d3, 1.6F, 3.0F);
         this.playSound(SoundEvents.SNOW_GOLEM_SHOOT, 1.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level().addFreshEntity(pea);
     }

@@ -16,7 +16,7 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 
 @EventBusSubscriber(modid = GardensAndGraves.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
-public class ServerSetUpEvents {
+public class ServerEvents {
 
     @SubscribeEvent
     public static void addAdditionalGoals(EntityJoinLevelEvent event){

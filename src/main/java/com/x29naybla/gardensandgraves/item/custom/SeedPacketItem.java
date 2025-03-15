@@ -54,11 +54,11 @@ public class SeedPacketItem extends Item {
     }
 
     public InteractionResult useOn(UseOnContext context) {
-        if ((context.getPlayer().getInventory().countItem(ModItems.SUN.get()) >= sunAmount) || context.getPlayer().isCreative()){
+        Level level = context.getLevel();
+        BlockPlaceContext blockplacecontext = new BlockPlaceContext(context);
+        BlockPos blockpos = blockplacecontext.getClickedPos();
+        if ((context.getPlayer().getInventory().countItem(ModItems.SUN.get()) >= sunAmount) || context.getPlayer().isCreative() || onPlanter(level, blockpos)){
             Direction direction = context.getClickedFace();
-            Level level = context.getLevel();
-            BlockPlaceContext blockplacecontext = new BlockPlaceContext(context);
-            BlockPos blockpos = blockplacecontext.getClickedPos();
             if (direction == Direction.DOWN) {
                 return InteractionResult.FAIL;
             } else if (onSubstrate(level, blockpos)) {

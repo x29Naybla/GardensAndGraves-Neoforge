@@ -18,14 +18,14 @@ public class ModEntityTagsProvider extends EntityTypeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         //Gardens and Graves Tags
+        tag(ModTags.Entities.FLOWERS)
+                .add(ModEntities.SUNFLOWER.get())
+                .add(ModEntities.MARIGOLD.get());
+
         tag(ModTags.Entities.PEASHOOTERS)
                 .add(ModEntities.PEASHOOTER.get())
                 .add(ModEntities.SNOW_PEASHOOTER.get())
                 .add(ModEntities.REPEATER.get());
-
-        tag(ModTags.Entities.FLOWERS)
-                .add(ModEntities.SUNFLOWER.get())
-                .add(ModEntities.MARIGOLD.get());
 
         tag(ModTags.Entities.PLANTS)
                 .addTag(ModTags.Entities.FLOWERS)
