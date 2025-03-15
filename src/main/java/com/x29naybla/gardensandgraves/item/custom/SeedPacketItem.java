@@ -2,6 +2,7 @@ package com.x29naybla.gardensandgraves.item.custom;
 
 import com.mojang.serialization.MapCodec;
 import com.x29naybla.gardensandgraves.data.ModTags;
+import com.x29naybla.gardensandgraves.entity.Plant;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -13,7 +14,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
@@ -24,13 +24,11 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 public class SeedPacketItem extends Item {
     private static final MapCodec<EntityType<?>> ENTITY_TYPE_FIELD_CODEC;
@@ -70,19 +68,26 @@ public class SeedPacketItem extends Item {
                 if (level.noCollision((Entity)null, aabb) && level.getEntities((Entity)null, aabb).isEmpty()) {
                     if (level instanceof ServerLevel) {
                         ServerLevel serverlevel = (ServerLevel)level;
-                        Entity plant = this.getType(itemstack).create(serverlevel, EntityType.createDefaultStackConfig(serverlevel, itemstack, context.getPlayer()), blockpos, MobSpawnType.SPAWN_EGG, true, true);
-                        if (plant == null) {
+                        Entity entity = this.getType(itemstack).create(serverlevel, EntityType.createDefaultStackConfig(serverlevel, itemstack, context.getPlayer()), blockpos, MobSpawnType.SPAWN_EGG, true, true);
+                        if (entity == null) {
                             return InteractionResult.FAIL;
                         }
                         float f = (float)Mth.floor((Mth.wrapDegrees(context.getRotation() - 180.0F) + 22.5F) / 45.0F) * 45.0F;
-                        plant.moveTo(plant.getX(), plant.getY(), plant.getZ(), f, 0.0F);
-                        serverlevel.addFreshEntityWithPassengers(plant);
-                        level.playSound((Player)null, plant.getX(), plant.getY(), plant.getZ(), SoundEvents.ARMOR_STAND_PLACE, SoundSource.BLOCKS, 0.75F, 0.8F);
-                        plant.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
+                        entity.moveTo(entity.getX(), entity.getY(), entity.getZ(), f, 0.0F);
+                        if(entity instanceof Plant plant){
+                            if(onPlanter(level, blockpos)){
+                                plant.setBaby(true);
+                                plant.fromPlanter(true);
+                            }else
+                                plant.fromPlanter(false);
+                        }
+                        serverlevel.addFreshEntityWithPassengers(entity);
+                        level.playSound((Player)null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ARMOR_STAND_PLACE, SoundSource.BLOCKS, 0.75F, 0.8F);
+                        entity.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
                     }
                     itemstack.shrink(1);
-                    if(!(context.getPlayer().isCreative())){
-                        context.getPlayer().getInventory().removeItem(context.getPlayer().getInventory().findSlotMatchingItem(ModItems.SUN.toStack(sunAmount)), sunAmount);
+                    if(!((context.getPlayer().isCreative() || onPlanter(level, blockpos)))){
+                        context.getPlayer().getInventory().removeItem(context.getPlayer().getInventory().findSlotMatchingItem(ModItems.SUN.toStack()), sunAmount);
                     }
                     return InteractionResult.sidedSuccess(level.isClientSide);
                 } else {
@@ -102,6 +107,14 @@ public class SeedPacketItem extends Item {
 
     public static boolean isSubstrate(BlockGetter reader, BlockPos pos) {
         return reader.getBlockState(pos).is(ModTags.Blocks.SUPPORTS_PLANTS);
+    }
+
+    public static boolean onPlanter(BlockGetter level, BlockPos pos) {
+        return isPlanter(level, pos.below());
+    }
+
+    public static boolean isPlanter(BlockGetter reader, BlockPos pos) {
+        return reader.getBlockState(pos).is(ModTags.Blocks.PLANTERS);
     }
 
     public EntityType<?> getType(ItemStack stack) {

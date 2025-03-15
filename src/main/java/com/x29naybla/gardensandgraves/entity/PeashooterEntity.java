@@ -1,6 +1,7 @@
 package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.entity.projectile.PeaProjectile;
+import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.*;
@@ -11,6 +12,7 @@ import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -27,6 +29,11 @@ public class PeashooterEntity extends Plant implements GeoEntity, RangedAttackMo
 
     public PeashooterEntity(EntityType<? extends PeashooterEntity> entityType, Level level) {
         super(entityType, level);
+    }
+
+    @Override
+    public @Nullable ItemStack getPickResult() {
+        return ModItems.SEED_PACKET_PEASHOOTER.toStack();
     }
 
     @Override

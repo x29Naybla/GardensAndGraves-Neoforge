@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
@@ -24,6 +25,11 @@ public class SunflowerEntity extends Plant implements GeoEntity {
     public SunflowerEntity(EntityType<? extends SunflowerEntity> entityType, Level level) {
         super(entityType, level);
         this.sunTime = 6000;
+    }
+
+    @Override
+    public @Nullable ItemStack getPickResult() {
+        return ModItems.SEED_PACKET_SUNFLOWER.toStack();
     }
 
     @Override
@@ -51,16 +57,17 @@ public class SunflowerEntity extends Plant implements GeoEntity {
         this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
     }
 
-    @Override
+
     public void aiStep() {
         super.aiStep();
-        if (!this.level().isClientSide && this.isAlive() && !this.level().isNight() && !this.isBaby() && --this.sunTime <= 0) {
-            this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-            this.spawnAtLocation(ModItems.SUN);
-            this.gameEvent(GameEvent.ENTITY_PLACE);
-            this.sunTime = 6000;
+        if(!this.fromPlanter){
+            if (!this.level().isClientSide && this.isAlive() && !this.level().isNight() && !this.isBaby() && --this.sunTime <= 0) {
+                this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+                this.spawnAtLocation(ModItems.SUN);
+                this.gameEvent(GameEvent.ENTITY_PLACE);
+                this.sunTime = 6000;
+            }
         }
-
     }
 
     @Override

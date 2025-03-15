@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
@@ -19,6 +20,11 @@ public class WallNutEntity extends Plant implements GeoEntity {
 
     public WallNutEntity(EntityType<? extends WallNutEntity> entityType, Level level) {
         super(entityType, level);
+    }
+
+    @Override
+    public @Nullable ItemStack getPickResult() {
+        return ModItems.SEED_PACKET_WALL_NUT.toStack();
     }
 
     public boolean canCollideWith(Entity entity) {

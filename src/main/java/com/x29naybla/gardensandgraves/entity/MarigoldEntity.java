@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
@@ -10,6 +11,7 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -29,6 +31,11 @@ public class MarigoldEntity extends Plant implements GeoEntity {
     public MarigoldEntity(EntityType<? extends MarigoldEntity> entityType, Level level) {
         super(entityType, level);
         this.rewardTime = 6000;
+    }
+
+    @Override
+    public @Nullable ItemStack getPickResult() {
+        return ModItems.SEED_PACKET_MARIGOLD.toStack();
     }
 
     @Override
@@ -65,7 +72,6 @@ public class MarigoldEntity extends Plant implements GeoEntity {
         return super.mobInteract(player, hand);
     }
 
-    @Override
     public void aiStep() {
         super.aiStep();
         if (!this.level().isClientSide && this.isAlive() && !this.isBaby() && --this.rewardTime <= 0) {

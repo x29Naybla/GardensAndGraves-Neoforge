@@ -1,21 +1,34 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.item.ModItems;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
 
 public class Plant extends TamableAnimal implements GeoEntity {
-    protected Plant(EntityType<? extends TamableAnimal> entityType, Level level) {
+    public int packetTime;
+    public boolean fromPlanter = false;
+
+    public Plant(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);
+        this.packetTime = 12000;
     }
+
+    public boolean fromPlanter(boolean planter){
+        return fromPlanter = planter;
+    }
+
     public boolean canBeLeashed() {
         return false;
     }
@@ -56,5 +69,35 @@ public class Plant extends TamableAnimal implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return null;
+    }
+
+    @Override
+    public void aiStep() {
+        super.aiStep();
+        if(fromPlanter){
+            if (!this.level().isClientSide && this.isAlive() && !this.isBaby() && --this.packetTime <= 0) {
+                this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+                this.spawnAtLocation(this.getPickResult().getItem());
+                this.gameEvent(GameEvent.ENTITY_PLACE);
+                this.packetTime = 12000;
+            }
+        }
+    }
+
+    public void readAdditionalSaveData(CompoundTag compound) {
+        super.readAdditionalSaveData(compound);
+        if (compound.contains("FromPlanter")) {
+            this.fromPlanter = compound.getBoolean("FromPlanter");
+        }
+        if (compound.contains("PacketTime")) {
+            this.packetTime = compound.getInt("PacketTime");
+        }
+
+    }
+
+    public void addAdditionalSaveData(CompoundTag compound) {
+        super.addAdditionalSaveData(compound);
+        compound.putBoolean("FromPlanter", this.fromPlanter);
+        compound.putInt("PacketTime", this.packetTime);
     }
 }

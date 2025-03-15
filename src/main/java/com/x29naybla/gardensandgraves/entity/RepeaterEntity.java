@@ -1,6 +1,7 @@
 package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.entity.projectile.PeaProjectile;
+import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.*;
@@ -27,6 +28,11 @@ public class RepeaterEntity extends Plant implements GeoEntity, RangedAttackMob 
 
     public RepeaterEntity(EntityType<? extends RepeaterEntity> entityType, Level level) {
         super(entityType, level);
+    }
+
+    @Override
+    public @Nullable ItemStack getPickResult() {
+        return ModItems.SEED_PACKET_REPEATER.toStack();
     }
 
     @Override
