@@ -57,6 +57,7 @@ public class SnowPeaProjectile extends ThrowableItemProjectile {
         Entity entity = result.getEntity();
         if (!(entity.getType().is(ModTags.Entities.PLANTS))){
             entity.hurt(this.damageSources().thrown(this, this.getOwner()), 2);
+            entity.extinguishFire();
             this.level().broadcastEntityEvent(this, (byte)3);
             shouldBreak = true;
         }
