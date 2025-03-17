@@ -17,11 +17,11 @@ public class ClientSetUpEvents {
         event.registerEntityRenderer(ModEntities.SUNFLOWER.get(), SunflowerRenderer::new);
         event.registerEntityRenderer(ModEntities.MARIGOLD.get(), MarigoldRenderer::new);
         event.registerEntityRenderer(ModEntities.PEASHOOTER.get(), PeashooterRenderer::new);
-        event.registerEntityRenderer(ModEntities.SNOW_PEASHOOTER.get(), SnowPeashooterRenderer::new);
+        event.registerEntityRenderer(ModEntities.SNOW_PEA.get(), SnowPeashooterRenderer::new);
         event.registerEntityRenderer(ModEntities.REPEATER.get(), RepeaterRenderer::new);
         event.registerEntityRenderer(ModEntities.WALL_NUT.get(), WallNutRenderer::new);
 
         event.registerEntityRenderer(ModEntities.PEA_PROJECTILE.get(), ThrownItemRenderer::new);
-        event.registerEntityRenderer(ModEntities.SNOW_PEA_PROJECTILE.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(ModEntities.FROZEN_PEA_PROJECTILE.get(), ThrownItemRenderer::new);
     }
 }

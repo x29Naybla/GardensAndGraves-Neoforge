@@ -1,8 +1,7 @@
 package com.x29naybla.gardensandgraves.client.model.entity;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
-import com.x29naybla.gardensandgraves.entity.SnowPeashooterEntity;
-import com.x29naybla.gardensandgraves.entity.SunflowerEntity;
+import com.x29naybla.gardensandgraves.entity.SnowPeaEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animation.AnimationState;
@@ -13,7 +12,7 @@ import software.bernie.geckolib.model.data.EntityModelData;
 
 public class SnowPeashooterEntityModel extends GeoModel {
     private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "geo/entity/snow_peashooter.geo.json");
-    private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "textures/entity/snow_peashooter.png");
+    private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "textures/entity/snow_pea.png");
     private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "animations/entity/peashooter.animation.json");
 
     @Override
@@ -39,7 +38,7 @@ public class SnowPeashooterEntityModel extends GeoModel {
         EntityModelData extraDataOfType = (EntityModelData) animationState.getData(DataTickets.ENTITY_MODEL_DATA);
         GeoBone head = this.getAnimationProcessor().getBone("head");
 
-        if (((SnowPeashooterEntity) animatable).isBaby()) {
+        if (((SnowPeaEntity) animatable).isBaby()) {
             head.setScaleX(1.6F);
             head.setScaleY(1.6F);
             head.setScaleZ(1.6F);

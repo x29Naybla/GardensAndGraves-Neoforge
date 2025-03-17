@@ -6,6 +6,7 @@ import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.ModCreativeModeTabs;
 import com.x29naybla.gardensandgraves.item.ModItems;
 
+import com.x29naybla.gardensandgraves.loot.LootModifierInit;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -33,10 +34,11 @@ public class GardensAndGraves {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-        ModCreativeModeTabs.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModSounds.register(modEventBus);
-        ModBlockEntities.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
+        LootModifierInit.LOOT_MODIFIERS.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
 

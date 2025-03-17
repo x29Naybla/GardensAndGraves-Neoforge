@@ -1,0 +1,134 @@
+{
+  "parent": "gardensandgraves:main/root",
+  "criteria": {
+    "planter": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_black": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_black"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_blue": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_blue"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_brown": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_brown"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_cyan": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_cyan"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_gray": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_gray"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_green": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_green"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_light_blue": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_light_blue"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_light_gray": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_light_gray"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_lime": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_lime"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_orange": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_orange"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_pink": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_pink"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_purple": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_purple"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_red": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_red"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_white": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_white"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "planter_yellow": {
+      "conditions": {
+        "recipe_id": "gardensandgraves:planter_yellow"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "gardensandgraves.advancement.planters.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "gardensandgraves:planter"
+    },
+    "title": {
+      "translate": "gardensandgraves.advancement.planters"
+    }
+  },
+  "requirements": [
+    [
+      "planter",
+      "planter_white",
+      "planter_light_gray",
+      "planter_gray",
+      "planter_black",
+      "planter_brown",
+      "planter_red",
+      "planter_orange",
+      "planter_yellow",
+      "planter_lime",
+      "planter_green",
+      "planter_cyan",
+      "planter_light_blue",
+      "planter_blue",
+      "planter_purple",
+      "planter_pink"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

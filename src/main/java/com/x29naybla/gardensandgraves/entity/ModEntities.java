@@ -2,7 +2,7 @@ package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
 import com.x29naybla.gardensandgraves.entity.projectile.PeaProjectile;
-import com.x29naybla.gardensandgraves.entity.projectile.SnowPeaProjectile;
+import com.x29naybla.gardensandgraves.entity.projectile.FrozenPeaProjectile;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -25,7 +25,7 @@ public class ModEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<SunflowerEntity>> SUNFLOWER = register("sunflower", SunflowerEntity::new, 0.7f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<MarigoldEntity>> MARIGOLD = register("marigold", MarigoldEntity::new, 0.7f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<PeashooterEntity>> PEASHOOTER = register("peashooter", PeashooterEntity::new, 0.5f, 0.9f);
-    public static final DeferredHolder<EntityType<?>, EntityType<SnowPeashooterEntity>> SNOW_PEASHOOTER = register("snow_peashooter", SnowPeashooterEntity::new, 0.5f, 0.9f);
+    public static final DeferredHolder<EntityType<?>, EntityType<SnowPeaEntity>> SNOW_PEA = register("snow_pea", SnowPeaEntity::new, 0.5f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<RepeaterEntity>> REPEATER = register("repeater", RepeaterEntity::new, 0.5f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<WallNutEntity>> WALL_NUT = register("wall_nut", WallNutEntity::new, 0.8f, 1.3f);
 
@@ -73,7 +73,7 @@ public class ModEntities {
         event.put(ModEntities.SUNFLOWER.get(), sunflowerAttributes.build());
         event.put(ModEntities.MARIGOLD.get(), marigoldAttributes.build());
         event.put(ModEntities.PEASHOOTER.get(), peashooterAttributes.build());
-        event.put(ModEntities.SNOW_PEASHOOTER.get(), snowPeashooterAttributes.build());
+        event.put(ModEntities.SNOW_PEA.get(), snowPeashooterAttributes.build());
         event.put(ModEntities.REPEATER.get(), repeaterAttributes.build());
         event.put(ModEntities.WALL_NUT.get(), wallNutAttributes.build());
     }
@@ -84,11 +84,11 @@ public class ModEntities {
                     .clientTrackingRange(16)
                     .build("pea")));
 
-    public static final Supplier<EntityType<SnowPeaProjectile>> SNOW_PEA_PROJECTILE = ENTITY_TYPES.register("projectile_snow_pea", () -> (
-            EntityType.Builder.<SnowPeaProjectile>of(SnowPeaProjectile::new, MobCategory.MISC)
+    public static final Supplier<EntityType<FrozenPeaProjectile>> FROZEN_PEA_PROJECTILE = ENTITY_TYPES.register("frozen_pea", () -> (
+            EntityType.Builder.<FrozenPeaProjectile>of(FrozenPeaProjectile::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F)
                     .clientTrackingRange(16)
-                    .build("projectile_snow_pea")));
+                    .build("frozen_pea")));
 
     private static <T extends Mob> DeferredHolder<EntityType<?>, EntityType<T>> register(String name, EntityType.EntityFactory<T> entity, float width, float height) {
         return ENTITY_TYPES.register(name, () -> EntityType.Builder.of(entity, MobCategory.CREATURE).sized(width, height).build(name));

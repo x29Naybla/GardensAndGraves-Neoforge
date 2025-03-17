@@ -1,0 +1,14 @@
+{
+  "type": "gardensandgraves:add_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/village/village_taiga_house"
+    },
+    {
+      "chance": 25.0,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "gardensandgraves:seed_packet_sun_shroom"
+}

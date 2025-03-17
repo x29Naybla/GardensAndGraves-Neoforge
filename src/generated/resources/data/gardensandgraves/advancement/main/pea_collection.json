@@ -1,0 +1,59 @@
+{
+  "parent": "gardensandgraves:main/root",
+  "criteria": {
+    "peashooter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gardensandgraves:seed_packet_peashooter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "repeater": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gardensandgraves:seed_packet_repeater"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "snow_peashooter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gardensandgraves:seed_packet_snow_pea"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "gardensandgraves.advancement.pea_collection.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "gardensandgraves:seed_packet_peashooter"
+    },
+    "title": {
+      "translate": "gardensandgraves.advancement.pea_collection"
+    }
+  },
+  "requirements": [
+    [
+      "peashooter"
+    ],
+    [
+      "snow_peashooter"
+    ],
+    [
+      "repeater"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

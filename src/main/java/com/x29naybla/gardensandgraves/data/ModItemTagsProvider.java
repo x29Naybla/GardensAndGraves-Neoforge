@@ -29,7 +29,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModTags.Items.SEED_PACKET_PEASHOOTERS)
                 .add(ModItems.SEED_PACKET_PEASHOOTER.get())
                 .add(ModItems.SEED_PACKET_REPEATER.get())
-                .add(ModItems.SEED_PACKET_SNOW_PEASHOOTER.get());
+                .add(ModItems.SEED_PACKET_SNOW_PEA.get());
 
         tag(ModTags.Items.SEED_PACKET_MUSHROOMS)
                 .add(ModItems.SEED_PACKET_SUN_SHROOM.get())

@@ -1,0 +1,85 @@
+{
+  "parent": "gardensandgraves:main/root",
+  "criteria": {
+    "doom_shroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gardensandgraves:seed_packet_doom_shroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "fume_shroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gardensandgraves:seed_packet_fume_shroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "hypno_shroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gardensandgraves:seed_packet_hypno_shroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "puff_shroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gardensandgraves:seed_packet_puff_shroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sun_shroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gardensandgraves:seed_packet_sun_shroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "gardensandgraves.advancement.mushroom_collection.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "gardensandgraves:seed_packet_sun_shroom"
+    },
+    "title": {
+      "translate": "gardensandgraves.advancement.mushroom_collection"
+    }
+  },
+  "requirements": [
+    [
+      "sun_shroom"
+    ],
+    [
+      "puff_shroom"
+    ],
+    [
+      "fume_shroom"
+    ],
+    [
+      "hypno_shroom"
+    ],
+    [
+      "doom_shroom"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

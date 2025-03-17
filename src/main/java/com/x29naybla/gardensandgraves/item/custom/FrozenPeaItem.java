@@ -1,6 +1,6 @@
 package com.x29naybla.gardensandgraves.item.custom;
 
-import com.x29naybla.gardensandgraves.entity.projectile.SnowPeaProjectile;
+import com.x29naybla.gardensandgraves.entity.projectile.FrozenPeaProjectile;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -11,8 +11,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class SnowPeaItem extends Item {
-    public SnowPeaItem(Properties properties) {
+public class FrozenPeaItem extends Item {
+    public FrozenPeaItem(Properties properties) {
         super(properties);
     }
 
@@ -22,7 +22,7 @@ public class SnowPeaItem extends Item {
         pLevel.playSound(null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
                 SoundEvents.SNOWBALL_THROW, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F));
         if(!pLevel.isClientSide){
-            SnowPeaProjectile pea = new SnowPeaProjectile(pLevel, pPlayer);
+            FrozenPeaProjectile pea = new FrozenPeaProjectile(pLevel, pPlayer);
             pea.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 1.5F, 0F);
             pLevel.addFreshEntity(pea);
         }

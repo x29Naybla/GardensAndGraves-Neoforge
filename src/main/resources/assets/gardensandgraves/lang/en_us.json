@@ -6,8 +6,8 @@
 
   "item.gardensandgraves.seed_packet_peashooter": "Peashooter Seed Packet",
   "item.gardensandgraves.seed_packet_peashooter.desc": "Sun Cost: 4",
-  "item.gardensandgraves.seed_packet_snow_peashooter": "Snow Pea Seed Packet",
-  "item.gardensandgraves.seed_packet_snow_peashooter.desc": "Sun Cost: 6",
+  "item.gardensandgraves.seed_packet_snow_pea": "Snow Pea Seed Packet",
+  "item.gardensandgraves.seed_packet_snow_pea.desc": "Sun Cost: 6",
   "item.gardensandgraves.seed_packet_repeater": "Repeater Seed Packet",
   "item.gardensandgraves.seed_packet_repeater.desc": "Sun Cost: 8",
 
@@ -36,7 +36,7 @@
 
   "item.gardensandgraves.sun": "Sun",
   "item.gardensandgraves.pea": "Pea",
-  "item.gardensandgraves.snow_pea": "Snow Pea",
+  "item.gardensandgraves.frozen_pea": "Frozen Pea",
 
   "item.gardensandgraves.brainz_banner_pattern": "Banner Pattern",
   "item.gardensandgraves.brainz_banner_pattern.desc": "Brainz",
@@ -82,7 +82,7 @@
   "entity.gardensandgraves.marigold": "Marigold",
 
   "entity.gardensandgraves.peashooter": "Peashooter",
-  "entity.gardensandgraves.snow_peashooter": "Snow Pea",
+  "entity.gardensandgraves.snow_pea": "Snow Pea",
   "entity.gardensandgraves.repeater": "Repeater",
 
   "entity.gardensandgraves.wall_nut": "Wall-nut",
@@ -92,6 +92,54 @@
   "entity.gardensandgraves.chomper": "Chomper",
   "entity.gardensandgraves.bonk_choy": "Bonk Choy",
 
+  "entity.gardensandgraves.sun_shroom": "Sun-shroom",
+  "entity.gardensandgraves.puff_shroom": "Puff-shroom",
+  "entity.gardensandgraves.fume_shroom": "Fume-shroom",
+  "entity.gardensandgraves.hypno_shroom": "Hypno-shroom",
+  "entity.gardensandgraves.doom_shroom": "Doom-shroom",
+
   "creativetab.gardensandgraves.blocks": "G&G Blocks",
-  "creativetab.gardensandgraves.items": "G&G Items"
+  "creativetab.gardensandgraves.items": "G&G Items",
+
+  "gardensandgraves.advancement.root": "Gardens and Graves",
+  "gardensandgraves.advancement.root.desc": "",
+
+  "gardensandgraves.advancement.planters": "Planting the future",
+  "gardensandgraves.advancement.planters.desc": "Craft a planter. Plants planted on it will produce seed packets!",
+
+  "gardensandgraves.advancement.sunflower": "Sunflower",
+  "gardensandgraves.advancement.sunflower.desc": "They generate a sun every 5 minutes, during the day",
+
+  "gardensandgraves.advancement.marigold": "Marigold",
+  "gardensandgraves.advancement.marigold.desc": "They generate between 1 and 3 iron or gold nuggets every 5 minutes",
+
+  "gardensandgraves.advancement.pea_collection": "A Peafect Collection",
+  "gardensandgraves.advancement.pea_collection.desc": "Obtain the seed packets for all plants of the peashooting family",
+
+  "gardensandgraves.advancement.peashooter": "Peashooter",
+  "gardensandgraves.advancement.peashooter.desc": "They shoot one pea every 1,5 seconds",
+
+  "gardensandgraves.advancement.snow_pea": "Snow Pea",
+  "gardensandgraves.advancement.snow_pea.desc": "They shoot one frozen pea every 1,5 seconds",
+
+  "gardensandgraves.advancement.repeater": "Repeater",
+  "gardensandgraves.advancement.repeater.desc": "They shoot one frozen pea every 1,5 seconds",
+
+  "gardensandgraves.advancement.mushroom_collection": "Not Mushroom for improvement",
+  "gardensandgraves.advancement.mushroom_collection.desc": "Obtain the seed packets for all mushrooms",
+
+  "gardensandgraves.advancement.sun_shroom": "Sun-shroom",
+  "gardensandgraves.advancement.sun_shroom.desc": "They generate a sun every 5 minutes, during the night",
+
+  "gardensandgraves.advancement.puff_shroom": "Puff-shroom",
+  "gardensandgraves.advancement.puff_shroom.desc": "",
+
+  "gardensandgraves.advancement.fume_shroom": "Fume-shroom",
+  "gardensandgraves.advancement.fume_shroom.desc": "",
+
+  "gardensandgraves.advancement.hypno_shroom": "Hypno-shroom",
+  "gardensandgraves.advancement.hypno_shroom.desc": "",
+
+  "gardensandgraves.advancement.doom_shroom": "Doom-shroom",
+  "gardensandgraves.advancement.doom_shroom.desc": ""
 }

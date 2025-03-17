@@ -4,7 +4,7 @@ import com.x29naybla.gardensandgraves.GardensAndGraves;
 import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.custom.PeaItem;
 import com.x29naybla.gardensandgraves.item.custom.SeedPacketItem;
-import com.x29naybla.gardensandgraves.item.custom.SnowPeaItem;
+import com.x29naybla.gardensandgraves.item.custom.FrozenPeaItem;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
@@ -26,8 +26,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> SEED_PACKET_PEASHOOTER = ITEMS.register("seed_packet_peashooter",
             () -> new SeedPacketItem(ModEntities.PEASHOOTER.get(), 4, new Item.Properties()));
-    public static final DeferredItem<Item> SEED_PACKET_SNOW_PEASHOOTER = ITEMS.register("seed_packet_snow_peashooter",
-            () -> new SeedPacketItem(ModEntities.SNOW_PEASHOOTER.get(), 6, new Item.Properties()));
+    public static final DeferredItem<Item> SEED_PACKET_SNOW_PEA = ITEMS.register("seed_packet_snow_pea",
+            () -> new SeedPacketItem(ModEntities.SNOW_PEA.get(), 6, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_REPEATER = ITEMS.register("seed_packet_repeater",
             () -> new SeedPacketItem(ModEntities.REPEATER.get(), 8, new Item.Properties()));
 
@@ -56,8 +56,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> PEA = ITEMS.register("pea",
             () -> new PeaItem(new Item.Properties()));
-    public static final DeferredItem<Item> SNOW_PEA = ITEMS.register("snow_pea",
-            () -> new SnowPeaItem(new Item.Properties()));
+    public static final DeferredItem<Item> FROZEN_PEA = ITEMS.register("frozen_pea",
+            () -> new FrozenPeaItem(new Item.Properties()));
 
     public static final DeferredItem<Item> BRAINZ_BANNER_PATTERN = ITEMS.register("brainz_banner_pattern",
             () -> new BannerPatternItem(BRAINZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1)));

@@ -17,28 +17,28 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 
-public class SnowPeaProjectile extends ThrowableItemProjectile {
+public class FrozenPeaProjectile extends ThrowableItemProjectile {
     public Boolean shouldBreak = false;
 
-    public SnowPeaProjectile(EntityType<? extends SnowPeaProjectile> entityType, Level level) {
+    public FrozenPeaProjectile(EntityType<? extends FrozenPeaProjectile> entityType, Level level) {
         super(entityType, level);
     }
 
-    public SnowPeaProjectile(Level level, LivingEntity shooter) {
-        super(ModEntities.SNOW_PEA_PROJECTILE.get(), shooter, level);
+    public FrozenPeaProjectile(Level level, LivingEntity shooter) {
+        super(ModEntities.FROZEN_PEA_PROJECTILE.get(), shooter, level);
     }
 
-    public SnowPeaProjectile(Level level, double x, double y, double z) {
-        super(ModEntities.SNOW_PEA_PROJECTILE.get(), x, y, z, level);
+    public FrozenPeaProjectile(Level level, double x, double y, double z) {
+        super(ModEntities.FROZEN_PEA_PROJECTILE.get(), x, y, z, level);
     }
 
     protected Item getDefaultItem() {
-        return ModItems.SNOW_PEA.get();
+        return ModItems.FROZEN_PEA.get();
     }
 
     private ParticleOptions getParticle() {
         ItemStack itemstack = this.getItem();
-        return (ParticleOptions)(!itemstack.isEmpty() && !itemstack.is(this.getDefaultItem()) ? new ItemParticleOption(ParticleTypes.ITEM, itemstack) : new ItemParticleOption(ParticleTypes.ITEM, ModItems.SNOW_PEA.toStack()));
+        return (ParticleOptions)(!itemstack.isEmpty() && !itemstack.is(this.getDefaultItem()) ? new ItemParticleOption(ParticleTypes.ITEM, itemstack) : new ItemParticleOption(ParticleTypes.ITEM, ModItems.FROZEN_PEA.toStack()));
     }
 
     public void handleEntityEvent(byte id) {
