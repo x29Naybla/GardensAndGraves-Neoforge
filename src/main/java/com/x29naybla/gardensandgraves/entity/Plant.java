@@ -1,16 +1,32 @@
 package com.x29naybla.gardensandgraves.entity;
 
-import com.x29naybla.gardensandgraves.item.ModItems;
+import com.x29naybla.gardensandgraves.component.ModDataComponents;
+import net.minecraft.CrashReport;
+import net.minecraft.CrashReportCategory;
+import net.minecraft.ReportedException;
+import net.minecraft.commands.arguments.NbtTagArgument;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.NbtIo;
+import net.minecraft.nbt.NbtUtils;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.neoforged.neoforge.common.MutableDataComponentHolder;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -29,8 +45,15 @@ public class Plant extends TamableAnimal implements GeoEntity {
         return fromPlanter = planter;
     }
 
-    public boolean canBeLeashed() {
-        return false;
+    public InteractionResult mobInteract(Player player, InteractionHand hand) {
+        if(player.getItemInHand(hand).getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
+            packUp(player);
+            player.getItemInHand(hand).hurtAndBreak(1, player, getSlotForHand(hand));
+            level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
+            level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
+        }
+
+        return super.mobInteract(player, hand);
     }
 
     @Override
@@ -40,6 +63,10 @@ public class Plant extends TamableAnimal implements GeoEntity {
         double d2 = this.getZ();
         super.refreshDimensions();
         this.setPos(d0, d1, d2);
+    }
+
+    public boolean canBeLeashed() {
+        return false;
     }
 
     @Override
@@ -100,4 +127,24 @@ public class Plant extends TamableAnimal implements GeoEntity {
         compound.putBoolean("FromPlanter", this.fromPlanter);
         compound.putInt("PacketTime", this.packetTime);
     }
+
+    public void packUp(Player player){
+        ItemStack itemStack = this.getPickResult();
+        //saveDefaultDataToItemTag(this, itemStack);
+
+        if (!player.getInventory().add(itemStack)) {
+            ItemEntity itemEntity = new ItemEntity(level(), this.getX(), this.getY() + 0.5, this.getZ(), itemStack);
+            itemEntity.setPickUpDelay(0);
+            itemEntity.setDeltaMovement(itemEntity.getDeltaMovement().multiply(0, 1, 0));
+            this.level().addFreshEntity(itemEntity);
+        }
+
+        this.discard();
+        spawnAtLocation(itemStack);
+    }
+
+    private static void saveDefaultDataToItemTag(Plant plant, ItemStack itemStack) {
+        if (plant.hasCustomName()) itemStack.set(DataComponents.CUSTOM_NAME, plant.getCustomName());
+    }
+
 }

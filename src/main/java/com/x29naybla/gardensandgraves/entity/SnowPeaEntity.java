@@ -47,7 +47,6 @@ public class SnowPeaEntity extends Plant implements GeoEntity, RangedAttackMob {
 
     protected <E extends SnowPeaEntity> PlayState animController(final AnimationState<E> event) {
         event.setAnimation(IDLE);
-
         return PlayState.CONTINUE;
     }
 

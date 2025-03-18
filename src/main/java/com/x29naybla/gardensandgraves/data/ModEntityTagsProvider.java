@@ -5,6 +5,7 @@ import com.x29naybla.gardensandgraves.entity.ModEntities;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
+import net.minecraft.tags.EntityTypeTags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,6 +33,8 @@ public class ModEntityTagsProvider extends EntityTypeTagsProvider {
                 .addTag(ModTags.Entities.PEASHOOTERS)
                 .add(ModEntities.WALL_NUT.get());
 
-
+        //Minecraft Tags
+        tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES)
+                .add(ModEntities.SNOW_PEA.get());
     }
 }

@@ -47,7 +47,8 @@ public class ModEntities {
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(Attributes.FOLLOW_RANGE,  8.5);
+                .add(Attributes.FOLLOW_RANGE,  8.5)
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 8.5);;
 
         AttributeSupplier.Builder snowPeashooterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
@@ -55,7 +56,8 @@ public class ModEntities {
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(Attributes.FOLLOW_RANGE,  8.5);
+                .add(Attributes.FOLLOW_RANGE,  8.5)
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 8.5);;
 
         AttributeSupplier.Builder repeaterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
@@ -63,7 +65,8 @@ public class ModEntities {
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(Attributes.FOLLOW_RANGE,  8.5);
+                .add(Attributes.FOLLOW_RANGE,  8.5)
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 8.5);
 
         AttributeSupplier.Builder wallNutAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
