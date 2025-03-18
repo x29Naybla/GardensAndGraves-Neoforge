@@ -108,38 +108,38 @@
   "gardensandgraves.advancement.planters.desc": "Craft a planter. Plants planted on it will produce seed packets!",
 
   "gardensandgraves.advancement.sunflower": "Sunflower",
-  "gardensandgraves.advancement.sunflower.desc": "They generate a sun every 5 minutes, during the day",
+  "gardensandgraves.advancement.sunflower.desc": "They generate a sun every 5 minutes, during the day. Can be found in plains villages",
 
   "gardensandgraves.advancement.marigold": "Marigold",
-  "gardensandgraves.advancement.marigold.desc": "They generate between 1 and 3 iron or gold nuggets every 5 minutes",
+  "gardensandgraves.advancement.marigold.desc": "They generate between 1 and 3 iron or gold nuggets every 5 minutes. Can be found in abandoned mineshafts and shipwrecks",
 
   "gardensandgraves.advancement.pea_collection": "A Peafect Collection",
   "gardensandgraves.advancement.pea_collection.desc": "Obtain the seed packets for all plants of the peashooting family",
 
   "gardensandgraves.advancement.peashooter": "Peashooter",
-  "gardensandgraves.advancement.peashooter.desc": "They shoot one pea every 1,5 seconds",
+  "gardensandgraves.advancement.peashooter.desc": "They shoot one pea every 1,5 seconds. Can be found in desert, plains, and taiga villages",
 
   "gardensandgraves.advancement.snow_pea": "Snow Pea",
-  "gardensandgraves.advancement.snow_pea.desc": "They shoot one frozen pea every 1,5 seconds",
+  "gardensandgraves.advancement.snow_pea.desc": "They shoot one frozen pea every 1,5 seconds. Can be found in snowy villages and ancient cities",
 
   "gardensandgraves.advancement.repeater": "Repeater",
-  "gardensandgraves.advancement.repeater.desc": "They shoot one frozen pea every 1,5 seconds",
+  "gardensandgraves.advancement.repeater.desc": "They shoot one pea every 1,5 seconds. Can be found in plains villages",
 
   "gardensandgraves.advancement.mushroom_collection": "Not Mushroom for improvement",
   "gardensandgraves.advancement.mushroom_collection.desc": "Obtain the seed packets for all mushrooms",
 
   "gardensandgraves.advancement.sun_shroom": "Sun-shroom",
-  "gardensandgraves.advancement.sun_shroom.desc": "They generate a sun every 5 minutes, during the night",
+  "gardensandgraves.advancement.sun_shroom.desc": "They generate a sun every 5 minutes, during the night. Can be found in taiga villages",
 
   "gardensandgraves.advancement.puff_shroom": "Puff-shroom",
-  "gardensandgraves.advancement.puff_shroom.desc": "",
+  "gardensandgraves.advancement.puff_shroom.desc": "Can be found in taiga villages",
 
   "gardensandgraves.advancement.fume_shroom": "Fume-shroom",
-  "gardensandgraves.advancement.fume_shroom.desc": "",
+  "gardensandgraves.advancement.fume_shroom.desc": "Can be found in taiga villages",
 
   "gardensandgraves.advancement.hypno_shroom": "Hypno-shroom",
-  "gardensandgraves.advancement.hypno_shroom.desc": "",
+  "gardensandgraves.advancement.hypno_shroom.desc": "Can be found in taiga villages",
 
   "gardensandgraves.advancement.doom_shroom": "Doom-shroom",
-  "gardensandgraves.advancement.doom_shroom.desc": ""
+  "gardensandgraves.advancement.doom_shroom.desc": "Can be found in ancient cities"
 }

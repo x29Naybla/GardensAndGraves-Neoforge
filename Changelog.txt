@@ -1,0 +1,9 @@
+changelog:
+* made snow peas immune to freezing
+* made frozen peas "freeze" enemies
+* fixed repeaters advancement description (english)
+* fixed snow pea advancement description (brazilian portuguese)
+* for the plants advancement descriptions, added where they can be found
+* right-clicking a plant while holding a shovel turns them into their seed packet form and keeping their names
+* started messing with custom data components
+* peashooting plants now respect their shooting range
