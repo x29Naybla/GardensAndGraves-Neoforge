@@ -1,6 +1,7 @@
 package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.item.ModItems;
+import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
@@ -46,7 +47,7 @@ public class MarigoldEntity extends Plant implements GeoEntity {
     }
 
     protected <E extends MarigoldEntity> PlayState animController(final AnimationState<E> event) {
-        if (rewardTime <= 20) {
+        if (this.rewardTime <= 20) {
             event.setAnimation(GENERATE);
         } else {
             event.setAnimation(IDLE);
@@ -67,7 +68,7 @@ public class MarigoldEntity extends Plant implements GeoEntity {
     public void aiStep() {
         super.aiStep();
         if (!this.level().isClientSide && this.isAlive() && !this.isBaby() && --this.rewardTime <= 0) {
-            this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            this.playSound(ModSounds.MONEYFALLS.get(), 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
             if(this.random.nextInt(1, 4) <= 1){
                 this.spawnAtLocation(Items.GOLD_NUGGET);
                 if(this.random.nextInt(1, 4) <= 2){

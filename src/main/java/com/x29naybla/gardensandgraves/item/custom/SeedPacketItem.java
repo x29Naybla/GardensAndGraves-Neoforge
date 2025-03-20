@@ -5,6 +5,7 @@ import com.x29naybla.gardensandgraves.component.ModDataComponents;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.Plant;
 import com.x29naybla.gardensandgraves.item.ModItems;
+import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -55,7 +56,6 @@ public class SeedPacketItem extends Item {
         return Component.translatable(this.getDescriptionId() + ".desc");
     }
 
-
     public InteractionResult useOn(UseOnContext context){
         Level level = context.getLevel();
         BlockPlaceContext blockplacecontext = new BlockPlaceContext(context);
@@ -90,7 +90,7 @@ public class SeedPacketItem extends Item {
                                 plant.fromPlanter(false);
                         }
                         serverlevel.addFreshEntityWithPassengers(entity);
-                        level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ARMOR_STAND_PLACE, SoundSource.BLOCKS, 0.75F, 0.8F);
+                        level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
                         entity.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
                     }
                     itemStack.shrink(1);

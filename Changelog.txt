@@ -7,3 +7,11 @@ changelog:
 * right-clicking a plant while holding a shovel turns them into their seed packet form and keeping their names
 * started messing with custom data components
 * peashooting plants now respect their shooting range
+
+* added sound when planting and "shoveling" plants
+* replaced the plant shooting sound
+* replaced sunflower generating sun sound
+* replaced the plant projectiles hitting sound
+* replaced marigold generating nuggets sound
+* added snow pea sparkles sound
+* right clicking on a plant with a seed packet of their type will heal them at the cost of one seed packet

@@ -1,6 +1,7 @@
 package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.item.ModItems;
+import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -42,6 +43,11 @@ public class Plant extends TamableAnimal implements GeoEntity {
             player.getItemInHand(hand).hurtAndBreak(1, player, getSlotForHand(hand));
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
+        }
+        if(player.getItemInHand(hand).getItem() == this.getPickResult().getItem()){
+            this.setHealth(this.getMaxHealth());
+            playSound(ModSounds.PLANT.get());
+            if (!player.isCreative()) player.getItemInHand(hand).shrink(1);
         }
 
         return super.mobInteract(player, hand);
@@ -122,6 +128,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public void packUp(Player player){
         ItemStack output = this.getPickResult();
         saveDefaultDataToItemTag(this, output);
+        playSound(SoundEvents.SHOVEL_FLATTEN);
 
         this.discard();
         spawnAtLocation(output);

@@ -19,6 +19,12 @@ public class ModSounds {
     public static final Supplier<SoundEvent> WABBY_WABBO = registerSoundEvent("wabby_wabbo");
     public static final ResourceKey<JukeboxSong> WABBY_WABBO_KEY = createSong("wabby_wabbo");
 
+    public static final Supplier<SoundEvent> THROW = registerSoundEvent("throw");
+    public static final Supplier<SoundEvent> SPLAT = registerSoundEvent("splat");
+    public static final Supplier<SoundEvent> PLANT = registerSoundEvent("plant");
+    public static final Supplier<SoundEvent> MONEYFALLS = registerSoundEvent("moneyfalls");
+    public static final Supplier<SoundEvent> SNOW_PEA_SPARKLES = registerSoundEvent("snow_pea_sparkles");
+
     private static ResourceKey<JukeboxSong> createSong(String name){
         return ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));
     }

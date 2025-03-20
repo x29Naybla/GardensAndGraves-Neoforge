@@ -1,6 +1,7 @@
 package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.item.ModItems;
+import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -43,7 +44,7 @@ public class SunflowerEntity extends Plant implements GeoEntity {
     }
 
     protected <E extends SunflowerEntity> PlayState animController(final AnimationState<E> event) {
-        if (sunTime <= 20) {
+        if (this.sunTime <= 20) {
             event.setAnimation(GENERATE);
         } else {
             event.setAnimation(IDLE);
@@ -62,7 +63,7 @@ public class SunflowerEntity extends Plant implements GeoEntity {
         super.aiStep();
         //if(!this.fromPlanter){
             if (!this.level().isClientSide && this.isAlive() && !this.level().isNight() && !this.isBaby() && --this.sunTime <= 0) {
-                this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+                this.playSound(ModSounds.THROW.get(), 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
                 this.spawnAtLocation(ModItems.SUN);
                 this.gameEvent(GameEvent.ENTITY_PLACE);
                 this.sunTime = 6000;

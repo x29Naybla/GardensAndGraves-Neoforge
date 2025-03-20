@@ -6,5 +6,41 @@
         "stream": true
       }
     ]
+  },
+  "throw": {
+    "sounds": [
+      {
+        "name": "gardensandgraves:throw"
+      }
+    ]
+  },
+  "splat": {
+    "sounds": [
+      {
+        "name": "gardensandgraves:splat",
+        "stream": true
+      }
+    ]
+  },
+  "plant": {
+    "sounds": [
+      {
+        "name": "gardensandgraves:plant"
+      }
+    ]
+  },
+  "moneyfalls": {
+    "sounds": [
+      {
+        "name": "gardensandgraves:moneyfalls"
+      }
+    ]
+  },
+  "snow_pea_sparkles": {
+    "sounds": [
+      {
+        "name": "gardensandgraves:snow_pea_sparkles"
+      }
+    ]
   }
 }
