@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "sun_shroom",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 0, -4], "size": [8, 8, 8], "uv": [0, 33]}
+					]
+				},
+				{
+					"name": "hat",
+					"parent": "sun_shroom",
+					"pivot": [0, 9, 0],
+					"cubes": [
+						{"origin": [-7, 8, -7], "size": [14, 5, 14], "uv": [0, 0]},
+						{"origin": [-5, 13, -5], "size": [10, 2, 10], "uv": [0, 20]}
+					]
+				}
+			]
+		}
+	]
+}

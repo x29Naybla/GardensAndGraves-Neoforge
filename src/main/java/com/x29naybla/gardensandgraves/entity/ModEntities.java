@@ -28,6 +28,8 @@ public class ModEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<SnowPeaEntity>> SNOW_PEA = register("snow_pea", SnowPeaEntity::new, 0.5f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<RepeaterEntity>> REPEATER = register("repeater", RepeaterEntity::new, 0.5f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<WallNutEntity>> WALL_NUT = register("wall_nut", WallNutEntity::new, 0.8f, 1.3f);
+    public static final DeferredHolder<EntityType<?>, EntityType<SunShroomEntity>> SUN_SHROOM = register("sun_shroom", SunShroomEntity::new, 0.7f, 0.9f);
+    public static final DeferredHolder<EntityType<?>, EntityType<DoomShroomEntity>> DOOM_SHROOM = register("doom_shroom", DoomShroomEntity::new, 0.7f, 0.9f);
 
     @SubscribeEvent
     public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
@@ -73,12 +75,20 @@ public class ModEntities {
                 .add(Attributes.MAX_HEALTH, 80)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99);
 
+        AttributeSupplier.Builder doomShroomAttributes = PathfinderMob.createMobAttributes()
+                .add(Attributes.MOVEMENT_SPEED,-99)
+                .add(Attributes.MAX_HEALTH, 6)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 99)
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 8);
+
         event.put(ModEntities.SUNFLOWER.get(), sunflowerAttributes.build());
         event.put(ModEntities.MARIGOLD.get(), marigoldAttributes.build());
         event.put(ModEntities.PEASHOOTER.get(), peashooterAttributes.build());
         event.put(ModEntities.SNOW_PEA.get(), snowPeashooterAttributes.build());
         event.put(ModEntities.REPEATER.get(), repeaterAttributes.build());
         event.put(ModEntities.WALL_NUT.get(), wallNutAttributes.build());
+        event.put(ModEntities.SUN_SHROOM.get(), sunflowerAttributes.build());
+        event.put(ModEntities.DOOM_SHROOM.get(), doomShroomAttributes.build());
     }
 
     public static final Supplier<EntityType<PeaProjectile>> PEA_PROJECTILE = ENTITY_TYPES.register("pea", () -> (

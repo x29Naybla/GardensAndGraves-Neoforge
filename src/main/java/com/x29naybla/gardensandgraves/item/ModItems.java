@@ -44,7 +44,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_SUN_SHROOM = ITEMS.register("seed_packet_sun_shroom",
-            () -> new Item(new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.SUN_SHROOM.get(), 1, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_PUFF_SHROOM = ITEMS.register("seed_packet_puff_shroom",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_FUME_SHROOM = ITEMS.register("seed_packet_fume_shroom",
@@ -52,7 +52,7 @@ public class ModItems {
     public static final DeferredItem<Item> SEED_PACKET_HYPNO_SHROOM = ITEMS.register("seed_packet_hypno_shroom",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_DOOM_SHROOM = ITEMS.register("seed_packet_doom_shroom",
-            () -> new Item(new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.DOOM_SHROOM.get(), 5, new Item.Properties()));
 
     public static final DeferredItem<Item> PEA = ITEMS.register("pea",
             () -> new PeaItem(new Item.Properties()));

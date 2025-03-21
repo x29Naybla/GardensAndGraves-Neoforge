@@ -28,10 +28,15 @@ public class ModEntityTagsProvider extends EntityTypeTagsProvider {
                 .add(ModEntities.SNOW_PEA.get())
                 .add(ModEntities.REPEATER.get());
 
+        tag(ModTags.Entities.MUSHROOMS)
+                .add(ModEntities.SUN_SHROOM.get())
+                .add(ModEntities.DOOM_SHROOM.get());
+
         tag(ModTags.Entities.PLANTS)
                 .addTag(ModTags.Entities.FLOWERS)
                 .addTag(ModTags.Entities.PEASHOOTERS)
-                .add(ModEntities.WALL_NUT.get());
+                .add(ModEntities.WALL_NUT.get())
+                .addTag(ModTags.Entities.MUSHROOMS);
 
         //Minecraft Tags
         tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES)

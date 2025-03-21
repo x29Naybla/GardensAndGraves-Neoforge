@@ -55,6 +55,7 @@ public class ModTags {
         //Gardens and Graves Tags
         public static final TagKey<EntityType<?>> FLOWERS = createTag("flowers");
         public static final TagKey<EntityType<?>> PEASHOOTERS = createTag("peashooters");
+        public static final TagKey<EntityType<?>> MUSHROOMS = createTag("mushrooms");
         public static final TagKey<EntityType<?>> PLANTS = createTag("plants");
 
         private static TagKey<EntityType<?>> createTag(String name) {

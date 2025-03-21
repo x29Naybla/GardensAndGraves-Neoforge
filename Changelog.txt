@@ -1,16 +1,6 @@
 changelog:
-* made snow peas immune to freezing
-* made frozen peas "freeze" enemies
-* fixed repeaters advancement description (english)
-* fixed snow pea advancement description (brazilian portuguese)
-* for the plants advancement descriptions, added where they can be found
-* right-clicking a plant while holding a shovel turns them into their seed packet form and keeping their names
-* started messing with custom data components
-* peashooting plants now respect their shooting range
-* added sound when planting and "shoveling" plants
-* replaced the plant shooting sound
-* replaced sunflower generating sun sound
-* replaced the plant projectiles hitting sound
-* replaced marigold generating nuggets sound
-* added snow pea sparkles sound
-* right-clicking on a plant with a seed packet of their type will heal them at the cost of one seed packet
+* brazilian portuguese translation adjustments
+* partially added french translations
+* fixed bug where plants could be healed even if they had max health
+* added the sun-shroom
+* added the doom-shroom (still needs tweaks)

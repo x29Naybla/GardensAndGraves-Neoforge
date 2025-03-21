@@ -44,7 +44,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
         }
-        if(player.getItemInHand(hand).getItem() == this.getPickResult().getItem()){
+        if((player.getItemInHand(hand).getItem() == this.getPickResult().getItem()) && this.getHealth() < this.getMaxHealth()){
             this.setHealth(this.getMaxHealth());
             playSound(ModSounds.PLANT.get());
             if (!player.isCreative()) player.getItemInHand(hand).shrink(1);

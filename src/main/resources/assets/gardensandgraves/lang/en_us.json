@@ -32,7 +32,7 @@
   "item.gardensandgraves.seed_packet_hypno_shroom": "Hypno-shroom Seed Packet",
   "item.gardensandgraves.seed_packet_hypno_shroom.desc": "Sun Cost:",
   "item.gardensandgraves.seed_packet_doom_shroom": "Doom-shroom Seed Packet",
-  "item.gardensandgraves.seed_packet_doom_shroom.desc": "Sun Cost:",
+  "item.gardensandgraves.seed_packet_doom_shroom.desc": "Sun Cost: 5",
 
   "item.gardensandgraves.sun": "Sun",
   "item.gardensandgraves.pea": "Pea",

@@ -1,0 +1,145 @@
+{
+  "item.gardensandgraves.seed_packet_sunflower": "Sachet de graines de tournesol",
+  "item.gardensandgraves.seed_packet_sunflower.desc": "Coût du soleil : 2",
+  "item.gardensandgraves.seed_packet_marigold": "Sachet de graines de souci",
+  "item.gardensandgraves.seed_packet_marigold.desc": "Coût du soleil : 2",
+
+  "item.gardensandgraves.seed_packet_peashooter": "Sachet de graines de pisto-pois",
+  "item.gardensandgraves.seed_packet_peashooter.desc": "Coût du soleil : 4",
+  "item.gardensandgraves.seed_packet_snow_pea": "Sachet de graines de pois geleur",
+  "item.gardensandgraves.seed_packet_snow_pea.desc": "Coût du soleil : 6",
+  "item.gardensandgraves.seed_packet_repeater": "Sachet de graines de double pisto-pois",
+  "item.gardensandgraves.seed_packet_repeater.desc": "Coût du soleil : 8",
+
+  "item.gardensandgraves.seed_packet_wall_nut": "Sachet de graines de noix",
+  "item.gardensandgraves.seed_packet_wall_nut.desc": "Coût du soleil : 2",
+
+  "item.gardensandgraves.seed_packet_potato_mine": "Sachet de graines de mine patate",
+  "item.gardensandgraves.seed_packet_potato_mine.desc": "Coût du soleil :",
+  "item.gardensandgraves.seed_packet_jalapeno": "Sachet de graines de jalapeño",
+  "item.gardensandgraves.seed_packet_jalapeno.desc": "Coût du soleil :",
+  "item.gardensandgraves.seed_packet_chomper": "Sachet de graines de mordeur",
+  "item.gardensandgraves.seed_packet_chomper.desc": "Coût du soleil :",
+  "item.gardensandgraves.seed_packet_bonk_choy": "Sachet de graines de tape choï",
+  "item.gardensandgraves.seed_packet_bonk_choy.desc": "Coût du soleil : 6",
+
+  "item.gardensandgraves.seed_packet_sun_shroom": "Sachet de graines de champi-soleil",
+  "item.gardensandgraves.seed_packet_sun_shroom.desc": "Coût du soleil : 1",
+  "item.gardensandgraves.seed_packet_puff_shroom": "Sachet de graines de champi-gnon",
+  "item.gardensandgraves.seed_packet_puff_shroom.desc": "Coût du soleil :",
+  "item.gardensandgraves.seed_packet_fume_shroom": "Sachet de graines de champi-fumée",
+  "item.gardensandgraves.seed_packet_fume_shroom.desc": "Coût du soleil :",
+  "item.gardensandgraves.seed_packet_hypno_shroom": "Sachet de graines de champi-hypno",
+  "item.gardensandgraves.seed_packet_hypno_shroom.desc": "Coût du soleil :",
+  "item.gardensandgraves.seed_packet_doom_shroom": "Sachet de graines de champi-mort",
+  "item.gardensandgraves.seed_packet_doom_shroom.desc": "Coût du soleil : 5",
+
+  "item.gardensandgraves.sun": "Soleil",
+  "item.gardensandgraves.pea": "Pois",
+  "item.gardensandgraves.frozen_pea": "Pois congelé",
+
+  "item.gardensandgraves.brainz_banner_pattern": "Motif de bannière",
+  "item.gardensandgraves.brainz_banner_pattern.desc": "Cerveau",
+  "item.gardensandgraves.music_disc_wabby_wabbo": "Disque",
+  "item.gardensandgraves.music_disc_wabby_wabbo.desc": "Cray-Z - Wabby Wabbo",
+
+  "block.gardensandgraves.planter": "Jardinière",
+  "block.gardensandgraves.planter_white": "Jardinière blanche",
+  "block.gardensandgraves.planter_light_gray": "Jardinière gris clair",
+  "block.gardensandgraves.planter_gray": "Jardinière grise",
+  "block.gardensandgraves.planter_black": "Jardinière noire",
+  "block.gardensandgraves.planter_brown": "Jardinière marron",
+  "block.gardensandgraves.planter_red": "Jardinière rouge",
+  "block.gardensandgraves.planter_orange": "Jardinière orange",
+  "block.gardensandgraves.planter_yellow": "Jardinière jaune",
+  "block.gardensandgraves.planter_lime": "Jardinière vert clair",
+  "block.gardensandgraves.planter_green": "Jardinière verte",
+  "block.gardensandgraves.planter_cyan": "Jardinière cyan",
+  "block.gardensandgraves.planter_light_blue": "Jardinière bleu clair",
+  "block.gardensandgraves.planter_blue": "Jardinière bleue",
+  "block.gardensandgraves.planter_purple": "Jardinière violette",
+  "block.gardensandgraves.planter_magenta": "Jardinière magenta",
+  "block.gardensandgraves.planter_pink": "Jardinière rose",
+
+  "block.minecraft.banner.gardensandgraves.brainz.white": "Cerveau blanche",
+  "block.minecraft.banner.gardensandgraves.brainz.light_gray": "Cerveau gris clair",
+  "block.minecraft.banner.gardensandgraves.brainz.gray": "Cervea grise",
+  "block.minecraft.banner.gardensandgraves.brainz.black": "Cerveau noire",
+  "block.minecraft.banner.gardensandgraves.brainz.brown": "Cerveau marron",
+  "block.minecraft.banner.gardensandgraves.brainz.red": "Cerveau rouge",
+  "block.minecraft.banner.gardensandgraves.brainz.orange": "Cerveau orange",
+  "block.minecraft.banner.gardensandgraves.brainz.yellow": "Cerveau jaune",
+  "block.minecraft.banner.gardensandgraves.brainz.lime": "Cerveau vert clair",
+  "block.minecraft.banner.gardensandgraves.brainz.green": "Cerveau verte",
+  "block.minecraft.banner.gardensandgraves.brainz.cyan": "Cerveau cyan",
+  "block.minecraft.banner.gardensandgraves.brainz.light_blue": "Cerveau bleu clair",
+  "block.minecraft.banner.gardensandgraves.brainz.blue": "Cerveau bleue",
+  "block.minecraft.banner.gardensandgraves.brainz.purple": "Cerveau violette",
+  "block.minecraft.banner.gardensandgraves.brainz.magenta": "Cerveau magenta",
+  "block.minecraft.banner.gardensandgraves.brainz.pink": "Cerveau rose",
+
+  "entity.gardensandgraves.sunflower": "Tournesol",
+  "entity.gardensandgraves.marigold": "Souci",
+
+  "entity.gardensandgraves.peashooter": "Pisto-pois",
+  "entity.gardensandgraves.snow_pea": "Pois geleur",
+  "entity.gardensandgraves.repeater": "Double pisto-pois",
+
+  "entity.gardensandgraves.wall_nut": "Noix",
+
+  "entity.gardensandgraves.potato_mine": "Mine patate",
+  "entity.gardensandgraves.jalapeno": "Jalapeño",
+  "entity.gardensandgraves.chomper": "Mordeur",
+  "entity.gardensandgraves.bonk_choy": "Tape choï",
+
+  "entity.gardensandgraves.sun_shroom": "Champi-soleil",
+  "entity.gardensandgraves.puff_shroom": "Champi-gnon",
+  "entity.gardensandgraves.fume_shroom": "Champi-fumée",
+  "entity.gardensandgraves.hypno_shroom": "Champi-hypno",
+  "entity.gardensandgraves.doom_shroom": "Champi-mort",
+
+  "creativetab.gardensandgraves.blocks": "G&G blocs",
+  "creativetab.gardensandgraves.items": "G&G objets",
+
+  "gardensandgraves.advancement.root": "Gardens and Graves",
+  "gardensandgraves.advancement.root.desc": "",
+
+  "gardensandgraves.advancement.planters": "Planting the future",
+  "gardensandgraves.advancement.planters.desc": "Craft a planter. Plants planted on it will produce seed packets!",
+
+  "gardensandgraves.advancement.sunflower": "Tournesol",
+  "gardensandgraves.advancement.sunflower.desc": "They generate a sun every 5 minutes, during the day. Can be found in plains villages",
+
+  "gardensandgraves.advancement.marigold": "Souci",
+  "gardensandgraves.advancement.marigold.desc": "They generate between 1 and 3 iron or gold nuggets every 5 minutes. Can be found in abandoned mineshafts and shipwrecks",
+
+  "gardensandgraves.advancement.pea_collection": "A Peafect Collection",
+  "gardensandgraves.advancement.pea_collection.desc": "Obtain the seed packets for all plants of the peashooting family",
+
+  "gardensandgraves.advancement.peashooter": "Pisto-pois",
+  "gardensandgraves.advancement.peashooter.desc": "They shoot one pea every 1,5 seconds. Can be found in desert, plains, and taiga villages",
+
+  "gardensandgraves.advancement.snow_pea": "Pois geleur",
+  "gardensandgraves.advancement.snow_pea.desc": "They shoot one frozen pea every 1,5 seconds. Can be found in snowy villages and ancient cities",
+
+  "gardensandgraves.advancement.repeater": "Double pisto-pois",
+  "gardensandgraves.advancement.repeater.desc": "They shoot one pea every 1,5 seconds. Can be found in plains villages",
+
+  "gardensandgraves.advancement.mushroom_collection": "Not Mushroom for improvement",
+  "gardensandgraves.advancement.mushroom_collection.desc": "Obtain the seed packets for all mushrooms",
+
+  "gardensandgraves.advancement.sun_shroom": "Champi-soleil",
+  "gardensandgraves.advancement.sun_shroom.desc": "They generate a sun every 5 minutes, during the night. Can be found in taiga villages",
+
+  "gardensandgraves.advancement.puff_shroom": "Champi-gnon",
+  "gardensandgraves.advancement.puff_shroom.desc": "Can be found in taiga villages",
+
+  "gardensandgraves.advancement.fume_shroom": "Champi-fumée",
+  "gardensandgraves.advancement.fume_shroom.desc": "Can be found in taiga villages",
+
+  "gardensandgraves.advancement.hypno_shroom": "Champi-hypno",
+  "gardensandgraves.advancement.hypno_shroom.desc": "Can be found in taiga villages",
+
+  "gardensandgraves.advancement.doom_shroom": "Champi-mort",
+  "gardensandgraves.advancement.doom_shroom.desc": "Can be found in ancient cities"
+}
