@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "entries": [
+    "gardensandgraves:add_loot_village_plains_house",
+    "gardensandgraves:add_loot_village_taiga_house",
+    "gardensandgraves:add_loot_village_snowy_house",
+    "gardensandgraves:add_loot_village_desert_house",
+    "gardensandgraves:add_loot_village_savanna_house",
+    "gardensandgraves:add_loot_jungle_temple",
+    "gardensandgraves:add_loot_desert_pyramid",
+    "gardensandgraves:add_loot_ancient_city",
+    "gardensandgraves:add_loot_ancient_city_ice_box",
+    "gardensandgraves:add_loot_woodland_mansion",
+    "gardensandgraves:add_loot_shipwreck_treasure",
+    "gardensandgraves:add_loot_abandoned_mineshaft"
+  ]
+}

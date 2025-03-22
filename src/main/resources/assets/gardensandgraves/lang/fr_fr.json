@@ -108,7 +108,7 @@
   "gardensandgraves.advancement.planters.desc": "Craft a planter. Plants planted on it will produce seed packets!",
 
   "gardensandgraves.advancement.sunflower": "Tournesol",
-  "gardensandgraves.advancement.sunflower.desc": "They generate a sun every 5 minutes, during the day. Can be found in plains villages",
+  "gardensandgraves.advancement.sunflower.desc": "Every 5 minutes during the day, they generate 2 suns but only when adults. Can be found in plains villages",
 
   "gardensandgraves.advancement.marigold": "Souci",
   "gardensandgraves.advancement.marigold.desc": "They generate between 1 and 3 iron or gold nuggets every 5 minutes. Can be found in abandoned mineshafts and shipwrecks",
@@ -129,7 +129,7 @@
   "gardensandgraves.advancement.wall_nut.desc": "They protect other plants from zombie attacks. Can be found in all villages",
 
   "gardensandgraves.advancement.potato_mine": "Mine patate",
-  "gardensandgraves.advancement.potato_mine.desc": "Can be found in desert and savanna villages, and jungle temples",
+  "gardensandgraves.advancement.potato_mine.desc": "Can be found in savanna villages, and jungle temples",
 
   "gardensandgraves.advancement.jalapeno": "Jalapeño",
   "gardensandgraves.advancement.jalapeno.desc": "Can be found in savanna and desert villages",
@@ -144,7 +144,7 @@
   "gardensandgraves.advancement.mushroom_collection.desc": "Obtain the seed packets for all mushrooms",
 
   "gardensandgraves.advancement.sun_shroom": "Champi-soleil",
-  "gardensandgraves.advancement.sun_shroom.desc": "They generate a sun every 5 minutes, during the night. Can be found in taiga villages",
+  "gardensandgraves.advancement.sun_shroom.desc": "Every 5 minutes during the night, they generate 1 sun when babies and 2 suns when adults. Can be found in taiga villages",
 
   "gardensandgraves.advancement.puff_shroom": "Champi-gnon",
   "gardensandgraves.advancement.puff_shroom.desc": "Can be found in taiga villages",

@@ -1,0 +1,11 @@
+{
+  "type": "gardensandgraves:add_loot_table",
+  "conditions":
+  [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/ancient_city_ice_box"
+    }
+  ],
+  "lootTable": "gardensandgraves:chests/gng_ancient_city_ice_box"
+}

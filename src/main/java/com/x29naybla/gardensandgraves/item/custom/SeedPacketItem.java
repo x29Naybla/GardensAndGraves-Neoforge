@@ -4,6 +4,7 @@ import com.mojang.serialization.MapCodec;
 import com.x29naybla.gardensandgraves.component.ModDataComponents;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.Plant;
+import com.x29naybla.gardensandgraves.entity.SunShroomEntity;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.ChatFormatting;
@@ -88,6 +89,7 @@ public class SeedPacketItem extends Item {
                                 plant.fromPlanter(true);
                             }else
                                 plant.fromPlanter(false);
+                            if(entity instanceof SunShroomEntity) plant.setBaby(true);
                         }
                         serverlevel.addFreshEntityWithPassengers(entity);
                         level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);

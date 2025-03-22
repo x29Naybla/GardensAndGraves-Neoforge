@@ -108,7 +108,7 @@
   "gardensandgraves.advancement.planters.desc": "Crie um germinador. As plantas plantadas nele produzirão pacotes de sementes!",
 
   "gardensandgraves.advancement.sunflower": "Girassol",
-  "gardensandgraves.advancement.sunflower.desc": "Gera um sol a cada 5 minutos, durante o dia. Pode ser encontrado em vilas de planície",
+  "gardensandgraves.advancement.sunflower.desc": "A cada 5 minutos durante o dia, gera dois sóis quando adulto. Pode ser encontrado em vilas de planície",
 
   "gardensandgraves.advancement.marigold": "Calêndula",
   "gardensandgraves.advancement.marigold.desc": "Gera entre 1 e 3 pepitas de ferro ou ouro a cada 5 minutos. Pode ser encontrada em minas abandonadas e navios naufragados",
@@ -129,7 +129,7 @@
   "gardensandgraves.advancement.wall_nut.desc": "Protege outras plantas de ataques de zumbis. Pode ser encontrada em todas as vilas",
 
   "gardensandgraves.advancement.potato_mine": "Batatamina",
-  "gardensandgraves.advancement.potato_mine.desc": "Pode ser encontrada em vilas de deserto, savana e templos da selva",
+  "gardensandgraves.advancement.potato_mine.desc": "Pode ser encontrada em vilas de savana e templos da selva",
 
   "gardensandgraves.advancement.jalapeno": "Pimenta",
   "gardensandgraves.advancement.jalapeno.desc": "Pode ser encontrada em vilas de deserto e savana",
@@ -144,7 +144,7 @@
   "gardensandgraves.advancement.mushroom_collection.desc": "Obtenha os pacotes de sementes para todos os cogumelos",
 
   "gardensandgraves.advancement.sun_shroom": "Solargumelo",
-  "gardensandgraves.advancement.sun_shroom.desc": "Gera um sol a cada 5 minutos, durante a noite. Pode ser encontrado em vilas de taiga",
+  "gardensandgraves.advancement.sun_shroom.desc": "A cada 5 minutos durante a noite, gera 1 sol quando criança e 2 sóis quando adulto. Pode ser encontrado em vilas de taiga",
 
   "gardensandgraves.advancement.puff_shroom": "Soprogumelo",
   "gardensandgraves.advancement.puff_shroom.desc": "Pode ser encontrado em vilas de taiga",

@@ -7,11 +7,6 @@ changelog:
 
 * added advancements for the bonk choy, chomper, jalapeno, potato mine, and wall-nut
 * altered advancement descriptions to reflect the updated seed packets distribution
-* changes to loot tables:
-** added bonk choy in savanna villages
-** added doom shroom in woodland mansions
-** added jalapeno in savanna villages
-** added peashooter in savanna villages
-** added potato mine in savanna villages
-** added wall-nut in savanna villages
-** lowered the chances of finding doom-shroom in ancient cities
+
+* fixed seed packets generation by changing the way loot tables are handled
+* made sunflowers giving 2 suns instead of 1 and altered their advancement's description to reflect the new yield
