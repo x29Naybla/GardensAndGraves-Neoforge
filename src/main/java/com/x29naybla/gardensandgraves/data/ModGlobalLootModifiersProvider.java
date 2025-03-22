@@ -83,6 +83,32 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(12.5f).build()},
                 ModItems.SEED_PACKET_WALL_NUT.get()));
 
+        //Savanna villages
+        add("peashooter_in_savanna_village", new AddItemModifier(new LootItemCondition[]{
+                LootTableIdCondition.builder(ResourceLocation.parse("chests/village/village_savanna_house")).build(),
+                LootItemRandomChanceCondition.randomChance(12.5f).build()},
+                ModItems.SEED_PACKET_PEASHOOTER.get()));
+
+        add("wall_nut_in_savanna_village", new AddItemModifier(new LootItemCondition[]{
+                LootTableIdCondition.builder(ResourceLocation.parse("chests/village/village_savanna_house")).build(),
+                LootItemRandomChanceCondition.randomChance(12.5f).build()},
+                ModItems.SEED_PACKET_WALL_NUT.get()));
+
+        add("jalapeno_in_savanna_village", new AddItemModifier(new LootItemCondition[]{
+                LootTableIdCondition.builder(ResourceLocation.parse("chests/village/village_savanna_house")).build(),
+                LootItemRandomChanceCondition.randomChance(12.5f).build()},
+                ModItems.SEED_PACKET_JALAPENO.get()));
+
+        add("bonk_choy_in_savanna_village", new AddItemModifier(new LootItemCondition[]{
+                LootTableIdCondition.builder(ResourceLocation.parse("chests/village/village_desert_house")).build(),
+                LootItemRandomChanceCondition.randomChance(12.5f).build()},
+                ModItems.SEED_PACKET_BONK_CHOY.get()));
+
+        add("potato_mine_in_savanna_village", new AddItemModifier(new LootItemCondition[]{
+                LootTableIdCondition.builder(ResourceLocation.parse("chests/village/village_desert_house")).build(),
+                LootItemRandomChanceCondition.randomChance(12.5f).build()},
+                ModItems.SEED_PACKET_POTATO_MINE.get()));
+
         //Desert villages
         add("jalapeno_in_desert_village", new AddItemModifier(new LootItemCondition[]{
                 LootTableIdCondition.builder(ResourceLocation.parse("chests/village/village_desert_house")).build(),
@@ -109,7 +135,7 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(12.5f).build()},
                 ModItems.SEED_PACKET_POTATO_MINE.get()));
 
-        //Desert temples
+        //Desert pyramid
         add("bonk_choy_in_desert_pyramid", new AddItemModifier(new LootItemCondition[]{
                 LootTableIdCondition.builder(ResourceLocation.parse("chests/desert_pyramid")).build(),
                 LootItemRandomChanceCondition.randomChance(12.5f).build()},
@@ -129,7 +155,7 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
         //Ancient city
         add("doom_shroom_in_ancient_city", new AddItemModifier(new LootItemCondition[]{
                 LootTableIdCondition.builder(ResourceLocation.parse("chests/ancient_city")).build(),
-                LootItemRandomChanceCondition.randomChance(12.5f).build()},
+                LootItemRandomChanceCondition.randomChance(6.25f).build()},
                 ModItems.SEED_PACKET_DOOM_SHROOM.get()));
 
         add("snow_peashooter_in_ancient_city_ice_box", new AddItemModifier(new LootItemCondition[]{
@@ -148,5 +174,11 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
                 LootTableIdCondition.builder(ResourceLocation.parse("chests/shipwreck_treasure")).build(),
                 LootItemRandomChanceCondition.randomChance(12.5f).build()},
                 ModItems.SEED_PACKET_MARIGOLD.get()));
+
+        //Woodland mansions
+        add("doom_shroom_in_woodland_mansion", new AddItemModifier(new LootItemCondition[]{
+                LootTableIdCondition.builder(ResourceLocation.parse("chests/woodland_mansion")).build(),
+                LootItemRandomChanceCondition.randomChance(6.25f).build()},
+                ModItems.SEED_PACKET_DOOM_SHROOM.get()));
     }
 }

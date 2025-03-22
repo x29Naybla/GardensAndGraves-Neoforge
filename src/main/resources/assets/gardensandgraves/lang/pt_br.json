@@ -117,13 +117,28 @@
   "gardensandgraves.advancement.pea_collection.desc": "Obtenha os pacotes de sementes para todas as plantas da família das disparervilhas",
 
   "gardensandgraves.advancement.peashooter": "Disparervilha",
-  "gardensandgraves.advancement.peashooter.desc": "Atira uma ervilha a cada 1.5 segundos. Pode ser encontrada em vilas de deserto, planície e taiga",
+  "gardensandgraves.advancement.peashooter.desc": "Atira uma ervilha a cada 1.5 segundos. Pode ser encontrada em vilas de deserto, savana, planície e taiga",
 
   "gardensandgraves.advancement.snow_pea": "Gelervilha",
   "gardensandgraves.advancement.snow_pea.desc": "Atira uma ervilha congelada a cada 1.5 segundos. Pode ser encontrada em vilas nevadas e cidades ancestrais",
 
   "gardensandgraves.advancement.repeater": "Duplervilha",
   "gardensandgraves.advancement.repeater.desc": "Atira uma ervilha a cada 1.5 segundos. Pode ser encontrada em vilas de planície",
+
+  "gardensandgraves.advancement.wall_nut": "Noz-obstáculo",
+  "gardensandgraves.advancement.wall_nut.desc": "Protege outras plantas de ataques de zumbis. Pode ser encontrada em todas as vilas",
+
+  "gardensandgraves.advancement.potato_mine": "Batatamina",
+  "gardensandgraves.advancement.potato_mine.desc": "Pode ser encontrada em vilas de deserto, savana e templos da selva",
+
+  "gardensandgraves.advancement.jalapeno": "Pimenta",
+  "gardensandgraves.advancement.jalapeno.desc": "Pode ser encontrada em vilas de deserto e savana",
+
+  "gardensandgraves.advancement.chomper": "Carnívora",
+  "gardensandgraves.advancement.chomper.desc": "Pode ser encontrada em templos da selva",
+
+  "gardensandgraves.advancement.bonk_choy": "Repolho-boxeador",
+  "gardensandgraves.advancement.bonk_choy.desc": "Pode ser encontrada em vilas de deserto e savana e pirâmides do deserto",
 
   "gardensandgraves.advancement.mushroom_collection": "Not Mushroom for improvement",
   "gardensandgraves.advancement.mushroom_collection.desc": "Obtenha os pacotes de sementes para todos os cogumelos",
@@ -141,5 +156,5 @@
   "gardensandgraves.advancement.hypno_shroom.desc": "Pode ser encontrado em vilas de taiga",
 
   "gardensandgraves.advancement.doom_shroom": "Ruinagumelo",
-  "gardensandgraves.advancement.doom_shroom.desc": "Pode ser encontrado em cidades ancestrais"
+  "gardensandgraves.advancement.doom_shroom.desc": "Pode ser encontrado em cidades ancestrais e mansões das florestas"
 }

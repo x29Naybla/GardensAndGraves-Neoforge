@@ -3,12 +3,12 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:chests/ancient_city"
+      "loot_table_id": "minecraft:chests/village/village_savanna_house"
     },
     {
-      "chance": 6.25,
+      "chance": 12.5,
       "condition": "minecraft:random_chance"
     }
   ],
-  "item": "gardensandgraves:seed_packet_doom_shroom"
+  "item": "gardensandgraves:seed_packet_jalapeno"
 }

@@ -1,0 +1,33 @@
+{
+  "parent": "gardensandgraves:main/root",
+  "criteria": {
+    "seed_packet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gardensandgraves:seed_packet_chomper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "gardensandgraves.advancement.chomper.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "gardensandgraves:seed_packet_chomper"
+    },
+    "title": {
+      "translate": "gardensandgraves.advancement.chomper"
+    }
+  },
+  "requirements": [
+    [
+      "seed_packet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

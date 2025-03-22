@@ -117,13 +117,28 @@
   "gardensandgraves.advancement.pea_collection.desc": "Obtain the seed packets for all plants of the peashooting family",
 
   "gardensandgraves.advancement.peashooter": "Pisto-pois",
-  "gardensandgraves.advancement.peashooter.desc": "They shoot one pea every 1,5 seconds. Can be found in desert, plains, and taiga villages",
+  "gardensandgraves.advancement.peashooter.desc": "They shoot one pea every 1,5 seconds. Can be found in desert, savanna, plains, and taiga villages",
 
   "gardensandgraves.advancement.snow_pea": "Pois geleur",
   "gardensandgraves.advancement.snow_pea.desc": "They shoot one frozen pea every 1,5 seconds. Can be found in snowy villages and ancient cities",
 
   "gardensandgraves.advancement.repeater": "Double pisto-pois",
   "gardensandgraves.advancement.repeater.desc": "They shoot one pea every 1,5 seconds. Can be found in plains villages",
+
+  "gardensandgraves.advancement.wall_nut": "Noix",
+  "gardensandgraves.advancement.wall_nut.desc": "They protect other plants from zombie attacks. Can be found in all villages",
+
+  "gardensandgraves.advancement.potato_mine": "Mine patate",
+  "gardensandgraves.advancement.potato_mine.desc": "Can be found in desert and savanna villages, and jungle temples",
+
+  "gardensandgraves.advancement.jalapeno": "Jalapeño",
+  "gardensandgraves.advancement.jalapeno.desc": "Can be found in savanna and desert villages",
+
+  "gardensandgraves.advancement.chomper": "Mordeur",
+  "gardensandgraves.advancement.chomper.desc": "Can be found in jungle temples",
+
+  "gardensandgraves.advancement.bonk_choy": "Tape choï",
+  "gardensandgraves.advancement.bonk_choy.desc": "Can be found in savanna and desert villages and desert pyramids",
 
   "gardensandgraves.advancement.mushroom_collection": "Not Mushroom for improvement",
   "gardensandgraves.advancement.mushroom_collection.desc": "Obtain the seed packets for all mushrooms",
@@ -141,5 +156,5 @@
   "gardensandgraves.advancement.hypno_shroom.desc": "Can be found in taiga villages",
 
   "gardensandgraves.advancement.doom_shroom": "Champi-mort",
-  "gardensandgraves.advancement.doom_shroom.desc": "Can be found in ancient cities"
+  "gardensandgraves.advancement.doom_shroom.desc": "Can be found in ancient cities and woodland mansions"
 }

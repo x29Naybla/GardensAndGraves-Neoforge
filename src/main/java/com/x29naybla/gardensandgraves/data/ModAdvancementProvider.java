@@ -82,6 +82,31 @@ public class ModAdvancementProvider implements AdvancementProvider.AdvancementGe
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/repeater"));
 
+        AdvancementHolder wall_nut = getAdvancement(gardensAndGraves, ModItems.SEED_PACKET_WALL_NUT.get(), "wall_nut", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_WALL_NUT.get()))
+                .requirements(AdvancementRequirements.Strategy.OR)
+                .save(consumer, getNameId("main/wall_nut"));
+
+        AdvancementHolder potato_mine = getAdvancement(gardensAndGraves, ModItems.SEED_PACKET_POTATO_MINE.get(), "potato_mine", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_POTATO_MINE.get()))
+                .requirements(AdvancementRequirements.Strategy.OR)
+                .save(consumer, getNameId("main/potato_mine"));
+
+        AdvancementHolder jalapeno = getAdvancement(gardensAndGraves, ModItems.SEED_PACKET_JALAPENO.get(), "jalapeno", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_JALAPENO.get()))
+                .requirements(AdvancementRequirements.Strategy.OR)
+                .save(consumer, getNameId("main/jalapeno"));
+
+        AdvancementHolder chomper = getAdvancement(gardensAndGraves, ModItems.SEED_PACKET_CHOMPER.get(), "chomper", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_CHOMPER.get()))
+                .requirements(AdvancementRequirements.Strategy.OR)
+                .save(consumer, getNameId("main/chomper"));
+
+        AdvancementHolder bonk_choy = getAdvancement(gardensAndGraves, ModItems.SEED_PACKET_BONK_CHOY.get(), "bonk_choy", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_BONK_CHOY.get()))
+                .requirements(AdvancementRequirements.Strategy.OR)
+                .save(consumer, getNameId("main/bonk_choy"));
+
         AdvancementHolder mushroomCollection = getAdvancement(gardensAndGraves, ModItems.SEED_PACKET_SUN_SHROOM.get(), "mushroom_collection", AdvancementType.TASK, true, true, false)
                 .addCriterion("sun_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_SUN_SHROOM.get()))
                 .addCriterion("puff_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_PUFF_SHROOM.get()))
