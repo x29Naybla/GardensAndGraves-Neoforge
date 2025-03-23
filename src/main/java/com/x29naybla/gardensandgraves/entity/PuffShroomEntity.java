@@ -1,0 +1,83 @@
+package com.x29naybla.gardensandgraves.entity;
+
+import com.x29naybla.gardensandgraves.entity.projectile.PeaProjectile;
+import com.x29naybla.gardensandgraves.item.ModItems;
+import com.x29naybla.gardensandgraves.sound.ModSounds;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.AgeableMob;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.monster.Enemy;
+import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.animatable.GeoEntity;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.util.GeckoLibUtil;
+
+public class PuffShroomEntity extends Plant implements GeoEntity, RangedAttackMob {
+    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.peashooter.idle");
+    protected static final RawAnimation SHOOT = RawAnimation.begin().thenLoop("animation.peashooter.shoot");
+    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
+    public boolean isShooting = false;
+
+    public PuffShroomEntity(EntityType<? extends PuffShroomEntity> entityType, Level level) {
+        super(entityType, level);
+    }
+
+    @Override
+    public @Nullable ItemStack getPickResult() {
+        return ModItems.SEED_PACKET_PUFF_SHROOM.toStack();
+    }
+
+    @Override
+    public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherparent) {;
+        return ModEntities.PUFF_SHROOM.get().create(level);
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
+        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::animController));
+    }
+
+    protected <E extends PuffShroomEntity> PlayState animController(final AnimationState<E> event) {
+        if(isShooting){
+            event.setAnimation(SHOOT);
+        }else
+            event.setAnimation(IDLE);
+
+        return PlayState.CONTINUE;
+    }
+
+    protected void registerGoals(){
+        this.goalSelector.addGoal(0, new RangedAttackGoal(this, 1.25F, 30, 8.5F));
+        this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (target) -> target instanceof Enemy && !(target instanceof Creeper || target instanceof EnderMan)));
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return geoCache;
+    }
+
+    @Override
+    public void performRangedAttack(LivingEntity target, float distanceFactor) {
+        PeaProjectile pea = new PeaProjectile(this.level(), this);
+        double d0 = target.getEyeY() - (double)1.1F;
+        double d1 = target.getX() - this.getX();
+        double d2 = d0 - pea.getY();
+        double d3 = target.getZ() - this.getZ();
+        double d4 = Math.sqrt(d1 * d1 + d3 * d3) * (double)0.2F;
+        pea.shoot(d1, d2 + d4, d3, 1.6F, 3.0F);
+        this.playSound(ModSounds.THROW.get(), 1.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+        this.level().addFreshEntity(pea);
+    }
+}

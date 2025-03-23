@@ -26,7 +26,7 @@
   "item.gardensandgraves.seed_packet_sun_shroom": "Pacote de sementes de solargumelo",
   "item.gardensandgraves.seed_packet_sun_shroom.desc": "Custo de sol: 1",
   "item.gardensandgraves.seed_packet_puff_shroom": "Pacote de sementes de soprogumelo",
-  "item.gardensandgraves.seed_packet_puff_shroom.desc": "Custo de sol:",
+  "item.gardensandgraves.seed_packet_puff_shroom.desc": "Custo de sol: 0",
   "item.gardensandgraves.seed_packet_fume_shroom": "Pacote de sementes de gasogumelo",
   "item.gardensandgraves.seed_packet_fume_shroom.desc": "Custo de sol:",
   "item.gardensandgraves.seed_packet_hypno_shroom": "Pacote de sementes de hypnogumelo",
@@ -108,7 +108,7 @@
   "gardensandgraves.advancement.planters.desc": "Crie um germinador. As plantas plantadas nele produzirão pacotes de sementes!",
 
   "gardensandgraves.advancement.sunflower": "Girassol",
-  "gardensandgraves.advancement.sunflower.desc": "A cada 5 minutos durante o dia, gera dois sóis quando adulto. Pode ser encontrado em vilas de planície",
+  "gardensandgraves.advancement.sunflower.desc": "Gera um sol a cada 5 minutos, durante o dia. Pode ser encontrado em vilas de planície",
 
   "gardensandgraves.advancement.marigold": "Calêndula",
   "gardensandgraves.advancement.marigold.desc": "Gera entre 1 e 3 pepitas de ferro ou ouro a cada 5 minutos. Pode ser encontrada em minas abandonadas e navios naufragados",

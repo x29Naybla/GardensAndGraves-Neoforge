@@ -9,4 +9,7 @@ changelog:
 * altered advancement descriptions to reflect the updated seed packets distribution
 
 * fixed seed packets generation by changing the way loot tables are handled
-* made sunflowers giving 2 suns instead of 1 and altered their advancement's description to reflect the new yield
+
+* added the puff-shroom
+* doubled the damage repeaters give to balance them not shooting two peas
+* made marigolds dyeable, marigolds planted on planters will have a random color

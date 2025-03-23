@@ -63,7 +63,6 @@ public class SunflowerEntity extends Plant implements GeoEntity {
         if (!this.level().isClientSide && this.isAlive() && !this.level().isNight() && !this.isBaby() && --this.sunTime <= 0) {
             this.playSound(ModSounds.THROW.get(), 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
             this.spawnAtLocation(ModItems.SUN);
-            this.spawnAtLocation(ModItems.SUN);
             this.gameEvent(GameEvent.ENTITY_PLACE);
             this.sunTime = 6000;
         }

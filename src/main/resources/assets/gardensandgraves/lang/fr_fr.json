@@ -26,7 +26,7 @@
   "item.gardensandgraves.seed_packet_sun_shroom": "Sachet de graines de champi-soleil",
   "item.gardensandgraves.seed_packet_sun_shroom.desc": "Coût du soleil : 1",
   "item.gardensandgraves.seed_packet_puff_shroom": "Sachet de graines de champi-gnon",
-  "item.gardensandgraves.seed_packet_puff_shroom.desc": "Coût du soleil :",
+  "item.gardensandgraves.seed_packet_puff_shroom.desc": "Coût du soleil : 0",
   "item.gardensandgraves.seed_packet_fume_shroom": "Sachet de graines de champi-fumée",
   "item.gardensandgraves.seed_packet_fume_shroom.desc": "Coût du soleil :",
   "item.gardensandgraves.seed_packet_hypno_shroom": "Sachet de graines de champi-hypno",
@@ -108,7 +108,7 @@
   "gardensandgraves.advancement.planters.desc": "Craft a planter. Plants planted on it will produce seed packets!",
 
   "gardensandgraves.advancement.sunflower": "Tournesol",
-  "gardensandgraves.advancement.sunflower.desc": "Every 5 minutes during the day, they generate 2 suns but only when adults. Can be found in plains villages",
+  "gardensandgraves.advancement.sunflower.desc": "They generate one sun every 5 minutes, during the day. Can be found in plains villages",
 
   "gardensandgraves.advancement.marigold": "Souci",
   "gardensandgraves.advancement.marigold.desc": "They generate between 1 and 3 iron or gold nuggets every 5 minutes. Can be found in abandoned mineshafts and shipwrecks",

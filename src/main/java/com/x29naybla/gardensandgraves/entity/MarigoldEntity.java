@@ -1,14 +1,25 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.google.common.collect.Maps;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.FastColor;
+import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -20,11 +31,31 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
+import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 public class MarigoldEntity extends Plant implements GeoEntity {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.flower.idle");
     protected static final RawAnimation GENERATE = RawAnimation.begin().thenLoop("animation.flower.generate");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
+    private static final EntityDataAccessor<Byte> DATA_PETALS_ID;
+    private static final Map<DyeColor, Integer> COLOR_BY_DYE;
     public int rewardTime;
+
+    private static int createMarigoldColor(DyeColor dyeColor) {
+        if (dyeColor == DyeColor.WHITE) {
+            return -1644826;
+        } else {
+            int i = dyeColor.getTextureDiffuseColor();
+            float f = 0.75F;
+            return FastColor.ARGB32.color(255, Mth.floor((float) FastColor.ARGB32.red(i) * 0.75F), Mth.floor((float) FastColor.ARGB32.green(i) * 0.75F), Mth.floor((float) FastColor.ARGB32.blue(i) * 0.75F));
+        }
+    }
+
+    public static int getColor(DyeColor dyeColor) {
+        return COLOR_BY_DYE.get(dyeColor);
+    }
 
     public MarigoldEntity(EntityType<? extends MarigoldEntity> entityType, Level level) {
         super(entityType, level);
@@ -63,6 +94,7 @@ public class MarigoldEntity extends Plant implements GeoEntity {
 
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
+        builder.define(DATA_PETALS_ID, (byte)0);
     }
 
     public void aiStep() {
@@ -96,15 +128,49 @@ public class MarigoldEntity extends Plant implements GeoEntity {
         return geoCache;
     }
 
+    public InteractionResult mobInteract(Player player, InteractionHand hand) {
+        ItemStack itemStack = player.getItemInHand(hand);
+
+        if (itemStack.getItem() instanceof DyeItem) {
+            DyeColor dyeColor = ((DyeItem)itemStack.getItem()).getDyeColor();
+            if (dyeColor != this.getColor()) {
+                this.setColor(dyeColor);
+                this.playSound(SoundEvents.DYE_USE, 1.0f, 1.0f);
+                if (!player.getAbilities().instabuild) {
+                    itemStack.shrink(1);
+                }
+                return InteractionResult.sidedSuccess(this.level().isClientSide);
+            }
+        }
+
+        return super.mobInteract(player, hand);
+    }
+
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         if (compound.contains("RewardGenerateTime")) {
             this.rewardTime = compound.getInt("RewardGenerateTime");
         }
+        this.setColor(DyeColor.byId(compound.getByte("Color")));
     }
 
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putInt("RewardGenerateTime", this.rewardTime);
+        compound.putByte("Color", (byte)this.getColor().getId());
+    }
+
+    public DyeColor getColor() {
+        return DyeColor.byId((Byte)this.entityData.get(DATA_PETALS_ID) & 15);
+    }
+
+    public void setColor(DyeColor dyeColor) {
+        byte b0 = (Byte)this.entityData.get(DATA_PETALS_ID);
+        this.entityData.set(DATA_PETALS_ID, (byte)(b0 & 240 | dyeColor.getId() & 15));
+    }
+
+    static {
+        DATA_PETALS_ID = SynchedEntityData.defineId(MarigoldEntity.class, EntityDataSerializers.BYTE);
+        COLOR_BY_DYE = Maps.newEnumMap((Map) Arrays.stream(DyeColor.values()).collect(Collectors.toMap((p_29868_) -> p_29868_, MarigoldEntity::createMarigoldColor)));
     }
 }
