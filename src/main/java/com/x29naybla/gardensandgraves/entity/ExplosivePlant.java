@@ -12,9 +12,6 @@ import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.material.Fluid;
-import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Fluids;
 
 import javax.annotation.Nullable;
 
@@ -98,7 +95,7 @@ public class ExplosivePlant extends Plant{
     private void explode() {
         if (!this.level().isClientSide) {
             this.dead = true;
-            this.level().explode(this, this.getX(), this.getY(), this.getZ(), this.explosionRadius, Level.ExplosionInteraction.MOB);
+            this.level().explode(this, this.getX(), this.getY(), this.getZ(), this.explosionRadius, Level.ExplosionInteraction.NONE);
             this.triggerOnDeathMobEffects(RemovalReason.KILLED);
             this.discard();
         }

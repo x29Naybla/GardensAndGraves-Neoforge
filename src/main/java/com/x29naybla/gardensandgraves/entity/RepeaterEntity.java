@@ -1,13 +1,12 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.entity.goal.ModShootGoal;
 import com.x29naybla.gardensandgraves.entity.projectile.PeaProjectile;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.EnderMan;
@@ -22,7 +21,7 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class RepeaterEntity extends Plant implements GeoEntity, RangedAttackMob {
+public class RepeaterEntity extends Peashooting implements GeoEntity, RangedAttackMob {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.peashooter.idle");
     protected static final RawAnimation SHOOT = RawAnimation.begin().thenLoop("animation.peashooter.shoot");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
@@ -47,20 +46,20 @@ public class RepeaterEntity extends Plant implements GeoEntity, RangedAttackMob 
     }
 
     protected <E extends RepeaterEntity> PlayState animController(final AnimationState<E> event) {
-        event.setAnimation(IDLE);
+        if(this.isShooting()){
+            event.setAnimation(SHOOT);
+            return PlayState.CONTINUE;
+
+        }else
+            event.setAnimation(IDLE);
 
         return PlayState.CONTINUE;
     }
 
     protected void registerGoals(){
-        this.goalSelector.addGoal(0, new RangedAttackGoal(this, 1.25F, 30, 8.5F));
+        this.goalSelector.addGoal(0, new ModShootGoal(this, 1, 1.25F, 30, 8.5F));
         this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (p_29932_) -> p_29932_ instanceof Enemy && !(p_29932_ instanceof Creeper || p_29932_ instanceof EnderMan)));
-    }
-
-    @Override
-    public void aiStep() {
-        super.aiStep();
     }
 
     @Override

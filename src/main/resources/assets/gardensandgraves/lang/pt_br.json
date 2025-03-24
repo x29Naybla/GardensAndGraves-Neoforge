@@ -98,6 +98,9 @@
   "entity.gardensandgraves.hypno_shroom": "Hypnogumelo",
   "entity.gardensandgraves.doom_shroom": "Ruinagumelo",
 
+  "death.attack.pea": "%1$s foi ervilhado(a) até a morte por %2$s",
+  "death.attack.frozen_pea": "%1$s foi congervilhado(a) por %2$s",
+
   "creativetab.gardensandgraves.blocks": "G&G blocos",
   "creativetab.gardensandgraves.items": "G&G itens",
 

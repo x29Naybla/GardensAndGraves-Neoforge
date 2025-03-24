@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity.projectile;
 
+import com.x29naybla.gardensandgraves.data.ModDamageTypes;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.ModItems;
@@ -7,6 +8,7 @@ import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -58,7 +60,7 @@ public class PeaProjectile extends ThrowableItemProjectile {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
         if (!(entity.getType().is(ModTags.Entities.PLANTS) || entity instanceof Player)){
-            entity.hurt(this.damageSources().thrown(this, this.getOwner()), 2);
+            entity.hurt(this.damageSources().source(ModDamageTypes.PEA_DAMAGE, this, this.getOwner()), 2);
             this.level().broadcastEntityEvent(this, (byte)3);
             shouldBreak = true;
         }

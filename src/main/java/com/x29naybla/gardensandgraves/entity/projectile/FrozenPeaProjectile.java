@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity.projectile;
 
+import com.x29naybla.gardensandgraves.data.ModDamageTypes;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.ModItems;
@@ -58,7 +59,7 @@ public class FrozenPeaProjectile extends ThrowableItemProjectile {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
         if (!(entity.getType().is(ModTags.Entities.PLANTS) || entity instanceof Player)){
-            entity.hurt(this.damageSources().thrown(this, this.getOwner()), 2);
+            entity.hurt(this.damageSources().source(ModDamageTypes.FROZEN_PEA_DAMAGE, this, this.getOwner()), 2);
             entity.extinguishFire();
             entity.setTicksFrozen(140);
             entity.isFullyFrozen();

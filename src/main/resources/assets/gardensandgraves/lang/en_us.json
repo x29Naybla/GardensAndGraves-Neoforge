@@ -98,8 +98,8 @@
   "entity.gardensandgraves.hypno_shroom": "Hypno-shroom",
   "entity.gardensandgraves.doom_shroom": "Doom-shroom",
 
-  "death.gardensandgraves.pea_projectile": "pead",
-  "death.gardensandgraves.frozen_pea_projectile": "frozen pead",
+  "death.attack.pea": "%1$s got pead to death by %2$s",
+  "death.attack.frozen_pea": "%1$s got peapsicled by %2$s",
 
   "creativetab.gardensandgraves.blocks": "G&G Blocks",
   "creativetab.gardensandgraves.items": "G&G Items",

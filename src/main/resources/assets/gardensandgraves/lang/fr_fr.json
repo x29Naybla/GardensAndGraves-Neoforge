@@ -98,6 +98,9 @@
   "entity.gardensandgraves.hypno_shroom": "Champi-hypno",
   "entity.gardensandgraves.doom_shroom": "Champi-mort",
 
+  "death.attack.pea": "%1$s got pead to death by %2$s",
+  "death.attack.frozen_pea": "%1$s got peapsicled by %2$s",
+
   "creativetab.gardensandgraves.blocks": "G&G blocs",
   "creativetab.gardensandgraves.items": "G&G objets",
 

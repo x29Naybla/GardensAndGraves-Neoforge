@@ -1,13 +1,12 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.entity.goal.ModShootGoal;
 import com.x29naybla.gardensandgraves.entity.projectile.PeaProjectile;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.EnderMan;
@@ -22,11 +21,10 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class PeashooterEntity extends Plant implements GeoEntity, RangedAttackMob {
+public class PeashooterEntity extends Peashooting implements GeoEntity, RangedAttackMob {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.peashooter.idle");
     protected static final RawAnimation SHOOT = RawAnimation.begin().thenLoop("animation.peashooter.shoot");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-    public boolean isShooting = false;
 
     public PeashooterEntity(EntityType<? extends PeashooterEntity> entityType, Level level) {
         super(entityType, level);
@@ -48,8 +46,10 @@ public class PeashooterEntity extends Plant implements GeoEntity, RangedAttackMo
     }
 
     protected <E extends PeashooterEntity> PlayState animController(final AnimationState<E> event) {
-        if(isShooting){
+        if(this.isShooting()){
             event.setAnimation(SHOOT);
+            return PlayState.CONTINUE;
+
         }else
             event.setAnimation(IDLE);
 
@@ -57,7 +57,7 @@ public class PeashooterEntity extends Plant implements GeoEntity, RangedAttackMo
     }
 
     protected void registerGoals(){
-        this.goalSelector.addGoal(0, new RangedAttackGoal(this, 1.25F, 30, 8.5F));
+        this.goalSelector.addGoal(0, new ModShootGoal(this, 1, 1.25F, 30, 8.5F));
         this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (target) -> target instanceof Enemy && !(target instanceof Creeper || target instanceof EnderMan)));
     }

@@ -3,7 +3,6 @@ package com.x29naybla.gardensandgraves.entity;
 import com.google.common.collect.Maps;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
