@@ -49,7 +49,7 @@ public class ModShootGoal extends Goal {
     @Override
     public boolean canUse() {
         LivingEntity livingentity = this.peashooting.getTarget();
-        if (livingentity != null && livingentity.isAlive() && !livingentity.isBaby()) {
+        if (livingentity != null && livingentity.isAlive() && !this.peashooting.isBaby()) {
             this.target = livingentity;
             return true;
         } else {
