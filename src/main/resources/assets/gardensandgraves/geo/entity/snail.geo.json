@@ -1,0 +1,50 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.snail",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "snail",
+					"pivot": [0, 0, -1]
+				},
+				{
+					"name": "foot",
+					"parent": "snail",
+					"pivot": [-1, 0, -1],
+					"cubes": [
+						{"origin": [-2, 0, -3], "size": [4, 3, 11], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "foot",
+					"pivot": [0, 1.5, -1],
+					"cubes": [
+						{"origin": [-2, 0, -8], "size": [4, 3, 5], "uv": [27, 15]},
+						{"origin": [0, 3, -8], "size": [2, 3, 2], "pivot": [1, 2.5, -7], "rotation": [25, 0, 25], "uv": [27, 30]},
+						{"origin": [-2, 3, -8], "size": [2, 3, 2], "pivot": [-1, 2.5, -7], "rotation": [25, 0, -25], "uv": [27, 24]},
+						{"origin": [-2, 2, -7], "size": [1, 2, 1], "pivot": [-1.5, 1.5, -7], "rotation": [115, 0, 25], "uv": [36, 26]},
+						{"origin": [1, 2, -7], "size": [1, 2, 1], "pivot": [1.5, 1.5, -7], "rotation": [115, 0, -25], "uv": [36, 32]}
+					]
+				},
+				{
+					"name": "shell",
+					"parent": "snail",
+					"pivot": [0, 6, 3],
+					"rotation": [-12.5, 0, 0],
+					"cubes": [
+						{"origin": [-2.5, 2, -1], "size": [5, 8, 8], "uv": [0, 15]}
+					]
+				}
+			]
+		}
+	]
+}

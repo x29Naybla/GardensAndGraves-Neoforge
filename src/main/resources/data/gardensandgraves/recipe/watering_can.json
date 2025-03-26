@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "@": {
+      "item": "minecraft:water_bucket"
+    },
+    "!": {
+      "item": "minecraft:cyan_dye"
+    }
+  },
+  "pattern": [
+    "  #",
+    "#@!",
+    "## "
+  ],
+  "result": {
+    "count": 1,
+    "id": "gardensandgraves:watering_can"
+  }
+}

@@ -35,11 +35,13 @@ public class SeedPacketItem extends Item {
     private static final MapCodec<EntityType<?>> ENTITY_TYPE_FIELD_CODEC;
     private final EntityType<?> defaultType;
     private final int sunAmount;
+    public final int cooldown;
 
-    public SeedPacketItem(EntityType<? extends Mob> defaultType, int sunAmount, Item.Properties properties) {
+    public SeedPacketItem(EntityType<? extends Mob> defaultType, int sunAmount, int cooldown, Item.Properties properties) {
         super(properties);
         this.defaultType = defaultType;
         this.sunAmount = sunAmount;
+        this.cooldown = cooldown*20;
     }
 
     public String getDescriptionId() {
@@ -85,15 +87,16 @@ public class SeedPacketItem extends Item {
                                 plant.setBaby(true);
                                 plant.fromPlanter(true);
                                 if (plant instanceof MarigoldEntity) ((MarigoldEntity) plant).setColor(DyeColor.byId(level.getRandom().nextIntBetweenInclusive(0, 15)));
+                                itemStack.shrink(1);
                             }else
                                 plant.fromPlanter(false);
                             if(entity instanceof SunShroomEntity) plant.setBaby(true);
                         }
+                        context.getPlayer().getCooldowns().addCooldown(this, cooldown);
                         serverlevel.addFreshEntityWithPassengers(entity);
                         level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
                         entity.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
                     }
-                    itemStack.shrink(1);
                     if(!((context.getPlayer().isCreative() || onPlanter(level, blockpos)))){
                         if(this.sunAmount == 0){
 

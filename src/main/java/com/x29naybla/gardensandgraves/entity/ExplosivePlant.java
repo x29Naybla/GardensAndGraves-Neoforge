@@ -20,7 +20,7 @@ public class ExplosivePlant extends Plant{
     private int oldSwell;
     private int swell;
     private int maxSwell = 10;
-    private int explosionRadius = 8;
+    private int explosionRadius = 9;
 
     public ExplosivePlant(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);

@@ -1,19 +1,11 @@
 changelog:
-* brazilian portuguese translation adjustments
-* partially added french translations
-* fixed bug where plants could be healed even if they had max health
-* added the sun-shroom
-* added the doom-shroom
-
-* added advancements for the bonk choy, chomper, jalapeno, potato mine, and wall-nut
-* altered advancement descriptions to reflect the updated seed packets distribution
-
-* fixed seed packets generation by changing the way loot tables are handled
-
-* added the puff-shroom
-* doubled the damage repeaters give to balance them not shooting two peas
-* made marigolds dyeable, marigolds planted on planters will have a random color
-
-* made pea and frozen pea projectiles a custom death message and not have knockback
-* implemented peashooting animations
-* baby peashooting plants no longer shoot
+* added watering cans, they can make farmland moist
+* seed packets are now consumed only when used on planters
+* seed packets now have a cooldown of varying duration depending on the type of plant
+* now only plants from planters drop the seed packets back
+* fixed plant HPs
+* made plant enemies a tag instead of being hardcoded
+* optimized imports
+* raised Doom-shroom sun cost to match PvZ 2
+* added Wall-nut hurt stages
+* added snails

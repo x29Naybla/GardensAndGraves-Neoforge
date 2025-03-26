@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.world.entity.EntityType;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,6 +38,11 @@ public class ModEntityTagsProvider extends EntityTypeTagsProvider {
                 .addTag(ModTags.Entities.PEASHOOTERS)
                 .add(ModEntities.WALL_NUT.get())
                 .addTag(ModTags.Entities.MUSHROOMS);
+
+        tag(ModTags.Entities.PLANT_ENEMIES)
+                .addTag(EntityTypeTags.UNDEAD)
+                .addTag(EntityTypeTags.ARTHROPOD)
+                .remove(EntityType.BEE);
 
         //Minecraft Tags
         tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES)

@@ -37,8 +37,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SEED_PACKET_DOOM_SHROOM);
                         output.accept(ModItems.BRAINZ_BANNER_PATTERN);
                         output.accept(ModItems.MUSIC_DISC_WABBY_WABBO);
+                        output.accept(ModItems.WATERING_CAN);
                         output.accept(ModItems.PEA);
                         output.accept(ModItems.FROZEN_PEA);
+                        output.accept(ModItems.SNAIL_SPAWN_EGG);
 
                     }).build());
 

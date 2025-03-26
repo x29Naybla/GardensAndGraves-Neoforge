@@ -35,6 +35,7 @@
   "item.gardensandgraves.seed_packet_doom_shroom.desc": "Coût du soleil : 5",
 
   "item.gardensandgraves.sun": "Soleil",
+  "item.gardensandgraves.watering_can": "Watering Can",
   "item.gardensandgraves.pea": "Pois",
   "item.gardensandgraves.frozen_pea": "Pois congelé",
 
@@ -42,6 +43,8 @@
   "item.gardensandgraves.brainz_banner_pattern.desc": "Cerveau",
   "item.gardensandgraves.music_disc_wabby_wabbo": "Disque",
   "item.gardensandgraves.music_disc_wabby_wabbo.desc": "Cray-Z - Wabby Wabbo",
+
+  "item.gardensandgraves.snail_spawn_egg": "Oeuf d'apparition de escargot",
 
   "block.gardensandgraves.planter": "Jardinière",
   "block.gardensandgraves.planter_white": "Jardinière blanche",
@@ -97,6 +100,8 @@
   "entity.gardensandgraves.fume_shroom": "Champi-fumée",
   "entity.gardensandgraves.hypno_shroom": "Champi-hypno",
   "entity.gardensandgraves.doom_shroom": "Champi-mort",
+
+  "entity.gardensandgraves.snail": "Snail",
 
   "death.attack.pea": "%1$s got pead to death by %2$s",
   "death.attack.frozen_pea": "%1$s got peapsicled by %2$s",

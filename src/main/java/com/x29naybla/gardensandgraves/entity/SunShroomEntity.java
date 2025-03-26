@@ -12,12 +12,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class SunShroomEntity extends Plant implements GeoEntity {
+public class SunShroomEntity extends Plant {
     protected static final RawAnimation GENERATE = RawAnimation.begin().thenLoop("animation.flower.generate");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     public int sunTime;

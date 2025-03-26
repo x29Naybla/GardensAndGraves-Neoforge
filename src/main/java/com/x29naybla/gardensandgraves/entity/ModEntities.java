@@ -32,64 +32,71 @@ public class ModEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<PuffShroomEntity>> PUFF_SHROOM = register("puff_shroom", PuffShroomEntity::new, 0.5f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<DoomShroomEntity>> DOOM_SHROOM = register("doom_shroom", DoomShroomEntity::new, 0.7f, 0.9f);
 
+    public static final DeferredHolder<EntityType<?>, EntityType<SnailEntity>> SNAIL = register("snail", SnailEntity::new, 0.7f, 0.6f);
+
     @SubscribeEvent
     public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
         AttributeSupplier.Builder sunflowerAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 6)
+                .add(Attributes.MAX_HEALTH, 30)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99);
 
         AttributeSupplier.Builder marigoldAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 6)
+                .add(Attributes.MAX_HEALTH, 30)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99);
 
         AttributeSupplier.Builder peashooterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 6)
+                .add(Attributes.MAX_HEALTH, 30)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(Attributes.FOLLOW_RANGE,  8.5)
-                .add(Attributes.ENTITY_INTERACTION_RANGE, 8.5);
+                .add(Attributes.FOLLOW_RANGE,  9)
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
 
         AttributeSupplier.Builder snowPeashooterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 6)
+                .add(Attributes.MAX_HEALTH, 30)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(Attributes.FOLLOW_RANGE,  8.5)
-                .add(Attributes.ENTITY_INTERACTION_RANGE, 8.5);;
+                .add(Attributes.FOLLOW_RANGE,  9)
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 9);;
 
         AttributeSupplier.Builder repeaterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 6)
+                .add(Attributes.MAX_HEALTH, 30)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 4)
-                .add(Attributes.FOLLOW_RANGE,  8.5)
-                .add(Attributes.ENTITY_INTERACTION_RANGE, 8.5);
+                .add(Attributes.FOLLOW_RANGE,  9)
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
 
         AttributeSupplier.Builder wallNutAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 80)
+                .add(Attributes.MAX_HEALTH, 400)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99);
 
         AttributeSupplier.Builder puffShroomAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 6)
+                .add(Attributes.MAX_HEALTH, 30)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(Attributes.FOLLOW_RANGE,  4.5)
-                .add(Attributes.ENTITY_INTERACTION_RANGE, 4.5);
+                .add(Attributes.FOLLOW_RANGE,  4)
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 4);
 
         AttributeSupplier.Builder doomShroomAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 6)
+                .add(Attributes.MAX_HEALTH, 30)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
-                .add(Attributes.ENTITY_INTERACTION_RANGE, 8);
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
+
+        AttributeSupplier.Builder snailAttributes = PathfinderMob.createMobAttributes()
+                .add(Attributes.MOVEMENT_SPEED,0.05)
+                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
 
         event.put(ModEntities.SUNFLOWER.get(), sunflowerAttributes.build());
         event.put(ModEntities.MARIGOLD.get(), marigoldAttributes.build());
@@ -100,6 +107,7 @@ public class ModEntities {
         event.put(ModEntities.SUN_SHROOM.get(), sunflowerAttributes.build());
         event.put(ModEntities.PUFF_SHROOM.get(), puffShroomAttributes.build());
         event.put(ModEntities.DOOM_SHROOM.get(), doomShroomAttributes.build());
+        event.put(ModEntities.SNAIL.get(), snailAttributes.build());
     }
 
     public static final Supplier<EntityType<PeaProjectile>> PEA_PROJECTILE = ENTITY_TYPES.register("pea", () -> (

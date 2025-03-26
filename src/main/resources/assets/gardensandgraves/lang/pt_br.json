@@ -35,6 +35,7 @@
   "item.gardensandgraves.seed_packet_doom_shroom.desc": "Custo de sol: 5",
 
   "item.gardensandgraves.sun": "Sol",
+  "item.gardensandgraves.watering_can": "Regador",
   "item.gardensandgraves.pea": "Ervilha",
   "item.gardensandgraves.frozen_pea": "Ervilha congelada",
 
@@ -42,6 +43,8 @@
   "item.gardensandgraves.brainz_banner_pattern.desc": "Mioloz",
   "item.gardensandgraves.music_disc_wabby_wabbo": "Disco musical",
   "item.gardensandgraves.music_disc_wabby_wabbo.desc": "Cray-Z — Wabby Wabbo",
+
+  "item.gardensandgraves.snail_spawn_egg": "Ovo gerador de caracol",
 
   "block.gardensandgraves.planter": "Germinador",
   "block.gardensandgraves.planter_white": "Germinador branco",
@@ -97,6 +100,8 @@
   "entity.gardensandgraves.fume_shroom": "Gasogumelo",
   "entity.gardensandgraves.hypno_shroom": "Hypnogumelo",
   "entity.gardensandgraves.doom_shroom": "Ruinagumelo",
+
+  "entity.gardensandgraves.snail": "Caracol",
 
   "death.attack.pea": "%1$s foi ervilhado(a) até a morte por %2$s",
   "death.attack.frozen_pea": "%1$s foi congervilhado(a) por %2$s",

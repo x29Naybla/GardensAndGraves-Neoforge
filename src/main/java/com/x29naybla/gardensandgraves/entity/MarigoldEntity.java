@@ -24,7 +24,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.animation.AnimationState;
@@ -34,7 +33,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class MarigoldEntity extends Plant implements GeoEntity {
+public class MarigoldEntity extends Plant {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.flower.idle");
     protected static final RawAnimation GENERATE = RawAnimation.begin().thenLoop("animation.flower.generate");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);

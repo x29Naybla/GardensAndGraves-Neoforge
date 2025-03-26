@@ -9,12 +9,11 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class WallNutEntity extends Plant implements GeoEntity {
+public class WallNutEntity extends Plant {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.wall_nut.idle");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 

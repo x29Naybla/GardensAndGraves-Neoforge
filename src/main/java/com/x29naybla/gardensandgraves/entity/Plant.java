@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.item.custom.SeedPacketItem;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
@@ -36,19 +37,33 @@ public class Plant extends TamableAnimal implements GeoEntity {
     }
 
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
+        SeedPacketItem item = (SeedPacketItem) this.getPickResult().getItem();
+
         if(player.getItemInHand(hand).getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
-            packUp(player);
+            if (fromPlanter) {
+                packUp(player);
+            }
+            playSound(SoundEvents.SHOVEL_FLATTEN);
+            this.discard();
             player.getItemInHand(hand).hurtAndBreak(1, player, getSlotForHand(hand));
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
         }
-        if((player.getItemInHand(hand).getItem() == this.getPickResult().getItem()) && this.getHealth() < this.getMaxHealth()){
+        if((player.getItemInHand(hand).getItem() == this.getPickResult().getItem()) && this.getHealth() < this.getMaxHealth() && !player.getCooldowns().isOnCooldown(item)){
             this.setHealth(this.getMaxHealth());
             playSound(ModSounds.PLANT.get());
-            if (!player.isCreative()) player.getItemInHand(hand).shrink(1);
+            player.getCooldowns().addCooldown(this.getPickResult().getItem(), item.cooldown);
+            if (!player.isCreative()) {
+                player.getItemInHand(hand).shrink(1);
+            }
         }
 
         return super.mobInteract(player, hand);
+    }
+
+    @Override
+    protected boolean shouldDropLoot() {
+        return this.fromPlanter;
     }
 
     @Override
@@ -126,9 +141,6 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public void packUp(Player player){
         ItemStack output = this.getPickResult();
         saveDefaultDataToItemTag(this, output);
-        playSound(SoundEvents.SHOVEL_FLATTEN);
-
-        this.discard();
         spawnAtLocation(output);
     }
 

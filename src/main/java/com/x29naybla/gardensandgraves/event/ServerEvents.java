@@ -1,14 +1,16 @@
 package com.x29naybla.gardensandgraves.event;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
+import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.Plant;
 import com.x29naybla.gardensandgraves.entity.WallNutEntity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.EnderMan;
-import net.minecraft.world.entity.monster.Monster;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -20,15 +22,11 @@ public class ServerEvents {
 
     @SubscribeEvent
     public static void addAdditionalGoals(EntityJoinLevelEvent event){
-        if(event.getEntity() instanceof Monster monster && !(event.getEntity() instanceof Creeper || event.getEntity() instanceof EnderMan)){
-            monster.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(monster, WallNutEntity.class, true));
-            monster.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(monster, Plant.class, true));
-
-        }
-
-        if(event.getEntity() instanceof Monster monster && (event.getEntity() instanceof Creeper || event.getEntity() instanceof EnderMan)){
-            monster.targetSelector.removeGoal(new NearestAttackableTargetGoal<>(monster, Plant.class, true));
-            monster.targetSelector.removeGoal(new HurtByTargetGoal(monster, Plant.class));
+        if (event.getEntity() instanceof  Mob mob){
+            if (mob.getType().is(ModTags.Entities.PLANT_ENEMIES)){
+                mob.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(mob, WallNutEntity.class, true));
+                mob.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(mob, Plant.class, true));
+            }
         }
     }
 

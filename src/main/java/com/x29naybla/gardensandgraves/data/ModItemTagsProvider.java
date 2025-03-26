@@ -6,6 +6,8 @@ import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -36,6 +38,14 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.SEED_PACKET_PUFF_SHROOM.get())
                 .add(ModItems.SEED_PACKET_FUME_SHROOM.get())
                 .add(ModItems.SEED_PACKET_DOOM_SHROOM.get());
+
+        tag(ModTags.Items.SNAIL_FOOD)
+                .addTag(ItemTags.LEAVES)
+                .add(Items.SHORT_GRASS)
+                .add(Items.TALL_GRASS)
+                .add(Items.FERN)
+                .add(Items.SWEET_BERRIES)
+                .add(Items.MELON_SLICE);;
 
         //C Tags
         tag(Tags.Items.DYED_WHITE)

@@ -5,6 +5,7 @@ import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.custom.PeaItem;
 import com.x29naybla.gardensandgraves.item.custom.SeedPacketItem;
 import com.x29naybla.gardensandgraves.item.custom.FrozenPeaItem;
+import com.x29naybla.gardensandgraves.item.custom.WateringCanItem;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
@@ -20,19 +21,19 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_SUNFLOWER = ITEMS.register("seed_packet_sunflower",
-            () -> new SeedPacketItem(ModEntities.SUNFLOWER.get(), 2, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.SUNFLOWER.get(), 2, 5, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_MARIGOLD = ITEMS.register("seed_packet_marigold",
-            () -> new SeedPacketItem(ModEntities.MARIGOLD.get(), 2, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.MARIGOLD.get(), 2, 10, new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_PEASHOOTER = ITEMS.register("seed_packet_peashooter",
-            () -> new SeedPacketItem(ModEntities.PEASHOOTER.get(), 4, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.PEASHOOTER.get(), 4, 5, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_SNOW_PEA = ITEMS.register("seed_packet_snow_pea",
-            () -> new SeedPacketItem(ModEntities.SNOW_PEA.get(), 6, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.SNOW_PEA.get(), 6, 5, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_REPEATER = ITEMS.register("seed_packet_repeater",
-            () -> new SeedPacketItem(ModEntities.REPEATER.get(), 8, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.REPEATER.get(), 8, 5, new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_WALL_NUT = ITEMS.register("seed_packet_wall_nut",
-            () -> new SeedPacketItem(ModEntities.WALL_NUT.get(), 4, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.WALL_NUT.get(), 4, 20, new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_POTATO_MINE = ITEMS.register("seed_packet_potato_mine",
             () -> new Item(new Item.Properties()));
@@ -44,15 +45,15 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_SUN_SHROOM = ITEMS.register("seed_packet_sun_shroom",
-            () -> new SeedPacketItem(ModEntities.SUN_SHROOM.get(), 1, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.SUN_SHROOM.get(), 1, 5, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_PUFF_SHROOM = ITEMS.register("seed_packet_puff_shroom",
-            () -> new SeedPacketItem(ModEntities.PUFF_SHROOM.get(), 0, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.PUFF_SHROOM.get(), 0, 5, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_FUME_SHROOM = ITEMS.register("seed_packet_fume_shroom",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_HYPNO_SHROOM = ITEMS.register("seed_packet_hypno_shroom",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_DOOM_SHROOM = ITEMS.register("seed_packet_doom_shroom",
-            () -> new SeedPacketItem(ModEntities.DOOM_SHROOM.get(), 5, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.DOOM_SHROOM.get(), 7, 15, new Item.Properties()));
 
     public static final DeferredItem<Item> PEA = ITEMS.register("pea",
             () -> new PeaItem(new Item.Properties()));
@@ -63,6 +64,11 @@ public class ModItems {
             () -> new BannerPatternItem(BRAINZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1)));
     public static final DeferredItem<Item> MUSIC_DISC_WABBY_WABBO = ITEMS.register("music_disc_wabby_wabbo",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE).jukeboxPlayable(ModSounds.WABBY_WABBO_KEY).stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN = ITEMS.register("watering_can",
+            () -> new WateringCanItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> SNAIL_SPAWN_EGG = ITEMS.register("snail_spawn_egg",
+            () -> new SpawnEggItem(ModEntities.SNAIL.get(), 0x706725, 0x8a5f15, new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
