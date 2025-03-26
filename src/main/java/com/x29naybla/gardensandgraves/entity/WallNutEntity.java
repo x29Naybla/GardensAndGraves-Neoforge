@@ -14,7 +14,6 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class WallNutEntity extends Plant {
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.wall_nut.idle");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     public WallNutEntity(EntityType<? extends WallNutEntity> entityType, Level level) {
@@ -54,8 +53,6 @@ public class WallNutEntity extends Plant {
     }
 
     protected <E extends WallNutEntity> PlayState animController(final AnimationState<E> event) {
-        event.setAnimation(IDLE);
-
         return PlayState.CONTINUE;
     }
 

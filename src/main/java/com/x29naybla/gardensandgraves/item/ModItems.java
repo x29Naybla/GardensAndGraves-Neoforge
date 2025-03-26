@@ -68,7 +68,7 @@ public class ModItems {
             () -> new WateringCanItem(new Item.Properties()));
 
     public static final DeferredItem<Item> SNAIL_SPAWN_EGG = ITEMS.register("snail_spawn_egg",
-            () -> new SpawnEggItem(ModEntities.SNAIL.get(), 0x706725, 0x8a5f15, new Item.Properties()));
+            () -> new SpawnEggItem(ModEntities.SNAIL.get(), 0x706725, 0xf09f48, new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

@@ -3,11 +3,13 @@ package com.x29naybla.gardensandgraves.data;
 import com.x29naybla.gardensandgraves.GardensAndGraves;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
 
@@ -64,6 +66,23 @@ public class ModTags {
 
         private static TagKey<EntityType<?>> createTag(String name) {
             return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));
+        }
+    }
+
+    public static class Biomes {
+        //Gardens and Graves Tags
+        public static final TagKey<Biome> SNAIL_HOMES = createTag("snail_homes");
+
+        private static TagKey<Biome> createTag(String name){
+            return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));
+        }
+
+        private static TagKey<Biome> commonItemTag(String path) {
+            return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath("c", path));
+        }
+
+        private static TagKey<Biome> externalItemTag(String modId, String path) {
+            return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(modId, path));
         }
     }
 

@@ -9,3 +9,5 @@ changelog:
 * raised Doom-shroom sun cost to match PvZ 2
 * added Wall-nut hurt stages
 * added snails
+
+* added snails generation in swamps, mangrove swamps, jungles, and all forests
