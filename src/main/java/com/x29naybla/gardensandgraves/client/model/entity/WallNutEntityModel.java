@@ -8,7 +8,6 @@ import software.bernie.geckolib.model.GeoModel;
 
 public class WallNutEntityModel extends GeoModel {
     private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "geo/entity/wall_nut.geo.json");
-    private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "animations/entity/wall_nut.animation.json");
 
     @Override
     public ResourceLocation getModelResource(GeoAnimatable animatable) {

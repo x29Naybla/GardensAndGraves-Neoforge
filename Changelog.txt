@@ -11,3 +11,6 @@ changelog:
 * added snails
 
 * added snails generation in swamps, mangrove swamps, jungles, and all forests
+
+* fixed Snow Peas shooting playing 2 sounds
+* reorder of the items creative tab

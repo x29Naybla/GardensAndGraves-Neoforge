@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "watering_cans",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_dye"
+    },
+    [
+      {
+        "item": "gardensandgraves:watering_can_black"
+      },
+      {
+        "item": "gardensandgraves:watering_can_blue"
+      },
+      {
+        "item": "gardensandgraves:watering_can_cyan"
+      },
+      {
+        "item": "gardensandgraves:watering_can_gray"
+      },
+      {
+        "item": "gardensandgraves:watering_can_green"
+      },
+      {
+        "item": "gardensandgraves:watering_can_light_blue"
+      },
+      {
+        "item": "gardensandgraves:watering_can_light_gray"
+      },
+      {
+        "item": "gardensandgraves:watering_can_lime"
+      },
+      {
+        "item": "gardensandgraves:watering_can_magenta"
+      },
+      {
+        "item": "gardensandgraves:watering_can_orange"
+      },
+      {
+        "item": "gardensandgraves:watering_can_pink"
+      },
+      {
+        "item": "gardensandgraves:watering_can_purple"
+      },
+      {
+        "item": "gardensandgraves:watering_can_red"
+      },
+      {
+        "item": "gardensandgraves:watering_can_yellow"
+      },
+      {
+        "item": "gardensandgraves:watering_can_white"
+      }
+    ]
+  ],
+  "result": {
+    "count": 1,
+    "id": "gardensandgraves:watering_can_brown"
+  }
+}

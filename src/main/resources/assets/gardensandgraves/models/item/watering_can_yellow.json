@@ -1,7 +1,7 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "gardensandgraves:item/watering_can"
+		"layer0": "gardensandgraves:item/watering_can_yellow"
 	},
 	"display": {
 		"thirdperson_righthand": {

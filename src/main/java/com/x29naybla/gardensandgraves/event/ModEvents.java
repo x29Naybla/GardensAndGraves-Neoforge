@@ -15,7 +15,22 @@ public class ModEvents {
             event.accept(ModItems.SNAIL_SPAWN_EGG);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
-            event.accept(ModItems.WATERING_CAN);
+            event.accept(ModItems.WATERING_CAN_WHITE);
+            event.accept(ModItems.WATERING_CAN_LIGHT_GRAY);
+            event.accept(ModItems.WATERING_CAN_GRAY);
+            event.accept(ModItems.WATERING_CAN_BLACK);
+            event.accept(ModItems.WATERING_CAN_BROWN);
+            event.accept(ModItems.WATERING_CAN_RED);
+            event.accept(ModItems.WATERING_CAN_ORANGE);
+            event.accept(ModItems.WATERING_CAN_YELLOW);
+            event.accept(ModItems.WATERING_CAN_LIME);
+            event.accept(ModItems.WATERING_CAN_GREEN);
+            event.accept(ModItems.WATERING_CAN_CYAN);
+            event.accept(ModItems.WATERING_CAN_LIGHT_BLUE);
+            event.accept(ModItems.WATERING_CAN_BLUE);
+            event.accept(ModItems.WATERING_CAN_PURPLE);
+            event.accept(ModItems.WATERING_CAN_MAGENTA);
+            event.accept(ModItems.WATERING_CAN_PINK);
         }
     }
 }

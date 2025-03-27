@@ -40,6 +40,7 @@ public class ModTags {
         public static final TagKey<Item> SEED_PACKET_PEASHOOTERS = createTag("seed_packet_peashooters");
         public static final TagKey<Item> SEED_PACKET_MUSHROOMS = createTag("seed_packet_mushrooms");
 
+        public static final TagKey<Item> WATERING_CANS = createTag("watering_cans");
         public static final TagKey<Item> SNAIL_FOOD = createTag("snail_food");
 
         private static TagKey<Item> createTag(String name){

@@ -7,18 +7,15 @@
     },
     "@": {
       "item": "minecraft:water_bucket"
-    },
-    "!": {
-      "item": "minecraft:cyan_dye"
     }
   },
   "pattern": [
     "  #",
-    "#@!",
+    "#@ ",
     "## "
   ],
   "result": {
     "count": 1,
-    "id": "gardensandgraves:watering_can"
+    "id": "gardensandgraves:watering_can_white"
   }
 }

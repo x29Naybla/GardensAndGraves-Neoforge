@@ -39,6 +39,25 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.SEED_PACKET_FUME_SHROOM.get())
                 .add(ModItems.SEED_PACKET_DOOM_SHROOM.get());
 
+        tag(ModTags.Items.WATERING_CANS)
+                .add(ModItems.WATERING_CAN_WHITE.get())
+                .add(ModItems.WATERING_CAN_LIGHT_GRAY.get())
+                .add(ModItems.WATERING_CAN_GRAY.get())
+                .add(ModItems.WATERING_CAN_BLACK.get())
+                .add(ModItems.WATERING_CAN_BROWN.get())
+                .add(ModItems.WATERING_CAN_RED.get())
+                .add(ModItems.WATERING_CAN_ORANGE.get())
+                .add(ModItems.WATERING_CAN_YELLOW.get())
+                .add(ModItems.WATERING_CAN_LIME.get())
+                .add(ModItems.WATERING_CAN_GREEN.get())
+                .add(ModItems.WATERING_CAN_CYAN.get())
+                .add(ModItems.WATERING_CAN_LIGHT_BLUE.get())
+                .add(ModItems.WATERING_CAN_BLUE.get())
+                .add(ModItems.WATERING_CAN_PURPLE.get())
+                .add(ModItems.WATERING_CAN_MAGENTA.get())
+                .add(ModItems.WATERING_CAN_PINK.get());
+
+
         tag(ModTags.Items.SNAIL_FOOD)
                 .addTag(ItemTags.LEAVES)
                 .add(Items.SHORT_GRASS)

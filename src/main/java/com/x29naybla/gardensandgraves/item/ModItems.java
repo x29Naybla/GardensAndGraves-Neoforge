@@ -64,8 +64,38 @@ public class ModItems {
             () -> new BannerPatternItem(BRAINZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1)));
     public static final DeferredItem<Item> MUSIC_DISC_WABBY_WABBO = ITEMS.register("music_disc_wabby_wabbo",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE).jukeboxPlayable(ModSounds.WABBY_WABBO_KEY).stacksTo(1)));
-    public static final DeferredItem<Item> WATERING_CAN = ITEMS.register("watering_can",
-            () -> new WateringCanItem(new Item.Properties()));
+    public static final DeferredItem<Item> WATERING_CAN_WHITE = ITEMS.register("watering_can_white",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_LIGHT_GRAY = ITEMS.register("watering_can_light_gray",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_GRAY = ITEMS.register("watering_can_gray",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_BLACK = ITEMS.register("watering_can_black",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_BROWN = ITEMS.register("watering_can_brown",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_RED = ITEMS.register("watering_can_red",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_ORANGE = ITEMS.register("watering_can_orange",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_YELLOW = ITEMS.register("watering_can_yellow",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_LIME = ITEMS.register("watering_can_lime",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_GREEN = ITEMS.register("watering_can_green",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_CYAN = ITEMS.register("watering_can_cyan",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_LIGHT_BLUE = ITEMS.register("watering_can_light_blue",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_BLUE = ITEMS.register("watering_can_blue",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_PURPLE = ITEMS.register("watering_can_purple",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_MAGENTA = ITEMS.register("watering_can_magenta",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> WATERING_CAN_PINK = ITEMS.register("watering_can_pink",
+            () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> SNAIL_SPAWN_EGG = ITEMS.register("snail_spawn_egg",
             () -> new SpawnEggItem(ModEntities.SNAIL.get(), 0x706725, 0xf09f48, new Item.Properties()));
