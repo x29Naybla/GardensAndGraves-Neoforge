@@ -13,4 +13,7 @@ public class ModDamageTypes {
 
     public static final ResourceKey<DamageType> FROZEN_PEA_DAMAGE =
             ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "frozen_pea_projectile"));
+
+    public static final ResourceKey<DamageType> PLANT_EXPLOSION =
+            ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "plant_explosion"));
 }

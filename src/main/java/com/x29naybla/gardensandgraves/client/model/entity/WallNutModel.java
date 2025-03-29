@@ -6,7 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.model.GeoModel;
 
-public class WallNutEntityModel extends GeoModel {
+public class WallNutModel extends GeoModel {
     private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "geo/entity/wall_nut.geo.json");
 
     @Override

@@ -2,7 +2,6 @@ package com.x29naybla.gardensandgraves.client.model.entity;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
 import com.x29naybla.gardensandgraves.entity.RepeaterEntity;
-import com.x29naybla.gardensandgraves.entity.SunflowerEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animation.AnimationState;
@@ -11,7 +10,7 @@ import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.model.data.EntityModelData;
 
-public class RepeaterEntityModel extends GeoModel {
+public class RepeaterModel extends GeoModel {
     private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "geo/entity/repeater.geo.json");
     private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "textures/entity/repeater.png");
     private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "animations/entity/peashooter.animation.json");

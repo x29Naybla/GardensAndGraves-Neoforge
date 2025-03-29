@@ -1,7 +1,7 @@
 package com.x29naybla.gardensandgraves.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.x29naybla.gardensandgraves.client.model.entity.SunflowerEntityModel;
+import com.x29naybla.gardensandgraves.client.model.entity.SunflowerModel;
 import com.x29naybla.gardensandgraves.entity.SunflowerEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -9,7 +9,7 @@ import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 public class SunflowerRenderer extends GeoEntityRenderer<SunflowerEntity> {
     public SunflowerRenderer(EntityRendererProvider.Context context) {
-        super(context, new SunflowerEntityModel());
+        super(context, new SunflowerModel());
     }
 
     @Override

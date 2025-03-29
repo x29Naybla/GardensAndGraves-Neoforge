@@ -28,8 +28,9 @@ public class ModEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<SnowPeaEntity>> SNOW_PEA = register("snow_pea", SnowPeaEntity::new, 0.5f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<RepeaterEntity>> REPEATER = register("repeater", RepeaterEntity::new, 0.5f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<WallNutEntity>> WALL_NUT = register("wall_nut", WallNutEntity::new, 0.8f, 1.3f);
+    public static final DeferredHolder<EntityType<?>, EntityType<PotatoMineEntity>> POTATO_MINE = register("potato_mine", PotatoMineEntity::new, 0.7f, 0.7f);
     public static final DeferredHolder<EntityType<?>, EntityType<SunShroomEntity>> SUN_SHROOM = register("sun_shroom", SunShroomEntity::new, 0.7f, 0.9f);
-    public static final DeferredHolder<EntityType<?>, EntityType<PuffShroomEntity>> PUFF_SHROOM = register("puff_shroom", PuffShroomEntity::new, 0.5f, 0.9f);
+    public static final DeferredHolder<EntityType<?>, EntityType<PuffShroomEntity>> PUFF_SHROOM = register("puff_shroom", PuffShroomEntity::new, 0.5f, 0.5f);
     public static final DeferredHolder<EntityType<?>, EntityType<DoomShroomEntity>> DOOM_SHROOM = register("doom_shroom", DoomShroomEntity::new, 0.7f, 0.9f);
 
     public static final DeferredHolder<EntityType<?>, EntityType<SnailEntity>> SNAIL = register("snail", SnailEntity::new, 0.7f, 0.6f);
@@ -78,6 +79,13 @@ public class ModEntities {
                 .add(Attributes.MAX_HEALTH, 400)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99);
 
+        AttributeSupplier.Builder potatoMineAttributes = PathfinderMob.createMobAttributes()
+                .add(Attributes.MOVEMENT_SPEED,-99)
+                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 99)
+                .add(Attributes.ATTACK_DAMAGE, 180)
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 1);
+
         AttributeSupplier.Builder puffShroomAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
                 .add(Attributes.MAX_HEALTH, 30)
@@ -95,7 +103,7 @@ public class ModEntities {
 
         AttributeSupplier.Builder snailAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,0.05)
-                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.MAX_HEALTH, 4)
                 .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
 
         event.put(ModEntities.SUNFLOWER.get(), sunflowerAttributes.build());
@@ -104,6 +112,7 @@ public class ModEntities {
         event.put(ModEntities.SNOW_PEA.get(), snowPeashooterAttributes.build());
         event.put(ModEntities.REPEATER.get(), repeaterAttributes.build());
         event.put(ModEntities.WALL_NUT.get(), wallNutAttributes.build());
+        event.put(ModEntities.POTATO_MINE.get(), potatoMineAttributes.build());
         event.put(ModEntities.SUN_SHROOM.get(), sunflowerAttributes.build());
         event.put(ModEntities.PUFF_SHROOM.get(), puffShroomAttributes.build());
         event.put(ModEntities.DOOM_SHROOM.get(), doomShroomAttributes.build());

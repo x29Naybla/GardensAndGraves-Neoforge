@@ -31,12 +31,14 @@ public class ModEntityTagsProvider extends EntityTypeTagsProvider {
 
         tag(ModTags.Entities.MUSHROOMS)
                 .add(ModEntities.SUN_SHROOM.get())
+                .add(ModEntities.PUFF_SHROOM.get())
                 .add(ModEntities.DOOM_SHROOM.get());
 
         tag(ModTags.Entities.PLANTS)
                 .addTag(ModTags.Entities.FLOWERS)
                 .addTag(ModTags.Entities.PEASHOOTERS)
                 .add(ModEntities.WALL_NUT.get())
+                .add(ModEntities.POTATO_MINE.get())
                 .addTag(ModTags.Entities.MUSHROOMS);
 
         tag(ModTags.Entities.PLANT_ENEMIES)

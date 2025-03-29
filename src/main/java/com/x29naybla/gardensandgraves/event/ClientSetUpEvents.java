@@ -20,6 +20,7 @@ public class ClientSetUpEvents {
         event.registerEntityRenderer(ModEntities.SNOW_PEA.get(), SnowPeashooterRenderer::new);
         event.registerEntityRenderer(ModEntities.REPEATER.get(), RepeaterRenderer::new);
         event.registerEntityRenderer(ModEntities.WALL_NUT.get(), WallNutRenderer::new);
+        event.registerEntityRenderer(ModEntities.POTATO_MINE.get(), PotatoMineRenderer::new);
         event.registerEntityRenderer(ModEntities.SUN_SHROOM.get(), SunShroomRenderer::new);
         event.registerEntityRenderer(ModEntities.PUFF_SHROOM.get(), PuffShroomRenderer::new);
         event.registerEntityRenderer(ModEntities.DOOM_SHROOM.get(), DoomShroomRenderer::new);

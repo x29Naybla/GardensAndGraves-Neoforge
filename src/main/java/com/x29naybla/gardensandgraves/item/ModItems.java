@@ -19,6 +19,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> SUN = ITEMS.register("sun",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BRAIN = ITEMS.register("brain",
+            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_SUNFLOWER = ITEMS.register("seed_packet_sunflower",
             () -> new SeedPacketItem(ModEntities.SUNFLOWER.get(), 2, 5, new Item.Properties()));
@@ -36,7 +38,7 @@ public class ModItems {
             () -> new SeedPacketItem(ModEntities.WALL_NUT.get(), 4, 20, new Item.Properties()));
 
     public static final DeferredItem<Item> SEED_PACKET_POTATO_MINE = ITEMS.register("seed_packet_potato_mine",
-            () -> new Item(new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.POTATO_MINE.get(), 1, 20, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_JALAPENO = ITEMS.register("seed_packet_jalapeno",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_CHOMPER = ITEMS.register("seed_packet_chomper",

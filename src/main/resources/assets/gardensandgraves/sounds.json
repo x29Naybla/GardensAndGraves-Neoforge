@@ -42,5 +42,19 @@
         "name": "gardensandgraves:snow_pea_sparkles"
       }
     ]
+  },
+  "doom": {
+    "sounds": [
+      {
+        "name": "gardensandgraves:doomshroom"
+      }
+    ]
+  },
+  "spudow": {
+    "sounds": [
+      {
+        "name": "gardensandgraves:potato_mine"
+      }
+    ]
   }
 }

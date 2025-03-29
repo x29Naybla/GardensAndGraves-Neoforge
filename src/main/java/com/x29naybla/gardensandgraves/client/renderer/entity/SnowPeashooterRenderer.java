@@ -1,7 +1,7 @@
 package com.x29naybla.gardensandgraves.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.x29naybla.gardensandgraves.client.model.entity.SnowPeashooterEntityModel;
+import com.x29naybla.gardensandgraves.client.model.entity.SnowPeaModel;
 import com.x29naybla.gardensandgraves.entity.SnowPeaEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -9,7 +9,7 @@ import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 public class SnowPeashooterRenderer extends GeoEntityRenderer<SnowPeaEntity> {
     public SnowPeashooterRenderer(EntityRendererProvider.Context context) {
-        super(context, new SnowPeashooterEntityModel());
+        super(context, new SnowPeaModel());
     }
 
     @Override

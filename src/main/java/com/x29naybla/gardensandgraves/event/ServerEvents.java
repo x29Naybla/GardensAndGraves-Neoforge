@@ -3,6 +3,7 @@ package com.x29naybla.gardensandgraves.event;
 import com.x29naybla.gardensandgraves.GardensAndGraves;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.Plant;
+import com.x29naybla.gardensandgraves.entity.PotatoMineEntity;
 import com.x29naybla.gardensandgraves.entity.WallNutEntity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -22,7 +23,8 @@ public class ServerEvents {
     public static void addAdditionalGoals(EntityJoinLevelEvent event){
         if (event.getEntity() instanceof  Mob mob){
             if (mob.getType().is(ModTags.Entities.PLANT_ENEMIES)){
-                mob.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(mob, WallNutEntity.class, true));
+                mob.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(mob, (WallNutEntity.class), true));
+                mob.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(mob, (PotatoMineEntity.class), true));
                 mob.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(mob, Plant.class, true));
             }
         }

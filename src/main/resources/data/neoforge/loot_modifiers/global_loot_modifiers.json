@@ -12,6 +12,12 @@
     "gardensandgraves:add_loot_ancient_city_ice_box",
     "gardensandgraves:add_loot_woodland_mansion",
     "gardensandgraves:add_loot_shipwreck_treasure",
-    "gardensandgraves:add_loot_abandoned_mineshaft"
+    "gardensandgraves:add_loot_abandoned_mineshaft",
+    "gardensandgraves:brain_from_villager",
+    "gardensandgraves:brain_from_wandering_trader",
+    "gardensandgraves:brain_from_pillager",
+    "gardensandgraves:brain_from_evoker",
+    "gardensandgraves:brain_from_vindicator",
+    "gardensandgraves:brain_from_witch"
   ]
 }

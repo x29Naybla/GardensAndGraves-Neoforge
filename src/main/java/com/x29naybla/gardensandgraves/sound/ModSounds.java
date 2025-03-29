@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.JukeboxSong;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -25,11 +26,14 @@ public class ModSounds {
     public static final Supplier<SoundEvent> MONEYFALLS = registerSoundEvent("moneyfalls");
     public static final Supplier<SoundEvent> SNOW_PEA_SPARKLES = registerSoundEvent("snow_pea_sparkles");
 
+    public static final DeferredHolder<SoundEvent, SoundEvent> SPUDOW = registerSoundEvent("spudow");
+    public static final DeferredHolder<SoundEvent, SoundEvent> DOOM = registerSoundEvent("doom");
+
     private static ResourceKey<JukeboxSong> createSong(String name){
         return ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));
     }
 
-    private static Supplier<SoundEvent> registerSoundEvent(String name){
+    private static DeferredHolder<SoundEvent, SoundEvent> registerSoundEvent(String name){
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name);
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
     }

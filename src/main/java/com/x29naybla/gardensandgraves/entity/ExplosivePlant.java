@@ -1,15 +1,25 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.data.ModDamageTypes;
+import com.x29naybla.gardensandgraves.data.ModTags;
+import com.x29naybla.gardensandgraves.sound.ModSounds;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.ExplosionDamageCalculator;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 
@@ -20,10 +30,13 @@ public class ExplosivePlant extends Plant{
     private int oldSwell;
     private int swell;
     private int maxSwell = 10;
-    private int explosionRadius = 9;
+    private int explosionRadius;
+    private Holder<SoundEvent> sound;
 
-    public ExplosivePlant(EntityType<? extends TamableAnimal> entityType, Level level) {
+    public ExplosivePlant(EntityType<? extends TamableAnimal> entityType, Level level, int explosionRadius, Holder<SoundEvent> sound) {
         super(entityType, level);
+        this.explosionRadius = explosionRadius;
+        this.sound = sound;
     }
 
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
@@ -95,7 +108,7 @@ public class ExplosivePlant extends Plant{
     private void explode() {
         if (!this.level().isClientSide) {
             this.dead = true;
-            this.level().explode(this, this.getX(), this.getY(), this.getZ(), this.explosionRadius, Level.ExplosionInteraction.NONE);
+            this.level().explode(this, this.damageSources().source(ModDamageTypes.PLANT_EXPLOSION), null, this.getX(), this.getY(), this.getZ(), this.explosionRadius, false, Level.ExplosionInteraction.NONE, ParticleTypes.EXPLOSION, ParticleTypes.EXPLOSION, sound);
             this.triggerOnDeathMobEffects(RemovalReason.KILLED);
             this.discard();
         }

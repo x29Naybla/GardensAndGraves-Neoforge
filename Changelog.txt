@@ -10,7 +10,14 @@ changelog:
 * added Wall-nut hurt stages
 * added snails
 
-* added snails generation in swamps, mangrove swamps, jungles, and all forests
+* added snails generation in swamps, mangrove swamps, jungles, and all non-coniferous forests
 
 * fixed Snow Peas shooting playing 2 sounds
 * reorder of the items creative tab
+
+* added the Potato-mine
+* fixed the Puff-shroom not being in the mushrooms tag
+* fixed incorrect Puff-shroom hitbox height
+* added custom explosion sounds for the Doom-shroom and Potato-mine
+* added brains that drop from villagers, wandering traders, illagers, witches, piglins, and piglin brutes
+* added recipe for the brainz banner pattern

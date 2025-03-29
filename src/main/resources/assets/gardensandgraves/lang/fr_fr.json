@@ -15,7 +15,7 @@
   "item.gardensandgraves.seed_packet_wall_nut.desc": "Coût du soleil : 2",
 
   "item.gardensandgraves.seed_packet_potato_mine": "Sachet de graines de mine patate",
-  "item.gardensandgraves.seed_packet_potato_mine.desc": "Coût du soleil :",
+  "item.gardensandgraves.seed_packet_potato_mine.desc": "Coût du soleil : 1",
   "item.gardensandgraves.seed_packet_jalapeno": "Sachet de graines de jalapeño",
   "item.gardensandgraves.seed_packet_jalapeno.desc": "Coût du soleil :",
   "item.gardensandgraves.seed_packet_chomper": "Sachet de graines de mordeur",
@@ -35,6 +35,7 @@
   "item.gardensandgraves.seed_packet_doom_shroom.desc": "Coût du soleil : 5",
 
   "item.gardensandgraves.sun": "Soleil",
+  "item.gardensandgraves.brain": "Brain",
   "item.gardensandgraves.watering_can_white": "White Watering Can",
   "item.gardensandgraves.watering_can_light_gray": "Light Gray Watering Can",
   "item.gardensandgraves.watering_can_gray": "Gray Watering Can",
@@ -120,6 +121,7 @@
 
   "death.attack.pea": "%1$s got pead to death by %2$s",
   "death.attack.frozen_pea": "%1$s got peapsicled by %2$s",
+  "death.attack.plant_explosion": "%1$s got turned into mush by %2$s",
 
   "creativetab.gardensandgraves.blocks": "G&G blocs",
   "creativetab.gardensandgraves.items": "G&G objets",

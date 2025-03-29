@@ -1,7 +1,7 @@
 package com.x29naybla.gardensandgraves.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.x29naybla.gardensandgraves.client.model.entity.MarigoldEntityModel;
+import com.x29naybla.gardensandgraves.client.model.entity.MarigoldModel;
 import com.x29naybla.gardensandgraves.entity.MarigoldEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -9,7 +9,7 @@ import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
 public class MarigoldRenderer extends GeoEntityRenderer<MarigoldEntity> {
     public MarigoldRenderer(EntityRendererProvider.Context context) {
-        super(context, new MarigoldEntityModel());
+        super(context, new MarigoldModel());
         this.addRenderLayer(new MarigoldPetalsRenderer(this));
     }
 

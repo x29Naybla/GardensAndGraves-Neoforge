@@ -10,30 +10,37 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.animation.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class DoomShroomEntity extends ExplosivePlant {
+import java.util.function.Supplier;
+
+public class PotatoMineEntity extends ExplosivePlant {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
-    public DoomShroomEntity(EntityType<? extends DoomShroomEntity> entityType, Level level) {
-        super(entityType, level, 9, ModSounds.DOOM);
+    public PotatoMineEntity(EntityType<? extends PotatoMineEntity> entityType, Level level) {
+        super(entityType, level, 1, ModSounds.SPUDOW);
     }
 
     @Override
     public @Nullable ItemStack getPickResult() {
-        return ModItems.SEED_PACKET_DOOM_SHROOM.toStack();
+        return ModItems.SEED_PACKET_POTATO_MINE.toStack();
     }
 
     @Override
     public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherparent) {;
-        return ModEntities.DOOM_SHROOM.get().create(level);
+        return ModEntities.POTATO_MINE.get().create(level);
     }
 
     @Override
@@ -41,7 +48,7 @@ public class DoomShroomEntity extends ExplosivePlant {
         controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::animController));
     }
 
-    protected <E extends DoomShroomEntity> PlayState animController(final AnimationState<E> event) {
+    protected <E extends PotatoMineEntity> PlayState animController(final AnimationState<E> event) {
         return PlayState.CONTINUE;
     }
 
