@@ -1,6 +1,7 @@
 {
 	"parent":"gardensandgraves:block/planter",
 	"textures":{
-		"0": "gardensandgraves:block/planter_lime"
+		"0": "gardensandgraves:block/planter_lime",
+		"particle": "minecraft:block/lime_terracotta"
 	}
 }

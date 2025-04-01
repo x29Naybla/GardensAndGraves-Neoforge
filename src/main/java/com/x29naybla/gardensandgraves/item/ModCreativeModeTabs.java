@@ -82,6 +82,23 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PLANTER_MAGENTA);
                         output.accept(ModBlocks.PLANTER_PINK);
 
+                        output.accept(ModBlocks.WHITE_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.LIGHT_GRAY_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.GRAY_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.BLACK_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.BROWN_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.RED_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.ORANGE_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.YELLOW_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.LIME_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.GREEN_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.CYAN_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.LIGHT_BLUE_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.BLUE_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.PURPLE_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.MAGENTA_PLASTIC_BLOCK);
+                        output.accept(ModBlocks.PINK_PLASTIC_BLOCK);
+
                     }).build());
 
 

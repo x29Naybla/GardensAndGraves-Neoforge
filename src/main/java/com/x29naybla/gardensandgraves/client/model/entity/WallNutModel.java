@@ -16,9 +16,9 @@ public class WallNutModel extends GeoModel {
 
     @Override
     public ResourceLocation getTextureResource(GeoAnimatable animatable) {
-        if (((WallNutEntity) animatable).getHealth() <= 133) {
+        if (((WallNutEntity) animatable).getHealth() <= 72) {
             return ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "textures/entity/wall_nut_dying.png");
-        } else if (((WallNutEntity) animatable).getHealth() <= 266) {
+        } else if (((WallNutEntity) animatable).getHealth() <= 144) {
             return ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "textures/entity/wall_nut_hurt.png");
         } else
             return ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "textures/entity/wall_nut.png");

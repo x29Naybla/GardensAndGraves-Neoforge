@@ -1,0 +1,9 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "gardensandgraves:block/cyan_plastic_block"
+      }
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
 	"parent":"gardensandgraves:block/planter",
 	"textures":{
-		"0": "gardensandgraves:block/planter_brown"
+		"0": "gardensandgraves:block/planter_brown",
+		"particle": "minecraft:block/brown_terracotta"
 	}
 }

@@ -20,42 +20,42 @@ public class ModItems {
     public static final DeferredItem<Item> SUN = ITEMS.register("sun",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> BRAIN = ITEMS.register("brain",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().food(ModFoodProperties.BRAIN)));
 
     public static final DeferredItem<Item> SEED_PACKET_SUNFLOWER = ITEMS.register("seed_packet_sunflower",
-            () -> new SeedPacketItem(ModEntities.SUNFLOWER.get(), 2, 5, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.SUNFLOWER.get(), 2, 5, new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SEED_PACKET_MARIGOLD = ITEMS.register("seed_packet_marigold",
-            () -> new SeedPacketItem(ModEntities.MARIGOLD.get(), 2, 10, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.MARIGOLD.get(), 2, 10, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> SEED_PACKET_PEASHOOTER = ITEMS.register("seed_packet_peashooter",
-            () -> new SeedPacketItem(ModEntities.PEASHOOTER.get(), 4, 5, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.PEASHOOTER.get(), 4, 5, new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SEED_PACKET_SNOW_PEA = ITEMS.register("seed_packet_snow_pea",
-            () -> new SeedPacketItem(ModEntities.SNOW_PEA.get(), 6, 5, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.SNOW_PEA.get(), 6, 5, new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SEED_PACKET_REPEATER = ITEMS.register("seed_packet_repeater",
-            () -> new SeedPacketItem(ModEntities.REPEATER.get(), 8, 5, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.REPEATER.get(), 8, 5, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> SEED_PACKET_WALL_NUT = ITEMS.register("seed_packet_wall_nut",
-            () -> new SeedPacketItem(ModEntities.WALL_NUT.get(), 4, 20, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.WALL_NUT.get(), 4, 20, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> SEED_PACKET_POTATO_MINE = ITEMS.register("seed_packet_potato_mine",
-            () -> new SeedPacketItem(ModEntities.POTATO_MINE.get(), 1, 20, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.POTATO_MINE.get(), 1, 20, new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SEED_PACKET_JALAPENO = ITEMS.register("seed_packet_jalapeno",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SEED_PACKET_CHOMPER = ITEMS.register("seed_packet_chomper",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SEED_PACKET_BONK_CHOY = ITEMS.register("seed_packet_bonk_choy",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> SEED_PACKET_SUN_SHROOM = ITEMS.register("seed_packet_sun_shroom",
-            () -> new SeedPacketItem(ModEntities.SUN_SHROOM.get(), 1, 5, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.SUN_SHROOM.get(), 1, 5, new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SEED_PACKET_PUFF_SHROOM = ITEMS.register("seed_packet_puff_shroom",
-            () -> new SeedPacketItem(ModEntities.PUFF_SHROOM.get(), 0, 5, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.PUFF_SHROOM.get(), 0, 5, new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SEED_PACKET_FUME_SHROOM = ITEMS.register("seed_packet_fume_shroom",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SEED_PACKET_HYPNO_SHROOM = ITEMS.register("seed_packet_hypno_shroom",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> SEED_PACKET_DOOM_SHROOM = ITEMS.register("seed_packet_doom_shroom",
-            () -> new SeedPacketItem(ModEntities.DOOM_SHROOM.get(), 7, 15, new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.DOOM_SHROOM.get(), 7, 15, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> PEA = ITEMS.register("pea",
             () -> new PeaItem(new Item.Properties()));

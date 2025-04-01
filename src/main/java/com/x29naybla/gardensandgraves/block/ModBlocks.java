@@ -52,6 +52,39 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PLANTER_PINK = registerBlock("planter_pink",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_TERRACOTTA).noOcclusion()));
 
+    public static final DeferredBlock<Block> WHITE_PLASTIC_BLOCK = registerBlock("white_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> LIGHT_GRAY_PLASTIC_BLOCK = registerBlock("light_gray_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> GRAY_PLASTIC_BLOCK = registerBlock("gray_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> BLACK_PLASTIC_BLOCK = registerBlock("black_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> BROWN_PLASTIC_BLOCK = registerBlock("brown_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> RED_PLASTIC_BLOCK = registerBlock("red_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> ORANGE_PLASTIC_BLOCK = registerBlock("orange_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> YELLOW_PLASTIC_BLOCK = registerBlock("yellow_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> LIME_PLASTIC_BLOCK = registerBlock("lime_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> GREEN_PLASTIC_BLOCK = registerBlock("green_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> CYAN_PLASTIC_BLOCK = registerBlock("cyan_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> LIGHT_BLUE_PLASTIC_BLOCK = registerBlock("light_blue_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> BLUE_PLASTIC_BLOCK = registerBlock("blue_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> PURPLE_PLASTIC_BLOCK = registerBlock("purple_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> MAGENTA_PLASTIC_BLOCK = registerBlock("magenta_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final DeferredBlock<Block> PINK_PLASTIC_BLOCK = registerBlock("pink_plastic_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

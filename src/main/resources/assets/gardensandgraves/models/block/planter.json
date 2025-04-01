@@ -5,7 +5,7 @@
 	"textures": {
 		"0": "gardensandgraves:block/planter",
 		"1": "block/dirt",
-		"particle": "gardensandgraves:block/planter"
+		"particle": "minecraft:block/terracotta"
 	},
 	"elements": [
 		{

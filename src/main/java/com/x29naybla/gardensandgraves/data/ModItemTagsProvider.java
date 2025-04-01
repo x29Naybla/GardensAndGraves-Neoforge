@@ -66,38 +66,80 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(Items.SWEET_BERRIES)
                 .add(Items.MELON_SLICE);;
 
-        //C Tags
+        //Common Tags
         tag(Tags.Items.DYED_WHITE)
-                .add(ModBlocks.PLANTER_WHITE.asItem());
+                .add(ModBlocks.PLANTER_WHITE.asItem())
+                .add(ModBlocks.WHITE_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_WHITE.get());
         tag(Tags.Items.DYED_LIGHT_GRAY)
-                .add(ModBlocks.PLANTER_LIGHT_GRAY.asItem());
+                .add(ModBlocks.PLANTER_LIGHT_GRAY.asItem())
+                .add(ModBlocks.LIGHT_GRAY_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_LIGHT_GRAY.get());
         tag(Tags.Items.DYED_GRAY)
-                .add(ModBlocks.PLANTER_GRAY.asItem());
+                .add(ModBlocks.PLANTER_GRAY.asItem())
+                .add(ModBlocks.GRAY_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_GRAY.get());
         tag(Tags.Items.DYED_BLACK)
-                .add(ModBlocks.PLANTER_BLACK.asItem());
+                .add(ModBlocks.PLANTER_BLACK.asItem())
+                .add(ModBlocks.BLACK_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_BLACK.get());
         tag(Tags.Items.DYED_BROWN)
-                .add(ModBlocks.PLANTER_BROWN.asItem());
+                .add(ModBlocks.PLANTER_BROWN.asItem())
+                .add(ModBlocks.BROWN_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_BROWN.get());
         tag(Tags.Items.DYED_RED)
-                .add(ModBlocks.PLANTER_RED.asItem());
+                .add(ModBlocks.PLANTER_RED.asItem())
+                .add(ModBlocks.RED_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_RED.get());
         tag(Tags.Items.DYED_ORANGE)
-                .add(ModBlocks.PLANTER_ORANGE.asItem());
+                .add(ModBlocks.PLANTER_ORANGE.asItem())
+                .add(ModBlocks.ORANGE_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_ORANGE.get());
         tag(Tags.Items.DYED_YELLOW)
-                .add(ModBlocks.PLANTER_YELLOW.asItem());
+                .add(ModBlocks.PLANTER_YELLOW.asItem())
+                .add(ModBlocks.YELLOW_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_YELLOW.get());
         tag(Tags.Items.DYED_LIME)
-                .add(ModBlocks.PLANTER_LIME.asItem());
+                .add(ModBlocks.PLANTER_LIME.asItem())
+                .add(ModBlocks.LIME_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_LIME.get());
         tag(Tags.Items.DYED_GREEN)
-                .add(ModBlocks.PLANTER_GREEN.asItem());
+                .add(ModBlocks.PLANTER_GREEN.asItem())
+                .add(ModBlocks.GREEN_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_GREEN.get());
         tag(Tags.Items.DYED_CYAN)
-                .add(ModBlocks.PLANTER_CYAN.asItem());
+                .add(ModBlocks.PLANTER_CYAN.asItem())
+                .add(ModBlocks.CYAN_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_CYAN.get());
         tag(Tags.Items.DYED_LIGHT_BLUE)
-                .add(ModBlocks.PLANTER_LIGHT_BLUE.asItem());
+                .add(ModBlocks.PLANTER_LIGHT_BLUE.asItem())
+                .add(ModBlocks.LIGHT_BLUE_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_LIGHT_BLUE.get());
         tag(Tags.Items.DYED_BLUE)
-                .add(ModBlocks.PLANTER_BLUE.asItem());
+                .add(ModBlocks.PLANTER_BLUE.asItem())
+                .add(ModBlocks.BLUE_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_BLUE.get());
         tag(Tags.Items.DYED_PURPLE)
-                .add(ModBlocks.PLANTER_PURPLE.asItem());
+                .add(ModBlocks.PLANTER_PURPLE.asItem())
+                .add(ModBlocks.PURPLE_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_PURPLE.get());
         tag(Tags.Items.DYED_MAGENTA)
-                .add(ModBlocks.PLANTER_MAGENTA.asItem());
+                .add(ModBlocks.PLANTER_MAGENTA.asItem())
+                .add(ModBlocks.MAGENTA_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_MAGENTA.get());
         tag(Tags.Items.DYED_PINK)
-                .add(ModBlocks.PLANTER_PINK.asItem());
+                .add(ModBlocks.PLANTER_PINK.asItem())
+                .add(ModBlocks.PINK_PLASTIC_BLOCK.asItem())
+                .add(ModItems.WATERING_CAN_PINK.get());
+
+
+        tag(Tags.Items.MUSIC_DISCS)
+                .add(ModItems.MUSIC_DISC_WABBY_WABBO.get());
+        tag(Tags.Items.FOODS_RAW_MEAT)
+                .add(ModItems.BRAIN.get());
+
+        //Vanilla Tags
+        tag(ItemTags.MEAT)
+                .add(ModItems.BRAIN.get());
     }
 }

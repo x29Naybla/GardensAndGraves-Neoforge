@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "gardensandgraves:block/gray_plastic_block"
+  }
+}

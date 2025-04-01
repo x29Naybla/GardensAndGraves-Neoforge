@@ -1,23 +1,12 @@
 changelog:
-* added watering cans, they can make farmland moist
-* seed packets are now consumed only when used on planters
-* seed packets now have a cooldown of varying duration depending on the type of plant
-* now only plants from planters drop the seed packets back
-* fixed plant HPs
-* made plant enemies a tag instead of being hardcoded
-* optimized imports
-* raised Doom-shroom sun cost to match PvZ 2
-* added Wall-nut hurt stages
-* added snails
-
-* added snails generation in swamps, mangrove swamps, jungles, and all non-coniferous forests
-
-* fixed Snow Peas shooting playing 2 sounds
-* reorder of the items creative tab
-
-* added the Potato-mine
-* fixed the Puff-shroom not being in the mushrooms tag
-* fixed incorrect Puff-shroom hitbox height
-* added custom explosion sounds for the Doom-shroom and Potato-mine
-* added brains that drop from villagers, wandering traders, illagers, witches, piglins, and piglin brutes
-* added recipe for the brainz banner pattern
+* improved the brain texture
+* made brains edible
+* put brains in the proper tags
+* put the watering cans in the proper tags
+* put planters in missing tags, now they can support bamboo and dead bush
+* put music disc in missing tag
+* fixed planter breaking particles
+* adjusted plants HP based on bites instead of HP value itself, to account for the difference on zombie strength in both franchises
+* added blocks of plastic
+* added recipe for Farmer's Delight minced beef using brains
+* seed packets don't stack anymore

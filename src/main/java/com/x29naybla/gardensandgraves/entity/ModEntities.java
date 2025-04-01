@@ -39,17 +39,17 @@ public class ModEntities {
     public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
         AttributeSupplier.Builder sunflowerAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.MAX_HEALTH, 16)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99);
 
         AttributeSupplier.Builder marigoldAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.MAX_HEALTH, 16)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99);
 
         AttributeSupplier.Builder peashooterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.MAX_HEALTH, 16)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
@@ -58,7 +58,7 @@ public class ModEntities {
 
         AttributeSupplier.Builder snowPeashooterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.MAX_HEALTH, 16)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
@@ -67,7 +67,7 @@ public class ModEntities {
 
         AttributeSupplier.Builder repeaterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.MAX_HEALTH, 16)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 4)
@@ -76,19 +76,19 @@ public class ModEntities {
 
         AttributeSupplier.Builder wallNutAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 400)
+                .add(Attributes.MAX_HEALTH, 216)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99);
 
         AttributeSupplier.Builder potatoMineAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.MAX_HEALTH, 16)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_DAMAGE, 180)
                 .add(Attributes.ENTITY_INTERACTION_RANGE, 1);
 
         AttributeSupplier.Builder puffShroomAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.MAX_HEALTH, 16)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
@@ -97,7 +97,7 @@ public class ModEntities {
 
         AttributeSupplier.Builder doomShroomAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
-                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.MAX_HEALTH, 16)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
 
