@@ -135,6 +135,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         tag(Tags.Items.MUSIC_DISCS)
                 .add(ModItems.MUSIC_DISC_WABBY_WABBO.get());
+        tag(Tags.Items.TOOLS)
+                .addTag(ModTags.Items.WATERING_CANS);
         tag(Tags.Items.FOODS_RAW_MEAT)
                 .add(ModItems.BRAIN.get());
 

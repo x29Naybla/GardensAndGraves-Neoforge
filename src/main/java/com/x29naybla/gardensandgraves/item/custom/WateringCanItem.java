@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -24,9 +25,22 @@ public class WateringCanItem extends Item {
         BlockPlaceContext blockplacecontext = new BlockPlaceContext(context);
         BlockPos blockpos = blockplacecontext.getClickedPos();
 
-        if (isFarmland(level, blockpos.below())){
+        if (isCrop(level, blockpos.below())){
+            BlockState blockState = level.getBlockState(blockpos.below(2));
+            level.setBlockAndUpdate(blockpos.below(2), blockState.setValue(BlockStateProperties.MOISTURE, 7));
+            level.addParticle(ParticleTypes.SPLASH, blockpos.getX(), blockpos.getY()+0.5, blockpos.getZ(), 0, 0, 0);
+            level.playSound(null, blockpos, SoundEvents.GENERIC_SPLASH, SoundSource.BLOCKS, 0.75F, 1.8F);
+
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        } else if (isFarmland(level, blockpos.below())){
             BlockState blockState = level.getBlockState(blockpos.below());
             level.setBlockAndUpdate(blockpos.below(), blockState.setValue(BlockStateProperties.MOISTURE, 7));
+            level.addParticle(ParticleTypes.SPLASH, blockpos.getX(), blockpos.getY()+0.5, blockpos.getZ(), 0, 0, 0);
+            level.playSound(null, blockpos, SoundEvents.GENERIC_SPLASH, SoundSource.BLOCKS, 0.75F, 1.8F);
+
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        } else if (isMudable(level, blockpos.below())){
+            level.setBlockAndUpdate(blockpos, Blocks.MUD.defaultBlockState());
             level.addParticle(ParticleTypes.SPLASH, blockpos.getX(), blockpos.getY()+0.5, blockpos.getZ(), 0, 0, 0);
             level.playSound(null, blockpos, SoundEvents.GENERIC_SPLASH, SoundSource.BLOCKS, 0.75F, 1.8F);
 
@@ -36,5 +50,13 @@ public class WateringCanItem extends Item {
 
     public static boolean isFarmland(BlockGetter reader, BlockPos pos) {
         return reader.getBlockState(pos).is(Blocks.FARMLAND);
+    }
+
+    public static boolean isCrop(BlockGetter reader, BlockPos pos) {
+        return reader.getBlockState(pos).is(BlockTags.MAINTAINS_FARMLAND);
+    }
+
+    public static boolean isMudable(BlockGetter reader, BlockPos pos) {
+        return reader.getBlockState(pos).is(BlockTags.CONVERTABLE_TO_MUD);
     }
 }

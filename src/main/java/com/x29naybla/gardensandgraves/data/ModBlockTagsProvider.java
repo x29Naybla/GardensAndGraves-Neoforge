@@ -104,58 +104,16 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         //Vanilla Tags
         tag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
-                .add(ModBlocks.PLANTER_WHITE.get())
-                .add(ModBlocks.PLANTER_LIGHT_GRAY.get())
-                .add(ModBlocks.PLANTER_GRAY.get())
-                .add(ModBlocks.PLANTER_BLACK.get())
-                .add(ModBlocks.PLANTER_BROWN.get())
-                .add(ModBlocks.PLANTER_RED.get())
-                .add(ModBlocks.PLANTER_ORANGE.get())
-                .add(ModBlocks.PLANTER_YELLOW.get())
-                .add(ModBlocks.PLANTER_LIME.get())
-                .add(ModBlocks.PLANTER_GREEN.get())
-                .add(ModBlocks.PLANTER_CYAN.get())
-                .add(ModBlocks.PLANTER_LIGHT_BLUE.get())
-                .add(ModBlocks.PLANTER_BLUE.get())
-                .add(ModBlocks.PLANTER_PURPLE.get())
-                .add(ModBlocks.PLANTER_MAGENTA.get())
-                .add(ModBlocks.PLANTER_PINK.get());
+                .addTag(ModTags.Blocks.PLANTERS);
+
+        tag(BlockTags.SMALL_DRIPLEAF_PLACEABLE)
+                .addTag(ModTags.Blocks.PLANTERS);
 
         tag(BlockTags.BIG_DRIPLEAF_PLACEABLE)
-                .add(ModBlocks.PLANTER_WHITE.get())
-                .add(ModBlocks.PLANTER_LIGHT_GRAY.get())
-                .add(ModBlocks.PLANTER_GRAY.get())
-                .add(ModBlocks.PLANTER_BLACK.get())
-                .add(ModBlocks.PLANTER_BROWN.get())
-                .add(ModBlocks.PLANTER_RED.get())
-                .add(ModBlocks.PLANTER_ORANGE.get())
-                .add(ModBlocks.PLANTER_YELLOW.get())
-                .add(ModBlocks.PLANTER_LIME.get())
-                .add(ModBlocks.PLANTER_GREEN.get())
-                .add(ModBlocks.PLANTER_CYAN.get())
-                .add(ModBlocks.PLANTER_LIGHT_BLUE.get())
-                .add(ModBlocks.PLANTER_BLUE.get())
-                .add(ModBlocks.PLANTER_PURPLE.get())
-                .add(ModBlocks.PLANTER_MAGENTA.get())
-                .add(ModBlocks.PLANTER_PINK.get());
+                .addTag(ModTags.Blocks.PLANTERS);
 
         tag(BlockTags.BAMBOO_PLANTABLE_ON)
-                .add(ModBlocks.PLANTER_WHITE.get())
-                .add(ModBlocks.PLANTER_LIGHT_GRAY.get())
-                .add(ModBlocks.PLANTER_GRAY.get())
-                .add(ModBlocks.PLANTER_BLACK.get())
-                .add(ModBlocks.PLANTER_BROWN.get())
-                .add(ModBlocks.PLANTER_RED.get())
-                .add(ModBlocks.PLANTER_ORANGE.get())
-                .add(ModBlocks.PLANTER_YELLOW.get())
-                .add(ModBlocks.PLANTER_LIME.get())
-                .add(ModBlocks.PLANTER_GREEN.get())
-                .add(ModBlocks.PLANTER_CYAN.get())
-                .add(ModBlocks.PLANTER_LIGHT_BLUE.get())
-                .add(ModBlocks.PLANTER_BLUE.get())
-                .add(ModBlocks.PLANTER_PURPLE.get())
-                .add(ModBlocks.PLANTER_MAGENTA.get())
-                .add(ModBlocks.PLANTER_PINK.get());
+                .addTag(ModTags.Blocks.PLANTERS);
 
     }
 }

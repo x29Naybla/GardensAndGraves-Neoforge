@@ -87,11 +87,11 @@ public class SeedPacketItem extends Item {
                                 plant.setBaby(true);
                                 plant.fromPlanter(true);
                                 if (plant instanceof MarigoldEntity) ((MarigoldEntity) plant).setColor(DyeColor.byId(level.getRandom().nextIntBetweenInclusive(0, 15)));
-                                itemStack.shrink(1);
                             }else
                                 plant.fromPlanter(false);
                             if(entity instanceof SunShroomEntity) plant.setBaby(true);
                         }
+                        itemStack.shrink(1);
                         context.getPlayer().getCooldowns().addCooldown(this, cooldown);
                         serverlevel.addFreshEntityWithPassengers(entity);
                         level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);

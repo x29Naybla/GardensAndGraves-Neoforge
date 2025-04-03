@@ -3,10 +3,12 @@ changelog:
 * made brains edible
 * put brains in the proper tags
 * put the watering cans in the proper tags
-* put planters in missing tags, now they can support bamboo and dead bush
+* put planters in missing tags, now they can support bamboo, big and small drip leaf, and dead bush
 * put music disc in missing tag
 * fixed planter breaking particles
 * adjusted plants HP based on bites instead of HP value itself, to account for the difference on zombie strength in both franchises
 * added blocks of plastic
 * added recipe for Farmer's Delight minced beef using brains
-* seed packets don't stack anymore
+
+* watering cans can also be used to water crops and make mud
+* reverted "seed packets are now consumed only when used on planters"
