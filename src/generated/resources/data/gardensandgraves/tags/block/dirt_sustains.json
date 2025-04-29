@@ -1,0 +1,19 @@
+{
+  "values": [
+    "minecraft:short_grass",
+    "minecraft:tall_grass",
+    "minecraft:fern",
+    "minecraft:large_fern",
+    "minecraft:bamboo",
+    "minecraft:dead_bush",
+    "minecraft:small_dripleaf",
+    "minecraft:big_dripleaf",
+    "#minecraft:flowers",
+    "#minecraft:saplings",
+    "minecraft:crimson_fungus",
+    "minecraft:crimson_roots",
+    "minecraft:warped_fungus",
+    "minecraft:warped_roots",
+    "minecraft:nether_sprouts"
+  ]
+}

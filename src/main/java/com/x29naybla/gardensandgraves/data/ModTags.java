@@ -19,6 +19,13 @@ public class ModTags {
         public static final TagKey<Block> PLANTERS = createTag("planters");
         public static final TagKey<Block> SUPPORTS_PLANTS = createTag("supports_plants");
 
+        public static final TagKey<Block> DIRT_SUSTAINS = createTag("dirt_sustains");
+        public static final TagKey<Block> MYCELIUM_SUSTAINS = createTag("mycelium_sustains");
+        public static final TagKey<Block> SANDS_SUSTAINS = createTag("sands_sustains");
+        public static final TagKey<Block> SOUL_SAND_SUSTAINS = createTag("soul_sand_sustains");
+
+        public static final TagKey<Block> MUSHROOMS = commonBlockTag("mushrooms");
+
         private static TagKey<Block> createTag(String name){
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));
         }
@@ -34,8 +41,6 @@ public class ModTags {
 
     public static class Items {
         //Gardens and Graves Tags
-        public static final TagKey<Item> PLANTER_SUBSTRATES = createTag("planter_substrates");
-
         public static final TagKey<Item> SEED_PACKET_FLOWERS = createTag("seed_packet_flowers");
         public static final TagKey<Item> SEED_PACKET_PEASHOOTERS = createTag("seed_packet_peashooters");
         public static final TagKey<Item> SEED_PACKET_MUSHROOMS = createTag("seed_packet_mushrooms");

@@ -40,9 +40,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
         SeedPacketItem item = (SeedPacketItem) this.getPickResult().getItem();
 
         if(player.getItemInHand(hand).getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
-            if (fromPlanter) {
-                packUp(player);
-            }
+            packUp(player);
             playSound(SoundEvents.SHOVEL_FLATTEN);
             this.discard();
             player.getItemInHand(hand).hurtAndBreak(1, player, getSlotForHand(hand));
@@ -59,11 +57,6 @@ public class Plant extends TamableAnimal implements GeoEntity {
         }
 
         return super.mobInteract(player, hand);
-    }
-
-    @Override
-    protected boolean shouldDropLoot() {
-        return this.fromPlanter;
     }
 
     @Override

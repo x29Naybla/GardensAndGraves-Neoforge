@@ -8,7 +8,6 @@
     "#minecraft:logs",
     "minecraft:lily_pad",
     "minecraft:gravel",
-    "minecraft:suspicious_gravel",
-    "#gardensandgraves:planters"
+    "minecraft:suspicious_gravel"
   ]
 }

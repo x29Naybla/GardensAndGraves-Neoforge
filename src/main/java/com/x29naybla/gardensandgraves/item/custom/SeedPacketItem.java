@@ -1,6 +1,8 @@
 package com.x29naybla.gardensandgraves.item.custom;
 
 import com.mojang.serialization.MapCodec;
+import com.x29naybla.gardensandgraves.block.ModBlockStateProperties;
+import com.x29naybla.gardensandgraves.block.Substrate;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.MarigoldEntity;
 import com.x29naybla.gardensandgraves.entity.Plant;
@@ -66,7 +68,7 @@ public class SeedPacketItem extends Item {
             Direction direction = context.getClickedFace();
             if (direction == Direction.DOWN) {
                 return InteractionResult.FAIL;
-            }else if (onSubstrate(level, blockpos)){
+            }else if (onSubstrate(level, blockpos) || onPlanter(level, blockpos)){
                 ItemStack itemStack = context.getItemInHand();
                 Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
                 AABB aabb = this.getType(itemStack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
@@ -122,7 +124,8 @@ public class SeedPacketItem extends Item {
     }
 
     public static boolean isPlanter(BlockGetter reader, BlockPos pos) {
-        return reader.getBlockState(pos).is(ModTags.Blocks.PLANTERS);
+        return (reader.getBlockState(pos).is(ModTags.Blocks.PLANTERS) && !(reader.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("empty") ||
+                reader.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("soul_sand")));
     }
 
     public EntityType<?> getType(ItemStack stack) {

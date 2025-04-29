@@ -4,6 +4,51 @@
       "apply": {
         "model": "gardensandgraves:block/planter_orange"
       }
+    },
+    {
+      "apply": {
+        "model": "gardensandgraves:block/substrate_dirt",
+        "uvlock": true
+      },
+      "when": {
+        "content": "dirt"
+      }
+    },
+    {
+      "apply": {
+        "model": "gardensandgraves:block/substrate_mycelium",
+        "uvlock": true
+      },
+      "when": {
+        "content": "mycelium"
+      }
+    },
+    {
+      "apply": {
+        "model": "gardensandgraves:block/substrate_sand",
+        "uvlock": true
+      },
+      "when": {
+        "content": "sand"
+      }
+    },
+    {
+      "apply": {
+        "model": "gardensandgraves:block/substrate_red_sand",
+        "uvlock": true
+      },
+      "when": {
+        "content": "red_sand"
+      }
+    },
+    {
+      "apply": {
+        "model": "gardensandgraves:block/substrate_soul_sand",
+        "uvlock": true
+      },
+      "when": {
+        "content": "soul_sand"
+      }
     }
   ]
 }

@@ -49,8 +49,37 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTags(BlockTags.LOGS)
                 .add(Blocks.LILY_PAD)
                 .add(Blocks.GRAVEL)
-                .add(Blocks.SUSPICIOUS_GRAVEL)
-                .addTags(ModTags.Blocks.PLANTERS);
+                .add(Blocks.SUSPICIOUS_GRAVEL);
+
+        tag(ModTags.Blocks.DIRT_SUSTAINS)
+                .add(Blocks.SHORT_GRASS)
+                .add(Blocks.TALL_GRASS)
+                .add(Blocks.FERN)
+                .add(Blocks.LARGE_FERN)
+                .add(Blocks.BAMBOO)
+                .add(Blocks.DEAD_BUSH)
+                .add(Blocks.SMALL_DRIPLEAF)
+                .add(Blocks.BIG_DRIPLEAF)
+                .addTag(BlockTags.FLOWERS)
+                .addTag(BlockTags.SAPLINGS)
+                .add(Blocks.CRIMSON_FUNGUS)
+                .add(Blocks.CRIMSON_ROOTS)
+                .add(Blocks.WARPED_FUNGUS)
+                .add(Blocks.WARPED_ROOTS)
+                .add(Blocks.NETHER_SPROUTS);
+
+        tag(ModTags.Blocks.MYCELIUM_SUSTAINS)
+                .addTag(ModTags.Blocks.DIRT_SUSTAINS)
+                .addTag(ModTags.Blocks.MUSHROOMS);
+
+        tag(ModTags.Blocks.SANDS_SUSTAINS)
+                .add(Blocks.CACTUS)
+                .add(Blocks.DEAD_BUSH)
+                .add(Blocks.BAMBOO);
+
+        tag(ModTags.Blocks.SOUL_SAND_SUSTAINS)
+                .add(Blocks.NETHER_WART)
+                .add(Blocks.WITHER_ROSE);
 
         //Common Tags
         tag(Tags.Blocks.DYED_WHITE)
@@ -102,18 +131,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.PLANTER_PINK.get())
                 .add(ModBlocks.PINK_PLASTIC_BLOCK.get());
 
-        //Vanilla Tags
-        tag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
-                .addTag(ModTags.Blocks.PLANTERS);
-
-        tag(BlockTags.SMALL_DRIPLEAF_PLACEABLE)
-                .addTag(ModTags.Blocks.PLANTERS);
-
-        tag(BlockTags.BIG_DRIPLEAF_PLACEABLE)
-                .addTag(ModTags.Blocks.PLANTERS);
-
-        tag(BlockTags.BAMBOO_PLANTABLE_ON)
-                .addTag(ModTags.Blocks.PLANTERS);
-
+        tag(ModTags.Blocks.MUSHROOMS)
+                .add(Blocks.BROWN_MUSHROOM)
+                .add(Blocks.RED_MUSHROOM);
     }
 }

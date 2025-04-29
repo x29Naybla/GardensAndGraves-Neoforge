@@ -5,14 +5,11 @@
   "key": {
     "#": {
       "item": "minecraft:green_terracotta"
-    },
-    "@": {
-      "item": "minecraft:dirt"
     }
   },
   "pattern": [
     "# #",
-    "#@#",
+    "# #",
     "###"
   ],
   "result": {

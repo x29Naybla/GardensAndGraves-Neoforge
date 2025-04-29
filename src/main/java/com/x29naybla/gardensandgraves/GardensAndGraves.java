@@ -1,12 +1,10 @@
 package com.x29naybla.gardensandgraves;
 
 import com.x29naybla.gardensandgraves.block.ModBlocks;
-import com.x29naybla.gardensandgraves.block.entity.ModBlockEntities;
 import com.x29naybla.gardensandgraves.component.ModDataComponents;
 import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.ModCreativeModeTabs;
 import com.x29naybla.gardensandgraves.item.ModItems;
-
 import com.x29naybla.gardensandgraves.loot.LootModifierInit;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.neoforged.api.distmarker.Dist;
@@ -36,7 +34,6 @@ public class GardensAndGraves {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModDataComponents.register(modEventBus);
-        ModBlockEntities.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModSounds.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
