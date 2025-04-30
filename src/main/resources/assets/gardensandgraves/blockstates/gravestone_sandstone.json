@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "gardensandgraves:block/gravestone_sandstone",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gardensandgraves:block/gravestone_sandstone"
+    },
+    "facing=south": {
+      "model": "gardensandgraves:block/gravestone_sandstone",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gardensandgraves:block/gravestone_sandstone",
+      "y": 270
+    }
+  }
+}

@@ -1,21 +1,4 @@
 changelog:
-* improved the brain texture
-* made brains edible
-* put brains in the proper tags
-* put the watering cans in the proper tags
-* put music disc in missing tag
-* fixed planter breaking particles
-* adjusted plants HP based on bites instead of HP value itself, to account for the difference on zombie strength in both franchises
-* added blocks of plastic
-* added recipe for Farmer's Delight minced beef using brains
-
-* watering cans can also be used to water crops and make mud
-* reverted "seed packets are now consumed only when used on planters"
-
-* reverted "now only plants from planters drop the seed packets back"
-* planters aren't block entities anymore
-* planters now are empty by default, but can be filled with dirt, mycelium, sand, red sand, soul sand, crimson nylium, warped nylium, and end stone
-* planters filled with a block will be able to support any plant sustainable by that block
-* changed the recipe for planters to reflect the default state being empty
-
-* planters filled with dirt can be used to cultivate crops
+* fixed the Farmer's Delight minced beef recipe using brains is not working
+* fixed the watering cans "mudding" behavior
+* added stone and sandstone gravestones

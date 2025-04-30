@@ -32,8 +32,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.util.TriState;
 
-import java.util.stream.Stream;
-
 public class PlanterBlock extends Block {
     public static final MapCodec<PlanterBlock> CODEC = simpleCodec(PlanterBlock::new);
     public static final EnumProperty<Substrate> CONTENT;
@@ -42,25 +40,12 @@ public class PlanterBlock extends Block {
         return CODEC;
     }
 
-    public static final VoxelShape SHAPE = Shapes.join(Stream.of(
-            Block.box(1, 0, 1, 15, 1, 15),
-            Block.box(2, 1, 1, 14, 12, 2),
-            Block.box(2, 1, 14, 14, 12, 15),
-            Block.box(1, 1, 1, 2, 12, 15),
-            Block.box(14, 1, 1, 15, 12, 15)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get(), Stream.of(
-            Block.box(2, 12, 0, 14, 16, 2),
-            Block.box(2, 12, 14, 14, 16, 16),
-            Block.box(0, 12, 0, 2, 16, 16),
-            Block.box(14, 12, 0, 16, 16, 16)
-    ).reduce((v1, v2) -> Shapes.join(v1, v2, BooleanOp.OR)).get(), BooleanOp.OR);
-
-    public static final VoxelShape TEMPORARY_SHAPE = Shapes.join(Block.box(1, 0, 1, 15, 12, 15), Block.box(0, 12, 0, 16, 16, 16), BooleanOp.OR);
+    public static final VoxelShape SHAPE = Shapes.join(Block.box(1, 0, 1, 15, 12, 15), Block.box(0, 12, 0, 16, 16, 16), BooleanOp.OR);
 
     public PlanterBlock(BlockBehaviour.Properties properties) {
         super(properties);
 
-        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(CONTENT, Substrate.EMPTY));
+        this.registerDefaultState(this.stateDefinition.any().setValue(CONTENT, Substrate.EMPTY));
     }
 
     @Override
@@ -182,7 +167,7 @@ public class PlanterBlock extends Block {
     }
 
     @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType p_276303_) {
+    protected boolean isPathfindable(BlockState state, PathComputationType type) {
         return false;
     }
 
@@ -210,7 +195,7 @@ public class PlanterBlock extends Block {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return TEMPORARY_SHAPE;
+        return SHAPE;
     }
 
     @Override

@@ -1,0 +1,6 @@
+{
+	"parent":"gardensandgraves:block/gravestone",
+	"textures":{
+		"1": "gardensandgraves:block/gravestone_sandstone"
+	}
+}
