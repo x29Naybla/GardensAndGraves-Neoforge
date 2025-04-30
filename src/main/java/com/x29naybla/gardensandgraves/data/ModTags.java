@@ -25,6 +25,8 @@ public class ModTags {
         public static final TagKey<Block> NYLIUM_SUSTAINS = createTag("nylium_sustains");
         public static final TagKey<Block> END_STONE_SUSTAINS = createTag("end_stone_sustains");
 
+        public static final TagKey<Block> GRAVESTONES = createTag("gravestones");
+
         public static final TagKey<Block> MUSHROOMS = commonBlockTag("mushrooms");
 
         private static TagKey<Block> createTag(String name){

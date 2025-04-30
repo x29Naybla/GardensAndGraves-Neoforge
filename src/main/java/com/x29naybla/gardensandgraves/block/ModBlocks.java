@@ -52,6 +52,11 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PLANTER_PINK = registerBlock("planter_pink",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_TERRACOTTA).noOcclusion()));
 
+    public static final DeferredBlock<Block> GRAVESTONE = registerBlock("gravestone",
+            () -> new GravestoneBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS).noOcclusion()));
+    public static final DeferredBlock<Block> GRAVESTONE_SANDSTONE = registerBlock("gravestone_sandstone",
+            () -> new GravestoneBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).noOcclusion()));
+
     public static final DeferredBlock<Block> WHITE_PLASTIC_BLOCK = registerBlock("white_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE).noOcclusion()));
     public static final DeferredBlock<Block> LIGHT_GRAY_PLASTIC_BLOCK = registerBlock("light_gray_plastic_block",

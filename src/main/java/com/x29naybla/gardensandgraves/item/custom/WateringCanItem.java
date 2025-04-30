@@ -39,8 +39,8 @@ public class WateringCanItem extends Item {
             level.playSound(null, blockpos, SoundEvents.GENERIC_SPLASH, SoundSource.BLOCKS, 0.75F, 1.8F);
 
             return InteractionResult.sidedSuccess(level.isClientSide);
-        } else if (isMudable(level, blockpos.below())){
-            level.setBlockAndUpdate(blockpos, Blocks.MUD.defaultBlockState());
+        } else if (isMudable(level, context)){
+            level.setBlockAndUpdate(context.getClickedPos(), Blocks.MUD.defaultBlockState());
             level.addParticle(ParticleTypes.SPLASH, blockpos.getX(), blockpos.getY()+0.5, blockpos.getZ(), 0, 0, 0);
             level.playSound(null, blockpos, SoundEvents.GENERIC_SPLASH, SoundSource.BLOCKS, 0.75F, 1.8F);
 
@@ -56,7 +56,7 @@ public class WateringCanItem extends Item {
         return reader.getBlockState(pos).is(BlockTags.MAINTAINS_FARMLAND);
     }
 
-    public static boolean isMudable(BlockGetter reader, BlockPos pos) {
-        return reader.getBlockState(pos).is(BlockTags.CONVERTABLE_TO_MUD);
+    public static boolean isMudable(BlockGetter reader, UseOnContext context) {
+        return reader.getBlockState(context.getClickedPos()).is(BlockTags.CONVERTABLE_TO_MUD);
     }
 }

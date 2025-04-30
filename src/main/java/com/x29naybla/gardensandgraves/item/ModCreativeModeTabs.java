@@ -81,6 +81,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PLANTER_PURPLE);
                         output.accept(ModBlocks.PLANTER_MAGENTA);
                         output.accept(ModBlocks.PLANTER_PINK);
+                        output.accept(ModBlocks.GRAVESTONE);
+                        output.accept(ModBlocks.GRAVESTONE_SANDSTONE);
 
                         output.accept(ModBlocks.WHITE_PLASTIC_BLOCK);
                         output.accept(ModBlocks.LIGHT_GRAY_PLASTIC_BLOCK);

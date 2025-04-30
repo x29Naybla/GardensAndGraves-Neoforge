@@ -95,6 +95,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.END_STONE_SUSTAINS)
                 .add(Blocks.CHORUS_FLOWER);
 
+        tag(ModTags.Blocks.GRAVESTONES)
+                .add(ModBlocks.GRAVESTONE.get())
+                .add(ModBlocks.GRAVESTONE_SANDSTONE.get());
+
         //Common Tags
         tag(Tags.Blocks.DYED_WHITE)
                 .add(ModBlocks.PLANTER_WHITE.get())
