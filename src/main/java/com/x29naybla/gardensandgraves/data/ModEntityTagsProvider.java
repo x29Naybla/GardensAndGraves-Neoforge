@@ -46,6 +46,21 @@ public class ModEntityTagsProvider extends EntityTypeTagsProvider {
                 .addTag(EntityTypeTags.ARTHROPOD)
                 .remove(EntityType.BEE);
 
+        tag(ModTags.Entities.PLANTABLE_ON_DIRT)
+                .addTag(ModTags.Entities.PLANTS);
+
+        tag(ModTags.Entities.PLANTABLE_ON_MYCELIUM)
+                .addTag(ModTags.Entities.PLANTABLE_ON_DIRT);
+
+        tag(ModTags.Entities.PLANTABLE_ON_SANDS);
+
+        tag(ModTags.Entities.PLANTABLE_ON_SOUL_SAND);
+
+        tag(ModTags.Entities.PLANTABLE_ON_NYLIUM)
+                .addTag(ModTags.Entities.MUSHROOMS);
+
+        tag(ModTags.Entities.PLANTABLE_ON_END_STONE);
+
         //Minecraft Tags
         tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES)
                 .add(ModEntities.SNOW_PEA.get());

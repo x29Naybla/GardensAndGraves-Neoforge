@@ -8,7 +8,10 @@ public enum Substrate implements StringRepresentable {
     MYCELIUM("mycelium"),
     SAND("sand"),
     RED_SAND("red_sand"),
-    SOUL_SAND("soul_sand");
+    SOUL_SAND("soul_sand"),
+    CRIMSON_NYLIUM("crimson_nylium"),
+    WARPED_NYLIUM("warped_nylium"),
+    END_STONE("end_stone");
 
     private final String name;
 

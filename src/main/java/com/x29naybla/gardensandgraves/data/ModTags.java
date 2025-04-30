@@ -3,7 +3,6 @@ package com.x29naybla.gardensandgraves.data;
 import com.x29naybla.gardensandgraves.GardensAndGraves;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -23,6 +22,8 @@ public class ModTags {
         public static final TagKey<Block> MYCELIUM_SUSTAINS = createTag("mycelium_sustains");
         public static final TagKey<Block> SANDS_SUSTAINS = createTag("sands_sustains");
         public static final TagKey<Block> SOUL_SAND_SUSTAINS = createTag("soul_sand_sustains");
+        public static final TagKey<Block> NYLIUM_SUSTAINS = createTag("nylium_sustains");
+        public static final TagKey<Block> END_STONE_SUSTAINS = createTag("end_stone_sustains");
 
         public static final TagKey<Block> MUSHROOMS = commonBlockTag("mushrooms");
 
@@ -67,6 +68,13 @@ public class ModTags {
         public static final TagKey<EntityType<?>> PEASHOOTERS = createTag("peashooters");
         public static final TagKey<EntityType<?>> MUSHROOMS = createTag("mushrooms");
         public static final TagKey<EntityType<?>> PLANTS = createTag("plants");
+
+        public static final TagKey<EntityType<?>> PLANTABLE_ON_DIRT = createTag("plantable_on_dirt");
+        public static final TagKey<EntityType<?>> PLANTABLE_ON_MYCELIUM = createTag("plantable_on_mycelium");
+        public static final TagKey<EntityType<?>> PLANTABLE_ON_SANDS = createTag("plantable_on_sands");
+        public static final TagKey<EntityType<?>> PLANTABLE_ON_SOUL_SAND = createTag("plantable_on_soul_sand");
+        public static final TagKey<EntityType<?>> PLANTABLE_ON_NYLIUM = createTag("plantable_on_nylium");
+        public static final TagKey<EntityType<?>> PLANTABLE_ON_END_STONE = createTag("plantable_on_end_stone");
 
         public static final TagKey<EntityType<?>> PLANT_ENEMIES = createTag("plant_enemies");
 

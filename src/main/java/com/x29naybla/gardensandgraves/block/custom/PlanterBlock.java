@@ -108,6 +108,27 @@ public class PlanterBlock extends Block {
                     itemStack.shrink(1);
                 }
                 return ItemInteractionResult.SUCCESS;
+            } else if (itemStack.is(Items.CRIMSON_NYLIUM)){
+                level.setBlock(pos, (state.setValue(CONTENT, Substrate.CRIMSON_NYLIUM)), 2);
+                level.playSound(null, pos, SoundEvents.NETHERRACK_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                if (!player.isCreative()) {
+                    itemStack.shrink(1);
+                }
+                return ItemInteractionResult.SUCCESS;
+            } else if (itemStack.is(Items.WARPED_NYLIUM)){
+                level.setBlock(pos, (state.setValue(CONTENT, Substrate.WARPED_NYLIUM)), 2);
+                level.playSound(null, pos, SoundEvents.NETHERRACK_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                if (!player.isCreative()) {
+                    itemStack.shrink(1);
+                }
+                return ItemInteractionResult.SUCCESS;
+            } else if (itemStack.is(Items.END_STONE)){
+                level.setBlock(pos, (state.setValue(CONTENT, Substrate.END_STONE)), 2);
+                level.playSound(null, pos, SoundEvents.STONE_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                if (!player.isCreative()) {
+                    itemStack.shrink(1);
+                }
+                return ItemInteractionResult.SUCCESS;
             }
         } else if (itemStack.isEmpty() && (level.getEntitiesOfClass(Plant.class, AABB.ofSize(pos.getCenter().add(0, 1, 0), 1, 1, 1))).isEmpty()) {
             if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("empty")) {
@@ -139,6 +160,21 @@ public class PlanterBlock extends Block {
                 player.setItemInHand(InteractionHand.MAIN_HAND, Items.SOUL_SAND.getDefaultInstance());
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
                 return ItemInteractionResult.SUCCESS;
+            } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("crimson_nylium")) {
+                level.playSound(null, pos, SoundEvents.NETHERRACK_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                player.setItemInHand(InteractionHand.MAIN_HAND, Items.CRIMSON_NYLIUM.getDefaultInstance());
+                level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
+                return ItemInteractionResult.SUCCESS;
+            } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("warped_nylium")) {
+                level.playSound(null, pos, SoundEvents.NETHERRACK_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                player.setItemInHand(InteractionHand.MAIN_HAND, Items.WARPED_NYLIUM.getDefaultInstance());
+                level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
+                return ItemInteractionResult.SUCCESS;
+            } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("end_stone")) {
+                level.playSound(null, pos, SoundEvents.STONE_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                player.setItemInHand(InteractionHand.MAIN_HAND, Items.END_STONE.getDefaultInstance());
+                level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
+                return ItemInteractionResult.SUCCESS;
             } else {
                 return ItemInteractionResult.FAIL;
             }
@@ -152,13 +188,20 @@ public class PlanterBlock extends Block {
 
     @Override
     public TriState canSustainPlant(BlockState state, BlockGetter level, BlockPos soilPosition, Direction facing, BlockState plant) {
-        if(plant.is(ModTags.Blocks.DIRT_SUSTAINS) || (plant.is(ModTags.Blocks.MUSHROOMS) && (level.getLightEmission(soilPosition.above()) < 14)) && level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("dirt")){
+        if (level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("dirt") && (plant.is(ModTags.Blocks.DIRT_SUSTAINS))){
+            if (plant.is(ModTags.Blocks.MUSHROOMS)){
+                if (level.getLightEmission(soilPosition.above()) > 13)
+                return TriState.FALSE;
+            } else return TriState.TRUE;
+        } else if (level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("mycelium") && plant.is(ModTags.Blocks.MYCELIUM_SUSTAINS)){
             return TriState.TRUE;
-        } else if(plant.is(ModTags.Blocks.MYCELIUM_SUSTAINS) && level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("mycelium")){
+        } else if ((level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("sand") || level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("red_sand")) && plant.is(ModTags.Blocks.SANDS_SUSTAINS)) {
             return TriState.TRUE;
-        } else if(plant.is(ModTags.Blocks.SANDS_SUSTAINS) && (level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("sand") || level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("red_sand"))){
+        } else if (level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("soul_sand") && plant.is(ModTags.Blocks.SOUL_SAND_SUSTAINS)){
             return TriState.TRUE;
-        } else if(plant.is(ModTags.Blocks.SOUL_SAND_SUSTAINS) && level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("soul_sand")){
+        } else if ((level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("crimson_nylium") || level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("warped_nylium")) && plant.is(ModTags.Blocks.NYLIUM_SUSTAINS)){
+            return TriState.TRUE;
+        } else if (level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("end_stone") && plant.is(ModTags.Blocks.END_STONE_SUSTAINS)){
             return TriState.TRUE;
         }
 

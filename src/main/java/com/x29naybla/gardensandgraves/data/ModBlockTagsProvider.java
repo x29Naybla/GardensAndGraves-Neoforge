@@ -56,12 +56,15 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(Blocks.TALL_GRASS)
                 .add(Blocks.FERN)
                 .add(Blocks.LARGE_FERN)
+                .add(Blocks.BAMBOO_SAPLING)
                 .add(Blocks.BAMBOO)
                 .add(Blocks.DEAD_BUSH)
                 .add(Blocks.SMALL_DRIPLEAF)
                 .add(Blocks.BIG_DRIPLEAF)
+                .addTag(BlockTags.CROPS)
                 .addTag(BlockTags.FLOWERS)
                 .addTag(BlockTags.SAPLINGS)
+                .addTag(ModTags.Blocks.MUSHROOMS)
                 .add(Blocks.CRIMSON_FUNGUS)
                 .add(Blocks.CRIMSON_ROOTS)
                 .add(Blocks.WARPED_FUNGUS)
@@ -69,17 +72,28 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(Blocks.NETHER_SPROUTS);
 
         tag(ModTags.Blocks.MYCELIUM_SUSTAINS)
-                .addTag(ModTags.Blocks.DIRT_SUSTAINS)
-                .addTag(ModTags.Blocks.MUSHROOMS);
+                .addTag(ModTags.Blocks.DIRT_SUSTAINS);
 
         tag(ModTags.Blocks.SANDS_SUSTAINS)
                 .add(Blocks.CACTUS)
                 .add(Blocks.DEAD_BUSH)
+                .add(Blocks.BAMBOO_SAPLING)
                 .add(Blocks.BAMBOO);
 
         tag(ModTags.Blocks.SOUL_SAND_SUSTAINS)
                 .add(Blocks.NETHER_WART)
                 .add(Blocks.WITHER_ROSE);
+
+        tag(ModTags.Blocks.NYLIUM_SUSTAINS)
+                .addTag(ModTags.Blocks.MUSHROOMS)
+                .add(Blocks.CRIMSON_FUNGUS)
+                .add(Blocks.CRIMSON_ROOTS)
+                .add(Blocks.WARPED_FUNGUS)
+                .add(Blocks.WARPED_ROOTS)
+                .add(Blocks.NETHER_SPROUTS);
+
+        tag(ModTags.Blocks.END_STONE_SUSTAINS)
+                .add(Blocks.CHORUS_FLOWER);
 
         //Common Tags
         tag(Tags.Blocks.DYED_WHITE)
