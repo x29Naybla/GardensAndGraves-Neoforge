@@ -20,7 +20,7 @@ public class ModTags {
 
         public static final TagKey<Block> DIRT_SUSTAINS = createTag("dirt_sustains");
         public static final TagKey<Block> MYCELIUM_SUSTAINS = createTag("mycelium_sustains");
-        public static final TagKey<Block> SANDS_SUSTAINS = createTag("sands_sustains");
+        public static final TagKey<Block> SAND_SUSTAINS = createTag("sand_sustains");
         public static final TagKey<Block> SOUL_SAND_SUSTAINS = createTag("soul_sand_sustains");
         public static final TagKey<Block> NYLIUM_SUSTAINS = createTag("nylium_sustains");
         public static final TagKey<Block> END_STONE_SUSTAINS = createTag("end_stone_sustains");
@@ -44,10 +44,6 @@ public class ModTags {
 
     public static class Items {
         //Gardens and Graves Tags
-        public static final TagKey<Item> SEED_PACKET_FLOWERS = createTag("seed_packet_flowers");
-        public static final TagKey<Item> SEED_PACKET_PEASHOOTERS = createTag("seed_packet_peashooters");
-        public static final TagKey<Item> SEED_PACKET_MUSHROOMS = createTag("seed_packet_mushrooms");
-
         public static final TagKey<Item> WATERING_CANS = createTag("watering_cans");
         public static final TagKey<Item> SNAIL_FOOD = createTag("snail_food");
 

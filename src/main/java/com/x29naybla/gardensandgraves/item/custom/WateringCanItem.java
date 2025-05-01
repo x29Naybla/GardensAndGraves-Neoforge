@@ -14,6 +14,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.Property;
+
+import java.util.function.Predicate;
 
 public class WateringCanItem extends Item {
     public WateringCanItem(Properties properties) {
@@ -25,7 +28,7 @@ public class WateringCanItem extends Item {
         BlockPlaceContext blockplacecontext = new BlockPlaceContext(context);
         BlockPos blockpos = blockplacecontext.getClickedPos();
 
-        if (isCrop(level, blockpos.below())){
+        if (isCrop(level, blockpos.below()) && isFarmland(level, blockpos.below(2))){
             BlockState blockState = level.getBlockState(blockpos.below(2));
             level.setBlockAndUpdate(blockpos.below(2), blockState.setValue(BlockStateProperties.MOISTURE, 7));
             level.addParticle(ParticleTypes.SPLASH, blockpos.getX(), blockpos.getY()+0.5, blockpos.getZ(), 0, 0, 0);

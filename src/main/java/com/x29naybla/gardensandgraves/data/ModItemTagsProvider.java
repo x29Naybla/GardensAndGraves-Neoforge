@@ -24,21 +24,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         //Gardens and Graves Tags
-        tag(ModTags.Items.SEED_PACKET_FLOWERS)
-                .add(ModItems.SEED_PACKET_SUNFLOWER.get())
-                .add(ModItems.SEED_PACKET_MARIGOLD.get());
-
-        tag(ModTags.Items.SEED_PACKET_PEASHOOTERS)
-                .add(ModItems.SEED_PACKET_PEASHOOTER.get())
-                .add(ModItems.SEED_PACKET_REPEATER.get())
-                .add(ModItems.SEED_PACKET_SNOW_PEA.get());
-
-        tag(ModTags.Items.SEED_PACKET_MUSHROOMS)
-                .add(ModItems.SEED_PACKET_SUN_SHROOM.get())
-                .add(ModItems.SEED_PACKET_PUFF_SHROOM.get())
-                .add(ModItems.SEED_PACKET_FUME_SHROOM.get())
-                .add(ModItems.SEED_PACKET_DOOM_SHROOM.get());
-
         tag(ModTags.Items.WATERING_CANS)
                 .add(ModItems.WATERING_CAN_WHITE.get())
                 .add(ModItems.WATERING_CAN_LIGHT_GRAY.get())

@@ -18,6 +18,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -60,56 +61,56 @@ public class PlanterBlock extends Block {
         if(level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("empty")){
             if(itemStack.is(Items.DIRT)){
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.DIRT)), 2);
-                level.playSound(null, pos, SoundEvents.GRAVEL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.GRAVEL.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!player.isCreative()) {
                     itemStack.shrink(1);
                 }
                 return ItemInteractionResult.SUCCESS;
             } else if (itemStack.is(Items.MYCELIUM)){
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.MYCELIUM)), 2);
-                level.playSound(null, pos, SoundEvents.GRASS_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.GRASS.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!player.isCreative()) {
                     itemStack.shrink(1);
                 }
                 return ItemInteractionResult.SUCCESS;
             } else if (itemStack.is(Items.SAND)){
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.SAND)), 2);
-                level.playSound(null, pos, SoundEvents.SAND_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.SAND.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!player.isCreative()) {
                     itemStack.shrink(1);
                 }
                 return ItemInteractionResult.SUCCESS;
             } else if (itemStack.is(Items.RED_SAND)){
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.RED_SAND)), 2);
-                level.playSound(null, pos, SoundEvents.SAND_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.SAND.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!player.isCreative()) {
                     itemStack.shrink(1);
                 }
                 return ItemInteractionResult.SUCCESS;
             } else if (itemStack.is(Items.SOUL_SAND)){
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.SOUL_SAND)), 2);
-                level.playSound(null, pos, SoundEvents.SOUL_SAND_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.SOUL_SAND.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!player.isCreative()) {
                     itemStack.shrink(1);
                 }
                 return ItemInteractionResult.SUCCESS;
             } else if (itemStack.is(Items.CRIMSON_NYLIUM)){
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.CRIMSON_NYLIUM)), 2);
-                level.playSound(null, pos, SoundEvents.NETHERRACK_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.NYLIUM.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!player.isCreative()) {
                     itemStack.shrink(1);
                 }
                 return ItemInteractionResult.SUCCESS;
             } else if (itemStack.is(Items.WARPED_NYLIUM)){
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.WARPED_NYLIUM)), 2);
-                level.playSound(null, pos, SoundEvents.NETHERRACK_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.NYLIUM.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!player.isCreative()) {
                     itemStack.shrink(1);
                 }
                 return ItemInteractionResult.SUCCESS;
             } else if (itemStack.is(Items.END_STONE)){
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.END_STONE)), 2);
-                level.playSound(null, pos, SoundEvents.STONE_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.STONE.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 if (!player.isCreative()) {
                     itemStack.shrink(1);
                 }
@@ -121,42 +122,42 @@ public class PlanterBlock extends Block {
                 level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
                 return ItemInteractionResult.SUCCESS;
             } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("dirt")) {
-                level.playSound(null, pos, SoundEvents.GRAVEL_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.GRAVEL.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 player.setItemInHand(InteractionHand.MAIN_HAND, Items.DIRT.getDefaultInstance());
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
                 return ItemInteractionResult.SUCCESS;
             } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("mycelium")) {
-                level.playSound(null, pos, SoundEvents.GRASS_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.GRASS.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 player.setItemInHand(InteractionHand.MAIN_HAND, Items.MYCELIUM.getDefaultInstance());
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
                 return ItemInteractionResult.SUCCESS;
             } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("sand")) {
-                level.playSound(null, pos, SoundEvents.SAND_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.SAND.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 player.setItemInHand(InteractionHand.MAIN_HAND, Items.SAND.getDefaultInstance());
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
                 return ItemInteractionResult.SUCCESS;
             } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("red_sand")) {
-                level.playSound(null, pos, SoundEvents.SAND_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.SAND.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 player.setItemInHand(InteractionHand.MAIN_HAND, Items.RED_SAND.getDefaultInstance());
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
                 return ItemInteractionResult.SUCCESS;
             } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("soul_sand")) {
-                level.playSound(null, pos, SoundEvents.SOUL_SAND_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.SOUL_SAND.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 player.setItemInHand(InteractionHand.MAIN_HAND, Items.SOUL_SAND.getDefaultInstance());
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
                 return ItemInteractionResult.SUCCESS;
             } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("crimson_nylium")) {
-                level.playSound(null, pos, SoundEvents.NETHERRACK_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.NYLIUM.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 player.setItemInHand(InteractionHand.MAIN_HAND, Items.CRIMSON_NYLIUM.getDefaultInstance());
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
                 return ItemInteractionResult.SUCCESS;
             } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("warped_nylium")) {
-                level.playSound(null, pos, SoundEvents.NETHERRACK_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.NYLIUM.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 player.setItemInHand(InteractionHand.MAIN_HAND, Items.WARPED_NYLIUM.getDefaultInstance());
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
                 return ItemInteractionResult.SUCCESS;
             } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("end_stone")) {
-                level.playSound(null, pos, SoundEvents.STONE_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, pos, SoundType.STONE.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 player.setItemInHand(InteractionHand.MAIN_HAND, Items.END_STONE.getDefaultInstance());
                 level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
                 return ItemInteractionResult.SUCCESS;
@@ -180,7 +181,7 @@ public class PlanterBlock extends Block {
             } else return TriState.TRUE;
         } else if (level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("mycelium") && plant.is(ModTags.Blocks.MYCELIUM_SUSTAINS)){
             return TriState.TRUE;
-        } else if ((level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("sand") || level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("red_sand")) && plant.is(ModTags.Blocks.SANDS_SUSTAINS)) {
+        } else if ((level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("sand") || level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("red_sand")) && plant.is(ModTags.Blocks.SAND_SUSTAINS)) {
             return TriState.TRUE;
         } else if (level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("soul_sand") && plant.is(ModTags.Blocks.SOUL_SAND_SUSTAINS)){
             return TriState.TRUE;

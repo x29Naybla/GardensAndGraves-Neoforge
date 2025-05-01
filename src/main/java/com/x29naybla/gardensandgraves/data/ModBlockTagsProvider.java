@@ -74,7 +74,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.MYCELIUM_SUSTAINS)
                 .addTag(ModTags.Blocks.DIRT_SUSTAINS);
 
-        tag(ModTags.Blocks.SANDS_SUSTAINS)
+        tag(ModTags.Blocks.SAND_SUSTAINS)
                 .add(Blocks.CACTUS)
                 .add(Blocks.DEAD_BUSH)
                 .add(Blocks.BAMBOO_SAPLING)

@@ -25,11 +25,12 @@ import software.bernie.geckolib.animation.AnimatableManager;
 
 public class Plant extends TamableAnimal implements GeoEntity {
     public int packetTime;
-    public boolean fromPlanter = false;
+    public boolean fromPlanter;
 
     public Plant(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);
         this.packetTime = 12000;
+        this.fromPlanter = false;
     }
 
     public boolean fromPlanter(boolean planter){

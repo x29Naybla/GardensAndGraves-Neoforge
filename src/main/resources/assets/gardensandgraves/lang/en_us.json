@@ -80,8 +80,8 @@
   "block.gardensandgraves.planter_magenta": "Magenta Planter",
   "block.gardensandgraves.planter_pink": "Pink Planter",
 
-  "block.gardensandgraves.gravestone": "Lápide",
-  "block.gardensandgraves.gravestone_sandstone": "Lápide de arenito",
+  "block.gardensandgraves.gravestone": "Gravestone",
+  "block.gardensandgraves.gravestone_sandstone": "Sandstone Gravestone",
 
   "block.gardensandgraves.white_plastic_block": "Block of White Plastic",
   "block.gardensandgraves.light_gray_plastic_block": "Block of Light Gray Plastic",
@@ -201,5 +201,42 @@
   "gardensandgraves.advancement.hypno_shroom.desc": "Can be found in taiga villages",
 
   "gardensandgraves.advancement.doom_shroom": "Doom-shroom",
-  "gardensandgraves.advancement.doom_shroom.desc": "Can be found in ancient cities and woodland mansions"
+  "gardensandgraves.advancement.doom_shroom.desc": "Can be found in ancient cities and woodland mansions",
+
+  "tag.item.gardensandgraves.watering_cans": "Watering Cans",
+  "tag.item.gardensandgraves.snail_food": "Snail Food",
+
+  "tag.block.gardensandgraves.planters": "Planters",
+  "tag.block.gardensandgraves.supports_plants": "Supports Plants",
+
+  "tag.block.gardensandgraves.dirt_sustains": "Dirt Sustains",
+  "tag.block.gardensandgraves.mycelium_sustains": "Mycelium Sustains",
+  "tag.block.gardensandgraves.sand_sustains": "Sand Sustains",
+  "tag.block.gardensandgraves.soul_sand_sustains": "Soul Sand Sustains",
+  "tag.block.gardensandgraves.nylium_sustains": "Nylium Sustains",
+  "tag.block.gardensandgraves.end_stone_sustains": "End Stone Sustains",
+
+  "tag.block.gardensandgraves.gravestones": "Gravestones",
+
+  "tag.entity.gardensandgraves.flowers": "Flowers",
+  "tag.entity.gardensandgraves.peashooters": "Peashooters",
+  "tag.entity.gardensandgraves.mushrooms": "Mushrooms",
+  "tag.entity.gardensandgraves.plants": "Plants",
+
+  "tag.entity.gardensandgraves.plantable_on_dirt": "Plantable On Dirt",
+  "tag.entity.gardensandgraves.plantable_on_mycelium": "Plantable On Mycelium",
+  "tag.entity.gardensandgraves.plantable_on_sand": "Plantable On Sand",
+  "tag.entity.gardensandgraves.plantable_on_soul_sand": "Plantable On Soul Sand",
+  "tag.entity.gardensandgraves.plantable_on_nylium": "Plantable On Nylium",
+  "tag.entity.gardensandgraves.plantable_on_end_stone": "Plantable On End Stone",
+
+  "tag.entity.gardensandgraves.plant_enemies": "Plant Enemies",
+
+  "config.jade.plugin_gardensandgraves.sunflower_sun_timer": "Sunflower Sun Timer",
+  "config.jade.plugin_gardensandgraves.sunshroom_sun_timer": "Sun-shroom Sun Timer",
+  "config.jade.plugin_gardensandgraves.reward_timer": "Marigold Rewards Timer",
+  "config.jade.plugin_gardensandgraves.seed_packets_timer": "Seed Packets Timer",
+  "gardensandgraves.sun_timer": "Next sun: ",
+  "gardensandgraves.reward_timer": "Next nuggets: ",
+  "gardensandgraves.seed_packets_timer": "Next seed packet: "
 }

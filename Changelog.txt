@@ -1,4 +1,7 @@
 changelog:
-* fixed the Farmer's Delight minced beef recipe using brains is not working
-* fixed the watering cans "mudding" behavior
-* added stone and sandstone gravestones
+* added tag translations for compatibility with "recipe viewing" mods
+* added Jade integration
+* removed unused tags
+* fixed english and brazilian portuguese translations for gravestones being swapped
+* fixed game crashing when using a watering can on a crop placed on a planter
+* fixed nylium having incorrect sounds play when taking and placing them in planters

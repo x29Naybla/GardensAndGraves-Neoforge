@@ -80,8 +80,8 @@
   "block.gardensandgraves.planter_magenta": "Germinador magenta",
   "block.gardensandgraves.planter_pink": "Germinador rosa",
 
-  "block.gardensandgraves.gravestone": "Gravestone",
-  "block.gardensandgraves.gravestone_sandstone": "Sandstone Gravestone",
+  "block.gardensandgraves.gravestone": "Lápide",
+  "block.gardensandgraves.gravestone_sandstone": "Lápide de arenito",
 
   "block.gardensandgraves.white_plastic_block": "Bloco de plástico branco",
   "block.gardensandgraves.light_gray_plastic_block": "Bloco de plástico cinza-claro",
@@ -201,5 +201,42 @@
   "gardensandgraves.advancement.hypno_shroom.desc": "Pode ser encontrado em vilas de taiga",
 
   "gardensandgraves.advancement.doom_shroom": "Ruinagumelo",
-  "gardensandgraves.advancement.doom_shroom.desc": "Pode ser encontrado em cidades ancestrais e mansões das florestas"
+  "gardensandgraves.advancement.doom_shroom.desc": "Pode ser encontrado em cidades ancestrais e mansões das florestas",
+
+  "tag.item.gardensandgraves.watering_cans": "Regadores",
+  "tag.item.gardensandgraves.snail_food": "Comida de caracol",
+
+  "tag.block.gardensandgraves.planters": "Germinadores",
+  "tag.block.gardensandgraves.supports_plants": "Suportam plantas",
+
+  "tag.block.gardensandgraves.dirt_sustains": "Terra sustenta",
+  "tag.block.gardensandgraves.mycelium_sustains": "Micélio sustenta",
+  "tag.block.gardensandgraves.sand_sustains": "Areia sustenta",
+  "tag.block.gardensandgraves.soul_sand_sustains": "Areia das almas sustenta",
+  "tag.block.gardensandgraves.nylium_sustains": "Nicélio sustenta",
+  "tag.block.gardensandgraves.end_stone_sustains": "Pedra do End sustenta",
+
+  "tag.block.gardensandgraves.gravestones": "Lápides",
+
+  "tag.entity.gardensandgraves.flowers": "Flores",
+  "tag.entity.gardensandgraves.peashooters": "Disparervilhas",
+  "tag.entity.gardensandgraves.mushrooms": "Cogumelos",
+  "tag.entity.gardensandgraves.plants": "Plantas",
+
+  "tag.entity.gardensandgraves.plantable_on_dirt": "Plantável em terra",
+  "tag.entity.gardensandgraves.plantable_on_mycelium": "Plantável em micélio",
+  "tag.entity.gardensandgraves.plantable_on_sand": "Plantável em areia",
+  "tag.entity.gardensandgraves.plantable_on_soul_sand": "Plantável em areia das almas",
+  "tag.entity.gardensandgraves.plantable_on_nylium": "Plantável em nicélio",
+  "tag.entity.gardensandgraves.plantable_on_end_stone": "Plantável em pedra do End",
+
+  "tag.entity.gardensandgraves.plant_enemies": "Inimigos das plantas",
+
+  "config.jade.plugin_gardensandgraves.sunflower_sun_timer": "Temporizador de sol de girassol",
+  "config.jade.plugin_gardensandgraves.sunshroom_sun_timer": "Temporizador de sol de solargumelo",
+  "config.jade.plugin_gardensandgraves.reward_timer": "Temporizador de recompensa de calêndula",
+  "config.jade.plugin_gardensandgraves.seed_packets_timer": "Temporizador de pacote de sementes",
+  "gardensandgraves.sun_timer": "Próximo sol: ",
+  "gardensandgraves.reward_timer": "Próximas pepitas: ",
+  "gardensandgraves.seed_packets_timer": "Próximo pacote de sementes: "
 }
