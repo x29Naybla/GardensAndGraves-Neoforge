@@ -1,9 +1,7 @@
 {
-  "multipart": [
-    {
-      "apply": {
-        "model": "gardensandgraves:block/orange_plastic_block"
-      }
+  "variants": {
+    "": {
+      "model": "gardensandgraves:block/orange_plastic_block"
     }
-  ]
+  }
 }

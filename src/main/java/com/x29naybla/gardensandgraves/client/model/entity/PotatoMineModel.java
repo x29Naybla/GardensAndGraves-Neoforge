@@ -8,7 +8,7 @@ import software.bernie.geckolib.model.GeoModel;
 public class PotatoMineModel extends GeoModel {
     private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "geo/entity/potato_mine.geo.json");
     private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "textures/entity/potato_mine.png");
-    private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "animations/entity/flower.animation.json");
+    private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "animations/entity/potato_mine.animation.json");
 
     @Override
     public ResourceLocation getModelResource(GeoAnimatable animatable) {

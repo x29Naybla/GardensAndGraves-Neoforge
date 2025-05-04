@@ -24,6 +24,16 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         //Gardens and Graves Tags
+        tag(ModTags.Items.PLANTER_SUBSTRATES)
+                .add(Items.DIRT)
+                .add(Items.MYCELIUM)
+                .add(Items.SAND)
+                .add(Items.RED_SAND)
+                .add(Items.CRIMSON_NYLIUM)
+                .add(Items.WARPED_NYLIUM)
+                .add(Items.SOUL_SAND)
+                .add(Items.END_STONE);
+
         tag(ModTags.Items.WATERING_CANS)
                 .add(ModItems.WATERING_CAN_WHITE.get())
                 .add(ModItems.WATERING_CAN_LIGHT_GRAY.get())

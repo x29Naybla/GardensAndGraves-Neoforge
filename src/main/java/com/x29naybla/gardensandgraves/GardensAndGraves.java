@@ -1,6 +1,8 @@
 package com.x29naybla.gardensandgraves;
 
 import com.x29naybla.gardensandgraves.block.ModBlocks;
+import com.x29naybla.gardensandgraves.block.entity.ModBlockEntities;
+import com.x29naybla.gardensandgraves.block.entity.renderer.PlanterBlockEntityRenderer;
 import com.x29naybla.gardensandgraves.component.ModDataComponents;
 import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.ModCreativeModeTabs;
@@ -16,6 +18,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -33,6 +36,7 @@ public class GardensAndGraves {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModDataComponents.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModSounds.register(modEventBus);
@@ -60,6 +64,11 @@ public class GardensAndGraves {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.PLANTER_BE.get(), PlanterBlockEntityRenderer::new);
         }
     }
 }

@@ -1,7 +1,7 @@
 package com.x29naybla.gardensandgraves.item.custom;
 
 import com.mojang.serialization.MapCodec;
-import com.x29naybla.gardensandgraves.block.ModBlockStateProperties;
+import com.x29naybla.gardensandgraves.block.entity.PlanterBlockEntity;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.MarigoldEntity;
 import com.x29naybla.gardensandgraves.entity.Plant;
@@ -123,18 +123,18 @@ public class SeedPacketItem extends Item {
     }
 
     public boolean isPlanter(BlockGetter reader, BlockPos pos) {
-        if (reader.getBlockState(pos).is(ModTags.Blocks.PLANTERS)){
-            if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_DIRT) && reader.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("dirt")) {
+        if (reader.getBlockEntity(pos) instanceof PlanterBlockEntity planter){
+            if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_DIRT) && planter.content.getStackInSlot(0).is(Items.DIRT)) {
                 return true;
-            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_MYCELIUM) && reader.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("mycelium")) {
+            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_MYCELIUM) && planter.content.getStackInSlot(0).is(Items.MYCELIUM)) {
                 return true;
-            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_SANDS) && (reader.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("sand") || reader.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("red_sand"))) {
+            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_SANDS) && planter.content.getStackInSlot(0).is(Items.SAND) || planter.content.getStackInSlot(0).is(Items.RED_SAND)) {
                 return true;
-            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_SOUL_SAND) && reader.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("soul_sand")) {
+            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_SOUL_SAND) && planter.content.getStackInSlot(0).is(Items.SOUL_SAND)) {
                 return true;
-            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_NYLIUM) && (reader.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("crimson_nylium") || reader.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("warped_nylium"))) {
+            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_NYLIUM) && planter.content.getStackInSlot(0).is(Items.CRIMSON_NYLIUM) || planter.content.getStackInSlot(0).is(Items.WARPED_NYLIUM)) {
                 return true;
-            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_END_STONE) && reader.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("end_stone")) {
+            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_END_STONE) && planter.content.getStackInSlot(0).is(Items.END_STONE)) {
                 return true;
             } else
                 return false;

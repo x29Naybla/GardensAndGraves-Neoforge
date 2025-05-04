@@ -19,7 +19,7 @@ public class ModSwellGoal extends Goal{
 
     public boolean canUse() {
         LivingEntity livingentity = this.explosivePlant.getTarget();
-        return this.explosivePlant.getSwellDir() > 0 || livingentity != null && this.explosivePlant.distanceToSqr(livingentity) < (double)9.0F;
+        return this.explosivePlant.getSwellDir() > 0 || livingentity != null && this.explosivePlant.distanceToSqr(livingentity) < (double)1.0F;
     }
 
     public void start() {

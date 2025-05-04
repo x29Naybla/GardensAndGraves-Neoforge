@@ -1,8 +1,7 @@
 package com.x29naybla.gardensandgraves.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import com.x29naybla.gardensandgraves.block.ModBlockStateProperties;
-import com.x29naybla.gardensandgraves.block.Substrate;
+import com.x29naybla.gardensandgraves.block.entity.PlanterBlockEntity;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.Plant;
 import net.minecraft.core.BlockPos;
@@ -16,14 +15,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.*;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
@@ -33,11 +31,12 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.util.TriState;
 
-public class PlanterBlock extends Block {
-    public static final MapCodec<PlanterBlock> CODEC = simpleCodec(PlanterBlock::new);
-    public static final EnumProperty<Substrate> CONTENT;
+import javax.annotation.Nullable;
 
-    public MapCodec<PlanterBlock> codec() {
+public class PlanterBlock extends BaseEntityBlock {
+    public static final MapCodec<PlanterBlock> CODEC = simpleCodec(PlanterBlock::new);
+
+    public MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
     }
 
@@ -45,126 +44,79 @@ public class PlanterBlock extends Block {
 
     public PlanterBlock(BlockBehaviour.Properties properties) {
         super(properties);
+    }
 
-        this.registerDefaultState(this.stateDefinition.any().setValue(CONTENT, Substrate.EMPTY));
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state){
+        return new PlanterBlockEntity(pos, state);
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(new Property[]{CONTENT});
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if(state.getBlock() != newState.getBlock()) {
+            if (level.getBlockEntity(pos) instanceof PlanterBlockEntity planter) {
+                planter.drops();
+                level.updateNeighbourForOutputSignal(pos, this);
+            }
+        }
+        super.onRemove(state, level, pos, newState, movedByPiston);
     }
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
-        itemStack = player.getItemInHand(hand);
+        if(level.getBlockEntity(pos) instanceof PlanterBlockEntity planter) {
+            if(itemStack.is(ModTags.Items.PLANTER_SUBSTRATES)) {
+                if(planter.content.getStackInSlot(0).isEmpty()) {
+                    planter.content.insertItem(0, itemStack.copy(), false);
+                    if(itemStack.is(Items.DIRT)) {
+                        level.playSound(null, pos, SoundType.GRAVEL.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    } else if(itemStack.is(Items.MYCELIUM)) {
+                        level.playSound(null, pos, SoundType.GRASS.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    } else if(itemStack.is(Items.SAND) || itemStack.is(Items.RED_SAND)) {
+                        level.playSound(null, pos, SoundType.SAND.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    } else if(itemStack.is(Items.SOUL_SAND)) {
+                        level.playSound(null, pos, SoundType.SOUL_SAND.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    } else if(itemStack.is(Items.CRIMSON_NYLIUM) || itemStack.is(Items.WARPED_NYLIUM)) {
+                        level.playSound(null, pos, SoundType.NYLIUM.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    } else if(itemStack.is(Items.END_STONE)) {
+                        level.playSound(null, pos, SoundType.STONE.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    }
 
-        if(level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("empty")){
-            if(itemStack.is(Items.DIRT)){
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.DIRT)), 2);
-                level.playSound(null, pos, SoundType.GRAVEL.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                if (!player.isCreative()) {
                     itemStack.shrink(1);
-                }
-                return ItemInteractionResult.SUCCESS;
-            } else if (itemStack.is(Items.MYCELIUM)){
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.MYCELIUM)), 2);
-                level.playSound(null, pos, SoundType.GRASS.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                if (!player.isCreative()) {
-                    itemStack.shrink(1);
-                }
-                return ItemInteractionResult.SUCCESS;
-            } else if (itemStack.is(Items.SAND)){
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.SAND)), 2);
-                level.playSound(null, pos, SoundType.SAND.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                if (!player.isCreative()) {
-                    itemStack.shrink(1);
-                }
-                return ItemInteractionResult.SUCCESS;
-            } else if (itemStack.is(Items.RED_SAND)){
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.RED_SAND)), 2);
-                level.playSound(null, pos, SoundType.SAND.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                if (!player.isCreative()) {
-                    itemStack.shrink(1);
-                }
-                return ItemInteractionResult.SUCCESS;
-            } else if (itemStack.is(Items.SOUL_SAND)){
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.SOUL_SAND)), 2);
-                level.playSound(null, pos, SoundType.SOUL_SAND.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                if (!player.isCreative()) {
-                    itemStack.shrink(1);
-                }
-                return ItemInteractionResult.SUCCESS;
-            } else if (itemStack.is(Items.CRIMSON_NYLIUM)){
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.CRIMSON_NYLIUM)), 2);
-                level.playSound(null, pos, SoundType.NYLIUM.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                if (!player.isCreative()) {
-                    itemStack.shrink(1);
-                }
-                return ItemInteractionResult.SUCCESS;
-            } else if (itemStack.is(Items.WARPED_NYLIUM)){
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.WARPED_NYLIUM)), 2);
-                level.playSound(null, pos, SoundType.NYLIUM.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                if (!player.isCreative()) {
-                    itemStack.shrink(1);
-                }
-                return ItemInteractionResult.SUCCESS;
-            } else if (itemStack.is(Items.END_STONE)){
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.END_STONE)), 2);
-                level.playSound(null, pos, SoundType.STONE.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                if (!player.isCreative()) {
-                    itemStack.shrink(1);
-                }
-                return ItemInteractionResult.SUCCESS;
+                } else
+                    level.playSound(null, pos, SoundEvents.DECORATED_POT_INSERT_FAIL, SoundSource.BLOCKS, 1.0F, 1.0F);
+            } else if (itemStack.isEmpty() && (level.getEntitiesOfClass(Plant.class, AABB.ofSize(pos.getCenter().add(0, 1, 0), 1, 1, 1))).isEmpty()){
+                if(!planter.content.getStackInSlot(0).isEmpty()){
+                    ItemStack stackOnPlanter = planter.content.extractItem(0,1,false);
+
+                    if(stackOnPlanter.is(Items.DIRT)) {
+                        level.playSound(null, pos, SoundType.GRAVEL.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    } else if(stackOnPlanter.is(Items.MYCELIUM)) {
+                        level.playSound(null, pos, SoundType.GRASS.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    } else if(stackOnPlanter.is(Items.SAND) || itemStack.is(Items.RED_SAND)) {
+                        level.playSound(null, pos, SoundType.SAND.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    } else if(stackOnPlanter.is(Items.SOUL_SAND)) {
+                        level.playSound(null, pos, SoundType.SOUL_SAND.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    } else if(stackOnPlanter.is(Items.CRIMSON_NYLIUM) || itemStack.is(Items.WARPED_NYLIUM)) {
+                        level.playSound(null, pos, SoundType.NYLIUM.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    } else if(stackOnPlanter.is(Items.END_STONE)) {
+                        level.playSound(null, pos, SoundType.STONE.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
+                    }
+
+                    player.setItemInHand(InteractionHand.MAIN_HAND, stackOnPlanter);
+                    level.playSound(null, pos, SoundEvents.DECORATED_POT_HIT, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    planter.clearContents();
+                } else
+                    level.playSound(null, pos, SoundEvents.DECORATED_POT_INSERT_FAIL, SoundSource.BLOCKS, 1.0F, 1.0F);
+            } else if(!(itemStack.isEmpty() && planter.content.getStackInSlot(0).isEmpty())) {
+                return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
             }
-        } else if (itemStack.isEmpty() && (level.getEntitiesOfClass(Plant.class, AABB.ofSize(pos.getCenter().add(0, 1, 0), 1, 1, 1))).isEmpty()) {
-            if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("empty")) {
-                level.playSound(null, pos, SoundEvents.DECORATED_POT_INSERT_FAIL, SoundSource.BLOCKS, 1.0F, 1.0F);
-                level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
-                return ItemInteractionResult.SUCCESS;
-            } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("dirt")) {
-                level.playSound(null, pos, SoundType.GRAVEL.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                player.setItemInHand(InteractionHand.MAIN_HAND, Items.DIRT.getDefaultInstance());
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
-                return ItemInteractionResult.SUCCESS;
-            } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("mycelium")) {
-                level.playSound(null, pos, SoundType.GRASS.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                player.setItemInHand(InteractionHand.MAIN_HAND, Items.MYCELIUM.getDefaultInstance());
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
-                return ItemInteractionResult.SUCCESS;
-            } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("sand")) {
-                level.playSound(null, pos, SoundType.SAND.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                player.setItemInHand(InteractionHand.MAIN_HAND, Items.SAND.getDefaultInstance());
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
-                return ItemInteractionResult.SUCCESS;
-            } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("red_sand")) {
-                level.playSound(null, pos, SoundType.SAND.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                player.setItemInHand(InteractionHand.MAIN_HAND, Items.RED_SAND.getDefaultInstance());
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
-                return ItemInteractionResult.SUCCESS;
-            } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("soul_sand")) {
-                level.playSound(null, pos, SoundType.SOUL_SAND.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                player.setItemInHand(InteractionHand.MAIN_HAND, Items.SOUL_SAND.getDefaultInstance());
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
-                return ItemInteractionResult.SUCCESS;
-            } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("crimson_nylium")) {
-                level.playSound(null, pos, SoundType.NYLIUM.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                player.setItemInHand(InteractionHand.MAIN_HAND, Items.CRIMSON_NYLIUM.getDefaultInstance());
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
-                return ItemInteractionResult.SUCCESS;
-            } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("warped_nylium")) {
-                level.playSound(null, pos, SoundType.NYLIUM.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                player.setItemInHand(InteractionHand.MAIN_HAND, Items.WARPED_NYLIUM.getDefaultInstance());
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
-                return ItemInteractionResult.SUCCESS;
-            } else if (level.getBlockState(pos).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("end_stone")) {
-                level.playSound(null, pos, SoundType.STONE.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                player.setItemInHand(InteractionHand.MAIN_HAND, Items.END_STONE.getDefaultInstance());
-                level.setBlock(pos, (state.setValue(CONTENT, Substrate.EMPTY)), 2);
-                return ItemInteractionResult.SUCCESS;
-            } else {
-                return ItemInteractionResult.FAIL;
-            }
-        } return ItemInteractionResult.FAIL;
+
+            return ItemInteractionResult.SUCCESS;
+        }
+
+        return ItemInteractionResult.FAIL;
     }
 
     @Override
@@ -174,21 +126,25 @@ public class PlanterBlock extends Block {
 
     @Override
     public TriState canSustainPlant(BlockState state, BlockGetter level, BlockPos soilPosition, Direction facing, BlockState plant) {
-        if (level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("dirt") && (plant.is(ModTags.Blocks.DIRT_SUSTAINS))){
-            if (plant.is(ModTags.Blocks.MUSHROOMS)){
-                if (level.getLightEmission(soilPosition.above()) > 13)
-                return TriState.FALSE;
-            } else return TriState.TRUE;
-        } else if (level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("mycelium") && plant.is(ModTags.Blocks.MYCELIUM_SUSTAINS)){
-            return TriState.TRUE;
-        } else if ((level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("sand") || level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("red_sand")) && plant.is(ModTags.Blocks.SAND_SUSTAINS)) {
-            return TriState.TRUE;
-        } else if (level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("soul_sand") && plant.is(ModTags.Blocks.SOUL_SAND_SUSTAINS)){
-            return TriState.TRUE;
-        } else if ((level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("crimson_nylium") || level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("warped_nylium")) && plant.is(ModTags.Blocks.NYLIUM_SUSTAINS)){
-            return TriState.TRUE;
-        } else if (level.getBlockState(soilPosition).getValue(ModBlockStateProperties.SUBSTRATE).toString().equals("end_stone") && plant.is(ModTags.Blocks.END_STONE_SUSTAINS)){
-            return TriState.TRUE;
+        if(level.getBlockEntity(soilPosition) instanceof PlanterBlockEntity planter) {
+            ItemStack substrate = planter.content.getStackInSlot(0);
+
+            if (substrate.is(Items.DIRT) && (plant.is(ModTags.Blocks.DIRT_SUSTAINS))){
+                if (plant.is(ModTags.Blocks.MUSHROOMS)){
+                    if (level.getLightEmission(soilPosition.above()) > 13)
+                        return TriState.FALSE;
+                } else return TriState.TRUE;
+            } else if (substrate.is(Items.MYCELIUM) && plant.is(ModTags.Blocks.MYCELIUM_SUSTAINS)){
+                return TriState.TRUE;
+            } else if ((substrate.is(Items.SAND) || substrate.is(Items.RED_SAND)) && plant.is(ModTags.Blocks.SAND_SUSTAINS)) {
+                return TriState.TRUE;
+            } else if (substrate.is(Items.SOUL_SAND) && plant.is(ModTags.Blocks.SOUL_SAND_SUSTAINS)){
+                return TriState.TRUE;
+            } else if ((substrate.is(Items.CRIMSON_NYLIUM) || substrate.is(Items.WARPED_NYLIUM)) && plant.is(ModTags.Blocks.NYLIUM_SUSTAINS)){
+                return TriState.TRUE;
+            } else if (substrate.is(Items.END_STONE) && plant.is(ModTags.Blocks.END_STONE_SUSTAINS)){
+                return TriState.TRUE;
+            }
         }
 
         return super.canSustainPlant(state, level, soilPosition, facing, plant);
@@ -202,9 +158,5 @@ public class PlanterBlock extends Block {
     @Override
     protected RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
-    }
-
-    static {
-        CONTENT = ModBlockStateProperties.SUBSTRATE;
     }
 }

@@ -2,10 +2,8 @@ package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.data.ModDamageTypes;
 import com.x29naybla.gardensandgraves.data.ModTags;
-import com.x29naybla.gardensandgraves.sound.ModSounds;
+import com.x29naybla.gardensandgraves.entity.goal.ModExplosionDamageCalculator;
 import net.minecraft.core.Holder;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -18,8 +16,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.ExplosionDamageCalculator;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 
@@ -29,14 +25,17 @@ public class ExplosivePlant extends Plant{
     private static final EntityDataAccessor<Integer> DATA_SWELL_DIR;
     private int oldSwell;
     private int swell;
-    private int maxSwell = 10;
+    private int maxSwell = 20;
     private int explosionRadius;
+    private int damage;
     private Holder<SoundEvent> sound;
 
-    public ExplosivePlant(EntityType<? extends TamableAnimal> entityType, Level level, int explosionRadius, Holder<SoundEvent> sound) {
+    public ExplosivePlant(EntityType<? extends TamableAnimal> entityType, Level level, int explosionRadius, int damage, Holder<SoundEvent> sound) {
         super(entityType, level);
         this.explosionRadius = explosionRadius;
+        this.damage = damage;
         this.sound = sound;
+        this.sound.value().getRange(2);
     }
 
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
@@ -87,10 +86,16 @@ public class ExplosivePlant extends Plant{
     }
 
     public void setTarget(@Nullable LivingEntity target) {
-        if (!(target instanceof Plant || target instanceof Player)) {
+        boolean canExplode = true;
+        if (this instanceof PotatoMineEntity){
+            PotatoMineEntity entity = (PotatoMineEntity) this;
+            if(!entity.armed) {
+                canExplode = false;
+            }
+        }
+        if (!(target == null) && target.getType().is(ModTags.Entities.PLANT_ENEMIES) && canExplode) {
             super.setTarget(target);
         }
-
     }
 
     public float getSwelling(float partialTicks) {
@@ -106,9 +111,12 @@ public class ExplosivePlant extends Plant{
     }
 
     private void explode() {
+        ModExplosionDamageCalculator damageCalculator = new ModExplosionDamageCalculator();
+        damageCalculator.setDamage(damage);
+
         if (!this.level().isClientSide) {
             this.dead = true;
-            this.level().explode(this, this.damageSources().source(ModDamageTypes.PLANT_EXPLOSION), null, this.getX(), this.getY(), this.getZ(), this.explosionRadius, false, Level.ExplosionInteraction.NONE, ParticleTypes.EXPLOSION, ParticleTypes.EXPLOSION, sound);
+            this.level().explode(this, this.damageSources().source(ModDamageTypes.PLANT_EXPLOSION), damageCalculator, this.getX(), this.getY(), this.getZ(), this.explosionRadius, false, Level.ExplosionInteraction.NONE, ParticleTypes.EXPLOSION, ParticleTypes.EXPLOSION, sound);
             this.triggerOnDeathMobEffects(RemovalReason.KILLED);
             this.discard();
         }

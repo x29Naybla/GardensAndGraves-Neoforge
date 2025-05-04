@@ -1,0 +1,10 @@
+{
+  "values": [
+    "minecraft:villager",
+    "minecraft:wandering_trader",
+    "#minecraft:illager",
+    "minecraft:witch",
+    "minecraft:piglin",
+    "minecraft:piglin_brute"
+  ]
+}

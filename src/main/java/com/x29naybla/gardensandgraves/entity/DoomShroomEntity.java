@@ -23,7 +23,7 @@ public class DoomShroomEntity extends ExplosivePlant {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     public DoomShroomEntity(EntityType<? extends DoomShroomEntity> entityType, Level level) {
-        super(entityType, level, 9, ModSounds.DOOM);
+        super(entityType, level, 9, 180, ModSounds.DOOM);
     }
 
     @Override
@@ -47,7 +47,6 @@ public class DoomShroomEntity extends ExplosivePlant {
 
     protected void registerGoals(){
         this.goalSelector.addGoal(0, new ModSwellGoal(this));
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2.0F, true));
         this.goalSelector.addGoal(2, new FloatGoal(this));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Mob.class, 10, false, false, (target) -> target instanceof Entity entity && entity.getType().is(ModTags.Entities.PLANT_ENEMIES)));
