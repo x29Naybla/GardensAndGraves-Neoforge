@@ -19,7 +19,7 @@ public enum SeedPacketsTimerProvider implements IEntityComponentProvider, IServe
         CompoundTag compound = entityAccessor.getServerData();
         Plant plant = (Plant) entityAccessor.getEntity();
 
-        if (compound.contains("SeedPacketsTimer") && compound.getBoolean("isFromPlanter") && !(plant.isBaby())) {
+        if (compound.contains("SeedPacketsTimer") && compound.getBoolean("isFromPlanter") && compound.getBoolean("onPlanter") && !(plant.isBaby())) {
             iTooltip.add(Component.translatable("gardensandgraves.seed_packets_timer", entityAccessor.getServerData().getInt("SeedPacketsTimer")));
             iTooltip.append(IThemeHelper.get().seconds(compound.getInt("SeedPacketsTimer"), 20));
         }
@@ -30,6 +30,7 @@ public enum SeedPacketsTimerProvider implements IEntityComponentProvider, IServe
         Plant plant = (Plant) entityAccessor.getEntity();
         compoundTag.putInt("SeedPacketsTimer", plant.packetTime);
         compoundTag.putBoolean("isFromPlanter", plant.fromPlanter);
+        compoundTag.putBoolean("onPlanter", plant.onPlanter);
     }
 
     @Override

@@ -248,7 +248,7 @@
   "tag.entity.gardensandgraves.plant_enemies": "Plant Enemies",
 
   "config.jade.plugin_gardensandgraves.sunflower_sun_timer": "Sunflower Sun Timer",
-  "config.jade.plugin_gardensandgraves.sunshroom_sun_timer": "Sun-shroom Sun Timer",
+  "config.jade.plugin_gardensandgraves.sun_shroom_sun_timer": "Sun-shroom Sun Timer",
   "config.jade.plugin_gardensandgraves.reward_timer": "Marigold Rewards Timer",
   "config.jade.plugin_gardensandgraves.seed_packets_timer": "Seed Packets Timer",
   "gardensandgraves.sun_timer": "Next sun: ",

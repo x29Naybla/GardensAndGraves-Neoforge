@@ -13,7 +13,7 @@ import snownee.jade.api.config.IPluginConfig;
 import snownee.jade.api.theme.IThemeHelper;
 
 public enum SunShroomSunTimerProvider implements IEntityComponentProvider, IServerDataProvider<EntityAccessor> {
-    SUNSHROOM_SUN;
+    SUN_SHROOM_SUN;
 
     @Override
     public void appendTooltip(ITooltip iTooltip, EntityAccessor entityAccessor, IPluginConfig iPluginConfig) {
@@ -34,7 +34,7 @@ public enum SunShroomSunTimerProvider implements IEntityComponentProvider, IServ
 
     @Override
     public ResourceLocation getUid() {
-        return JadeIntegration.SUNSHROOM_SUN_TIMER;
+        return JadeIntegration.SUN_SHROOM_SUN_TIMER;
     }
 
 }

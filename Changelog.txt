@@ -1,26 +1,6 @@
 changelog:
-* added tag translations for compatibility with "recipe viewing" mods
-* added Jade integration
-* removed unused tags
-* fixed english and brazilian portuguese translations for gravestones being swapped
-* fixed game crashing when using a watering can on a crop placed on a planter
-* fixed nylium having incorrect sounds play when taking and placing them in planters
-
-* fixed the amount of damage given by the potato mine's explosion
-* fixed plants not being resistant to knockback from explosions
-* changed the detection range of potato mines and doom shrooms so they explode only when a plant enemy reaches them
-* made the explosions of potato mines and doom-shrooms only hurt entities inside the "gardensandgraves:plant_enemies" tag
-* potato mines now start hidden and take 2 seconds to arm themselves before being able to explode
-* made doom-shroom explosions be hearable from further away
-* fixed bug where piglins and piglin brutes didn't drop brains
-* turned drop brains into a tag instead of each entity having a separate loot table
-* put endermen in the "drops brain" tag
-* put the illager tag in the "drops brain" tag instead of each individual entity
-* made the planters block entities again
-* moved the planter contents system from being blockstates into based on an inventory (IMPORTANT, this will erase the contents of your planters, taking the blocks out of them before updating is advised)
-
-* slightly changes to the sunflower and marigold seed packets
-* started to add potted plants
-* players can use a flower pot to pot sunflowers, marigolds, peashooters, snow peas, repeaters, and potato mines from planters
-* if the player is on creative mode while using a shovel to pick up a plant's seed packet, the shovel isn't damaged
-* added seed packets of sunflowers, peashooters, and wall-nuts to the bonus chest loot table
+* fixed using a shovel on sunflowers crashing the game
+* fixed potted plants not being able to be repotted
+* fixed replanting potted plants not returning the flower pot
+* removed the ability of plants from planters to produce seed packets after being replanted
+* polished plant shoveling and potting interactions with the inventory

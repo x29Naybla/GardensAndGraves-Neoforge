@@ -21,7 +21,7 @@ public class SunflowerEntity extends Plant {
     public int sunTime;
 
     public SunflowerEntity(EntityType<? extends SunflowerEntity> entityType, Level level) {
-        super(entityType, level, null, ModItems.POTTED_SUNFLOWER.toStack());
+        super(entityType, level, ModItems.SEED_PACKET_SUNFLOWER.toStack(), ModItems.POTTED_SUNFLOWER.toStack());
         this.sunTime = 6000;
     }
 

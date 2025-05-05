@@ -87,6 +87,7 @@ public class SeedPacketItem extends Item {
                             if(onPlanter(level, blockpos)){
                                 plant.setBaby(true);
                                 plant.fromPlanter(true);
+                                plant.onPlanter = true;
                                 if (plant instanceof MarigoldEntity) ((MarigoldEntity) plant).setColor(DyeColor.byId(level.getRandom().nextIntBetweenInclusive(0, 15)));
                             }else
                                 plant.fromPlanter(false);

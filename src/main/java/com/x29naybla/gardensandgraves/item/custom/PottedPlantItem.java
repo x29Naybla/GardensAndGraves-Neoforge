@@ -8,12 +8,14 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
@@ -59,10 +61,9 @@ public class PottedPlantItem extends SeedPacketItem{
                         entity.setXRot(0);
                         if(entity instanceof Plant plant){
                             if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
-
+                            plant.fromPlanter = true;
                         }
-                        itemStack.shrink(1);
-                        context.getPlayer().getCooldowns().addCooldown(this, cooldown);
+                        context.getPlayer().setItemInHand(InteractionHand.MAIN_HAND, Items.FLOWER_POT.getDefaultInstance());
                         serverlevel.addFreshEntityWithPassengers(entity);
                         level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
                         entity.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());

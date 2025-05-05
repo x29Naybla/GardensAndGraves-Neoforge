@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.block.entity.PlanterBlockEntity;
 import com.x29naybla.gardensandgraves.item.custom.SeedPacketItem;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.core.component.DataComponents;
@@ -18,7 +19,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -28,6 +28,7 @@ import software.bernie.geckolib.animation.AnimatableManager;
 public class Plant extends TamableAnimal implements GeoEntity {
     public int packetTime;
     public boolean fromPlanter;
+    public boolean onPlanter;
     public ItemStack seedPacket;
     @Nullable
     public ItemStack pottedItem;
@@ -36,12 +37,9 @@ public class Plant extends TamableAnimal implements GeoEntity {
         super(entityType, level);
         this.packetTime = 12000;
         this.fromPlanter = false;
+        this.onPlanter = level.getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity;
         this.seedPacket = seedPacket;
         this.pottedItem = pottedItem;
-    }
-
-    public void setSeedPacket(@Nullable ItemStack seedPacket) {
-        this.seedPacket = seedPacket;
     }
 
     @Override
@@ -60,9 +58,6 @@ public class Plant extends TamableAnimal implements GeoEntity {
             packUp(player, this.seedPacket);
             playSound(SoundEvents.SHOVEL_FLATTEN);
             this.discard();
-            if(!player.isCreative()){
-                player.getItemInHand(InteractionHand.MAIN_HAND).hurtAndBreak(1, player, getSlotForHand(InteractionHand.MAIN_HAND));
-            }
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
         }
@@ -76,11 +71,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
         }
         if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem().getDefaultInstance().is(Items.FLOWER_POT) && this.fromPlanter && this.pottedItem != null) {
             packUp(player, this.pottedItem);
-            playSound(SoundType.STONE.getPlaceSound());
             this.discard();
-            if(!player.isCreative()) {
-                player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
-            }
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
         }
@@ -133,7 +124,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     @Override
     public void aiStep() {
         super.aiStep();
-        if(fromPlanter){
+        if(fromPlanter && onPlanter){
             if (!this.level().isClientSide && this.isAlive() && !this.isBaby() && --this.packetTime <= 0) {
                 this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
                 this.spawnAtLocation(this.seedPacket);
@@ -163,7 +154,27 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public void packUp(Player player, ItemStack stack){
         ItemStack output = stack;
         saveDefaultDataToItemTag(this, output);
-        spawnAtLocation(output);
+
+        if(player.getItemInHand(InteractionHand.MAIN_HAND).is(Items.FLOWER_POT)){
+
+            if(player.getItemInHand(InteractionHand.MAIN_HAND).getCount() == 1) {
+                player.setItemInHand(InteractionHand.MAIN_HAND, output);
+            } else if(player.getInventory().hasAnyMatching(ItemStack::isEmpty)) {
+                player.addItem(output);
+                player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
+            } else
+                spawnAtLocation(output);
+        } else {
+
+            if(player.getInventory().hasAnyMatching(ItemStack::isEmpty)) {
+                player.addItem(output);
+            } else
+                spawnAtLocation(output);
+
+            if(!player.isCreative()) {
+                player.getItemInHand(InteractionHand.MAIN_HAND).hurtAndBreak(1, player, getSlotForHand(InteractionHand.MAIN_HAND));
+            }
+        }
     }
 
     private static void saveDefaultDataToItemTag(Plant plant, ItemStack itemStack) {
