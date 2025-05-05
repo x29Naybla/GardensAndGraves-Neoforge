@@ -56,13 +56,8 @@ public class MarigoldEntity extends Plant {
     }
 
     public MarigoldEntity(EntityType<? extends MarigoldEntity> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ModItems.SEED_PACKET_MARIGOLD.toStack(), ModItems.POTTED_MARIGOLD.toStack());
         this.rewardTime = 6000;
-    }
-
-    @Override
-    public @Nullable ItemStack getPickResult() {
-        return ModItems.SEED_PACKET_MARIGOLD.toStack();
     }
 
     @Override

@@ -8,7 +8,6 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
@@ -22,13 +21,8 @@ public class SunShroomEntity extends Plant {
     public int sunTime;
 
     public SunShroomEntity(EntityType<? extends SunShroomEntity> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, ModItems.SEED_PACKET_SUN_SHROOM.toStack(), null);
         this.sunTime = 6000;
-    }
-
-    @Override
-    public @Nullable ItemStack getPickResult() {
-        return ModItems.SEED_PACKET_SUN_SHROOM.toStack();
     }
 
     @Override

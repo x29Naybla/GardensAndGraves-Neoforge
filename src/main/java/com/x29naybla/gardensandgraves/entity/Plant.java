@@ -16,7 +16,9 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -26,11 +28,25 @@ import software.bernie.geckolib.animation.AnimatableManager;
 public class Plant extends TamableAnimal implements GeoEntity {
     public int packetTime;
     public boolean fromPlanter;
+    public ItemStack seedPacket;
+    @Nullable
+    public ItemStack pottedItem;
 
-    public Plant(EntityType<? extends TamableAnimal> entityType, Level level) {
+    public Plant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
         super(entityType, level);
         this.packetTime = 12000;
         this.fromPlanter = false;
+        this.seedPacket = seedPacket;
+        this.pottedItem = pottedItem;
+    }
+
+    public void setSeedPacket(@Nullable ItemStack seedPacket) {
+        this.seedPacket = seedPacket;
+    }
+
+    @Override
+    public @Nullable ItemStack getPickResult() {
+        return this.seedPacket;
     }
 
     public boolean fromPlanter(boolean planter){
@@ -38,13 +54,15 @@ public class Plant extends TamableAnimal implements GeoEntity {
     }
 
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
-        SeedPacketItem item = (SeedPacketItem) this.getPickResult().getItem();
+        SeedPacketItem item = (SeedPacketItem) this.seedPacket.getItem();
 
-        if(player.getItemInHand(hand).getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
-            packUp(player);
+        if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
+            packUp(player, this.seedPacket);
             playSound(SoundEvents.SHOVEL_FLATTEN);
             this.discard();
-            player.getItemInHand(hand).hurtAndBreak(1, player, getSlotForHand(hand));
+            if(!player.isCreative()){
+                player.getItemInHand(InteractionHand.MAIN_HAND).hurtAndBreak(1, player, getSlotForHand(InteractionHand.MAIN_HAND));
+            }
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
             level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
         }
@@ -55,6 +73,16 @@ public class Plant extends TamableAnimal implements GeoEntity {
             if (!player.isCreative()) {
                 player.getItemInHand(hand).shrink(1);
             }
+        }
+        if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem().getDefaultInstance().is(Items.FLOWER_POT) && this.fromPlanter && this.pottedItem != null) {
+            packUp(player, this.pottedItem);
+            playSound(SoundType.STONE.getPlaceSound());
+            this.discard();
+            if(!player.isCreative()) {
+                player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
+            }
+            level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
+            level().addParticle(ParticleTypes.CLOUD, this.getX(), this.getY()+0.5, this.getZ(), 0, 0, 0);
         }
 
         return super.mobInteract(player, hand);
@@ -108,7 +136,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
         if(fromPlanter){
             if (!this.level().isClientSide && this.isAlive() && !this.isBaby() && --this.packetTime <= 0) {
                 this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-                this.spawnAtLocation(this.getPickResult().getItem());
+                this.spawnAtLocation(this.seedPacket);
                 this.gameEvent(GameEvent.ENTITY_PLACE);
                 this.packetTime = 12000;
             }
@@ -132,8 +160,8 @@ public class Plant extends TamableAnimal implements GeoEntity {
         compound.putInt("PacketTime", this.packetTime);
     }
 
-    public void packUp(Player player){
-        ItemStack output = this.getPickResult();
+    public void packUp(Player player, ItemStack stack){
+        ItemStack output = stack;
         saveDefaultDataToItemTag(this, output);
         spawnAtLocation(output);
     }

@@ -17,12 +17,7 @@ public class WallNutEntity extends Plant {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     public WallNutEntity(EntityType<? extends WallNutEntity> entityType, Level level) {
-        super(entityType, level);
-    }
-
-    @Override
-    public @Nullable ItemStack getPickResult() {
-        return ModItems.SEED_PACKET_WALL_NUT.toStack();
+        super(entityType, level, ModItems.SEED_PACKET_WALL_NUT.toStack(), null);
     }
 
     public boolean canCollideWith(Entity entity) {

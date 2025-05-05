@@ -2,10 +2,7 @@ package com.x29naybla.gardensandgraves.item;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
 import com.x29naybla.gardensandgraves.entity.ModEntities;
-import com.x29naybla.gardensandgraves.item.custom.PeaItem;
-import com.x29naybla.gardensandgraves.item.custom.SeedPacketItem;
-import com.x29naybla.gardensandgraves.item.custom.FrozenPeaItem;
-import com.x29naybla.gardensandgraves.item.custom.WateringCanItem;
+import com.x29naybla.gardensandgraves.item.custom.*;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
@@ -56,6 +53,19 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_DOOM_SHROOM = ITEMS.register("seed_packet_doom_shroom",
             () -> new SeedPacketItem(ModEntities.DOOM_SHROOM.get(), 7, 15, new Item.Properties()));
+
+    public static final DeferredItem<Item> POTTED_SUNFLOWER = ITEMS.register("potted_sunflower",
+            () -> new PottedPlantItem(ModEntities.SUNFLOWER.get(), new Item.Properties()));
+    public static final DeferredItem<Item> POTTED_MARIGOLD = ITEMS.register("potted_marigold",
+            () -> new PottedPlantItem(ModEntities.MARIGOLD.get(), new Item.Properties()));
+    public static final DeferredItem<Item> POTTED_PEASHOOTER = ITEMS.register("potted_peashooter",
+            () -> new PottedPlantItem(ModEntities.PEASHOOTER.get(), new Item.Properties()));
+    public static final DeferredItem<Item> POTTED_SNOW_PEA = ITEMS.register("potted_snow_pea",
+            () -> new PottedPlantItem(ModEntities.SNOW_PEA.get(), new Item.Properties()));
+    public static final DeferredItem<Item> POTTED_REPEATER = ITEMS.register("potted_repeater",
+            () -> new PottedPlantItem(ModEntities.REPEATER.get(), new Item.Properties()));
+    public static final DeferredItem<Item> POTTED_POTATO_MINE = ITEMS.register("potted_potato_mine",
+            () -> new PottedPlantItem(ModEntities.POTATO_MINE.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> PEA = ITEMS.register("pea",
             () -> new PeaItem(new Item.Properties()));

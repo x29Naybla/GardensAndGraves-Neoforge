@@ -83,11 +83,13 @@ public class PlanterBlock extends BaseEntityBlock {
                         level.playSound(null, pos, SoundType.STONE.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                     }
 
-                    itemStack.shrink(1);
+                    if(!player.isCreative()) {
+                        itemStack.shrink(1);
+                    }
                 } else
                     level.playSound(null, pos, SoundEvents.DECORATED_POT_INSERT_FAIL, SoundSource.BLOCKS, 1.0F, 1.0F);
             } else if (itemStack.isEmpty() && (level.getEntitiesOfClass(Plant.class, AABB.ofSize(pos.getCenter().add(0, 1, 0), 1, 1, 1))).isEmpty()){
-                if(!planter.content.getStackInSlot(0).isEmpty()){
+                if(!planter.content.getStackInSlot(0).isEmpty() && player.getItemInHand(InteractionHand.MAIN_HAND).is(Items.AIR)){
                     ItemStack stackOnPlanter = planter.content.extractItem(0,1,false);
 
                     if(stackOnPlanter.is(Items.DIRT)) {

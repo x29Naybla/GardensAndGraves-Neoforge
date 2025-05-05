@@ -7,7 +7,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
@@ -22,13 +21,8 @@ public class SunflowerEntity extends Plant {
     public int sunTime;
 
     public SunflowerEntity(EntityType<? extends SunflowerEntity> entityType, Level level) {
-        super(entityType, level);
+        super(entityType, level, null, ModItems.POTTED_SUNFLOWER.toStack());
         this.sunTime = 6000;
-    }
-
-    @Override
-    public @Nullable ItemStack getPickResult() {
-        return ModItems.SEED_PACKET_SUNFLOWER.toStack();
     }
 
     @Override

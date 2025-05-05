@@ -13,6 +13,7 @@
     "gardensandgraves:add_loot_woodland_mansion",
     "gardensandgraves:add_loot_shipwreck_treasure",
     "gardensandgraves:add_loot_abandoned_mineshaft",
-    "gardensandgraves:brains_from_tag"
+    "gardensandgraves:brains_from_tag",
+    "gardensandgraves:add_loot_bonus_chest"
   ]
 }

@@ -18,3 +18,9 @@ changelog:
 * put the illager tag in the "drops brain" tag instead of each individual entity
 * made the planters block entities again
 * moved the planter contents system from being blockstates into based on an inventory (IMPORTANT, this will erase the contents of your planters, taking the blocks out of them before updating is advised)
+
+* slightly changes to the sunflower and marigold seed packets
+* started to add potted plants
+* players can use a flower pot to pot sunflowers, marigolds, peashooters, snow peas, repeaters, and potato mines from planters
+* if the player is on creative mode while using a shovel to pick up a plant's seed packet, the shovel isn't damaged
+* added seed packets of sunflowers, peashooters, and wall-nuts to the bonus chest loot table

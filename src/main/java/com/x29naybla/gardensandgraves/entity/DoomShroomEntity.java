@@ -12,7 +12,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -23,12 +22,7 @@ public class DoomShroomEntity extends ExplosivePlant {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     public DoomShroomEntity(EntityType<? extends DoomShroomEntity> entityType, Level level) {
-        super(entityType, level, 9, 180, ModSounds.DOOM);
-    }
-
-    @Override
-    public @Nullable ItemStack getPickResult() {
-        return ModItems.SEED_PACKET_DOOM_SHROOM.toStack();
+        super(entityType, level, ModItems.SEED_PACKET_DOOM_SHROOM.toStack(), null, 9, 180, ModSounds.DOOM);
     }
 
     @Override

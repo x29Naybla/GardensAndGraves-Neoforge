@@ -10,13 +10,18 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+
+import javax.annotation.Nullable;
 
 public class Peashooting extends Plant implements RangedAttackMob {
     protected static final EntityDataAccessor<Boolean> SHOOTING = SynchedEntityData.defineId(Peashooting.class, EntityDataSerializers.BOOLEAN);
 
-    public Peashooting(EntityType<? extends TamableAnimal> entityType, Level level) {
-        super(entityType, level);
+    public Peashooting(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
+        super(entityType, level, seedPacket, pottedItem);
+        this.seedPacket = seedPacket;
+        this.pottedItem = pottedItem;
     }
 
     protected void registerGoals(){

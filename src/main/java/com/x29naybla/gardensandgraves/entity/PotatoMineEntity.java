@@ -14,17 +14,13 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
-
-import java.util.function.Supplier;
 
 public class PotatoMineEntity extends ExplosivePlant {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
@@ -35,13 +31,8 @@ public class PotatoMineEntity extends ExplosivePlant {
     public boolean armed;
 
     public PotatoMineEntity(EntityType<? extends PotatoMineEntity> entityType, Level level) {
-        super(entityType, level, 1, 180, ModSounds.SPUDOW);
+        super(entityType, level, ModItems.SEED_PACKET_POTATO_MINE.toStack(), ModItems.POTTED_POTATO_MINE.toStack(), 1, 180, ModSounds.SPUDOW);
         this.armed = false;
-    }
-
-    @Override
-    public @Nullable ItemStack getPickResult() {
-        return ModItems.SEED_PACKET_POTATO_MINE.toStack();
     }
 
     @Override

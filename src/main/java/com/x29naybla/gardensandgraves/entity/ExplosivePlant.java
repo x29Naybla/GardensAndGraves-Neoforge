@@ -12,10 +12,10 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 
@@ -30,8 +30,10 @@ public class ExplosivePlant extends Plant{
     private int damage;
     private Holder<SoundEvent> sound;
 
-    public ExplosivePlant(EntityType<? extends TamableAnimal> entityType, Level level, int explosionRadius, int damage, Holder<SoundEvent> sound) {
-        super(entityType, level);
+    public ExplosivePlant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem, int explosionRadius, int damage, Holder<SoundEvent> sound) {
+        super(entityType, level, seedPacket, pottedItem);
+        this.seedPacket = seedPacket;
+        this.pottedItem = pottedItem;
         this.explosionRadius = explosionRadius;
         this.damage = damage;
         this.sound = sound;

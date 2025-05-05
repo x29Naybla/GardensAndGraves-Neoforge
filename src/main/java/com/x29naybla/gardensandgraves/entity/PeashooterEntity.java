@@ -9,7 +9,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -23,12 +22,7 @@ public class PeashooterEntity extends Peashooting {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     public PeashooterEntity(EntityType<? extends PeashooterEntity> entityType, Level level) {
-        super(entityType, level);
-    }
-
-    @Override
-    public @Nullable ItemStack getPickResult() {
-        return ModItems.SEED_PACKET_PEASHOOTER.toStack();
+        super(entityType, level, ModItems.SEED_PACKET_PEASHOOTER.toStack(), ModItems.POTTED_PEASHOOTER.toStack());
     }
 
     @Override

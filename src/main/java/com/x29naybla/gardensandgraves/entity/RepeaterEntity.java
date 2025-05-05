@@ -5,7 +5,6 @@ import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -19,12 +18,7 @@ public class RepeaterEntity extends Peashooting {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     public RepeaterEntity(EntityType<? extends RepeaterEntity> entityType, Level level) {
-        super(entityType, level);
-    }
-
-    @Override
-    public @Nullable ItemStack getPickResult() {
-        return ModItems.SEED_PACKET_REPEATER.toStack();
+        super(entityType, level, ModItems.SEED_PACKET_REPEATER.toStack(), ModItems.POTTED_REPEATER.toStack());
     }
 
     @Override

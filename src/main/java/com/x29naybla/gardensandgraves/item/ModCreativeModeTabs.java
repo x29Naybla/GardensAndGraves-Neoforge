@@ -35,6 +35,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SEED_PACKET_FUME_SHROOM);
                         output.accept(ModItems.SEED_PACKET_HYPNO_SHROOM);
                         output.accept(ModItems.SEED_PACKET_DOOM_SHROOM);
+                        output.accept(ModItems.POTTED_SUNFLOWER);
+                        output.accept(ModItems.POTTED_MARIGOLD);
+                        output.accept(ModItems.POTTED_PEASHOOTER);
+                        output.accept(ModItems.POTTED_SNOW_PEA);
+                        output.accept(ModItems.POTTED_REPEATER);
+                        output.accept(ModItems.POTTED_POTATO_MINE);
                         output.accept(ModItems.WATERING_CAN_WHITE);
                         output.accept(ModItems.WATERING_CAN_LIGHT_GRAY);
                         output.accept(ModItems.WATERING_CAN_GRAY);

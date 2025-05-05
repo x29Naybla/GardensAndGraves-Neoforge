@@ -34,6 +34,21 @@
   "item.gardensandgraves.seed_packet_doom_shroom": "Doom-shroom Seed Packet",
   "item.gardensandgraves.seed_packet_doom_shroom.desc": "Sun Cost: 5",
 
+  "item.gardensandgraves.potted_sunflower": "Potted Sunflower",
+  "item.gardensandgraves.potted_sunflower.desc": "Description",
+  "item.gardensandgraves.potted_marigold": "Potted Marigold",
+  "item.gardensandgraves.potted_marigold.desc": "Description",
+
+  "item.gardensandgraves.potted_peashooter": "Potted Peashooter",
+  "item.gardensandgraves.potted_peashooter.desc": "Description",
+  "item.gardensandgraves.potted_snow_pea": "Potted Snow Pea",
+  "item.gardensandgraves.potted_snow_pea.desc": "Description",
+  "item.gardensandgraves.potted_repeater": "Potted Repeater",
+  "item.gardensandgraves.potted_repeater.desc": "Description",
+
+  "item.gardensandgraves.potted_potato_mine": "Potted Potato Mine",
+  "item.gardensandgraves.potted_potato_mine.desc": "Description",
+
   "item.gardensandgraves.sun": "Sun",
   "item.gardensandgraves.brain": "Brain",
   "item.gardensandgraves.watering_can_white": "White Watering Can",

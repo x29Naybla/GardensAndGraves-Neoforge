@@ -26,6 +26,8 @@ public class PlanterBlockEntity extends BlockEntity {
             setChanged();
             if(!level.isClientSide()) {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+                PlanterBlockEntity.this.requestModelDataUpdate();
+                PlanterBlockEntity.this.setChanged();
             }
         }
     };
