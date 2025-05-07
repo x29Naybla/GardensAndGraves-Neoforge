@@ -34,6 +34,26 @@
   "item.gardensandgraves.seed_packet_doom_shroom": "Sachet de graines de champi-mort",
   "item.gardensandgraves.seed_packet_doom_shroom.desc": "Coût du soleil : 5",
 
+  "item.gardensandgraves.potted_sunflower": "Tournesol en pot",
+  "item.gardensandgraves.potted_sunflower.desc": "Description",
+  "item.gardensandgraves.potted_marigold": "Souci en pot",
+  "item.gardensandgraves.potted_marigold.desc": "Description",
+
+  "item.gardensandgraves.potted_peashooter": "Pisto-pois en pot",
+  "item.gardensandgraves.potted_peashooter.desc": "Description",
+  "item.gardensandgraves.potted_snow_pea": "Pois geleur en pot",
+  "item.gardensandgraves.potted_snow_pea.desc": "Description",
+  "item.gardensandgraves.potted_repeater": "Double pisto-pois",
+  "item.gardensandgraves.potted_repeater.desc": "Description",
+
+  "item.gardensandgraves.potted_potato_mine": "Mine patate en pot",
+  "item.gardensandgraves.potted_potato_mine.desc": "Description",
+
+  "item.gardensandgraves.potted_sun_shroom": "Champi-soleil en pot",
+  "item.gardensandgraves.potted_sun_shroom.desc": "Description",
+  "item.gardensandgraves.potted_puff_shroom": "Champi-gnon en pot",
+  "item.gardensandgraves.potted_puff_shroom.desc": "Description",
+
   "item.gardensandgraves.sun": "Soleil",
   "item.gardensandgraves.brain": "Brain",
   "item.gardensandgraves.watering_can_white": "White Watering Can",

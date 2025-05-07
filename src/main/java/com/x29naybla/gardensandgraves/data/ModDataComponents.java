@@ -1,21 +1,27 @@
-package com.x29naybla.gardensandgraves.component;
+package com.x29naybla.gardensandgraves.data;
 
 import com.mojang.serialization.Codec;
 import com.x29naybla.gardensandgraves.GardensAndGraves;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.core.component.DataComponentType;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.UUID;
 import java.util.function.UnaryOperator;
 
 public class ModDataComponents {
     public static final DeferredRegister<DataComponentType<?>> DATA_COMPONENT_TYPES =
-            DeferredRegister.createDataComponents(ResourceKey.createRegistryKey(ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "data_maps/entity_type")), GardensAndGraves.MOD_ID);
+            DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, GardensAndGraves.MOD_ID);
 
-
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> AGE = register("age",
+            builder -> builder.persistent(Codec.INT));
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Float>> HEALTH = register("health",
+            builder -> builder.persistent(Codec.FLOAT));
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<UUID>> UUID = register("uuid",
+            builder -> builder.persistent(UUIDUtil.CODEC));
 
     private static <T>DeferredHolder<DataComponentType<?>, DataComponentType<T>> register(String name,
                                                                                           UnaryOperator<DataComponentType.Builder<T>> builderOperator) {

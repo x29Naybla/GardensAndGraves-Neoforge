@@ -3,7 +3,7 @@ package com.x29naybla.gardensandgraves;
 import com.x29naybla.gardensandgraves.block.ModBlocks;
 import com.x29naybla.gardensandgraves.block.entity.ModBlockEntities;
 import com.x29naybla.gardensandgraves.block.entity.renderer.PlanterBlockEntityRenderer;
-import com.x29naybla.gardensandgraves.component.ModDataComponents;
+import com.x29naybla.gardensandgraves.data.ModDataComponents;
 import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.ModCreativeModeTabs;
 import com.x29naybla.gardensandgraves.item.ModItems;

@@ -1,5 +1,7 @@
 package com.x29naybla.gardensandgraves.item.custom;
 
+import com.x29naybla.gardensandgraves.data.ModDataComponents;
+import com.x29naybla.gardensandgraves.entity.MarigoldEntity;
 import com.x29naybla.gardensandgraves.entity.Plant;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.core.BlockPos;
@@ -61,6 +63,10 @@ public class PottedPlantItem extends SeedPacketItem{
                         entity.setXRot(0);
                         if(entity instanceof Plant plant){
                             if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
+                            if (stack.has(DataComponents.BASE_COLOR)) ((MarigoldEntity) plant).setColor(stack.get(DataComponents.BASE_COLOR));
+                            if (stack.has(ModDataComponents.AGE)) plant.setAge(stack.get(ModDataComponents.AGE));
+                            if (stack.has(ModDataComponents.HEALTH)) plant.setHealth(stack.get(ModDataComponents.HEALTH));
+                            if (stack.has(ModDataComponents.UUID)) plant.setUUID(stack.get(ModDataComponents.UUID));
                             plant.fromPlanter = true;
                         }
                         context.getPlayer().setItemInHand(InteractionHand.MAIN_HAND, Items.FLOWER_POT.getDefaultInstance());

@@ -49,7 +49,7 @@ public class SeedPacketItem extends Item {
         return this.getOrCreateDescriptionId();
     }
 
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         tooltipComponents.add(this.getDisplayName().withStyle(ChatFormatting.GRAY));
     }
 
@@ -86,11 +86,11 @@ public class SeedPacketItem extends Item {
                             if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
                             if(onPlanter(level, blockpos)){
                                 plant.setBaby(true);
-                                plant.fromPlanter(true);
+                                plant.fromPlanter = true;
                                 plant.onPlanter = true;
                                 if (plant instanceof MarigoldEntity) ((MarigoldEntity) plant).setColor(DyeColor.byId(level.getRandom().nextIntBetweenInclusive(0, 15)));
                             }else
-                                plant.fromPlanter(false);
+                                plant.fromPlanter = false;
                             if(entity instanceof SunShroomEntity) plant.setBaby(true);
                         }
                         itemStack.shrink(1);

@@ -1,6 +1,14 @@
 changelog:
-* fixed using a shovel on sunflowers crashing the game
-* fixed potted plants not being able to be repotted
-* fixed replanting potted plants not returning the flower pot
-* removed the ability of plants from planters to produce seed packets after being replanted
-* polished plant shoveling and potting interactions with the inventory
+* fixed Enderman not being able to drop Brain
+* added Potted Sun-shroom and Potted Puff-shroom
+* added missing translations for potted plants to Brazilian Portuguese and French
+* created an "endermen" tag and added it to the drops_brain tag
+* added Enderman Overhaul's endermen to the endermen tag
+* added mod support, additions to the drops_brain tag include:
+* * Guard villager's guards,
+* * Mobs of Mythology's kobolds and kobold warriors
+* * Touhou Little Maid's maids and maid fairies
+* * Raided's illagers
+* * Radical Cobblemon Trainers' trainers
+* plants when potted now keep their age, health, owner, and marigolds their color
+* more changes to plant shoveling and potting interactions

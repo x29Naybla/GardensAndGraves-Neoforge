@@ -34,6 +34,26 @@
   "item.gardensandgraves.seed_packet_doom_shroom": "Pacote de sementes de ruinagumelo",
   "item.gardensandgraves.seed_packet_doom_shroom.desc": "Custo de sol: 5",
 
+  "item.gardensandgraves.potted_sunflower": "Girassol envasado",
+  "item.gardensandgraves.potted_sunflower.desc": "Descrição",
+  "item.gardensandgraves.potted_marigold": "Calêndula envasada",
+  "item.gardensandgraves.potted_marigold.desc": "Descrição",
+
+  "item.gardensandgraves.potted_peashooter": "Disparervilha envasada",
+  "item.gardensandgraves.potted_peashooter.desc": "Descrição",
+  "item.gardensandgraves.potted_snow_pea": "Gelervilha envasada",
+  "item.gardensandgraves.potted_snow_pea.desc": "Descrição",
+  "item.gardensandgraves.potted_repeater": "Duplaervilha envasada",
+  "item.gardensandgraves.potted_repeater.desc": "Descrição",
+
+  "item.gardensandgraves.potted_potato_mine": "Batatamina envasada",
+  "item.gardensandgraves.potted_potato_mine.desc": "Descrição",
+
+  "item.gardensandgraves.potted_sun_shroom": "Solargumelo envasado",
+  "item.gardensandgraves.potted_sun_shroom.desc": "Descrição",
+  "item.gardensandgraves.potted_puff_shroom": "Soprogumelo envasado",
+  "item.gardensandgraves.potted_puff_shroom.desc": "Descrição",
+
   "item.gardensandgraves.sun": "Sol",
   "item.gardensandgraves.brain": "Cérebro",
   "item.gardensandgraves.watering_can_white": "Regador branco",

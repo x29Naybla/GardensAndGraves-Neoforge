@@ -24,7 +24,7 @@ public class PuffShroomEntity extends Plant implements RangedAttackMob {
     public boolean isShooting = false;
 
     public PuffShroomEntity(EntityType<? extends PuffShroomEntity> entityType, Level level) {
-        super(entityType, level, ModItems.SEED_PACKET_PUFF_SHROOM.toStack(), null);
+        super(entityType, level, ModItems.SEED_PACKET_PUFF_SHROOM.toStack(), ModItems.POTTED_PUFF_SHROOM.toStack());
     }
 
     @Override

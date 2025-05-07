@@ -41,6 +41,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.POTTED_SNOW_PEA);
                         output.accept(ModItems.POTTED_REPEATER);
                         output.accept(ModItems.POTTED_POTATO_MINE);
+                        output.accept(ModItems.POTTED_SUN_SHROOM);
+                        output.accept(ModItems.POTTED_PUFF_SHROOM);
                         output.accept(ModItems.WATERING_CAN_WHITE);
                         output.accept(ModItems.WATERING_CAN_LIGHT_GRAY);
                         output.accept(ModItems.WATERING_CAN_GRAY);

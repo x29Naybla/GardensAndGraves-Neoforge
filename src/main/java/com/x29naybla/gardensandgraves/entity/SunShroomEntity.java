@@ -21,7 +21,7 @@ public class SunShroomEntity extends Plant {
     public int sunTime;
 
     public SunShroomEntity(EntityType<? extends SunShroomEntity> entityType, Level level) {
-        super(entityType, level, ModItems.SEED_PACKET_SUN_SHROOM.toStack(), null);
+        super(entityType, level, ModItems.SEED_PACKET_SUN_SHROOM.toStack(), ModItems.POTTED_SUN_SHROOM.toStack());
         this.sunTime = 6000;
     }
 

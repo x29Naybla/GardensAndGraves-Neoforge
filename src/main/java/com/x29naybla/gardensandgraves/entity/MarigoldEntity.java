@@ -40,6 +40,7 @@ public class MarigoldEntity extends Plant {
     private static final EntityDataAccessor<Byte> DATA_PETALS_ID;
     private static final Map<DyeColor, Integer> COLOR_BY_DYE;
     public int rewardTime;
+    public static DyeColor dyedColor;
 
     private static int createMarigoldColor(DyeColor dyeColor) {
         if (dyeColor == DyeColor.WHITE) {
@@ -160,6 +161,7 @@ public class MarigoldEntity extends Plant {
     public void setColor(DyeColor dyeColor) {
         byte b0 = (Byte)this.entityData.get(DATA_PETALS_ID);
         this.entityData.set(DATA_PETALS_ID, (byte)(b0 & 240 | dyeColor.getId() & 15));
+        dyedColor = dyeColor;
     }
 
     static {

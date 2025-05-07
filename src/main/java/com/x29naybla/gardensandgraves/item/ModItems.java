@@ -66,6 +66,10 @@ public class ModItems {
             () -> new PottedPlantItem(ModEntities.REPEATER.get(), new Item.Properties()));
     public static final DeferredItem<Item> POTTED_POTATO_MINE = ITEMS.register("potted_potato_mine",
             () -> new PottedPlantItem(ModEntities.POTATO_MINE.get(), new Item.Properties()));
+    public static final DeferredItem<Item> POTTED_SUN_SHROOM = ITEMS.register("potted_sun_shroom",
+            () -> new PottedPlantItem(ModEntities.SUN_SHROOM.get(), new Item.Properties()));
+    public static final DeferredItem<Item> POTTED_PUFF_SHROOM = ITEMS.register("potted_puff_shroom",
+            () -> new PottedPlantItem(ModEntities.PUFF_SHROOM.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> PEA = ITEMS.register("pea",
             () -> new PeaItem(new Item.Properties()));
