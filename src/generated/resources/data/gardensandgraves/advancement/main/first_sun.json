@@ -1,11 +1,11 @@
 {
-  "parent": "gardensandgraves:main/first_pack",
+  "parent": "gardensandgraves:main/planters",
   "criteria": {
-    "seed_packet": {
+    "sun": {
       "conditions": {
         "items": [
           {
-            "items": "gardensandgraves:seed_packet_puff_shroom"
+            "items": "gardensandgraves:sun"
           }
         ]
       },
@@ -14,19 +14,19 @@
   },
   "display": {
     "description": {
-      "translate": "gardensandgraves.advancement.puff_shroom.desc"
+      "translate": "gardensandgraves.advancement.first_sun.desc"
     },
     "icon": {
       "count": 1,
-      "id": "gardensandgraves:seed_packet_puff_shroom"
+      "id": "gardensandgraves:sun"
     },
     "title": {
-      "translate": "gardensandgraves.advancement.puff_shroom"
+      "translate": "gardensandgraves.advancement.first_sun"
     }
   },
   "requirements": [
     [
-      "seed_packet"
+      "sun"
     ]
   ],
   "sends_telemetry_event": true

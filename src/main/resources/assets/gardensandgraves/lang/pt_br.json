@@ -178,9 +178,6 @@
   "gardensandgraves.advancement.marigold": "Calêndula",
   "gardensandgraves.advancement.marigold.desc": "Gera entre 1 e 3 pepitas de ferro ou ouro a cada 5 minutos. Pode ser encontrada em minas abandonadas e navios naufragados",
 
-  "gardensandgraves.advancement.pea_collection": "A Peafect Collection",
-  "gardensandgraves.advancement.pea_collection.desc": "Obtenha os pacotes de sementes para todas as plantas da família das disparervilhas",
-
   "gardensandgraves.advancement.peashooter": "Disparervilha",
   "gardensandgraves.advancement.peashooter.desc": "Atira uma ervilha a cada 1.5 segundos. Pode ser encontrada em vilas de deserto, savana, planície e taiga",
 
@@ -194,7 +191,7 @@
   "gardensandgraves.advancement.wall_nut.desc": "Protege outras plantas de ataques de zumbis. Pode ser encontrada em todas as vilas",
 
   "gardensandgraves.advancement.potato_mine": "Batatamina",
-  "gardensandgraves.advancement.potato_mine.desc": "Pode ser encontrada em vilas de savana e templos da selva",
+  "gardensandgraves.advancement.potato_mine.desc": "Leva 2 segundos para se armar, e então explodirá quando for pisada. Pode ser encontrada em vilas de savana e templos da selva",
 
   "gardensandgraves.advancement.jalapeno": "Pimenta",
   "gardensandgraves.advancement.jalapeno.desc": "Pode ser encontrada em vilas de deserto e savana",
@@ -204,9 +201,6 @@
 
   "gardensandgraves.advancement.bonk_choy": "Repolho-boxeador",
   "gardensandgraves.advancement.bonk_choy.desc": "Pode ser encontrada em vilas de deserto e savana e pirâmides do deserto",
-
-  "gardensandgraves.advancement.mushroom_collection": "Not Mushroom for improvement",
-  "gardensandgraves.advancement.mushroom_collection.desc": "Obtenha os pacotes de sementes para todos os cogumelos",
 
   "gardensandgraves.advancement.sun_shroom": "Solargumelo",
   "gardensandgraves.advancement.sun_shroom.desc": "A cada 5 minutos durante a noite, gera 1 sol quando criança e 2 sóis quando adulto. Pode ser encontrado em vilas de taiga",

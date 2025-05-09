@@ -41,6 +41,16 @@ public class ModEntityTagsProvider extends EntityTypeTagsProvider {
                 .add(ModEntities.POTATO_MINE.get())
                 .addTag(ModTags.Entities.MUSHROOMS);
 
+        tag(ModTags.Entities.POTTABLE_PLANTS)
+                .add(ModEntities.SUNFLOWER.get())
+                .add(ModEntities.MARIGOLD.get())
+                .add(ModEntities.PEASHOOTER.get())
+                .add(ModEntities.SNOW_PEA.get())
+                .add(ModEntities.REPEATER.get())
+                .add(ModEntities.POTATO_MINE.get())
+                .add(ModEntities.SUN_SHROOM.get())
+                .add(ModEntities.PUFF_SHROOM.get());
+
         tag(ModTags.Entities.PLANT_ENEMIES)
                 .addTag(EntityTypeTags.UNDEAD)
                 .addTag(EntityTypeTags.ARTHROPOD)

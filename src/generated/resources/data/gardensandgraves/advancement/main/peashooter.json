@@ -1,5 +1,5 @@
 {
-  "parent": "gardensandgraves:main/pea_collection",
+  "parent": "gardensandgraves:main/first_pack",
   "criteria": {
     "seed_packet": {
       "conditions": {

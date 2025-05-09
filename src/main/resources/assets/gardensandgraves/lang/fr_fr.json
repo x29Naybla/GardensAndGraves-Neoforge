@@ -169,7 +169,7 @@
   "gardensandgraves.advancement.root": "Gardens and Graves",
   "gardensandgraves.advancement.root.desc": "",
 
-  "gardensandgraves.advancement.planters": "Planting the future",
+  "gardensandgraves.advancement.planters": "Planting the Future",
   "gardensandgraves.advancement.planters.desc": "Craft a planter. Plants planted on it will produce seed packets!",
 
   "gardensandgraves.advancement.sunflower": "Tournesol",
@@ -177,9 +177,6 @@
 
   "gardensandgraves.advancement.marigold": "Souci",
   "gardensandgraves.advancement.marigold.desc": "They generate between 1 and 3 iron or gold nuggets every 5 minutes. Can be found in abandoned mineshafts and shipwrecks",
-
-  "gardensandgraves.advancement.pea_collection": "A Peafect Collection",
-  "gardensandgraves.advancement.pea_collection.desc": "Obtain the seed packets for all plants of the peashooting family",
 
   "gardensandgraves.advancement.peashooter": "Pisto-pois",
   "gardensandgraves.advancement.peashooter.desc": "They shoot one pea every 1,5 seconds. Can be found in desert, savanna, plains, and taiga villages",
@@ -194,7 +191,7 @@
   "gardensandgraves.advancement.wall_nut.desc": "They protect other plants from zombie attacks. Can be found in all villages",
 
   "gardensandgraves.advancement.potato_mine": "Mine patate",
-  "gardensandgraves.advancement.potato_mine.desc": "Can be found in savanna villages, and jungle temples",
+  "gardensandgraves.advancement.potato_mine.desc": "They take 2 seconds to arm, and then will explode when they get stepped on. Can be found in savanna villages, and jungle temples",
 
   "gardensandgraves.advancement.jalapeno": "Jalapeño",
   "gardensandgraves.advancement.jalapeno.desc": "Can be found in savanna and desert villages",
@@ -204,9 +201,6 @@
 
   "gardensandgraves.advancement.bonk_choy": "Tape choï",
   "gardensandgraves.advancement.bonk_choy.desc": "Can be found in savanna and desert villages and desert pyramids",
-
-  "gardensandgraves.advancement.mushroom_collection": "Not Mushroom for improvement",
-  "gardensandgraves.advancement.mushroom_collection.desc": "Obtain the seed packets for all mushrooms",
 
   "gardensandgraves.advancement.sun_shroom": "Champi-soleil",
   "gardensandgraves.advancement.sun_shroom.desc": "Every 5 minutes during the night, they generate 1 sun when babies and 2 suns when adults. Can be found in taiga villages",

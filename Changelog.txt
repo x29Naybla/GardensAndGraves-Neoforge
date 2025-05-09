@@ -12,3 +12,10 @@ changelog:
 * * Radical Cobblemon Trainers' trainers
 * plants when potted now keep their age, health, owner, and marigolds their color
 * more changes to plant shoveling and potting interactions
+
+* made potted plants be able to be replanted on planters
+* removed the advancements "A Peafect Collection" and "Not Mushroom for improvement"
+* fixed the letter casing of some advancement names and descriptions to better match vanilla's
+* added guide text to the potato mine's advancement
+* added the "pottable_plants" tag
+* added 4 new advancements

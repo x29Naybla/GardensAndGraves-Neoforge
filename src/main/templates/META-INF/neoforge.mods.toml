@@ -38,7 +38,7 @@ displayName="${mod_name}" #mandatory
 logoFile="gardensandgraves.png" #optional
 
 # A text field displayed in the mod UI
-credits="PopCap, Asof, ChiefArug, CodexAdrian, Lance5057, and Pix3l Spud" #optional
+credits="PopCap, Asof, ChiefArug, CodexAdrian, Crispytwig, Lance5057, and Pix3l Spud" #optional
 
 # A text field displayed in the mod UI
 authors="${mod_authors}" #optional

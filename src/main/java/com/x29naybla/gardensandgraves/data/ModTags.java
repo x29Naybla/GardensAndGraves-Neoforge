@@ -69,6 +69,8 @@ public class ModTags {
         public static final TagKey<EntityType<?>> MUSHROOMS = createTag("mushrooms");
         public static final TagKey<EntityType<?>> PLANTS = createTag("plants");
 
+        public static final TagKey<EntityType<?>> POTTABLE_PLANTS = createTag("pottable_plants");
+
         public static final TagKey<EntityType<?>> PLANTABLE_ON_DIRT = createTag("plantable_on_dirt");
         public static final TagKey<EntityType<?>> PLANTABLE_ON_MYCELIUM = createTag("plantable_on_mycelium");
         public static final TagKey<EntityType<?>> PLANTABLE_ON_SANDS = createTag("plantable_on_sands");

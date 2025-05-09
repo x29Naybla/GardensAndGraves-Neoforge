@@ -42,40 +42,38 @@ public class PottedPlantItem extends SeedPacketItem{
         BlockPos blockpos = blockplacecontext.getClickedPos();
         ItemStack stack = context.getItemInHand();
 
-        if (!onPlanter(level, blockpos)){
-            Direction direction = context.getClickedFace();
-            if (direction == Direction.DOWN) {
-                return InteractionResult.FAIL;
-            }else if (onSubstrate(level, blockpos)){
-                ItemStack itemStack = context.getItemInHand();
-                Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
-                AABB aabb = this.getType(itemStack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
-                if(level.noCollision(null, aabb) && level.getEntities(null, aabb).isEmpty()){
-                    if(level instanceof ServerLevel){
-                        ServerLevel serverlevel = (ServerLevel)level;
-                        Entity entity = this.getType(itemStack).create(serverlevel, EntityType.createDefaultStackConfig(serverlevel, itemStack, context.getPlayer()), blockpos, MobSpawnType.SPAWN_EGG, false, false);
-                        if (entity == null) {
-                            return InteractionResult.FAIL;
-                        }
-                        float f = (float)Mth.floor((Mth.wrapDegrees(context.getRotation()) + 22.5F) / 45.0F) * 45.0F;
-                        entity.moveTo(entity.getX(), entity.getY(), entity.getZ(), 0, 0);
-                        entity.setYRot(f);
-                        entity.setXRot(0);
-                        if(entity instanceof Plant plant){
-                            if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
-                            if (stack.has(DataComponents.BASE_COLOR)) ((MarigoldEntity) plant).setColor(stack.get(DataComponents.BASE_COLOR));
-                            if (stack.has(ModDataComponents.AGE)) plant.setAge(stack.get(ModDataComponents.AGE));
-                            if (stack.has(ModDataComponents.HEALTH)) plant.setHealth(stack.get(ModDataComponents.HEALTH));
-                            if (stack.has(ModDataComponents.UUID)) plant.setUUID(stack.get(ModDataComponents.UUID));
-                            plant.fromPlanter = true;
-                        }
-                        context.getPlayer().setItemInHand(InteractionHand.MAIN_HAND, Items.FLOWER_POT.getDefaultInstance());
-                        serverlevel.addFreshEntityWithPassengers(entity);
-                        level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
-                        entity.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
+        Direction direction = context.getClickedFace();
+        if (direction == Direction.DOWN) {
+            return InteractionResult.FAIL;
+        }else if (onSubstrate(level, blockpos) || onPlanter(level, blockpos)){
+            ItemStack itemStack = context.getItemInHand();
+            Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
+            AABB aabb = this.getType(itemStack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
+            if(level.noCollision(null, aabb) && level.getEntities(null, aabb).isEmpty()){
+                if(level instanceof ServerLevel){
+                    ServerLevel serverlevel = (ServerLevel)level;
+                    Entity entity = this.getType(itemStack).create(serverlevel, EntityType.createDefaultStackConfig(serverlevel, itemStack, context.getPlayer()), blockpos, MobSpawnType.SPAWN_EGG, false, false);
+                    if (entity == null) {
+                        return InteractionResult.FAIL;
                     }
-                    return InteractionResult.sidedSuccess(level.isClientSide);
-                } else return InteractionResult.FAIL;
+                    float f = (float)Mth.floor((Mth.wrapDegrees(context.getRotation()) + 22.5F) / 45.0F) * 45.0F;
+                    entity.moveTo(entity.getX(), entity.getY(), entity.getZ(), 0, 0);
+                    entity.setYRot(f);
+                    entity.setXRot(0);
+                    if(entity instanceof Plant plant){
+                        if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
+                        if (stack.has(DataComponents.BASE_COLOR)) ((MarigoldEntity) plant).setColor(stack.get(DataComponents.BASE_COLOR));
+                        if (stack.has(ModDataComponents.AGE)) plant.setAge(stack.get(ModDataComponents.AGE));
+                        if (stack.has(ModDataComponents.HEALTH)) plant.setHealth(stack.get(ModDataComponents.HEALTH));
+                        if (stack.has(ModDataComponents.UUID)) plant.setUUID(stack.get(ModDataComponents.UUID));
+                        plant.fromPlanter = true;
+                    }
+                    context.getPlayer().setItemInHand(InteractionHand.MAIN_HAND, Items.FLOWER_POT.getDefaultInstance());
+                    serverlevel.addFreshEntityWithPassengers(entity);
+                    level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
+                    entity.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
+                }
+                return InteractionResult.sidedSuccess(level.isClientSide);
             } else return InteractionResult.FAIL;
         } else return InteractionResult.FAIL;
     }
