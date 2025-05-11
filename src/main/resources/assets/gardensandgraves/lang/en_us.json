@@ -74,6 +74,7 @@
   "item.gardensandgraves.watering_can_pink": "Pink Watering Can",
   "item.gardensandgraves.pea": "Pea",
   "item.gardensandgraves.frozen_pea": "Frozen Pea",
+  "item.gardensandgraves.spore": "Spore",
 
   "item.gardensandgraves.brainz_banner_pattern": "Banner Pattern",
   "item.gardensandgraves.brainz_banner_pattern.desc": "Brainz",
@@ -81,6 +82,11 @@
   "item.gardensandgraves.music_disc_wabby_wabbo.desc": "Cray-Z - Wabby Wabbo",
 
   "item.gardensandgraves.snail_spawn_egg": "Snail Spawn Egg",
+
+  "item.minecraft.tipped_arrow.effect.gng_zombification": "Arrow of Zombification",
+  "item.minecraft.potion.effect.gng_zombification": "Potion of Zombification",
+  "item.minecraft.splash_potion.effect.gng_zombification": "Splash Potion of Zombification",
+  "item.minecraft.lingering_potion.effect.gng_zombification": "Lingering Potion of Zombification",
 
   "block.gardensandgraves.planter": "Planter",
   "block.gardensandgraves.planter_white": "White Planter",
@@ -159,6 +165,10 @@
 
   "entity.gardensandgraves.snail": "Snail",
 
+  "entity.gardensandgraves.pea": "Pea",
+  "entity.gardensandgraves.frozen_pea": "Frozen Pea",
+  "entity.gardensandgraves.spore": "Spore",
+
   "death.attack.pea": "%1$s got pead to death by %2$s",
   "death.attack.frozen_pea": "%1$s got peapsicled by %2$s",
   "death.attack.plant_explosion": "%1$s got turned into mush by %2$s",
@@ -197,7 +207,7 @@
   "gardensandgraves.advancement.snow_pea.desc": "They shoot one Frozen Pea every 1,5 seconds. Can be found in snowy villages and ancient cities",
 
   "gardensandgraves.advancement.repeater": "Repeater",
-  "gardensandgraves.advancement.repeater.desc": "They shoot one Pea every 1,5 seconds. Can be found in plains villages",
+  "gardensandgraves.advancement.repeater.desc": "They shoot one Pea that deals double damage, every 1,5 seconds. Can be found in plains villages",
 
   "gardensandgraves.advancement.wall_nut": "Wall-nut",
   "gardensandgraves.advancement.wall_nut.desc": "They protect other plants from zombie attacks. Can be found in all villages",
@@ -218,7 +228,7 @@
   "gardensandgraves.advancement.sun_shroom.desc": "Every 5 minutes during the night, they generate 1 Sun when babies and 2 suns when adults. Can be found in taiga villages",
 
   "gardensandgraves.advancement.puff_shroom": "Puff-shroom",
-  "gardensandgraves.advancement.puff_shroom.desc": "Can be found in taiga villages",
+  "gardensandgraves.advancement.puff_shroom.desc": "They're cheap, but with a short distance. Can be found in taiga villages",
 
   "gardensandgraves.advancement.fume_shroom": "Fume-shroom",
   "gardensandgraves.advancement.fume_shroom.desc": "Can be found in taiga villages",
@@ -228,6 +238,8 @@
 
   "gardensandgraves.advancement.doom_shroom": "Doom-shroom",
   "gardensandgraves.advancement.doom_shroom.desc": "Can be found in ancient cities and woodland mansions",
+
+  "effect.gardensandgraves.zombification": "Zombification",
 
   "tag.item.gardensandgraves.watering_cans": "Watering Cans",
   "tag.item.gardensandgraves.snail_food": "Snail Food",

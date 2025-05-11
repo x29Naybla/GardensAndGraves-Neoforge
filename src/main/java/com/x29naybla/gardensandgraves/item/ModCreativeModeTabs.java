@@ -62,6 +62,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MUSIC_DISC_WABBY_WABBO);
                         output.accept(ModItems.PEA);
                         output.accept(ModItems.FROZEN_PEA);
+                        output.accept(ModItems.SPORE);
                         output.accept(ModItems.BRAIN);
                         output.accept(ModItems.BRAINZ_BANNER_PATTERN);
                         output.accept(ModItems.SNAIL_SPAWN_EGG);

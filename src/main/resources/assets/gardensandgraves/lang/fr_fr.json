@@ -74,6 +74,7 @@
   "item.gardensandgraves.watering_can_pink": "Pink Watering Can",
   "item.gardensandgraves.pea": "Pois",
   "item.gardensandgraves.frozen_pea": "Pois congelé",
+  "item.gardensandgraves.spore": "Spore",
 
   "item.gardensandgraves.brainz_banner_pattern": "Motif de bannière",
   "item.gardensandgraves.brainz_banner_pattern.desc": "Cerveau",
@@ -81,6 +82,11 @@
   "item.gardensandgraves.music_disc_wabby_wabbo.desc": "Cray-Z - Wabby Wabbo",
 
   "item.gardensandgraves.snail_spawn_egg": "Oeuf d'apparition de escargot",
+
+  "item.minecraft.tipped_arrow.effect.gng_zombification": "Flèche de Zombification",
+  "item.minecraft.potion.effect.gng_zombification": "Potion de zombification",
+  "item.minecraft.splash_potion.effect.gng_zombification": "Potion de zombification jetable",
+  "item.minecraft.lingering_potion.effect.gng_zombification": "Potion de zombification persistante",
 
   "block.gardensandgraves.planter": "Jardinière",
   "block.gardensandgraves.planter_white": "Jardinière blanche",
@@ -159,6 +165,10 @@
 
   "entity.gardensandgraves.snail": "Snail",
 
+  "entity.gardensandgraves.pea": "Pois",
+  "entity.gardensandgraves.frozen_pea": "Pois congelé",
+  "entity.gardensandgraves.spore": "Spore",
+
   "death.attack.pea": "%1$s got pead to death by %2$s",
   "death.attack.frozen_pea": "%1$s got peapsicled by %2$s",
   "death.attack.plant_explosion": "%1$s got turned into mush by %2$s",
@@ -185,7 +195,7 @@
   "gardensandgraves.advancement.snow_pea.desc": "They shoot one frozen pea every 1,5 seconds. Can be found in snowy villages and ancient cities",
 
   "gardensandgraves.advancement.repeater": "Double pisto-pois",
-  "gardensandgraves.advancement.repeater.desc": "They shoot one pea every 1,5 seconds. Can be found in plains villages",
+  "gardensandgraves.advancement.repeater.desc": "They shoot one Pea that deals double damage, every 1,5 seconds. Can be found in plains villages",
 
   "gardensandgraves.advancement.wall_nut": "Noix",
   "gardensandgraves.advancement.wall_nut.desc": "They protect other plants from zombie attacks. Can be found in all villages",
@@ -206,7 +216,7 @@
   "gardensandgraves.advancement.sun_shroom.desc": "Every 5 minutes during the night, they generate 1 sun when babies and 2 suns when adults. Can be found in taiga villages",
 
   "gardensandgraves.advancement.puff_shroom": "Champi-gnon",
-  "gardensandgraves.advancement.puff_shroom.desc": "Can be found in taiga villages",
+  "gardensandgraves.advancement.puff_shroom.desc": "They're cheap, but with a short distance. Can be found in taiga villages",
 
   "gardensandgraves.advancement.fume_shroom": "Champi-fumée",
   "gardensandgraves.advancement.fume_shroom.desc": "Can be found in taiga villages",
@@ -215,5 +225,44 @@
   "gardensandgraves.advancement.hypno_shroom.desc": "Can be found in taiga villages",
 
   "gardensandgraves.advancement.doom_shroom": "Champi-mort",
-  "gardensandgraves.advancement.doom_shroom.desc": "Can be found in ancient cities and woodland mansions"
+  "gardensandgraves.advancement.doom_shroom.desc": "Can be found in ancient cities and woodland mansions",
+
+  "effect.gardensandgraves.zombification": "Zombification",
+
+  "tag.item.gardensandgraves.watering_cans": "Watering Cans",
+  "tag.item.gardensandgraves.snail_food": "Snail Food",
+
+  "tag.block.gardensandgraves.planters": "Planters",
+  "tag.block.gardensandgraves.supports_plants": "Supports Plants",
+
+  "tag.block.gardensandgraves.dirt_sustains": "Dirt Sustains",
+  "tag.block.gardensandgraves.mycelium_sustains": "Mycelium Sustains",
+  "tag.block.gardensandgraves.sand_sustains": "Sand Sustains",
+  "tag.block.gardensandgraves.soul_sand_sustains": "Soul Sand Sustains",
+  "tag.block.gardensandgraves.nylium_sustains": "Nylium Sustains",
+  "tag.block.gardensandgraves.end_stone_sustains": "End Stone Sustains",
+
+  "tag.block.gardensandgraves.gravestones": "Gravestones",
+
+  "tag.entity.gardensandgraves.flowers": "Flowers",
+  "tag.entity.gardensandgraves.peashooters": "Peashooters",
+  "tag.entity.gardensandgraves.mushrooms": "Mushrooms",
+  "tag.entity.gardensandgraves.plants": "Plants",
+
+  "tag.entity.gardensandgraves.plantable_on_dirt": "Plantable On Dirt",
+  "tag.entity.gardensandgraves.plantable_on_mycelium": "Plantable On Mycelium",
+  "tag.entity.gardensandgraves.plantable_on_sand": "Plantable On Sand",
+  "tag.entity.gardensandgraves.plantable_on_soul_sand": "Plantable On Soul Sand",
+  "tag.entity.gardensandgraves.plantable_on_nylium": "Plantable On Nylium",
+  "tag.entity.gardensandgraves.plantable_on_end_stone": "Plantable On End Stone",
+
+  "tag.entity.gardensandgraves.plant_enemies": "Plant Enemies",
+
+  "config.jade.plugin_gardensandgraves.sunflower_sun_timer": "Sunflower Sun Timer",
+  "config.jade.plugin_gardensandgraves.sun_shroom_sun_timer": "Sun-shroom Sun Timer",
+  "config.jade.plugin_gardensandgraves.reward_timer": "Marigold Rewards Timer",
+  "config.jade.plugin_gardensandgraves.seed_packets_timer": "Seed Packets Timer",
+  "gardensandgraves.sun_timer": "Next sun: ",
+  "gardensandgraves.reward_timer": "Next nuggets: ",
+  "gardensandgraves.seed_packets_timer": "Next seed packet: "
 }

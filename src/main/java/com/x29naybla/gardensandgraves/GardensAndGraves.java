@@ -4,10 +4,12 @@ import com.x29naybla.gardensandgraves.block.ModBlocks;
 import com.x29naybla.gardensandgraves.block.entity.ModBlockEntities;
 import com.x29naybla.gardensandgraves.block.entity.renderer.PlanterBlockEntityRenderer;
 import com.x29naybla.gardensandgraves.data.ModDataComponents;
+import com.x29naybla.gardensandgraves.effect.ModEffects;
 import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.ModCreativeModeTabs;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.loot.LootModifierInit;
+import com.x29naybla.gardensandgraves.potion.ModPotions;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -34,11 +36,16 @@ public class GardensAndGraves {
 
         NeoForge.EVENT_BUS.register(this);
 
+        ModEntities.ENTITY_TYPES.register(modEventBus);
+        ModEffects.MOB_EFFECTS.register(modEventBus);
+        ModPotions.POTIONS.register(modEventBus);
+
         ModItems.register(modEventBus);
+        ModDataComponents.register(modEventBus);
+
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
-        ModDataComponents.register(modEventBus);
-        ModEntities.ENTITY_TYPES.register(modEventBus);
+
         ModSounds.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         LootModifierInit.LOOT_MODIFIERS.register(modEventBus);

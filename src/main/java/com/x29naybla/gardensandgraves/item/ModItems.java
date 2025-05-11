@@ -75,6 +75,8 @@ public class ModItems {
             () -> new PeaItem(new Item.Properties()));
     public static final DeferredItem<Item> FROZEN_PEA = ITEMS.register("frozen_pea",
             () -> new FrozenPeaItem(new Item.Properties()));
+    public static final DeferredItem<Item> SPORE = ITEMS.register("spore",
+            () -> new SporeItem(new Item.Properties()));
 
     public static final DeferredItem<Item> BRAINZ_BANNER_PATTERN = ITEMS.register("brainz_banner_pattern",
             () -> new BannerPatternItem(BRAINZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1)));

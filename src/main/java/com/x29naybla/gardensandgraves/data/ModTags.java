@@ -46,6 +46,8 @@ public class ModTags {
         //Gardens and Graves Tags
         public static final TagKey<Item> PLANTER_SUBSTRATES = createTag("planter_substrates");
 
+        public static final TagKey<Item> FLOWER_POTS = createTag("flower_pots");
+
         public static final TagKey<Item> WATERING_CANS = createTag("watering_cans");
         public static final TagKey<Item> SNAIL_FOOD = createTag("snail_food");
 

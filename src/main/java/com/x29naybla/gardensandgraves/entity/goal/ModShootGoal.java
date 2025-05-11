@@ -1,6 +1,6 @@
 package com.x29naybla.gardensandgraves.entity.goal;
 
-import com.x29naybla.gardensandgraves.entity.Peashooting;
+import com.x29naybla.gardensandgraves.entity.ShootingPlant;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 
 public class ModShootGoal extends Goal {
-    private final Peashooting peashooting;
+    private final ShootingPlant shootingPlant;
     private final RangedAttackMob rangedAttackMob;
     @Nullable
     private LivingEntity target;
@@ -35,7 +35,7 @@ public class ModShootGoal extends Goal {
             throw new IllegalArgumentException("ArrowAttackGoal requires Mob implements RangedAttackMob");
         } else {
             this.rangedAttackMob = rangedAttackMob;
-            this.peashooting = (Peashooting) rangedAttackMob;
+            this.shootingPlant = (ShootingPlant) rangedAttackMob;
             this.timerCap = timeInSeconds * 20;
             this.speedModifier = speedModifier;
             this.attackIntervalMin = attackIntervalMin;
@@ -48,8 +48,8 @@ public class ModShootGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        LivingEntity livingentity = this.peashooting.getTarget();
-        if (livingentity != null && livingentity.isAlive() && !this.peashooting.isBaby()) {
+        LivingEntity livingentity = this.shootingPlant.getTarget();
+        if (livingentity != null && livingentity.isAlive() && !this.shootingPlant.isBaby()) {
             this.target = livingentity;
             return true;
         } else {
@@ -60,16 +60,16 @@ public class ModShootGoal extends Goal {
     public void start() {
         super.start();
         shootTimer = 0;
-        peashooting.setShooting(true);
+        shootingPlant.setShooting(true);
     }
 
     @Override
     public boolean canContinueToUse() {
-        return this.canUse() || this.target.isAlive() && !this.peashooting.getNavigation().isDone() && shootTimer++ <= timerCap;
+        return this.canUse() || this.target.isAlive() && !this.shootingPlant.getNavigation().isDone() && shootTimer++ <= timerCap;
     }
 
     public void stop() {
-        peashooting.setShooting(false);
+        shootingPlant.setShooting(false);
         this.target = null;
         this.seeTime = 0;
         this.attackTime = -1;
@@ -80,8 +80,8 @@ public class ModShootGoal extends Goal {
     }
 
     public void tick() {
-        double d0 = this.peashooting.distanceToSqr(this.target.getX(), this.target.getY(), this.target.getZ());
-        boolean flag = this.peashooting.getSensing().hasLineOfSight(this.target);
+        double d0 = this.shootingPlant.distanceToSqr(this.target.getX(), this.target.getY(), this.target.getZ());
+        boolean flag = this.shootingPlant.getSensing().hasLineOfSight(this.target);
         if (flag) {
             ++this.seeTime;
         } else {
@@ -89,12 +89,12 @@ public class ModShootGoal extends Goal {
         }
 
         if (!(d0 > (double)this.attackRadiusSqr) && this.seeTime >= 5) {
-            this.peashooting.getNavigation().stop();
+            this.shootingPlant.getNavigation().stop();
         } else {
-            this.peashooting.getNavigation().moveTo(this.target, this.speedModifier);
+            this.shootingPlant.getNavigation().moveTo(this.target, this.speedModifier);
         }
 
-        this.peashooting.getLookControl().setLookAt(this.target, 30.0F, 30.0F);
+        this.shootingPlant.getLookControl().setLookAt(this.target, 30.0F, 30.0F);
         if (--this.attackTime == 3) {
             if (!flag) {
                 return;

@@ -74,6 +74,7 @@
   "item.gardensandgraves.watering_can_pink": "Regador rosa",
   "item.gardensandgraves.pea": "Ervilha",
   "item.gardensandgraves.frozen_pea": "Ervilha congelada",
+  "item.gardensandgraves.spore": "Esporo",
 
   "item.gardensandgraves.brainz_banner_pattern": "Figura para estandarte",
   "item.gardensandgraves.brainz_banner_pattern.desc": "Mioloz",
@@ -81,6 +82,11 @@
   "item.gardensandgraves.music_disc_wabby_wabbo.desc": "Cray-Z — Wabby Wabbo",
 
   "item.gardensandgraves.snail_spawn_egg": "Ovo gerador de caracol",
+
+  "item.minecraft.tipped_arrow.effect.gng_zombification": "Flecha de zumbificação",
+  "item.minecraft.potion.effect.gng_zombification": "Poção de zumbificação",
+  "item.minecraft.splash_potion.effect.gng_zombification": "Poção arremessável de zumbificação",
+  "item.minecraft.lingering_potion.effect.gng_zombification": "Poção prolongada de zumbificação",
 
   "block.gardensandgraves.planter": "Germinador",
   "block.gardensandgraves.planter_white": "Germinador branco",
@@ -159,6 +165,10 @@
 
   "entity.gardensandgraves.snail": "Caracol",
 
+  "entity.gardensandgraves.pea": "Ervilha",
+  "entity.gardensandgraves.frozen_pea": "Ervilha congelada",
+  "entity.gardensandgraves.spore": "Esporo",
+
   "death.attack.pea": "%1$s foi ervilhado(a) até a morte por %2$s",
   "death.attack.frozen_pea": "%1$s foi congervilhado(a) por %2$s",
   "death.attack.plant_explosion": "%1$s foi transformado(a) em purê por %2$s",
@@ -185,7 +195,7 @@
   "gardensandgraves.advancement.snow_pea.desc": "Atira uma ervilha congelada a cada 1.5 segundos. Pode ser encontrada em vilas nevadas e cidades ancestrais",
 
   "gardensandgraves.advancement.repeater": "Duplervilha",
-  "gardensandgraves.advancement.repeater.desc": "Atira uma ervilha a cada 1.5 segundos. Pode ser encontrada em vilas de planície",
+  "gardensandgraves.advancement.repeater.desc": "Atira uma ervilha que causa o dobro de dano, a cada 1.5 segundos. Pode ser encontrada em vilas de planície",
 
   "gardensandgraves.advancement.wall_nut": "Noz-obstáculo",
   "gardensandgraves.advancement.wall_nut.desc": "Protege outras plantas de ataques de zumbis. Pode ser encontrada em todas as vilas",
@@ -206,7 +216,7 @@
   "gardensandgraves.advancement.sun_shroom.desc": "A cada 5 minutos durante a noite, gera 1 sol quando criança e 2 sóis quando adulto. Pode ser encontrado em vilas de taiga",
 
   "gardensandgraves.advancement.puff_shroom": "Soprogumelo",
-  "gardensandgraves.advancement.puff_shroom.desc": "Pode ser encontrado em vilas de taiga",
+  "gardensandgraves.advancement.puff_shroom.desc": "Barato, mas com um curto alcance. Pode ser encontrado em vilas de taiga",
 
   "gardensandgraves.advancement.fume_shroom": "Gasogumelo",
   "gardensandgraves.advancement.fume_shroom.desc": "Pode ser encontrado em vilas de taiga",
@@ -216,6 +226,8 @@
 
   "gardensandgraves.advancement.doom_shroom": "Ruinagumelo",
   "gardensandgraves.advancement.doom_shroom.desc": "Pode ser encontrado em cidades ancestrais e mansões das florestas",
+
+  "effect.gardensandgraves.zombification": "Zumbificação",
 
   "tag.item.gardensandgraves.watering_cans": "Regadores",
   "tag.item.gardensandgraves.snail_food": "Comida de caracol",

@@ -15,10 +15,10 @@ import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
 
-public class Peashooting extends Plant implements RangedAttackMob {
-    protected static final EntityDataAccessor<Boolean> SHOOTING = SynchedEntityData.defineId(Peashooting.class, EntityDataSerializers.BOOLEAN);
+public class ShootingPlant extends Plant implements RangedAttackMob {
+    protected static final EntityDataAccessor<Boolean> SHOOTING = SynchedEntityData.defineId(ShootingPlant.class, EntityDataSerializers.BOOLEAN);
 
-    public Peashooting(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
+    public ShootingPlant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
         super(entityType, level, seedPacket, pottedItem);
         this.seedPacket = seedPacket;
         this.pottedItem = pottedItem;

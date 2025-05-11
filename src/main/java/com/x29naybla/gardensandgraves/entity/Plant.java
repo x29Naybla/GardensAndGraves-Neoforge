@@ -2,6 +2,7 @@ package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.block.entity.PlanterBlockEntity;
 import com.x29naybla.gardensandgraves.data.ModDataComponents;
+import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.item.custom.SeedPacketItem;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.core.component.DataComponents;
@@ -18,17 +19,13 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
-
-import java.util.Set;
 
 public class Plant extends TamableAnimal implements GeoEntity {
     public int packetTime;
@@ -76,7 +73,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 player.getItemInHand(hand).shrink(1);
             }
             return InteractionResult.SUCCESS;
-        } else if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem().getDefaultInstance().is(Items.FLOWER_POT) && this.fromPlanter && this.pottedItem != null) {
+        } else if(player.getItemInHand(InteractionHand.MAIN_HAND).is(ModTags.Items.FLOWER_POTS) && this.fromPlanter && this.pottedItem != null) {
             saveDefaultDataToItemTag(this, this.pottedItem);
 
             player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
@@ -153,6 +150,19 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 this.gameEvent(GameEvent.ENTITY_PLACE);
                 this.packetTime = 12000;
             }
+        }
+        if (!fromPlanter) {
+            /*
+            if(!this.level().isClientSide && this.isAlive() && (time == 12000 || time == 23000)) {
+                this.spawnAtLocation(this.seedPacket);
+                this.playSound(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
+                this.discard();
+                if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {
+                    serverLevel.sendParticles(ParticleTypes.POOF, this.getX(), this.getY() + 0.5,
+                            this.getZ(), 2, 0, 0, 0, 0);
+                }
+            }
+             */
         }
     }
 

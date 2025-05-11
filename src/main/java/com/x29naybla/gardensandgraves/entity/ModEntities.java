@@ -3,6 +3,7 @@ package com.x29naybla.gardensandgraves.entity;
 import com.x29naybla.gardensandgraves.GardensAndGraves;
 import com.x29naybla.gardensandgraves.entity.projectile.PeaProjectile;
 import com.x29naybla.gardensandgraves.entity.projectile.FrozenPeaProjectile;
+import com.x29naybla.gardensandgraves.entity.projectile.SporeProjectile;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -138,6 +139,12 @@ public class ModEntities {
                     .sized(0.25F, 0.25F)
                     .clientTrackingRange(16)
                     .build("frozen_pea")));
+
+    public static final Supplier<EntityType<SporeProjectile>> SPORE_PROJECTILE = ENTITY_TYPES.register("spore", () -> (
+            EntityType.Builder.<SporeProjectile>of(SporeProjectile::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F)
+                    .clientTrackingRange(16)
+                    .build("spore")));
 
     private static <T extends Mob> DeferredHolder<EntityType<?>, EntityType<T>> register(String name, EntityType.EntityFactory<T> entity, float width, float height) {
         return ENTITY_TYPES.register(name, () -> EntityType.Builder.of(entity, MobCategory.CREATURE).sized(width, height).build(name));

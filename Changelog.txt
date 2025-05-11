@@ -10,7 +10,7 @@ changelog:
 * * Touhou Little Maid's maids and maid fairies
 * * Raided's illagers
 * * Radical Cobblemon Trainers' trainers
-* plants when potted now keep their age, health, owner, and marigolds their color
+* plants when potted now keep their age, health, uuid, and marigolds their color
 * more changes to plant shoveling and potting interactions
 
 * made potted plants be able to be replanted on planters
@@ -19,3 +19,13 @@ changelog:
 * added guide text to the potato mine's advancement
 * added the "pottable_plants" tag
 * added 4 new advancements
+
+* slight changes to the textures of watering cans and blocks of plastic
+* renamed the entity class "Peashooting" into "ShootingPlant"
+* fixed the description of puff-shroom's advancement only having where they are found
+* adjusted the description of the repeater's advancement to make clear they deal double damage
+* added a spore projectile
+* changed puff-shroom's projectile into spores instead of peas
+* added missing translations for the entity version of peas and frozen peas
+* added the zombification effect, which currently is obtainable by brewing an awkward potions with a brain, and converts piglins/piglin brutes and villagers into zombified piglins and zombie villagers, respectively
+* added the zombification potion, splash potion, and lingering potion
