@@ -3,6 +3,7 @@ package com.x29naybla.gardensandgraves;
 import com.x29naybla.gardensandgraves.block.ModBlocks;
 import com.x29naybla.gardensandgraves.block.entity.ModBlockEntities;
 import com.x29naybla.gardensandgraves.block.entity.renderer.PlanterBlockEntityRenderer;
+import com.x29naybla.gardensandgraves.data.ModDataAttachments;
 import com.x29naybla.gardensandgraves.data.ModDataComponents;
 import com.x29naybla.gardensandgraves.effect.ModEffects;
 import com.x29naybla.gardensandgraves.entity.ModEntities;
@@ -39,6 +40,7 @@ public class GardensAndGraves {
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModEffects.MOB_EFFECTS.register(modEventBus);
         ModPotions.POTIONS.register(modEventBus);
+        ModDataAttachments.ATTACHMENT_TYPES.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModDataComponents.register(modEventBus);

@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity.goal;
 
+import com.x29naybla.gardensandgraves.data.ModDataAttachments;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Explosion;
@@ -22,7 +23,7 @@ public class ModExplosionDamageCalculator extends ExplosionDamageCalculator {
 
     @Override
     public boolean shouldDamageEntity(Explosion explosion, Entity entity) {
-        if (entity.getType().is(ModTags.Entities.PLANT_ENEMIES)){
+        if (entity.getType().is(ModTags.Entities.PLANT_ENEMIES) || entity.getData(ModDataAttachments.ZOMBIE)){
             return true;
         } else return false;
     }

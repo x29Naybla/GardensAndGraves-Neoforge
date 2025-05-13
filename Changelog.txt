@@ -27,5 +27,12 @@ changelog:
 * added a spore projectile
 * changed puff-shroom's projectile into spores instead of peas
 * added missing translations for the entity version of peas and frozen peas
-* added the zombification effect, which currently is obtainable by brewing an awkward potions with a brain, and converts piglins/piglin brutes and villagers into zombified piglins and zombie villagers, respectively
+* added the zombification effect, which currently is obtainable by brewing an awkward potions with a brain, after the effect passes or if the entity dies they get converted into:
+* * piglins and piglin brutes into zombified piglins
+* * hoglins into zoglins
+* * villagers into zombie villagers
+* * players "turn" into zombie players (a "zombie" data gets attached to them)
 * added the zombification potion, splash potion, and lingering potion
+
+* aggressive mobs will attack zombie players only if provoked
+* zombie players can sleep even if there are monsters nearby

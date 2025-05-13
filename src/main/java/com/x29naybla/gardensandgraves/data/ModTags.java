@@ -80,6 +80,7 @@ public class ModTags {
         public static final TagKey<EntityType<?>> PLANTABLE_ON_NYLIUM = createTag("plantable_on_nylium");
         public static final TagKey<EntityType<?>> PLANTABLE_ON_END_STONE = createTag("plantable_on_end_stone");
 
+        public static final TagKey<EntityType<?>> ENDERMEN = createTag("endermen");
         public static final TagKey<EntityType<?>> PLANT_ENEMIES = createTag("plant_enemies");
 
         private static TagKey<EntityType<?>> createTag(String name) {

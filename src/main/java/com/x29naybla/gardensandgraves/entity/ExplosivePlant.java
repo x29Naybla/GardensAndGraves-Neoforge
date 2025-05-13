@@ -1,8 +1,10 @@
 package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.data.ModDamageTypes;
+import com.x29naybla.gardensandgraves.data.ModDataAttachments;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.goal.ModExplosionDamageCalculator;
+import com.x29naybla.gardensandgraves.entity.goal.ModSwellGoal;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -12,9 +14,10 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -38,6 +41,13 @@ public class ExplosivePlant extends Plant{
         this.damage = damage;
         this.sound = sound;
         this.sound.value().getRange(2);
+    }
+
+    protected void registerGoals(){
+        this.goalSelector.addGoal(0, new ModSwellGoal(this));
+        this.goalSelector.addGoal(2, new FloatGoal(this));
+        this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, false, false, (target) -> target instanceof Entity entity && (entity.getType().is(ModTags.Entities.PLANT_ENEMIES) || entity.getData(ModDataAttachments.ZOMBIE))));
     }
 
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
