@@ -13,6 +13,8 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.animal.horse.Horse;
+import net.minecraft.world.entity.animal.horse.ZombieHorse;
 import net.minecraft.world.entity.monster.Zoglin;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.ZombieVillager;
@@ -64,6 +66,15 @@ public class Zombification extends MobEffect {
                     zombievillager.setVillagerXp(villager.getVillagerXp());
                     EventHooks.onLivingConvert(entity, zombievillager);
                     entity.makeSound(SoundEvents.ZOMBIE_INFECT);
+                }
+                return true;
+
+            } else if(entity instanceof Horse horse) {
+                horse.makeSound(SoundEvents.HORSE_BREATHE);
+                ZombieHorse zHorse = horse.convertTo(EntityType.ZOMBIE_HORSE, true);
+                if(zHorse != null) {
+                    zHorse.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
+                    EventHooks.onLivingConvert(horse, zHorse);
                 }
                 return true;
 

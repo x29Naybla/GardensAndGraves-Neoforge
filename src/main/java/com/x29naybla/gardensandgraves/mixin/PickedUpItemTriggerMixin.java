@@ -19,8 +19,7 @@ public class PickedUpItemTriggerMixin {
             cancellable = true
     )
     private void throwToNewPlayer(ServerPlayer firstOwner, ItemStack stack, @Nullable Entity newOwner, CallbackInfo ci) {
-        assert newOwner != null;
-        if (newOwner.getUUID() == firstOwner.getUUID()) {
+        if (newOwner != null && newOwner.getUUID() == firstOwner.getUUID()) {
             ci.cancel();
         }
     }

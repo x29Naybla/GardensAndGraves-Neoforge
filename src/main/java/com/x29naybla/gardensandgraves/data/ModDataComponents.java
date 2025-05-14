@@ -20,8 +20,8 @@ public class ModDataComponents {
             builder -> builder.persistent(Codec.INT));
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Float>> HEALTH = register("health",
             builder -> builder.persistent(Codec.FLOAT));
-    public static final DeferredHolder<DataComponentType<?>, DataComponentType<UUID>> UUID = register("uuid",
-            builder -> builder.persistent(UUIDUtil.CODEC));
+    //public static final DeferredHolder<DataComponentType<?>, DataComponentType<UUID>> UUID = register("uuid",
+    //        builder -> builder.persistent(UUIDUtil.CODEC));
 
     private static <T>DeferredHolder<DataComponentType<?>, DataComponentType<T>> register(String name,
                                                                                           UnaryOperator<DataComponentType.Builder<T>> builderOperator) {

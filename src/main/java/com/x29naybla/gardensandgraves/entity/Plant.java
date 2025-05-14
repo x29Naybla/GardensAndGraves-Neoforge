@@ -76,7 +76,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
         } else if(player.getItemInHand(InteractionHand.MAIN_HAND).is(ModTags.Items.FLOWER_POTS) && this.fromPlanter && this.pottedItem != null) {
             saveDefaultDataToItemTag(this, this.pottedItem);
 
-            player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
+            if (!player.isCreative()) player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
             if (!player.getInventory().add(this.pottedItem)) {
                 ItemEntity itemEntity = new ItemEntity(level(), this.getX(), this.getY() + 0.5, this.getZ(), this.pottedItem);
                 itemEntity.setPickUpDelay(0);
@@ -187,7 +187,6 @@ public class Plant extends TamableAnimal implements GeoEntity {
         if (plant.hasCustomName()) itemStack.set(DataComponents.CUSTOM_NAME, plant.getCustomName());
         if (plant instanceof MarigoldEntity) itemStack.set(DataComponents.BASE_COLOR, MarigoldEntity.dyedColor);
         if (plant.isBaby()) itemStack.set(ModDataComponents.AGE, plant.getAge());
-        itemStack.set(ModDataComponents.UUID, plant.getUUID());
         itemStack.set(ModDataComponents.HEALTH, plant.getHealth());
     }
 }

@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.x29naybla.gardensandgraves.mixin",
+  "mixins": [
+    "PickedUpItemTriggerMixin",
+    "ZombieSunSensitiveMixin"
+  ],
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

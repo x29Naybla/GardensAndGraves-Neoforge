@@ -10,7 +10,7 @@ changelog:
 * * Touhou Little Maid's maids and maid fairies
 * * Raided's illagers
 * * Radical Cobblemon Trainers' trainers
-* plants when potted now keep their age, health, uuid, and marigolds their color
+* plants when potted now in addition to their names, also keep their age, health, and marigolds their color
 * more changes to plant shoveling and potting interactions
 
 * made potted plants be able to be replanted on planters
@@ -36,3 +36,6 @@ changelog:
 
 * aggressive mobs will attack zombie players only if provoked
 * zombie players can sleep even if there are monsters nearby
+
+* zombie horses are obtainable by throwing a zombification potion at horses
+* zombies no longer burn because of sunlight

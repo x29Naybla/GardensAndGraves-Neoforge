@@ -65,10 +65,9 @@ public class PottedPlantItem extends SeedPacketItem{
                         if (stack.has(DataComponents.BASE_COLOR)) ((MarigoldEntity) plant).setColor(stack.get(DataComponents.BASE_COLOR));
                         if (stack.has(ModDataComponents.AGE)) plant.setAge(stack.get(ModDataComponents.AGE));
                         if (stack.has(ModDataComponents.HEALTH)) plant.setHealth(stack.get(ModDataComponents.HEALTH));
-                        if (stack.has(ModDataComponents.UUID)) plant.setUUID(stack.get(ModDataComponents.UUID));
                         plant.fromPlanter = true;
                     }
-                    context.getPlayer().setItemInHand(InteractionHand.MAIN_HAND, Items.FLOWER_POT.getDefaultInstance());
+                    if (!context.getPlayer().isCreative()) context.getPlayer().setItemInHand(InteractionHand.MAIN_HAND, Items.FLOWER_POT.getDefaultInstance());
                     serverlevel.addFreshEntityWithPassengers(entity);
                     level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
                     entity.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
