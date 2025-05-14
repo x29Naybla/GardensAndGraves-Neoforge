@@ -33,7 +33,7 @@ changelog:
 * * villagers into zombie villagers
 * * horses into zombie horses
 * * players "turn" into zombie players (a "zombie" data gets attached to them)
-* added the zombification potion, splash potion, and lingering potion
+* added the zombification potion, splash potion, lingering potion, and arrow
 
 * aggressive mobs will attack zombie players only if provoked
 * zombie players can sleep even if there are monsters nearby
