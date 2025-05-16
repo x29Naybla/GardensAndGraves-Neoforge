@@ -46,6 +46,10 @@ public class PuffShroomEntity extends ShootingPlant {
         return geoCache;
     }
 
+    public void aiStep(){
+        super.aiStep();
+    }
+
     @Override
     public void performRangedAttack(LivingEntity target, float distanceFactor) {
         SporeProjectile spore = new SporeProjectile(this.level(), this);

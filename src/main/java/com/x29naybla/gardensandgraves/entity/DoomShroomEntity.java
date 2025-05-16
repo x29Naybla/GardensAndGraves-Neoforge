@@ -42,6 +42,10 @@ public class DoomShroomEntity extends ExplosivePlant {
         super.readAdditionalSaveData(compound);
     }
 
+    public void aiStep(){
+        super.aiStep();
+    }
+
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
     }

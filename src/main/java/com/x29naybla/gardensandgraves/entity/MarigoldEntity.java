@@ -36,6 +36,7 @@ import java.util.stream.Collectors;
 public class MarigoldEntity extends Plant {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.flower.idle");
     protected static final RawAnimation GENERATE = RawAnimation.begin().thenLoop("animation.flower.generate");
+    protected static final EntityDataAccessor<Boolean> GENERATED = SynchedEntityData.defineId(MarigoldEntity.class, EntityDataSerializers.BOOLEAN);
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     private static final EntityDataAccessor<Byte> DATA_PETALS_ID;
     private static final Map<DyeColor, Integer> COLOR_BY_DYE;
@@ -72,11 +73,12 @@ public class MarigoldEntity extends Plant {
     }
 
     protected <E extends MarigoldEntity> PlayState animController(final AnimationState<E> event) {
-        if (this.rewardTime <= 20) {
+        if (this.isGenerated()) {
             event.setAnimation(GENERATE);
-        } else {
+
+            return PlayState.CONTINUE;
+        } else
             event.setAnimation(IDLE);
-        }
 
         return PlayState.CONTINUE;
     }
@@ -88,6 +90,7 @@ public class MarigoldEntity extends Plant {
 
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
+        builder.define(GENERATED, false);
         builder.define(DATA_PETALS_ID, (byte)0);
     }
 
@@ -145,13 +148,23 @@ public class MarigoldEntity extends Plant {
         if (compound.contains("RewardGenerateTime")) {
             this.rewardTime = compound.getInt("RewardGenerateTime");
         }
+        getEntityData().set(GENERATED, compound.getBoolean("Generated"));
         this.setColor(DyeColor.byId(compound.getByte("Color")));
     }
 
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putInt("RewardGenerateTime", this.rewardTime);
+        compound.putBoolean("Generated", getEntityData().get(GENERATED));
         compound.putByte("Color", (byte)this.getColor().getId());
+    }
+
+    public boolean isGenerated(){
+        return getEntityData().get(GENERATED);
+    }
+
+    public void setGenerated(boolean bool) {
+        getEntityData().set(GENERATED, bool);
     }
 
     public DyeColor getColor() {

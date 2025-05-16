@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.x29naybla.gardensandgraves.GardensAndGraves;
 import com.x29naybla.gardensandgraves.entity.MarigoldEntity;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -18,31 +19,39 @@ public class MarigoldPetalsRenderer extends GeoRenderLayer<MarigoldEntity> {
     public MarigoldPetalsRenderer(GeoRenderer<MarigoldEntity> entityRendererIn) {
         super(entityRendererIn);
     }
+    private static final ResourceLocation PETALS = ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "geo/entity/marigold.geo.json");
+
 
     public ResourceLocation getTextureResource() {
-        return ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "textures/entity/marigold_petals.png");
+        return ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, "textures/entity/marigold/marigold_petals.png");
     }
 
     @Override
-    public void render(PoseStack poseStack, MarigoldEntity animatable, BakedGeoModel bakedModel, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay) {
+    public void render(PoseStack poseStack, MarigoldEntity marigold, BakedGeoModel bakedModel, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay) {
+        if (marigold.isInvisible()) {
+            Minecraft minecraft = Minecraft.getInstance();
+            boolean flag = minecraft.shouldEntityAppearGlowing(marigold);
+            if (flag) {
 
-        int color;
-
-        if (animatable.hasCustomName() && "jeb_".equals(animatable.getName().getString())) {
-            int n = animatable.tickCount / 50 + animatable.getId();
-            int o = DyeColor.values().length;
-            int p = n % o;
-            int q = (n + 1) % o;
-            float r = ((float)(animatable.tickCount % 50) + partialTick) / 50.0F;
-            int fs = MarigoldEntity.getColor(DyeColor.byId(p));
-            int gs = MarigoldEntity.getColor(DyeColor.byId(q));
-            color = FastColor.ARGB32.lerp(r, fs, gs);
+            }
         } else {
-            color = animatable.getColor().getTextureDiffuseColor();
+            int i;
+            if (marigold.hasCustomName() && "jeb_".equals(marigold.getName().getString())) {
+                int j = 25;
+                int k = marigold.tickCount / 25 + marigold.getId();
+                int l = DyeColor.values().length;
+                int i1 = k % l;
+                int j1 = (k + 1) % l;
+                float f = ((float)(marigold.tickCount % 25) + partialTick) / 25.0F;
+                int k1 = MarigoldEntity.getColor(DyeColor.byId(i1));
+                int l1 = MarigoldEntity.getColor(DyeColor.byId(j1));
+                i = FastColor.ARGB32.lerp(f, k1, l1);
+            } else {
+                i = marigold.getColor().getTextureDiffuseColor();
+            }
+
+            RenderType renderType1 = RenderType.entityCutoutNoCull(getTextureResource());
+            this.getRenderer().actuallyRender(poseStack, marigold, bakedModel, renderType, bufferSource, bufferSource.getBuffer(renderType1), true, partialTick, packedLight, OverlayTexture.NO_OVERLAY, i);
         }
-
-
-        RenderType renderType1 = RenderType.entityCutoutNoCull(getTextureResource());
-        this.getRenderer().actuallyRender(poseStack, animatable, bakedModel, renderType, bufferSource, bufferSource.getBuffer(renderType1), true, partialTick, packedLight, OverlayTexture.NO_OVERLAY, color);
     }
 }

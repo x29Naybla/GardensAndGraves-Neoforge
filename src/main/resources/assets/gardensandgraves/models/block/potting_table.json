@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/cherry_planks",
+    "east": "gardensandgraves:block/potting_table_side",
+    "north": "gardensandgraves:block/potting_table_front",
+    "particle": "gardensandgraves:block/potting_table_front",
+    "south": "gardensandgraves:block/potting_table_side",
+    "up": "gardensandgraves:block/potting_table_top",
+    "west": "gardensandgraves:block/potting_table_front"
+  }
+}

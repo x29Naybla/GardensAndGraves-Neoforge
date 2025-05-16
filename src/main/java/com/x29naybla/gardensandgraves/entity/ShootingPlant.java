@@ -26,8 +26,8 @@ public class ShootingPlant extends Plant implements RangedAttackMob {
 
     protected void registerGoals(){
         this.goalSelector.addGoal(1, new ModShootGoal(this, 1, 1.25F, 30, 8.5F));
-        this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (target) -> target instanceof Entity entity && entity.getType().is(ModTags.Entities.PLANT_ENEMIES)));
+        this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
     protected void defineSynchedData(SynchedEntityData.Builder builder) {

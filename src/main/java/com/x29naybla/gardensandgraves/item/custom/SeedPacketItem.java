@@ -54,7 +54,7 @@ public class SeedPacketItem extends Item {
     }
 
     public MutableComponent getDisplayName() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
+        return Component.translatable("gardensandgraves.description.seed_packets_sun_cost").append(String.valueOf(this.sunAmount));
     }
 
     public InteractionResult useOn(UseOnContext context){

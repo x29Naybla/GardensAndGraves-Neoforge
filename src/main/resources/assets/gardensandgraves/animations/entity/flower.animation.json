@@ -2,7 +2,7 @@
 	"format_version": "1.8.0",
 	"animations": {
 		"animation.flower.idle": {
-			"loop": true,
+			"loop": false,
 			"animation_length": 1,
 			"bones": {
 				"head": {
@@ -203,6 +203,14 @@
 					}
 				},
 				"head": {
+					"rotation": {
+						"0.05": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [-22.5, 0, 0]
+						}
+					},
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -217,6 +225,9 @@
 				},
 				"petals": {
 					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
 						"0.125": {
 							"vector": [0, -0.5, 0]
 						},

@@ -1,41 +1,18 @@
 changelog:
-* fixed Enderman not being able to drop Brain
-* added Potted Sun-shroom and Potted Puff-shroom
-* added missing translations for potted plants to Brazilian Portuguese and French
-* created an "endermen" tag and added it to the drops_brain tag
-* added Enderman Overhaul's endermen to the endermen tag
-* added mod support, additions to the drops_brain tag include:
-* * Guard villager's guards,
-* * Mobs of Mythology's kobolds and kobold warriors
-* * Touhou Little Maid's maids and maid fairies
-* * Raided's illagers
-* * Radical Cobblemon Trainers' trainers
-* plants when potted now in addition to their names, also keep their age, health, and marigolds their color
-* more changes to plant shoveling and potting interactions
-
-* made potted plants be able to be replanted on planters
-* removed the advancements "A Peafect Collection" and "Not Mushroom for improvement"
-* fixed the letter casing of some advancement names and descriptions to better match vanilla's
-* added guide text to the potato mine's advancement
-* added the "pottable_plants" tag
-* added 4 new advancements
-
-* slight changes to the textures of watering cans and blocks of plastic
-* renamed the entity class "Peashooting" into "ShootingPlant"
-* fixed the description of puff-shroom's advancement only having where they are found
-* adjusted the description of the repeater's advancement to make clear they deal double damage
-* added a spore projectile
-* changed puff-shroom's projectile into spores instead of peas
-* added missing translations for the entity version of peas and frozen peas
-* added the zombification effect, which currently is obtainable by brewing an awkward potions with a brain, after the effect passes or if the entity dies they get converted into:
-* * piglins and piglin brutes into zombified piglins
-* * hoglins into zoglins
-* * villagers into zombie villagers
-* * players "turn" into zombie players (a "zombie" data gets attached to them)
-* added the zombification potion, splash potion, and lingering potion
-
-* aggressive mobs will attack zombie players only if provoked
-* zombie players can sleep even if there are monsters nearby
-
-* zombie horses are obtainable by throwing a zombification potion at horses
-* zombies no longer burn because of sunlight
+* fixed the Watering Can recipes advancement triggering
+* improved the description of seed packets to use one single translation id with the sun cost being given automatically
+* fixed Brazilian Portuguese advancement translations
+* fixed Brazilian Portuguese jade integration's Sun-shroom's Sun timer
+* fixed the description of Doom-shroom's advancement only having where they are found
+* fixed Sun-shroom's advancement description describing an old unused mechanic
+* raised the Doom-shroom's seed packet cooldown from 15 to 35
+* moved the Marigold and their petals texture into a subfolder
+* moved the Wall-nut textures into a subfolder
+* added a SolarPlant class and made Sunflowers and SunShrooms extend it
+* added a custom goal to handle sun generation instead of being part of individual AIs
+* mushroom plants now sleep during the day
+* made a single sun timer Jade toggle merging Sunflower's and Sun-shroom's
+* added a Potted Table block
+* moved planter recipe advancements from misc into decorations
+* fixed marigold petals still being invisible when they are invisible
+* now sunflowers and marigolds will properly play the "generating" animation

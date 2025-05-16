@@ -34,6 +34,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public ItemStack seedPacket;
     @Nullable
     public ItemStack pottedItem;
+    public Boolean sleepy;
 
     public Plant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
         super(entityType, level);
@@ -42,6 +43,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
         this.onPlanter = level.getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity;
         this.seedPacket = seedPacket;
         this.pottedItem = pottedItem;
+        this.sleepy = false;
     }
 
     @Override

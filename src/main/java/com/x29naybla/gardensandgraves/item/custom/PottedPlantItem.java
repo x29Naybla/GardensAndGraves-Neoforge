@@ -7,6 +7,8 @@ import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -33,6 +35,11 @@ public class PottedPlantItem extends SeedPacketItem{
     @Override
     public int getMaxStackSize(ItemStack stack) {
         return 1;
+    }
+
+    @Override
+    public MutableComponent getDisplayName() {
+        return Component.translatable(this.getDescriptionId() + ".desc");
     }
 
     @Override

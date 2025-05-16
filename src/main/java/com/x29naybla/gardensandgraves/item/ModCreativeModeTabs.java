@@ -63,9 +63,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PEA);
                         output.accept(ModItems.FROZEN_PEA);
                         output.accept(ModItems.SPORE);
+                        output.accept(ModItems.SNAIL_SPAWN_EGG);
                         output.accept(ModItems.BRAIN);
                         output.accept(ModItems.BRAINZ_BANNER_PATTERN);
-                        output.accept(ModItems.SNAIL_SPAWN_EGG);
 
                     }).build());
 
@@ -73,6 +73,7 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.PLANTER.get()))
                     .title(Component.translatable("creativetab.gardensandgraves.blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.POTTING_TABLE);
                         output.accept(ModBlocks.PLANTER);
                         output.accept(ModBlocks.PLANTER_WHITE);
                         output.accept(ModBlocks.PLANTER_LIGHT_GRAY);
@@ -90,8 +91,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PLANTER_PURPLE);
                         output.accept(ModBlocks.PLANTER_MAGENTA);
                         output.accept(ModBlocks.PLANTER_PINK);
-                        output.accept(ModBlocks.GRAVESTONE);
-                        output.accept(ModBlocks.GRAVESTONE_SANDSTONE);
 
                         output.accept(ModBlocks.WHITE_PLASTIC_BLOCK);
                         output.accept(ModBlocks.LIGHT_GRAY_PLASTIC_BLOCK);
@@ -109,6 +108,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PURPLE_PLASTIC_BLOCK);
                         output.accept(ModBlocks.MAGENTA_PLASTIC_BLOCK);
                         output.accept(ModBlocks.PINK_PLASTIC_BLOCK);
+
+                        output.accept(ModBlocks.GRAVESTONE);
+                        output.accept(ModBlocks.GRAVESTONE_SANDSTONE);
 
                     }).build());
 

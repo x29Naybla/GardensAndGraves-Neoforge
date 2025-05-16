@@ -17,6 +17,9 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(GardensAndGraves.MOD_ID);
 
+    public static final DeferredBlock<Block> POTTING_TABLE = registerBlock("potting_table",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_PLANKS)));
+
     public static final DeferredBlock<Block> PLANTER = registerBlock("planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA).noOcclusion()));
     public static final DeferredBlock<Block> PLANTER_WHITE = registerBlock("planter_white",
