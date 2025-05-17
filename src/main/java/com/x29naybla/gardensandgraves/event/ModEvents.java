@@ -1,8 +1,11 @@
 package com.x29naybla.gardensandgraves.event;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
+import com.x29naybla.gardensandgraves.block.ModBlocks;
 import com.x29naybla.gardensandgraves.item.ModItems;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -11,8 +14,8 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 public class ModEvents {
     @SubscribeEvent
     public static void buildContents(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-            event.accept(ModItems.SNAIL_SPAWN_EGG);
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.insertAfter(Blocks.SMITHING_TABLE.asItem().getDefaultInstance(), ModBlocks.POTTING_TABLE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
             event.accept(ModItems.WATERING_CAN_WHITE);

@@ -74,7 +74,7 @@ public class ModEntities {
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
-                .add(Attributes.ATTACK_DAMAGE, 4)
+                .add(Attributes.ATTACK_DAMAGE, 2)
                 .add(Attributes.FOLLOW_RANGE,  9)
                 .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
 

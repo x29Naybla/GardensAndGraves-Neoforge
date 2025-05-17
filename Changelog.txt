@@ -19,3 +19,5 @@ changelog:
 * potted plants can now be placed down with the flower pots by crouching
 * cleaned and organized plants' code
 * removed snails
+
+* repeaters now properly shots 2 peas

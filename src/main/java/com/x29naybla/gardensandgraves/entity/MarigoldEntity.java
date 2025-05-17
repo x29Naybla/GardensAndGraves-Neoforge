@@ -1,8 +1,8 @@
 package com.x29naybla.gardensandgraves.entity;
 
 import com.google.common.collect.Maps;
+import com.x29naybla.gardensandgraves.entity.goal.ModMarigoldingGoal;
 import com.x29naybla.gardensandgraves.item.ModItems;
-import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -19,9 +19,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.gameevent.GameEvent;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.animation.AnimationState;
@@ -64,33 +62,8 @@ public class MarigoldEntity extends Plant {
     //Goals and AI
     protected void registerGoals(){
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
-    }
-
-    public void aiStep() {
-        super.aiStep();
-        if (!this.level().isClientSide && this.isAlive() && !this.isBaby() && --this.rewardTime <= 0) {
-            this.playSound(ModSounds.MONEYFALLS.get(), 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-            if(this.random.nextInt(1, 4) <= 1){
-                this.spawnAtLocation(Items.GOLD_NUGGET);
-                if(this.random.nextInt(1, 4) <= 2){
-                    this.spawnAtLocation(Items.GOLD_NUGGET);
-                    if(this.random.nextInt(1, 4) <= 1){
-                        this.spawnAtLocation(Items.GOLD_NUGGET);
-                    }
-                }
-            }else{
-                this.spawnAtLocation(Items.IRON_NUGGET);
-                if(this.random.nextInt(1, 4) <= 2){
-                    this.spawnAtLocation(Items.IRON_NUGGET);
-                    if(this.random.nextInt(1, 4) <= 1){
-                        this.spawnAtLocation(Items.IRON_NUGGET);
-                    }
-                }
-            }
-            this.gameEvent(GameEvent.ENTITY_PLACE);
-            this.rewardTime = 6000;
-        }
+        this.goalSelector.addGoal(1, new ModMarigoldingGoal(this));
+        this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
     }
 
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
@@ -122,8 +95,8 @@ public class MarigoldEntity extends Plant {
             event.setAnimation(GENERATE);
 
             return PlayState.CONTINUE;
-        } else
-            event.setAnimation(IDLE);
+        }
+        event.setAnimation(IDLE);
 
         return PlayState.CONTINUE;
     }

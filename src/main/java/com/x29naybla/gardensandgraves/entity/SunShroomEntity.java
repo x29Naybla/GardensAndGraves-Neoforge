@@ -23,7 +23,7 @@ public class SunShroomEntity extends SolarPlant {
     //Goals and AI
     protected void registerGoals(){
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new ModGenerateSunGoal(this, false, false));
+        this.goalSelector.addGoal(1, new ModGenerateSunGoal(this, false));
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
     }
 

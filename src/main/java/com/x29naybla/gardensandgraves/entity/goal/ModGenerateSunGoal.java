@@ -9,12 +9,10 @@ import net.minecraft.world.level.gameevent.GameEvent;
 public class ModGenerateSunGoal extends Goal {
     private final SolarPlant plant;
     private final Boolean dayPlant;
-    private final Boolean canBaby;
 
-    public ModGenerateSunGoal(SolarPlant plant, Boolean dayPlant, Boolean canBaby) {
+    public ModGenerateSunGoal(SolarPlant plant, Boolean dayPlant) {
         this.plant = plant;
         this.dayPlant = dayPlant;
-        this.canBaby = canBaby;
     }
 
     @Override
@@ -38,18 +36,21 @@ public class ModGenerateSunGoal extends Goal {
     }
 
     public void tick(){
-        if (!this.dayPlant || (this.dayPlant && !this.plant.level().isRainingAt(this.plant.getOnPos()))) {
-            if (!this.plant.isBaby() || (this.canBaby && this.plant.isBaby()) || (!this.canBaby && !this.plant.isBaby())) {
-                if (--this.plant.sunTime <= 40) {
+        if (!this.dayPlant || (this.dayPlant && !this.plant.level().isRainingAt(this.plant.getOnPos().above()))) {
+            if (!this.plant.isBaby()) {
+                --this.plant.sunTime;
+                if (this.plant.sunTime == 5985) {
+                    this.plant.setGenerated(false);
+                }
+                if (this.plant.sunTime <= 5) {
                     this.plant.setGenerated(true);
-                    if (!this.plant.level().isClientSide && --this.plant.sunTime <= 0) {
-                        this.plant.playSound(ModSounds.THROW.get(), 1.0F, (this.plant.getRandom().nextFloat() - this.plant.getRandom().nextFloat()) * 0.2F + 1.0F);
-                        this.plant.spawnAtLocation(ModItems.SUN);
-                        this.plant.gameEvent(GameEvent.ENTITY_PLACE);
-                        if (this.plant.isBaby()) this.plant.sunTime = 12000;
-                        else this.plant.sunTime = 6000;
-                        this.plant.setGenerated(false);
-                    }
+                }
+                if (!this.plant.level().isClientSide && this.plant.sunTime <= 0) {
+                    this.plant.playSound(ModSounds.THROW.get(), 1.0F, (this.plant.getRandom().nextFloat() - this.plant.getRandom().nextFloat()) * 0.2F + 1.0F);
+                    this.plant.spawnAtLocation(ModItems.SUN);
+                    this.plant.gameEvent(GameEvent.ENTITY_PLACE);
+                    this.plant.sunTime = 6000;
+
                 }
             }
         }
