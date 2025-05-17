@@ -52,15 +52,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.WATERING_CAN_MAGENTA.get())
                 .add(ModItems.WATERING_CAN_PINK.get());
 
-
-        tag(ModTags.Items.SNAIL_FOOD)
-                .addTag(ItemTags.LEAVES)
-                .add(Items.SHORT_GRASS)
-                .add(Items.TALL_GRASS)
-                .add(Items.FERN)
-                .add(Items.SWEET_BERRIES)
-                .add(Items.MELON_SLICE);;
-
         //Common Tags
         tag(Tags.Items.DYED_WHITE)
                 .add(ModBlocks.PLANTER_WHITE.asItem())

@@ -14,12 +14,14 @@ public class SolarPlant extends Plant{
     protected static final EntityDataAccessor<Boolean> GENERATED = SynchedEntityData.defineId(SolarPlant.class, EntityDataSerializers.BOOLEAN);
     public int sunTime;
 
+    //Properties
     public SolarPlant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
         super(entityType, level, seedPacket, pottedItem);
         if (this.isBaby()) this.sunTime = 12000;
         else this.sunTime = 6000;
     }
 
+    //Data
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(GENERATED, false);

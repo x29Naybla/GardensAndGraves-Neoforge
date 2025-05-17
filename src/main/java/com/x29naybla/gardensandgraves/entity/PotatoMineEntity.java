@@ -19,20 +19,16 @@ public class PotatoMineEntity extends ExplosivePlant {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
     protected static final RawAnimation ARMING = RawAnimation.begin().thenPlay("animation.potato_mine.arming");
     protected static final EntityDataAccessor<Boolean> ARMED = SynchedEntityData.defineId(PotatoMineEntity.class, EntityDataSerializers.BOOLEAN);
-
     public int armingTime = 0;
     public boolean armed;
 
+    //Properties
     public PotatoMineEntity(EntityType<? extends PotatoMineEntity> entityType, Level level) {
         super(entityType, level, ModItems.SEED_PACKET_POTATO_MINE.toStack(), ModItems.POTTED_POTATO_MINE.toStack(), 1, 180, ModSounds.SPUDOW);
         this.armed = false;
     }
 
-    @Override
-    public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherparent) {;
-        return ModEntities.POTATO_MINE.get().create(level);
-    }
-
+    //Goals and AI
     public void tick() {
         if(this.isAlive()){
             if (!this.armed){
@@ -53,6 +49,7 @@ public class PotatoMineEntity extends ExplosivePlant {
         super.tick();
     }
 
+    //GeckoLib
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
         controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::animController));
@@ -70,6 +67,7 @@ public class PotatoMineEntity extends ExplosivePlant {
         return geoCache;
     }
 
+    //Data
     public void setArmed(boolean bool) {
         getEntityData().set(ARMED, bool);
     }

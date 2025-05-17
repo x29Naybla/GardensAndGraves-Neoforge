@@ -18,18 +18,25 @@ import javax.annotation.Nullable;
 public class ShootingPlant extends Plant implements RangedAttackMob {
     protected static final EntityDataAccessor<Boolean> SHOOTING = SynchedEntityData.defineId(ShootingPlant.class, EntityDataSerializers.BOOLEAN);
 
+    //Properties
     public ShootingPlant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
         super(entityType, level, seedPacket, pottedItem);
         this.seedPacket = seedPacket;
         this.pottedItem = pottedItem;
     }
 
+    //Goals and AI
     protected void registerGoals(){
         this.goalSelector.addGoal(1, new ModShootGoal(this, 1, 1.25F, 30, 8.5F));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (target) -> target instanceof Entity entity && entity.getType().is(ModTags.Entities.PLANT_ENEMIES)));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
+    @Override
+    public void performRangedAttack(LivingEntity livingEntity, float v) {
+    }
+
+    //Data
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(SHOOTING, false);
@@ -51,9 +58,5 @@ public class ShootingPlant extends Plant implements RangedAttackMob {
 
     public void setShooting(boolean bool) {
         getEntityData().set(SHOOTING, bool);
-    }
-
-    @Override
-    public void performRangedAttack(LivingEntity livingEntity, float v) {
     }
 }

@@ -3,32 +3,32 @@ package com.x29naybla.gardensandgraves.entity;
 import com.x29naybla.gardensandgraves.entity.goal.ModGenerateSunGoal;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class SunflowerEntity extends SolarPlant {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.flower.idle");
-    protected static final RawAnimation GENERATE = RawAnimation.begin().thenLoop("animation.flower.generate");
+    protected static final RawAnimation GENERATE = RawAnimation.begin().thenPlayAndHold("animation.flower.generate");
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
-
+    //Properties
     public SunflowerEntity(EntityType<? extends SunflowerEntity> entityType, Level level) {
         super(entityType, level, ModItems.SEED_PACKET_SUNFLOWER.toStack(), ModItems.POTTED_SUNFLOWER.toStack());
     }
 
-    @Override
-    public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherparent) {;
-        return ModEntities.SUNFLOWER.get().create(level);
+    //Goals and AI
+    protected void registerGoals(){
+        this.goalSelector.addGoal(1, new FloatGoal(this));
+        this.goalSelector.addGoal(2, new ModGenerateSunGoal(this, true, false));
+        this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
+    //GeckoLib
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
         controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::animController));
@@ -45,21 +45,12 @@ public class SunflowerEntity extends SolarPlant {
         return PlayState.CONTINUE;
     }
 
-    protected void registerGoals(){
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new ModGenerateSunGoal(this, true, false));
-        this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
-    }
-
-    public void aiStep() {
-        super.aiStep();
-    }
-
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return geoCache;
     }
 
+    //Data
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         if (compound.contains("SunGenerateTime")) {

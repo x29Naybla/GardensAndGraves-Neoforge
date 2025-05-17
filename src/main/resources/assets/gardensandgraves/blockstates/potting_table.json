@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "gardensandgraves:block/potting_table",
+      "y": 90
+    },
+    "facing=north": {
       "model": "gardensandgraves:block/potting_table"
+    },
+    "facing=south": {
+      "model": "gardensandgraves:block/potting_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gardensandgraves:block/potting_table",
+      "y": 270
     }
   }
 }

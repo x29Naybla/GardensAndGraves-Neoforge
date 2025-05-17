@@ -49,7 +49,6 @@ public class ModTags {
         public static final TagKey<Item> FLOWER_POTS = createTag("flower_pots");
 
         public static final TagKey<Item> WATERING_CANS = createTag("watering_cans");
-        public static final TagKey<Item> SNAIL_FOOD = createTag("snail_food");
 
         private static TagKey<Item> createTag(String name){
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));
@@ -89,7 +88,6 @@ public class ModTags {
 
     public static class Biomes {
         //Gardens and Graves Tags
-        public static final TagKey<Biome> SNAIL_HOMES = createTag("snail_homes");
 
         private static TagKey<Biome> createTag(String name){
             return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));

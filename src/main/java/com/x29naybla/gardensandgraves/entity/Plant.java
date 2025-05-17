@@ -36,6 +36,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public ItemStack pottedItem;
     public Boolean sleepy;
 
+    //Properties
     public Plant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
         super(entityType, level);
         this.packetTime = 12000;
@@ -51,6 +52,30 @@ public class Plant extends TamableAnimal implements GeoEntity {
         return this.seedPacket;
     }
 
+    @Override
+    public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
+        return null;
+    }
+
+    public boolean canBeLeashed() {
+        return false;
+    }
+
+    @Override
+    public boolean isPushable() {
+        return false;
+    }
+
+    @Override
+    protected void doPush(Entity entity) {
+    }
+
+    @Override
+    public boolean isFood(ItemStack itemStack) {
+        return false;
+    }
+
+    //Goals and AI
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
 
@@ -101,48 +126,6 @@ public class Plant extends TamableAnimal implements GeoEntity {
     }
 
     @Override
-    public void refreshDimensions() {
-        double d0 = this.getX();
-        double d1 = this.getY();
-        double d2 = this.getZ();
-        super.refreshDimensions();
-        this.setPos(d0, d1, d2);
-    }
-
-    public boolean canBeLeashed() {
-        return false;
-    }
-
-    @Override
-    public boolean isPushable() {
-        return false;
-    }
-
-    @Override
-    protected void doPush(Entity entity) {
-    }
-
-    @Override
-    public boolean isFood(ItemStack itemStack) {
-        return false;
-    }
-
-    @Override
-    public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return null;
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return null;
-    }
-
-    @Override
     public void aiStep() {
         super.aiStep();
         if(fromPlanter && onPlanter){
@@ -166,6 +149,27 @@ public class Plant extends TamableAnimal implements GeoEntity {
             }
              */
         }
+    }
+
+    //GeckoLib
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return null;
+    }
+
+    //Data
+    @Override
+    public void refreshDimensions() {
+        double d0 = this.getX();
+        double d1 = this.getY();
+        double d2 = this.getZ();
+        super.refreshDimensions();
+        this.setPos(d0, d1, d2);
     }
 
     public void readAdditionalSaveData(CompoundTag compound) {

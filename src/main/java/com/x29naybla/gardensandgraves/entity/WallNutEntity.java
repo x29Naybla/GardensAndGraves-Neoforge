@@ -6,7 +6,6 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -16,6 +15,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 public class WallNutEntity extends Plant {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
+    //Properties
     public WallNutEntity(EntityType<? extends WallNutEntity> entityType, Level level) {
         super(entityType, level, ModItems.SEED_PACKET_WALL_NUT.toStack(), null);
     }
@@ -32,16 +32,13 @@ public class WallNutEntity extends Plant {
         return true;
     }
 
-    @Override
-    public boolean isFood(ItemStack itemStack) {
-        return false;
+    //Goals and AI
+    protected void registerGoals(){
+        this.goalSelector.addGoal(0, new FloatGoal(this));
+        this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
     }
 
-    @Override
-    public @Nullable AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherparent) {;
-        return ModEntities.WALL_NUT.get().create(level);
-    }
-
+    //GeckoLib
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
         controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::animController));
@@ -49,16 +46,6 @@ public class WallNutEntity extends Plant {
 
     protected <E extends WallNutEntity> PlayState animController(final AnimationState<E> event) {
         return PlayState.CONTINUE;
-    }
-
-    protected void registerGoals(){
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
-    }
-
-    @Override
-    public void aiStep() {
-        super.aiStep();
     }
 
     @Override

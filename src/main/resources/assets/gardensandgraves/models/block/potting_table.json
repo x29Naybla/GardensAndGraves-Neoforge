@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "minecraft:block/cherry_planks",
-    "east": "gardensandgraves:block/potting_table_side",
-    "north": "gardensandgraves:block/potting_table_front",
     "particle": "gardensandgraves:block/potting_table_front",
-    "south": "gardensandgraves:block/potting_table_side",
+    "down": "minecraft:block/cherry_planks",
+    "east": "gardensandgraves:block/potting_table_right",
+    "north": "gardensandgraves:block/potting_table_front",
+    "south": "gardensandgraves:block/potting_table_back",
     "up": "gardensandgraves:block/potting_table_top",
-    "west": "gardensandgraves:block/potting_table_front"
+    "west": "gardensandgraves:block/potting_table_left"
   }
 }

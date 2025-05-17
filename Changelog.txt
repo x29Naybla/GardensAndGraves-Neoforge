@@ -10,9 +10,12 @@ changelog:
 * moved the Wall-nut textures into a subfolder
 * added a SolarPlant class and made Sunflowers and SunShrooms extend it
 * added a custom goal to handle sun generation instead of being part of individual AIs
-* mushroom plants now sleep during the day
 * made a single sun timer Jade toggle merging Sunflower's and Sun-shroom's
-* added a Potted Table block
+* added the Potting Table block
 * moved planter recipe advancements from misc into decorations
-* fixed marigold petals still being invisible when they are invisible
+* fixed marigold petals still being visible when they are invisible
 * now sunflowers and marigolds will properly play the "generating" animation
+
+* potted plants can now be placed down with the flower pots by crouching
+* cleaned and organized plants' code
+* removed snails

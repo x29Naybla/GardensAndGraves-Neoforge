@@ -1,7 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.data.ModDamageTypes;
-import com.x29naybla.gardensandgraves.data.ModDataAttachments;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.goal.ModExplosionDamageCalculator;
 import com.x29naybla.gardensandgraves.entity.goal.ModSwellGoal;
@@ -15,10 +14,8 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -34,6 +31,7 @@ public class ExplosivePlant extends Plant{
     private int damage;
     private Holder<SoundEvent> sound;
 
+    //Properties
     public ExplosivePlant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem, int explosionRadius, int damage, Holder<SoundEvent> sound) {
         super(entityType, level, seedPacket, pottedItem);
         this.seedPacket = seedPacket;
@@ -44,33 +42,11 @@ public class ExplosivePlant extends Plant{
         this.sound.value().getRange(2);
     }
 
+    //Goals and AI
     protected void registerGoals(){
         this.goalSelector.addGoal(1, new ModSwellGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Mob.class, 10, false, false, (target) -> target instanceof Entity entity && entity.getType().is(ModTags.Entities.PLANT_ENEMIES)));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
-    }
-
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        super.defineSynchedData(builder);
-        builder.define(DATA_SWELL_DIR, -1);
-    }
-
-    public void addAdditionalSaveData(CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
-        compound.putShort("Fuse", (short)this.maxSwell);
-        compound.putByte("ExplosionRadius", (byte)this.explosionRadius);
-    }
-
-    public void readAdditionalSaveData(CompoundTag compound) {
-        super.readAdditionalSaveData(compound);
-        if (compound.contains("Fuse", 99)) {
-            this.maxSwell = compound.getShort("Fuse");
-        }
-
-        if (compound.contains("ExplosionRadius", 99)) {
-            this.explosionRadius = compound.getByte("ExplosionRadius");
-        }
-
     }
 
     public void tick() {
@@ -110,18 +86,6 @@ public class ExplosivePlant extends Plant{
         }
     }
 
-    public float getSwelling(float partialTicks) {
-        return Mth.lerp(partialTicks, this.oldSwell, this.swell) / (this.maxSwell - 2);
-    }
-
-    public int getSwellDir() {
-        return this.entityData.get(DATA_SWELL_DIR);
-    }
-
-    public void setSwellDir(int state) {
-        this.entityData.set(DATA_SWELL_DIR, state);
-    }
-
     private void explode() {
         ModExplosionDamageCalculator damageCalculator = new ModExplosionDamageCalculator();
         damageCalculator.setDamage(damage);
@@ -133,6 +97,42 @@ public class ExplosivePlant extends Plant{
             this.discard();
         }
 
+    }
+
+    //Data
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(DATA_SWELL_DIR, -1);
+    }
+
+    public void addAdditionalSaveData(CompoundTag compound) {
+        super.addAdditionalSaveData(compound);
+        compound.putShort("Fuse", (short)this.maxSwell);
+        compound.putByte("ExplosionRadius", (byte)this.explosionRadius);
+    }
+
+    public void readAdditionalSaveData(CompoundTag compound) {
+        super.readAdditionalSaveData(compound);
+        if (compound.contains("Fuse", 99)) {
+            this.maxSwell = compound.getShort("Fuse");
+        }
+
+        if (compound.contains("ExplosionRadius", 99)) {
+            this.explosionRadius = compound.getByte("ExplosionRadius");
+        }
+
+    }
+
+    public float getSwelling(float partialTicks) {
+        return Mth.lerp(partialTicks, this.oldSwell, this.swell) / (this.maxSwell - 2);
+    }
+
+    public int getSwellDir() {
+        return this.entityData.get(DATA_SWELL_DIR);
+    }
+
+    public void setSwellDir(int state) {
+        this.entityData.set(DATA_SWELL_DIR, state);
     }
 
     static {

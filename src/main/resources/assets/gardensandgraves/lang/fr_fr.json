@@ -66,8 +66,6 @@
   "item.gardensandgraves.music_disc_wabby_wabbo": "Disque",
   "item.gardensandgraves.music_disc_wabby_wabbo.desc": "Cray-Z - Wabby Wabbo",
 
-  "item.gardensandgraves.snail_spawn_egg": "Oeuf d'apparition de escargot",
-
   "item.minecraft.tipped_arrow.effect.gng_zombification": "Flèche de Zombification",
   "item.minecraft.potion.effect.gng_zombification": "Potion de zombification",
   "item.minecraft.splash_potion.effect.gng_zombification": "Potion de zombification jetable",
@@ -150,8 +148,6 @@
   "entity.gardensandgraves.hypno_shroom": "Champi-hypno",
   "entity.gardensandgraves.doom_shroom": "Champi-mort",
 
-  "entity.gardensandgraves.snail": "Snail",
-
   "entity.gardensandgraves.pea": "Pois",
   "entity.gardensandgraves.frozen_pea": "Pois congelé",
   "entity.gardensandgraves.spore": "Spore",
@@ -231,7 +227,6 @@
   "gardensandgraves.description.seed_packets_sun_cost": "Coût du soleil : ",
 
   "tag.item.gardensandgraves.watering_cans": "Watering Cans",
-  "tag.item.gardensandgraves.snail_food": "Snail Food",
 
   "tag.block.gardensandgraves.planters": "Planters",
   "tag.block.gardensandgraves.supports_plants": "Supports Plants",
