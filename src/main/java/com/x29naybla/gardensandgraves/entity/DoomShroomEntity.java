@@ -15,6 +15,7 @@ public class DoomShroomEntity extends ExplosivePlant {
     //Properties
     public DoomShroomEntity(EntityType<? extends DoomShroomEntity> entityType, Level level) {
         super(entityType, level, ModItems.SEED_PACKET_DOOM_SHROOM.toStack(), null, 9, 180, ModSounds.DOOM);
+        this.mushroom = true;
     }
 
     //GeckoLib

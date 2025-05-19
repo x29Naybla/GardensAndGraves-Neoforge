@@ -34,6 +34,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(Items.SOUL_SAND)
                 .add(Items.END_STONE);
 
+        tag(ModTags.Items.SUSTAINS_MUSHROOMS)
+                .add(Items.MYCELIUM)
+                .add(Items.PODZOL)
+                .add(Items.CRIMSON_NYLIUM)
+                .add(Items.WARPED_NYLIUM);
+
         tag(ModTags.Items.WATERING_CANS)
                 .add(ModItems.WATERING_CAN_WHITE.get())
                 .add(ModItems.WATERING_CAN_LIGHT_GRAY.get())

@@ -62,7 +62,7 @@ public class FrozenPeaProjectile extends ThrowableItemProjectile {
         if (!(entity.getType().is(ModTags.Entities.PLANTS) || entity instanceof Player player && !player.getData(ModDataAttachments.ZOMBIE))){
             entity.hurt(this.damageSources().source(ModDamageTypes.FROZEN_PEA_DAMAGE, this, this.getOwner()), 2);
             entity.extinguishFire();
-            entity.setTicksFrozen(140);
+            entity.setTicksFrozen(280);
             entity.isFullyFrozen();
             this.level().broadcastEntityEvent(this, (byte)3);
             playSound(ModSounds.SPLAT.get(),0.25F, 1 / (this.getRandom().nextFloat() * 0.4F + 0.8F));

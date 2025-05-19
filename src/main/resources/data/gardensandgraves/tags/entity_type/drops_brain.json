@@ -6,16 +6,6 @@
     "minecraft:witch",
     "minecraft:piglin",
     "minecraft:piglin_brute",
-    "#gardensandgraves:endermen",
-    "guardvillagers:guard",
-    "mobs_of_mythology:kobold",
-    "mobs_of_mythology:kobold_warrior",
-    "touhou_little_maid:maid",
-    "touhou_little_maid:fairy",
-    "raided:electromancer",
-    "raided:incinerator",
-    "raided:inquisitor",
-    "raided:necromancer",
-    "rctmod:trainer"
+    "#gardensandgraves:endermen"
   ]
 }

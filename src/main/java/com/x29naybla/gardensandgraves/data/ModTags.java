@@ -17,6 +17,7 @@ public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> PLANTERS = createTag("planters");
         public static final TagKey<Block> SUPPORTS_PLANTS = createTag("supports_plants");
+        public static final TagKey<Block> SUSTAINS_MUSHROOMS = createTag("sustains_mushrooms");
 
         public static final TagKey<Block> DIRT_SUSTAINS = createTag("dirt_sustains");
         public static final TagKey<Block> MYCELIUM_SUSTAINS = createTag("mycelium_sustains");
@@ -45,6 +46,7 @@ public class ModTags {
     public static class Items {
         //Gardens and Graves Tags
         public static final TagKey<Item> PLANTER_SUBSTRATES = createTag("planter_substrates");
+        public static final TagKey<Item> SUSTAINS_MUSHROOMS = createTag("sustains_mushrooms");
 
         public static final TagKey<Item> FLOWER_POTS = createTag("flower_pots");
 

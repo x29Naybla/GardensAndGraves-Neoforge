@@ -8,8 +8,12 @@ import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -28,13 +32,16 @@ import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
 
 public class Plant extends TamableAnimal implements GeoEntity {
+    protected int ticksForSleepyParticles;
     public int packetTime;
     public boolean fromPlanter;
     public boolean onPlanter;
+    public boolean isSleeping;
     public ItemStack seedPacket;
     @Nullable
     public ItemStack pottedItem;
-    public Boolean sleepy;
+    public Boolean mushroom;
+    public Boolean gotCoffee;
 
     //Properties
     public Plant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
@@ -42,9 +49,12 @@ public class Plant extends TamableAnimal implements GeoEntity {
         this.packetTime = 12000;
         this.fromPlanter = false;
         this.onPlanter = level.getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity;
+        this.isSleeping = false;
         this.seedPacket = seedPacket;
         this.pottedItem = pottedItem;
-        this.sleepy = false;
+        this.mushroom = false;
+        this.gotCoffee = false;
+        this.ticksForSleepyParticles = 40;
     }
 
     @Override
@@ -136,18 +146,26 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 this.packetTime = 12000;
             }
         }
-        if (!fromPlanter) {
-            /*
-            if(!this.level().isClientSide && this.isAlive() && (time == 12000 || time == 23000)) {
-                this.spawnAtLocation(this.seedPacket);
-                this.playSound(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
-                this.discard();
-                if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {
-                    serverLevel.sendParticles(ParticleTypes.POOF, this.getX(), this.getY() + 0.5,
-                            this.getZ(), 2, 0, 0, 0, 0);
-                }
+
+        if (this.mushroom == true) {
+            if (this.level().isNight()
+                    || this.gotCoffee
+                    || this.level().getBlockState(this.getOnPos()).is(BlockTags.MUSHROOM_GROW_BLOCK)
+                    || (this.level().getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity planterBlock && planterBlock.content.getStackInSlot(0).is(ModTags.Items.SUSTAINS_MUSHROOMS))) {
+                this.isSleeping = false;
+            } else {
+                this.isSleeping = true;
             }
-             */
+        }
+
+        if (this.isSleeping) {
+            //if (--this.ticksForSleepyParticles <= 0) {
+            //    this.level().addParticle(ModParticles.SLEEPING_PARTICLES.get(), this.getX(), this.getY() + this.getEyeHeight() + 0.3, this.getZ(), 0, 0.005, 0);
+            //    this.ticksForSleepyParticles = 40;
+            //}
+            this.setNoAi(true);
+        } else {
+            this.setNoAi(false);
         }
     }
 
@@ -177,6 +195,9 @@ public class Plant extends TamableAnimal implements GeoEntity {
         if (compound.contains("FromPlanter")) {
             this.fromPlanter = compound.getBoolean("FromPlanter");
         }
+        if (compound.contains("IsSleeping")) {
+            this.isSleeping = compound.getBoolean("IsSleeping");
+        }
         if (compound.contains("PacketTime")) {
             this.packetTime = compound.getInt("PacketTime");
         }
@@ -186,6 +207,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putBoolean("FromPlanter", this.fromPlanter);
+        compound.putBoolean("IsSleeping", this.isSleeping);
         compound.putInt("PacketTime", this.packetTime);
     }
 

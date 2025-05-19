@@ -10,6 +10,7 @@ import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.item.ModCreativeModeTabs;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.loot.LootModifierInit;
+import com.x29naybla.gardensandgraves.particle.ModParticles;
 import com.x29naybla.gardensandgraves.potion.ModPotions;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.neoforged.api.distmarker.Dist;
@@ -40,6 +41,7 @@ public class GardensAndGraves {
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModEffects.MOB_EFFECTS.register(modEventBus);
         ModPotions.POTIONS.register(modEventBus);
+        ModParticles.PARTICLE_TYPES.register(modEventBus);
         ModDataAttachments.ATTACHMENT_TYPES.register(modEventBus);
 
         ModItems.register(modEventBus);

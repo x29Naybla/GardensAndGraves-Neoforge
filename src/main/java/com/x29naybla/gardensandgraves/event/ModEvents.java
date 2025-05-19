@@ -5,6 +5,7 @@ import com.x29naybla.gardensandgraves.block.ModBlocks;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -18,6 +19,7 @@ public class ModEvents {
             event.insertAfter(Blocks.SMITHING_TABLE.asItem().getDefaultInstance(), ModBlocks.POTTING_TABLE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
+            event.insertAfter(Items.MUSIC_DISC_PIGSTEP.getDefaultInstance(), ModItems.MUSIC_DISC_WABBY_WABBO.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.accept(ModItems.WATERING_CAN_WHITE);
             event.accept(ModItems.WATERING_CAN_LIGHT_GRAY);
             event.accept(ModItems.WATERING_CAN_GRAY);

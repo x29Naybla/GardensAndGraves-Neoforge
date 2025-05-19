@@ -18,6 +18,7 @@ public class SunShroomEntity extends SolarPlant {
     //Properties
     public SunShroomEntity(EntityType<? extends SunShroomEntity> entityType, Level level) {
         super(entityType, level, ModItems.SEED_PACKET_SUN_SHROOM.toStack(), ModItems.POTTED_SUN_SHROOM.toStack());
+        this.mushroom = true;
     }
 
     //Goals and AI

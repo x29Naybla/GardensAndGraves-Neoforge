@@ -21,3 +21,22 @@ changelog:
 * removed snails
 
 * repeaters now properly shoots 2 peas
+
+* created an item and block tags called #gardensandgraves:sustains_mushrooms
+* mushrooms now will sleep during the day, except if planted on #gardensandgraves:sustains_mushrooms
+* added sleepy particles, intended to show when mushrooms are sleeping but not currently implemented
+* slight adjustments to the textures of the following items:
+* * Sunflower Seed Packet
+* * Marigold Seed Packet
+* * Peashooter Seed Packet
+* * Snow Pea Seed Packet
+* * Repeater Seed Packet
+* * Potted Sunflower
+* * Potted Marigold
+* * Potted Peashooter
+* * Potted Snow Pea
+* * Potted Repeater
+* * Pea
+* * Frozen Pea
+* removed all non-vanilla entries from the drops_brain and endermen tags because said tags would break if those mods were not present
+* added the wabby-wabbo music disc to the creative inventory tab next to the vanilla music discs

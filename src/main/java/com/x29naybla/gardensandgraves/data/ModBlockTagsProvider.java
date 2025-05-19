@@ -41,15 +41,18 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.PLANTER_PINK.get());
 
         tag(ModTags.Blocks.SUPPORTS_PLANTS)
-                .addTags(BlockTags.DIRT)
-                .addTags(BlockTags.SAND)
+                .addTag(BlockTags.DIRT)
+                .addTag(BlockTags.SAND)
                 .add(Blocks.SANDSTONE)
                 .add(Blocks.RED_SANDSTONE)
-                .addTags(BlockTags.PLANKS)
-                .addTags(BlockTags.LOGS)
+                .addTag(BlockTags.PLANKS)
+                .addTag(BlockTags.LOGS)
                 .add(Blocks.LILY_PAD)
                 .add(Blocks.GRAVEL)
                 .add(Blocks.SUSPICIOUS_GRAVEL);
+
+        tag(ModTags.Blocks.SUSTAINS_MUSHROOMS)
+                .addTag(BlockTags.MUSHROOM_GROW_BLOCK);
 
         tag(ModTags.Blocks.DIRT_SUSTAINS)
                 .add(Blocks.SHORT_GRASS)

@@ -2,8 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": "#minecraft:planks",
-    "@": "#gardensandgraves:flower_pots"
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "@": {
+      "tag": "gardensandgraves:flower_pots"
+    }
   },
   "pattern": [
     "@@",
