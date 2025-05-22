@@ -14,7 +14,7 @@ public class ModParticles {
             DeferredRegister.create(BuiltInRegistries.PARTICLE_TYPE, GardensAndGraves.MOD_ID);
 
     public static final Supplier<SimpleParticleType> SLEEPING_PARTICLES =
-            PARTICLE_TYPES.register("sleeping_particles", () -> new SimpleParticleType(true));
+            PARTICLE_TYPES.register("sleeping", () -> new SimpleParticleType(true));
 
     public static void register(IEventBus eventBus){
         PARTICLE_TYPES.register(eventBus);

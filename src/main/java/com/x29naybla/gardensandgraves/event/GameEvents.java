@@ -1,19 +1,33 @@
 package com.x29naybla.gardensandgraves.event;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
+import com.x29naybla.gardensandgraves.block.ModBlocks;
 import com.x29naybla.gardensandgraves.data.ModDataAttachments;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.*;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.potion.ModPotions;
+import com.x29naybla.gardensandgraves.villager.ModVillagers;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.EnderMan;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.npc.VillagerDataHolder;
+import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.trading.ItemCost;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -22,18 +36,26 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.EnderManAngerEvent;
 import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 import net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent;
+import net.neoforged.neoforge.event.village.VillagerTradesEvent;
+
+import javax.annotation.Nullable;
+import java.util.*;
 
 @EventBusSubscriber(modid = GardensAndGraves.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class GameEvents {
 
     @SubscribeEvent
     public static void addAdditionalGoals(EntityJoinLevelEvent event){
-        if (event.getEntity() instanceof  Mob mob){
-            if (mob.getType().is(ModTags.Entities.PLANT_ENEMIES)){
-                mob.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(mob, (WallNutEntity.class), true));
-                mob.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(mob, (PotatoMineEntity.class), true));
-                mob.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(mob, Plant.class, true));
+        if (event.getEntity() instanceof  Monster monster){
+            if (monster.getType().is(ModTags.Entities.PLANT_ENEMIES)){
+                monster.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(monster, (WallNutEntity.class), true));
+                monster.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(monster, (PotatoMineEntity.class), true));
+                monster.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(monster, Plant.class, true));
             }
+        }
+        if (event.getEntity() instanceof AbstractGolem golem) {
+            golem.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(golem, LivingEntity.class, true,
+                    (target) -> target instanceof LivingEntity livingEntity && livingEntity.getData(ModDataAttachments.ZOMBIE)));
         }
     }
 
@@ -50,7 +72,7 @@ public class GameEvents {
             }
         }
 
-        if(attacker instanceof Mob && newTarget instanceof Player player) {
+        if(attacker instanceof Monster && newTarget instanceof Player player) {
             if(player.getData(ModDataAttachments.ZOMBIE)) {
                 event.setCanceled(true);
                 if(attacker.getLastHurtByMob() != null) {
@@ -59,6 +81,132 @@ public class GameEvents {
             }
         }
 
+    }
+
+    @SubscribeEvent
+    public static void addGardenerTrades(VillagerTradesEvent event) {
+        if (event.getType() == ModVillagers.GARDENER.value()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
+            //Novice
+            trades.get(1).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 1),
+                    new ItemStack(Items.FLOWER_POT, 1), 16, 1, 0.05f
+            ));
+
+            trades.get(1).add(new BiomeSpecificTrade(
+                    new ItemCost(Items.EMERALD, 4), 1,2, 2,
+                    Map.of(VillagerType.PLAINS, ModItems.SEED_PACKET_SUNFLOWER.get(),
+                            VillagerType.SAVANNA, ModItems.SEED_PACKET_SUNFLOWER.get(),
+                            VillagerType.DESERT, ModItems.SEED_PACKET_SUNFLOWER.get(),
+                            VillagerType.JUNGLE, ModItems.SEED_PACKET_SUNFLOWER.get(),
+                            VillagerType.TAIGA, ModItems.SEED_PACKET_SUN_SHROOM.get(),
+                            VillagerType.SNOW, ModItems.SEED_PACKET_SUN_SHROOM.get(),
+                            VillagerType.SWAMP, ModItems.SEED_PACKET_SUN_SHROOM.get()))
+            );
+
+            trades.get(1).add(new BiomeSpecificTrade(
+                    new ItemCost(Items.EMERALD, 4), 1,2, 2,
+                    Map.of(VillagerType.PLAINS, ModItems.SEED_PACKET_PEASHOOTER.get(),
+                            VillagerType.SAVANNA, ModItems.SEED_PACKET_PEASHOOTER.get(),
+                            VillagerType.DESERT, ModItems.SEED_PACKET_PEASHOOTER.get(),
+                            VillagerType.JUNGLE, ModItems.SEED_PACKET_REPEATER.get(),
+                            VillagerType.TAIGA, ModItems.SEED_PACKET_PUFF_SHROOM.get(),
+                            VillagerType.SWAMP, ModItems.SEED_PACKET_PUFF_SHROOM.get(),
+                            VillagerType.SNOW, ModItems.SEED_PACKET_SNOW_PEA.get()))
+            );
+
+            //Apprentice
+            trades.get(2).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 12),
+                    new ItemStack(ModBlocks.PLANTER, 1), 8, 5, 0.05f
+            ));
+
+            trades.get(2).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 2),
+                    new ItemStack(Items.BONE_MEAL, 5), 16, 5, 0.05f
+            ));
+
+            trades.get(2).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 4),
+                    new ItemStack(ModItems.SEED_PACKET_WALL_NUT.get(), 1), 2, 5, 0.05f
+            ));
+
+            //Journeyman
+            trades.get(3).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 3),
+                    new ItemStack(Items.SHEARS, 1), 16, 10, 0.05f
+            ));
+
+            trades.get(3).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 7),
+                    new ItemStack(ModItems.WATERING_CAN_GREEN.get(), 1), 12, 10, 0.05f
+            ));
+
+            trades.get(3).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 5),
+                    new ItemStack(Items.GRASS_BLOCK, 1), 12, 10, 0.05f
+            ));
+
+            //Expert
+            trades.get(4).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 8),
+                    new ItemStack(Items.MYCELIUM, 1), 8, 15, 0.05f
+            ));
+
+            trades.get(4).add(new BiomeSpecificTrade(
+                    new ItemCost(Items.EMERALD, 3), 1,8, 15,
+                    Map.of(VillagerType.PLAINS, ModItems.PEA.get(),
+                            VillagerType.SAVANNA, ModItems.PEA.get(),
+                            VillagerType.DESERT, ModItems.PEA.get(),
+                            VillagerType.JUNGLE, ModItems.PEA.get(),
+                            VillagerType.TAIGA, ModItems.SPORE.get(),
+                            VillagerType.SWAMP, ModItems.SPORE.get(),
+                            VillagerType.SNOW, ModItems.FROZEN_PEA.get()))
+            );
+
+            //Master
+            trades.get(5).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 12),
+                    new ItemStack(ModItems.SEED_PACKET_DOOM_SHROOM.get(), 1), 6, 30, 0.05f
+            ));
+
+            trades.get(5).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 8),
+                    new ItemStack(ModItems.SEED_PACKET_MARIGOLD.get(), 1), 6, 30, 0.05f
+            ));
+        }
+    }
+
+    static class BiomeSpecificTrade implements VillagerTrades.ItemListing {
+        private final Map<VillagerType, Item> trades;
+        private final ItemCost itemCost;
+        private final int toSell;
+        private final int maxUses;
+        private final int villagerXp;
+
+        public BiomeSpecificTrade(ItemCost itemCost, int toSell, int maxUses, int villagerXp, Map<VillagerType, Item> trades) {
+            this.trades = trades;
+            this.itemCost = itemCost;
+            this.toSell = toSell;
+            this.maxUses = maxUses;
+            this.villagerXp = villagerXp;
+        }
+
+        @Nullable
+        public MerchantOffer getOffer(Entity trader, RandomSource random) {
+            if (trader instanceof VillagerDataHolder villagerdataholder) {
+                Item item = this.trades.get(villagerdataholder.getVillagerData().getType());
+                if (item == null) {
+                    return null;
+                } else {
+                    ItemStack itemStack = new ItemStack(item, this.toSell);
+                    return new MerchantOffer(itemCost, itemStack, this.maxUses, this.villagerXp, 0.05F);
+                }
+            } else {
+                return null;
+            }
+        }
     }
 
     @SubscribeEvent

@@ -128,6 +128,8 @@
   "block.minecraft.banner.gardensandgraves.brainz.magenta": "Mioloz magenta",
   "block.minecraft.banner.gardensandgraves.brainz.pink": "Mioloz rosa",
 
+  "entity.minecraft.villager.gardensandgraves.gardener": "Jardineiro",
+
   "entity.gardensandgraves.sunflower": "Girassol",
   "entity.gardensandgraves.marigold": "Calêndula",
 
@@ -152,9 +154,9 @@
   "entity.gardensandgraves.frozen_pea": "Ervilha congelada",
   "entity.gardensandgraves.spore": "Esporo",
 
-  "death.attack.pea": "%1$s foi ervilhado(a) até a morte por %2$s",
-  "death.attack.frozen_pea": "%1$s foi congervilhado(a) por %2$s",
-  "death.attack.plant_explosion": "%1$s foi transformado(a) em purê por %2$s",
+  "death.attack.pea": "%1$s foi ervilhado(a) até a morte",
+  "death.attack.frozen_pea": "%1$s foi congervilhado(a)",
+  "death.attack.plant_explosion": "%1$s foi transformado(a) em purê",
 
   "creativetab.gardensandgraves.blocks": "G&G blocos",
   "creativetab.gardensandgraves.items": "G&G itens",

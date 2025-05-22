@@ -12,19 +12,18 @@ changelog:
 * added a custom goal to handle sun generation instead of being part of individual AIs
 * made a single sun timer Jade toggle merging Sunflower's and Sun-shroom's
 * added the Potting Table block
+* added a Gardener Villager profession, taking the Potting Table as their workstation
 * moved planter recipe advancements from misc into decorations
 * fixed marigold petals still being visible when they are invisible
 * now sunflowers and marigolds will properly play the "generating" animation
-
 * potted plants can now be placed down with the flower pots by crouching
 * cleaned and organized plants' code
 * removed snails
-
 * repeaters now properly shoots 2 peas
-
 * created an item and block tags called #gardensandgraves:sustains_mushrooms
 * mushrooms now will sleep during the day, except if planted on #gardensandgraves:sustains_mushrooms
-* added sleepy particles, intended to show when mushrooms are sleeping but not currently implemented
+* added sleepy particles
+* when plants are sleeping, sleepy particles will appear on top of them slowly going up, as a visual indicator
 * slight adjustments to the textures of the following items:
 * * Sunflower Seed Packet
 * * Marigold Seed Packet
@@ -40,3 +39,6 @@ changelog:
 * * Frozen Pea
 * removed all non-vanilla entries from the drops_brain and endermen tags because said tags would break if those mods were not present
 * added the wabby-wabbo music disc to the creative inventory tab next to the vanilla music discs
+* reduced doom-shroom's explosion radius from 9 to 4
+* reduced the maximum stack size of peas, frozen peas, and spores, from 64 to 16
+* made plants and golems see zombie players as targets

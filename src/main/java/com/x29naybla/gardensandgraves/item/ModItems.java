@@ -72,11 +72,11 @@ public class ModItems {
             () -> new PottedPlantItem(ModEntities.PUFF_SHROOM.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> PEA = ITEMS.register("pea",
-            () -> new PeaItem(new Item.Properties()));
+            () -> new PeaItem(new Item.Properties().stacksTo(16)));
     public static final DeferredItem<Item> FROZEN_PEA = ITEMS.register("frozen_pea",
-            () -> new FrozenPeaItem(new Item.Properties()));
+            () -> new FrozenPeaItem(new Item.Properties().stacksTo(16)));
     public static final DeferredItem<Item> SPORE = ITEMS.register("spore",
-            () -> new SporeItem(new Item.Properties()));
+            () -> new SporeItem(new Item.Properties().stacksTo(16)));
 
     public static final DeferredItem<Item> BRAINZ_BANNER_PATTERN = ITEMS.register("brainz_banner_pattern",
             () -> new BannerPatternItem(BRAINZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1)));
