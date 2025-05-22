@@ -4,13 +4,11 @@ import com.x29naybla.gardensandgraves.block.entity.PlanterBlockEntity;
 import com.x29naybla.gardensandgraves.data.ModDataComponents;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.item.custom.SeedPacketItem;
+import com.x29naybla.gardensandgraves.particle.ModParticles;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
@@ -36,23 +34,23 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public int packetTime;
     public boolean fromPlanter;
     public boolean onPlanter;
-    public boolean isSleeping;
     public ItemStack seedPacket;
     @Nullable
     public ItemStack pottedItem;
-    public Boolean mushroom;
-    public Boolean gotCoffee;
+    public boolean mushroom;
+    public boolean isSleeping;
+    public boolean gotCoffee;
 
     //Properties
-    public Plant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
+    public Plant(EntityType<? extends Plant> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
         super(entityType, level);
         this.packetTime = 12000;
         this.fromPlanter = false;
         this.onPlanter = level.getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity;
-        this.isSleeping = false;
         this.seedPacket = seedPacket;
         this.pottedItem = pottedItem;
         this.mushroom = false;
+        this.isSleeping = false;
         this.gotCoffee = false;
         this.ticksForSleepyParticles = 40;
     }
@@ -147,26 +145,32 @@ public class Plant extends TamableAnimal implements GeoEntity {
             }
         }
 
-        if (this.mushroom == true) {
-            if (this.level().isNight()
-                    || this.gotCoffee
-                    || this.level().getBlockState(this.getOnPos()).is(BlockTags.MUSHROOM_GROW_BLOCK)
-                    || (this.level().getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity planterBlock && planterBlock.content.getStackInSlot(0).is(ModTags.Items.SUSTAINS_MUSHROOMS))) {
-                this.isSleeping = false;
+        if (!this.level().isClientSide) {
+            if (this.mushroom) {
+                if (this.level().isNight()
+                        || this.gotCoffee
+                        || this.level().getBlockState(this.getOnPos()).is(BlockTags.MUSHROOM_GROW_BLOCK)
+                        || (this.level().getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity planterBlock && planterBlock.content.getStackInSlot(0).is(ModTags.Items.SUSTAINS_MUSHROOMS))) {
+                    this.isSleeping = false;
+                } else {
+                    this.isSleeping = true;
+                }
             } else {
-                this.isSleeping = true;
+                this.isSleeping = false;
             }
-        }
 
-        if (this.isSleeping) {
-            //if (--this.ticksForSleepyParticles <= 0) {
-            //    this.level().addParticle(ModParticles.SLEEPING_PARTICLES.get(), this.getX(), this.getY() + this.getEyeHeight() + 0.3, this.getZ(), 0, 0.005, 0);
-            //    this.ticksForSleepyParticles = 40;
-            //}
-            this.setNoAi(true);
-        } else {
-            this.setNoAi(false);
-        }
+            if (this.isSleeping) {
+                --this.ticksForSleepyParticles;
+                if (this.ticksForSleepyParticles <= 0) {
+                    ((ServerLevel) level()).sendParticles(ModParticles.SLEEPING_PARTICLES.get(), this.getX(), this.getY() + this.getEyeHeight() + 0.3,
+                            this.getZ(), 1, 0, 0, 0, 0.0004);
+                    this.ticksForSleepyParticles = 40;
+                }
+                this.setNoAi(true);
+            } else {
+                this.setNoAi(false);
+            }
+         }
     }
 
     //GeckoLib

@@ -128,6 +128,8 @@
   "block.minecraft.banner.gardensandgraves.brainz.magenta": "Magenta Brainz",
   "block.minecraft.banner.gardensandgraves.brainz.pink": "Pink Brainz",
 
+  "entity.minecraft.villager.gardensandgraves.gardener": "Gardener",
+
   "entity.gardensandgraves.sunflower": "Sunflower",
   "entity.gardensandgraves.marigold": "Marigold",
 
@@ -152,9 +154,9 @@
   "entity.gardensandgraves.frozen_pea": "Frozen Pea",
   "entity.gardensandgraves.spore": "Spore",
 
-  "death.attack.pea": "%1$s got pead to death by %2$s",
-  "death.attack.frozen_pea": "%1$s got peapsicled by %2$s",
-  "death.attack.plant_explosion": "%1$s got turned into mush by %2$s",
+  "death.attack.pea": "%1$s got pead to death",
+  "death.attack.frozen_pea": "%1$s got peapsicled",
+  "death.attack.plant_explosion": "%1$s got turned into mush",
 
   "creativetab.gardensandgraves.blocks": "G&G Blocks",
   "creativetab.gardensandgraves.items": "G&G Items",

@@ -59,7 +59,7 @@ public class SporeProjectile extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
-        if (!(entity.getType().is(ModTags.Entities.PLANTS) || entity instanceof Player player && !player.getData(ModDataAttachments.ZOMBIE))){
+        if (!(entity.getType().is(ModTags.Entities.PLANT_ALLAYS) || entity instanceof Player player && !player.getData(ModDataAttachments.ZOMBIE))){
             entity.hurt(this.damageSources().source(ModDamageTypes.PEA_DAMAGE, this, this.getOwner()), 2);
             this.level().broadcastEntityEvent(this, (byte)3);
             shouldBreak = true;

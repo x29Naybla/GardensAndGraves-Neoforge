@@ -10,7 +10,6 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -80,7 +79,7 @@ public class PottedPlantItem extends SeedPacketItem{
     }
 
     private void placePlant(ItemStack stack, ServerLevel serverlevel, UseOnContext context, BlockPos blockpos, Boolean onFlowerPot) {
-        Entity entity = this.getType(stack).create(serverlevel, EntityType.createDefaultStackConfig(serverlevel, stack, context.getPlayer()), blockpos, MobSpawnType.SPAWN_EGG, false, false);
+        Entity entity = this.getType(stack).create(serverlevel, EntityType.createDefaultStackConfig(serverlevel, stack, context.getPlayer()), blockpos, MobSpawnType.BUCKET, false, false);
         if (entity == null) {
             return;
         }

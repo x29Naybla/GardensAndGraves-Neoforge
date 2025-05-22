@@ -15,7 +15,7 @@ public class SolarPlant extends Plant{
     public int sunTime;
 
     //Properties
-    public SolarPlant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
+    public SolarPlant(EntityType<? extends SolarPlant> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
         super(entityType, level, seedPacket, pottedItem);
         if (this.isBaby()) this.sunTime = 12000;
         else this.sunTime = 6000;

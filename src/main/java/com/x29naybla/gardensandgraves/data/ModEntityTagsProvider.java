@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.world.entity.EntityType;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -55,6 +56,14 @@ public class ModEntityTagsProvider extends EntityTypeTagsProvider {
                 .addTag(EntityTypeTags.UNDEAD)
                 .addTag(EntityTypeTags.ARTHROPOD)
                 .remove(EntityType.BEE);
+
+        tag(ModTags.Entities.PLANT_ALLAYS)
+                .addTag(ModTags.Entities.PLANTS)
+                .add(EntityType.BEE)
+                .add(EntityType.VILLAGER)
+                .add(EntityType.WANDERING_TRADER)
+                .add(EntityType.IRON_GOLEM)
+                .add(EntityType.SNOW_GOLEM);
 
         tag(ModTags.Entities.PLANTABLE_ON_DIRT)
                 .addTag(ModTags.Entities.PLANTS);

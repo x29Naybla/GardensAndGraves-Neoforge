@@ -83,6 +83,8 @@ public class ModTags {
 
         public static final TagKey<EntityType<?>> PLANT_ENEMIES = createTag("plant_enemies");
 
+        public static final TagKey<EntityType<?>> PLANT_ALLAYS = createTag("plant_allays");
+
         private static TagKey<EntityType<?>> createTag(String name) {
             return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(GardensAndGraves.MOD_ID, name));
         }

@@ -11,13 +11,13 @@ import org.jetbrains.annotations.Nullable;
 public class SleepingParticles extends TextureSheetParticle {
     protected SleepingParticles(ClientLevel level, double x, double y, double z, SpriteSet spriteSet, double xSpeed, double ySpeed, double zSpeed) {
         super(level, x, y, z);
-        this.scale(0.5F + ((float) lifetime / 100));
+        this.scale(0.5F);
         this.setSize(0.25F, 0.25F);
         this.lifetime = this.random.nextInt(50) + 80;
 
         this.gravity = 3.0E-6F;
         this.xd = xSpeed;
-        this.yd = ySpeed + (double)(this.random.nextFloat() / 500.0F);
+        this.yd = ySpeed;
         this.zd = zSpeed;
 
         this.setSpriteFromAge(spriteSet);
@@ -28,9 +28,8 @@ public class SleepingParticles extends TextureSheetParticle {
         this.yo = this.y;
         this.zo = this.z;
         if (this.age++ < this.lifetime && !(this.alpha <= 0.0F)) {
-            this.xd += (this.random.nextFloat() / 5000.0F * (float)(this.random.nextBoolean() ? 1 : -1));
-            this.zd += (this.random.nextFloat() / 5000.0F * (float)(this.random.nextBoolean() ? 1 : -1));
-            this.yd -= this.gravity;
+            this.yd += 0.0002;
+            if (this.yd < 0) this.yd = 0;
             this.move(this.xd, this.yd, this.zd);
             if (this.age >= this.lifetime - 60 && this.alpha > 0.01F) {
                 this.alpha -= 0.015F;

@@ -1,6 +1,7 @@
 package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.data.ModDamageTypes;
+import com.x29naybla.gardensandgraves.data.ModDataAttachments;
 import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.goal.ModExplosionDamageCalculator;
 import com.x29naybla.gardensandgraves.entity.goal.ModSwellGoal;
@@ -32,7 +33,7 @@ public class ExplosivePlant extends Plant{
     private Holder<SoundEvent> sound;
 
     //Properties
-    public ExplosivePlant(EntityType<? extends TamableAnimal> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem, int explosionRadius, int damage, Holder<SoundEvent> sound) {
+    public ExplosivePlant(EntityType<? extends ExplosivePlant> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem, int explosionRadius, int damage, Holder<SoundEvent> sound) {
         super(entityType, level, seedPacket, pottedItem);
         this.seedPacket = seedPacket;
         this.pottedItem = pottedItem;
@@ -45,7 +46,8 @@ public class ExplosivePlant extends Plant{
     //Goals and AI
     protected void registerGoals(){
         this.goalSelector.addGoal(1, new ModSwellGoal(this));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Mob.class, 10, false, false, (target) -> target instanceof Entity entity && entity.getType().is(ModTags.Entities.PLANT_ENEMIES)));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, LivingEntity.class, 10, false, false,
+                (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE).booleanValue())));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
@@ -81,7 +83,7 @@ public class ExplosivePlant extends Plant{
                 canExplode = false;
             }
         }
-        if (!(target == null) && target.getType().is(ModTags.Entities.PLANT_ENEMIES) && canExplode) {
+        if (!(target == null) && (target.hasData(ModDataAttachments.ZOMBIE) || target.getType().is(ModTags.Entities.PLANT_ENEMIES)) && canExplode) {
             super.setTarget(target);
         }
     }
