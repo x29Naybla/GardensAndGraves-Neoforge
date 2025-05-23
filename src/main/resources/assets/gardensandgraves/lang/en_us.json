@@ -228,10 +228,15 @@
 
   "gardensandgraves.description.seed_packets_sun_cost": "Sun Cost: ",
 
+  "tag.item.gardensandgraves.planter_substrates": "Planter Substrates",
+  "tag.item.gardensandgraves.sustains_mushrooms": "Sustains Mushrooms",
+
+  "tag.item.gardensandgraves.flower_pots": "Flower pots",
   "tag.item.gardensandgraves.watering_cans": "Watering Cans",
 
   "tag.block.gardensandgraves.planters": "Planters",
   "tag.block.gardensandgraves.supports_plants": "Supports Plants",
+  "tag.block.gardensandgraves.sustains_mushrooms": "Sustains Mushrooms",
 
   "tag.block.gardensandgraves.dirt_sustains": "Dirt Sustains",
   "tag.block.gardensandgraves.mycelium_sustains": "Mycelium Sustains",
@@ -241,11 +246,14 @@
   "tag.block.gardensandgraves.end_stone_sustains": "End Stone Sustains",
 
   "tag.block.gardensandgraves.gravestones": "Gravestones",
+  "tag.block.gardensandgraves.mushrooms": "Mushrooms",
 
   "tag.entity.gardensandgraves.flowers": "Flowers",
   "tag.entity.gardensandgraves.peashooters": "Peashooters",
   "tag.entity.gardensandgraves.mushrooms": "Mushrooms",
   "tag.entity.gardensandgraves.plants": "Plants",
+
+  "tag.entity.gardensandgraves.pottable_plants": "Pottable Plants",
 
   "tag.entity.gardensandgraves.plantable_on_dirt": "Plantable On Dirt",
   "tag.entity.gardensandgraves.plantable_on_mycelium": "Plantable On Mycelium",
@@ -255,6 +263,20 @@
   "tag.entity.gardensandgraves.plantable_on_end_stone": "Plantable On End Stone",
 
   "tag.entity.gardensandgraves.plant_enemies": "Plant Enemies",
+  "tag.entity.gardensandgraves.plant_allays": "Plant Allays",
+
+  "gardensandgraves.subtitles.item.seed_packets.plants": "Seed packet plants",
+  "gardensandgraves.subtitles.item.potted_plant.plants": "Potted plant replants",
+  "gardensandgraves.subtitles.item.watering_can.water": "Watering Can waters",
+  "gardensandgraves.subtitles.item.seed_packets.heals": "Seed packet heals",
+  "gardensandgraves.subtitles.entity.villager.work_gardener": "Gardener works",
+  "gardensandgraves.subtitles.entity.plant.grows": "Plant grows",
+  "gardensandgraves.subtitles.entity.peashooter.shoots": "Peashooter shoots",
+  "gardensandgraves.subtitles.entity.snow_pea.shoots": "Snow-pea shoots",
+  "gardensandgraves.subtitles.entity.repeater.shoots": "Repeater shoots",
+  "gardensandgraves.subtitles.entity.puff_shroom.shoots": "Puff-shroom shoots",
+  "gardensandgraves.subtitles.entity.potato_mine.explodes": "Potato Mine explodes",
+  "gardensandgraves.subtitles.entity.doom_shroom.explodes": "Doom-shroom explodes",
 
   "config.jade.plugin_gardensandgraves.sun_timer": "Sun Timers",
   "config.jade.plugin_gardensandgraves.reward_timer": "Marigold Rewards Timer",

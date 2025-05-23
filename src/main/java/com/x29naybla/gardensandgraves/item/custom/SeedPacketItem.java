@@ -96,7 +96,7 @@ public class SeedPacketItem extends Item {
                         itemStack.shrink(1);
                         context.getPlayer().getCooldowns().addCooldown(this, cooldown);
                         serverlevel.addFreshEntityWithPassengers(entity);
-                        level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
+                        level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.SEED_PACKER_PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
                         entity.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
                     }
                     if(!((context.getPlayer().isCreative() || onPlanter(level, blockpos)))){

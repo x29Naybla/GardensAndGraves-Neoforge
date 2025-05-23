@@ -24,7 +24,7 @@ public class ModVillagers {
     public static final Holder<VillagerProfession> GARDENER = VILLAGER_PROFESSIONS.register("gardener",
             () -> new VillagerProfession("gardener", holder -> holder.value() == GARDENER_POI.value(),
                     poiTypeHolder -> poiTypeHolder.value() == GARDENER_POI.value(), ImmutableSet.of(), ImmutableSet.of(),
-                    ModSounds.PLANT.get()));
+                    ModSounds.GARDENER_WORK.get()));
 
     public static void register(IEventBus eventBus) {
         POI_TYPES.register(eventBus);

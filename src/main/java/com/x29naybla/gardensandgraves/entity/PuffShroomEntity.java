@@ -32,7 +32,7 @@ public class PuffShroomEntity extends ShootingPlant {
         double d3 = target.getZ() - this.getZ();
         double d4 = Math.sqrt(d1 * d1 + d3 * d3) * (double)0.2F;
         spore.shoot(d1, d2 + d4, d3, 1.6F, 3.0F);
-        this.playSound(ModSounds.THROW.get(), 1.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+        this.playSound(ModSounds.PUFF.get(), 1.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level().addFreshEntity(spore);
     }
 

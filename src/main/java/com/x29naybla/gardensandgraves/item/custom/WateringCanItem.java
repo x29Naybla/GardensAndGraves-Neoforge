@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.item.custom;
 
+import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -29,20 +30,20 @@ public class WateringCanItem extends Item {
             BlockState blockState = level.getBlockState(blockpos.below(2));
             level.setBlockAndUpdate(blockpos.below(2), blockState.setValue(BlockStateProperties.MOISTURE, 7));
             level.addParticle(ParticleTypes.SPLASH, blockpos.getX(), blockpos.getY()+0.5, blockpos.getZ(), 0, 0, 0);
-            level.playSound(null, blockpos, SoundEvents.GENERIC_SPLASH, SoundSource.BLOCKS, 0.75F, 1.8F);
+            level.playSound(null, blockpos, ModSounds.WATERING_CAN_USE.get(), SoundSource.BLOCKS, 0.75F, 1.8F);
 
             return InteractionResult.sidedSuccess(level.isClientSide);
         } else if (isFarmland(level, blockpos.below())){
             BlockState blockState = level.getBlockState(blockpos.below());
             level.setBlockAndUpdate(blockpos.below(), blockState.setValue(BlockStateProperties.MOISTURE, 7));
             level.addParticle(ParticleTypes.SPLASH, blockpos.getX(), blockpos.getY()+0.5, blockpos.getZ(), 0, 0, 0);
-            level.playSound(null, blockpos, SoundEvents.GENERIC_SPLASH, SoundSource.BLOCKS, 0.75F, 1.8F);
+            level.playSound(null, blockpos, ModSounds.WATERING_CAN_USE.get(), SoundSource.BLOCKS, 0.75F, 1.8F);
 
             return InteractionResult.sidedSuccess(level.isClientSide);
         } else if (isMudable(level, context)){
             level.setBlockAndUpdate(context.getClickedPos(), Blocks.MUD.defaultBlockState());
             level.addParticle(ParticleTypes.SPLASH, blockpos.getX(), blockpos.getY()+0.5, blockpos.getZ(), 0, 0, 0);
-            level.playSound(null, blockpos, SoundEvents.GENERIC_SPLASH, SoundSource.BLOCKS, 0.75F, 1.8F);
+            level.playSound(null, blockpos, ModSounds.WATERING_CAN_USE.get(), SoundSource.BLOCKS, 0.75F, 1.8F);
 
             return InteractionResult.sidedSuccess(level.isClientSide);
         } else return InteractionResult.FAIL;

@@ -89,7 +89,7 @@ public class PottedPlantItem extends SeedPacketItem{
             serverlevel.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.STONE_PLACE, SoundSource.BLOCKS, 1F, 0.8F);
         } else {
             entity.moveTo(entity.getX(), entity.getY(), entity.getZ(), 0, 0);
-            serverlevel.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
+            serverlevel.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.POTTED_PLANT_PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
         }
         entity.setYRot(f);
         entity.setXRot(0);

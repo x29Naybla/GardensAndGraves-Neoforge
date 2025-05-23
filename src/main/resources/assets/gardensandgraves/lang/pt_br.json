@@ -228,10 +228,15 @@
 
   "gardensandgraves.description.seed_packets_sun_cost": "Custo de sol: ",
 
+  "tag.item.gardensandgraves.planter_substrates": "Substratos para germinadores",
+  "tag.item.gardensandgraves.sustains_mushrooms": "Sustentam cogumelos",
+
+  "tag.item.gardensandgraves.flower_pots": "Vasos",
   "tag.item.gardensandgraves.watering_cans": "Regadores",
 
   "tag.block.gardensandgraves.planters": "Germinadores",
   "tag.block.gardensandgraves.supports_plants": "Suportam plantas",
+  "tag.block.gardensandgraves.sustains_mushrooms": "Sustentam cogumelos",
 
   "tag.block.gardensandgraves.dirt_sustains": "Terra sustenta",
   "tag.block.gardensandgraves.mycelium_sustains": "Micélio sustenta",
@@ -241,6 +246,7 @@
   "tag.block.gardensandgraves.end_stone_sustains": "Pedra do End sustenta",
 
   "tag.block.gardensandgraves.gravestones": "Lápides",
+  "tag.block.gardensandgraves.mushrooms": "Cogumelos",
 
   "tag.entity.gardensandgraves.flowers": "Flores",
   "tag.entity.gardensandgraves.peashooters": "Disparervilhas",
@@ -254,7 +260,23 @@
   "tag.entity.gardensandgraves.plantable_on_nylium": "Plantável em nicélio",
   "tag.entity.gardensandgraves.plantable_on_end_stone": "Plantável em pedra do End",
 
+  "tag.entity.gardensandgraves.pottable_plants": "Plantas envasáveis",
+
   "tag.entity.gardensandgraves.plant_enemies": "Inimigos das plantas",
+  "tag.entity.gardensandgraves.plant_allays": "Aliados das plantas",
+
+  "gardensandgraves.subtitles.item.seed_packets.plants": "Pacote de sementes planta",
+  "gardensandgraves.subtitles.item.potted_plant.plants": "Planta envasa replanta",
+  "gardensandgraves.subtitles.item.watering_can.water": "Regador rega",
+  "gardensandgraves.subtitles.item.seed_packets.heals": "Pacote de sementes cura",
+  "gardensandgraves.subtitles.entity.villager.work_gardener": "Jardineiro trabalha",
+  "gardensandgraves.subtitles.entity.plant.grows": "Planta cresce",
+  "gardensandgraves.subtitles.entity.peashooter.shoots": "Disparervilha atira",
+  "gardensandgraves.subtitles.entity.snow_pea.shoots": "Gelervilha atira",
+  "gardensandgraves.subtitles.entity.repeater.shoots": "Duplaervilha atira",
+  "gardensandgraves.subtitles.entity.puff_shroom.shoots": "Soprogumelo atira",
+  "gardensandgraves.subtitles.entity.potato_mine.explodes": "Batatamina explode",
+  "gardensandgraves.subtitles.entity.doom_shroom.explodes": "Ruinagumelo explode",
 
   "config.jade.plugin_gardensandgraves.sun_timer": "Temporizadores de Sol",
   "config.jade.plugin_gardensandgraves.reward_timer": "Temporizador de recompensa de Calêndula",

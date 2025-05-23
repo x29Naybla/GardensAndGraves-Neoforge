@@ -1,44 +1,20 @@
 changelog:
-* fixed the Watering Can recipes advancement triggering
-* improved the description of seed packets to use one single translation id with the sun cost being given automatically
-* fixed Brazilian Portuguese advancement translations
-* fixed Brazilian Portuguese jade integration's Sun-shroom's Sun timer
-* fixed the description of Doom-shroom's advancement only having where they are found
-* fixed Sun-shroom's advancement description describing an old unused mechanic
-* raised the Doom-shroom's seed packet cooldown from 15 to 35
-* moved the Marigold and their petals texture into a subfolder
-* moved the Wall-nut textures into a subfolder
-* added a SolarPlant class and made Sunflowers and SunShrooms extend it
-* added a custom goal to handle sun generation instead of being part of individual AIs
-* made a single sun timer Jade toggle merging Sunflower's and Sun-shroom's
-* added the Potting Table block
-* added a Gardener Villager profession, taking the Potting Table as their workstation
-* moved planter recipe advancements from misc into decorations
-* fixed marigold petals still being visible when they are invisible
-* now sunflowers and marigolds will properly play the "generating" animation
-* potted plants can now be placed down with the flower pots by crouching
-* cleaned and organized plants' code
-* removed snails
-* repeaters now properly shoots 2 peas
-* created an item and block tags called #gardensandgraves:sustains_mushrooms
-* mushrooms now will sleep during the day, except if planted on #gardensandgraves:sustains_mushrooms
-* added sleepy particles
-* when plants are sleeping, sleepy particles will appear on top of them slowly going up, as a visual indicator
-* slight adjustments to the textures of the following items:
-* * Sunflower Seed Packet
-* * Marigold Seed Packet
-* * Peashooter Seed Packet
-* * Snow Pea Seed Packet
-* * Repeater Seed Packet
-* * Potted Sunflower
-* * Potted Marigold
-* * Potted Peashooter
-* * Potted Snow Pea
-* * Potted Repeater
-* * Pea
-* * Frozen Pea
-* removed all non-vanilla entries from the drops_brain and endermen tags because said tags would break if those mods were not present
-* added the wabby-wabbo music disc to the creative inventory tab next to the vanilla music discs
-* reduced doom-shroom's explosion radius from 9 to 4
-* reduced the maximum stack size of peas, frozen peas, and spores, from 64 to 16
-* made plants and golems see zombie players as targets
+* plants that are not from planters will "expire" once sunset or sunrise comes
+* added sound effect for plants growing up
+* added a new sound for using watering cans
+* added a new sound for puff-shrooms shooting
+* added missing tag translations
+* added variant sounds for plant, splat, and throw
+* added subtitles for:
+* * using watering cans
+* * seed packets planting
+* * seed packets healing
+* * potted plants planting
+* * gardener working
+* * plants growing
+* * peashooters shooting
+* * snow-peas shooting
+* * repeaters shooting
+* * puff-shrooms shooting
+* * potato mines exploding
+* * doom-shrooms exploding

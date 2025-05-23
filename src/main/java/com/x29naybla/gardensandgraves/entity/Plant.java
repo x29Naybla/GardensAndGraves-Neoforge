@@ -10,6 +10,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -40,6 +41,8 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public boolean mushroom;
     public boolean isSleeping;
     public boolean gotCoffee;
+    private boolean fromDay;
+    private boolean fromNight;
 
     //Properties
     public Plant(EntityType<? extends Plant> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
@@ -53,6 +56,9 @@ public class Plant extends TamableAnimal implements GeoEntity {
         this.isSleeping = false;
         this.gotCoffee = false;
         this.ticksForSleepyParticles = 40;
+
+        this.fromDay = this.level().isDay();
+        this.fromNight = this.level().isNight();
     }
 
     @Override
@@ -87,22 +93,16 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
 
-            spawnAtLocation(this.seedPacket);
+            expire(SoundEvents.SHOVEL_FLATTEN);
 
             if(!player.isCreative()) {
                 player.getItemInHand(InteractionHand.MAIN_HAND).hurtAndBreak(1, player, getSlotForHand(InteractionHand.MAIN_HAND));
             }
 
-            playSound(SoundEvents.SHOVEL_FLATTEN);
-            this.discard();
-            if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {
-                serverLevel.sendParticles(ParticleTypes.POOF, this.getX(), this.getY() + 0.5,
-                        this.getZ(), 2, 0, 0, 0, 0);
-            }
             return InteractionResult.SUCCESS;
         } else if((player.getItemInHand(hand).getItem() == this.seedPacket.getItem()) && this.getHealth() < this.getMaxHealth() && !player.getCooldowns().isOnCooldown(this.seedPacket.getItem())){
             this.setHealth(this.getMaxHealth());
-            playSound(ModSounds.PLANT.get());
+            playSound(ModSounds.SEED_PACKET_HEAL.get());
             player.getCooldowns().addCooldown(this.seedPacket.getItem(), ((SeedPacketItem) this.seedPacket.getItem()).cooldown);
             if (!player.isCreative()) {
                 player.getItemInHand(hand).shrink(1);
@@ -143,6 +143,14 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 this.gameEvent(GameEvent.ENTITY_PLACE);
                 this.packetTime = 12000;
             }
+        } else if (!fromPlanter) {
+            if (fromDay && this.level().isNight()) {
+                expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
+            }
+
+            if (fromNight && this.level().isDay()) {
+                expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
+            }
         }
 
         if (!this.level().isClientSide) {
@@ -171,6 +179,20 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 this.setNoAi(false);
             }
          }
+    }
+
+    public void ageUp(int amount, boolean forced){
+        playSound(ModSounds.PLANT_GROW.get());
+    }
+
+    public void expire(SoundEvent sound){
+        this.spawnAtLocation(this.seedPacket);
+        playSound(sound);
+        this.discard();
+        if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {
+            serverLevel.sendParticles(ParticleTypes.POOF, this.getX(), this.getY() + 0.5,
+                    this.getZ(), 2, 0, 0, 0, 0);
+        }
     }
 
     //GeckoLib
