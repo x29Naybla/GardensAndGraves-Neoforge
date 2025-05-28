@@ -74,7 +74,30 @@
       }
     ]
   },
+  "sunflower_sun": {
+    "subtitle": "gardensandgraves.subtitles.entity.sunflower.generates",
+    "sounds": [
+      {
+        "name": "gardensandgraves:throw1"
+      },
+      {
+        "name": "gardensandgraves:throw2"
+      }
+    ]
+  },
+  "sun_shroom_sun": {
+    "subtitle": "gardensandgraves.subtitles.entity.sun_shroom.generates",
+    "sounds": [
+      {
+        "name": "gardensandgraves:throw1"
+      },
+      {
+        "name": "gardensandgraves:throw2"
+      }
+    ]
+  },
   "moneyfalls": {
+    "subtitle": "gardensandgraves.subtitles.entity.marigold.generates",
     "sounds": [
       {
         "name": "gardensandgraves:moneyfalls"

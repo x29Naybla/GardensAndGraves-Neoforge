@@ -1,0 +1,11 @@
+{
+  "type": "gardensandgraves:add_loot_table",
+  "conditions":
+  [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:entities/zombie"
+    }
+  ],
+  "lootTable": "gardensandgraves:entities/gng_zombie"
+}

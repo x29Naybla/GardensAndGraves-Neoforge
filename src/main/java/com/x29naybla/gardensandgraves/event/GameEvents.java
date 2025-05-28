@@ -9,21 +9,22 @@ import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.potion.ModPotions;
 import com.x29naybla.gardensandgraves.villager.ModVillagers;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.npc.VillagerDataHolder;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.trading.ItemCost;
@@ -41,6 +42,8 @@ import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import javax.annotation.Nullable;
 import java.util.*;
 
+import static com.x29naybla.gardensandgraves.item.ZombieBanner.getZombieLeaderBannerInstance;
+
 @EventBusSubscriber(modid = GardensAndGraves.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class GameEvents {
 
@@ -56,6 +59,12 @@ public class GameEvents {
         if (event.getEntity() instanceof AbstractGolem golem) {
             golem.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(golem, LivingEntity.class, true,
                     (target) -> target instanceof LivingEntity livingEntity && livingEntity.getData(ModDataAttachments.ZOMBIE)));
+        }
+        if (!event.getLevel().isClientSide && event.getLevel().random.nextIntBetweenInclusive(0, 49) <= 0.75) {
+            if (event.getEntity() instanceof Zombie zombie) {
+                zombie.setItemSlot(EquipmentSlot.HEAD, getZombieLeaderBannerInstance(zombie.registryAccess().lookupOrThrow(Registries.BANNER_PATTERN)));
+                zombie.setGuaranteedDrop(EquipmentSlot.HEAD);
+            }
         }
     }
 

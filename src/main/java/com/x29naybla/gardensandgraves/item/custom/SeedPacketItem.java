@@ -103,7 +103,7 @@ public class SeedPacketItem extends Item {
                         if(this.sunAmount == 0){
 
                         } else
-                        context.getPlayer().getInventory().removeItem(context.getPlayer().getInventory().findSlotMatchingItem(ModItems.SUN.toStack()), sunAmount);
+                            context.getPlayer().getInventory().removeItem(context.getPlayer().getInventory().findSlotMatchingItem(ModItems.SUN.toStack()), sunAmount);
                     }
                     return InteractionResult.sidedSuccess(level.isClientSide);
                 } else return InteractionResult.FAIL;
@@ -144,8 +144,8 @@ public class SeedPacketItem extends Item {
     }
 
     public EntityType<?> getType(ItemStack stack) {
-        CustomData customdata = (CustomData)stack.getOrDefault(DataComponents.ENTITY_DATA, CustomData.EMPTY);
-        return !customdata.isEmpty() ? (EntityType)customdata.read(ENTITY_TYPE_FIELD_CODEC).result().orElse(this.getDefaultType()) : this.getDefaultType();
+        CustomData customdata = stack.getOrDefault(DataComponents.ENTITY_DATA, CustomData.EMPTY);
+        return !customdata.isEmpty() ? customdata.read(ENTITY_TYPE_FIELD_CODEC).result().orElse(this.getDefaultType()) : this.getDefaultType();
     }
 
     protected EntityType<?> getDefaultType() {

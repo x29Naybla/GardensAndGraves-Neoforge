@@ -20,12 +20,13 @@ public class ModSounds {
     public static final Supplier<SoundEvent> WABBY_WABBO = registerSoundEvent("wabby_wabbo");
     public static final ResourceKey<JukeboxSong> WABBY_WABBO_KEY = createSong("wabby_wabbo");
 
-    public static final Supplier<SoundEvent> THROW = registerSoundEvent("throw");
     public static final Supplier<SoundEvent> SPLAT = registerSoundEvent("splat");
     public static final Supplier<SoundEvent> SEED_PACKET_HEAL = registerSoundEvent("seed_packet_heal");
     public static final Supplier<SoundEvent> SEED_PACKER_PLANT = registerSoundEvent("seed_packet_plant");
     public static final Supplier<SoundEvent> POTTED_PLANT_PLANT = registerSoundEvent("potted_plant_plant");
     public static final Supplier<SoundEvent> GARDENER_WORK = registerSoundEvent("gardener_work");
+    public static final Supplier<SoundEvent> SUNFLOWER_SUN = registerSoundEvent("sunflower_sun");
+    public static final Supplier<SoundEvent> SUN_SHROOM_SUN = registerSoundEvent("sun_shroom_sun");
     public static final Supplier<SoundEvent> MONEYFALLS = registerSoundEvent("moneyfalls");
     public static final Supplier<SoundEvent> PEASHOOTER_SHOT = registerSoundEvent("pea_shot");
     public static final Supplier<SoundEvent> SNOW_PEA_SHOT = registerSoundEvent("snow_pea_shot");

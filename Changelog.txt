@@ -10,7 +10,7 @@ changelog:
 * * seed packets planting
 * * seed packets healing
 * * potted plants planting
-* * gardener working
+* * gardeners working
 * * plants growing
 * * peashooters shooting
 * * snow-peas shooting
@@ -18,3 +18,10 @@ changelog:
 * * puff-shrooms shooting
 * * potato mines exploding
 * * doom-shrooms exploding
+
+* * sunflowers generating
+* * sun-shrooms generating
+* * marigolds generating
+* if the block under the plant is broken, the plant will "expire"
+* when spawning, zombies have a 2% chance of being a "flag zombie", wearing a Brainz Banner and will drop an ominous bottle upon death
+* added a temporary placeholder texture to fix the gardener zombie villager texture being broken, while an actual texture isn't made

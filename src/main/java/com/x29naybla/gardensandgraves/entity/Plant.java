@@ -24,6 +24,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -41,8 +42,8 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public boolean mushroom;
     public boolean isSleeping;
     public boolean gotCoffee;
-    private boolean fromDay;
-    private boolean fromNight;
+    private final boolean fromDay;
+    private final boolean fromNight;
 
     //Properties
     public Plant(EntityType<? extends Plant> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
@@ -153,6 +154,12 @@ public class Plant extends TamableAnimal implements GeoEntity {
             }
         }
 
+        if(this.level().getBlockState(this.getOnPos()).is(Blocks.AIR) ||
+                this.level().getBlockState(this.getOnPos()).is(Blocks.CAVE_AIR) ||
+                this.level().getBlockState(this.getOnPos()).is(Blocks.VOID_AIR)) {
+            this.expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
+        }
+
         if (!this.level().isClientSide) {
             if (this.mushroom) {
                 if (this.level().isNight()
@@ -178,7 +185,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
             } else {
                 this.setNoAi(false);
             }
-         }
+        }
     }
 
     public void ageUp(int amount, boolean forced){

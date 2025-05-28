@@ -128,6 +128,8 @@
   "block.minecraft.banner.gardensandgraves.brainz.magenta": "Mioloz magenta",
   "block.minecraft.banner.gardensandgraves.brainz.pink": "Mioloz rosa",
 
+  "gardensandgraves.items.brainz_banner": "Estandarte de mioloz",
+
   "entity.minecraft.villager.gardensandgraves.gardener": "Jardineiro",
 
   "entity.gardensandgraves.sunflower": "Girassol",
@@ -270,13 +272,16 @@
   "gardensandgraves.subtitles.item.watering_can.water": "Regador rega",
   "gardensandgraves.subtitles.item.seed_packets.heals": "Pacote de sementes cura",
   "gardensandgraves.subtitles.entity.villager.work_gardener": "Jardineiro trabalha",
-  "gardensandgraves.subtitles.entity.plant.grows": "Planta cresce",
+  "gardensandgraves.subtitles.entity.sunflower.generates": "Girassol gera",
+  "gardensandgraves.subtitles.entity.sun_shroom.generates": "Solargumelo gera",
+  "gardensandgraves.subtitles.entity.marigold.generates": "Calêndula gera",
   "gardensandgraves.subtitles.entity.peashooter.shoots": "Disparervilha atira",
   "gardensandgraves.subtitles.entity.snow_pea.shoots": "Gelervilha atira",
   "gardensandgraves.subtitles.entity.repeater.shoots": "Duplaervilha atira",
   "gardensandgraves.subtitles.entity.puff_shroom.shoots": "Soprogumelo atira",
-  "gardensandgraves.subtitles.entity.potato_mine.explodes": "Batatamina explode",
   "gardensandgraves.subtitles.entity.doom_shroom.explodes": "Ruinagumelo explode",
+  "gardensandgraves.subtitles.entity.potato_mine.explodes": "Batatamina explode",
+  "gardensandgraves.subtitles.entity.plant.grows": "Planta cresce",
 
   "config.jade.plugin_gardensandgraves.sun_timer": "Temporizadores de Sol",
   "config.jade.plugin_gardensandgraves.reward_timer": "Temporizador de recompensa de Calêndula",

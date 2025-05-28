@@ -128,6 +128,8 @@
   "block.minecraft.banner.gardensandgraves.brainz.magenta": "Magenta Brainz",
   "block.minecraft.banner.gardensandgraves.brainz.pink": "Pink Brainz",
 
+  "gardensandgraves.items.brainz_banner": "Brainz Banner",
+
   "entity.minecraft.villager.gardensandgraves.gardener": "Gardener",
 
   "entity.gardensandgraves.sunflower": "Sunflower",
@@ -270,13 +272,16 @@
   "gardensandgraves.subtitles.item.watering_can.water": "Watering Can waters",
   "gardensandgraves.subtitles.item.seed_packets.heals": "Seed packet heals",
   "gardensandgraves.subtitles.entity.villager.work_gardener": "Gardener works",
-  "gardensandgraves.subtitles.entity.plant.grows": "Plant grows",
+  "gardensandgraves.subtitles.entity.sunflower.generates": "Sunflower generates",
+  "gardensandgraves.subtitles.entity.sun_shroom.generates": "Sun-shroom generates",
+  "gardensandgraves.subtitles.entity.marigold.generates": "Marigold generates",
   "gardensandgraves.subtitles.entity.peashooter.shoots": "Peashooter shoots",
   "gardensandgraves.subtitles.entity.snow_pea.shoots": "Snow-pea shoots",
   "gardensandgraves.subtitles.entity.repeater.shoots": "Repeater shoots",
   "gardensandgraves.subtitles.entity.puff_shroom.shoots": "Puff-shroom shoots",
-  "gardensandgraves.subtitles.entity.potato_mine.explodes": "Potato Mine explodes",
   "gardensandgraves.subtitles.entity.doom_shroom.explodes": "Doom-shroom explodes",
+  "gardensandgraves.subtitles.entity.potato_mine.explodes": "Potato Mine explodes",
+  "gardensandgraves.subtitles.entity.plant.grows": "Plant grows",
 
   "config.jade.plugin_gardensandgraves.sun_timer": "Sun Timers",
   "config.jade.plugin_gardensandgraves.reward_timer": "Marigold Rewards Timer",

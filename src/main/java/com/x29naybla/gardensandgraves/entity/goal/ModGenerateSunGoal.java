@@ -2,16 +2,18 @@ package com.x29naybla.gardensandgraves.entity.goal;
 
 import com.x29naybla.gardensandgraves.entity.SolarPlant;
 import com.x29naybla.gardensandgraves.item.ModItems;
-import com.x29naybla.gardensandgraves.sound.ModSounds;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.level.gameevent.GameEvent;
 
 public class ModGenerateSunGoal extends Goal {
     private final SolarPlant plant;
+    private final SoundEvent sound;
     private final Boolean dayPlant;
 
-    public ModGenerateSunGoal(SolarPlant plant, Boolean dayPlant) {
+    public ModGenerateSunGoal(SolarPlant plant, SoundEvent sound, Boolean dayPlant) {
         this.plant = plant;
+        this.sound = sound;
         this.dayPlant = dayPlant;
     }
 
@@ -46,7 +48,7 @@ public class ModGenerateSunGoal extends Goal {
                     this.plant.setGenerated(true);
                 }
                 if (!this.plant.level().isClientSide && this.plant.sunTime <= 0) {
-                    this.plant.playSound(ModSounds.THROW.get(), 1.0F, (this.plant.getRandom().nextFloat() - this.plant.getRandom().nextFloat()) * 0.2F + 1.0F);
+                    this.plant.playSound(this.sound, 1.0F, (this.plant.getRandom().nextFloat() - this.plant.getRandom().nextFloat()) * 0.2F + 1.0F);
                     this.plant.spawnAtLocation(ModItems.SUN);
                     this.plant.gameEvent(GameEvent.ENTITY_PLACE);
                     this.plant.sunTime = 6000;

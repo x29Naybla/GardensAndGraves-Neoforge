@@ -2,6 +2,7 @@ package com.x29naybla.gardensandgraves.entity;
 
 import com.x29naybla.gardensandgraves.entity.goal.ModGenerateSunGoal;
 import com.x29naybla.gardensandgraves.item.ModItems;
+import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -24,7 +25,7 @@ public class SunflowerEntity extends SolarPlant {
     //Goals and AI
     protected void registerGoals(){
         this.goalSelector.addGoal(1, new FloatGoal(this));
-        this.goalSelector.addGoal(2, new ModGenerateSunGoal(this, true));
+        this.goalSelector.addGoal(2, new ModGenerateSunGoal(this, ModSounds.SUNFLOWER_SUN.get(), true));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
