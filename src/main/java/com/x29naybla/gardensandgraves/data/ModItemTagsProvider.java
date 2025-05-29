@@ -6,6 +6,7 @@ import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -37,6 +38,33 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModTags.Items.SUSTAINS_MUSHROOMS)
                 .add(Items.MYCELIUM)
                 .add(Items.PODZOL)
+                .add(Items.CRIMSON_NYLIUM)
+                .add(Items.WARPED_NYLIUM);
+
+        tag(ModTags.Items.SUSTAINS_SUNFLOWERS)
+                .addTag(ItemTags.DIRT);
+        tag(ModTags.Items.SUSTAINS_MARIGOLDS)
+                .addTag(ItemTags.DIRT);
+        tag(ModTags.Items.SUSTAINS_PEASHOOTERS)
+                .addTag(ItemTags.DIRT);
+        tag(ModTags.Items.SUSTAINS_SNOW_PEAS)
+                .addTag(ItemTags.DIRT);
+        tag(ModTags.Items.SUSTAINS_REPEATERS)
+                .addTag(ItemTags.DIRT);
+        tag(ModTags.Items.SUSTAINS_WALL_NUTS)
+                .addTag(ItemTags.DIRT);
+        tag(ModTags.Items.SUSTAINS_POTATO_MINES)
+                .addTag(ItemTags.DIRT);
+        tag(ModTags.Items.SUSTAINS_SUN_SHROOMS)
+                .addTag(ItemTags.DIRT)
+                .add(Items.CRIMSON_NYLIUM)
+                .add(Items.WARPED_NYLIUM);
+        tag(ModTags.Items.SUSTAINS_PUFF_SHROOMS)
+                .addTag(ItemTags.DIRT)
+                .add(Items.CRIMSON_NYLIUM)
+                .add(Items.WARPED_NYLIUM);
+        tag(ModTags.Items.SUSTAINS_DOOM_SHROOMS)
+                .addTag(ItemTags.DIRT)
                 .add(Items.CRIMSON_NYLIUM)
                 .add(Items.WARPED_NYLIUM);
 

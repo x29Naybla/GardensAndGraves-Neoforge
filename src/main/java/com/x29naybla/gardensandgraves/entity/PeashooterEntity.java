@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.projectile.PeaProjectile;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
@@ -17,7 +18,7 @@ public class PeashooterEntity extends ShootingPlant {
 
     //Properties
     public PeashooterEntity(EntityType<? extends PeashooterEntity> entityType, Level level) {
-        super(entityType, level, ModItems.SEED_PACKET_PEASHOOTER.toStack(), ModItems.POTTED_PEASHOOTER.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_PEASHOOTERS, ModItems.SEED_PACKET_PEASHOOTER.toStack(), ModItems.POTTED_PEASHOOTER.toStack());
     }
 
     //Goals and AI

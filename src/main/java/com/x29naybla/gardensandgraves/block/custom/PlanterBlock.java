@@ -11,6 +11,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
@@ -69,19 +70,9 @@ public class PlanterBlock extends BaseEntityBlock {
             if(itemStack.is(ModTags.Items.PLANTER_SUBSTRATES)) {
                 if(planter.content.getStackInSlot(0).isEmpty()) {
                     planter.content.insertItem(0, itemStack.copy(), false);
-                    if(itemStack.is(Items.DIRT)) {
-                        level.playSound(null, pos, SoundType.GRAVEL.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    } else if(itemStack.is(Items.MYCELIUM)) {
-                        level.playSound(null, pos, SoundType.GRASS.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    } else if(itemStack.is(Items.SAND) || itemStack.is(Items.RED_SAND)) {
-                        level.playSound(null, pos, SoundType.SAND.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    } else if(itemStack.is(Items.SOUL_SAND)) {
-                        level.playSound(null, pos, SoundType.SOUL_SAND.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    } else if(itemStack.is(Items.CRIMSON_NYLIUM) || itemStack.is(Items.WARPED_NYLIUM)) {
-                        level.playSound(null, pos, SoundType.NYLIUM.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    } else if(itemStack.is(Items.END_STONE)) {
-                        level.playSound(null, pos, SoundType.STONE.getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    }
+
+                    BlockItem content = (BlockItem) itemStack.getItem();
+                    level.playSound(null, pos, content.getBlock().getSoundType(content.getBlock().defaultBlockState(), level, pos, null).getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
 
                     if(!player.isCreative()) {
                         itemStack.shrink(1);
@@ -92,19 +83,8 @@ public class PlanterBlock extends BaseEntityBlock {
                 if(!planter.content.getStackInSlot(0).isEmpty() && player.getItemInHand(InteractionHand.MAIN_HAND).is(Items.AIR)){
                     ItemStack stackOnPlanter = planter.content.extractItem(0,1,false);
 
-                    if(stackOnPlanter.is(Items.DIRT)) {
-                        level.playSound(null, pos, SoundType.GRAVEL.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    } else if(stackOnPlanter.is(Items.MYCELIUM)) {
-                        level.playSound(null, pos, SoundType.GRASS.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    } else if(stackOnPlanter.is(Items.SAND) || itemStack.is(Items.RED_SAND)) {
-                        level.playSound(null, pos, SoundType.SAND.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    } else if(stackOnPlanter.is(Items.SOUL_SAND)) {
-                        level.playSound(null, pos, SoundType.SOUL_SAND.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    } else if(stackOnPlanter.is(Items.CRIMSON_NYLIUM) || itemStack.is(Items.WARPED_NYLIUM)) {
-                        level.playSound(null, pos, SoundType.NYLIUM.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    } else if(stackOnPlanter.is(Items.END_STONE)) {
-                        level.playSound(null, pos, SoundType.STONE.getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
-                    }
+                    BlockItem content = (BlockItem) stackOnPlanter.getItem();
+                    level.playSound(null, pos, content.getBlock().getSoundType(content.getBlock().defaultBlockState(), level, pos, null).getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
 
                     player.setItemInHand(InteractionHand.MAIN_HAND, stackOnPlanter);
                     level.playSound(null, pos, SoundEvents.DECORATED_POT_HIT, SoundSource.BLOCKS, 1.0F, 1.0F);

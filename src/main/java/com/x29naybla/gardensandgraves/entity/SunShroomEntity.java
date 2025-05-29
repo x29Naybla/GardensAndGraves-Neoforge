@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.goal.ModGenerateSunGoal;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
@@ -18,7 +19,7 @@ public class SunShroomEntity extends SolarPlant {
 
     //Properties
     public SunShroomEntity(EntityType<? extends SunShroomEntity> entityType, Level level) {
-        super(entityType, level, ModItems.SEED_PACKET_SUN_SHROOM.toStack(), ModItems.POTTED_SUN_SHROOM.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_SUN_SHROOMS, ModItems.SEED_PACKET_SUN_SHROOM.toStack(), ModItems.POTTED_SUN_SHROOM.toStack());
         this.mushroom = true;
     }
 

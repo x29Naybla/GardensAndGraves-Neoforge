@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.projectile.FrozenPeaProjectile;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
@@ -17,7 +18,7 @@ public class SnowPeaEntity extends ShootingPlant {
 
     //Properties
     public SnowPeaEntity(EntityType<? extends SnowPeaEntity> entityType, Level level) {
-        super(entityType, level, ModItems.SEED_PACKET_SNOW_PEA.toStack(), ModItems.POTTED_SNOW_PEA.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_SNOW_PEAS, ModItems.SEED_PACKET_SNOW_PEA.toStack(), ModItems.POTTED_SNOW_PEA.toStack());
     }
 
     //Goals and AI

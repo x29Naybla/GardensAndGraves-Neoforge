@@ -6,6 +6,7 @@ import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.item.custom.SeedPacketItem;
 import com.x29naybla.gardensandgraves.particle.ModParticles;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -14,6 +15,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.AgeableMob;
@@ -22,7 +24,9 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -33,6 +37,7 @@ import software.bernie.geckolib.animation.AnimatableManager;
 
 public class Plant extends TamableAnimal implements GeoEntity {
     protected int ticksForSleepyParticles;
+    protected TagKey<Item> substrate;
     public int packetTime;
     public boolean fromPlanter;
     public boolean onPlanter;
@@ -46,7 +51,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     private final boolean fromNight;
 
     //Properties
-    public Plant(EntityType<? extends Plant> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
+    public Plant(EntityType<? extends Plant> entityType, Level level, TagKey<Item> substrate, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
         super(entityType, level);
         this.packetTime = 12000;
         this.fromPlanter = false;
@@ -60,6 +65,8 @@ public class Plant extends TamableAnimal implements GeoEntity {
 
         this.fromDay = this.level().isDay();
         this.fromNight = this.level().isNight();
+
+        this.substrate = substrate;
     }
 
     @Override
@@ -186,6 +193,13 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 this.setNoAi(false);
             }
         }
+    }
+
+    public boolean onRightSubstrate(BlockGetter reader, BlockPos pos) {
+        if (reader.getBlockState(pos.below()).is(ModTags.Blocks.SUPPORTS_PLANTS) ||
+                (reader.getBlockEntity(pos.below()) instanceof PlanterBlockEntity planter && planter.content.getStackInSlot(0).is(this.substrate))) {
+            return true;
+        } else return false;
     }
 
     public void ageUp(int amount, boolean forced){

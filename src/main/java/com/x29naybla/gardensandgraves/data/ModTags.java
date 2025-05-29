@@ -48,6 +48,17 @@ public class ModTags {
         public static final TagKey<Item> PLANTER_SUBSTRATES = createTag("planter_substrates");
         public static final TagKey<Item> SUSTAINS_MUSHROOMS = createTag("sustains_mushrooms");
 
+        public static final TagKey<Item> SUSTAINS_SUNFLOWERS = createTag("sustains_sunflowers");
+        public static final TagKey<Item> SUSTAINS_MARIGOLDS = createTag("sustains_marigolds");
+        public static final TagKey<Item> SUSTAINS_PEASHOOTERS = createTag("sustains_peashooters");
+        public static final TagKey<Item> SUSTAINS_SNOW_PEAS = createTag("sustains_snow_peas");
+        public static final TagKey<Item> SUSTAINS_REPEATERS = createTag("sustains_repeaters");
+        public static final TagKey<Item> SUSTAINS_WALL_NUTS = createTag("sustains_wall_nuts");
+        public static final TagKey<Item> SUSTAINS_POTATO_MINES = createTag("sustains_potato_mines");
+        public static final TagKey<Item> SUSTAINS_SUN_SHROOMS = createTag("sustains_sun_shrooms");
+        public static final TagKey<Item> SUSTAINS_PUFF_SHROOMS = createTag("sustains_puff_shrooms");
+        public static final TagKey<Item> SUSTAINS_DOOM_SHROOMS = createTag("sustains_doom_shrooms");
+
         public static final TagKey<Item> FLOWER_POTS = createTag("flower_pots");
 
         public static final TagKey<Item> WATERING_CANS = createTag("watering_cans");
@@ -73,13 +84,6 @@ public class ModTags {
         public static final TagKey<EntityType<?>> PLANTS = createTag("plants");
 
         public static final TagKey<EntityType<?>> POTTABLE_PLANTS = createTag("pottable_plants");
-
-        public static final TagKey<EntityType<?>> PLANTABLE_ON_DIRT = createTag("plantable_on_dirt");
-        public static final TagKey<EntityType<?>> PLANTABLE_ON_MYCELIUM = createTag("plantable_on_mycelium");
-        public static final TagKey<EntityType<?>> PLANTABLE_ON_SANDS = createTag("plantable_on_sands");
-        public static final TagKey<EntityType<?>> PLANTABLE_ON_SOUL_SAND = createTag("plantable_on_soul_sand");
-        public static final TagKey<EntityType<?>> PLANTABLE_ON_NYLIUM = createTag("plantable_on_nylium");
-        public static final TagKey<EntityType<?>> PLANTABLE_ON_END_STONE = createTag("plantable_on_end_stone");
 
         public static final TagKey<EntityType<?>> PLANT_ENEMIES = createTag("plant_enemies");
 

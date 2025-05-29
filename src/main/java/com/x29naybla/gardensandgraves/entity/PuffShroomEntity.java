@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.projectile.SporeProjectile;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
@@ -18,7 +19,7 @@ public class PuffShroomEntity extends ShootingPlant {
 
     //Properties
     public PuffShroomEntity(EntityType<? extends PuffShroomEntity> entityType, Level level) {
-        super(entityType, level, ModItems.SEED_PACKET_PUFF_SHROOM.toStack(), ModItems.POTTED_PUFF_SHROOM.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_PUFF_SHROOMS, ModItems.SEED_PACKET_PUFF_SHROOM.toStack(), ModItems.POTTED_PUFF_SHROOM.toStack());
         this.mushroom = true;
     }
 

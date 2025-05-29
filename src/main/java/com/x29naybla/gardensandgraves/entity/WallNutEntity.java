@@ -1,13 +1,11 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.item.ModItems;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
@@ -17,7 +15,7 @@ public class WallNutEntity extends Plant {
 
     //Properties
     public WallNutEntity(EntityType<? extends WallNutEntity> entityType, Level level) {
-        super(entityType, level, ModItems.SEED_PACKET_WALL_NUT.toStack(), null);
+        super(entityType, level, ModTags.Items.SUSTAINS_WALL_NUTS, ModItems.SEED_PACKET_WALL_NUT.toStack(), null);
     }
 
     public boolean canCollideWith(Entity entity) {

@@ -1,27 +1,3 @@
 changelog:
-* plants that are not from planters will "expire" once sunset or sunrise comes
-* added sound effect for plants growing up
-* added a new sound for using watering cans
-* added a new sound for puff-shrooms shooting
-* added missing tag translations
-* added variant sounds for plant, splat, and throw
-* added subtitles for:
-* * using watering cans
-* * seed packets planting
-* * seed packets healing
-* * potted plants planting
-* * gardeners working
-* * plants growing
-* * peashooters shooting
-* * snow-peas shooting
-* * repeaters shooting
-* * puff-shrooms shooting
-* * potato mines exploding
-* * doom-shrooms exploding
-
-* * sunflowers generating
-* * sun-shrooms generating
-* * marigolds generating
-* if the block under the plant is broken, the plant will "expire"
-* when spawning, zombies have a 2% chance of being a "flag zombie", wearing a Brainz Banner and will drop an ominous bottle upon death
-* added a temporary placeholder texture to fix the gardener zombie villager texture being broken, while an actual texture isn't made
+* planter interaction sounds are now dynamically chosen from the substrate being taken from/placed into it
+* made each plant have their own tag to dictate what types of substrate supports them

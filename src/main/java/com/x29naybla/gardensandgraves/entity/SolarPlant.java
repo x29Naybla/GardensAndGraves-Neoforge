@@ -4,8 +4,10 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -15,8 +17,8 @@ public class SolarPlant extends Plant{
     public int sunTime;
 
     //Properties
-    public SolarPlant(EntityType<? extends SolarPlant> entityType, Level level, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
-        super(entityType, level, seedPacket, pottedItem);
+    public SolarPlant(EntityType<? extends SolarPlant> entityType, Level level, TagKey<Item> substrate, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
+        super(entityType, level, substrate, seedPacket, pottedItem);
         if (this.isBaby()) this.sunTime = 12000;
         else this.sunTime = 6000;
     }

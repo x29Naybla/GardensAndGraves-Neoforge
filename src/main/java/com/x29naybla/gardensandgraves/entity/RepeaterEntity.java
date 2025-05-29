@@ -21,7 +21,7 @@ public class RepeaterEntity extends ShootingPlant {
 
     //Properties
     public RepeaterEntity(EntityType<? extends RepeaterEntity> entityType, Level level) {
-        super(entityType, level, ModItems.SEED_PACKET_REPEATER.toStack(), ModItems.POTTED_REPEATER.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_REPEATERS, ModItems.SEED_PACKET_REPEATER.toStack(), ModItems.POTTED_REPEATER.toStack());
     }
 
     //Goals and AI

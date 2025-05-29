@@ -233,6 +233,17 @@
   "tag.item.gardensandgraves.planter_substrates": "Planter Substrates",
   "tag.item.gardensandgraves.sustains_mushrooms": "Sustains Mushrooms",
 
+  "tag.item.gardensandgraves.sustains_sunflowers": "Sustains Sunflowers",
+  "tag.item.gardensandgraves.sustains_marigolds": "Sustains Marigolds",
+  "tag.item.gardensandgraves.sustains_peashooters": "Sustains Peashooters",
+  "tag.item.gardensandgraves.sustains_snow_peas": "Sustains Snow Peas",
+  "tag.item.gardensandgraves.sustains_repeaters": "Sustains Repeaters",
+  "tag.item.gardensandgraves.sustains_wall_nuts": "Sustains Wall-nuts",
+  "tag.item.gardensandgraves.sustains_potato_mines": "Sustains Potato Mines",
+  "tag.item.gardensandgraves.sustains_sun_shrooms": "Sustains Sun-shrooms",
+  "tag.item.gardensandgraves.sustains_puff_shrooms": "Sustains Puff-shrooms",
+  "tag.item.gardensandgraves.sustains_doom_shrooms": "Sustains Doom-shrooms",
+
   "tag.item.gardensandgraves.flower_pots": "Flower pots",
   "tag.item.gardensandgraves.watering_cans": "Watering Cans",
 
@@ -256,13 +267,6 @@
   "tag.entity.gardensandgraves.plants": "Plants",
 
   "tag.entity.gardensandgraves.pottable_plants": "Pottable Plants",
-
-  "tag.entity.gardensandgraves.plantable_on_dirt": "Plantable On Dirt",
-  "tag.entity.gardensandgraves.plantable_on_mycelium": "Plantable On Mycelium",
-  "tag.entity.gardensandgraves.plantable_on_sand": "Plantable On Sand",
-  "tag.entity.gardensandgraves.plantable_on_soul_sand": "Plantable On Soul Sand",
-  "tag.entity.gardensandgraves.plantable_on_nylium": "Plantable On Nylium",
-  "tag.entity.gardensandgraves.plantable_on_end_stone": "Plantable On End Stone",
 
   "tag.entity.gardensandgraves.plant_enemies": "Plant Enemies",
   "tag.entity.gardensandgraves.plant_allays": "Plant Allays",

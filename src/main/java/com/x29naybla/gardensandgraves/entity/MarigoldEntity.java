@@ -1,6 +1,7 @@
 package com.x29naybla.gardensandgraves.entity;
 
 import com.google.common.collect.Maps;
+import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.goal.ModMarigoldingGoal;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.nbt.CompoundTag;
@@ -41,7 +42,7 @@ public class MarigoldEntity extends Plant {
 
     //Properties
     public MarigoldEntity(EntityType<? extends MarigoldEntity> entityType, Level level) {
-        super(entityType, level, ModItems.SEED_PACKET_MARIGOLD.toStack(), ModItems.POTTED_MARIGOLD.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_MARIGOLDS, ModItems.SEED_PACKET_MARIGOLD.toStack(), ModItems.POTTED_MARIGOLD.toStack());
         this.rewardTime = 6000;
     }
 

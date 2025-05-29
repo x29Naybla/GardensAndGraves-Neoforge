@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.nbt.CompoundTag;
@@ -14,7 +15,7 @@ public class DoomShroomEntity extends ExplosivePlant {
 
     //Properties
     public DoomShroomEntity(EntityType<? extends DoomShroomEntity> entityType, Level level) {
-        super(entityType, level, ModItems.SEED_PACKET_DOOM_SHROOM.toStack(), null, 4, 180, ModSounds.DOOM);
+        super(entityType, level, ModTags.Items.SUSTAINS_DOOM_SHROOMS, ModItems.SEED_PACKET_DOOM_SHROOM.toStack(), null, 4, 180, ModSounds.DOOM);
         this.mushroom = true;
     }
 

@@ -233,6 +233,17 @@
   "tag.item.gardensandgraves.planter_substrates": "Substratos para germinadores",
   "tag.item.gardensandgraves.sustains_mushrooms": "Sustentam cogumelos",
 
+  "tag.item.gardensandgraves.sustains_sunflowers": "Sustentam Girassóis",
+  "tag.item.gardensandgraves.sustains_marigolds": "Sustentam Calêndulas",
+  "tag.item.gardensandgraves.sustains_peashooters": "Sustentam Disparervilhas",
+  "tag.item.gardensandgraves.sustains_snow_peas": "Sustentam Gelervilhas",
+  "tag.item.gardensandgraves.sustains_repeaters": "Sustentam Duplaervilhas",
+  "tag.item.gardensandgraves.sustains_wall_nuts": "Sustentam Nozes-obstáculo",
+  "tag.item.gardensandgraves.sustains_potato_mines": "Sustentam Batataminas",
+  "tag.item.gardensandgraves.sustains_sun_shrooms": "Sustentam Solargumelo",
+  "tag.item.gardensandgraves.sustains_puff_shrooms": "Sustentam Soprogumelo",
+  "tag.item.gardensandgraves.sustains_doom_shrooms": "Sustentam Ruinagumelo",
+
   "tag.item.gardensandgraves.flower_pots": "Vasos",
   "tag.item.gardensandgraves.watering_cans": "Regadores",
 
@@ -254,13 +265,6 @@
   "tag.entity.gardensandgraves.peashooters": "Disparervilhas",
   "tag.entity.gardensandgraves.mushrooms": "Cogumelos",
   "tag.entity.gardensandgraves.plants": "Plantas",
-
-  "tag.entity.gardensandgraves.plantable_on_dirt": "Plantável em terra",
-  "tag.entity.gardensandgraves.plantable_on_mycelium": "Plantável em micélio",
-  "tag.entity.gardensandgraves.plantable_on_sand": "Plantável em areia",
-  "tag.entity.gardensandgraves.plantable_on_soul_sand": "Plantável em areia das almas",
-  "tag.entity.gardensandgraves.plantable_on_nylium": "Plantável em nicélio",
-  "tag.entity.gardensandgraves.plantable_on_end_stone": "Plantável em pedra do End",
 
   "tag.entity.gardensandgraves.pottable_plants": "Plantas envasáveis",
 

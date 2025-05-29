@@ -1,5 +1,6 @@
 package com.x29naybla.gardensandgraves.entity;
 
+import com.x29naybla.gardensandgraves.data.ModTags;
 import com.x29naybla.gardensandgraves.entity.goal.ModGenerateSunGoal;
 import com.x29naybla.gardensandgraves.item.ModItems;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
@@ -19,7 +20,7 @@ public class SunflowerEntity extends SolarPlant {
 
     //Properties
     public SunflowerEntity(EntityType<? extends SunflowerEntity> entityType, Level level) {
-        super(entityType, level, ModItems.SEED_PACKET_SUNFLOWER.toStack(), ModItems.POTTED_SUNFLOWER.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_SUNFLOWERS, ModItems.SEED_PACKET_SUNFLOWER.toStack(), ModItems.POTTED_SUNFLOWER.toStack());
     }
 
     //Goals and AI

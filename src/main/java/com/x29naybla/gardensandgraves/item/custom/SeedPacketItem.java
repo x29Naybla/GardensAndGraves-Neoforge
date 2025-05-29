@@ -83,15 +83,18 @@ public class SeedPacketItem extends Item {
                         entity.setYRot(f);
                         entity.setXRot(0);
                         if(entity instanceof Plant plant){
-                            if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
-                            if(onPlanter(level, blockpos)){
-                                plant.setBaby(true);
-                                plant.fromPlanter = true;
-                                plant.onPlanter = true;
-                                if (plant instanceof MarigoldEntity) ((MarigoldEntity) plant).setColor(DyeColor.byId(level.getRandom().nextIntBetweenInclusive(0, 15)));
-                            }else
-                                plant.fromPlanter = false;
-                            if(entity instanceof SunShroomEntity) plant.setBaby(true);
+                            if (plant.onRightSubstrate(level, blockpos)) {
+                                if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
+                                if(onPlanter(level, blockpos)){
+                                    plant.setBaby(true);
+                                    plant.fromPlanter = true;
+                                    plant.onPlanter = true;
+                                    if (plant instanceof MarigoldEntity) ((MarigoldEntity) plant).setColor(DyeColor.byId(level.getRandom().nextIntBetweenInclusive(0, 15)));
+                                }else
+                                    plant.fromPlanter = false;
+                                if(entity instanceof SunShroomEntity) plant.setBaby(true);
+                            } else
+                                return InteractionResult.FAIL;
                         }
                         itemStack.shrink(1);
                         context.getPlayer().getCooldowns().addCooldown(this, cooldown);
@@ -124,21 +127,8 @@ public class SeedPacketItem extends Item {
     }
 
     public boolean isPlanter(BlockGetter reader, BlockPos pos) {
-        if (reader.getBlockEntity(pos) instanceof PlanterBlockEntity planter){
-            if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_DIRT) && planter.content.getStackInSlot(0).is(Items.DIRT)) {
-                return true;
-            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_MYCELIUM) && planter.content.getStackInSlot(0).is(Items.MYCELIUM)) {
-                return true;
-            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_SANDS) && planter.content.getStackInSlot(0).is(Items.SAND) || planter.content.getStackInSlot(0).is(Items.RED_SAND)) {
-                return true;
-            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_SOUL_SAND) && planter.content.getStackInSlot(0).is(Items.SOUL_SAND)) {
-                return true;
-            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_NYLIUM) && planter.content.getStackInSlot(0).is(Items.CRIMSON_NYLIUM) || planter.content.getStackInSlot(0).is(Items.WARPED_NYLIUM)) {
-                return true;
-            } else if (this.getType(this.getDefaultInstance()).is(ModTags.Entities.PLANTABLE_ON_END_STONE) && planter.content.getStackInSlot(0).is(Items.END_STONE)) {
-                return true;
-            } else
-                return false;
+        if (reader.getBlockEntity(pos) instanceof PlanterBlockEntity){
+            return true;
         } else
             return false;
     }
