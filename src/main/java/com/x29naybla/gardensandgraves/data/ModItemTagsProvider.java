@@ -6,7 +6,6 @@ import com.x29naybla.gardensandgraves.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -26,10 +25,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         //Gardens and Graves Tags
         tag(ModTags.Items.PLANTER_SUBSTRATES)
-                .add(Items.DIRT)
-                .add(Items.MYCELIUM)
-                .add(Items.SAND)
-                .add(Items.RED_SAND)
+                .addTag(ItemTags.DIRT)
+                .addTag(ItemTags.SMELTS_TO_GLASS)
                 .add(Items.CRIMSON_NYLIUM)
                 .add(Items.WARPED_NYLIUM)
                 .add(Items.SOUL_SAND)

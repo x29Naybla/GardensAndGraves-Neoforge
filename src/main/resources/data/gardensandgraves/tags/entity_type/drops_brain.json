@@ -6,6 +6,49 @@
     "minecraft:witch",
     "minecraft:piglin",
     "minecraft:piglin_brute",
-    "#gardensandgraves:endermen"
+    {
+      "id": "guardvillagers:guard",
+      "required": false
+    },
+    {
+      "id": "mobs_of_mythology:kobold",
+      "required": false
+    },
+    {
+      "id": "mobs_of_mythology:kobold_warrior",
+      "required": false
+    },
+    {
+      "id": "touhou_little_maid:maid",
+      "required": false
+    },
+    {
+      "id": "touhou_little_maid:fairy",
+      "required": false
+    },
+    {
+      "id": "raided:electromancer",
+      "required": false
+    },
+    {
+      "id": "raided:incinerator",
+      "required": false
+    },
+    {
+      "id": "raided:inquisitor",
+      "required": false
+    },
+    {
+      "id": "raided:necromancer",
+      "required": false
+    },
+    {
+      "id": "rctmod:trainer",
+      "required": false
+    },
+    {
+      "id": "arts_and_crafts:light_gray_flower_pot",
+      "required": false
+    }
   ]
 }

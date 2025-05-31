@@ -3,7 +3,6 @@ package com.x29naybla.gardensandgraves.item.custom;
 import com.x29naybla.gardensandgraves.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
@@ -15,6 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.neoforged.neoforge.common.Tags;
 
 public class WateringCanItem extends Item {
     public WateringCanItem(Properties properties) {
@@ -50,7 +50,7 @@ public class WateringCanItem extends Item {
     }
 
     public static boolean isFarmland(BlockGetter reader, BlockPos pos) {
-        return reader.getBlockState(pos).is(Blocks.FARMLAND);
+        return reader.getBlockState(pos).is(Tags.Blocks.VILLAGER_FARMLANDS);
     }
 
     public static boolean isCrop(BlockGetter reader, BlockPos pos) {

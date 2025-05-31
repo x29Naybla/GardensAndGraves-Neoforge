@@ -20,12 +20,11 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -57,7 +56,9 @@ public class PottedPlantItem extends SeedPacketItem{
         if (player != null && player.isCrouching()) {
             if (level instanceof ServerLevel) {
                 ServerLevel serverlevel = (ServerLevel)level;
-                level.setBlock(blockpos, Blocks.FLOWER_POT.defaultBlockState(), 3);
+                ItemStack flowerPot = stack.get(DataComponents.BUNDLE_CONTENTS).getItemUnsafe(0);
+                BlockItem flowerPotBlock = (BlockItem) flowerPot.getItem();
+                level.setBlock(blockpos, flowerPotBlock.getBlock().defaultBlockState(), 3);
                 placePlant(stack, serverlevel, context, blockpos, true);
                 if (player != null && !player.isCreative()) player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
             }
@@ -71,7 +72,10 @@ public class PottedPlantItem extends SeedPacketItem{
                 if(level instanceof ServerLevel){
                     ServerLevel serverlevel = (ServerLevel)level;
                     placePlant(stack, serverlevel, context, blockpos, false);
-                    if (player != null && !player.isCreative()) player.setItemInHand(InteractionHand.MAIN_HAND, Items.FLOWER_POT.getDefaultInstance());
+                    if (player != null && !player.isCreative()) {
+                        ItemStack flowerPot = stack.get(DataComponents.BUNDLE_CONTENTS).getItemUnsafe(0);
+                        player.setItemInHand(InteractionHand.MAIN_HAND, flowerPot);
+                    }
                 }
                 return InteractionResult.sidedSuccess(level.isClientSide);
             } else return InteractionResult.FAIL;

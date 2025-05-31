@@ -26,6 +26,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
@@ -34,6 +35,8 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.AnimatableManager;
+
+import java.util.List;
 
 public class Plant extends TamableAnimal implements GeoEntity {
     protected int ticksForSleepyParticles;
@@ -99,7 +102,9 @@ public class Plant extends TamableAnimal implements GeoEntity {
 
     //Goals and AI
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
-        if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
+        ItemStack playerHand = player.getItemInHand(InteractionHand.MAIN_HAND);
+
+        if(playerHand.getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
 
             expire(SoundEvents.SHOVEL_FLATTEN);
 
@@ -108,7 +113,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
             }
 
             return InteractionResult.SUCCESS;
-        } else if((player.getItemInHand(hand).getItem() == this.seedPacket.getItem()) && this.getHealth() < this.getMaxHealth() && !player.getCooldowns().isOnCooldown(this.seedPacket.getItem())){
+        } else if((playerHand.getItem() == this.seedPacket.getItem()) && this.getHealth() < this.getMaxHealth() && !player.getCooldowns().isOnCooldown(this.seedPacket.getItem())){
             this.setHealth(this.getMaxHealth());
             playSound(ModSounds.SEED_PACKET_HEAL.get());
             player.getCooldowns().addCooldown(this.seedPacket.getItem(), ((SeedPacketItem) this.seedPacket.getItem()).cooldown);
@@ -116,10 +121,11 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 player.getItemInHand(hand).shrink(1);
             }
             return InteractionResult.SUCCESS;
-        } else if(player.getItemInHand(InteractionHand.MAIN_HAND).is(ModTags.Items.FLOWER_POTS) && this.fromPlanter && this.pottedItem != null) {
+        } else if(playerHand.is(ModTags.Items.FLOWER_POTS) && this.fromPlanter && this.pottedItem != null) {
             saveDefaultDataToItemTag(this, this.pottedItem);
+            this.pottedItem.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(playerHand.copy())));
 
-            if (!player.isCreative()) player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
+            if (!player.isCreative()) playerHand.shrink(1);
             if (!player.getInventory().add(this.pottedItem)) {
                 ItemEntity itemEntity = new ItemEntity(level(), this.getX(), this.getY() + 0.5, this.getZ(), this.pottedItem);
                 itemEntity.setPickUpDelay(0);

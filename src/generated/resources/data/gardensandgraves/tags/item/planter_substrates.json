@@ -1,12 +1,15 @@
 {
   "values": [
-    "minecraft:dirt",
-    "minecraft:mycelium",
+    "#minecraft:dirt",
     "minecraft:sand",
     "minecraft:red_sand",
     "minecraft:crimson_nylium",
     "minecraft:warped_nylium",
     "minecraft:soul_sand",
-    "minecraft:end_stone"
+    "minecraft:end_stone",
+    {
+      "id": "farmersdelight:rich_soil",
+      "required": false
+    }
   ]
 }

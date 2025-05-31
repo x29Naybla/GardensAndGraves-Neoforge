@@ -2,14 +2,12 @@ package com.x29naybla.gardensandgraves.data;
 
 import com.mojang.serialization.Codec;
 import com.x29naybla.gardensandgraves.GardensAndGraves;
-import net.minecraft.core.UUIDUtil;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import java.util.UUID;
 import java.util.function.UnaryOperator;
 
 public class ModDataComponents {
@@ -20,8 +18,6 @@ public class ModDataComponents {
             builder -> builder.persistent(Codec.INT));
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<Float>> HEALTH = register("health",
             builder -> builder.persistent(Codec.FLOAT));
-    //public static final DeferredHolder<DataComponentType<?>, DataComponentType<UUID>> UUID = register("uuid",
-    //        builder -> builder.persistent(UUIDUtil.CODEC));
 
     private static <T>DeferredHolder<DataComponentType<?>, DataComponentType<T>> register(String name,
                                                                                           UnaryOperator<DataComponentType.Builder<T>> builderOperator) {
