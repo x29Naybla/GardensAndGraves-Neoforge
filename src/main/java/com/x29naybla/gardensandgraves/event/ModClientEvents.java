@@ -1,6 +1,8 @@
 package com.x29naybla.gardensandgraves.event;
 
 import com.x29naybla.gardensandgraves.GardensAndGraves;
+import com.x29naybla.gardensandgraves.block.entity.ModBlockEntities;
+import com.x29naybla.gardensandgraves.client.renderer.block.PlanterBlockEntityRenderer;
 import com.x29naybla.gardensandgraves.entity.ModEntities;
 import com.x29naybla.gardensandgraves.client.renderer.entity.*;
 import com.x29naybla.gardensandgraves.particle.ModParticles;
@@ -14,6 +16,11 @@ import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 @EventBusSubscriber(modid = GardensAndGraves.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModClientEvents {
+
+    @SubscribeEvent
+    public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(ModBlockEntities.PLANTER_BE.get(), PlanterBlockEntityRenderer::new);
+    }
 
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event){

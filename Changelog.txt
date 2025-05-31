@@ -15,3 +15,6 @@ changelog:
 * * Touhou Little Maid's maids and maid fairies
 * * Raided's illagers
 * * Radical Cobblemon Trainers' trainers
+
+* cleaned unused imports
+* started to make a README.md file
