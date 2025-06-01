@@ -1,0 +1,296 @@
+{
+  "item.bloom_and_doom.seed_packet_sunflower": "Pacote de sementes de girassol",
+  "item.bloom_and_doom.seed_packet_marigold": "Pacote de sementes de calêndula",
+
+  "item.bloom_and_doom.seed_packet_peashooter": "Pacote de sementes de disparervilha",
+  "item.bloom_and_doom.seed_packet_snow_pea": "Pacote de sementes de gelervilha",
+  "item.bloom_and_doom.seed_packet_repeater": "Pacote de sementes de duplaervilha",
+
+  "item.bloom_and_doom.seed_packet_wall_nut": "Pacote de sementes de noz-obstáculo",
+
+  "item.bloom_and_doom.seed_packet_potato_mine": "Pacote de sementes de batatamina",
+  "item.bloom_and_doom.seed_packet_jalapeno": "Pacote de sementes de pimenta",
+  "item.bloom_and_doom.seed_packet_chomper": "Pacote de sementes de carnívora",
+  "item.bloom_and_doom.seed_packet_bonk_choy": "Pacote de sementes de repolho-boxeador",
+
+  "item.bloom_and_doom.seed_packet_sun_shroom": "Pacote de sementes de solargumelo",
+  "item.bloom_and_doom.seed_packet_puff_shroom": "Pacote de sementes de soprogumelo",
+  "item.bloom_and_doom.seed_packet_fume_shroom": "Pacote de sementes de gasogumelo",
+  "item.bloom_and_doom.seed_packet_hypno_shroom": "Pacote de sementes de hypnogumelo",
+  "item.bloom_and_doom.seed_packet_doom_shroom": "Pacote de sementes de ruinagumelo",
+
+  "item.bloom_and_doom.potted_sunflower": "Girassol envasado",
+  "item.bloom_and_doom.potted_sunflower.desc": "Descrição",
+  "item.bloom_and_doom.potted_marigold": "Calêndula envasada",
+  "item.bloom_and_doom.potted_marigold.desc": "Descrição",
+
+  "item.bloom_and_doom.potted_peashooter": "Disparervilha envasada",
+  "item.bloom_and_doom.potted_peashooter.desc": "Descrição",
+  "item.bloom_and_doom.potted_snow_pea": "Gelervilha envasada",
+  "item.bloom_and_doom.potted_snow_pea.desc": "Descrição",
+  "item.bloom_and_doom.potted_repeater": "Duplaervilha envasada",
+  "item.bloom_and_doom.potted_repeater.desc": "Descrição",
+
+  "item.bloom_and_doom.potted_potato_mine": "Batatamina envasada",
+  "item.bloom_and_doom.potted_potato_mine.desc": "Descrição",
+
+  "item.bloom_and_doom.potted_sun_shroom": "Solargumelo envasado",
+  "item.bloom_and_doom.potted_sun_shroom.desc": "Descrição",
+  "item.bloom_and_doom.potted_puff_shroom": "Soprogumelo envasado",
+  "item.bloom_and_doom.potted_puff_shroom.desc": "Descrição",
+
+  "item.bloom_and_doom.sun": "Sol",
+  "item.bloom_and_doom.brain": "Cérebro",
+  "item.bloom_and_doom.watering_can_white": "Regador branco",
+  "item.bloom_and_doom.watering_can_light_gray": "Regador cinza-claro",
+  "item.bloom_and_doom.watering_can_gray": "Regador cinza",
+  "item.bloom_and_doom.watering_can_black": "Regador preto",
+  "item.bloom_and_doom.watering_can_brown": "Regador marrom",
+  "item.bloom_and_doom.watering_can_red": "Regador vermelho",
+  "item.bloom_and_doom.watering_can_orange": "Regador laranja",
+  "item.bloom_and_doom.watering_can_yellow": "Regador amarelo",
+  "item.bloom_and_doom.watering_can_lime": "Regador verde-limão",
+  "item.bloom_and_doom.watering_can_green": "Regador verde",
+  "item.bloom_and_doom.watering_can_cyan": "Regador ciano",
+  "item.bloom_and_doom.watering_can_light_blue": "Regador azul-claro",
+  "item.bloom_and_doom.watering_can_blue": "Regador azul",
+  "item.bloom_and_doom.watering_can_purple": "Regador roxo",
+  "item.bloom_and_doom.watering_can_magenta": "Regador magenta",
+  "item.bloom_and_doom.watering_can_pink": "Regador rosa",
+  "item.bloom_and_doom.pea": "Ervilha",
+  "item.bloom_and_doom.frozen_pea": "Ervilha congelada",
+  "item.bloom_and_doom.spore": "Esporo",
+
+  "item.bloom_and_doom.brainz_banner_pattern": "Figura para estandarte",
+  "item.bloom_and_doom.brainz_banner_pattern.desc": "Mioloz",
+  "item.bloom_and_doom.music_disc_wabby_wabbo": "Disco musical",
+  "item.bloom_and_doom.music_disc_wabby_wabbo.desc": "Cray-Z — Wabby Wabbo",
+
+  "item.minecraft.tipped_arrow.effect.gng_zombification": "Flecha de zumbificação",
+  "item.minecraft.potion.effect.gng_zombification": "Poção de zumbificação",
+  "item.minecraft.splash_potion.effect.gng_zombification": "Poção arremessável de zumbificação",
+  "item.minecraft.lingering_potion.effect.gng_zombification": "Poção prolongada de zumbificação",
+
+  "block.bloom_and_doom.potting_table": "Mesa de envasamento",
+
+  "block.bloom_and_doom.planter": "Germinador",
+  "block.bloom_and_doom.planter_white": "Germinador branco",
+  "block.bloom_and_doom.planter_light_gray": "Germinador cinza-claro",
+  "block.bloom_and_doom.planter_gray": "Germinador cinza",
+  "block.bloom_and_doom.planter_black": "Germinador preto",
+  "block.bloom_and_doom.planter_brown": "Germinador marrom",
+  "block.bloom_and_doom.planter_red": "Germinador vermelho",
+  "block.bloom_and_doom.planter_orange": "Germinador laranja",
+  "block.bloom_and_doom.planter_yellow": "Germinador amarelo",
+  "block.bloom_and_doom.planter_lime": "Germinador verde-limão",
+  "block.bloom_and_doom.planter_green": "Germinador verde",
+  "block.bloom_and_doom.planter_cyan": "Germinador ciano",
+  "block.bloom_and_doom.planter_light_blue": "Germinador azul-claro",
+  "block.bloom_and_doom.planter_blue": "Germinador azul",
+  "block.bloom_and_doom.planter_purple": "Germinador roxo",
+  "block.bloom_and_doom.planter_magenta": "Germinador magenta",
+  "block.bloom_and_doom.planter_pink": "Germinador rosa",
+
+  "block.bloom_and_doom.white_plastic_block": "Bloco de plástico branco",
+  "block.bloom_and_doom.light_gray_plastic_block": "Bloco de plástico cinza-claro",
+  "block.bloom_and_doom.gray_plastic_block": "Bloco de plástico cinza",
+  "block.bloom_and_doom.black_plastic_block": "Bloco de plástico preto",
+  "block.bloom_and_doom.brown_plastic_block": "Bloco de plástico marrom",
+  "block.bloom_and_doom.red_plastic_block": "Bloco de plástico vermelho",
+  "block.bloom_and_doom.orange_plastic_block": "Bloco de plástico laranja",
+  "block.bloom_and_doom.yellow_plastic_block": "Bloco de plástico amarelo",
+  "block.bloom_and_doom.lime_plastic_block": "Bloco de plástico Lime",
+  "block.bloom_and_doom.green_plastic_block": "Bloco de plástico verde",
+  "block.bloom_and_doom.cyan_plastic_block": "Bloco de plástico ciano",
+  "block.bloom_and_doom.light_blue_plastic_block": "Bloco de plástico azul-claro",
+  "block.bloom_and_doom.blue_plastic_block": "Bloco de plástico azul",
+  "block.bloom_and_doom.purple_plastic_block": "Bloco de plástico roxo",
+  "block.bloom_and_doom.magenta_plastic_block": "Bloco de plástico magenta",
+  "block.bloom_and_doom.pink_plastic_block": "Bloco de plástico rosa",
+
+  "block.bloom_and_doom.gravestone": "Lápide",
+  "block.bloom_and_doom.gravestone_sandstone": "Lápide de arenito",
+
+  "block.minecraft.banner.bloom_and_doom.brainz.white": "Mioloz branco",
+  "block.minecraft.banner.bloom_and_doom.brainz.light_gray": "Mioloz cinza-claro",
+  "block.minecraft.banner.bloom_and_doom.brainz.gray": "Mioloz cinza",
+  "block.minecraft.banner.bloom_and_doom.brainz.black": "Mioloz preto",
+  "block.minecraft.banner.bloom_and_doom.brainz.brown": "Mioloz marrom",
+  "block.minecraft.banner.bloom_and_doom.brainz.red": "Mioloz vermelho",
+  "block.minecraft.banner.bloom_and_doom.brainz.orange": "Mioloz laranja",
+  "block.minecraft.banner.bloom_and_doom.brainz.yellow": "Mioloz amarelo",
+  "block.minecraft.banner.bloom_and_doom.brainz.lime": "Mioloz verde-limão",
+  "block.minecraft.banner.bloom_and_doom.brainz.green": "Mioloz verde",
+  "block.minecraft.banner.bloom_and_doom.brainz.cyan": "Mioloz ciano",
+  "block.minecraft.banner.bloom_and_doom.brainz.light_blue": "Mioloz azul-claro",
+  "block.minecraft.banner.bloom_and_doom.brainz.blue": "Mioloz azul",
+  "block.minecraft.banner.bloom_and_doom.brainz.purple": "Mioloz roxo",
+  "block.minecraft.banner.bloom_and_doom.brainz.magenta": "Mioloz magenta",
+  "block.minecraft.banner.bloom_and_doom.brainz.pink": "Mioloz rosa",
+
+  "bloom_and_doom.items.brainz_banner": "Estandarte de mioloz",
+
+  "entity.minecraft.villager.bloom_and_doom.gardener": "Jardineiro",
+
+  "entity.bloom_and_doom.sunflower": "Girassol",
+  "entity.bloom_and_doom.marigold": "Calêndula",
+
+  "entity.bloom_and_doom.peashooter": "Disparervilha",
+  "entity.bloom_and_doom.snow_pea": "Gelervilha",
+  "entity.bloom_and_doom.repeater": "Duplervilha",
+
+  "entity.bloom_and_doom.wall_nut": "Noz-obstáculo",
+
+  "entity.bloom_and_doom.potato_mine": "Batatamina",
+  "entity.bloom_and_doom.jalapeno": "Pimenta",
+  "entity.bloom_and_doom.chomper": "Carnívora",
+  "entity.bloom_and_doom.bonk_choy": "Repolho-boxeador",
+
+  "entity.bloom_and_doom.sun_shroom": "Solargumelo",
+  "entity.bloom_and_doom.puff_shroom": "Soprogumelo",
+  "entity.bloom_and_doom.fume_shroom": "Gasogumelo",
+  "entity.bloom_and_doom.hypno_shroom": "Hypnogumelo",
+  "entity.bloom_and_doom.doom_shroom": "Ruinagumelo",
+
+  "entity.bloom_and_doom.pea": "Ervilha",
+  "entity.bloom_and_doom.frozen_pea": "Ervilha congelada",
+  "entity.bloom_and_doom.spore": "Esporo",
+
+  "death.attack.pea": "%1$s foi ervilhado(a) até a morte",
+  "death.attack.frozen_pea": "%1$s foi congervilhado(a)",
+  "death.attack.plant_explosion": "%1$s foi transformado(a) em purê",
+
+  "creativetab.bloom_and_doom.blocks": "G&G blocos",
+  "creativetab.bloom_and_doom.items": "G&G itens",
+
+  "bloom_and_doom.advancement.root": "Gardens and Graves",
+  "bloom_and_doom.advancement.root.desc": "",
+
+  "bloom_and_doom.advancement.planters": "Germinando o futuro",
+  "bloom_and_doom.advancement.planters.desc": "Crie um Germinador. As plantas plantadas nele produzirão pacotes de sementes!",
+
+  "bloom_and_doom.advancement.first_sun": "Primeiro sol",
+  "bloom_and_doom.advancement.first_sun.desc": "Consiga seu primeiro Sol",
+
+  "bloom_and_doom.advancement.potted": "Envasador",
+  "bloom_and_doom.advancement.potted.desc": "Use um Vaso em uma planta de um Germinador para carregá-la com você",
+
+  "bloom_and_doom.advancement.peace_love_plants": "Paz, amor, e plantas",
+  "bloom_and_doom.advancement.peace_love_plants.desc": "Presenteie alguém uma Batatamina Envasada",
+
+  "bloom_and_doom.advancement.first_pack": "Packed Friend",
+  "bloom_and_doom.advancement.first_pack.desc": "Consiga seu primeiro pacote de sementes",
+
+  "bloom_and_doom.advancement.sunflower": "Girassol",
+  "bloom_and_doom.advancement.sunflower.desc": "Gera um Sol a cada 5 minutos, durante o dia. Pode ser encontrado em vilas de planície",
+
+  "bloom_and_doom.advancement.marigold": "Calêndula",
+  "bloom_and_doom.advancement.marigold.desc": "Gera entre 1 e 3 pepitas de ferro ou ouro a cada 5 minutos. Pode ser encontrada em minas abandonadas e navios naufragados",
+
+  "bloom_and_doom.advancement.peashooter": "Disparervilha",
+  "bloom_and_doom.advancement.peashooter.desc": "Atira uma Ervilha a cada 1.5 segundos. Pode ser encontrada em vilas de deserto, savana, planície e taiga",
+
+  "bloom_and_doom.advancement.snow_pea": "Gelervilha",
+  "bloom_and_doom.advancement.snow_pea.desc": "Atira uma Ervilha Congelada a cada 1.5 segundos. Pode ser encontrada em vilas nevadas e cidades ancestrais",
+
+  "bloom_and_doom.advancement.repeater": "Duplervilha",
+  "bloom_and_doom.advancement.repeater.desc": "Atira duas ervilhas consecutivas a cada 1.5 segundos. Pode ser encontrada em vilas de planície",
+
+  "bloom_and_doom.advancement.wall_nut": "Noz-obstáculo",
+  "bloom_and_doom.advancement.wall_nut.desc": "Protege outras plantas de ataques de zumbis. Pode ser encontrada em todas as vilas",
+
+  "bloom_and_doom.advancement.potato_mine": "Batatamina",
+  "bloom_and_doom.advancement.potato_mine.desc": "Leva 2 segundos para se armar, e então explodirá quando for pisada. Pode ser encontrada em vilas de savana e templos da selva",
+
+  "bloom_and_doom.advancement.jalapeno": "Pimenta",
+  "bloom_and_doom.advancement.jalapeno.desc": "Pode ser encontrada em vilas de deserto e savana",
+
+  "bloom_and_doom.advancement.chomper": "Carnívora",
+  "bloom_and_doom.advancement.chomper.desc": "Pode ser encontrada em templos da selva",
+
+  "bloom_and_doom.advancement.bonk_choy": "Repolho-boxeador",
+  "bloom_and_doom.advancement.bonk_choy.desc": "Pode ser encontrada em vilas de deserto e savana e pirâmides do deserto",
+
+  "bloom_and_doom.advancement.sun_shroom": "Solargumelo",
+  "bloom_and_doom.advancement.sun_shroom.desc": "Gera um Sol a cada 5 minutos, durante a noite. Pode ser encontrado em vilas de taiga",
+
+  "bloom_and_doom.advancement.puff_shroom": "Soprogumelo",
+  "bloom_and_doom.advancement.puff_shroom.desc": "Barato, mas com um curto alcance. Pode ser encontrado em vilas de taiga",
+
+  "bloom_and_doom.advancement.fume_shroom": "Gasogumelo",
+  "bloom_and_doom.advancement.fume_shroom.desc": "Pode ser encontrado em vilas de taiga",
+
+  "bloom_and_doom.advancement.hypno_shroom": "Hypnogumelo",
+  "bloom_and_doom.advancement.hypno_shroom.desc": "Pode ser encontrado em vilas de taiga",
+
+  "bloom_and_doom.advancement.doom_shroom": "Ruinagumelo",
+  "bloom_and_doom.advancement.doom_shroom.desc": "Sua explosão tem um raio de 9 blocos, causando dano suficiente para matar a maioria dos inimigos. Pode ser encontrado em cidades ancestrais e mansões das florestas",
+
+  "effect.bloom_and_doom.zombification": "Zumbificação",
+
+  "bloom_and_doom.description.seed_packets_sun_cost": "Custo de sol: ",
+
+  "tag.item.bloom_and_doom.planter_substrates": "Substratos para germinadores",
+  "tag.item.bloom_and_doom.sustains_mushrooms": "Sustentam cogumelos",
+
+  "tag.item.bloom_and_doom.sustains_sunflowers": "Sustentam Girassóis",
+  "tag.item.bloom_and_doom.sustains_marigolds": "Sustentam Calêndulas",
+  "tag.item.bloom_and_doom.sustains_peashooters": "Sustentam Disparervilhas",
+  "tag.item.bloom_and_doom.sustains_snow_peas": "Sustentam Gelervilhas",
+  "tag.item.bloom_and_doom.sustains_repeaters": "Sustentam Duplaervilhas",
+  "tag.item.bloom_and_doom.sustains_wall_nuts": "Sustentam Nozes-obstáculo",
+  "tag.item.bloom_and_doom.sustains_potato_mines": "Sustentam Batataminas",
+  "tag.item.bloom_and_doom.sustains_sun_shrooms": "Sustentam Solargumelo",
+  "tag.item.bloom_and_doom.sustains_puff_shrooms": "Sustentam Soprogumelo",
+  "tag.item.bloom_and_doom.sustains_doom_shrooms": "Sustentam Ruinagumelo",
+
+  "tag.item.bloom_and_doom.flower_pots": "Vasos",
+  "tag.item.bloom_and_doom.watering_cans": "Regadores",
+
+  "tag.block.bloom_and_doom.planters": "Germinadores",
+  "tag.block.bloom_and_doom.supports_plants": "Suportam plantas",
+  "tag.block.bloom_and_doom.sustains_mushrooms": "Sustentam cogumelos",
+
+  "tag.block.bloom_and_doom.dirt_sustains": "Terra sustenta",
+  "tag.block.bloom_and_doom.mycelium_sustains": "Micélio sustenta",
+  "tag.block.bloom_and_doom.sand_sustains": "Areia sustenta",
+  "tag.block.bloom_and_doom.soul_sand_sustains": "Areia das almas sustenta",
+  "tag.block.bloom_and_doom.nylium_sustains": "Nicélio sustenta",
+  "tag.block.bloom_and_doom.end_stone_sustains": "Pedra do End sustenta",
+
+  "tag.block.bloom_and_doom.gravestones": "Lápides",
+  "tag.block.bloom_and_doom.mushrooms": "Cogumelos",
+
+  "tag.entity.bloom_and_doom.flowers": "Flores",
+  "tag.entity.bloom_and_doom.peashooters": "Disparervilhas",
+  "tag.entity.bloom_and_doom.mushrooms": "Cogumelos",
+  "tag.entity.bloom_and_doom.plants": "Plantas",
+
+  "tag.entity.bloom_and_doom.pottable_plants": "Plantas envasáveis",
+
+  "tag.entity.bloom_and_doom.plant_enemies": "Inimigos das plantas",
+  "tag.entity.bloom_and_doom.plant_allays": "Aliados das plantas",
+
+  "bloom_and_doom.subtitles.item.seed_packets.plants": "Pacote de sementes planta",
+  "bloom_and_doom.subtitles.item.potted_plant.plants": "Planta envasa replanta",
+  "bloom_and_doom.subtitles.item.watering_can.water": "Regador rega",
+  "bloom_and_doom.subtitles.item.seed_packets.heals": "Pacote de sementes cura",
+  "bloom_and_doom.subtitles.entity.villager.work_gardener": "Jardineiro trabalha",
+  "bloom_and_doom.subtitles.entity.sunflower.generates": "Girassol gera",
+  "bloom_and_doom.subtitles.entity.sun_shroom.generates": "Solargumelo gera",
+  "bloom_and_doom.subtitles.entity.marigold.generates": "Calêndula gera",
+  "bloom_and_doom.subtitles.entity.peashooter.shoots": "Disparervilha atira",
+  "bloom_and_doom.subtitles.entity.snow_pea.shoots": "Gelervilha atira",
+  "bloom_and_doom.subtitles.entity.repeater.shoots": "Duplaervilha atira",
+  "bloom_and_doom.subtitles.entity.puff_shroom.shoots": "Soprogumelo atira",
+  "bloom_and_doom.subtitles.entity.doom_shroom.explodes": "Ruinagumelo explode",
+  "bloom_and_doom.subtitles.entity.potato_mine.explodes": "Batatamina explode",
+  "bloom_and_doom.subtitles.entity.plant.grows": "Planta cresce",
+
+  "config.jade.plugin_bloom_and_doom.sun_timer": "Temporizadores de Sol",
+  "config.jade.plugin_bloom_and_doom.reward_timer": "Temporizador de recompensa de Calêndula",
+  "config.jade.plugin_bloom_and_doom.seed_packets_timer": "Temporizador de pacote de sementes",
+  "bloom_and_doom.sun_timer": "Próximo Sol: ",
+  "bloom_and_doom.reward_timer": "Próximas pepitas: ",
+  "bloom_and_doom.seed_packets_timer": "Próximo pacote de sementes: "
+}

@@ -1,9 +1,0 @@
-{
-  "values": [
-    "#minecraft:dirt",
-    {
-      "id": "farmersdelight:rich_soil",
-      "required": false
-    }
-  ]
-}

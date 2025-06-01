@@ -1,20 +1,20 @@
 {
   "replace": false,
   "entries": [
-    "gardensandgraves:add_loot_village_plains_house",
-    "gardensandgraves:add_loot_village_taiga_house",
-    "gardensandgraves:add_loot_village_snowy_house",
-    "gardensandgraves:add_loot_village_desert_house",
-    "gardensandgraves:add_loot_village_savanna_house",
-    "gardensandgraves:add_loot_jungle_temple",
-    "gardensandgraves:add_loot_desert_pyramid",
-    "gardensandgraves:add_loot_ancient_city",
-    "gardensandgraves:add_loot_ancient_city_ice_box",
-    "gardensandgraves:add_loot_woodland_mansion",
-    "gardensandgraves:add_loot_shipwreck_treasure",
-    "gardensandgraves:add_loot_abandoned_mineshaft",
-    "gardensandgraves:brains_from_tag",
-    "gardensandgraves:add_loot_bonus_chest",
-    "gardensandgraves:add_loot_zombie"
+    "bloom_and_doom:add_loot_village_plains_house",
+    "bloom_and_doom:add_loot_village_taiga_house",
+    "bloom_and_doom:add_loot_village_snowy_house",
+    "bloom_and_doom:add_loot_village_desert_house",
+    "bloom_and_doom:add_loot_village_savanna_house",
+    "bloom_and_doom:add_loot_jungle_temple",
+    "bloom_and_doom:add_loot_desert_pyramid",
+    "bloom_and_doom:add_loot_ancient_city",
+    "bloom_and_doom:add_loot_ancient_city_ice_box",
+    "bloom_and_doom:add_loot_woodland_mansion",
+    "bloom_and_doom:add_loot_shipwreck_treasure",
+    "bloom_and_doom:add_loot_abandoned_mineshaft",
+    "bloom_and_doom:brains_from_tag",
+    "bloom_and_doom:add_loot_bonus_chest",
+    "bloom_and_doom:add_loot_zombie"
   ]
 }

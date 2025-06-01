@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "bloom_and_doom:block/potting_table_front",
+    "down": "minecraft:block/cherry_planks",
+    "east": "bloom_and_doom:block/potting_table_right",
+    "north": "bloom_and_doom:block/potting_table_front",
+    "south": "bloom_and_doom:block/potting_table_back",
+    "up": "bloom_and_doom:block/potting_table_top",
+    "west": "bloom_and_doom:block/potting_table_left"
+  }
+}

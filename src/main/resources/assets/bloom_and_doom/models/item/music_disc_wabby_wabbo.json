@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/template_music_disc",
+  "textures": {
+    "layer0": "bloom_and_doom:item/music_disc_wabby_wabbo"
+  }
+}

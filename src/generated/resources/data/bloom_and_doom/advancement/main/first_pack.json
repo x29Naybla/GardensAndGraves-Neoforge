@@ -1,0 +1,187 @@
+{
+  "parent": "bloom_and_doom:main/root",
+  "criteria": {
+    "bonk_choy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_bonk_choy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chomper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_chomper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doom_shroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_doom_shroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "fume_shroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_fume_shroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "hypno_shroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_hypno_shroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "jalapeno": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_jalapeno"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "marigold": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_marigold"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "peashooter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_peashooter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "potato_mine": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_potato_mine"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "puff_shroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_puff_shroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "repeater": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_repeater"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "snow_pea": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_snow_pea"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sun_shroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_sun_shroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sunflower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_sunflower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "wall_nut": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_wall_nut"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "bloom_and_doom.advancement.first_pack.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "bloom_and_doom:seed_packet_sunflower"
+    },
+    "title": {
+      "translate": "bloom_and_doom.advancement.first_pack"
+    }
+  },
+  "requirements": [
+    [
+      "sunflower",
+      "marigold",
+      "peashooter",
+      "snow_pea",
+      "repeater",
+      "wall_nut",
+      "potato_mine",
+      "jalapeno",
+      "chomper",
+      "bonk_choy",
+      "sun_shroom",
+      "puff_shroom",
+      "fume_shroom",
+      "hypno_shroom",
+      "doom_shroom"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,177 @@
+{
+  "wabby_wabbo": {
+    "sounds": [
+      {
+        "name": "bloom_and_doom:records/wabby_wabbo",
+        "stream": true
+      }
+    ]
+  },
+  "throw": {
+    "sounds": [
+      {
+        "name": "bloom_and_doom:throw1"
+      },
+      {
+        "name": "bloom_and_doom:throw2"
+      }
+    ]
+  },
+  "splat": {
+    "sounds": [
+      {
+        "name": "bloom_and_doom:splat1"
+      },
+      {
+        "name": "bloom_and_doom:splat2"
+      },
+      {
+        "name": "bloom_and_doom:splat3"
+      }
+    ]
+  },
+  "seed_packet_heal": {
+    "subtitle": "bloom_and_doom.subtitles.item.seed_packets.heals",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:plant1"
+      },
+      {
+        "name": "bloom_and_doom:plant2"
+      }
+    ]
+  },
+  "seed_packet_plant": {
+    "subtitle": "bloom_and_doom.subtitles.item.seed_packets.plants",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:plant1"
+      },
+      {
+        "name": "bloom_and_doom:plant2"
+      }
+    ]
+  },
+  "potted_plant_plant": {
+    "subtitle": "bloom_and_doom.subtitles.item.potted_plant.plants",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:plant1"
+      },
+      {
+        "name": "bloom_and_doom:plant2"
+      }
+    ]
+  },
+  "gardener_work": {
+    "subtitle": "bloom_and_doom.subtitles.entity.villager.work_gardener",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:plant1"
+      },
+      {
+        "name": "bloom_and_doom:plant2"
+      }
+    ]
+  },
+  "sunflower_sun": {
+    "subtitle": "bloom_and_doom.subtitles.entity.sunflower.generates",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:throw1"
+      },
+      {
+        "name": "bloom_and_doom:throw2"
+      }
+    ]
+  },
+  "sun_shroom_sun": {
+    "subtitle": "bloom_and_doom.subtitles.entity.sun_shroom.generates",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:throw1"
+      },
+      {
+        "name": "bloom_and_doom:throw2"
+      }
+    ]
+  },
+  "moneyfalls": {
+    "subtitle": "bloom_and_doom.subtitles.entity.marigold.generates",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:moneyfalls"
+      }
+    ]
+  },
+  "pea_shot": {
+    "subtitle": "bloom_and_doom.subtitles.entity.peashooter.shoots",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:throw1"
+      },
+      {
+        "name": "bloom_and_doom:throw2"
+      }
+    ]
+  },
+  "snow_pea_shot": {
+    "subtitle": "bloom_and_doom.subtitles.entity.snow_pea.shoots",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:snow_pea_sparkles"
+      }
+    ]
+  },
+  "repeater_shot": {
+    "subtitle": "bloom_and_doom.subtitles.entity.repeater.shoots",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:throw1"
+      },
+      {
+        "name": "bloom_and_doom:throw2"
+      }
+    ]
+  },
+  "puff": {
+    "subtitle": "bloom_and_doom.subtitles.entity.puff_shroom.shoots",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:puff"
+      }
+    ]
+  },
+  "doom": {
+    "subtitle": "bloom_and_doom.subtitles.entity.doom_shroom.explodes",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:doomshroom"
+      }
+    ]
+  },
+  "spudow": {
+    "subtitle": "bloom_and_doom.subtitles.entity.potato_mine.explodes",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:potato_mine"
+      }
+    ]
+  },
+  "plant_grow": {
+    "subtitle": "bloom_and_doom.subtitles.entity.plant.grows",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:plantgrow"
+      }
+    ]
+  },
+  "watering_can_use": {
+    "subtitle": "bloom_and_doom.subtitles.item.watering_can.water",
+    "sounds": [
+      {
+        "name": "bloom_and_doom:watering"
+      }
+    ]
+  }
+}

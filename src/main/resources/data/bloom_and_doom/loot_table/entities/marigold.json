@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "bloom_and_doom:seed_packet_marigold"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bloom_and_doom:entities/marigold"
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "bloom_and_doom:block/brown_plastic_block"
+    }
+  }
+}

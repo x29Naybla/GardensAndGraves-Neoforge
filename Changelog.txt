@@ -18,3 +18,5 @@ changelog:
 
 * cleaned unused imports
 * started to make a README.md file
+
+* changed the mod name and id

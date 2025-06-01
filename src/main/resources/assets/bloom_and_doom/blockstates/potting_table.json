@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "bloom_and_doom:block/potting_table",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "bloom_and_doom:block/potting_table"
+    },
+    "facing=south": {
+      "model": "bloom_and_doom:block/potting_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "bloom_and_doom:block/potting_table",
+      "y": 270
+    }
+  }
+}

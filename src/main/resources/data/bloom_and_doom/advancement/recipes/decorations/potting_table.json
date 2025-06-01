@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flower_pots": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#bloom_and_doom:flower_pots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bloom_and_doom:potting_table"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_flower_pots"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bloom_and_doom:potting_table"
+    ]
+  }
+}

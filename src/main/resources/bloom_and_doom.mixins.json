@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.x29naybla.bloom_and_doom.mixin",
+  "mixins": [
+    "PickedUpItemTriggerMixin",
+    "ZombieSunSensitiveMixin"
+  ],
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

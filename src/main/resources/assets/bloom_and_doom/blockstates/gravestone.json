@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "bloom_and_doom:block/gravestone",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "bloom_and_doom:block/gravestone"
+    },
+    "facing=south": {
+      "model": "bloom_and_doom:block/gravestone",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "bloom_and_doom:block/gravestone",
+      "y": 270
+    }
+  }
+}

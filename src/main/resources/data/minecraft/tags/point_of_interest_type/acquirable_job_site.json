@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     {
-      "id": "gardensandgraves:gardener_poi",
+      "id": "bloom_and_doom:gardener_poi",
       "required": false
     }
   ]

@@ -1,0 +1,296 @@
+{
+  "item.bloom_and_doom.seed_packet_sunflower": "Sunflower Seed Packet",
+  "item.bloom_and_doom.seed_packet_marigold": "Marigold Seed Packet",
+
+  "item.bloom_and_doom.seed_packet_peashooter": "Peashooter Seed Packet",
+  "item.bloom_and_doom.seed_packet_snow_pea": "Snow Pea Seed Packet",
+  "item.bloom_and_doom.seed_packet_repeater": "Repeater Seed Packet",
+
+  "item.bloom_and_doom.seed_packet_wall_nut": "Wall-nut Seed Packet",
+
+  "item.bloom_and_doom.seed_packet_potato_mine": "Potato Mine Seed Packet",
+  "item.bloom_and_doom.seed_packet_jalapeno": "Jalapeno Seed Packet",
+  "item.bloom_and_doom.seed_packet_chomper": "Chomper Seed Packet",
+  "item.bloom_and_doom.seed_packet_bonk_choy": "Bonk Choy Seed Packet",
+
+  "item.bloom_and_doom.seed_packet_sun_shroom": "Sun-shroom Seed Packet",
+  "item.bloom_and_doom.seed_packet_puff_shroom": "Puff-shroom Seed Packet",
+  "item.bloom_and_doom.seed_packet_fume_shroom": "Fume-shroom Seed Packet",
+  "item.bloom_and_doom.seed_packet_hypno_shroom": "Hypno-shroom Seed Packet",
+  "item.bloom_and_doom.seed_packet_doom_shroom": "Doom-shroom Seed Packet",
+
+  "item.bloom_and_doom.potted_sunflower": "Potted Sunflower",
+  "item.bloom_and_doom.potted_sunflower.desc": "Description",
+  "item.bloom_and_doom.potted_marigold": "Potted Marigold",
+  "item.bloom_and_doom.potted_marigold.desc": "Description",
+
+  "item.bloom_and_doom.potted_peashooter": "Potted Peashooter",
+  "item.bloom_and_doom.potted_peashooter.desc": "Description",
+  "item.bloom_and_doom.potted_snow_pea": "Potted Snow Pea",
+  "item.bloom_and_doom.potted_snow_pea.desc": "Description",
+  "item.bloom_and_doom.potted_repeater": "Potted Repeater",
+  "item.bloom_and_doom.potted_repeater.desc": "Description",
+
+  "item.bloom_and_doom.potted_potato_mine": "Potted Potato Mine",
+  "item.bloom_and_doom.potted_potato_mine.desc": "Description",
+
+  "item.bloom_and_doom.potted_sun_shroom": "Potted Sun-shroom",
+  "item.bloom_and_doom.potted_sun_shroom.desc": "Description",
+  "item.bloom_and_doom.potted_puff_shroom": "Potted Puff-shroom",
+  "item.bloom_and_doom.potted_puff_shroom.desc": "Description",
+
+  "item.bloom_and_doom.sun": "Sun",
+  "item.bloom_and_doom.brain": "Brain",
+  "item.bloom_and_doom.watering_can_white": "White Watering Can",
+  "item.bloom_and_doom.watering_can_light_gray": "Light Gray Watering Can",
+  "item.bloom_and_doom.watering_can_gray": "Gray Watering Can",
+  "item.bloom_and_doom.watering_can_black": "Black Watering Can",
+  "item.bloom_and_doom.watering_can_brown": "Brown Watering Can",
+  "item.bloom_and_doom.watering_can_red": "Red Watering Can",
+  "item.bloom_and_doom.watering_can_orange": "Orange Watering Can",
+  "item.bloom_and_doom.watering_can_yellow": "Yellow Watering Can",
+  "item.bloom_and_doom.watering_can_lime": "Lime Watering Can",
+  "item.bloom_and_doom.watering_can_green": "Green Watering Can",
+  "item.bloom_and_doom.watering_can_cyan": "Cyan Watering Can",
+  "item.bloom_and_doom.watering_can_light_blue": "Light Blue Watering Can",
+  "item.bloom_and_doom.watering_can_blue": "Blue Watering Can",
+  "item.bloom_and_doom.watering_can_purple": "Purple Watering Can",
+  "item.bloom_and_doom.watering_can_magenta": "Magenta Watering Can",
+  "item.bloom_and_doom.watering_can_pink": "Pink Watering Can",
+  "item.bloom_and_doom.pea": "Pea",
+  "item.bloom_and_doom.frozen_pea": "Frozen Pea",
+  "item.bloom_and_doom.spore": "Spore",
+
+  "item.bloom_and_doom.brainz_banner_pattern": "Banner Pattern",
+  "item.bloom_and_doom.brainz_banner_pattern.desc": "Brainz",
+  "item.bloom_and_doom.music_disc_wabby_wabbo": "Music Disc",
+  "item.bloom_and_doom.music_disc_wabby_wabbo.desc": "Cray-Z - Wabby Wabbo",
+
+  "item.minecraft.tipped_arrow.effect.gng_zombification": "Arrow of Zombification",
+  "item.minecraft.potion.effect.gng_zombification": "Potion of Zombification",
+  "item.minecraft.splash_potion.effect.gng_zombification": "Splash Potion of Zombification",
+  "item.minecraft.lingering_potion.effect.gng_zombification": "Lingering Potion of Zombification",
+
+  "block.bloom_and_doom.potting_table": "Potting Table",
+
+  "block.bloom_and_doom.planter": "Planter",
+  "block.bloom_and_doom.planter_white": "White Planter",
+  "block.bloom_and_doom.planter_light_gray": "Light Gray Planter",
+  "block.bloom_and_doom.planter_gray": "Gray Planter",
+  "block.bloom_and_doom.planter_black": "Black Planter",
+  "block.bloom_and_doom.planter_brown": "Brown Planter",
+  "block.bloom_and_doom.planter_red": "Red Planter",
+  "block.bloom_and_doom.planter_orange": "Orange Planter",
+  "block.bloom_and_doom.planter_yellow": "Yellow Planter",
+  "block.bloom_and_doom.planter_lime": "Lime Planter",
+  "block.bloom_and_doom.planter_green": "Green Planter",
+  "block.bloom_and_doom.planter_cyan": "Cyan Planter",
+  "block.bloom_and_doom.planter_light_blue": "Light Blue Planter",
+  "block.bloom_and_doom.planter_blue": "Blue Planter",
+  "block.bloom_and_doom.planter_purple": "Purple Planter",
+  "block.bloom_and_doom.planter_magenta": "Magenta Planter",
+  "block.bloom_and_doom.planter_pink": "Pink Planter",
+
+  "block.bloom_and_doom.white_plastic_block": "Block of White Plastic",
+  "block.bloom_and_doom.light_gray_plastic_block": "Block of Light Gray Plastic",
+  "block.bloom_and_doom.gray_plastic_block": "Block of Gray Plastic",
+  "block.bloom_and_doom.black_plastic_block": "Block of Black Plastic",
+  "block.bloom_and_doom.brown_plastic_block": "Block of Brown Plastic",
+  "block.bloom_and_doom.red_plastic_block": "Block of Red Plastic",
+  "block.bloom_and_doom.orange_plastic_block": "Block of Orange Plastic",
+  "block.bloom_and_doom.yellow_plastic_block": "Block of Yellow Plastic",
+  "block.bloom_and_doom.lime_plastic_block": "Block of Lime Plastic",
+  "block.bloom_and_doom.green_plastic_block": "Block of Green Plastic",
+  "block.bloom_and_doom.cyan_plastic_block": "Block of Cyan Plastic",
+  "block.bloom_and_doom.light_blue_plastic_block": "Block of Light Blue Plastic",
+  "block.bloom_and_doom.blue_plastic_block": "Block of Blue Plastic",
+  "block.bloom_and_doom.purple_plastic_block": "Block of Purple Plastic",
+  "block.bloom_and_doom.magenta_plastic_block": "Block of Magenta Plastic",
+  "block.bloom_and_doom.pink_plastic_block": "Block of Pink Plastic",
+
+  "block.bloom_and_doom.gravestone": "Gravestone",
+  "block.bloom_and_doom.gravestone_sandstone": "Sandstone Gravestone",
+
+  "block.minecraft.banner.bloom_and_doom.brainz.white": "White Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.light_gray": "Light Gray Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.gray": "Gray Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.black": "Black Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.brown": "Brown Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.red": "Red Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.orange": "Orange Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.yellow": "Yellow Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.lime": "Lime Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.green": "Green Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.cyan": "Cyan Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.light_blue": "Light Blue Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.blue": "Blue Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.purple": "Purple Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.magenta": "Magenta Brainz",
+  "block.minecraft.banner.bloom_and_doom.brainz.pink": "Pink Brainz",
+
+  "bloom_and_doom.items.brainz_banner": "Brainz Banner",
+
+  "entity.minecraft.villager.bloom_and_doom.gardener": "Gardener",
+
+  "entity.bloom_and_doom.sunflower": "Sunflower",
+  "entity.bloom_and_doom.marigold": "Marigold",
+
+  "entity.bloom_and_doom.peashooter": "Peashooter",
+  "entity.bloom_and_doom.snow_pea": "Snow Pea",
+  "entity.bloom_and_doom.repeater": "Repeater",
+
+  "entity.bloom_and_doom.wall_nut": "Wall-nut",
+
+  "entity.bloom_and_doom.potato_mine": "Potato Mine",
+  "entity.bloom_and_doom.jalapeno": "Jalapeno",
+  "entity.bloom_and_doom.chomper": "Chomper",
+  "entity.bloom_and_doom.bonk_choy": "Bonk Choy",
+
+  "entity.bloom_and_doom.sun_shroom": "Sun-shroom",
+  "entity.bloom_and_doom.puff_shroom": "Puff-shroom",
+  "entity.bloom_and_doom.fume_shroom": "Fume-shroom",
+  "entity.bloom_and_doom.hypno_shroom": "Hypno-shroom",
+  "entity.bloom_and_doom.doom_shroom": "Doom-shroom",
+
+  "entity.bloom_and_doom.pea": "Pea",
+  "entity.bloom_and_doom.frozen_pea": "Frozen Pea",
+  "entity.bloom_and_doom.spore": "Spore",
+
+  "death.attack.pea": "%1$s got pead to death",
+  "death.attack.frozen_pea": "%1$s got peapsicled",
+  "death.attack.plant_explosion": "%1$s got turned into mush",
+
+  "creativetab.bloom_and_doom.blocks": "G&G Blocks",
+  "creativetab.bloom_and_doom.items": "G&G Items",
+
+  "bloom_and_doom.advancement.root": "Gardens and Graves",
+  "bloom_and_doom.advancement.root.desc": "",
+
+  "bloom_and_doom.advancement.planters": "Planting the Future",
+  "bloom_and_doom.advancement.planters.desc": "Craft a Planter. Plants planted on it will produce seed packets!",
+
+  "bloom_and_doom.advancement.first_sun": "First Sun",
+  "bloom_and_doom.advancement.first_sun.desc": "Get your first Sun",
+
+  "bloom_and_doom.advancement.potted": "Potter",
+  "bloom_and_doom.advancement.potted.desc": "Use a Flower Pot on a plant from a Planter to take them with you",
+
+  "bloom_and_doom.advancement.peace_love_plants": "Peace, Love, and Plants",
+  "bloom_and_doom.advancement.peace_love_plants.desc": "Gift someone a Potted Potato Mine",
+
+  "bloom_and_doom.advancement.first_pack": "Packed Friend",
+  "bloom_and_doom.advancement.first_pack.desc": "Get your first seed packet",
+
+  "bloom_and_doom.advancement.sunflower": "Sunflower",
+  "bloom_and_doom.advancement.sunflower.desc": "They generate one Sun every 5 minutes, during the day. Can be found in plains villages",
+
+  "bloom_and_doom.advancement.marigold": "Marigold",
+  "bloom_and_doom.advancement.marigold.desc": "They generate between 1 and 3 iron or gold nuggets every 5 minutes. Can be found in abandoned mineshafts and shipwrecks",
+
+  "bloom_and_doom.advancement.peashooter": "Peashooter",
+  "bloom_and_doom.advancement.peashooter.desc": "They shoot one Pea every 1,5 seconds. Can be found in desert, savanna, plains, and taiga villages",
+
+  "bloom_and_doom.advancement.snow_pea": "Snow Pea",
+  "bloom_and_doom.advancement.snow_pea.desc": "They shoot one Frozen Pea every 1,5 seconds. Can be found in snowy villages and ancient cities",
+
+  "bloom_and_doom.advancement.repeater": "Repeater",
+  "bloom_and_doom.advancement.repeater.desc": "They shoot two consecutive peas every 1,5 seconds. Can be found in plains villages",
+
+  "bloom_and_doom.advancement.wall_nut": "Wall-nut",
+  "bloom_and_doom.advancement.wall_nut.desc": "They protect other plants from zombie attacks. Can be found in all villages",
+
+  "bloom_and_doom.advancement.potato_mine": "Potato Mine",
+  "bloom_and_doom.advancement.potato_mine.desc": "They take 2 seconds to arm, and then will explode when they get stepped on. Can be found in savanna villages, and jungle temples",
+
+  "bloom_and_doom.advancement.jalapeno": "Jalapeno",
+  "bloom_and_doom.advancement.jalapeno.desc": "Can be found in savanna and desert villages",
+
+  "bloom_and_doom.advancement.chomper": "Chomper",
+  "bloom_and_doom.advancement.chomper.desc": "Can be found in jungle temples",
+
+  "bloom_and_doom.advancement.bonk_choy": "Bonk Choy",
+  "bloom_and_doom.advancement.bonk_choy.desc": "Can be found in savanna and desert villages and desert pyramids",
+
+  "bloom_and_doom.advancement.sun_shroom": "Sun-shroom",
+  "bloom_and_doom.advancement.sun_shroom.desc": "They generate one Sun every 5 minutes, during the night. Can be found in taiga villages",
+
+  "bloom_and_doom.advancement.puff_shroom": "Puff-shroom",
+  "bloom_and_doom.advancement.puff_shroom.desc": "They're cheap, but with a short distance. Can be found in taiga villages",
+
+  "bloom_and_doom.advancement.fume_shroom": "Fume-shroom",
+  "bloom_and_doom.advancement.fume_shroom.desc": "Can be found in taiga villages",
+
+  "bloom_and_doom.advancement.hypno_shroom": "Hypno-shroom",
+  "bloom_and_doom.advancement.hypno_shroom.desc": "Can be found in taiga villages",
+
+  "bloom_and_doom.advancement.doom_shroom": "Doom-shroom",
+  "bloom_and_doom.advancement.doom_shroom.desc": "Their explosion has a 9 blocks radius, dealing enough damage to kill most enemies. Can be found in ancient cities and woodland mansions",
+
+  "effect.bloom_and_doom.zombification": "Zombification",
+
+  "bloom_and_doom.description.seed_packets_sun_cost": "Sun Cost: ",
+
+  "tag.item.bloom_and_doom.planter_substrates": "Planter Substrates",
+  "tag.item.bloom_and_doom.sustains_mushrooms": "Sustains Mushrooms",
+
+  "tag.item.bloom_and_doom.sustains_sunflowers": "Sustains Sunflowers",
+  "tag.item.bloom_and_doom.sustains_marigolds": "Sustains Marigolds",
+  "tag.item.bloom_and_doom.sustains_peashooters": "Sustains Peashooters",
+  "tag.item.bloom_and_doom.sustains_snow_peas": "Sustains Snow Peas",
+  "tag.item.bloom_and_doom.sustains_repeaters": "Sustains Repeaters",
+  "tag.item.bloom_and_doom.sustains_wall_nuts": "Sustains Wall-nuts",
+  "tag.item.bloom_and_doom.sustains_potato_mines": "Sustains Potato Mines",
+  "tag.item.bloom_and_doom.sustains_sun_shrooms": "Sustains Sun-shrooms",
+  "tag.item.bloom_and_doom.sustains_puff_shrooms": "Sustains Puff-shrooms",
+  "tag.item.bloom_and_doom.sustains_doom_shrooms": "Sustains Doom-shrooms",
+
+  "tag.item.bloom_and_doom.flower_pots": "Flower pots",
+  "tag.item.bloom_and_doom.watering_cans": "Watering Cans",
+
+  "tag.block.bloom_and_doom.planters": "Planters",
+  "tag.block.bloom_and_doom.supports_plants": "Supports Plants",
+  "tag.block.bloom_and_doom.sustains_mushrooms": "Sustains Mushrooms",
+
+  "tag.block.bloom_and_doom.dirt_sustains": "Dirt Sustains",
+  "tag.block.bloom_and_doom.mycelium_sustains": "Mycelium Sustains",
+  "tag.block.bloom_and_doom.sand_sustains": "Sand Sustains",
+  "tag.block.bloom_and_doom.soul_sand_sustains": "Soul Sand Sustains",
+  "tag.block.bloom_and_doom.nylium_sustains": "Nylium Sustains",
+  "tag.block.bloom_and_doom.end_stone_sustains": "End Stone Sustains",
+
+  "tag.block.bloom_and_doom.gravestones": "Gravestones",
+  "tag.block.bloom_and_doom.mushrooms": "Mushrooms",
+
+  "tag.entity.bloom_and_doom.flowers": "Flowers",
+  "tag.entity.bloom_and_doom.peashooters": "Peashooters",
+  "tag.entity.bloom_and_doom.mushrooms": "Mushrooms",
+  "tag.entity.bloom_and_doom.plants": "Plants",
+
+  "tag.entity.bloom_and_doom.pottable_plants": "Pottable Plants",
+
+  "tag.entity.bloom_and_doom.plant_enemies": "Plant Enemies",
+  "tag.entity.bloom_and_doom.plant_allays": "Plant Allays",
+
+  "bloom_and_doom.subtitles.item.seed_packets.plants": "Seed packet plants",
+  "bloom_and_doom.subtitles.item.potted_plant.plants": "Potted plant replants",
+  "bloom_and_doom.subtitles.item.watering_can.water": "Watering Can waters",
+  "bloom_and_doom.subtitles.item.seed_packets.heals": "Seed packet heals",
+  "bloom_and_doom.subtitles.entity.villager.work_gardener": "Gardener works",
+  "bloom_and_doom.subtitles.entity.sunflower.generates": "Sunflower generates",
+  "bloom_and_doom.subtitles.entity.sun_shroom.generates": "Sun-shroom generates",
+  "bloom_and_doom.subtitles.entity.marigold.generates": "Marigold generates",
+  "bloom_and_doom.subtitles.entity.peashooter.shoots": "Peashooter shoots",
+  "bloom_and_doom.subtitles.entity.snow_pea.shoots": "Snow-pea shoots",
+  "bloom_and_doom.subtitles.entity.repeater.shoots": "Repeater shoots",
+  "bloom_and_doom.subtitles.entity.puff_shroom.shoots": "Puff-shroom shoots",
+  "bloom_and_doom.subtitles.entity.doom_shroom.explodes": "Doom-shroom explodes",
+  "bloom_and_doom.subtitles.entity.potato_mine.explodes": "Potato Mine explodes",
+  "bloom_and_doom.subtitles.entity.plant.grows": "Plant grows",
+
+  "config.jade.plugin_bloom_and_doom.sun_timer": "Sun Timers",
+  "config.jade.plugin_bloom_and_doom.reward_timer": "Marigold Rewards Timer",
+  "config.jade.plugin_bloom_and_doom.seed_packets_timer": "Seed Packets Timer",
+  "bloom_and_doom.sun_timer": "Next sun: ",
+  "bloom_and_doom.reward_timer": "Next nuggets: ",
+  "bloom_and_doom.seed_packets_timer": "Next seed packet: "
+}

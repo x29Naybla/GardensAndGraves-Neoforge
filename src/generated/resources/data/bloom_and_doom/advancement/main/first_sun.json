@@ -1,0 +1,33 @@
+{
+  "parent": "bloom_and_doom:main/planters",
+  "criteria": {
+    "sun": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:sun"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "bloom_and_doom.advancement.first_sun.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "bloom_and_doom:sun"
+    },
+    "title": {
+      "translate": "bloom_and_doom.advancement.first_sun"
+    }
+  },
+  "requirements": [
+    [
+      "sun"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

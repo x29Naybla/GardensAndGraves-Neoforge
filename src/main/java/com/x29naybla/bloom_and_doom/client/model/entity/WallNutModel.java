@@ -1,0 +1,31 @@
+package com.x29naybla.bloom_and_doom.client.model.entity;
+
+import com.x29naybla.bloom_and_doom.BloomAndDoom;
+import com.x29naybla.bloom_and_doom.entity.WallNutEntity;
+import net.minecraft.resources.ResourceLocation;
+import software.bernie.geckolib.animatable.GeoAnimatable;
+import software.bernie.geckolib.model.GeoModel;
+
+public class WallNutModel extends GeoModel {
+    private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "geo/entity/wall_nut.geo.json");
+
+    @Override
+    public ResourceLocation getModelResource(GeoAnimatable animatable) {
+        return this.model;
+    }
+
+    @Override
+    public ResourceLocation getTextureResource(GeoAnimatable animatable) {
+        if (((WallNutEntity) animatable).getHealth() <= 72) {
+            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/wall_nut/dying.png");
+        } else if (((WallNutEntity) animatable).getHealth() <= 144) {
+            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/wall_nut/hurt.png");
+        } else
+            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/wall_nut/normal.png");
+    }
+
+    @Override
+    public ResourceLocation getAnimationResource(GeoAnimatable animatable) {
+        return null;
+    }
+}

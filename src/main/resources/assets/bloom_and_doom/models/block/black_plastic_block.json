@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "bloom_and_doom:block/black_plastic_block"
+  }
+}

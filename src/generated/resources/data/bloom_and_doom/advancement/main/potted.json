@@ -1,0 +1,40 @@
+{
+  "parent": "bloom_and_doom:main/planters",
+  "criteria": {
+    "potted": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "#bloom_and_doom:pottable_plants"
+            }
+          }
+        ],
+        "item": {
+          "items": "minecraft:flower_pot"
+        }
+      },
+      "trigger": "minecraft:player_interacted_with_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "bloom_and_doom.advancement.potted.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "bloom_and_doom:potted_sunflower"
+    },
+    "title": {
+      "translate": "bloom_and_doom.advancement.potted"
+    }
+  },
+  "requirements": [
+    [
+      "potted"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

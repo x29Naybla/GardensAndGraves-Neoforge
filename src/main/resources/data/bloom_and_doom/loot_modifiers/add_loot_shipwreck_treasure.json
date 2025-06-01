@@ -1,0 +1,11 @@
+{
+  "type": "bloom_and_doom:add_loot_table",
+  "conditions":
+  [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/shipwreck_treasure"
+    }
+  ],
+  "lootTable": "bloom_and_doom:chests/gng_shipwreck_treasure"
+}

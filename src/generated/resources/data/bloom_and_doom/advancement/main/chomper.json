@@ -1,0 +1,33 @@
+{
+  "parent": "bloom_and_doom:main/first_pack",
+  "criteria": {
+    "seed_packet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_chomper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "bloom_and_doom.advancement.chomper.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "bloom_and_doom:seed_packet_chomper"
+    },
+    "title": {
+      "translate": "bloom_and_doom.advancement.chomper"
+    }
+  },
+  "requirements": [
+    [
+      "seed_packet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

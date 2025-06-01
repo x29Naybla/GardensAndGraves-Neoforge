@@ -1,0 +1,6 @@
+{
+	"parent":"bloom_and_doom:block/gravestone",
+	"textures":{
+		"1": "bloom_and_doom:block/gravestone_sandstone"
+	}
+}

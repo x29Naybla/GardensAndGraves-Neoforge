@@ -1,0 +1,33 @@
+{
+  "parent": "bloom_and_doom:main/first_pack",
+  "criteria": {
+    "seed_packet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_snow_pea"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "bloom_and_doom.advancement.snow_pea.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "bloom_and_doom:seed_packet_snow_pea"
+    },
+    "title": {
+      "translate": "bloom_and_doom.advancement.snow_pea"
+    }
+  },
+  "requirements": [
+    [
+      "seed_packet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

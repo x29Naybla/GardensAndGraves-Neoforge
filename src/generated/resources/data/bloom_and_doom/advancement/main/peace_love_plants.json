@@ -1,0 +1,49 @@
+{
+  "parent": "bloom_and_doom:main/potted",
+  "criteria": {
+    "gift": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:player"
+            }
+          }
+        ],
+        "item": {
+          "items": "bloom_and_doom:potted_potato_mine"
+        },
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:player"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:thrown_item_picked_up_by_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "bloom_and_doom.advancement.peace_love_plants.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "bloom_and_doom:potted_potato_mine"
+    },
+    "title": {
+      "translate": "bloom_and_doom.advancement.peace_love_plants"
+    }
+  },
+  "requirements": [
+    [
+      "gift"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

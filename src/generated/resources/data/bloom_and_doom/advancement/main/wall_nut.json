@@ -1,0 +1,33 @@
+{
+  "parent": "bloom_and_doom:main/first_pack",
+  "criteria": {
+    "seed_packet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:seed_packet_wall_nut"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "bloom_and_doom.advancement.wall_nut.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "bloom_and_doom:seed_packet_wall_nut"
+    },
+    "title": {
+      "translate": "bloom_and_doom.advancement.wall_nut"
+    }
+  },
+  "requirements": [
+    [
+      "seed_packet"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
