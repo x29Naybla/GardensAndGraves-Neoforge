@@ -38,22 +38,22 @@
   "rewards": {
     "recipes": [
       "bloom_and_doom:watering_can",
-      "bloom_and_doom:watering_can_white",
-      "bloom_and_doom:watering_can_light_gray",
-      "bloom_and_doom:watering_can_gray",
-      "bloom_and_doom:watering_can_black",
-      "bloom_and_doom:watering_can_brown",
-      "bloom_and_doom:watering_can_red",
-      "bloom_and_doom:watering_can_orange",
-      "bloom_and_doom:watering_can_yellow",
-      "bloom_and_doom:watering_can_lime",
-      "bloom_and_doom:watering_can_green",
-      "bloom_and_doom:watering_can_cyan",
-      "bloom_and_doom:watering_can_light_blue",
-      "bloom_and_doom:watering_can_blue",
-      "bloom_and_doom:watering_can_purple",
-      "bloom_and_doom:watering_can_magenta",
-      "bloom_and_doom:watering_can_pink"
+      "bloom_and_doom:white_watering_can",
+      "bloom_and_doom:light_gray_watering_can",
+      "bloom_and_doom:gray_watering_can",
+      "bloom_and_doom:black_watering_can",
+      "bloom_and_doom:brown_watering_can",
+      "bloom_and_doom:red_watering_can",
+      "bloom_and_doom:orange_watering_can",
+      "bloom_and_doom:yellow_watering_can",
+      "bloom_and_doom:lime_watering_can",
+      "bloom_and_doom:green_watering_can",
+      "bloom_and_doom:cyan_watering_can",
+      "bloom_and_doom:light_blue_watering_can",
+      "bloom_and_doom:blue_watering_can",
+      "bloom_and_doom:purple_watering_can",
+      "bloom_and_doom:magenta_watering_can",
+      "bloom_and_doom:pink_watering_can"
     ]
   }
 }

@@ -9,91 +9,91 @@
     },
     "planter_black": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_black"
+        "recipe_id": "bloom_and_doom:black_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_blue": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_blue"
+        "recipe_id": "bloom_and_doom:blue_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_brown": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_brown"
+        "recipe_id": "bloom_and_doom:brown_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_cyan": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_cyan"
+        "recipe_id": "bloom_and_doom:cyan_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_gray": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_gray"
+        "recipe_id": "bloom_and_doom:gray_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_green": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_green"
+        "recipe_id": "bloom_and_doom:green_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_light_blue": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_light_blue"
+        "recipe_id": "bloom_and_doom:light_blue_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_light_gray": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_light_gray"
+        "recipe_id": "bloom_and_doom:light_gray_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_lime": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_lime"
+        "recipe_id": "bloom_and_doom:lime_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_orange": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_orange"
+        "recipe_id": "bloom_and_doom:orange_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_pink": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_pink"
+        "recipe_id": "bloom_and_doom:pink_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_purple": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_purple"
+        "recipe_id": "bloom_and_doom:purple_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_red": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_red"
+        "recipe_id": "bloom_and_doom:red_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_white": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_white"
+        "recipe_id": "bloom_and_doom:white_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     },
     "planter_yellow": {
       "conditions": {
-        "recipe_id": "bloom_and_doom:planter_yellow"
+        "recipe_id": "bloom_and_doom:yellow_planter"
       },
       "trigger": "minecraft:recipe_crafted"
     }

@@ -1,21 +1,21 @@
 {
   "values": [
     "bloom_and_doom:planter",
-    "bloom_and_doom:planter_white",
-    "bloom_and_doom:planter_light_gray",
-    "bloom_and_doom:planter_gray",
-    "bloom_and_doom:planter_black",
-    "bloom_and_doom:planter_brown",
-    "bloom_and_doom:planter_red",
-    "bloom_and_doom:planter_orange",
-    "bloom_and_doom:planter_yellow",
-    "bloom_and_doom:planter_lime",
-    "bloom_and_doom:planter_green",
-    "bloom_and_doom:planter_cyan",
-    "bloom_and_doom:planter_light_blue",
-    "bloom_and_doom:planter_blue",
-    "bloom_and_doom:planter_purple",
-    "bloom_and_doom:planter_magenta",
-    "bloom_and_doom:planter_pink"
+    "bloom_and_doom:white_planter",
+    "bloom_and_doom:light_gray_planter",
+    "bloom_and_doom:gray_planter",
+    "bloom_and_doom:black_planter",
+    "bloom_and_doom:brown_planter",
+    "bloom_and_doom:red_planter",
+    "bloom_and_doom:orange_planter",
+    "bloom_and_doom:yellow_planter",
+    "bloom_and_doom:lime_planter",
+    "bloom_and_doom:green_planter",
+    "bloom_and_doom:cyan_planter",
+    "bloom_and_doom:light_blue_planter",
+    "bloom_and_doom:blue_planter",
+    "bloom_and_doom:purple_planter",
+    "bloom_and_doom:magenta_planter",
+    "bloom_and_doom:pink_planter"
   ]
 }

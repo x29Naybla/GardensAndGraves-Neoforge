@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "watering_cans",
+  "ingredients": [
+    {
+      "item": "minecraft:red_dye"
+    },
+    [
+      {
+        "item": "gardensandgraves:black_watering_can"
+      },
+      {
+        "item": "gardensandgraves:blue_watering_can"
+      },
+      {
+        "item": "gardensandgraves:brown_watering_can"
+      },
+      {
+        "item": "gardensandgraves:cyan_watering_can"
+      },
+      {
+        "item": "gardensandgraves:gray_watering_can"
+      },
+      {
+        "item": "gardensandgraves:green_watering_can"
+      },
+      {
+        "item": "gardensandgraves:light_blue_watering_can"
+      },
+      {
+        "item": "gardensandgraves:light_gray_watering_can"
+      },
+      {
+        "item": "gardensandgraves:lime_watering_can"
+      },
+      {
+        "item": "gardensandgraves:magenta_watering_can"
+      },
+      {
+        "item": "gardensandgraves:orange_watering_can"
+      },
+      {
+        "item": "gardensandgraves:pink_watering_can"
+      },
+      {
+        "item": "gardensandgraves:purple_watering_can"
+      },
+      {
+        "item": "gardensandgraves:yellow_watering_can"
+      },
+      {
+        "item": "gardensandgraves:white_watering_can"
+      }
+    ]
+  ],
+  "result": {
+    "count": 1,
+    "id": "gardensandgraves:red_watering_can"
+  }
+}

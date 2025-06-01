@@ -22,37 +22,37 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> PLANTER = registerBlock("planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> WHITE_PLANTER = registerBlock("planter_white",
+    public static final DeferredBlock<Block> WHITE_PLANTER = registerBlock("white_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> LIGHT_GRAY_PLANTER = registerBlock("planter_light_gray",
+    public static final DeferredBlock<Block> LIGHT_GRAY_PLANTER = registerBlock("light_gray_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_GRAY_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> GRAY_PLANTER = registerBlock("planter_gray",
+    public static final DeferredBlock<Block> GRAY_PLANTER = registerBlock("gray_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> BLACK_PLANTER = registerBlock("planter_black",
+    public static final DeferredBlock<Block> BLACK_PLANTER = registerBlock("black_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> BROWN_PLANTER = registerBlock("planter_brown",
+    public static final DeferredBlock<Block> BROWN_PLANTER = registerBlock("brown_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> RED_PLANTER = registerBlock("planter_red",
+    public static final DeferredBlock<Block> RED_PLANTER = registerBlock("red_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> ORANGE_PLANTER = registerBlock("planter_orange",
+    public static final DeferredBlock<Block> ORANGE_PLANTER = registerBlock("orange_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> YELLOW_PLANTER = registerBlock("planter_yellow",
+    public static final DeferredBlock<Block> YELLOW_PLANTER = registerBlock("yellow_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> LIME_PLANTER = registerBlock("planter_lime",
+    public static final DeferredBlock<Block> LIME_PLANTER = registerBlock("lime_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LIME_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> GREEN_PLANTER = registerBlock("planter_green",
+    public static final DeferredBlock<Block> GREEN_PLANTER = registerBlock("green_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GREEN_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> CYAN_PLANTER = registerBlock("planter_cyan",
+    public static final DeferredBlock<Block> CYAN_PLANTER = registerBlock("cyan_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CYAN_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> LIGHT_BLUE_PLANTER = registerBlock("planter_light_blue",
+    public static final DeferredBlock<Block> LIGHT_BLUE_PLANTER = registerBlock("light_blue_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_BLUE_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> BLUE_PLANTER = registerBlock("planter_blue",
+    public static final DeferredBlock<Block> BLUE_PLANTER = registerBlock("blue_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> PURPLE_PLANTER = registerBlock("planter_purple",
+    public static final DeferredBlock<Block> PURPLE_PLANTER = registerBlock("purple_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PURPLE_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> MAGENTA_PLANTER = registerBlock("planter_magenta",
+    public static final DeferredBlock<Block> MAGENTA_PLANTER = registerBlock("magenta_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MAGENTA_TERRACOTTA).noOcclusion()));
-    public static final DeferredBlock<Block> PINK_PLANTER = registerBlock("planter_pink",
+    public static final DeferredBlock<Block> PINK_PLANTER = registerBlock("pink_planter",
             () -> new PlanterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_TERRACOTTA).noOcclusion()));
 
     public static final DeferredBlock<Block> GRAVESTONE = registerBlock("gravestone",

@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "watering_cans",
+  "ingredients": [
+    {
+      "item": "minecraft:lime_dye"
+    },
+    [
+      {
+        "item": "bloom_and_doom:black_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:blue_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:brown_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:cyan_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:gray_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:green_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:light_blue_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:light_gray_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:magenta_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:orange_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:pink_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:purple_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:red_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:yellow_watering_can"
+      },
+      {
+        "item": "bloom_and_doom:white_watering_can"
+      }
+    ]
+  ],
+  "result": {
+    "count": 1,
+    "id": "bloom_and_doom:lime_watering_can"
+  }
+}

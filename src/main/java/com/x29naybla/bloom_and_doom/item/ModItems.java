@@ -84,37 +84,37 @@ public class ModItems {
             () -> new BannerPatternItem(BRAINZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1)));
     public static final DeferredItem<Item> MUSIC_DISC_WABBY_WABBO = ITEMS.register("music_disc_wabby_wabbo",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE).jukeboxPlayable(ModSounds.WABBY_WABBO_KEY).stacksTo(1)));
-    public static final DeferredItem<Item> WHITE_WATERING_CAN = ITEMS.register("watering_can_white",
+    public static final DeferredItem<Item> WHITE_WATERING_CAN = ITEMS.register("white_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> LIGHT_GRAY_WATERING_CAN = ITEMS.register("watering_can_light_gray",
+    public static final DeferredItem<Item> LIGHT_GRAY_WATERING_CAN = ITEMS.register("light_gray_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> GRAY_WATERING_CAN = ITEMS.register("watering_can_gray",
+    public static final DeferredItem<Item> GRAY_WATERING_CAN = ITEMS.register("gray_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> BLACK_WATERING_CAN = ITEMS.register("watering_can_black",
+    public static final DeferredItem<Item> BLACK_WATERING_CAN = ITEMS.register("black_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> BROWN_WATERING_CAN = ITEMS.register("watering_can_brown",
+    public static final DeferredItem<Item> BROWN_WATERING_CAN = ITEMS.register("brown_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> RED_WATERING_CAN = ITEMS.register("watering_can_red",
+    public static final DeferredItem<Item> RED_WATERING_CAN = ITEMS.register("red_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> ORANGE_WATERING_CAN = ITEMS.register("watering_can_orange",
+    public static final DeferredItem<Item> ORANGE_WATERING_CAN = ITEMS.register("orange_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> YELLOW_WATERING_CAN = ITEMS.register("watering_can_yellow",
+    public static final DeferredItem<Item> YELLOW_WATERING_CAN = ITEMS.register("yellow_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> LIME_WATERING_CAN = ITEMS.register("watering_can_lime",
+    public static final DeferredItem<Item> LIME_WATERING_CAN = ITEMS.register("lime_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> GREEN_WATERING_CAN = ITEMS.register("watering_can_green",
+    public static final DeferredItem<Item> GREEN_WATERING_CAN = ITEMS.register("green_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> CYAN_WATERING_CAN = ITEMS.register("watering_can_cyan",
+    public static final DeferredItem<Item> CYAN_WATERING_CAN = ITEMS.register("cyan_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> LIGHT_BLUE_WATERING_CAN = ITEMS.register("watering_can_light_blue",
+    public static final DeferredItem<Item> LIGHT_BLUE_WATERING_CAN = ITEMS.register("light_blue_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> BLUE_WATERING_CAN = ITEMS.register("watering_can_blue",
+    public static final DeferredItem<Item> BLUE_WATERING_CAN = ITEMS.register("blue_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> PURPLE_WATERING_CAN = ITEMS.register("watering_can_purple",
+    public static final DeferredItem<Item> PURPLE_WATERING_CAN = ITEMS.register("purple_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> MAGENTA_WATERING_CAN = ITEMS.register("watering_can_magenta",
+    public static final DeferredItem<Item> MAGENTA_WATERING_CAN = ITEMS.register("magenta_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
-    public static final DeferredItem<Item> PINK_WATERING_CAN = ITEMS.register("watering_can_pink",
+    public static final DeferredItem<Item> PINK_WATERING_CAN = ITEMS.register("pink_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
 
     public static void register(IEventBus eventBus){

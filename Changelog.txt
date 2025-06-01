@@ -20,3 +20,6 @@ changelog:
 * started to make a README.md file
 
 * changed the mod name and id
+* removed old unused models
+
+* changed the id of the watering cans and colored planters to match the way vanilla names colored items and blocks

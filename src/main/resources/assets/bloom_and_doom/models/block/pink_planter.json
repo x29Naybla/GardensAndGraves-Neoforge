@@ -1,0 +1,7 @@
+{
+	"parent":"bloom_and_doom:block/planter",
+	"textures":{
+		"0": "bloom_and_doom:block/pink_planter",
+		"particle": "minecraft:block/pink_terracotta"
+	}
+}
