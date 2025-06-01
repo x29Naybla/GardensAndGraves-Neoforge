@@ -23,7 +23,7 @@ import java.util.function.Consumer;
 public class ModAdvancementProvider implements AdvancementProvider.AdvancementGenerator{
     @Override
     public void generate(HolderLookup.Provider provider, Consumer<AdvancementHolder> consumer, ExistingFileHelper existingFileHelper) {
-        AdvancementHolder gardensAndGraves = Advancement.Builder.advancement()
+        AdvancementHolder bloomAndDoom = Advancement.Builder.advancement()
                 .display(ModItems.SUN.get(),
                         Component.translatable(BloomAndDoom.MOD_ID + "." + "advancement.root"),
                         Component.translatable(BloomAndDoom.MOD_ID + "." + "advancement.root.desc"),
@@ -32,7 +32,7 @@ public class ModAdvancementProvider implements AdvancementProvider.AdvancementGe
                 .addCriterion("sun", InventoryChangeTrigger.TriggerInstance.hasItems(new ItemLike[]{}))
                 .save(consumer, getNameId("main/root"));
 
-        AdvancementHolder planters = getAdvancement(gardensAndGraves, ModBlocks.PLANTER, "planters", AdvancementType.TASK, true, true, false)
+        AdvancementHolder planters = getAdvancement(bloomAndDoom, ModBlocks.PLANTER, "planters", AdvancementType.TASK, true, true, false)
                 .addCriterion("planter", RecipeCraftedTrigger.TriggerInstance.craftedItem(ModBlocks.PLANTER.getId()))
                 .addCriterion("planter_white", RecipeCraftedTrigger.TriggerInstance.craftedItem(ModBlocks.WHITE_PLANTER.getId()))
                 .addCriterion("planter_light_gray", RecipeCraftedTrigger.TriggerInstance.craftedItem(ModBlocks.LIGHT_GRAY_PLANTER.getId()))
@@ -69,7 +69,7 @@ public class ModAdvancementProvider implements AdvancementProvider.AdvancementGe
                         Optional.of(EntityPredicate.wrap(EntityPredicate.Builder.entity().of(EntityType.PLAYER)))))
                 .save(consumer, getNameId("main/peace_love_plants"));
 
-        AdvancementHolder first_pack = getAdvancement(gardensAndGraves, ModItems.SEED_PACKET_SUNFLOWER, "first_pack", AdvancementType.TASK, true, true, false)
+        AdvancementHolder first_pack = getAdvancement(bloomAndDoom, ModItems.SEED_PACKET_SUNFLOWER, "first_pack", AdvancementType.TASK, true, true, false)
                 .addCriterion("sunflower", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_SUNFLOWER))
                 .addCriterion("marigold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_MARIGOLD))
                 .addCriterion("peashooter", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_PEASHOOTER))

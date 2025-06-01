@@ -7,5 +7,5 @@
       "loot_table_id": "minecraft:chests/spawn_bonus_chest"
     }
   ],
-  "lootTable": "bloom_and_doom:chests/gng_bonus_chest"
+  "lootTable": "bloom_and_doom:chests/bnd_bonus_chest"
 }

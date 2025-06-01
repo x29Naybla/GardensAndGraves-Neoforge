@@ -7,5 +7,5 @@
       "loot_table_id": "minecraft:chests/village/village_desert_house"
     }
   ],
-  "lootTable": "bloom_and_doom:chests/gng_village_desert_house"
+  "lootTable": "bloom_and_doom:chests/bnd_village_desert_house"
 }

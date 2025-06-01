@@ -7,5 +7,5 @@
       "loot_table_id": "minecraft:chests/desert_pyramid"
     }
   ],
-  "lootTable": "bloom_and_doom:chests/gng_desert_pyramid"
+  "lootTable": "bloom_and_doom:chests/bnd_desert_pyramid"
 }

@@ -7,5 +7,5 @@
       "loot_table_id": "minecraft:entities/zombie"
     }
   ],
-  "lootTable": "bloom_and_doom:entities/gng_zombie"
+  "lootTable": "bloom_and_doom:entities/bnd_zombie"
 }

@@ -7,5 +7,5 @@
       "loot_table_id": "minecraft:chests/shipwreck_treasure"
     }
   ],
-  "lootTable": "bloom_and_doom:chests/gng_shipwreck_treasure"
+  "lootTable": "bloom_and_doom:chests/bnd_shipwreck_treasure"
 }

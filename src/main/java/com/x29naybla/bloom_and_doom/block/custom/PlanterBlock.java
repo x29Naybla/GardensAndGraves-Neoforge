@@ -85,7 +85,6 @@ public class PlanterBlock extends BaseEntityBlock {
                     level.playSound(null, pos, content.getBlock().getSoundType(content.getBlock().defaultBlockState(), level, pos, null).getBreakSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
 
                     player.setItemInHand(InteractionHand.MAIN_HAND, stackOnPlanter);
-                    level.playSound(null, pos, SoundEvents.DECORATED_POT_HIT, SoundSource.BLOCKS, 1.0F, 1.0F);
                     planter.clearContents();
                 } else
                     level.playSound(null, pos, SoundEvents.DECORATED_POT_INSERT_FAIL, SoundSource.BLOCKS, 1.0F, 1.0F);

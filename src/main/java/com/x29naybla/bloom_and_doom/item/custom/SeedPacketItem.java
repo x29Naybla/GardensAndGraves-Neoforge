@@ -1,6 +1,7 @@
 package com.x29naybla.bloom_and_doom.item.custom;
 
 import com.mojang.serialization.MapCodec;
+import com.x29naybla.bloom_and_doom.BloomAndDoom;
 import com.x29naybla.bloom_and_doom.block.entity.PlanterBlockEntity;
 import com.x29naybla.bloom_and_doom.data.ModTags;
 import com.x29naybla.bloom_and_doom.entity.MarigoldEntity;
@@ -60,7 +61,7 @@ public class SeedPacketItem extends Item {
     }
 
     public MutableComponent getDisplayName() {
-        return Component.translatable("gardensandgraves.description.seed_packets_sun_cost").append(String.valueOf(this.sunAmount));
+        return Component.translatable(BloomAndDoom.MOD_ID+".description.seed_packets_sun_cost").append(String.valueOf(this.sunAmount));
     }
 
     public InteractionResult useOn(UseOnContext context){

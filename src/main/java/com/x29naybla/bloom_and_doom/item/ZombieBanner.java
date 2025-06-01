@@ -22,7 +22,7 @@ public class ZombieBanner {
         BannerPatternLayers bannerpatternlayers = (new BannerPatternLayers.Builder()).addIfRegistered(patternRegistry, ResourceKey.create(Registries.BANNER_PATTERN, ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID,"brainz")), DyeColor.PINK).build();
         itemstack.set(DataComponents.BANNER_PATTERNS, bannerpatternlayers);
         itemstack.set(DataComponents.HIDE_ADDITIONAL_TOOLTIP, Unit.INSTANCE);
-        itemstack.set(DataComponents.ITEM_NAME, Component.translatable("gardensandgraves.items.brainz_banner"));
+        itemstack.set(DataComponents.ITEM_NAME, Component.translatable(BloomAndDoom.MOD_ID+".items.brainz_banner"));
         itemstack.set(DataComponents.RARITY, Rarity.UNCOMMON);
         return itemstack;
     }

@@ -160,10 +160,10 @@
   "death.attack.frozen_pea": "%1$s foi congervilhado(a)",
   "death.attack.plant_explosion": "%1$s foi transformado(a) em purê",
 
-  "creativetab.bloom_and_doom.blocks": "G&G blocos",
-  "creativetab.bloom_and_doom.items": "G&G itens",
+  "creativetab.bloom_and_doom.blocks": "B&D blocos",
+  "creativetab.bloom_and_doom.items": "B&D itens",
 
-  "bloom_and_doom.advancement.root": "Gardens and Graves",
+  "bloom_and_doom.advancement.root": "Bloom and Doom",
   "bloom_and_doom.advancement.root.desc": "",
 
   "bloom_and_doom.advancement.planters": "Germinando o futuro",

@@ -7,5 +7,5 @@
       "loot_table_id": "minecraft:chests/abandoned_mineshaft"
     }
   ],
-  "lootTable": "bloom_and_doom:chests/gng_abandoned_mineshaft"
+  "lootTable": "bloom_and_doom:chests/bnd_abandoned_mineshaft"
 }

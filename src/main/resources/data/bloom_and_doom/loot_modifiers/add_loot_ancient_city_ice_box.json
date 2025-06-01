@@ -7,5 +7,5 @@
       "loot_table_id": "minecraft:chests/ancient_city_ice_box"
     }
   ],
-  "lootTable": "bloom_and_doom:chests/gng_ancient_city_ice_box"
+  "lootTable": "bloom_and_doom:chests/bnd_ancient_city_ice_box"
 }

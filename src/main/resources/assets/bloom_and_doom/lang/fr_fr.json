@@ -160,10 +160,10 @@
   "death.attack.frozen_pea": "%1$s got peapsicled",
   "death.attack.plant_explosion": "%1$s got turned into mush",
 
-  "creativetab.bloom_and_doom.blocks": "G&G blocs",
-  "creativetab.bloom_and_doom.items": "G&G objets",
+  "creativetab.bloom_and_doom.blocks": "B&D blocs",
+  "creativetab.bloom_and_doom.items": "B&D objets",
 
-  "bloom_and_doom.advancement.root": "Gardens and Graves",
+  "bloom_and_doom.advancement.root": "Bloom and Doom",
   "bloom_and_doom.advancement.root.desc": "",
 
   "bloom_and_doom.advancement.planters": "Planting the Future",
