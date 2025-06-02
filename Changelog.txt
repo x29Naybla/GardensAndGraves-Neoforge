@@ -1,25 +1,7 @@
 changelog:
-* planter interaction sounds are now dynamically chosen from the substrate being taken from/placed into it
-* made each plant have their own tag to dictate what types of substrate supports them
-
-* now the entire dirt tag is included as valid planter substrate instead of only dirt and mycelium
-* potted plants now store the item used to pot them, instead of being defined to always return a Flower Pot
-* added support for Arts & Crafts dyed flower pots
-* changed the planter_substrates tag to have the vanilla smelts_to_glass tag instead of passing Sand and Red Sand
-* changed the watering cans to check the neoforge villager_farmlands tag instead of hardcoding the vanilla farmland
-* removed Enderman from the drops_brain tag
-* removed the endermen tag
-* readded mod support; additions to the drops_brain tag once again include:
-* * Guard villager's guards,
-* * Mobs of Mythology's kobolds and kobold warriors
-* * Touhou Little Maid's maids and maid fairies
-* * Raided's illagers
-* * Radical Cobblemon Trainers' trainers
-
-* cleaned unused imports
-* started to make a README.md file
-
-* changed the mod name and id
-* removed old unused models
-
-* changed the id of the watering cans and colored planters to match the way vanilla names colored items and blocks
+* updated mod logo
+* added sleeping textures for mushroom plants
+* moved mushroom plants' textures to sub-folders
+* potato mines now keep their armed status when leaving and re-entering a world
+* made potted potato mines when replanted be armed by default
+* renamed wall-nut textures

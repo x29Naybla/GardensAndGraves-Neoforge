@@ -17,11 +17,11 @@ public class WallNutModel extends GeoModel {
     @Override
     public ResourceLocation getTextureResource(GeoAnimatable animatable) {
         if (((WallNutEntity) animatable).getHealth() <= 72) {
-            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/wall_nut/dying.png");
+            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/wall_nut/wall_nut_dying.png");
         } else if (((WallNutEntity) animatable).getHealth() <= 144) {
-            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/wall_nut/hurt.png");
+            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/wall_nut/wall_nut_hurt.png");
         } else
-            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/wall_nut/normal.png");
+            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/wall_nut/wall_nut_well.png");
     }
 
     @Override

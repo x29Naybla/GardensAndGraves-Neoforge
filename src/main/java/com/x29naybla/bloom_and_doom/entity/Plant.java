@@ -10,6 +10,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -18,10 +21,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -39,6 +39,7 @@ import software.bernie.geckolib.animation.AnimatableManager;
 import java.util.List;
 
 public class Plant extends TamableAnimal implements GeoEntity {
+    private static final EntityDataAccessor<Boolean> DATA_IS_SLEEPING = SynchedEntityData.defineId(Plant.class, EntityDataSerializers.BOOLEAN);
     protected int ticksForSleepyParticles;
     protected TagKey<Item> substrate;
     public int packetTime;
@@ -48,7 +49,6 @@ public class Plant extends TamableAnimal implements GeoEntity {
     @Nullable
     public ItemStack pottedItem;
     public boolean mushroom;
-    public boolean isSleeping;
     public boolean gotCoffee;
     private final boolean fromDay;
     private final boolean fromNight;
@@ -62,7 +62,6 @@ public class Plant extends TamableAnimal implements GeoEntity {
         this.seedPacket = seedPacket;
         this.pottedItem = pottedItem;
         this.mushroom = false;
-        this.isSleeping = false;
         this.gotCoffee = false;
         this.ticksForSleepyParticles = 40;
 
@@ -179,15 +178,15 @@ public class Plant extends TamableAnimal implements GeoEntity {
                         || this.gotCoffee
                         || this.level().getBlockState(this.getOnPos()).is(BlockTags.MUSHROOM_GROW_BLOCK)
                         || (this.level().getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity planterBlock && planterBlock.content.getStackInSlot(0).is(ModTags.Items.SUSTAINS_MUSHROOMS))) {
-                    this.isSleeping = false;
+                    setSleeping(false);
                 } else {
-                    this.isSleeping = true;
+                    setSleeping(true);
                 }
             } else {
-                this.isSleeping = false;
+                setSleeping(false);
             }
 
-            if (this.isSleeping) {
+            if (getSleeping()) {
                 --this.ticksForSleepyParticles;
                 if (this.ticksForSleepyParticles <= 0) {
                     ((ServerLevel) level()).sendParticles(ModParticles.SLEEPING_PARTICLES.get(), this.getX(), this.getY() + this.getEyeHeight() + 0.3,
@@ -243,13 +242,26 @@ public class Plant extends TamableAnimal implements GeoEntity {
         this.setPos(d0, d1, d2);
     }
 
+    public boolean getSleeping() {
+        return this.entityData.get(DATA_IS_SLEEPING);
+    }
+
+    public void setSleeping(boolean isSleeping) {
+        this.entityData.set(DATA_IS_SLEEPING, isSleeping);
+    }
+
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(DATA_IS_SLEEPING, false);
+    }
+
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         if (compound.contains("FromPlanter")) {
             this.fromPlanter = compound.getBoolean("FromPlanter");
         }
         if (compound.contains("IsSleeping")) {
-            this.isSleeping = compound.getBoolean("IsSleeping");
+            setSleeping(compound.getBoolean("IsSleeping"));
         }
         if (compound.contains("PacketTime")) {
             this.packetTime = compound.getInt("PacketTime");
@@ -260,7 +272,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putBoolean("FromPlanter", this.fromPlanter);
-        compound.putBoolean("IsSleeping", this.isSleeping);
+        compound.putBoolean("IsSleeping", getSleeping());
         compound.putInt("PacketTime", this.packetTime);
     }
 

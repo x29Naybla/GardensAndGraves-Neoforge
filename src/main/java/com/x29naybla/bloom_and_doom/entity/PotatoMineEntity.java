@@ -18,18 +18,16 @@ public class PotatoMineEntity extends ExplosivePlant {
     protected static final RawAnimation ARMING = RawAnimation.begin().thenPlay("animation.potato_mine.arming");
     protected static final EntityDataAccessor<Boolean> ARMED = SynchedEntityData.defineId(PotatoMineEntity.class, EntityDataSerializers.BOOLEAN);
     public int armingTime = 0;
-    public boolean armed;
 
     //Properties
     public PotatoMineEntity(EntityType<? extends PotatoMineEntity> entityType, Level level) {
         super(entityType, level, ModTags.Items.SUSTAINS_POTATO_MINES, ModItems.SEED_PACKET_POTATO_MINE.toStack(), ModItems.POTTED_POTATO_MINE.toStack(), 1, 180, ModSounds.SPUDOW);
-        this.armed = false;
     }
 
     //Goals and AI
     public void tick() {
         if(this.isAlive()){
-            if (!this.armed){
+            if (!getArmed()){
                 this.armingTime += 1;
             }
 
@@ -38,10 +36,9 @@ public class PotatoMineEntity extends ExplosivePlant {
             }
 
             int maxArmingTime = 40;
-            if (this.armingTime >= maxArmingTime){
+            if (getArmed() || this.armingTime >= maxArmingTime){
                 this.armingTime = maxArmingTime;
-                this.armed = true;
-                this.setArmed(true);
+                setArmed(true);
             }
         }
         super.tick();
@@ -54,7 +51,7 @@ public class PotatoMineEntity extends ExplosivePlant {
     }
 
     protected <E extends PotatoMineEntity> PlayState animController(final AnimationState<E> event) {
-        if (!armed){
+        if (!getArmed()){
             event.setAnimation(ARMING);
         }
         return PlayState.CONTINUE;
@@ -66,22 +63,26 @@ public class PotatoMineEntity extends ExplosivePlant {
     }
 
     //Data
+    public boolean getArmed(){
+        return this.entityData.get(ARMED);
+    }
+
     public void setArmed(boolean bool) {
-        getEntityData().set(ARMED, bool);
+        this.entityData.set(ARMED, bool);
     }
 
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
-        builder.define(ARMED, this.armed);
+        builder.define(ARMED, false);
     }
 
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        getEntityData().set(ARMED, compound.getBoolean("Armed"));
+        setArmed(compound.getBoolean("Armed"));
     }
 
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
-        compound.putBoolean("Armed", getEntityData().get(ARMED));
+        compound.putBoolean("Armed", getArmed());
     }
 }

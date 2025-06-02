@@ -1,13 +1,13 @@
 package com.x29naybla.bloom_and_doom.client.model.entity;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
+import com.x29naybla.bloom_and_doom.entity.PuffShroomEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.model.GeoModel;
 
 public class PuffShroomModel extends GeoModel {
     private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "geo/entity/puff_shroom.geo.json");
-    private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/puff_shroom.png");
     private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "animations/entity/flower.animation.json");
 
     @Override
@@ -17,7 +17,10 @@ public class PuffShroomModel extends GeoModel {
 
     @Override
     public ResourceLocation getTextureResource(GeoAnimatable animatable) {
-        return this.texture;
+        if (((PuffShroomEntity) animatable).getSleeping()) {
+            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/puff_shroom/puff_shroom_sleeping.png");
+        } else
+            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/puff_shroom/puff_shroom.png");
     }
 
     @Override

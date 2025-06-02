@@ -3,6 +3,7 @@ package com.x29naybla.bloom_and_doom.item.custom;
 import com.x29naybla.bloom_and_doom.data.ModDataComponents;
 import com.x29naybla.bloom_and_doom.entity.MarigoldEntity;
 import com.x29naybla.bloom_and_doom.entity.Plant;
+import com.x29naybla.bloom_and_doom.entity.PotatoMineEntity;
 import com.x29naybla.bloom_and_doom.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -102,6 +103,7 @@ public class PottedPlantItem extends SeedPacketItem{
             if (stack.has(DataComponents.BASE_COLOR)) ((MarigoldEntity) plant).setColor(stack.get(DataComponents.BASE_COLOR));
             if (stack.has(ModDataComponents.AGE)) plant.setAge(stack.get(ModDataComponents.AGE));
             if (stack.has(ModDataComponents.HEALTH)) plant.setHealth(stack.get(ModDataComponents.HEALTH));
+            ((PotatoMineEntity) plant).setArmed(true);
             plant.fromPlanter = true;
         }
         serverlevel.addFreshEntityWithPassengers(entity);

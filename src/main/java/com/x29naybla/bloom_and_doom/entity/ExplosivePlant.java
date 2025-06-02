@@ -80,9 +80,8 @@ public class ExplosivePlant extends Plant{
 
     public void setTarget(@Nullable LivingEntity target) {
         boolean canExplode = true;
-        if (this instanceof PotatoMineEntity){
-            PotatoMineEntity entity = (PotatoMineEntity) this;
-            if(!entity.armed) {
+        if (this instanceof PotatoMineEntity potatoMine){
+            if(!potatoMine.getArmed()) {
                 canExplode = false;
             }
         }
