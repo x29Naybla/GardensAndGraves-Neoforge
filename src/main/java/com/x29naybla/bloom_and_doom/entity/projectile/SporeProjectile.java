@@ -20,6 +20,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import org.jetbrains.annotations.NotNull;
 
 public class SporeProjectile extends ThrowableItemProjectile {
     public Boolean shouldBreak = false;
@@ -36,7 +37,7 @@ public class SporeProjectile extends ThrowableItemProjectile {
         super(ModEntities.SPORE_PROJECTILE.get(), x, y, z, level);
     }
 
-    protected Item getDefaultItem() {
+    protected @NotNull Item getDefaultItem() {
         return ModItems.SPORE.get();
     }
 
@@ -56,7 +57,7 @@ public class SporeProjectile extends ThrowableItemProjectile {
 
     }
 
-    protected void onHitEntity(EntityHitResult result) {
+    protected void onHitEntity(@NotNull EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
         if (!(entity.getType().is(ModTags.Entities.PLANT_ALLAYS) || entity instanceof Player player && !player.getData(ModDataAttachments.ZOMBIE))){
@@ -66,7 +67,7 @@ public class SporeProjectile extends ThrowableItemProjectile {
         }
     }
 
-    protected void onHit(HitResult result) {
+    protected void onHit(@NotNull HitResult result) {
         super.onHit(result);
         if (!this.level().isClientSide && shouldBreak == true) {
             playSound(ModSounds.SPLAT.get(), 0.25F, 1 / (this.getRandom().nextFloat() * 0.4F + 0.8F));
@@ -75,7 +76,7 @@ public class SporeProjectile extends ThrowableItemProjectile {
     }
 
     @Override
-    protected void onHitBlock(BlockHitResult result){
+    protected void onHitBlock(@NotNull BlockHitResult result){
         this.level().broadcastEntityEvent(this, (byte)3);
     }
 }

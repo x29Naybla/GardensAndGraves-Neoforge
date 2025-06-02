@@ -19,8 +19,7 @@ public class ModGenerateSunGoal extends Goal {
 
     @Override
     public boolean canUse(){
-        if(this.plant.isAlive() && ((this.dayPlant && this.plant.level().isDay()) || (!this.dayPlant && this.plant.level().isNight()))) return true;
-        else return false;
+        return this.plant.isAlive() && ((this.dayPlant && this.plant.level().isDay()) || (!this.dayPlant && this.plant.level().isNight()));
     }
 
     public void start(){
@@ -29,8 +28,7 @@ public class ModGenerateSunGoal extends Goal {
 
     @Override
     public boolean canContinueToUse() {
-        if(this.plant.isAlive() && ((this.dayPlant && this.plant.level().isDay()) || (!this.dayPlant && this.plant.level().isNight()))) return true;
-        else return false;
+        return this.plant.isAlive() && ((this.dayPlant && this.plant.level().isDay()) || (!this.dayPlant && this.plant.level().isNight()));
     }
 
     public boolean requiresUpdateEveryTick() {

@@ -23,6 +23,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -32,8 +33,8 @@ public class ExplosivePlant extends Plant{
     private int swell;
     private int maxSwell = 20;
     private int explosionRadius;
-    private int damage;
-    private Holder<SoundEvent> sound;
+    private final int damage;
+    private final Holder<SoundEvent> sound;
 
     //Properties
     public ExplosivePlant(EntityType<? extends ExplosivePlant> entityType, Level level, TagKey<Item> substrate, ItemStack seedPacket, @Nullable ItemStack pottedItem, int explosionRadius, int damage, Holder<SoundEvent> sound) {
@@ -50,7 +51,7 @@ public class ExplosivePlant extends Plant{
     protected void registerGoals(){
         this.goalSelector.addGoal(1, new ModSwellGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, LivingEntity.class, 10, false, false,
-                (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE).booleanValue())));
+                (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE))));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
@@ -85,7 +86,7 @@ public class ExplosivePlant extends Plant{
                 canExplode = false;
             }
         }
-        if (!(target == null) && (target.hasData(ModDataAttachments.ZOMBIE) || target.getType().is(ModTags.Entities.PLANT_ENEMIES)) && canExplode) {
+        if (target != null && (target.hasData(ModDataAttachments.ZOMBIE) || target.getType().is(ModTags.Entities.PLANT_ENEMIES)) && canExplode) {
             super.setTarget(target);
         }
     }
@@ -104,18 +105,18 @@ public class ExplosivePlant extends Plant{
     }
 
     //Data
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+    protected void defineSynchedData(SynchedEntityData.@NotNull Builder builder) {
         super.defineSynchedData(builder);
         builder.define(DATA_SWELL_DIR, -1);
     }
 
-    public void addAdditionalSaveData(CompoundTag compound) {
+    public void addAdditionalSaveData(@NotNull CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putShort("Fuse", (short)this.maxSwell);
         compound.putByte("ExplosionRadius", (byte)this.explosionRadius);
     }
 
-    public void readAdditionalSaveData(CompoundTag compound) {
+    public void readAdditionalSaveData(@NotNull CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         if (compound.contains("Fuse", 99)) {
             this.maxSwell = compound.getShort("Fuse");

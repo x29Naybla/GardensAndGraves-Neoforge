@@ -5,6 +5,7 @@ import com.x29naybla.bloom_and_doom.data.ModTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.ExplosionDamageCalculator;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
@@ -17,15 +18,13 @@ public class ModExplosionDamageCalculator extends ExplosionDamageCalculator {
     }
 
     @Override
-    public float getKnockbackMultiplier(Entity entity) {
+    public float getKnockbackMultiplier(@NotNull Entity entity) {
         return 0;
     }
 
     @Override
-    public boolean shouldDamageEntity(Explosion explosion, Entity entity) {
-        if (entity.getType().is(ModTags.Entities.PLANT_ENEMIES) || entity.getData(ModDataAttachments.ZOMBIE)){
-            return true;
-        } else return false;
+    public boolean shouldDamageEntity(@NotNull Explosion explosion, Entity entity) {
+        return entity.getType().is(ModTags.Entities.PLANT_ENEMIES) || entity.getData(ModDataAttachments.ZOMBIE);
     }
 
     @Override

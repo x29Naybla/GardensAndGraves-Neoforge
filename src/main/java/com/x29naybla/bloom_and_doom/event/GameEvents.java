@@ -40,6 +40,7 @@ import net.neoforged.neoforge.event.entity.living.EnderManAngerEvent;
 import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 import net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -206,7 +207,7 @@ public class GameEvents {
         }
 
         @Nullable
-        public MerchantOffer getOffer(Entity trader, RandomSource random) {
+        public MerchantOffer getOffer(@NotNull Entity trader, @NotNull RandomSource random) {
             if (trader instanceof VillagerDataHolder villagerdataholder) {
                 Item item = this.trades.get(villagerdataholder.getVillagerData().getType());
                 if (item == null) {

@@ -66,7 +66,7 @@ public class ModEntities {
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
                 .add(Attributes.FOLLOW_RANGE,  9)
-                .add(Attributes.ENTITY_INTERACTION_RANGE, 9);;
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
 
         AttributeSupplier.Builder repeaterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)

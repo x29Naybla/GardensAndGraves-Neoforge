@@ -15,13 +15,14 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.common.Tags;
+import org.jetbrains.annotations.NotNull;
 
 public class WateringCanItem extends Item {
     public WateringCanItem(Properties properties) {
         super(properties);
     }
 
-    public InteractionResult useOn(UseOnContext context){
+    public @NotNull InteractionResult useOn(UseOnContext context){
         Level level = context.getLevel();
         BlockPlaceContext blockplacecontext = new BlockPlaceContext(context);
         BlockPos blockpos = blockplacecontext.getClickedPos();

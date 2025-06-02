@@ -5,3 +5,6 @@ changelog:
 * potato mines now keep their armed status when leaving and re-entering a world
 * made potted potato mines when replanted be armed by default
 * renamed wall-nut textures
+
+* fixed being able to replant potted plants on planters with contents that shouldn't support them
+* resolved some warnings

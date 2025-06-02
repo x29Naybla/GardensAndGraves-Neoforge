@@ -15,8 +15,7 @@ public class ModMarigoldingGoal extends Goal {
 
     @Override
     public boolean canUse(){
-        if(this.plant.isAlive() && !this.plant.isBaby()) return true;
-        else return false;
+        return this.plant.isAlive() && !this.plant.isBaby();
     }
 
     public void start(){
@@ -25,8 +24,7 @@ public class ModMarigoldingGoal extends Goal {
 
     @Override
     public boolean canContinueToUse() {
-        if(this.plant.isAlive()) return true;
-        else return false;
+        return this.plant.isAlive();
     }
 
     public boolean requiresUpdateEveryTick() {

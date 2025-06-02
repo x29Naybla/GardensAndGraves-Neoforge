@@ -36,6 +36,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -52,11 +53,11 @@ public class SeedPacketItem extends Item {
         this.cooldown = cooldown*20;
     }
 
-    public String getDescriptionId() {
+    public @NotNull String getDescriptionId() {
         return this.getOrCreateDescriptionId();
     }
 
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
         tooltipComponents.add(this.getDisplayName().withStyle(ChatFormatting.GRAY));
     }
 
@@ -64,61 +65,62 @@ public class SeedPacketItem extends Item {
         return Component.translatable(BloomAndDoom.MOD_ID+".description.seed_packets_sun_cost").append(String.valueOf(this.sunAmount));
     }
 
-    public InteractionResult useOn(UseOnContext context){
+    public @NotNull InteractionResult useOn(UseOnContext context){
         Level level = context.getLevel();
         BlockPlaceContext blockplacecontext = new BlockPlaceContext(context);
         BlockPos blockpos = blockplacecontext.getClickedPos();
         ItemStack stack = context.getItemInHand();
 
-        if ((context.getPlayer().getInventory().countItem(ModItems.SUN.get()) >= sunAmount) || context.getPlayer().isCreative() ||onPlanter(level, blockpos)){
-            Direction direction = context.getClickedFace();
-            if (direction == Direction.DOWN) {
-                return InteractionResult.FAIL;
-            }else if (onSubstrate(level, blockpos) || onPlanter(level, blockpos)){
-                ItemStack itemStack = context.getItemInHand();
-                Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
-                AABB aabb = this.getType(itemStack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
-                if(level.noCollision(null, aabb) && level.getEntities(null, aabb).isEmpty()){
-                    if(level instanceof ServerLevel){
-                        ServerLevel serverlevel = (ServerLevel)level;
-                        Entity entity = this.getType(itemStack).create(serverlevel, EntityType.createDefaultStackConfig(serverlevel, itemStack, context.getPlayer()), blockpos, MobSpawnType.SPAWN_EGG, false, false);
-                        if (entity == null) {
-                            return InteractionResult.FAIL;
-                        }
-                        float f = (float)Mth.floor((Mth.wrapDegrees(context.getRotation()) + 22.5F) / 45.0F) * 45.0F;
-                        entity.moveTo(entity.getX(), entity.getY(), entity.getZ(), 0, 0);
-                        entity.setYRot(f);
-                        entity.setXRot(0);
-                        if(entity instanceof Plant plant){
-                            if (plant.onRightSubstrate(level, blockpos)) {
-                                if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
-                                if(onPlanter(level, blockpos)){
-                                    plant.setBaby(true);
-                                    plant.fromPlanter = true;
-                                    plant.onPlanter = true;
-                                    if (plant instanceof MarigoldEntity) ((MarigoldEntity) plant).setColor(DyeColor.byId(level.getRandom().nextIntBetweenInclusive(0, 15)));
-                                }else
-                                    plant.fromPlanter = false;
-                                if(entity instanceof SunShroomEntity) plant.setBaby(true);
-                            } else
+        if (context.getPlayer() != null) {
+            if ((context.getPlayer().getInventory().countItem(ModItems.SUN.get()) >= sunAmount) || context.getPlayer().isCreative() ||onPlanter(level, blockpos)){
+                Direction direction = context.getClickedFace();
+                if (direction == Direction.DOWN) {
+                    return InteractionResult.FAIL;
+                }else if (onSubstrate(level, blockpos) || onPlanter(level, blockpos)){
+                    ItemStack itemStack = context.getItemInHand();
+                    Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
+                    AABB aabb = this.getType(itemStack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
+                    if(level.noCollision(null, aabb) && level.getEntities(null, aabb).isEmpty()){
+                        if(level instanceof ServerLevel serverLevel){
+                            Entity entity = this.getType(itemStack).create(serverLevel, EntityType.createDefaultStackConfig(serverLevel, itemStack, context.getPlayer()), blockpos, MobSpawnType.SPAWN_EGG, false, false);
+                            if (entity == null) {
                                 return InteractionResult.FAIL;
+                            }
+                            float f = (float)Mth.floor((Mth.wrapDegrees(context.getRotation()) + 22.5F) / 45.0F) * 45.0F;
+                            entity.moveTo(entity.getX(), entity.getY(), entity.getZ(), 0, 0);
+                            entity.setYRot(f);
+                            entity.setXRot(0);
+                            if(entity instanceof Plant plant){
+                                if (plant.onRightSubstrate(level, blockpos)) {
+                                    if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
+                                    if(onPlanter(level, blockpos)){
+                                        plant.setBaby(true);
+                                        plant.fromPlanter = true;
+                                        plant.onPlanter = true;
+                                        if (plant instanceof MarigoldEntity) ((MarigoldEntity) plant).setColor(DyeColor.byId(level.getRandom().nextIntBetweenInclusive(0, 15)));
+                                    }else
+                                        plant.fromPlanter = false;
+                                    if(entity instanceof SunShroomEntity) plant.setBaby(true);
+                                } else
+                                    return InteractionResult.FAIL;
+                            }
+                            itemStack.shrink(1);
+                            context.getPlayer().getCooldowns().addCooldown(this, cooldown);
+                            serverLevel.addFreshEntityWithPassengers(entity);
+                            level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.SEED_PACKER_PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
+                            entity.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
                         }
-                        itemStack.shrink(1);
-                        context.getPlayer().getCooldowns().addCooldown(this, cooldown);
-                        serverlevel.addFreshEntityWithPassengers(entity);
-                        level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.SEED_PACKER_PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
-                        entity.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
-                    }
-                    if(!((context.getPlayer().isCreative() || onPlanter(level, blockpos)))){
-                        if(this.sunAmount == 0){
-
-                        } else
-                            context.getPlayer().getInventory().removeItem(context.getPlayer().getInventory().findSlotMatchingItem(ModItems.SUN.toStack()), sunAmount);
-                    }
-                    return InteractionResult.sidedSuccess(level.isClientSide);
+                        if(!((context.getPlayer().isCreative() || onPlanter(level, blockpos)))){
+                            if(!(this.sunAmount == 0)) {
+                                context.getPlayer().getInventory().removeItem(context.getPlayer().getInventory().findSlotMatchingItem(ModItems.SUN.toStack()), sunAmount);
+                            }
+                        }
+                        return InteractionResult.sidedSuccess(level.isClientSide);
+                    } else return InteractionResult.FAIL;
                 } else return InteractionResult.FAIL;
-            } else return InteractionResult.FAIL;
-        } else return InteractionResult.FAIL;
+            }
+        }
+        return InteractionResult.FAIL;
     }
 
     public static boolean onSubstrate(BlockGetter level, BlockPos pos) {
@@ -134,10 +136,7 @@ public class SeedPacketItem extends Item {
     }
 
     public boolean isPlanter(BlockGetter reader, BlockPos pos) {
-        if (reader.getBlockEntity(pos) instanceof PlanterBlockEntity){
-            return true;
-        } else
-            return false;
+        return reader.getBlockEntity(pos) instanceof PlanterBlockEntity;
     }
 
     public EntityType<?> getType(ItemStack stack) {

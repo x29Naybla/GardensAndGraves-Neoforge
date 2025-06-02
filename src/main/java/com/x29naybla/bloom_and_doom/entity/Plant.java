@@ -31,6 +31,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.gameevent.GameEvent;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -77,7 +78,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     }
 
     @Override
-    public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
+    public @Nullable AgeableMob getBreedOffspring(@NotNull ServerLevel serverLevel, @NotNull AgeableMob ageableMob) {
         return null;
     }
 
@@ -91,16 +92,16 @@ public class Plant extends TamableAnimal implements GeoEntity {
     }
 
     @Override
-    protected void doPush(Entity entity) {
+    protected void doPush(@NotNull Entity entity) {
     }
 
     @Override
-    public boolean isFood(ItemStack itemStack) {
+    public boolean isFood(@NotNull ItemStack itemStack) {
         return false;
     }
 
     //Goals and AI
-    public InteractionResult mobInteract(Player player, InteractionHand hand) {
+    public @NotNull InteractionResult mobInteract(Player player, @NotNull InteractionHand hand) {
         ItemStack playerHand = player.getItemInHand(InteractionHand.MAIN_HAND);
 
         if(playerHand.getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
@@ -174,14 +175,10 @@ public class Plant extends TamableAnimal implements GeoEntity {
 
         if (!this.level().isClientSide) {
             if (this.mushroom) {
-                if (this.level().isNight()
-                        || this.gotCoffee
-                        || this.level().getBlockState(this.getOnPos()).is(BlockTags.MUSHROOM_GROW_BLOCK)
-                        || (this.level().getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity planterBlock && planterBlock.content.getStackInSlot(0).is(ModTags.Items.SUSTAINS_MUSHROOMS))) {
-                    setSleeping(false);
-                } else {
-                    setSleeping(true);
-                }
+                setSleeping(!this.level().isNight()
+                        && !this.gotCoffee
+                        && !this.level().getBlockState(this.getOnPos()).is(BlockTags.MUSHROOM_GROW_BLOCK)
+                        && (!(this.level().getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity planterBlock) || !planterBlock.content.getStackInSlot(0).is(ModTags.Items.SUSTAINS_MUSHROOMS)));
             } else {
                 setSleeping(false);
             }
@@ -201,10 +198,8 @@ public class Plant extends TamableAnimal implements GeoEntity {
     }
 
     public boolean onRightSubstrate(BlockGetter reader, BlockPos pos) {
-        if (reader.getBlockState(pos.below()).is(ModTags.Blocks.SUPPORTS_PLANTS) ||
-                (reader.getBlockEntity(pos.below()) instanceof PlanterBlockEntity planter && planter.content.getStackInSlot(0).is(this.substrate))) {
-            return true;
-        } else return false;
+        return reader.getBlockState(pos.below()).is(ModTags.Blocks.SUPPORTS_PLANTS) ||
+                (reader.getBlockEntity(pos.below()) instanceof PlanterBlockEntity planter && planter.content.getStackInSlot(0).is(this.substrate));
     }
 
     public void ageUp(int amount, boolean forced){
@@ -250,12 +245,12 @@ public class Plant extends TamableAnimal implements GeoEntity {
         this.entityData.set(DATA_IS_SLEEPING, isSleeping);
     }
 
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+    protected void defineSynchedData(SynchedEntityData.@NotNull Builder builder) {
         super.defineSynchedData(builder);
         builder.define(DATA_IS_SLEEPING, false);
     }
 
-    public void readAdditionalSaveData(CompoundTag compound) {
+    public void readAdditionalSaveData(@NotNull CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         if (compound.contains("FromPlanter")) {
             this.fromPlanter = compound.getBoolean("FromPlanter");
@@ -269,7 +264,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
 
     }
 
-    public void addAdditionalSaveData(CompoundTag compound) {
+    public void addAdditionalSaveData(@NotNull CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putBoolean("FromPlanter", this.fromPlanter);
         compound.putBoolean("IsSleeping", getSleeping());

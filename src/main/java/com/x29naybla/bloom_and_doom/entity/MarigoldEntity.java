@@ -21,6 +21,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.animation.AnimationState;
@@ -52,7 +53,7 @@ public class MarigoldEntity extends Plant {
         } else {
             int i = dyeColor.getTextureDiffuseColor();
             float f = 0.75F;
-            return FastColor.ARGB32.color(255, Mth.floor((float) FastColor.ARGB32.red(i) * 0.75F), Mth.floor((float) FastColor.ARGB32.green(i) * 0.75F), Mth.floor((float) FastColor.ARGB32.blue(i) * 0.75F));
+            return FastColor.ARGB32.color(255, Mth.floor((float) FastColor.ARGB32.red(i) * f), Mth.floor((float) FastColor.ARGB32.green(i) * f), Mth.floor((float) FastColor.ARGB32.blue(i) * f));
         }
     }
 
@@ -67,7 +68,7 @@ public class MarigoldEntity extends Plant {
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
     }
 
-    public InteractionResult mobInteract(Player player, InteractionHand hand) {
+    public @NotNull InteractionResult mobInteract(Player player, @NotNull InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
 
         if (itemStack.getItem() instanceof DyeItem) {
@@ -108,13 +109,13 @@ public class MarigoldEntity extends Plant {
     }
 
     //Data
-    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+    protected void defineSynchedData(SynchedEntityData.@NotNull Builder builder) {
         super.defineSynchedData(builder);
         builder.define(GENERATED, false);
         builder.define(DATA_PETALS_ID, (byte)0);
     }
 
-    public void readAdditionalSaveData(CompoundTag compound) {
+    public void readAdditionalSaveData(@NotNull CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         if (compound.contains("RewardGenerateTime")) {
             this.rewardTime = compound.getInt("RewardGenerateTime");
@@ -123,7 +124,7 @@ public class MarigoldEntity extends Plant {
         this.setColor(DyeColor.byId(compound.getByte("Color")));
     }
 
-    public void addAdditionalSaveData(CompoundTag compound) {
+    public void addAdditionalSaveData(@NotNull CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putInt("RewardGenerateTime", this.rewardTime);
         compound.putBoolean("Generated", getEntityData().get(GENERATED));
@@ -139,11 +140,11 @@ public class MarigoldEntity extends Plant {
     }
 
     public DyeColor getColor() {
-        return DyeColor.byId((Byte)this.entityData.get(DATA_PETALS_ID) & 15);
+        return DyeColor.byId(this.entityData.get(DATA_PETALS_ID) & 15);
     }
 
     public void setColor(DyeColor dyeColor) {
-        byte b0 = (Byte)this.entityData.get(DATA_PETALS_ID);
+        byte b0 = this.entityData.get(DATA_PETALS_ID);
         this.entityData.set(DATA_PETALS_ID, (byte)(b0 & 240 | dyeColor.getId() & 15));
         dyedColor = dyeColor;
     }
