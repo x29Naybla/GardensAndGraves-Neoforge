@@ -6,20 +6,20 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.level.gameevent.GameEvent;
 
+import static com.x29naybla.bloom_and_doom.entity.Plant.DATA_IS_SLEEPING;
+
 public class ModGenerateSunGoal extends Goal {
     private final SolarPlant plant;
     private final SoundEvent sound;
-    private final Boolean dayPlant;
 
-    public ModGenerateSunGoal(SolarPlant plant, SoundEvent sound, Boolean dayPlant) {
+    public ModGenerateSunGoal(SolarPlant plant, SoundEvent sound) {
         this.plant = plant;
         this.sound = sound;
-        this.dayPlant = dayPlant;
     }
 
     @Override
     public boolean canUse(){
-        return this.plant.isAlive() && ((this.dayPlant && this.plant.level().isDay()) || (!this.dayPlant && this.plant.level().isNight()));
+        return this.plant.isAlive() && ((!this.plant.isMushroom && this.plant.level().isDay()) || (this.plant.isMushroom && !this.plant.getEntityData().get(DATA_IS_SLEEPING)));
     }
 
     public void start(){
@@ -28,7 +28,7 @@ public class ModGenerateSunGoal extends Goal {
 
     @Override
     public boolean canContinueToUse() {
-        return this.plant.isAlive() && ((this.dayPlant && this.plant.level().isDay()) || (!this.dayPlant && this.plant.level().isNight()));
+        return this.plant.isAlive() && ((!this.plant.isMushroom && this.plant.level().isDay()) || (this.plant.isMushroom && !this.plant.getEntityData().get(DATA_IS_SLEEPING)));
     }
 
     public boolean requiresUpdateEveryTick() {
@@ -36,10 +36,10 @@ public class ModGenerateSunGoal extends Goal {
     }
 
     public void tick(){
-        if (!this.dayPlant || (this.dayPlant && !this.plant.level().isRainingAt(this.plant.getOnPos().above()))) {
-            if (!this.plant.isBaby()) {
+        if (this.plant.isMushroom || !this.plant.level().isRainingAt(this.plant.getOnPos().above())) {
+            if (this.plant.canBaby || !this.plant.isBaby()) {
                 --this.plant.sunTime;
-                if (this.plant.sunTime == 5985) {
+                if (this.plant.sunTime == plant.maxSunTime-15) {
                     this.plant.setGenerated(false);
                 }
                 if (this.plant.sunTime <= 5) {
@@ -49,8 +49,9 @@ public class ModGenerateSunGoal extends Goal {
                     this.plant.playSound(this.sound, 1.0F, (this.plant.getRandom().nextFloat() - this.plant.getRandom().nextFloat()) * 0.2F + 1.0F);
                     this.plant.spawnAtLocation(ModItems.SUN);
                     this.plant.gameEvent(GameEvent.ENTITY_PLACE);
-                    this.plant.sunTime = 6000;
-
+                    if (this.plant.isBaby()) {
+                        this.plant.sunTime = plant.maxSunTime*2;
+                    } else this.plant.sunTime = plant.maxSunTime;
                 }
             }
         }

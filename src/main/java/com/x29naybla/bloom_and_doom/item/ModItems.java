@@ -17,7 +17,7 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(BloomAndDoom.MOD_ID);
 
     public static final DeferredItem<Item> SUN = ITEMS.register("sun",
-            () -> new Item(new Item.Properties()));
+            () -> new SunItem(new Item.Properties()));
     public static final DeferredItem<Item> BRAIN = ITEMS.register("brain",
             () -> new Item(new Item.Properties().food(ModFoodProperties.BRAIN)));
 

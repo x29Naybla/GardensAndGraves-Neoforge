@@ -1,5 +1,6 @@
 package com.x29naybla.bloom_and_doom.jade;
 
+import com.x29naybla.bloom_and_doom.BloomAndDoom;
 import com.x29naybla.bloom_and_doom.entity.SolarPlant;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -17,10 +18,9 @@ public enum SunTimerProvider implements IEntityComponentProvider, IServerDataPro
     @Override
     public void appendTooltip(ITooltip iTooltip, EntityAccessor entityAccessor, IPluginConfig iPluginConfig) {
         CompoundTag compound = entityAccessor.getServerData();
-        SolarPlant solarPlant = (SolarPlant) entityAccessor.getEntity();
 
-        if (entityAccessor.getServerData().contains("SunTimer") && !solarPlant.isBaby()) {
-            iTooltip.add(Component.translatable("bloom_and_doom.sun_timer", entityAccessor.getServerData().getInt("SunTimer")));
+        if (entityAccessor.getServerData().contains("SunTimer") && (entityAccessor.getServerData().getBoolean("CanBaby") || !entityAccessor.getServerData().getBoolean("IsBaby"))) {
+            iTooltip.add(Component.translatable(BloomAndDoom.MOD_ID+".sun_timer", entityAccessor.getServerData().getInt("SunTimer")));
             iTooltip.append(IThemeHelper.get().seconds(compound.getInt("SunTimer"), 20));
         }
     }
@@ -29,6 +29,8 @@ public enum SunTimerProvider implements IEntityComponentProvider, IServerDataPro
     public void appendServerData(CompoundTag compoundTag, EntityAccessor entityAccessor) {
         SolarPlant solarPlant = (SolarPlant) entityAccessor.getEntity();
         compoundTag.putInt("SunTimer", solarPlant.sunTime);
+        compoundTag.putBoolean("IsBaby", solarPlant.isBaby());
+        compoundTag.putBoolean("CanBaby", solarPlant.canBaby);
     }
 
     @Override

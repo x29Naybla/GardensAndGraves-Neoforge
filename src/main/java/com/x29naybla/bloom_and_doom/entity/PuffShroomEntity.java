@@ -21,7 +21,7 @@ public class PuffShroomEntity extends ShootingPlant {
     //Properties
     public PuffShroomEntity(EntityType<? extends PuffShroomEntity> entityType, Level level) {
         super(entityType, level, ModTags.Items.SUSTAINS_PUFF_SHROOMS, ModItems.SEED_PACKET_PUFF_SHROOM.toStack(), ModItems.POTTED_PUFF_SHROOM.toStack());
-        this.mushroom = true;
+        this.isMushroom = true;
     }
 
     //Goals and AI

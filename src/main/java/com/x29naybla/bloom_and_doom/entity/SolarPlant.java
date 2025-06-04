@@ -14,13 +14,15 @@ import org.jetbrains.annotations.Nullable;
 
 public class SolarPlant extends Plant{
     protected static final EntityDataAccessor<Boolean> GENERATED = SynchedEntityData.defineId(SolarPlant.class, EntityDataSerializers.BOOLEAN);
+    public boolean canBaby;
     public int sunTime;
+    public final int maxSunTime = 960;
 
     //Properties
-    public SolarPlant(EntityType<? extends SolarPlant> entityType, Level level, TagKey<Item> substrate, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
+    public SolarPlant(EntityType<? extends SolarPlant> entityType, Level level, TagKey<Item> substrate, ItemStack seedPacket, @Nullable ItemStack pottedItem, Boolean canBaby) {
         super(entityType, level, substrate, seedPacket, pottedItem);
-        if (this.isBaby()) this.sunTime = 12000;
-        else this.sunTime = 6000;
+        this.sunTime = maxSunTime;
+        this.canBaby = canBaby;
     }
 
     //Data

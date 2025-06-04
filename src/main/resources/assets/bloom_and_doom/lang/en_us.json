@@ -182,7 +182,7 @@
   "bloom_and_doom.advancement.first_pack.desc": "Get your first seed packet",
 
   "bloom_and_doom.advancement.sunflower": "Sunflower",
-  "bloom_and_doom.advancement.sunflower.desc": "They generate one Sun every 5 minutes, during the day. Can be found in plains villages",
+  "bloom_and_doom.advancement.sunflower.desc": "They generate one Sun every 48 seconds, during the day. Can be found in plains villages",
 
   "bloom_and_doom.advancement.marigold": "Marigold",
   "bloom_and_doom.advancement.marigold.desc": "They generate between 1 and 3 iron or gold nuggets every 5 minutes. Can be found in abandoned mineshafts and shipwrecks",
@@ -212,7 +212,7 @@
   "bloom_and_doom.advancement.bonk_choy.desc": "Can be found in savanna and desert villages and desert pyramids",
 
   "bloom_and_doom.advancement.sun_shroom": "Sun-shroom",
-  "bloom_and_doom.advancement.sun_shroom.desc": "They generate one Sun every 5 minutes, during the night. Can be found in taiga villages",
+  "bloom_and_doom.advancement.sun_shroom.desc": "When they're awake, they take 48 seconds to generate one Sun when adults, and 1 minute and 36 seconds when babies. Can be found in taiga villages",
 
   "bloom_and_doom.advancement.puff_shroom": "Puff-shroom",
   "bloom_and_doom.advancement.puff_shroom.desc": "They're cheap, but with a short distance. Can be found in taiga villages",

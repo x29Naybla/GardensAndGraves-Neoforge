@@ -21,13 +21,13 @@ public class SunflowerEntity extends SolarPlant {
 
     //Properties
     public SunflowerEntity(EntityType<? extends SunflowerEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_SUNFLOWERS, ModItems.SEED_PACKET_SUNFLOWER.toStack(), ModItems.POTTED_SUNFLOWER.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_SUNFLOWERS, ModItems.SEED_PACKET_SUNFLOWER.toStack(), ModItems.POTTED_SUNFLOWER.toStack(), false);
     }
 
     //Goals and AI
     protected void registerGoals(){
         this.goalSelector.addGoal(1, new FloatGoal(this));
-        this.goalSelector.addGoal(2, new ModGenerateSunGoal(this, ModSounds.SUNFLOWER_SUN.get(), true));
+        this.goalSelector.addGoal(2, new ModGenerateSunGoal(this, ModSounds.SUNFLOWER_SUN.get()));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 

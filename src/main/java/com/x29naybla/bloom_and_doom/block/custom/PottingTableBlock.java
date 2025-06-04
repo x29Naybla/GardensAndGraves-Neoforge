@@ -11,12 +11,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
+import org.jetbrains.annotations.NotNull;
 
 public class PottingTableBlock extends Block {
     public static final DirectionProperty FACING;
     public static final MapCodec<PottingTableBlock> CODEC = simpleCodec(PottingTableBlock::new);
 
-    public MapCodec<PottingTableBlock> codec() {
+    public @NotNull MapCodec<PottingTableBlock> codec() {
         return CODEC;
     }
 
@@ -29,11 +30,11 @@ public class PottingTableBlock extends Block {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
-    protected BlockState rotate(BlockState state, Rotation rotation) {
+    protected @NotNull BlockState rotate(BlockState state, Rotation rotation) {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
-    protected BlockState mirror(BlockState state, Mirror mirror) {
+    protected @NotNull BlockState mirror(BlockState state, Mirror mirror) {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 

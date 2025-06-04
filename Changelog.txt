@@ -8,3 +8,13 @@ changelog:
 
 * fixed being able to replant potted plants on planters with contents that shouldn't support them
 * resolved some warnings
+
+* made baby sun-shrooms plants able to produce sun
+* shortened the time needed to produce sun from 5 minutes to 48 seconds (adult plants) and 1 minute and 36 seconds (baby plants)
+* shortened the time needed for sun-shrooms to grow on the lawn from 20 minutes to 4 minutes
+* raised the time needed for sun-shrooms to grow on planters from 20 minutes to 24 minutes
+* fixes in French translations
+* added missing French translations for the watering cans and
+* added missing French translation for the Brain item
+* added missing French translations for the "planters" and "mushrooms" block tags
+* added missing French translations for the "flowers", "mushrooms" and "plants" entity tags

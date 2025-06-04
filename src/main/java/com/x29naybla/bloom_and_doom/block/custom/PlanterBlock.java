@@ -29,13 +29,12 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.util.TriState;
-
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 public class PlanterBlock extends BaseEntityBlock {
     public static final MapCodec<PlanterBlock> CODEC = simpleCodec(PlanterBlock::new);
 
-    public MapCodec<? extends BaseEntityBlock> codec() {
+    public @NotNull MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
     }
 
@@ -45,14 +44,13 @@ public class PlanterBlock extends BaseEntityBlock {
         super(properties);
     }
 
-    @Nullable
     @Override
-    public BlockEntity newBlockEntity(BlockPos pos, BlockState state){
+    public BlockEntity newBlockEntity(@NotNull BlockPos pos, @NotNull BlockState state){
         return new PlanterBlockEntity(pos, state);
     }
 
     @Override
-    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+    protected void onRemove(BlockState state, @NotNull Level level, @NotNull BlockPos pos, BlockState newState, boolean movedByPiston) {
         if(state.getBlock() != newState.getBlock()) {
             if (level.getBlockEntity(pos) instanceof PlanterBlockEntity planter) {
                 planter.drops();
@@ -63,7 +61,7 @@ public class PlanterBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
+    protected @NotNull ItemInteractionResult useItemOn(@NotNull ItemStack itemStack, @NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult result) {
         if(level.getBlockEntity(pos) instanceof PlanterBlockEntity planter) {
             if(itemStack.is(ModTags.Items.PLANTER_SUBSTRATES)) {
                 if(planter.content.getStackInSlot(0).isEmpty()) {
@@ -99,12 +97,12 @@ public class PlanterBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType type) {
+    protected boolean isPathfindable(@NotNull BlockState state, @NotNull PathComputationType type) {
         return false;
     }
 
     @Override
-    public TriState canSustainPlant(BlockState state, BlockGetter level, BlockPos soilPosition, Direction facing, BlockState plant) {
+    public @NotNull TriState canSustainPlant(@NotNull BlockState state, BlockGetter level, @NotNull BlockPos soilPosition, @NotNull Direction facing, @NotNull BlockState plant) {
         if(level.getBlockEntity(soilPosition) instanceof PlanterBlockEntity planter) {
             ItemStack substrate = planter.content.getStackInSlot(0);
 
@@ -130,12 +128,12 @@ public class PlanterBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    protected @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return SHAPE;
     }
 
     @Override
-    protected RenderShape getRenderShape(BlockState state) {
+    protected @NotNull RenderShape getRenderShape(@NotNull BlockState state) {
         return RenderShape.MODEL;
     }
 }

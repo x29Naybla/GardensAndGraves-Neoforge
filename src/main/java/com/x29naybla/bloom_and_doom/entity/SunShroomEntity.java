@@ -20,14 +20,15 @@ public class SunShroomEntity extends SolarPlant {
 
     //Properties
     public SunShroomEntity(EntityType<? extends SunShroomEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_SUN_SHROOMS, ModItems.SEED_PACKET_SUN_SHROOM.toStack(), ModItems.POTTED_SUN_SHROOM.toStack());
-        this.mushroom = true;
+        super(entityType, level, ModTags.Items.SUSTAINS_SUN_SHROOMS, ModItems.SEED_PACKET_SUN_SHROOM.toStack(), ModItems.POTTED_SUN_SHROOM.toStack(), true);
+        this.isMushroom = true;
+        this.sunTime = maxSunTime*2;
     }
 
     //Goals and AI
     protected void registerGoals(){
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new ModGenerateSunGoal(this, ModSounds.SUN_SHROOM_SUN.get(),false));
+        this.goalSelector.addGoal(1, new ModGenerateSunGoal(this, ModSounds.SUN_SHROOM_SUN.get()));
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
     }
 

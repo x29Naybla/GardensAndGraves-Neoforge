@@ -94,13 +94,16 @@ public class SeedPacketItem extends Item {
                                 if (plant.onRightSubstrate(level, blockpos)) {
                                     if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
                                     if(onPlanter(level, blockpos)){
-                                        plant.setBaby(true);
+                                        if(entity instanceof SunShroomEntity) plant.setAge(-28800);
+                                        else
+                                            plant.setBaby(true);
                                         plant.fromPlanter = true;
                                         plant.onPlanter = true;
                                         if (plant instanceof MarigoldEntity) ((MarigoldEntity) plant).setColor(DyeColor.byId(level.getRandom().nextIntBetweenInclusive(0, 15)));
-                                    }else
+                                    }else {
                                         plant.fromPlanter = false;
-                                    if(entity instanceof SunShroomEntity) plant.setBaby(true);
+                                        if(entity instanceof SunShroomEntity) plant.setAge(-4800);
+                                    }
                                 } else
                                     return InteractionResult.FAIL;
                             }

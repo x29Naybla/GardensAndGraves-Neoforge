@@ -12,22 +12,25 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class PlanterBlockEntity extends BlockEntity {
     public final ItemStackHandler content = new ItemStackHandler(1){
         @Override
-        protected int getStackLimit(int slot, ItemStack stack) {
+        protected int getStackLimit(int slot, @NotNull ItemStack stack) {
             return 1;
         }
 
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
-            if(!level.isClientSide()) {
-                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
-                PlanterBlockEntity.this.requestModelDataUpdate();
-                PlanterBlockEntity.this.setChanged();
+            if(level != null) {
+                if(!level.isClientSide()) {
+                    level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+                    PlanterBlockEntity.this.requestModelDataUpdate();
+                    PlanterBlockEntity.this.setChanged();
+                }
             }
         }
     };
@@ -46,17 +49,17 @@ public class PlanterBlockEntity extends BlockEntity {
             inv.setItem(i, content.getStackInSlot(i));
         }
 
-        Containers.dropContents(this.level, this.worldPosition, inv);
+        if (level != null) Containers.dropContents(this.level, this.worldPosition, inv);
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+    protected void saveAdditional(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) {
         super.saveAdditional(tag, registries);
         tag.put("content", content.serializeNBT(registries));
     }
 
     @Override
-    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+    protected void loadAdditional(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider registries) {
         super.loadAdditional(tag, registries);
         content.deserializeNBT(registries, tag.getCompound("content"));
     }
@@ -67,7 +70,7 @@ public class PlanterBlockEntity extends BlockEntity {
     }
 
     @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+    public @NotNull CompoundTag getUpdateTag(HolderLookup.@NotNull Provider registries) {
         return saveWithoutMetadata(registries);
     }
 }

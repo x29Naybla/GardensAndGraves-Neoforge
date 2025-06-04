@@ -15,6 +15,7 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
 public class GravestoneBlock extends Block {
     public static final MapCodec<GravestoneBlock> CODEC = simpleCodec(GravestoneBlock::new);
@@ -22,7 +23,7 @@ public class GravestoneBlock extends Block {
 
     private static final VoxelShape SHAPE = Shapes.or(Shapes.join(Block.box(0, 0, 10, 16, 4, 16), Block.box(2, 4, 11, 14, 16, 15), BooleanOp.OR));
 
-    public MapCodec<GravestoneBlock> codec() {
+    public @NotNull MapCodec<GravestoneBlock> codec() {
         return CODEC;
     }
 
@@ -32,12 +33,12 @@ public class GravestoneBlock extends Block {
     }
 
     @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType type) {
+    protected boolean isPathfindable(@NotNull BlockState state, @NotNull PathComputationType type) {
         return false;
     }
 
     @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+    protected @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         Direction direction = state.getValue(FACING);
 
         if(direction == Direction.NORTH || direction == Direction.WEST){
@@ -59,7 +60,7 @@ public class GravestoneBlock extends Block {
     }
 
     @Override
-    protected RenderShape getRenderShape(BlockState state) {
+    protected @NotNull RenderShape getRenderShape(@NotNull BlockState state) {
         return RenderShape.MODEL;
     }
 
@@ -67,11 +68,11 @@ public class GravestoneBlock extends Block {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
-    protected BlockState rotate(BlockState state, Rotation rotation) {
+    protected @NotNull BlockState rotate(BlockState state, Rotation rotation) {
         return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
-    protected BlockState mirror(BlockState state, Mirror mirror) {
+    protected @NotNull BlockState mirror(BlockState state, Mirror mirror) {
         return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 

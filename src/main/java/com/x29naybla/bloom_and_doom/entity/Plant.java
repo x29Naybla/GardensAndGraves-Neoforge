@@ -40,7 +40,7 @@ import software.bernie.geckolib.animation.AnimatableManager;
 import java.util.List;
 
 public class Plant extends TamableAnimal implements GeoEntity {
-    private static final EntityDataAccessor<Boolean> DATA_IS_SLEEPING = SynchedEntityData.defineId(Plant.class, EntityDataSerializers.BOOLEAN);
+    public static final EntityDataAccessor<Boolean> DATA_IS_SLEEPING = SynchedEntityData.defineId(Plant.class, EntityDataSerializers.BOOLEAN);
     protected int ticksForSleepyParticles;
     protected TagKey<Item> substrate;
     public int packetTime;
@@ -49,7 +49,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public ItemStack seedPacket;
     @Nullable
     public ItemStack pottedItem;
-    public boolean mushroom;
+    public boolean isMushroom;
     public boolean gotCoffee;
     private final boolean fromDay;
     private final boolean fromNight;
@@ -62,7 +62,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
         this.onPlanter = level.getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity;
         this.seedPacket = seedPacket;
         this.pottedItem = pottedItem;
-        this.mushroom = false;
+        this.isMushroom = false;
         this.gotCoffee = false;
         this.ticksForSleepyParticles = 40;
 
@@ -174,7 +174,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
         }
 
         if (!this.level().isClientSide) {
-            if (this.mushroom) {
+            if (this.isMushroom) {
                 setSleeping(!this.level().isNight()
                         && !this.gotCoffee
                         && !this.level().getBlockState(this.getOnPos()).is(BlockTags.MUSHROOM_GROW_BLOCK)

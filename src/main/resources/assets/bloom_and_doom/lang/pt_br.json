@@ -182,7 +182,7 @@
   "bloom_and_doom.advancement.first_pack.desc": "Consiga seu primeiro pacote de sementes",
 
   "bloom_and_doom.advancement.sunflower": "Girassol",
-  "bloom_and_doom.advancement.sunflower.desc": "Gera um Sol a cada 5 minutos, durante o dia. Pode ser encontrado em vilas de planície",
+  "bloom_and_doom.advancement.sunflower.desc": "Gera um Sol a cada 48 segundos, durante o dia. Pode ser encontrado em vilas de planície",
 
   "bloom_and_doom.advancement.marigold": "Calêndula",
   "bloom_and_doom.advancement.marigold.desc": "Gera entre 1 e 3 pepitas de ferro ou ouro a cada 5 minutos. Pode ser encontrada em minas abandonadas e navios naufragados",
@@ -212,7 +212,7 @@
   "bloom_and_doom.advancement.bonk_choy.desc": "Pode ser encontrada em vilas de deserto e savana e pirâmides do deserto",
 
   "bloom_and_doom.advancement.sun_shroom": "Solargumelo",
-  "bloom_and_doom.advancement.sun_shroom.desc": "Gera um Sol a cada 5 minutos, durante a noite. Pode ser encontrado em vilas de taiga",
+  "bloom_and_doom.advancement.sun_shroom.desc": "Quando acordado, leva 48 segundos para gerar um Sol quando adulto, e 1 minuto e 36 segundos quando bebês. Pode ser encontrado em vilas de taiga",
 
   "bloom_and_doom.advancement.puff_shroom": "Soprogumelo",
   "bloom_and_doom.advancement.puff_shroom.desc": "Barato, mas com um curto alcance. Pode ser encontrado em vilas de taiga",
