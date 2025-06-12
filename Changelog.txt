@@ -18,3 +18,12 @@ changelog:
 * added missing French translation for the Brain item
 * added missing French translations for the "planters" and "mushrooms" block tags
 * added missing French translations for the "flowers", "mushrooms" and "plants" entity tags
+
+* zombie players can cure themselves similarly to how zombie villagers are cured (drinking milk will cancel the curing process)
+* renamed ModShootGoal to PlantShootGoal
+* renamed ModReShootGoal to PlantShootDoubleGoal
+* replaced the IllegalArgumentException message from PlantShootGoal and PlantShootDoubleGoal
+* made a PlantProjectile as a parent class for PeaProjectile, FrozenPeaProjectile, and SporeProjectile
+* added a Damage Type for spore projectiles
+* added support for Farmer's Delight's Rich Soil
+* fixed placement of plants and mushrooms on planters

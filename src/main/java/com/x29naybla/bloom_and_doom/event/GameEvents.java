@@ -10,7 +10,11 @@ import com.x29naybla.bloom_and_doom.potion.ModPotions;
 import com.x29naybla.bloom_and_doom.villager.ModVillagers;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -39,6 +43,7 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.EnderManAngerEvent;
 import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 import net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import org.jetbrains.annotations.NotNull;
 
@@ -233,6 +238,39 @@ public class GameEvents {
     public static void zombiePlayerSleep(CanPlayerSleepEvent event){
         if(event.getEntity().getData(ModDataAttachments.ZOMBIE) && event.getProblem() == Player.BedSleepingProblem.NOT_SAFE) {
             event.setProblem(null);
+        }
+    }
+
+    @SubscribeEvent
+    public static void zombiePlayerCureSelf(PlayerTickEvent.Pre event) {
+        Player player = event.getEntity();
+        boolean fromCuring = false;
+        if(player.getData(ModDataAttachments.ZOMBIE)) {
+            if(player.hasEffect(MobEffects.WEAKNESS) && ((player.getUseItem().is(Items.GOLDEN_APPLE) || player.getUseItem().is(Items.ENCHANTED_GOLDEN_APPLE)) && player.getUseItemRemainingTicks() <= 1)) {
+                player.removeEffect(MobEffects.WEAKNESS);
+                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ZOMBIE_VILLAGER_CURE, SoundSource.PLAYERS);
+                player.addEffect(new MobEffectInstance(
+                        MobEffects.DAMAGE_BOOST,
+                        6000,
+                        0,
+                        false,
+                        true,
+                        true
+                ));
+                fromCuring = true;
+            }
+            if(player.hasEffect(MobEffects.DAMAGE_BOOST) && player.getEffect(MobEffects.DAMAGE_BOOST).getDuration() <= 1 && fromCuring){
+                player.removeData(ModDataAttachments.ZOMBIE);
+                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ZOMBIE_VILLAGER_CONVERTED, SoundSource.PLAYERS);
+                player.addEffect(new MobEffectInstance(
+                        MobEffects.CONFUSION,
+                        200,
+                        0,
+                        false,
+                        true,
+                        true
+                ));
+            }
         }
     }
 

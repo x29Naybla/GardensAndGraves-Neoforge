@@ -158,6 +158,7 @@
 
   "death.attack.pea": "%1$s foi ervilhado(a) até a morte",
   "death.attack.frozen_pea": "%1$s foi congervilhado(a)",
+  "death.attack.spore": "%1$s was sent to their spore-n point",
   "death.attack.plant_explosion": "%1$s foi transformado(a) em purê",
 
   "creativetab.bloom_and_doom.blocks": "B&D blocos",

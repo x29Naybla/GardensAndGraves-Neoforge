@@ -6,6 +6,7 @@ import com.x29naybla.bloom_and_doom.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -36,7 +37,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(Items.MYCELIUM)
                 .add(Items.PODZOL)
                 .add(Items.CRIMSON_NYLIUM)
-                .add(Items.WARPED_NYLIUM);
+                .add(Items.WARPED_NYLIUM)
+                .addOptional(ResourceLocation.parse("farmersdelight:organic_compost"))
+                .addOptional(ResourceLocation.parse("farmersdelight:rich_soil"));
 
         tag(ModTags.Items.SUSTAINS_SUNFLOWERS)
                 .addTag(ItemTags.DIRT);
@@ -160,5 +163,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         //Vanilla Tags
         tag(ItemTags.MEAT)
                 .add(ModItems.BRAIN.get());
+        tag(ItemTags.DIRT)
+                .addOptional(ResourceLocation.parse("farmersdelight:rich_soil"));
     }
 }

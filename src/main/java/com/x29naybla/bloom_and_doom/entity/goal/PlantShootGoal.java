@@ -4,14 +4,12 @@ import com.x29naybla.bloom_and_doom.entity.ShootingPlant;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.monster.RangedAttackMob;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
 
-public class ModReShootGoal extends Goal {
+public class PlantShootGoal extends Goal {
     private final ShootingPlant shootingPlant;
-    private final RangedAttackMob rangedAttackMob;
     @Nullable
     private LivingEntity target;
     private int attackTime;
@@ -25,17 +23,16 @@ public class ModReShootGoal extends Goal {
     private int shootTimer;
     private final int timerCap;
 
-    public ModReShootGoal(RangedAttackMob rangedAttackMob, int timeInSeconds, double speedModifier, int attackInterval, float attackRadius){
-        this(rangedAttackMob, timeInSeconds, speedModifier, attackInterval, attackInterval, attackRadius);
+    public PlantShootGoal(ShootingPlant shootingPlant, int timeInSeconds, double speedModifier, int attackInterval, float attackRadius){
+        this(shootingPlant, timeInSeconds, speedModifier, attackInterval, attackInterval, attackRadius);
     }
 
-    public ModReShootGoal(RangedAttackMob rangedAttackMob, int timeInSeconds, double speedModifier, int attackIntervalMin, int attackIntervalMax, float attackRadius){
+    public PlantShootGoal(ShootingPlant shootingPlant, int timeInSeconds, double speedModifier, int attackIntervalMin, int attackIntervalMax, float attackRadius){
         this.attackTime = -1;
-        if (!(rangedAttackMob instanceof LivingEntity)) {
-            throw new IllegalArgumentException("ArrowAttackGoal requires Mob implements RangedAttackMob");
+        if (shootingPlant == null) {
+            throw new IllegalArgumentException("PlantShootGoal requires Mob extends ShootingPlant");
         } else {
-            this.rangedAttackMob = rangedAttackMob;
-            this.shootingPlant = (ShootingPlant) rangedAttackMob;
+            this.shootingPlant = shootingPlant;
             this.timerCap = timeInSeconds * 20;
             this.speedModifier = speedModifier;
             this.attackIntervalMin = attackIntervalMin;
@@ -97,28 +94,16 @@ public class ModReShootGoal extends Goal {
             }
 
             this.shootingPlant.getLookControl().setLookAt(this.target, 30.0F, 30.0F);
-
-            --this.attackTime;
-            if (this.attackTime == 3) {
+            if (--this.attackTime == 3) {
                 if (!flag) {
                     return;
                 }
 
                 float f = (float)Math.sqrt(d0) / this.attackRadius;
                 float f1 = Mth.clamp(f, 0.1F, 1.0F);
-                this.rangedAttackMob.performRangedAttack(this.target, f1);
-            }
-            if (this.attackTime == 2) {
-                if (!flag) {
-                    return;
-                }
-
-                float f = (float)Math.sqrt(d0) / this.attackRadius;
-                float f1 = Mth.clamp(f, 0.1F, 1.0F);
-                this.rangedAttackMob.performRangedAttack(this.target, f1);
+                this.shootingPlant.performRangedAttack(this.target, f1);
                 this.attackTime = Mth.floor(f * (float)(this.attackIntervalMax - this.attackIntervalMin) + (float)this.attackIntervalMin);
-            }
-            if (this.attackTime < 0) {
+            } else if (this.attackTime < 0) {
                 this.attackTime = Mth.floor(Mth.lerp(Math.sqrt(d0) / (double)this.attackRadius, this.attackIntervalMin, this.attackIntervalMax));
             }
         }

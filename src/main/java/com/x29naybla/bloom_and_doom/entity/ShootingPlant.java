@@ -2,7 +2,7 @@ package com.x29naybla.bloom_and_doom.entity;
 
 import com.x29naybla.bloom_and_doom.data.ModDataAttachments;
 import com.x29naybla.bloom_and_doom.data.ModTags;
-import com.x29naybla.bloom_and_doom.entity.goal.ModShootGoal;
+import com.x29naybla.bloom_and_doom.entity.goal.PlantShootGoal;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -32,7 +32,7 @@ public class ShootingPlant extends Plant implements RangedAttackMob {
 
     //Goals and AI
     protected void registerGoals(){
-        this.goalSelector.addGoal(1, new ModShootGoal(this, 1, 1.25F, 30, 8.5F));
+        this.goalSelector.addGoal(1, new PlantShootGoal(this, 1, 1.25F, 30, 8.5F));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, LivingEntity.class, 10, false, false,
                 (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE).booleanValue())));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));

@@ -3,6 +3,14 @@
     "minecraft:mycelium",
     "minecraft:podzol",
     "minecraft:crimson_nylium",
-    "minecraft:warped_nylium"
+    "minecraft:warped_nylium",
+    {
+      "id": "farmersdelight:organic_compost",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:rich_soil",
+      "required": false
+    }
   ]
 }

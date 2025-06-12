@@ -90,6 +90,7 @@ dependencies {
     implementation "net.neoforged:neoforge:${neo_version}"
     implementation "software.bernie.geckolib:geckolib-neoforge-1.21.1:${geckolib_version}"
     implementation "maven.modrinth:jade:${jade_version}+neoforge"
+    implementation "maven.modrinth:farmers-delight:${farmersdelight_version}"
 }
 
 tasks.withType(ProcessResources).configureEach {

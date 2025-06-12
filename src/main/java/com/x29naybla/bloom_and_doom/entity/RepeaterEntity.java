@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.entity;
 
 import com.x29naybla.bloom_and_doom.data.ModTags;
-import com.x29naybla.bloom_and_doom.entity.goal.ModReShootGoal;
+import com.x29naybla.bloom_and_doom.entity.goal.PlantShootDoubleGoal;
 import com.x29naybla.bloom_and_doom.entity.projectile.PeaProjectile;
 import com.x29naybla.bloom_and_doom.item.ModItems;
 import com.x29naybla.bloom_and_doom.sound.ModSounds;
@@ -30,7 +30,7 @@ public class RepeaterEntity extends ShootingPlant {
     //Goals and AI
     @Override
     protected void registerGoals(){
-        this.goalSelector.addGoal(1, new ModReShootGoal(this, 1, 1.25F, 30, 8.5F));
+        this.goalSelector.addGoal(1, new PlantShootDoubleGoal(this, 1, 1.25F, 30, 8.5F));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Mob.class, 10, true, false, (target) -> target instanceof Entity entity && entity.getType().is(ModTags.Entities.PLANT_ENEMIES)));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }

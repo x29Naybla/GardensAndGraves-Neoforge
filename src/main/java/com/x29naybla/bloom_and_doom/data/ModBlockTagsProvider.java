@@ -4,6 +4,7 @@ import com.x29naybla.bloom_and_doom.BloomAndDoom;
 import com.x29naybla.bloom_and_doom.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
@@ -72,7 +73,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(Blocks.CRIMSON_ROOTS)
                 .add(Blocks.WARPED_FUNGUS)
                 .add(Blocks.WARPED_ROOTS)
-                .add(Blocks.NETHER_SPROUTS);
+                .add(Blocks.NETHER_SPROUTS)
+                .addOptional(ResourceLocation.parse("farmersdelight:brown_mushroom_colony"))
+                .addOptional(ResourceLocation.parse("farmersdelight:red_mushroom_colony"));
 
         tag(ModTags.Blocks.MYCELIUM_SUSTAINS)
                 .addTag(ModTags.Blocks.DIRT_SUSTAINS);
