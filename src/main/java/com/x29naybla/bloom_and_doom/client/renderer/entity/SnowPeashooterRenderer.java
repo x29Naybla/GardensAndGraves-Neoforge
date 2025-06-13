@@ -2,7 +2,7 @@ package com.x29naybla.bloom_and_doom.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.x29naybla.bloom_and_doom.client.model.entity.SnowPeaModel;
-import com.x29naybla.bloom_and_doom.entity.SnowPeaEntity;
+import com.x29naybla.bloom_and_doom.common.entity.SnowPeaEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;

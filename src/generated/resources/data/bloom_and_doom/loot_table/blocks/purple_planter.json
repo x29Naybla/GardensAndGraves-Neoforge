@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bloom_and_doom:purple_planter"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bloom_and_doom:blocks/purple_planter"
+}

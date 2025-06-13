@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.client.model.entity;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
-import com.x29naybla.bloom_and_doom.entity.MarigoldEntity;
+import com.x29naybla.bloom_and_doom.common.entity.MarigoldEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animation.AnimationState;

@@ -2,7 +2,7 @@ package com.x29naybla.bloom_and_doom.client.renderer.block;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.x29naybla.bloom_and_doom.block.entity.PlanterBlockEntity;
+import com.x29naybla.bloom_and_doom.common.block.entity.PlanterBlockEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -16,6 +16,7 @@ import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.model.data.ModelData;
+import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
@@ -30,8 +31,8 @@ public class PlanterBlockEntityRenderer implements BlockEntityRenderer<PlanterBl
     }
 
     @Override
-    public void render(PlanterBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack,
-                       MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
+    public void render(PlanterBlockEntity pBlockEntity, float pPartialTick, @NotNull PoseStack pPoseStack,
+                       @NotNull MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
         ItemStack stack = pBlockEntity.content.getStackInSlot(0);
 
         if(!stack.isEmpty()) {
@@ -46,7 +47,7 @@ public class PlanterBlockEntityRenderer implements BlockEntityRenderer<PlanterBl
 
             VertexConsumer vertexconsumer = pBufferSource.getBuffer(RenderType.entityTranslucent(InventoryMenu.BLOCK_ATLAS));
 
-            Vector4f uv = getUVFromSprite(bq.get(0).getSprite(), 2, 2, 14, 14);
+            Vector4f uv = getUVFromSprite(bq.getFirst().getSprite(), 2, 2, 14, 14);
             PoseStack.Pose posestack$pose = pPoseStack.last();
             Matrix4f matrix4f = posestack$pose.pose();
             Matrix3f matrix3f = posestack$pose.normal();

@@ -20,10 +20,17 @@ changelog:
 * added missing French translations for the "flowers", "mushrooms" and "plants" entity tags
 
 * zombie players can cure themselves similarly to how zombie villagers are cured (drinking milk will cancel the curing process)
-* renamed ModShootGoal to PlantShootGoal
-* renamed ModReShootGoal to PlantShootDoubleGoal
 * replaced the IllegalArgumentException message from PlantShootGoal and PlantShootDoubleGoal
 * made a PlantProjectile as a parent class for PeaProjectile, FrozenPeaProjectile, and SporeProjectile
 * added a Damage Type for spore projectiles
 * added support for Farmer's Delight's Rich Soil
 * fixed placement of plants and mushrooms on planters
+
+* fixed comments referring to the mod by the old name
+* changed the position of the entries in the block tags "dirt_sustains", "mycelium_sustains", "sand_sustains", "soul_sand_sustains", and "nylium_sustains" to reflect the order in the creative inventory
+* added sweet berries to the tags "dirt_sustains" and "mycelium_sustains"
+* fixed the crafting recipe for the Orange Watering Can
+* fixed the entity tag "sensitive_to_plant_explosion"
+* renamed and moved multiple classes to better organize everything
+* fixed Potting Table not dropping itself
+* fixed gravestones and plastic blocks not dropping themselves

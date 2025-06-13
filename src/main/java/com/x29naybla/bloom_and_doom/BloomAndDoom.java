@@ -1,18 +1,7 @@
 package com.x29naybla.bloom_and_doom;
 
-import com.x29naybla.bloom_and_doom.block.ModBlocks;
-import com.x29naybla.bloom_and_doom.block.entity.ModBlockEntities;
-import com.x29naybla.bloom_and_doom.data.ModDataAttachments;
-import com.x29naybla.bloom_and_doom.data.ModDataComponents;
-import com.x29naybla.bloom_and_doom.effect.ModEffects;
-import com.x29naybla.bloom_and_doom.entity.ModEntities;
-import com.x29naybla.bloom_and_doom.item.ModCreativeModeTabs;
-import com.x29naybla.bloom_and_doom.item.ModItems;
-import com.x29naybla.bloom_and_doom.loot.LootModifierInit;
-import com.x29naybla.bloom_and_doom.particle.ModParticles;
-import com.x29naybla.bloom_and_doom.potion.ModPotions;
-import com.x29naybla.bloom_and_doom.sound.ModSounds;
-import com.x29naybla.bloom_and_doom.villager.ModVillagers;
+import com.x29naybla.bloom_and_doom.common.registry.*;
+import com.x29naybla.bloom_and_doom.common.loot.LootModifierInit;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;

@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.x29naybla.bloom_and_doom.mixin",
+  "package": "com.x29naybla.bloom_and_doom.common.mixin",
   "mixins": [
     "PickedUpItemTriggerMixin",
     "ZombieSunSensitiveMixin"

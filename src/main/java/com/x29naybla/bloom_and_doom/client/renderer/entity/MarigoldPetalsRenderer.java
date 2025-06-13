@@ -3,7 +3,7 @@ package com.x29naybla.bloom_and_doom.client.renderer.entity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
-import com.x29naybla.bloom_and_doom.entity.MarigoldEntity;
+import com.x29naybla.bloom_and_doom.common.entity.MarigoldEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -38,11 +38,11 @@ public class MarigoldPetalsRenderer extends GeoRenderLayer<MarigoldEntity> {
             int i;
             if (marigold.hasCustomName() && "jeb_".equals(marigold.getName().getString())) {
                 int j = 25;
-                int k = marigold.tickCount / 25 + marigold.getId();
+                int k = marigold.tickCount / j + marigold.getId();
                 int l = DyeColor.values().length;
                 int i1 = k % l;
                 int j1 = (k + 1) % l;
-                float f = ((float)(marigold.tickCount % 25) + partialTick) / 25.0F;
+                float f = ((float)(marigold.tickCount % j) + partialTick) / j;
                 int k1 = MarigoldEntity.getColor(DyeColor.byId(i1));
                 int l1 = MarigoldEntity.getColor(DyeColor.byId(j1));
                 i = FastColor.ARGB32.lerp(f, k1, l1);
