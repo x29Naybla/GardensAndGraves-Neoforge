@@ -1,51 +1,58 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
+import com.x29naybla.bloom_and_doom.common.entity.goal.PlantChompGoal;
 import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
+import com.x29naybla.bloom_and_doom.common.registry.ModItems;
 import com.x29naybla.bloom_and_doom.common.tag.ModTags;
-import com.x29naybla.bloom_and_doom.common.entity.goal.PlantShootGoal;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.monster.RangedAttackMob;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-import javax.annotation.Nullable;
-
-public class ShootingPlant extends Plant implements RangedAttackMob {
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.peashooter.idle");
-    protected static final RawAnimation SHOOT = RawAnimation.begin().thenLoop("animation.peashooter.shoot");
+public class ChomperEntity extends Plant {
+    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.chomper.idle");
+    protected static final RawAnimation CHOMP = RawAnimation.begin().thenPlay("animation.chomper.chomp").thenPlayXTimes("animation.chomper.chew", 22);
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-    protected static final EntityDataAccessor<Boolean> SHOOTING = SynchedEntityData.defineId(ShootingPlant.class, EntityDataSerializers.BOOLEAN);
+    protected static final EntityDataAccessor<Boolean> CHEWING = SynchedEntityData.defineId(ChomperEntity.class, EntityDataSerializers.BOOLEAN);
+    public int chewingTime = 0;
+    public int maxChewingTime = 350;
 
     //Properties
-    public ShootingPlant(EntityType<? extends ShootingPlant> entityType, Level level, TagKey<Item> substrate, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
-        super(entityType, level, substrate, seedPacket, pottedItem);
-        this.seedPacket = seedPacket;
-        this.pottedItem = pottedItem;
+    public ChomperEntity(EntityType<? extends Plant> entityType, Level level) {
+        super(entityType, level, ModTags.Items.SUSTAINS_CHOMPERS, ModItems.SEED_PACKET_CHOMPER.toStack(), null);
     }
 
     //Goals and AI
     protected void registerGoals(){
-        this.goalSelector.addGoal(1, new PlantShootGoal(this, 1, 30, 8.5F));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, false, false,
+        this.goalSelector.addGoal(1, new PlantChompGoal(this));
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 350, true, true,
                 (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE))));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
     @Override
-    public void performRangedAttack(@NotNull LivingEntity livingEntity, float v) {
+    public void tick() {
+        if(this.isAlive()) {
+            if(getChewing()) {
+               chewingTime += 1;
+            }
+            if(chewingTime < 0) chewingTime = 0;
+
+            if(chewingTime >= maxChewingTime) {
+                setChewing(false);
+                chewingTime = 0;
+            }
+        }
+        super.tick();
     }
 
     //GeckoLib
@@ -54,9 +61,9 @@ public class ShootingPlant extends Plant implements RangedAttackMob {
         controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::animController));
     }
 
-    protected <E extends ShootingPlant> PlayState animController(final AnimationState<E> event) {
-        if(this.isShooting()){
-            event.setAnimation(SHOOT);
+    protected <E extends ChomperEntity> PlayState animController(final AnimationState<E> event) {
+        if(this.getChewing()){
+            event.setAnimation(CHOMP);
             return PlayState.CONTINUE;
 
         }else
@@ -73,24 +80,32 @@ public class ShootingPlant extends Plant implements RangedAttackMob {
     //Data
     protected void defineSynchedData(SynchedEntityData.@NotNull Builder builder) {
         super.defineSynchedData(builder);
-        builder.define(SHOOTING, false);
+        builder.define(CHEWING, false);
     }
 
     public void readAdditionalSaveData(@NotNull CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        getEntityData().set(SHOOTING, compound.getBoolean("Shooting"));
+        getEntityData().set(CHEWING, compound.getBoolean("Chewing"));
+        if (compound.contains("ChewingTime")) {
+            this.chewingTime = compound.getInt("ChewingTime");
+        }
     }
 
     public void addAdditionalSaveData(@NotNull CompoundTag compound) {
         super.addAdditionalSaveData(compound);
-        compound.putBoolean("Shooting", getEntityData().get(SHOOTING));
+        compound.putBoolean("Chewing", getEntityData().get(CHEWING));
+        compound.putInt("ChewingTime", this.chewingTime);
     }
 
-    public boolean isShooting(){
-        return getEntityData().get(SHOOTING);
+    public boolean getChewing(){
+        return getEntityData().get(CHEWING);
     }
 
-    public void setShooting(boolean bool) {
-        getEntityData().set(SHOOTING, bool);
+    public void setChewing(boolean bool) {
+        getEntityData().set(CHEWING, bool);
+    }
+
+    public void performChompAttack(LivingEntity target, float f1) {
+        target.discard();
     }
 }

@@ -40,7 +40,7 @@ public class ModItems {
     public static final DeferredItem<Item> SEED_PACKET_JALAPENO = ITEMS.register("seed_packet_jalapeno",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_CHOMPER = ITEMS.register("seed_packet_chomper",
-            () -> new Item(new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.CHOMPER.get(), 6, 5, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_BONK_CHOY = ITEMS.register("seed_packet_bonk_choy",
             () -> new Item(new Item.Properties()));
 
@@ -72,17 +72,6 @@ public class ModItems {
     public static final DeferredItem<Item> POTTED_PUFF_SHROOM = ITEMS.register("potted_puff_shroom",
             () -> new PottedPlantItem(ModEntities.PUFF_SHROOM.get(), new Item.Properties()));
 
-    public static final DeferredItem<Item> PEA = ITEMS.register("pea",
-            () -> new PeaItem(new Item.Properties().stacksTo(16)));
-    public static final DeferredItem<Item> FROZEN_PEA = ITEMS.register("frozen_pea",
-            () -> new FrozenPeaItem(new Item.Properties().stacksTo(16)));
-    public static final DeferredItem<Item> SPORE = ITEMS.register("spore",
-            () -> new SporeItem(new Item.Properties().stacksTo(16)));
-
-    public static final DeferredItem<Item> BRAINZ_BANNER_PATTERN = ITEMS.register("brainz_banner_pattern",
-            () -> new BannerPatternItem(BRAINZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1)));
-    public static final DeferredItem<Item> MUSIC_DISC_WABBY_WABBO = ITEMS.register("music_disc_wabby_wabbo",
-            () -> new Item(new Item.Properties().rarity(Rarity.RARE).jukeboxPlayable(ModSounds.WABBY_WABBO_KEY).stacksTo(1)));
     public static final DeferredItem<Item> WHITE_WATERING_CAN = ITEMS.register("white_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> LIGHT_GRAY_WATERING_CAN = ITEMS.register("light_gray_watering_can",
@@ -115,6 +104,20 @@ public class ModItems {
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> PINK_WATERING_CAN = ITEMS.register("pink_watering_can",
             () -> new WateringCanItem(new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<Item> PEA = ITEMS.register("pea",
+            () -> new PeaItem(new Item.Properties().stacksTo(16)));
+    public static final DeferredItem<Item> FROZEN_PEA = ITEMS.register("frozen_pea",
+            () -> new FrozenPeaItem(new Item.Properties().stacksTo(16)));
+    public static final DeferredItem<Item> SPORE = ITEMS.register("spore",
+            () -> new SporeItem(new Item.Properties().stacksTo(16)));
+
+    public static final DeferredItem<Item> MUSIC_DISC_WABBY_WABBO = ITEMS.register("music_disc_wabby_wabbo",
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE).jukeboxPlayable(ModSounds.WABBY_WABBO_KEY).stacksTo(1)));
+    public static final DeferredItem<Item> ALMANAC = ITEMS.register("almanac",
+            () -> new AlmanacItem(new Item.Properties()));
+    public static final DeferredItem<Item> BRAINZ_BANNER_PATTERN = ITEMS.register("brainz_banner_pattern",
+            () -> new BannerPatternItem(BRAINZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

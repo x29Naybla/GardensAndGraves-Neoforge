@@ -54,6 +54,8 @@ public class ItemTags extends ItemTagsProvider {
                 .addTag(net.minecraft.tags.ItemTags.DIRT);
         tag(ModTags.Items.SUSTAINS_WALL_NUTS)
                 .addTag(net.minecraft.tags.ItemTags.DIRT);
+        tag(ModTags.Items.SUSTAINS_CHOMPERS)
+                .addTag(net.minecraft.tags.ItemTags.DIRT);
         tag(ModTags.Items.SUSTAINS_POTATO_MINES)
                 .addTag(net.minecraft.tags.ItemTags.DIRT);
         tag(ModTags.Items.SUSTAINS_SUN_SHROOMS)

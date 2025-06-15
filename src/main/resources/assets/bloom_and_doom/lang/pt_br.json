@@ -61,10 +61,11 @@
   "item.bloom_and_doom.frozen_pea": "Ervilha congelada",
   "item.bloom_and_doom.spore": "Esporo",
 
-  "item.bloom_and_doom.brainz_banner_pattern": "Figura para estandarte",
-  "item.bloom_and_doom.brainz_banner_pattern.desc": "Mioloz",
   "item.bloom_and_doom.music_disc_wabby_wabbo": "Disco musical",
   "item.bloom_and_doom.music_disc_wabby_wabbo.desc": "Cray-Z — Wabby Wabbo",
+  "item.bloom_and_doom.almanac": "Almanaque",
+  "item.bloom_and_doom.brainz_banner_pattern": "Figura para estandarte",
+  "item.bloom_and_doom.brainz_banner_pattern.desc": "Mioloz",
 
   "item.minecraft.tipped_arrow.effect.gng_zombification": "Flecha de zumbificação",
   "item.minecraft.potion.effect.gng_zombification": "Poção de zumbificação",

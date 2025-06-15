@@ -1,0 +1,298 @@
+{
+  "item.bloom_and_doom.seed_packet_sunflower": "Пакет семян Подсолнуха",
+  "item.bloom_and_doom.seed_packet_marigold": "Пакет семян Золотой Ромашки",
+
+  "item.bloom_and_doom.seed_packet_peashooter": "Пакет семян Горохострела",
+  "item.bloom_and_doom.seed_packet_snow_pea": "Пакет семян Морозного Гороха",
+  "item.bloom_and_doom.seed_packet_repeater": "Пакет семян Скорострела",
+
+  "item.bloom_and_doom.seed_packet_wall_nut": "Пакет семян Стена-Ореха",
+
+  "item.bloom_and_doom.seed_packet_potato_mine": "Пакет семян Картофельной Мины",
+  "item.bloom_and_doom.seed_packet_jalapeno": "Пакет семян Халапеньо",
+  "item.bloom_and_doom.seed_packet_chomper": "Пакет семян Зубастика",
+  "item.bloom_and_doom.seed_packet_bonk_choy": "Пакет семян Бонк-Чоя",
+
+  "item.bloom_and_doom.seed_packet_sun_shroom": "Пакет семян Солнцегриба",
+  "item.bloom_and_doom.seed_packet_puff_shroom": "Пакет семян Спорогриба",
+  "item.bloom_and_doom.seed_packet_fume_shroom": "Пакет семян Дымогриба",
+  "item.bloom_and_doom.seed_packet_hypno_shroom": "Пакет семян Гипногриба",
+  "item.bloom_and_doom.seed_packet_doom_shroom": "Пакет семян Гриба Судьбы",
+
+  "item.bloom_and_doom.potted_sunflower": "Подсолнух в горшке",
+  "item.bloom_and_doom.potted_sunflower.desc": "Описание",
+  "item.bloom_and_doom.potted_marigold": "Золотая Ромашка в горшке",
+  "item.bloom_and_doom.potted_marigold.desc": "Описание",
+
+  "item.bloom_and_doom.potted_peashooter": "Горохострел в горшке",
+  "item.bloom_and_doom.potted_peashooter.desc": "Описание",
+  "item.bloom_and_doom.potted_snow_pea": "Морозный Горох в горшке",
+  "item.bloom_and_doom.potted_snow_pea.desc": "Описание",
+  "item.bloom_and_doom.potted_repeater": "Скорострел в горшке",
+  "item.bloom_and_doom.potted_repeater.desc": "Описание",
+
+  "item.bloom_and_doom.potted_potato_mine": "Картофельная мина в горшке",
+  "item.bloom_and_doom.potted_potato_mine.desc": "Описание",
+
+  "item.bloom_and_doom.potted_sun_shroom": "Солнцегриб в горшке",
+  "item.bloom_and_doom.potted_sun_shroom.desc": "Описание",
+  "item.bloom_and_doom.potted_puff_shroom": "Спорогриб в горшке",
+  "item.bloom_and_doom.potted_puff_shroom.desc": "Описание",
+
+  "item.bloom_and_doom.sun": "Солнышко",
+  "item.bloom_and_doom.brain": "Мозг",
+  "item.bloom_and_doom.white_watering_can": "Белая лейка",
+  "item.bloom_and_doom.light_gray_watering_can": "Светло-серая лейка",
+  "item.bloom_and_doom.gray_watering_can": "Серая лейка",
+  "item.bloom_and_doom.black_watering_can": "Чёрная лейка",
+  "item.bloom_and_doom.brown_watering_can": "Коричневая лейка",
+  "item.bloom_and_doom.red_watering_can": "Красная лейка",
+  "item.bloom_and_doom.orange_watering_can": "Оранжевая лейка",
+  "item.bloom_and_doom.yellow_watering_can": "Жёлтая лейка",
+  "item.bloom_and_doom.lime_watering_can": "Лаймовая лейка",
+  "item.bloom_and_doom.green_watering_can": "Зелёная лейка",
+  "item.bloom_and_doom.cyan_watering_can": "Бирюзовая лейка",
+  "item.bloom_and_doom.light_blue_watering_can": "Голубая лейка",
+  "item.bloom_and_doom.blue_watering_can": "Синяя лейка",
+  "item.bloom_and_doom.purple_watering_can": "Фиолетовая лейка",
+  "item.bloom_and_doom.magenta_watering_can": "Пурпурная лейка",
+  "item.bloom_and_doom.pink_watering_can": "Розовая лейка",
+  "item.bloom_and_doom.pea": "Горошек",
+  "item.bloom_and_doom.frozen_pea": "Морозный Горошек",
+  "item.bloom_and_doom.spore": "Споры",
+
+  "item.bloom_and_doom.music_disc_wabby_wabbo": "Музыкальная пластинка",
+  "item.bloom_and_doom.music_disc_wabby_wabbo.desc": "Cray-Z - Wabby Wabbo",
+  "item.bloom_and_doom.almanac": "Альманах",
+  "item.bloom_and_doom.brainz_banner_pattern": "Шаблон баннера",
+  "item.bloom_and_doom.brainz_banner_pattern.desc": "Моzг",
+
+  "item.minecraft.tipped_arrow.effect.gng_zombification": "Стрела Зомбификации",
+  "item.minecraft.potion.effect.gng_zombification": "Зелье Зомбификации",
+  "item.minecraft.splash_potion.effect.gng_zombification": "Взрывное зелье Зомбификации",
+  "item.minecraft.lingering_potion.effect.gng_zombification": "Оседающее зелье Зомбификации",
+
+  "block.bloom_and_doom.potting_table": "Стол для горшков",
+
+  "block.bloom_and_doom.planter": "Горшок",
+  "block.bloom_and_doom.white_planter": "Белый Горшок",
+  "block.bloom_and_doom.light_gray_planter": "Светло-серый горшок",
+  "block.bloom_and_doom.gray_planter": "Серый горшок",
+  "block.bloom_and_doom.black_planter": "Чёрный горшок",
+  "block.bloom_and_doom.brown_planter": "Коричневый горшок",
+  "block.bloom_and_doom.red_planter": "Красный горшок",
+  "block.bloom_and_doom.orange_planter": "Оранжевый горшок",
+  "block.bloom_and_doom.yellow_planter": "Жёлтый горшок",
+  "block.bloom_and_doom.lime_planter": "Лаймовый горшок",
+  "block.bloom_and_doom.green_planter": "Зелёный горшок",
+  "block.bloom_and_doom.cyan_planter": "Бирюзовый горшок",
+  "block.bloom_and_doom.light_blue_planter": "Голубой горшок",
+  "block.bloom_and_doom.blue_planter": "Синий горшок",
+  "block.bloom_and_doom.purple_planter": "Фиолетовый горшок",
+  "block.bloom_and_doom.magenta_planter": "Пурпурный горшок",
+  "block.bloom_and_doom.pink_planter": "Розовый горшок",
+
+  "block.bloom_and_doom.white_plastic_block": "Блок белого пластика",
+  "block.bloom_and_doom.light_gray_plastic_block": "Блок светло-серого пластика",
+  "block.bloom_and_doom.gray_plastic_block": "Блок серого пластика",
+  "block.bloom_and_doom.black_plastic_block": "Блок чёрного пластика",
+  "block.bloom_and_doom.brown_plastic_block": "Блок коричневого пластика",
+  "block.bloom_and_doom.red_plastic_block": "Блок красного пластика",
+  "block.bloom_and_doom.orange_plastic_block": "Блок оранжевого пластика",
+  "block.bloom_and_doom.yellow_plastic_block": "Блок жёлтого пластика",
+  "block.bloom_and_doom.lime_plastic_block": "Блок лаймового пластика",
+  "block.bloom_and_doom.green_plastic_block": "Блок зелёного пластика",
+  "block.bloom_and_doom.cyan_plastic_block": "Блок бирюзового пластика",
+  "block.bloom_and_doom.light_blue_plastic_block": "Блок голубого пластика",
+  "block.bloom_and_doom.blue_plastic_block": "Блок синего пластика",
+  "block.bloom_and_doom.purple_plastic_block": "Блок фиолетового пластика",
+  "block.bloom_and_doom.magenta_plastic_block": "Блок пурпурного пластика",
+  "block.bloom_and_doom.pink_plastic_block": "Блок розового пластика",
+
+  "block.bloom_and_doom.gravestone": "Надгробие",
+  "block.bloom_and_doom.gravestone_sandstone": "Песчаное надгробие",
+
+  "block.minecraft.banner.bloom_and_doom.brainz.white": "Белое Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.light_gray": "Светло-серое Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.gray": "Серое Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.black": "Чёрное Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.brown": "Коричневое Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.red": "Красное Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.orange": "Оранжевое Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.yellow": "Жёлтое Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.lime": "Лаймовое Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.green": "Зелёное Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.cyan": "Бирюзовое Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.light_blue": "Голубое Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.blue": "Синее Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.purple": "Фиолетовое Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.magenta": "Пурпурное Моzгознаме",
+  "block.minecraft.banner.bloom_and_doom.brainz.pink": "Розовое Моzгознаме",
+
+  "bloom_and_doom.items.brainz_banner": "Баннер с моzгом",
+
+  "entity.minecraft.villager.bloom_and_doom.gardener": "Садовник",
+
+  "entity.bloom_and_doom.sunflower": "Подсолнух",
+  "entity.bloom_and_doom.marigold": "Золотая Ромашка",
+
+  "entity.bloom_and_doom.peashooter": "Горохострел",
+  "entity.bloom_and_doom.snow_pea": "Морозный Горох",
+  "entity.bloom_and_doom.repeater": "Скорострел",
+
+  "entity.bloom_and_doom.wall_nut": "Стена-Орех",
+
+  "entity.bloom_and_doom.potato_mine": "Картофельная Мина",
+  "entity.bloom_and_doom.jalapeno": "Халапеньо",
+  "entity.bloom_and_doom.chomper": "Зубастик",
+  "entity.bloom_and_doom.bonk_choy": "Бонк-Чой",
+
+  "entity.bloom_and_doom.sun_shroom": "Солнцегриб",
+  "entity.bloom_and_doom.puff_shroom": "Спорогриб",
+  "entity.bloom_and_doom.fume_shroom": "Дымогриб",
+  "entity.bloom_and_doom.hypno_shroom": "Гипногриб",
+  "entity.bloom_and_doom.doom_shroom": "Гриб Судьбы",
+
+  "entity.bloom_and_doom.pea": "Горошек",
+  "entity.bloom_and_doom.frozen_pea": "Морозный Горошек",
+  "entity.bloom_and_doom.spore": "Спора",
+
+  "death.attack.pea": "%1$s был убит горохом",
+  "death.attack.frozen_pea": "%1$s заморожен горохом",
+  "death.attack.spore": "Жизнь %1$s была оспорена",
+  "death.attack.plant_explosion": "%1$s превратился в пюре",
+
+  "creativetab.bloom_and_doom.blocks": "B&D: Блоки",
+  "creativetab.bloom_and_doom.items": "B&D: Предметы",
+
+  "bloom_and_doom.advancement.root": "Bloom and Doom",
+  "bloom_and_doom.advancement.root.desc": "",
+
+  "bloom_and_doom.advancement.planters": "Сажая будущее",
+  "bloom_and_doom.advancement.planters.desc": "Скрафтите горшок. Растения, посаженные в него, будут производить пакеты семян!",
+
+  "bloom_and_doom.advancement.first_sun": "Первое солнышко",
+  "bloom_and_doom.advancement.first_sun.desc": "Получите своё первое солнышко",
+
+  "bloom_and_doom.advancement.potted": "Горшошечник",
+  "bloom_and_doom.advancement.potted.desc": "Используйте цветочный горшок на растении из горшка, чтобы взять его с собой",
+
+  "bloom_and_doom.advancement.peace_love_plants": "Мир, любовь и растения",
+  "bloom_and_doom.advancement.peace_love_plants.desc": "Подарите кому-нибудь горшечную картофельную мину",
+
+  "bloom_and_doom.advancement.first_pack": "Упакованный друг",
+  "bloom_and_doom.advancement.first_pack.desc": "Получите свой первый пакет семян",
+
+  "bloom_and_doom.advancement.sunflower": "Подсолнух",
+  "bloom_and_doom.advancement.sunflower.desc": "Генерирует одно солнышко каждые 5 минут в течение дня. Можно найти в деревнях на равнинах",
+
+  "bloom_and_doom.advancement.marigold": "Золотая Ромашка",
+  "bloom_and_doom.advancement.marigold.desc": "Генерирует от 1 до 3 железных или золотых самородков каждые 5 минут. Можно найти в заброшенных шахтах и обломках кораблей",
+
+  "bloom_and_doom.advancement.peashooter": "Горохострел",
+  "bloom_and_doom.advancement.peashooter.desc": "Стреляет одним горошком каждые 1,5 секунды. Можно найти в деревнях пустыни, саванны, равнин и тайги",
+
+  "bloom_and_doom.advancement.snow_pea": "Морозный Горох",
+  "bloom_and_doom.advancement.snow_pea.desc": "Стреляет одним морозным горошком каждые 1,5 секунды. Можно найти в снежных деревнях и древних городах",
+
+  "bloom_and_doom.advancement.repeater": "Скорострел",
+  "bloom_and_doom.advancement.repeater.desc": "Стреляет двумя последовательными горошками каждые 1,5 секунды. Можно найти в деревнях на равнинах",
+
+  "bloom_and_doom.advancement.wall_nut": "Стена-Орех",
+  "bloom_and_doom.advancement.wall_nut.desc": "Защищает другие растения от атак зомби. Можно найти во всех деревнях",
+
+  "bloom_and_doom.advancement.potato_mine": "Картофельная Мина",
+  "bloom_and_doom.advancement.potato_mine.desc": "Требуется 2 секунды для установки, после чего взрывается при наступлении. Можно найти в деревнях саванны и храмах джунглей",
+
+  "bloom_and_doom.advancement.jalapeno": "Халапеньо",
+  "bloom_and_doom.advancement.jalapeno.desc": "Можно найти в деревнях саванны и пустыни",
+
+  "bloom_and_doom.advancement.chomper": "Зубастик",
+  "bloom_and_doom.advancement.chomper.desc": "Можно найти в храмах джунглей",
+
+  "bloom_and_doom.advancement.bonk_choy": "Бонк-Чой",
+  "bloom_and_doom.advancement.bonk_choy.desc": "Можно найти в деревнях саванны и пустыни, а также в пустынных пирамидах",
+
+  "bloom_and_doom.advancement.sun_shroom": "Солнцегриб",
+  "bloom_and_doom.advancement.sun_shroom.desc": "Генерирует одно солнышко каждые 5 минут ночью. Можно найти в деревнях тайги",
+
+  "bloom_and_doom.advancement.puff_shroom": "Спорогриб",
+  "bloom_and_doom.advancement.puff_shroom.desc": "Дешёвый, но с короткой дистанцией. Можно найти в деревнях тайги",
+
+  "bloom_and_doom.advancement.fume_shroom": "Дымогриб",
+  "bloom_and_doom.advancement.fume_shroom.desc": "Можно найти в деревнях тайги",
+
+  "bloom_and_doom.advancement.hypno_shroom": "Гипногриб",
+  "bloom_and_doom.advancement.hypno_shroom.desc": "Можно найти в деревнях тайги",
+
+  "bloom_and_doom.advancement.doom_shroom": "Гриб Судьбы",
+  "bloom_and_doom.advancement.doom_shroom.desc": "Его взрыв имеет радиус 9 блоков и наносит достаточно урона, чтобы убить большинство врагов. Можно найти в древних городах и лесных особняках",
+
+  "effect.bloom_and_doom.zombification": "Зомбификация",
+
+  "bloom_and_doom.description.seed_packets_sun_cost": "Стоимость в солнце: ",
+
+  "tag.item.bloom_and_doom.planter_substrates": "Субстраты для горшков",
+  "tag.item.bloom_and_doom.sustains_mushrooms": "Поддерживает грибы",
+
+  "tag.item.bloom_and_doom.sustains_sunflowers": "Поддерживает подсолнухи",
+  "tag.item.bloom_and_doom.sustains_marigolds": "Поддерживает золотые ромашки",
+  "tag.item.bloom_and_doom.sustains_peashooters": "Поддерживает горохострелов",
+  "tag.item.bloom_and_doom.sustains_snow_peas": "Поддерживает морозный горох",
+  "tag.item.bloom_and_doom.sustains_repeaters": "Поддерживает скорострелов",
+  "tag.item.bloom_and_doom.sustains_wall_nuts": "Поддерживает стена-орехи",
+  "tag.item.bloom_and_doom.sustains_potato_mines": "Поддерживает картофельные мины",
+  "tag.item.bloom_and_doom.sustains_sun_shrooms": "Поддерживает солнцегрибы",
+  "tag.item.bloom_and_doom.sustains_puff_shrooms": "Поддерживает спорогрибы",
+  "tag.item.bloom_and_doom.sustains_doom_shrooms": "Поддерживает грибы судьбы",
+
+  "tag.item.bloom_and_doom.flower_pots": "Цветочные горшки",
+  "tag.item.bloom_and_doom.watering_cans": "Лейки",
+
+  "tag.block.bloom_and_doom.planters": "Горшки",
+  "tag.block.bloom_and_doom.supports_plants": "Поддерживает растения",
+  "tag.block.bloom_and_doom.sustains_mushrooms": "Поддерживает грибы",
+
+  "tag.block.bloom_and_doom.dirt_sustains": "Поддерживает на земле",
+  "tag.block.bloom_and_doom.mycelium_sustains": "Поддерживает на мицелии",
+  "tag.block.bloom_and_doom.sand_sustains": "Поддерживает на песке",
+  "tag.block.bloom_and_doom.soul_sand_sustains": "Поддерживает на песке душ",
+  "tag.block.bloom_and_doom.nylium_sustains": "Поддерживает на нилиуме",
+  "tag.block.bloom_and_doom.end_stone_sustains": "Поддерживает на энд-камне",
+
+  "tag.block.bloom_and_doom.gravestones": "Надгробия",
+  "tag.block.bloom_and_doom.mushrooms": "Грибы",
+
+  "tag.entity.bloom_and_doom.flowers": "Цветы",
+  "tag.entity.bloom_and_doom.peashooters": "Горохострелы",
+  "tag.entity.bloom_and_doom.mushrooms": "Грибы",
+  "tag.entity.bloom_and_doom.plants": "Растения",
+
+  "tag.entity.bloom_and_doom.pottable_plants": "Растения для горшков",
+
+  "tag.entity.bloom_and_doom.plant_enemies": "Враги растений",
+  "tag.entity.bloom_and_doom.plant_allays": "Союзники растений",
+
+  "bloom_and_doom.subtitles.item.seed_packets.plants": "Пакет семян сажает",
+  "bloom_and_doom.subtitles.item.potted_plant.plants": "Горшечное растение пересаживается",
+  "bloom_and_doom.subtitles.item.watering_can.water": "Лейка поливает",
+  "bloom_and_doom.subtitles.item.seed_packets.heals": "Пакет семян лечит",
+  "bloom_and_doom.subtitles.entity.villager.work_gardener": "Садовник работает",
+  "bloom_and_doom.subtitles.entity.sunflower.generates": "Подсолнух генерирует",
+  "bloom_and_doom.subtitles.entity.sun_shroom.generates": "Солнцегриб генерирует",
+  "bloom_and_doom.subtitles.entity.marigold.generates": "Золотая ромашка генерирует",
+  "bloom_and_doom.subtitles.entity.peashooter.shoots": "Горохострел стреляет",
+  "bloom_and_doom.subtitles.entity.snow_pea.shoots": "Морозный горох стреляет",
+  "bloom_and_doom.subtitles.entity.repeater.shoots": "Скорострел стреляет",
+  "bloom_and_doom.subtitles.entity.puff_shroom.shoots": "Спорогриб стреляет",
+  "bloom_and_doom.subtitles.entity.doom_shroom.explodes": "Гриб судьбы взрывается",
+  "bloom_and_doom.subtitles.entity.potato_mine.explodes": "Картофельная мина взрывается",
+  "bloom_and_doom.subtitles.entity.plant.grows": "Растение растёт",
+
+  "config.jade.plugin_bloom_and_doom.sun_timer": "Таймер солнца",
+  "config.jade.plugin_bloom_and_doom.reward_timer": "Таймер наград золотой ромашки",
+  "config.jade.plugin_bloom_and_doom.seed_packets_timer": "Таймер пакетов семян",
+  "bloom_and_doom.sun_timer": "Следующее солнце: ",
+  "bloom_and_doom.reward_timer": "Следующие самородки: ",
+  "bloom_and_doom.seed_packets_timer": "Следующий пакет семян: "
+}

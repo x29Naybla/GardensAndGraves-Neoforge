@@ -6,9 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.cache.object.GeoBone;
-import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.model.GeoModel;
-import software.bernie.geckolib.model.data.EntityModelData;
 
 public class SnowPeaModel extends GeoModel {
     private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "geo/entity/snow_peashooter.geo.json");
@@ -35,7 +33,6 @@ public class SnowPeaModel extends GeoModel {
         super.setCustomAnimations(animatable, instanceId, animationState);
         if (animationState == null) return;
 
-        EntityModelData extraDataOfType = (EntityModelData) animationState.getData(DataTickets.ENTITY_MODEL_DATA);
         GeoBone head = this.getAnimationProcessor().getBone("head");
 
         if (((SnowPeaEntity) animatable).isBaby()) {

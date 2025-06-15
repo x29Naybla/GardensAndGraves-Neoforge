@@ -1,17 +1,17 @@
 package com.x29naybla.bloom_and_doom.client.model.entity;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
-import com.x29naybla.bloom_and_doom.common.entity.SunflowerEntity;
+import com.x29naybla.bloom_and_doom.common.entity.ChomperEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animation.AnimationState;
 import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.model.GeoModel;
 
-public class SunflowerModel extends GeoModel {
-    private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "geo/entity/sunflower.geo.json");
-    private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/sunflower.png");
-    private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "animations/entity/flower.animation.json");
+public class ChomperModel extends GeoModel {
+    private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "geo/entity/chomper.geo.json");
+    private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/chomper.png");
+    private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "animations/entity/chomper.animation.json");
 
     @Override
     public ResourceLocation getModelResource(GeoAnimatable animatable) {
@@ -35,7 +35,7 @@ public class SunflowerModel extends GeoModel {
 
         GeoBone head = this.getAnimationProcessor().getBone("head");
 
-        if (((SunflowerEntity) animatable).isBaby()) {
+        if (((ChomperEntity) animatable).isBaby()) {
             head.setScaleX(1.6F);
             head.setScaleY(1.6F);
             head.setScaleZ(1.6F);

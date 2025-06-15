@@ -2,7 +2,7 @@ package com.x29naybla.bloom_and_doom.common.entity;
 
 import com.google.common.collect.Maps;
 import com.x29naybla.bloom_and_doom.common.tag.ModTags;
-import com.x29naybla.bloom_and_doom.common.entity.goal.ModMarigoldingGoal;
+import com.x29naybla.bloom_and_doom.common.entity.goal.MarigoldGenerateGoal;
 import com.x29naybla.bloom_and_doom.common.registry.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -14,7 +14,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
@@ -63,8 +62,7 @@ public class MarigoldEntity extends Plant {
 
     //Goals and AI
     protected void registerGoals(){
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new ModMarigoldingGoal(this));
+        this.goalSelector.addGoal(1, new MarigoldGenerateGoal(this));
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
     }
 

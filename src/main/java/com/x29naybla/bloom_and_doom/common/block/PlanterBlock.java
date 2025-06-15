@@ -126,6 +126,11 @@ public class PlanterBlock extends BaseEntityBlock {
     }
 
     @Override
+    protected boolean isRandomlyTicking(@NotNull BlockState state) {
+        return true;
+    }
+
+    @Override
     public @NotNull TriState canSustainPlant(@NotNull BlockState state, BlockGetter level, @NotNull BlockPos pos, @NotNull Direction facing, @NotNull BlockState plant) {
         if(level.getBlockEntity(pos) instanceof PlanterBlockEntity planter) {
             ItemStack substrate = planter.content.getStackInSlot(0);

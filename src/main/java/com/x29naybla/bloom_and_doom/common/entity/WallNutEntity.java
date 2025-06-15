@@ -4,7 +4,6 @@ import com.x29naybla.bloom_and_doom.common.tag.ModTags;
 import com.x29naybla.bloom_and_doom.common.registry.ModItems;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +33,6 @@ public class WallNutEntity extends Plant {
 
     //Goals and AI
     protected void registerGoals(){
-        this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
     }
 

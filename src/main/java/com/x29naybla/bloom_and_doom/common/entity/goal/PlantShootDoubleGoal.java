@@ -13,7 +13,6 @@ public class PlantShootDoubleGoal extends Goal {
     @Nullable
     private LivingEntity target;
     private int attackTime;
-    private final double speedModifier;
     private int seeTime;
     private final int attackIntervalMin;
     private final int attackIntervalMax;
@@ -23,23 +22,22 @@ public class PlantShootDoubleGoal extends Goal {
     private int shootTimer;
     private final int timerCap;
 
-    public PlantShootDoubleGoal(ShootingPlant shootingPlant, int timeInSeconds, double speedModifier, int attackInterval, float attackRadius){
-        this(shootingPlant, timeInSeconds, speedModifier, attackInterval, attackInterval, attackRadius);
+    public PlantShootDoubleGoal(ShootingPlant shootingPlant, int timeInSeconds, int attackInterval, float attackRadius){
+        this(shootingPlant, timeInSeconds, attackInterval, attackInterval, attackRadius);
     }
 
-    public PlantShootDoubleGoal(ShootingPlant shootingPlant, int timeInSeconds, double speedModifier, int attackIntervalMin, int attackIntervalMax, float attackRadius){
+    public PlantShootDoubleGoal(ShootingPlant shootingPlant, int timeInSeconds, int attackIntervalMin, int attackIntervalMax, float attackRadius){
         this.attackTime = -1;
         if (shootingPlant == null) {
             throw new IllegalArgumentException("PlantShootDoubleGoal requires Mob extends ShootingPlant");
         } else {
             this.shootingPlant = shootingPlant;
             this.timerCap = timeInSeconds * 20;
-            this.speedModifier = speedModifier;
             this.attackIntervalMin = attackIntervalMin;
             this.attackIntervalMax = attackIntervalMax;
             this.attackRadius = attackRadius;
             this.attackRadiusSqr = attackRadius * attackRadius;
-            this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
+            this.setFlags(EnumSet.of(Flag.LOOK));
         }
     }
 
@@ -89,8 +87,6 @@ public class PlantShootDoubleGoal extends Goal {
 
             if (!(d0 > (double)this.attackRadiusSqr) && this.seeTime >= 5) {
                 this.shootingPlant.getNavigation().stop();
-            } else {
-                this.shootingPlant.getNavigation().moveTo(this.target, this.speedModifier);
             }
 
             this.shootingPlant.getLookControl().setLookAt(this.target, 30.0F, 30.0F);

@@ -19,6 +19,7 @@ public class PotatoMineEntity extends ExplosivePlant {
     protected static final RawAnimation ARMING = RawAnimation.begin().thenPlay("animation.potato_mine.arming");
     protected static final EntityDataAccessor<Boolean> ARMED = SynchedEntityData.defineId(PotatoMineEntity.class, EntityDataSerializers.BOOLEAN);
     public int armingTime = 0;
+    public int maxArmingTime = 40;
 
     //Properties
     public PotatoMineEntity(EntityType<? extends PotatoMineEntity> entityType, Level level) {
@@ -32,11 +33,8 @@ public class PotatoMineEntity extends ExplosivePlant {
                 this.armingTime += 1;
             }
 
-            if (this.armingTime < 0) {
-                this.armingTime = 0;
-            }
+            if (this.armingTime < 0) this.armingTime = 0;
 
-            int maxArmingTime = 40;
             if (getArmed() || this.armingTime >= maxArmingTime){
                 this.armingTime = maxArmingTime;
                 setArmed(true);

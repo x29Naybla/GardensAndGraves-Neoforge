@@ -34,11 +34,15 @@ public class SolarPlant extends Plant{
     public void readAdditionalSaveData(@NotNull CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         getEntityData().set(GENERATED, compound.getBoolean("Generated"));
+        if (compound.contains("SunGenerateTime")) {
+            this.sunTime = compound.getInt("SunGenerateTime");
+        }
     }
 
     public void addAdditionalSaveData(@NotNull CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putBoolean("Generated", getEntityData().get(GENERATED));
+        compound.putInt("SunGenerateTime", this.sunTime);
     }
 
     public boolean isGenerated(){

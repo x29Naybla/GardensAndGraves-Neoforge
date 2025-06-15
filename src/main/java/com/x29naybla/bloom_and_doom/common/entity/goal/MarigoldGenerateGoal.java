@@ -6,10 +6,10 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.gameevent.GameEvent;
 
-public class ModMarigoldingGoal extends Goal {
+public class MarigoldGenerateGoal extends Goal {
     private final MarigoldEntity plant;
 
-    public ModMarigoldingGoal(MarigoldEntity plant) {
+    public MarigoldGenerateGoal(MarigoldEntity plant) {
         this.plant = plant;
     }
 

@@ -34,3 +34,7 @@ changelog:
 * renamed and moved multiple classes to better organize everything
 * fixed Potting Table not dropping itself
 * fixed gravestones and plastic blocks not dropping themselves
+
+* added ru_ru translations (thank you, Gospi and фuxиar!)
+* added the Almanac, but currently without its use
+* started adding chompers

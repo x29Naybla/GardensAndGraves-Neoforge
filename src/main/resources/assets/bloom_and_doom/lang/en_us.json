@@ -61,10 +61,11 @@
   "item.bloom_and_doom.frozen_pea": "Frozen Pea",
   "item.bloom_and_doom.spore": "Spore",
 
-  "item.bloom_and_doom.brainz_banner_pattern": "Banner Pattern",
-  "item.bloom_and_doom.brainz_banner_pattern.desc": "Brainz",
   "item.bloom_and_doom.music_disc_wabby_wabbo": "Music Disc",
   "item.bloom_and_doom.music_disc_wabby_wabbo.desc": "Cray-Z - Wabby Wabbo",
+  "item.bloom_and_doom.almanac": "Almanac",
+  "item.bloom_and_doom.brainz_banner_pattern": "Banner Pattern",
+  "item.bloom_and_doom.brainz_banner_pattern.desc": "Brainz",
 
   "item.minecraft.tipped_arrow.effect.gng_zombification": "Arrow of Zombification",
   "item.minecraft.potion.effect.gng_zombification": "Potion of Zombification",

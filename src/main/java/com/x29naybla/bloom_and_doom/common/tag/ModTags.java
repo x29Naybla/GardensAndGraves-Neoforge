@@ -46,6 +46,7 @@ public class ModTags {
         public static final TagKey<Item> SUSTAINS_REPEATERS = createTag("sustains_repeaters");
         public static final TagKey<Item> SUSTAINS_WALL_NUTS = createTag("sustains_wall_nuts");
         public static final TagKey<Item> SUSTAINS_POTATO_MINES = createTag("sustains_potato_mines");
+        public static final TagKey<Item> SUSTAINS_CHOMPERS = createTag("sustains_chompers");
         public static final TagKey<Item> SUSTAINS_SUN_SHROOMS = createTag("sustains_sun_shrooms");
         public static final TagKey<Item> SUSTAINS_PUFF_SHROOMS = createTag("sustains_puff_shrooms");
         public static final TagKey<Item> SUSTAINS_DOOM_SHROOMS = createTag("sustains_doom_shrooms");

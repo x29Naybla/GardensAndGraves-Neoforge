@@ -1,15 +1,12 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
 import com.x29naybla.bloom_and_doom.common.tag.ModTags;
-import com.x29naybla.bloom_and_doom.common.entity.goal.ModGenerateSunGoal;
+import com.x29naybla.bloom_and_doom.common.entity.goal.PlantGenerateSunGoal;
 import com.x29naybla.bloom_and_doom.common.registry.ModItems;
 import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
@@ -27,8 +24,7 @@ public class SunShroomEntity extends SolarPlant {
 
     //Goals and AI
     protected void registerGoals(){
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new ModGenerateSunGoal(this, ModSounds.SUN_SHROOM_SUN.get()));
+        this.goalSelector.addGoal(1, new PlantGenerateSunGoal(this, ModSounds.SUN_SHROOM_SUN.get()));
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
     }
 
@@ -51,19 +47,5 @@ public class SunShroomEntity extends SolarPlant {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return geoCache;
-    }
-
-    //Data
-    public void readAdditionalSaveData(@NotNull CompoundTag compound) {
-        super.readAdditionalSaveData(compound);
-        if (compound.contains("SunGenerateTime")) {
-            this.sunTime = compound.getInt("SunGenerateTime");
-        }
-
-    }
-
-    public void addAdditionalSaveData(@NotNull CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
-        compound.putInt("SunGenerateTime", this.sunTime);
     }
 }

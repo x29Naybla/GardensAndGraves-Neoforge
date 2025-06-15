@@ -7,17 +7,9 @@ import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.*;
-import software.bernie.geckolib.animation.AnimationState;
-import software.bernie.geckolib.util.GeckoLibUtil;
+import org.jetbrains.annotations.NotNull;
 
 public class PuffShroomEntity extends ShootingPlant {
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.peashooter.idle");
-    protected static final RawAnimation SHOOT = RawAnimation.begin().thenLoop("animation.peashooter.shoot");
-    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-    public boolean isShooting = false;
-
     //Properties
     public PuffShroomEntity(EntityType<? extends PuffShroomEntity> entityType, Level level) {
         super(entityType, level, ModTags.Items.SUSTAINS_PUFF_SHROOMS, ModItems.SEED_PACKET_PUFF_SHROOM.toStack(), ModItems.POTTED_PUFF_SHROOM.toStack());
@@ -26,7 +18,7 @@ public class PuffShroomEntity extends ShootingPlant {
 
     //Goals and AI
     @Override
-    public void performRangedAttack(LivingEntity target, float distanceFactor) {
+    public void performRangedAttack(@NotNull LivingEntity target, float distanceFactor) {
         SporeProjectile spore = new SporeProjectile(this.level(), this);
         double d0 = target.getEyeY() - (double)1.1F;
         double d1 = target.getX() - this.getX();
@@ -36,25 +28,5 @@ public class PuffShroomEntity extends ShootingPlant {
         spore.shoot(d1, d2 + d4, d3, 1.6F, 3.0F);
         this.playSound(ModSounds.PUFF.get(), 1.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level().addFreshEntity(spore);
-    }
-
-    //GeckoLib
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::animController));
-    }
-
-    protected <E extends PuffShroomEntity> PlayState animController(final AnimationState<E> event) {
-        if(isShooting){
-            event.setAnimation(SHOOT);
-        }else
-            event.setAnimation(IDLE);
-
-        return PlayState.CONTINUE;
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return geoCache;
     }
 }

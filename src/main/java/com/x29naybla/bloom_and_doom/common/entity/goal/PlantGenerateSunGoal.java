@@ -8,11 +8,11 @@ import net.minecraft.world.level.gameevent.GameEvent;
 
 import static com.x29naybla.bloom_and_doom.common.entity.Plant.DATA_IS_SLEEPING;
 
-public class ModGenerateSunGoal extends Goal {
+public class PlantGenerateSunGoal extends Goal {
     private final SolarPlant plant;
     private final SoundEvent sound;
 
-    public ModGenerateSunGoal(SolarPlant plant, SoundEvent sound) {
+    public PlantGenerateSunGoal(SolarPlant plant, SoundEvent sound) {
         this.plant = plant;
         this.sound = sound;
     }
