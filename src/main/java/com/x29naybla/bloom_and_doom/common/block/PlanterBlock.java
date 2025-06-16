@@ -20,10 +20,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
@@ -44,6 +45,7 @@ import vectorwing.farmersdelight.common.utility.MathUtils;
 import java.util.stream.Stream;
 
 public class PlanterBlock extends BaseEntityBlock {
+    public static final BooleanProperty FILLED = BooleanProperty.create("filled");
     public static final MapCodec<PlanterBlock> CODEC = simpleCodec(PlanterBlock::new);
     public @NotNull MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
@@ -65,6 +67,12 @@ public class PlanterBlock extends BaseEntityBlock {
 
     public PlanterBlock(Properties properties) {
         super(properties);
+        this.registerDefaultState(this.defaultBlockState().setValue(FILLED, false));
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FILLED);
     }
 
     @Override
@@ -89,6 +97,8 @@ public class PlanterBlock extends BaseEntityBlock {
             ItemStack substrate = planter.content.getStackInSlot(0);
             if(itemStack.is(ModTags.Items.PLANTER_SUBSTRATES)) {
                 if(substrate.isEmpty()) {
+                    if(!level.isClientSide()) level.setBlockAndUpdate(pos, state.setValue(FILLED, true));
+
                     planter.content.insertItem(0, itemStack.copy(), false);
 
                     BlockItem content = (BlockItem) itemStack.getItem();
@@ -108,6 +118,8 @@ public class PlanterBlock extends BaseEntityBlock {
 
                     player.setItemInHand(InteractionHand.MAIN_HAND, stackOnPlanter);
                     planter.clearContents();
+
+                    if(!level.isClientSide()) level.setBlockAndUpdate(pos, state.setValue(FILLED, false));
                 } else
                     level.playSound(null, pos, SoundEvents.DECORATED_POT_INSERT_FAIL, SoundSource.BLOCKS, 1.0F, 1.0F);
             } else if(!(itemStack.isEmpty() && substrate.isEmpty())) {
@@ -134,13 +146,12 @@ public class PlanterBlock extends BaseEntityBlock {
     public @NotNull TriState canSustainPlant(@NotNull BlockState state, BlockGetter level, @NotNull BlockPos pos, @NotNull Direction facing, @NotNull BlockState plant) {
         if(level.getBlockEntity(pos) instanceof PlanterBlockEntity planter) {
             ItemStack substrate = planter.content.getStackInSlot(0);
-            LevelReader reader = (LevelReader) level;
 
+            if (!state.getValue(FILLED) && (plant.is(Blocks.TWISTING_VINES) || plant.is(Blocks.TWISTING_VINES_PLANT)))
+                return TriState.FALSE;
             if (!substrate.isEmpty() && !substrate.is(ModTags.Items.SUSTAINS_MUSHROOMS)) {
                 if (plant.is(CommonTags.Blocks.MUSHROOMS)){
-                    if (reader.getRawBrightness(pos, 0) > 13) {
-                        return TriState.FALSE;
-                    } else return TriState.TRUE;
+                    return TriState.DEFAULT;
                 }
             }
             if (substrate.is(ItemTags.DIRT) && plant.is(ModTags.Blocks.DIRT_SUSTAINS)){
@@ -207,10 +218,10 @@ public class PlanterBlock extends BaseEntityBlock {
 
     @Override
     protected @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
-        if (level.getBlockEntity(pos) instanceof PlanterBlockEntity planter) {
-            if (planter.content.getStackInSlot(0).isEmpty()) return SHAPE_EMPTY;
-        }
-        return SHAPE_FULL;
+        Boolean filled = state.getValue(FILLED);
+
+        if (filled) return SHAPE_FULL;
+        else return SHAPE_EMPTY;
     }
 
     @Override

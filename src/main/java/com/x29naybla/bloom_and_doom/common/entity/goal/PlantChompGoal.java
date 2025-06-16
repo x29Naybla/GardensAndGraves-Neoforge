@@ -1,7 +1,6 @@
 package com.x29naybla.bloom_and_doom.common.entity.goal;
 
 import com.x29naybla.bloom_and_doom.common.entity.ChomperEntity;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 
@@ -13,8 +12,6 @@ public class PlantChompGoal extends Goal {
     @Nullable
     private LivingEntity target;
     private int attackTime;
-    private int seeTime;
-    private final float attackRadius;
     private final float attackRadiusSqr;
 
     private int chewTimer;
@@ -26,9 +23,9 @@ public class PlantChompGoal extends Goal {
         } else {
             this.chomper = chomper;
             this.timerCap = 20;
-            this.attackRadius = 2;
+            float attackRadius = 2;
             this.attackRadiusSqr = attackRadius * attackRadius;
-            this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
+            this.setFlags(EnumSet.of(Flag.LOOK));
         }
     }
 
@@ -58,7 +55,6 @@ public class PlantChompGoal extends Goal {
     public void stop() {
         chomper.setChewing(false);
         this.target = null;
-        this.seeTime = 0;
         this.attackTime = -1;
     }
 
@@ -70,26 +66,17 @@ public class PlantChompGoal extends Goal {
         if (this.target != null) {
             double d0 = this.chomper.distanceToSqr(this.target.getX(), this.target.getY(), this.target.getZ());
             boolean flag = this.chomper.getSensing().hasLineOfSight(this.target);
-            if (flag) {
-                ++this.seeTime;
-            } else {
-                this.seeTime = 0;
-            }
-
-            if (!(d0 > (double)this.attackRadiusSqr) && this.seeTime >= 5) {
-                this.chomper.getNavigation().stop();
-            }
 
             this.chomper.getLookControl().setLookAt(this.target, 30.0F, 30.0F);
-            if (--this.attackTime == 1) {
+            if (--this.attackTime == 0) {
                 if (!flag) {
                     return;
                 }
 
-                float f = (float)Math.sqrt(d0) / this.attackRadius;
-                float f1 = Mth.clamp(f, 0.1F, 1.0F);
-                this.chomper.performChompAttack(this.target, f1);
-                this.attackTime = 350;
+                if (d0 < this.attackRadiusSqr) {
+                    this.chomper.performChompAttack(this.target);
+                    this.attackTime = this.chomper.maxChewingTime;
+                }
             } else if (this.attackTime < 0) {
                 this.attackTime = 0;
             }

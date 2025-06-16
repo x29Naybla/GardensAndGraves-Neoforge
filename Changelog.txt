@@ -38,3 +38,8 @@ changelog:
 * added ru_ru translations (thank you, Gospi and фuxиar!)
 * added the Almanac, but currently without its use
 * started adding chompers
+
+* fixed zombies burning from sunlight
+* fixed being able to get the "Peace, Love, and Plants" advancement from throwing a Potted Potato Mine and grabbing it yourself
+* fixed plants staying on top of the block after the substrate is removed
+* fixed being able to plant twisting vines on empty planters
