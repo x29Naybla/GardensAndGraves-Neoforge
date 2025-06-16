@@ -40,7 +40,9 @@ public class ModItems {
     public static final DeferredItem<Item> SEED_PACKET_JALAPENO = ITEMS.register("seed_packet_jalapeno",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_CHOMPER = ITEMS.register("seed_packet_chomper",
-            () -> new SeedPacketItem(ModEntities.CHOMPER.get(), 6, 5, new Item.Properties()));
+            () -> new Item(new Item.Properties()));
+    //public static final DeferredItem<Item> SEED_PACKET_CHOMPER = ITEMS.register("seed_packet_chomper",
+    //        () -> new SeedPacketItem(ModEntities.CHOMPER.get(), 6, 5, new Item.Properties()));
     public static final DeferredItem<Item> SEED_PACKET_BONK_CHOY = ITEMS.register("seed_packet_bonk_choy",
             () -> new Item(new Item.Properties()));
 

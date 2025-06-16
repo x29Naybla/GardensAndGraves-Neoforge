@@ -5,7 +5,6 @@ import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -80,13 +79,13 @@ public class Zombification extends MobEffect {
 
             } else if(entity instanceof Player player) {
                 player.setData(ModDataAttachments.ZOMBIE, true);
-                if (!entity.level().isClientSide) player.level().playSound(player, player.getOnPos(), SoundEvents.ZOMBIE_INFECT, SoundSource.PLAYERS,1.0F, 1.0F);
+                player.makeSound(SoundEvents.ZOMBIE_INFECT);
                 return true;
 
             }
         } else if (entity.level().isClientSide && (entity.getHealth() <= 0 || entity.getEffect(ModEffects.ZOMBIFICATION).getDuration() == 1) && entity instanceof Player player) {
             player.setData(ModDataAttachments.ZOMBIE, true);
-            if (!entity.level().isClientSide) player.level().playSound(player, player.getOnPos(), SoundEvents.ZOMBIE_INFECT, SoundSource.PLAYERS,1.0F, 1.0F);
+            player.makeSound(SoundEvents.ZOMBIE_INFECT);
             return true;
         }
 

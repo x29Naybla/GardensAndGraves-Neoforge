@@ -34,7 +34,7 @@ public class ChomperEntity extends Plant {
     //Goals and AI
     protected void registerGoals(){
         this.goalSelector.addGoal(1, new PlantChompGoal(this));
-        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 350, true, true,
+        this.goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 0, false, false,
                 (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE))));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
@@ -105,7 +105,7 @@ public class ChomperEntity extends Plant {
         getEntityData().set(CHEWING, bool);
     }
 
-    public void performChompAttack(LivingEntity target, float f1) {
-        target.discard();
+    public void performChompAttack(LivingEntity target) {
+        target.remove(RemovalReason.KILLED);
     }
 }
