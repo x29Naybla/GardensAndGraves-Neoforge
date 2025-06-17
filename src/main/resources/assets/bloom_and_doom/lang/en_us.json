@@ -294,5 +294,8 @@
   "config.jade.plugin_bloom_and_doom.seed_packets_timer": "Seed Packets Timer",
   "bloom_and_doom.sun_timer": "Next sun: ",
   "bloom_and_doom.reward_timer": "Next nuggets: ",
-  "bloom_and_doom.seed_packets_timer": "Next seed packet: "
+  "bloom_and_doom.seed_packets_timer": "Next seed packet: ",
+
+  "bloom_and_doom.gui.almanac.button.plants": "Plants",
+  "bloom_and_doom.gui.almanac.button.zombies": "Zombies"
 }

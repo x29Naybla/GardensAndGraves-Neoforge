@@ -31,7 +31,7 @@ public class ModEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<RepeaterEntity>> REPEATER = register("repeater", RepeaterEntity::new, 0.5f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<WallNutEntity>> WALL_NUT = register("wall_nut", WallNutEntity::new, 0.8f, 1.3f);
     public static final DeferredHolder<EntityType<?>, EntityType<PotatoMineEntity>> POTATO_MINE = register("potato_mine", PotatoMineEntity::new, 0.7f, 0.7f);
-    //public static final DeferredHolder<EntityType<?>, EntityType<ChomperEntity>> CHOMPER = register("chomper", ChomperEntity::new, 1f, 1.65f);
+    public static final DeferredHolder<EntityType<?>, EntityType<ChomperEntity>> CHOMPER = register("chomper", ChomperEntity::new, 1f, 1.65f);
     public static final DeferredHolder<EntityType<?>, EntityType<SunShroomEntity>> SUN_SHROOM = register("sun_shroom", SunShroomEntity::new, 0.7f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<PuffShroomEntity>> PUFF_SHROOM = register("puff_shroom", PuffShroomEntity::new, 0.5f, 0.5f);
     public static final DeferredHolder<EntityType<?>, EntityType<DoomShroomEntity>> DOOM_SHROOM = register("doom_shroom", DoomShroomEntity::new, 0.7f, 1f);
@@ -127,7 +127,7 @@ public class ModEntities {
         event.put(ModEntities.REPEATER.get(), repeaterAttributes.build());
         event.put(ModEntities.WALL_NUT.get(), wallNutAttributes.build());
         event.put(ModEntities.POTATO_MINE.get(), potatoMineAttributes.build());
-        //event.put(ModEntities.CHOMPER.get(), chomperAttributes.build());
+        event.put(ModEntities.CHOMPER.get(), chomperAttributes.build());
         event.put(ModEntities.SUN_SHROOM.get(), sunflowerAttributes.build());
         event.put(ModEntities.PUFF_SHROOM.get(), puffShroomAttributes.build());
         event.put(ModEntities.DOOM_SHROOM.get(), doomShroomAttributes.build());
