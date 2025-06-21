@@ -17,7 +17,7 @@ public class SunShroomEntity extends SolarPlant {
 
     //Properties
     public SunShroomEntity(EntityType<? extends SunShroomEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_SUN_SHROOMS, ModItems.SEED_PACKET_SUN_SHROOM.toStack(), ModItems.POTTED_SUN_SHROOM.toStack(), true);
+        super(entityType, level, ModTags.Items.SUSTAINS_SUN_SHROOMS, ModItems.SUN_SHROOM_SEED_PACKET.toStack(), ModItems.POTTED_SUN_SHROOM.toStack(), true);
         this.isMushroom = true;
         this.sunTime = maxSunTime*2;
     }

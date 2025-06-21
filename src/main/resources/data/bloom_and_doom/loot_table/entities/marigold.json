@@ -13,7 +13,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "bloom_and_doom:seed_packet_marigold"
+          "name": "bloom_and_doom:marigold_seed_packet"
         }
       ],
       "rolls": 1.0

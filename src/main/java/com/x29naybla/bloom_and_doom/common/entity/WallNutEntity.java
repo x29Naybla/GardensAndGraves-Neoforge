@@ -16,7 +16,7 @@ public class WallNutEntity extends Plant {
 
     //Properties
     public WallNutEntity(EntityType<? extends WallNutEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_WALL_NUTS, ModItems.SEED_PACKET_WALL_NUT.toStack(), null);
+        super(entityType, level, ModTags.Items.SUSTAINS_WALL_NUTS, ModItems.WALL_NUT_SEED_PACKET.toStack(), null);
     }
 
     public boolean canCollideWith(@NotNull Entity entity) {

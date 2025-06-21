@@ -1,23 +1,23 @@
 {
-  "item.bloom_and_doom.seed_packet_sunflower": "Sunflower Seed Packet",
-  "item.bloom_and_doom.seed_packet_marigold": "Marigold Seed Packet",
+  "item.bloom_and_doom.sunflower_seed_packet": "Sunflower Seed Packet",
+  "item.bloom_and_doom.marigold_seed_packet": "Marigold Seed Packet",
 
-  "item.bloom_and_doom.seed_packet_peashooter": "Peashooter Seed Packet",
-  "item.bloom_and_doom.seed_packet_snow_pea": "Snow Pea Seed Packet",
-  "item.bloom_and_doom.seed_packet_repeater": "Repeater Seed Packet",
+  "item.bloom_and_doom.peashooter_seed_packet": "Peashooter Seed Packet",
+  "item.bloom_and_doom.snow_pea_seed_packet": "Snow Pea Seed Packet",
+  "item.bloom_and_doom.repeater_seed_packet": "Repeater Seed Packet",
 
-  "item.bloom_and_doom.seed_packet_wall_nut": "Wall-nut Seed Packet",
+  "item.bloom_and_doom.wall_nut_seed_packet": "Wall-nut Seed Packet",
 
-  "item.bloom_and_doom.seed_packet_potato_mine": "Potato Mine Seed Packet",
-  "item.bloom_and_doom.seed_packet_jalapeno": "Jalapeno Seed Packet",
-  "item.bloom_and_doom.seed_packet_chomper": "Chomper Seed Packet",
-  "item.bloom_and_doom.seed_packet_bonk_choy": "Bonk Choy Seed Packet",
+  "item.bloom_and_doom.potato_mine_seed_packet": "Potato Mine Seed Packet",
+  "item.bloom_and_doom.jalapeno_seed_packet": "Jalapeno Seed Packet",
+  "item.bloom_and_doom.chomper_seed_packet": "Chomper Seed Packet",
+  "item.bloom_and_doom.bonk_choy_seed_packet": "Bonk Choy Seed Packet",
 
-  "item.bloom_and_doom.seed_packet_sun_shroom": "Sun-shroom Seed Packet",
-  "item.bloom_and_doom.seed_packet_puff_shroom": "Puff-shroom Seed Packet",
-  "item.bloom_and_doom.seed_packet_fume_shroom": "Fume-shroom Seed Packet",
-  "item.bloom_and_doom.seed_packet_hypno_shroom": "Hypno-shroom Seed Packet",
-  "item.bloom_and_doom.seed_packet_doom_shroom": "Doom-shroom Seed Packet",
+  "item.bloom_and_doom.sun_shroom_seed_packet": "Sun-shroom Seed Packet",
+  "item.bloom_and_doom.puff_shroom_seed_packet": "Puff-shroom Seed Packet",
+  "item.bloom_and_doom.fume_shroom_seed_packet": "Fume-shroom Seed Packet",
+  "item.bloom_and_doom.hypno_shroom_seed_packet": "Hypno-shroom Seed Packet",
+  "item.bloom_and_doom.doom_shroom_seed_packet": "Doom-shroom Seed Packet",
 
   "item.bloom_and_doom.potted_sunflower": "Potted Sunflower",
   "item.bloom_and_doom.potted_sunflower.desc": "Description",

@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 public class PeashooterEntity extends ShootingPlant {
     //Properties
     public PeashooterEntity(EntityType<? extends PeashooterEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_PEASHOOTERS, ModItems.SEED_PACKET_PEASHOOTER.toStack(), ModItems.POTTED_PEASHOOTER.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_PEASHOOTERS, ModItems.PEASHOOTER_SEED_PACKET.toStack(), ModItems.POTTED_PEASHOOTER.toStack());
     }
 
     //Goals and AI

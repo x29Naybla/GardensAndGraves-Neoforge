@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_bonk_choy"
+            "items": "bloom_and_doom:bonk_choy_seed_packet"
           }
         ]
       },
@@ -15,7 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_chomper"
+            "items": "bloom_and_doom:chomper_seed_packet"
           }
         ]
       },
@@ -25,7 +25,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_doom_shroom"
+            "items": "bloom_and_doom:doom_shroom_seed_packet"
           }
         ]
       },
@@ -35,7 +35,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_fume_shroom"
+            "items": "bloom_and_doom:fume_shroom_seed_packet"
           }
         ]
       },
@@ -45,7 +45,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_hypno_shroom"
+            "items": "bloom_and_doom:hypno_shroom_seed_packet"
           }
         ]
       },
@@ -55,7 +55,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_jalapeno"
+            "items": "bloom_and_doom:jalapeno_seed_packet"
           }
         ]
       },
@@ -65,7 +65,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_marigold"
+            "items": "bloom_and_doom:marigold_seed_packet"
           }
         ]
       },
@@ -75,7 +75,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_peashooter"
+            "items": "bloom_and_doom:peashooter_seed_packet"
           }
         ]
       },
@@ -85,7 +85,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_potato_mine"
+            "items": "bloom_and_doom:potato_mine_seed_packet"
           }
         ]
       },
@@ -95,7 +95,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_puff_shroom"
+            "items": "bloom_and_doom:puff_shroom_seed_packet"
           }
         ]
       },
@@ -105,7 +105,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_repeater"
+            "items": "bloom_and_doom:repeater_seed_packet"
           }
         ]
       },
@@ -115,7 +115,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_snow_pea"
+            "items": "bloom_and_doom:snow_pea_seed_packet"
           }
         ]
       },
@@ -125,7 +125,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_sun_shroom"
+            "items": "bloom_and_doom:sun_shroom_seed_packet"
           }
         ]
       },
@@ -135,7 +135,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_sunflower"
+            "items": "bloom_and_doom:sunflower_seed_packet"
           }
         ]
       },
@@ -145,7 +145,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_wall_nut"
+            "items": "bloom_and_doom:wall_nut_seed_packet"
           }
         ]
       },
@@ -158,7 +158,7 @@
     },
     "icon": {
       "count": 1,
-      "id": "bloom_and_doom:seed_packet_sunflower"
+      "id": "bloom_and_doom:sunflower_seed_packet"
     },
     "title": {
       "translate": "bloom_and_doom.advancement.first_pack"

@@ -19,7 +19,7 @@
               }
             }
           ],
-          "name": "bloom_and_doom:seed_packet_jalapeno"
+          "name": "bloom_and_doom:jalapeno_seed_packet"
         },
         {
           "type": "minecraft:item",
@@ -33,7 +33,7 @@
               }
             }
           ],
-          "name": "bloom_and_doom:seed_packet_peashooter"
+          "name": "bloom_and_doom:peashooter_seed_packet"
         },
         {
           "type": "minecraft:item",
@@ -47,7 +47,7 @@
               }
             }
           ],
-          "name": "bloom_and_doom:seed_packet_potato_mine"
+          "name": "bloom_and_doom:potato_mine_seed_packet"
         },
         {
           "type": "minecraft:item",
@@ -61,7 +61,7 @@
               }
             }
           ],
-          "name": "bloom_and_doom:seed_packet_wall_nut"
+          "name": "bloom_and_doom:wall_nut_seed_packet"
         },
         {
           "type": "minecraft:item",
@@ -75,7 +75,7 @@
               }
             }
           ],
-          "name": "bloom_and_doom:seed_packet_bonk_choy"
+          "name": "bloom_and_doom:bonk_choy_seed_packet"
         }
       ]
     }

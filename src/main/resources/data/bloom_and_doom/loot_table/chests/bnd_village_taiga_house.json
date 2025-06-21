@@ -19,7 +19,7 @@
               }
             }
           ],
-          "name": "bloom_and_doom:seed_packet_sun_shroom"
+          "name": "bloom_and_doom:sun_shroom_seed_packet"
         },
         {
           "type": "minecraft:item",
@@ -33,7 +33,7 @@
               }
             }
           ],
-          "name": "bloom_and_doom:seed_packet_peashooter"
+          "name": "bloom_and_doom:peashooter_seed_packet"
         },
         {
           "type": "minecraft:item",
@@ -47,7 +47,7 @@
               }
             }
           ],
-          "name": "bloom_and_doom:seed_packet_puff_shroom"
+          "name": "bloom_and_doom:puff_shroom_seed_packet"
         },
         {
           "type": "minecraft:item",
@@ -61,7 +61,7 @@
               }
             }
           ],
-          "name": "bloom_and_doom:seed_packet_fume_shroom"
+          "name": "bloom_and_doom:fume_shroom_seed_packet"
         },
         {
           "type": "minecraft:item",
@@ -75,7 +75,7 @@
               }
             }
           ],
-          "name": "bloom_and_doom:seed_packet_hypno_shroom"
+          "name": "bloom_and_doom:hypno_shroom_seed_packet"
         }
       ]
     }

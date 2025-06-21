@@ -1,3 +1,6 @@
 changelog:
 * unhid the chomper
 * started adding pages to the Almanac
+
+* added update checker
+* renamed the texture and id of the seed packet items

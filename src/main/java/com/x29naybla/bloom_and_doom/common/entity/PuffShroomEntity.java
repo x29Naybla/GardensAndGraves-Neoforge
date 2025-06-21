@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 public class PuffShroomEntity extends ShootingPlant {
     //Properties
     public PuffShroomEntity(EntityType<? extends PuffShroomEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_PUFF_SHROOMS, ModItems.SEED_PACKET_PUFF_SHROOM.toStack(), ModItems.POTTED_PUFF_SHROOM.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_PUFF_SHROOMS, ModItems.PUFF_SHROOM_SEED_PACKET.toStack(), ModItems.POTTED_PUFF_SHROOM.toStack());
         this.isMushroom = true;
     }
 

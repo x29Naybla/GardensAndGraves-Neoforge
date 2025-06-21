@@ -28,7 +28,7 @@ public class ChomperEntity extends Plant {
 
     //Properties
     public ChomperEntity(EntityType<? extends Plant> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_CHOMPERS, ModItems.SEED_PACKET_CHOMPER.toStack(), null);
+        super(entityType, level, ModTags.Items.SUSTAINS_CHOMPERS, ModItems.CHOMPER_SEED_PACKET.toStack(), null);
     }
 
     //Goals and AI

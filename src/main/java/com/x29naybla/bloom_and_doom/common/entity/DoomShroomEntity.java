@@ -16,7 +16,7 @@ public class DoomShroomEntity extends ExplosivePlant {
 
     //Properties
     public DoomShroomEntity(EntityType<? extends DoomShroomEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_DOOM_SHROOMS, ModItems.SEED_PACKET_DOOM_SHROOM.toStack(), null, 4, 180, ModSounds.DOOM);
+        super(entityType, level, ModTags.Items.SUSTAINS_DOOM_SHROOMS, ModItems.DOOM_SHROOM_SEED_PACKET.toStack(), null, 4, 180, ModSounds.DOOM);
         this.isMushroom = true;
     }
 

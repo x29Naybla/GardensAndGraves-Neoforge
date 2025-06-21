@@ -1,23 +1,23 @@
 {
-  "item.bloom_and_doom.seed_packet_sunflower": "Pacote de sementes de girassol",
-  "item.bloom_and_doom.seed_packet_marigold": "Pacote de sementes de calêndula",
+  "item.bloom_and_doom.sunflower_seed_packet": "Pacote de sementes de girassol",
+  "item.bloom_and_doom.marigold_seed_packet": "Pacote de sementes de calêndula",
 
-  "item.bloom_and_doom.seed_packet_peashooter": "Pacote de sementes de disparervilha",
-  "item.bloom_and_doom.seed_packet_snow_pea": "Pacote de sementes de gelervilha",
-  "item.bloom_and_doom.seed_packet_repeater": "Pacote de sementes de duplaervilha",
+  "item.bloom_and_doom.peashooter_seed_packet": "Pacote de sementes de disparervilha",
+  "item.bloom_and_doom.snow_pea_seed_packet": "Pacote de sementes de gelervilha",
+  "item.bloom_and_doom.repeater_seed_packet": "Pacote de sementes de duplaervilha",
 
-  "item.bloom_and_doom.seed_packet_wall_nut": "Pacote de sementes de noz-obstáculo",
+  "item.bloom_and_doom.wall_nut_seed_packet": "Pacote de sementes de noz-obstáculo",
 
-  "item.bloom_and_doom.seed_packet_potato_mine": "Pacote de sementes de batatamina",
-  "item.bloom_and_doom.seed_packet_jalapeno": "Pacote de sementes de pimenta",
-  "item.bloom_and_doom.seed_packet_chomper": "Pacote de sementes de carnívora",
-  "item.bloom_and_doom.seed_packet_bonk_choy": "Pacote de sementes de repolho-boxeador",
+  "item.bloom_and_doom.potato_mine_seed_packet": "Pacote de sementes de batatamina",
+  "item.bloom_and_doom.jalapeno_seed_packet": "Pacote de sementes de pimenta",
+  "item.bloom_and_doom.chomper_seed_packet": "Pacote de sementes de carnívora",
+  "item.bloom_and_doom.bonk_choy_seed_packet": "Pacote de sementes de repolho-boxeador",
 
-  "item.bloom_and_doom.seed_packet_sun_shroom": "Pacote de sementes de solargumelo",
-  "item.bloom_and_doom.seed_packet_puff_shroom": "Pacote de sementes de soprogumelo",
-  "item.bloom_and_doom.seed_packet_fume_shroom": "Pacote de sementes de gasogumelo",
-  "item.bloom_and_doom.seed_packet_hypno_shroom": "Pacote de sementes de hypnogumelo",
-  "item.bloom_and_doom.seed_packet_doom_shroom": "Pacote de sementes de ruinagumelo",
+  "item.bloom_and_doom.sun_shroom_seed_packet": "Pacote de sementes de solargumelo",
+  "item.bloom_and_doom.puff_shroom_seed_packet": "Pacote de sementes de soprogumelo",
+  "item.bloom_and_doom.fume_shroom_seed_packet": "Pacote de sementes de gasogumelo",
+  "item.bloom_and_doom.hypno_shroom_seed_packet": "Pacote de sementes de hypnogumelo",
+  "item.bloom_and_doom.doom_shroom_seed_packet": "Pacote de sementes de ruinagumelo",
 
   "item.bloom_and_doom.potted_sunflower": "Girassol envasado",
   "item.bloom_and_doom.potted_sunflower.desc": "Descrição",

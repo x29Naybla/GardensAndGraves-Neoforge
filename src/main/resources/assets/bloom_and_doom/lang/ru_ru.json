@@ -1,23 +1,23 @@
 {
-  "item.bloom_and_doom.seed_packet_sunflower": "Пакет семян Подсолнуха",
-  "item.bloom_and_doom.seed_packet_marigold": "Пакет семян Золотой Ромашки",
+  "item.bloom_and_doom.sunflower_seed_packet": "Пакет семян Подсолнуха",
+  "item.bloom_and_doom.marigold_seed_packet": "Пакет семян Золотой Ромашки",
 
-  "item.bloom_and_doom.seed_packet_peashooter": "Пакет семян Горохострела",
-  "item.bloom_and_doom.seed_packet_snow_pea": "Пакет семян Морозного Гороха",
-  "item.bloom_and_doom.seed_packet_repeater": "Пакет семян Скорострела",
+  "item.bloom_and_doom.peashooter_seed_packet": "Пакет семян Горохострела",
+  "item.bloom_and_doom.snow_pea_seed_packet": "Пакет семян Морозного Гороха",
+  "item.bloom_and_doom.repeater_seed_packet": "Пакет семян Скорострела",
 
-  "item.bloom_and_doom.seed_packet_wall_nut": "Пакет семян Стена-Ореха",
+  "item.bloom_and_doom.wall_nut_seed_packet": "Пакет семян Стена-Ореха",
 
-  "item.bloom_and_doom.seed_packet_potato_mine": "Пакет семян Картофельной Мины",
-  "item.bloom_and_doom.seed_packet_jalapeno": "Пакет семян Халапеньо",
-  "item.bloom_and_doom.seed_packet_chomper": "Пакет семян Зубастика",
-  "item.bloom_and_doom.seed_packet_bonk_choy": "Пакет семян Бонк-Чоя",
+  "item.bloom_and_doom.potato_mine_seed_packet": "Пакет семян Картофельной Мины",
+  "item.bloom_and_doom.jalapeno_seed_packet": "Пакет семян Халапеньо",
+  "item.bloom_and_doom.chomper_seed_packet": "Пакет семян Зубастика",
+  "item.bloom_and_doom.bonk_choy_seed_packet": "Пакет семян Бонк-Чоя",
 
-  "item.bloom_and_doom.seed_packet_sun_shroom": "Пакет семян Солнцегриба",
-  "item.bloom_and_doom.seed_packet_puff_shroom": "Пакет семян Спорогриба",
-  "item.bloom_and_doom.seed_packet_fume_shroom": "Пакет семян Дымогриба",
-  "item.bloom_and_doom.seed_packet_hypno_shroom": "Пакет семян Гипногриба",
-  "item.bloom_and_doom.seed_packet_doom_shroom": "Пакет семян Гриба Судьбы",
+  "item.bloom_and_doom.sun_shroom_seed_packet": "Пакет семян Солнцегриба",
+  "item.bloom_and_doom.puff_shroom_seed_packet": "Пакет семян Спорогриба",
+  "item.bloom_and_doom.fume_shroom_seed_packet": "Пакет семян Дымогриба",
+  "item.bloom_and_doom.hypno_shroom_seed_packet": "Пакет семян Гипногриба",
+  "item.bloom_and_doom.doom_shroom_seed_packet": "Пакет семян Гриба Судьбы",
 
   "item.bloom_and_doom.potted_sunflower": "Подсолнух в горшке",
   "item.bloom_and_doom.potted_sunflower.desc": "Описание",

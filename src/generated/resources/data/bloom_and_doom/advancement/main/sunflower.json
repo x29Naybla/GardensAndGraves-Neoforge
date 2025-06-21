@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "bloom_and_doom:seed_packet_sunflower"
+            "items": "bloom_and_doom:sunflower_seed_packet"
           }
         ]
       },
@@ -18,7 +18,7 @@
     },
     "icon": {
       "count": 1,
-      "id": "bloom_and_doom:seed_packet_sunflower"
+      "id": "bloom_and_doom:sunflower_seed_packet"
     },
     "title": {
       "translate": "bloom_and_doom.advancement.sunflower"

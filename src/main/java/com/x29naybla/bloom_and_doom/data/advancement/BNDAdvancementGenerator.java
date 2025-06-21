@@ -71,97 +71,97 @@ public class BNDAdvancementGenerator implements AdvancementProvider.AdvancementG
                         Optional.of(EntityPredicate.wrap(EntityPredicate.Builder.entity().of(EntityType.PLAYER)))))
                 .save(consumer, getNameId("main/peace_love_plants"));
 
-        AdvancementHolder first_pack = getAdvancement(bloomAndDoom, ModItems.SEED_PACKET_SUNFLOWER, "first_pack", AdvancementType.TASK, true, true, false)
-                .addCriterion("sunflower", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_SUNFLOWER))
-                .addCriterion("marigold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_MARIGOLD))
-                .addCriterion("peashooter", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_PEASHOOTER))
-                .addCriterion("snow_pea", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_SNOW_PEA))
-                .addCriterion("repeater", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_REPEATER))
-                .addCriterion("wall_nut", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_WALL_NUT))
-                .addCriterion("potato_mine", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_POTATO_MINE))
-                .addCriterion("jalapeno", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_JALAPENO))
-                .addCriterion("chomper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_CHOMPER))
-                .addCriterion("bonk_choy", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_BONK_CHOY))
-                .addCriterion("sun_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_SUN_SHROOM))
-                .addCriterion("puff_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_PUFF_SHROOM))
-                .addCriterion("fume_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_FUME_SHROOM))
-                .addCriterion("hypno_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_HYPNO_SHROOM))
-                .addCriterion("doom_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_DOOM_SHROOM))
+        AdvancementHolder first_pack = getAdvancement(bloomAndDoom, ModItems.SUNFLOWER_SEED_PACKET, "first_pack", AdvancementType.TASK, true, true, false)
+                .addCriterion("sunflower", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SUNFLOWER_SEED_PACKET))
+                .addCriterion("marigold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MARIGOLD_SEED_PACKET))
+                .addCriterion("peashooter", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.PEASHOOTER_SEED_PACKET))
+                .addCriterion("snow_pea", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SNOW_PEA_SEED_PACKET))
+                .addCriterion("repeater", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.REPEATER_SEED_PACKET))
+                .addCriterion("wall_nut", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.WALL_NUT_SEED_PACKET))
+                .addCriterion("potato_mine", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.POTATO_MINE_SEED_PACKET))
+                .addCriterion("jalapeno", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.JALAPENO_SEED_PACKET))
+                .addCriterion("chomper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CHOMPER_SEED_PACKET))
+                .addCriterion("bonk_choy", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BONK_CHOY_SEED_PACKET))
+                .addCriterion("sun_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SUN_SHROOM_SEED_PACKET))
+                .addCriterion("puff_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.PUFF_SHROOM_SEED_PACKET))
+                .addCriterion("fume_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.FUME_SHROOM_SEED_PACKET))
+                .addCriterion("hypno_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HYPNO_SHROOM_SEED_PACKET))
+                .addCriterion("doom_shroom", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.DOOM_SHROOM_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/first_pack"));
 
-        AdvancementHolder sunflower = getAdvancement(first_pack, ModItems.SEED_PACKET_SUNFLOWER, "sunflower", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_SUNFLOWER))
+        AdvancementHolder sunflower = getAdvancement(first_pack, ModItems.SUNFLOWER_SEED_PACKET, "sunflower", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SUNFLOWER_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/sunflower"));
 
-        AdvancementHolder marigold = getAdvancement(first_pack, ModItems.SEED_PACKET_MARIGOLD, "marigold", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_MARIGOLD))
+        AdvancementHolder marigold = getAdvancement(first_pack, ModItems.MARIGOLD_SEED_PACKET, "marigold", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MARIGOLD_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/marigold"));
 
-        AdvancementHolder peashooter = getAdvancement(first_pack, ModItems.SEED_PACKET_PEASHOOTER, "peashooter", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_PEASHOOTER))
+        AdvancementHolder peashooter = getAdvancement(first_pack, ModItems.PEASHOOTER_SEED_PACKET, "peashooter", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.PEASHOOTER_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/peashooter"));
 
-        AdvancementHolder snow_pea = getAdvancement(first_pack, ModItems.SEED_PACKET_SNOW_PEA, "snow_pea", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_SNOW_PEA))
+        AdvancementHolder snow_pea = getAdvancement(first_pack, ModItems.SNOW_PEA_SEED_PACKET, "snow_pea", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SNOW_PEA_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/snow_pea"));
 
-        AdvancementHolder repeater = getAdvancement(first_pack, ModItems.SEED_PACKET_REPEATER, "repeater", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_REPEATER))
+        AdvancementHolder repeater = getAdvancement(first_pack, ModItems.REPEATER_SEED_PACKET, "repeater", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.REPEATER_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/repeater"));
 
-        AdvancementHolder wall_nut = getAdvancement(first_pack, ModItems.SEED_PACKET_WALL_NUT, "wall_nut", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_WALL_NUT))
+        AdvancementHolder wall_nut = getAdvancement(first_pack, ModItems.WALL_NUT_SEED_PACKET, "wall_nut", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.WALL_NUT_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/wall_nut"));
 
-        AdvancementHolder potato_mine = getAdvancement(first_pack, ModItems.SEED_PACKET_POTATO_MINE, "potato_mine", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_POTATO_MINE))
+        AdvancementHolder potato_mine = getAdvancement(first_pack, ModItems.POTATO_MINE_SEED_PACKET, "potato_mine", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.POTATO_MINE_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/potato_mine"));
 
-        AdvancementHolder jalapeno = getAdvancement(first_pack, ModItems.SEED_PACKET_JALAPENO, "jalapeno", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_JALAPENO))
+        AdvancementHolder jalapeno = getAdvancement(first_pack, ModItems.JALAPENO_SEED_PACKET, "jalapeno", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.JALAPENO_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/jalapeno"));
 
-        AdvancementHolder chomper = getAdvancement(first_pack, ModItems.SEED_PACKET_CHOMPER, "chomper", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_CHOMPER))
+        AdvancementHolder chomper = getAdvancement(first_pack, ModItems.CHOMPER_SEED_PACKET, "chomper", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CHOMPER_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/chomper"));
 
-        AdvancementHolder bonk_choy = getAdvancement(first_pack, ModItems.SEED_PACKET_BONK_CHOY, "bonk_choy", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_BONK_CHOY))
+        AdvancementHolder bonk_choy = getAdvancement(first_pack, ModItems.BONK_CHOY_SEED_PACKET, "bonk_choy", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BONK_CHOY_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/bonk_choy"));
 
-        AdvancementHolder sun_shroom = getAdvancement(first_pack, ModItems.SEED_PACKET_SUN_SHROOM, "sun_shroom", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_SUN_SHROOM))
+        AdvancementHolder sun_shroom = getAdvancement(first_pack, ModItems.SUN_SHROOM_SEED_PACKET, "sun_shroom", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SUN_SHROOM_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/sun_shroom"));
 
-        AdvancementHolder puff_shroom = getAdvancement(first_pack, ModItems.SEED_PACKET_PUFF_SHROOM, "puff_shroom", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_PUFF_SHROOM))
+        AdvancementHolder puff_shroom = getAdvancement(first_pack, ModItems.PUFF_SHROOM_SEED_PACKET, "puff_shroom", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.PUFF_SHROOM_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/puff_shroom"));
 
-        AdvancementHolder fume_shroom = getAdvancement(first_pack, ModItems.SEED_PACKET_FUME_SHROOM, "fume_shroom", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_FUME_SHROOM))
+        AdvancementHolder fume_shroom = getAdvancement(first_pack, ModItems.FUME_SHROOM_SEED_PACKET, "fume_shroom", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.FUME_SHROOM_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/fume_shroom"));
 
-        AdvancementHolder hypno_shroom = getAdvancement(first_pack, ModItems.SEED_PACKET_HYPNO_SHROOM, "hypno_shroom", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_HYPNO_SHROOM))
+        AdvancementHolder hypno_shroom = getAdvancement(first_pack, ModItems.HYPNO_SHROOM_SEED_PACKET, "hypno_shroom", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HYPNO_SHROOM_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/hypno_shroom"));
 
-        AdvancementHolder doom_shroom = getAdvancement(first_pack, ModItems.SEED_PACKET_DOOM_SHROOM, "doom_shroom", AdvancementType.TASK, true, true, false)
-                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SEED_PACKET_DOOM_SHROOM))
+        AdvancementHolder doom_shroom = getAdvancement(first_pack, ModItems.DOOM_SHROOM_SEED_PACKET, "doom_shroom", AdvancementType.TASK, true, true, false)
+                .addCriterion("seed_packet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.DOOM_SHROOM_SEED_PACKET))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/doom_shroom"));
     }

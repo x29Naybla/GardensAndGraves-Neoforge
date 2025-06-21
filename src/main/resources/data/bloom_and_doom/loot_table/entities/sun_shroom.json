@@ -13,7 +13,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "bloom_and_doom:seed_packet_sun_shroom"
+          "name": "bloom_and_doom:sun_shroom_seed_packet"
         }
       ],
       "rolls": 1.0

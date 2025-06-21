@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 public class SnowPeaEntity extends ShootingPlant {
     //Properties
     public SnowPeaEntity(EntityType<? extends SnowPeaEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_SNOW_PEAS, ModItems.SEED_PACKET_SNOW_PEA.toStack(), ModItems.POTTED_SNOW_PEA.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_SNOW_PEAS, ModItems.SNOW_PEA_SEED_PACKET.toStack(), ModItems.POTTED_SNOW_PEA.toStack());
     }
 
     //Goals and AI

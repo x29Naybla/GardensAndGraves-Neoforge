@@ -42,7 +42,7 @@ public class MarigoldEntity extends Plant {
 
     //Properties
     public MarigoldEntity(EntityType<? extends MarigoldEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_MARIGOLDS, ModItems.SEED_PACKET_MARIGOLD.toStack(), ModItems.POTTED_MARIGOLD.toStack());
+        super(entityType, level, ModTags.Items.SUSTAINS_MARIGOLDS, ModItems.MARIGOLD_SEED_PACKET.toStack(), ModItems.POTTED_MARIGOLD.toStack());
         this.rewardTime = 6000;
     }
 

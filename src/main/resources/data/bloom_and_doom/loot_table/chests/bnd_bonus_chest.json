@@ -11,7 +11,7 @@
               "count": 1
             }
           ],
-          "name": "bloom_and_doom:seed_packet_sunflower"
+          "name": "bloom_and_doom:sunflower_seed_packet"
         }
       ]
     },
@@ -26,7 +26,7 @@
               "count": 1
             }
           ],
-          "name": "bloom_and_doom:seed_packet_peashooter"
+          "name": "bloom_and_doom:peashooter_seed_packet"
         }
       ]
     },
@@ -41,7 +41,7 @@
               "count": 1
             }
           ],
-          "name": "bloom_and_doom:seed_packet_wall_nut"
+          "name": "bloom_and_doom:wall_nut_seed_packet"
         }
       ]
     }

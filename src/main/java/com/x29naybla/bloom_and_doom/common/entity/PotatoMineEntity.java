@@ -23,7 +23,7 @@ public class PotatoMineEntity extends ExplosivePlant {
 
     //Properties
     public PotatoMineEntity(EntityType<? extends PotatoMineEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_POTATO_MINES, ModItems.SEED_PACKET_POTATO_MINE.toStack(), ModItems.POTTED_POTATO_MINE.toStack(), 1, 180, ModSounds.SPUDOW);
+        super(entityType, level, ModTags.Items.SUSTAINS_POTATO_MINES, ModItems.POTATO_MINE_SEED_PACKET.toStack(), ModItems.POTTED_POTATO_MINE.toStack(), 1, 180, ModSounds.SPUDOW);
     }
 
     //Goals and AI

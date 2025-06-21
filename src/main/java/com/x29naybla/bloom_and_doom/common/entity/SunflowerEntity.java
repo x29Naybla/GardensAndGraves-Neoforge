@@ -18,7 +18,7 @@ public class SunflowerEntity extends SolarPlant {
 
     //Properties
     public SunflowerEntity(EntityType<? extends SunflowerEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_SUNFLOWERS, ModItems.SEED_PACKET_SUNFLOWER.toStack(), ModItems.POTTED_SUNFLOWER.toStack(), false);
+        super(entityType, level, ModTags.Items.SUSTAINS_SUNFLOWERS, ModItems.SUNFLOWER_SEED_PACKET.toStack(), ModItems.POTTED_SUNFLOWER.toStack(), false);
     }
 
     //Goals and AI

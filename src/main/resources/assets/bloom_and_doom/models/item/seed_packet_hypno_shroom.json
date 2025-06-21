@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "bloom_and_doom:item/seed_packet_hypno_shroom"
-  }
-}

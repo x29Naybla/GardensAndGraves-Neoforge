@@ -19,21 +19,21 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.bloom_and_doom.items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.SUN);
-                        output.accept(ModItems.SEED_PACKET_SUNFLOWER);
-                        output.accept(ModItems.SEED_PACKET_MARIGOLD);
-                        output.accept(ModItems.SEED_PACKET_PEASHOOTER);
-                        output.accept(ModItems.SEED_PACKET_SNOW_PEA);
-                        output.accept(ModItems.SEED_PACKET_REPEATER);
-                        output.accept(ModItems.SEED_PACKET_WALL_NUT);
-                        output.accept(ModItems.SEED_PACKET_POTATO_MINE);
-                        output.accept(ModItems.SEED_PACKET_JALAPENO);
-                        output.accept(ModItems.SEED_PACKET_CHOMPER);
-                        output.accept(ModItems.SEED_PACKET_BONK_CHOY);
-                        output.accept(ModItems.SEED_PACKET_SUN_SHROOM);
-                        output.accept(ModItems.SEED_PACKET_PUFF_SHROOM);
-                        output.accept(ModItems.SEED_PACKET_FUME_SHROOM);
-                        output.accept(ModItems.SEED_PACKET_HYPNO_SHROOM);
-                        output.accept(ModItems.SEED_PACKET_DOOM_SHROOM);
+                        output.accept(ModItems.SUNFLOWER_SEED_PACKET);
+                        output.accept(ModItems.MARIGOLD_SEED_PACKET);
+                        output.accept(ModItems.PEASHOOTER_SEED_PACKET);
+                        output.accept(ModItems.SNOW_PEA_SEED_PACKET);
+                        output.accept(ModItems.REPEATER_SEED_PACKET);
+                        output.accept(ModItems.WALL_NUT_SEED_PACKET);
+                        output.accept(ModItems.POTATO_MINE_SEED_PACKET);
+                        output.accept(ModItems.JALAPENO_SEED_PACKET);
+                        output.accept(ModItems.CHOMPER_SEED_PACKET);
+                        output.accept(ModItems.BONK_CHOY_SEED_PACKET);
+                        output.accept(ModItems.SUN_SHROOM_SEED_PACKET);
+                        output.accept(ModItems.PUFF_SHROOM_SEED_PACKET);
+                        output.accept(ModItems.FUME_SHROOM_SEED_PACKET);
+                        output.accept(ModItems.HYPNO_SHROOM_SEED_PACKET);
+                        output.accept(ModItems.DOOM_SHROOM_SEED_PACKET);
                         output.accept(ModItems.POTTED_SUNFLOWER);
                         output.accept(ModItems.POTTED_MARIGOLD);
                         output.accept(ModItems.POTTED_PEASHOOTER);

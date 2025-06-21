@@ -15,8 +15,7 @@ version="${mod_version}"
 
 displayName="${mod_name}"
 
-# A URL to query for updates for this mod. See the JSON update specification https://docs.neoforged.net/docs/misc/updatechecker/
-#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+updateJSONURL="https://github.com/29Naybla/BloomAndDoom-Neoforge/blob/1.21(.1)/updates.json"
 
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional

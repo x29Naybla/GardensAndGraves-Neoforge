@@ -114,24 +114,24 @@ public class GameEvents {
 
             trades.get(1).add(new BiomeSpecificTrade(
                     new ItemCost(Items.EMERALD, 4), 1,2, 2,
-                    Map.of(VillagerType.PLAINS, ModItems.SEED_PACKET_SUNFLOWER.get(),
-                            VillagerType.SAVANNA, ModItems.SEED_PACKET_SUNFLOWER.get(),
-                            VillagerType.DESERT, ModItems.SEED_PACKET_SUNFLOWER.get(),
-                            VillagerType.JUNGLE, ModItems.SEED_PACKET_SUNFLOWER.get(),
-                            VillagerType.TAIGA, ModItems.SEED_PACKET_SUN_SHROOM.get(),
-                            VillagerType.SNOW, ModItems.SEED_PACKET_SUN_SHROOM.get(),
-                            VillagerType.SWAMP, ModItems.SEED_PACKET_SUN_SHROOM.get()))
+                    Map.of(VillagerType.PLAINS, ModItems.SUNFLOWER_SEED_PACKET.get(),
+                            VillagerType.SAVANNA, ModItems.SUNFLOWER_SEED_PACKET.get(),
+                            VillagerType.DESERT, ModItems.SUNFLOWER_SEED_PACKET.get(),
+                            VillagerType.JUNGLE, ModItems.SUNFLOWER_SEED_PACKET.get(),
+                            VillagerType.TAIGA, ModItems.SUN_SHROOM_SEED_PACKET.get(),
+                            VillagerType.SNOW, ModItems.SUN_SHROOM_SEED_PACKET.get(),
+                            VillagerType.SWAMP, ModItems.SUN_SHROOM_SEED_PACKET.get()))
             );
 
             trades.get(1).add(new BiomeSpecificTrade(
                     new ItemCost(Items.EMERALD, 4), 1,2, 2,
-                    Map.of(VillagerType.PLAINS, ModItems.SEED_PACKET_PEASHOOTER.get(),
-                            VillagerType.SAVANNA, ModItems.SEED_PACKET_PEASHOOTER.get(),
-                            VillagerType.DESERT, ModItems.SEED_PACKET_PEASHOOTER.get(),
-                            VillagerType.JUNGLE, ModItems.SEED_PACKET_REPEATER.get(),
-                            VillagerType.TAIGA, ModItems.SEED_PACKET_PUFF_SHROOM.get(),
-                            VillagerType.SWAMP, ModItems.SEED_PACKET_PUFF_SHROOM.get(),
-                            VillagerType.SNOW, ModItems.SEED_PACKET_SNOW_PEA.get()))
+                    Map.of(VillagerType.PLAINS, ModItems.PEASHOOTER_SEED_PACKET.get(),
+                            VillagerType.SAVANNA, ModItems.PEASHOOTER_SEED_PACKET.get(),
+                            VillagerType.DESERT, ModItems.PEASHOOTER_SEED_PACKET.get(),
+                            VillagerType.JUNGLE, ModItems.REPEATER_SEED_PACKET.get(),
+                            VillagerType.TAIGA, ModItems.PUFF_SHROOM_SEED_PACKET.get(),
+                            VillagerType.SWAMP, ModItems.PUFF_SHROOM_SEED_PACKET.get(),
+                            VillagerType.SNOW, ModItems.SNOW_PEA_SEED_PACKET.get()))
             );
 
             //Apprentice
@@ -147,7 +147,7 @@ public class GameEvents {
 
             trades.get(2).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 4),
-                    new ItemStack(ModItems.SEED_PACKET_WALL_NUT.get(), 1), 2, 5, 0.05f
+                    new ItemStack(ModItems.WALL_NUT_SEED_PACKET.get(), 1), 2, 5, 0.05f
             ));
 
             //Journeyman
@@ -186,12 +186,12 @@ public class GameEvents {
             //Master
             trades.get(5).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 12),
-                    new ItemStack(ModItems.SEED_PACKET_DOOM_SHROOM.get(), 1), 6, 30, 0.05f
+                    new ItemStack(ModItems.DOOM_SHROOM_SEED_PACKET.get(), 1), 6, 30, 0.05f
             ));
 
             trades.get(5).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 8),
-                    new ItemStack(ModItems.SEED_PACKET_MARIGOLD.get(), 1), 6, 30, 0.05f
+                    new ItemStack(ModItems.MARIGOLD_SEED_PACKET.get(), 1), 6, 30, 0.05f
             ));
         }
     }
