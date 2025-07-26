@@ -53,7 +53,7 @@ import java.util.Map;
 
 import static com.x29naybla.bloom_and_doom.common.item.ZombieBanner.getZombieLeaderBannerInstance;
 
-@EventBusSubscriber(modid = BloomAndDoom.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = BloomAndDoom.MOD_ID)
 public class GameEvents {
 
     @SubscribeEvent

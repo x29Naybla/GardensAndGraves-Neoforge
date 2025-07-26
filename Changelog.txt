@@ -1,6 +1,12 @@
 changelog:
-* unhid the chomper
+* unhid the chomper (chomping still not working)
 * started adding pages to the Almanac
 
 * added update checker
-* renamed the texture and id of the seed packet items
+* renamed the texture and id of the seed packet items (planting all your seed packets is recommended, so you don't lose them)
+
+* slight texture improvements to watering cans
+* lowered the volume of plant shooting sounds
+* added "frozen_pea_projectile", "pea_projectile", "plant_explosion", and "spore_projectile" damage types to the "bypasses_cooldown" tag
+* raised peashooter, snow pea, and repeater shooting ranges from 9 to 15
+* raised puff-shroom shooting range from 4 to 6

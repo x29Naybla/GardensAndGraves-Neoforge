@@ -14,7 +14,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
-@EventBusSubscriber(modid = BloomAndDoom.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = BloomAndDoom.MOD_ID)
 public class ModEvents {
     @SubscribeEvent
     public static void buildContents(BuildCreativeModeTabContentsEvent event) {

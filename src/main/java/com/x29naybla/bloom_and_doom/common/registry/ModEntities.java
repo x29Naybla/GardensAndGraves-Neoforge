@@ -20,7 +20,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-@EventBusSubscriber(modid = BloomAndDoom.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = BloomAndDoom.MOD_ID)
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, BloomAndDoom.MOD_ID);
 
@@ -57,8 +57,7 @@ public class ModEntities {
                 .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(Attributes.FOLLOW_RANGE,  9)
-                .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 15);
 
         AttributeSupplier.Builder snowPeashooterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
@@ -67,8 +66,7 @@ public class ModEntities {
                 .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(Attributes.FOLLOW_RANGE,  9)
-                .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 15);
 
         AttributeSupplier.Builder repeaterAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
@@ -77,8 +75,7 @@ public class ModEntities {
                 .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(Attributes.FOLLOW_RANGE,  9)
-                .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 15);
 
         AttributeSupplier.Builder wallNutAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
@@ -100,7 +97,6 @@ public class ModEntities {
                 .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 350)
                 .add(Attributes.ATTACK_DAMAGE, 4)
-                .add(Attributes.FOLLOW_RANGE,  2)
                 .add(Attributes.ENTITY_INTERACTION_RANGE, 2);
 
         AttributeSupplier.Builder puffShroomAttributes = PathfinderMob.createMobAttributes()
@@ -110,8 +106,7 @@ public class ModEntities {
                 .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 2)
-                .add(Attributes.FOLLOW_RANGE,  4)
-                .add(Attributes.ENTITY_INTERACTION_RANGE, 4);
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 6);
 
         AttributeSupplier.Builder doomShroomAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
