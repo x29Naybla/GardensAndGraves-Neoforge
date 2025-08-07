@@ -8,5 +8,5 @@ changelog:
 * slight texture improvements to watering cans
 * lowered the volume of plant shooting sounds
 * added "frozen_pea_projectile", "pea_projectile", "plant_explosion", and "spore_projectile" damage types to the "bypasses_cooldown" tag
-* raised peashooter, snow pea, and repeater shooting ranges from 9 to 15
-* raised puff-shroom shooting range from 4 to 6
+
+//trying to fix the chomping... no success

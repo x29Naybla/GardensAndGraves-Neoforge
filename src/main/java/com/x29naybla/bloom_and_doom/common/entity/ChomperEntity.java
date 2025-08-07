@@ -104,8 +104,4 @@ public class ChomperEntity extends Plant {
     public void setChewing(boolean bool) {
         getEntityData().set(CHEWING, bool);
     }
-
-    public void performChompAttack(LivingEntity target) {
-        target.remove(RemovalReason.KILLED);
-    }
 }

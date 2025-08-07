@@ -1,6 +1,7 @@
 package com.x29naybla.bloom_and_doom.common.entity.goal;
 
 import com.x29naybla.bloom_and_doom.common.entity.ChomperEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 
@@ -12,7 +13,7 @@ public class PlantChompGoal extends Goal {
     @Nullable
     private LivingEntity target;
     private int attackTime;
-    private final float attackRadiusSqr;
+    private final float attackRadius;
 
     private int chewTimer;
     private final int timerCap;
@@ -22,15 +23,15 @@ public class PlantChompGoal extends Goal {
             throw new IllegalArgumentException("PlantChompGoal requires ChomperEntity or Mob extends ChomperEntity");
         } else {
             this.chomper = chomper;
+            this.attackTime = 0;
             this.timerCap = 20;
-            float attackRadius = 2;
-            this.attackRadiusSqr = attackRadius * attackRadius;
+            this.attackRadius = 2;
             this.setFlags(EnumSet.of(Flag.LOOK));
         }
     }
 
     @Override
-    public boolean canUse() {
+    public boolean canUse(){
         LivingEntity livingentity = this.chomper.getTarget();
         if (livingentity != null && livingentity.isAlive() && !this.chomper.isBaby()) {
             this.target = livingentity;
@@ -55,7 +56,6 @@ public class PlantChompGoal extends Goal {
     public void stop() {
         chomper.setChewing(false);
         this.target = null;
-        this.attackTime = -1;
     }
 
     public boolean requiresUpdateEveryTick() {
@@ -68,17 +68,18 @@ public class PlantChompGoal extends Goal {
             boolean flag = this.chomper.getSensing().hasLineOfSight(this.target);
 
             this.chomper.getLookControl().setLookAt(this.target, 30.0F, 30.0F);
-            if (--this.attackTime == 0) {
+            if (--this.attackTime <= 0) {
                 if (!flag) {
                     return;
                 }
 
-                if (d0 < this.attackRadiusSqr) {
-                    this.chomper.performChompAttack(this.target);
+                if (d0 < this.attackRadius) {
+                    this.target.remove(Entity.RemovalReason.KILLED);
+                    if (this.target != null) {
+                        return;
+                    }
                     this.attackTime = this.chomper.maxChewingTime;
                 }
-            } else if (this.attackTime < 0) {
-                this.attackTime = 0;
             }
         }
     }
