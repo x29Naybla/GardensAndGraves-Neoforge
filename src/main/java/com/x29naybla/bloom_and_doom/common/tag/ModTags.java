@@ -73,6 +73,7 @@ public class ModTags {
         public static final TagKey<EntityType<?>> POTTABLE_PLANTS = createTag("pottable_plants");
 
         public static final TagKey<EntityType<?>> PLANT_ENEMIES = createTag("plant_enemies");
+        public static final TagKey<EntityType<?>> CAN_BE_CHOMPED = createTag("can_be_chomped");
 
         public static final TagKey<EntityType<?>> PLANT_ALLAYS = createTag("plant_allays");
 
