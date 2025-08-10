@@ -291,9 +291,11 @@
 
   "config.jade.plugin_bloom_and_doom.sun_timer": "Таймер солнца",
   "config.jade.plugin_bloom_and_doom.reward_timer": "Таймер наград золотой ромашки",
+  "config.jade.plugin_bloom_and_doom.chewing_timer": "Chewing Timer",
   "config.jade.plugin_bloom_and_doom.seed_packets_timer": "Таймер пакетов семян",
   "bloom_and_doom.sun_timer": "Следующее солнце: ",
   "bloom_and_doom.reward_timer": "Следующие самородки: ",
+  "bloom_and_doom.chew_timer": "Chewing left: ",
   "bloom_and_doom.seed_packets_timer": "Следующий пакет семян: ",
 
   "bloom_and_doom.gui.almanac.button.plants": "Растения",

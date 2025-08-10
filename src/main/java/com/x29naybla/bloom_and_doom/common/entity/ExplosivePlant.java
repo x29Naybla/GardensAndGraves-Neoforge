@@ -80,13 +80,10 @@ public class ExplosivePlant extends Plant{
     }
 
     public void setTarget(@Nullable LivingEntity target) {
-        boolean canExplode = true;
-        if (this instanceof PotatoMineEntity potatoMine){
-            if(!potatoMine.getArmed()) {
-                canExplode = false;
-            }
+        if (this instanceof PotatoMineEntity potatoMine && !potatoMine.getArmed() || this.isBaby()){
+            return;
         }
-        if (target != null && (target.hasData(ModDataAttachments.ZOMBIE) || target.getType().is(ModTags.Entities.PLANT_ENEMIES)) && canExplode) {
+        if (target != null && (target.hasData(ModDataAttachments.ZOMBIE) || target.getType().is(ModTags.Entities.PLANT_ENEMIES))) {
             super.setTarget(target);
         }
     }

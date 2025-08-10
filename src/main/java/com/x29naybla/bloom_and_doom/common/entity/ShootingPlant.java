@@ -24,10 +24,12 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import javax.annotation.Nullable;
 
 public class ShootingPlant extends Plant implements RangedAttackMob {
+    protected static final EntityDataAccessor<Boolean> SHOOTING = SynchedEntityData.defineId(ShootingPlant.class, EntityDataSerializers.BOOLEAN);
+
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.peashooter.idle");
     protected static final RawAnimation SHOOT = RawAnimation.begin().thenLoop("animation.peashooter.shoot");
+
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-    protected static final EntityDataAccessor<Boolean> SHOOTING = SynchedEntityData.defineId(ShootingPlant.class, EntityDataSerializers.BOOLEAN);
 
     //Properties
     public ShootingPlant(EntityType<? extends ShootingPlant> entityType, Level level, TagKey<Item> substrate, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
@@ -38,14 +40,14 @@ public class ShootingPlant extends Plant implements RangedAttackMob {
 
     //Goals and AI
     protected void registerGoals(){
-        this.goalSelector.addGoal(1, new PlantShootGoal(this, 1, 30, 8.5F));
+        this.goalSelector.addGoal(1, new PlantShootGoal(this, 1.5F, 20, 8));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, false, false,
                 (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE))));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
     @Override
-    public void performRangedAttack(@NotNull LivingEntity livingEntity, float v) {
+    public void performRangedAttack(@NotNull LivingEntity target, float distanceFactor) {
     }
 
     //GeckoLib

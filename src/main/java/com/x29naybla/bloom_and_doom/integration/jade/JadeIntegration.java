@@ -12,12 +12,15 @@ public class JadeIntegration implements IWailaPlugin {
 
     public static final ResourceLocation REWARD_TIMER = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "reward_timer");
 
+    public static final ResourceLocation CHEWING_TIMER = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "chewing_timer");
+
     public static final ResourceLocation SEED_PACKETS_TIMER = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "seed_packets_timer");
 
     @Override
     public void register(IWailaCommonRegistration registration) {
         registration.registerEntityDataProvider(SunTimerProvider.SUN, SolarPlant.class);
         registration.registerEntityDataProvider(MarigoldRewardTimerProvider.MARIGOLD_REWARD, MarigoldEntity.class);
+        registration.registerEntityDataProvider(ChewingTimerProvider.CHEWING, ChomperEntity.class);
         registration.registerEntityDataProvider(SeedPacketsTimerProvider.SEED_PACKETS, Plant.class);
     }
 
@@ -25,6 +28,7 @@ public class JadeIntegration implements IWailaPlugin {
     public void registerClient(IWailaClientRegistration registration) {
         registration.registerEntityComponent(SunTimerProvider.SUN, SolarPlant.class);
         registration.registerEntityComponent(MarigoldRewardTimerProvider.MARIGOLD_REWARD, MarigoldEntity.class);
+        registration.registerEntityComponent(ChewingTimerProvider.CHEWING, ChomperEntity.class);
         registration.registerEntityComponent(SeedPacketsTimerProvider.SEED_PACKETS, Plant.class);
     }
 }

@@ -1,5 +1,5 @@
 changelog:
-* unhid the chomper (chomping still not working)
+* unhid the Chomper
 * started adding pages to the Almanac
 
 * added update checker
@@ -10,3 +10,7 @@ changelog:
 * added "frozen_pea_projectile", "pea_projectile", "plant_explosion", and "spore_projectile" damage types to the "bypasses_cooldown" tag
 
 //trying to fix the chomping... no success
+
+* fixed potato mines being able to explode if they are babies
+* increased shooting plants' shooting speed and projectile damage
+//chomper data fixing and jade integration work

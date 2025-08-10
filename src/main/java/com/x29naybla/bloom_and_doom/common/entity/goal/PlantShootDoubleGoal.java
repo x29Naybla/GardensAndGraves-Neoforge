@@ -20,13 +20,13 @@ public class PlantShootDoubleGoal extends Goal {
     private final float attackRadiusSqr;
 
     private int shootTimer;
-    private final int timerCap;
+    private final float timerCap;
 
-    public PlantShootDoubleGoal(ShootingPlant shootingPlant, int timeInSeconds, int attackInterval, float attackRadius){
+    public PlantShootDoubleGoal(ShootingPlant shootingPlant, float timeInSeconds, int attackInterval, float attackRadius){
         this(shootingPlant, timeInSeconds, attackInterval, attackInterval, attackRadius);
     }
 
-    public PlantShootDoubleGoal(ShootingPlant shootingPlant, int timeInSeconds, int attackIntervalMin, int attackIntervalMax, float attackRadius){
+    public PlantShootDoubleGoal(ShootingPlant shootingPlant, float timeInSeconds, int attackIntervalMin, int attackIntervalMax, float attackRadius){
         this.attackTime = -1;
         if (shootingPlant == null) {
             throw new IllegalArgumentException("PlantShootDoubleGoal requires Mob extends ShootingPlant");

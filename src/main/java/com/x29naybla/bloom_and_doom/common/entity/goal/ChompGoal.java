@@ -25,12 +25,12 @@ public final class ChompGoal extends Goal {
 
     @Override
     public boolean canUse() {
-        return chomper.isAlive() && chomper.isNotChomping() && (chomping = findChomping()) != null;
+        return chomper.isAlive() && chomper.isNotChewing() && (chomping = findChomping()) != null;
     }
 
     @Override
     public void start() {
-        chomper.startChomping();
+        chomper.startChewing();
     }
 
     @Override
