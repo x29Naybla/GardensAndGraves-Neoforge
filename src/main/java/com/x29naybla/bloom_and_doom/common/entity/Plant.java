@@ -2,6 +2,7 @@ package com.x29naybla.bloom_and_doom.common.entity;
 
 import com.x29naybla.bloom_and_doom.common.block.entity.PlanterBlockEntity;
 import com.x29naybla.bloom_and_doom.common.registry.ModDataComponents;
+import com.x29naybla.bloom_and_doom.common.registry.ModItems;
 import com.x29naybla.bloom_and_doom.common.tag.ModTags;
 import com.x29naybla.bloom_and_doom.common.item.SeedPacketItem;
 import com.x29naybla.bloom_and_doom.common.registry.ModParticles;
@@ -103,6 +104,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     //Goals and AI
     public @NotNull InteractionResult mobInteract(Player player, @NotNull InteractionHand hand) {
         ItemStack playerHand = player.getItemInHand(InteractionHand.MAIN_HAND);
+        SeedPacketItem seedPacket = (SeedPacketItem) this.seedPacket.getItem();
 
         if(playerHand.getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
 
@@ -113,12 +115,13 @@ public class Plant extends TamableAnimal implements GeoEntity {
             }
 
             return InteractionResult.SUCCESS;
-        } else if((playerHand.getItem() == this.seedPacket.getItem()) && this.getHealth() < this.getMaxHealth() && !player.getCooldowns().isOnCooldown(this.seedPacket.getItem())){
+        } else if((playerHand.getItem() == seedPacket) && this.getHealth() < this.getMaxHealth() && !player.getCooldowns().isOnCooldown(this.seedPacket.getItem()) && (player.getInventory().countItem(ModItems.SUN.get()) >= seedPacket.getSunAmount() || player.isCreative())){
             this.setHealth(this.getMaxHealth());
             playSound(ModSounds.SEED_PACKET_HEAL.get());
-            player.getCooldowns().addCooldown(this.seedPacket.getItem(), ((SeedPacketItem) this.seedPacket.getItem()).cooldown);
+            player.getCooldowns().addCooldown(seedPacket, seedPacket.cooldown);
             if (!player.isCreative()) {
                 player.getItemInHand(hand).shrink(1);
+                player.getInventory().removeItem(player.getInventory().findSlotMatchingItem(ModItems.SUN.toStack()), seedPacket.getSunAmount());
             }
             return InteractionResult.SUCCESS;
         } else if(playerHand.is(ModTags.Items.FLOWER_POTS) && this.fromPlanter && this.pottedItem != null) {

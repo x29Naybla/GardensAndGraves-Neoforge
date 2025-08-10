@@ -14,3 +14,5 @@ changelog:
 * fixed potato mines being able to explode if they are babies
 * increased shooting plants' shooting speed and projectile damage
 //chomper data fixing and jade integration work
+
+* fixed healing plants with seed packets not costing sun

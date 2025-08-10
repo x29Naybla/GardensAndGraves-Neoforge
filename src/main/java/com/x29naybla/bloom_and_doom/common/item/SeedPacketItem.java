@@ -53,6 +53,10 @@ public class SeedPacketItem extends Item {
         this.cooldown = cooldown*20;
     }
 
+    public int getSunAmount() {
+        return this.sunAmount;
+    }
+
     public @NotNull String getDescriptionId() {
         return this.getOrCreateDescriptionId();
     }
@@ -72,7 +76,7 @@ public class SeedPacketItem extends Item {
         ItemStack stack = context.getItemInHand();
 
         if (context.getPlayer() != null) {
-            if ((context.getPlayer().getInventory().countItem(ModItems.SUN.get()) >= sunAmount) || context.getPlayer().isCreative() ||onPlanter(level, blockpos)){
+            if ((context.getPlayer().getInventory().countItem(ModItems.SUN.get()) >= sunAmount) || context.getPlayer().isCreative() || onPlanter(level, blockpos)){
                 Direction direction = context.getClickedFace();
                 if (direction == Direction.DOWN) {
                     return InteractionResult.FAIL;
