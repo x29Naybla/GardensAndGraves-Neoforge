@@ -289,6 +289,9 @@
   "bloom_and_doom.subtitles.entity.potato_mine.explodes": "Картофельная мина взрывается",
   "bloom_and_doom.subtitles.entity.plant.grows": "Растение растёт",
 
+  "bloom_and_doom.configuration.pea_3d": "3D peas",
+  "bloom_and_doom.configuration.spore_3d": "3D spores",
+
   "config.jade.plugin_bloom_and_doom.sun_timer": "Таймер солнца",
   "config.jade.plugin_bloom_and_doom.reward_timer": "Таймер наград золотой ромашки",
   "config.jade.plugin_bloom_and_doom.chewing_timer": "Chewing Timer",

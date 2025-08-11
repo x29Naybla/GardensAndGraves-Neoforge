@@ -1,11 +1,11 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
+import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
 import com.x29naybla.bloom_and_doom.common.tag.ModTags;
 import com.x29naybla.bloom_and_doom.common.entity.goal.PlantShootDoubleGoal;
 import com.x29naybla.bloom_and_doom.common.entity.projectile.PeaProjectile;
 import com.x29naybla.bloom_and_doom.common.registry.ModItems;
 import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -23,8 +23,9 @@ public class RepeaterEntity extends ShootingPlant {
     //Goals and AI
     @Override
     protected void registerGoals(){
-        this.goalSelector.addGoal(1, new PlantShootDoubleGoal(this, 1.5F, 20, 8));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Mob.class, 10, true, false, (target) -> target instanceof Entity entity && entity.getType().is(ModTags.Entities.PLANT_ENEMIES)));
+        this.goalSelector.addGoal(1, new PlantShootDoubleGoal(this, 1.5F, 30, 8));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Mob.class, 10, true, false,
+                (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE))));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 

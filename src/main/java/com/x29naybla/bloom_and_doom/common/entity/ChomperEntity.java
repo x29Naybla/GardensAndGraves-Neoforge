@@ -18,6 +18,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class ChomperEntity extends Plant {
     public static final EntityDataAccessor<Integer> CHEWING = SynchedEntityData.defineId(ChomperEntity.class, EntityDataSerializers.INT);
+    public final int maxChewTime = 350;
 
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.chomper.idle");
     protected static final RawAnimation CHOMP = RawAnimation.begin().thenPlay("animation.chomper.chomp");
@@ -37,12 +38,11 @@ public class ChomperEntity extends Plant {
 
     @Override
     public void tick() {
-        if (!level().isClientSide && tickCount % 20 == 0) {
-            int chomping = getChewing();
-            if (chomping > 0) {
-                setChewing(chomping - 1);
-            }
-
+        if (!level().isClientSide) {
+            if (getChewing() >= 1) {
+                setChewing(getChewing()-1);
+            } else
+                setChewing(0);
         }
         super.tick();
     }
@@ -99,7 +99,7 @@ public class ChomperEntity extends Plant {
     }
 
     public void startChewing() {
-        entityData.set(CHEWING, 50);
+        entityData.set(CHEWING, maxChewTime);
     }
 
     public void eat(Entity entity) {

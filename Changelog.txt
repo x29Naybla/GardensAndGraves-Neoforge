@@ -16,3 +16,7 @@ changelog:
 //chomper data fixing and jade integration work
 
 * fixed healing plants with seed packets not costing sun
+
+* fixed chompers' chomping
+* fixed repeaters not shooting zombie players
+* added config options for a future Amendments compat

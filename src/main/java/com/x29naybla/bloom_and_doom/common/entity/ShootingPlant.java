@@ -40,8 +40,8 @@ public class ShootingPlant extends Plant implements RangedAttackMob {
 
     //Goals and AI
     protected void registerGoals(){
-        this.goalSelector.addGoal(1, new PlantShootGoal(this, 1.5F, 20, 8));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, false, false,
+        this.goalSelector.addGoal(1, new PlantShootGoal(this, 1.5F, 30, 8));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false,
                 (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE))));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }

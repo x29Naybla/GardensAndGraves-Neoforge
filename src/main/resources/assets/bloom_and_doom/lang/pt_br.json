@@ -289,6 +289,9 @@
   "bloom_and_doom.subtitles.entity.potato_mine.explodes": "Batatamina explode",
   "bloom_and_doom.subtitles.entity.plant.grows": "Planta cresce",
 
+  "bloom_and_doom.configuration.pea_3d": "Ervilhas 3D",
+  "bloom_and_doom.configuration.spore_3d": "Esporos 3D",
+
   "config.jade.plugin_bloom_and_doom.sun_timer": "Temporizadores de Sol",
   "config.jade.plugin_bloom_and_doom.reward_timer": "Temporizador de recompensa de Calêndula",
   "config.jade.plugin_bloom_and_doom.chewing_timer": "Temporizador de mastigação",
