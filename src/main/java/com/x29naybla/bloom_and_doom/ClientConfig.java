@@ -13,6 +13,10 @@ public class ClientConfig {
             .comment("Makes peas render in 3D (Amendments compat)")
             .define("pea_3d", true);
 
+    public static final ModConfigSpec.BooleanValue FROZEN_PEAS_3D = BUILDER
+            .comment("Makes frozen peas render in 3D (Amendments compat)")
+            .define("frozen_pea_3d", true);
+
     public static final ModConfigSpec.BooleanValue SPORES_3D = BUILDER
             .comment("Makes spores render in 3D (Amendments compat)")
             .define("spore_3d", true);

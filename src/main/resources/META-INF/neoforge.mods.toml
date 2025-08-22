@@ -22,7 +22,7 @@ updateJSONURL="https://github.com/29Naybla/BloomAndDoom-Neoforge/blob/1.21(.1)/u
 
 logoFile="bloom_and_doom.png"
 
-credits="PopCap, .vectorwing, Asof, ChiefArug, CodexAdrian, Crispytwig, Lance5057, and Pix3l Spud" #optional
+credits="PopCap, .vectorwing, Asof, ChiefArug, CodexAdrian, Crispytwig, Harleylizard, Lance5057, and Pix3l Spud" #optional
 
 authors="${mod_authors}"
 

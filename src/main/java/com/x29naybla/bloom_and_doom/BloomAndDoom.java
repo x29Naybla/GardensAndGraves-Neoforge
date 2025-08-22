@@ -1,5 +1,6 @@
 package com.x29naybla.bloom_and_doom;
 
+import com.x29naybla.bloom_and_doom.client.event.ClientSetupEvents;
 import com.x29naybla.bloom_and_doom.common.registry.*;
 import com.x29naybla.bloom_and_doom.common.loot.LootModifierInit;
 import net.neoforged.bus.api.IEventBus;
@@ -37,6 +38,8 @@ public class BloomAndDoom {
         ModSounds.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         LootModifierInit.LOOT_MODIFIERS.register(modEventBus);
+
+        ClientSetupEvents.init();
 
         modContainer.registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);
         modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
