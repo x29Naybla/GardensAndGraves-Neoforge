@@ -1,10 +1,2 @@
 changelog:
-* added missing credits
-* added missing config for 3d frozen peas
-* implemented compat for Amendments' 3d projectiles
-* halved the damage dealt by plant projectiles
-
-* added a config option to control if plants have a short lifespan or not (false by default)
-* fixed a flower pot duplication glitch
-* updated the wall-nuts' textures to improve the ridges
-* changed the eyes of the wall-nut seed packets and wall-nut entities into the same color
+* fixed the game not opening if Amendments isn't present

@@ -1,11 +1,12 @@
 package com.x29naybla.bloom_and_doom;
 
-import com.x29naybla.bloom_and_doom.client.event.ClientSetupEvents;
 import com.x29naybla.bloom_and_doom.common.registry.*;
 import com.x29naybla.bloom_and_doom.common.loot.LootModifierInit;
+import com.x29naybla.bloom_and_doom.integration.Ammendments;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
@@ -39,7 +40,9 @@ public class BloomAndDoom {
         ModCreativeModeTabs.register(modEventBus);
         LootModifierInit.LOOT_MODIFIERS.register(modEventBus);
 
-        ClientSetupEvents.init();
+        if (ModList.get().isLoaded("amendments")){
+            Ammendments.init();
+        }
 
         modContainer.registerConfig(ModConfig.Type.CLIENT, ClientConfigs.SPEC);
         modContainer.registerConfig(ModConfig.Type.COMMON, CommonConfigs.SPEC);
