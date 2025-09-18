@@ -290,7 +290,10 @@
   "bloom_and_doom.subtitles.entity.plant.grows": "Растение растёт",
 
   "bloom_and_doom.configuration.pea_3d": "3D peas",
+  "bloom_and_doom.configuration.frozen_pea_3d": "3D frozen peas",
   "bloom_and_doom.configuration.spore_3d": "3D spores",
+
+  "bloom_and_doom.configuration.plants_lifespan": "Short-lived plants",
 
   "config.jade.plugin_bloom_and_doom.sun_timer": "Таймер солнца",
   "config.jade.plugin_bloom_and_doom.reward_timer": "Таймер наград золотой ромашки",

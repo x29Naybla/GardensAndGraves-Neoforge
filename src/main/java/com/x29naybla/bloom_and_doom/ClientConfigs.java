@@ -6,7 +6,7 @@ import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 @EventBusSubscriber(modid = BloomAndDoom.MOD_ID)
-public class ClientConfig {
+public class ClientConfigs {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     public static final ModConfigSpec.BooleanValue PEAS_3D = BUILDER

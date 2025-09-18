@@ -41,7 +41,8 @@ public class BloomAndDoom {
 
         ClientSetupEvents.init();
 
-        modContainer.registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);
+        modContainer.registerConfig(ModConfig.Type.CLIENT, ClientConfigs.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, CommonConfigs.SPEC);
         modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
 

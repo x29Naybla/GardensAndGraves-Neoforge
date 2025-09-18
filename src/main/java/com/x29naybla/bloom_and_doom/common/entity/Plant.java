@@ -1,5 +1,6 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
+import com.x29naybla.bloom_and_doom.CommonConfigs;
 import com.x29naybla.bloom_and_doom.common.block.entity.PlanterBlockEntity;
 import com.x29naybla.bloom_and_doom.common.registry.ModDataComponents;
 import com.x29naybla.bloom_and_doom.common.registry.ModItems;
@@ -126,7 +127,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
             return InteractionResult.SUCCESS;
         } else if(playerHand.is(ModTags.Items.FLOWER_POTS) && this.fromPlanter && this.pottedItem != null) {
             saveDefaultDataToItemTag(this, this.pottedItem);
-            this.pottedItem.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(playerHand.copy())));
+            this.pottedItem.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(playerHand.copyWithCount(1))));
 
             if (!player.isCreative()) playerHand.shrink(1);
             if (!player.getInventory().add(this.pottedItem)) {
@@ -161,12 +162,14 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 this.packetTime = 12000;
             }
         } else if (!fromPlanter) {
-            if (fromDay && this.level().isNight()) {
-                expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
-            }
+            if (CommonConfigs.PLANTS_LIFESPAN.get()) {
+                if (fromDay && this.level().isNight()) {
+                    expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
+                }
 
-            if (fromNight && this.level().isDay()) {
-                expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
+                if (fromNight && this.level().isDay()) {
+                    expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
+                }
             }
         }
 

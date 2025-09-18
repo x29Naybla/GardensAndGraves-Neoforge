@@ -289,8 +289,11 @@
   "bloom_and_doom.subtitles.entity.potato_mine.explodes": "Potato Mine explodes",
   "bloom_and_doom.subtitles.entity.plant.grows": "Plant grows",
 
-  "bloom_and_doom.configuration.pea_3d": "Pois 3D",
+  "bloom_and_doom.configuration.pea_3d": "3D peas",
+  "bloom_and_doom.configuration.frozen_pea_3d": "3D frozen peas",
   "bloom_and_doom.configuration.spore_3d": "Spores 3D",
+
+  "bloom_and_doom.configuration.plants_lifespan": "Short-lived plants",
 
   "config.jade.plugin_bloom_and_doom.sun_timer": "Sun Timers",
   "config.jade.plugin_bloom_and_doom.reward_timer": "Marigold Rewards Timer",

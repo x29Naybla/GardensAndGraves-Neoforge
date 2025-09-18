@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.client.event;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
-import com.x29naybla.bloom_and_doom.ClientConfig;
+import com.x29naybla.bloom_and_doom.ClientConfigs;
 import com.x29naybla.bloom_and_doom.common.registry.ModBlockEntities;
 import com.x29naybla.bloom_and_doom.client.renderer.block.PlanterBlockEntityRenderer;
 import com.x29naybla.bloom_and_doom.client.renderer.entity.*;
@@ -60,13 +60,13 @@ public class ClientSetupEvents {
         event.registerEntityRenderer(ModEntities.PUFF_SHROOM.get(), PuffShroomRenderer::new);
         event.registerEntityRenderer(ModEntities.DOOM_SHROOM.get(), DoomShroomRenderer::new);
 
-        if (!ModList.get().isLoaded(Amendments.MOD_ID) || !ClientConfig.PEAS_3D.get()) {
+        if (!ModList.get().isLoaded(Amendments.MOD_ID) || !ClientConfigs.PEAS_3D.get()) {
             event.registerEntityRenderer(ModEntities.PEA_PROJECTILE.get(), ThrownItemRenderer::new);
         }
-        if (!ModList.get().isLoaded(Amendments.MOD_ID) || !ClientConfig.FROZEN_PEAS_3D.get()) {
+        if (!ModList.get().isLoaded(Amendments.MOD_ID) || !ClientConfigs.FROZEN_PEAS_3D.get()) {
             event.registerEntityRenderer(ModEntities.FROZEN_PEA_PROJECTILE.get(), ThrownItemRenderer::new);
         }
-        if (!ModList.get().isLoaded(Amendments.MOD_ID) || !ClientConfig.SPORES_3D.get()) {
+        if (!ModList.get().isLoaded(Amendments.MOD_ID) || !ClientConfigs.SPORES_3D.get()) {
             event.registerEntityRenderer(ModEntities.SPORE_PROJECTILE.get(), ThrownItemRenderer::new);
         }
     }
@@ -74,17 +74,17 @@ public class ClientSetupEvents {
     @EventCalled
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {
        float modelScale = 0.75f;
-        if (ClientConfig.PEAS_3D.get()) {
+        if (ClientConfigs.PEAS_3D.get()) {
             event.register(ModEntities.PEA_PROJECTILE.get(), context -> new Small3DBallRenderer(context,
                     modelScale, PEA_TEXTURE, false));
         }
 
-        if (ClientConfig.FROZEN_PEAS_3D.get()) {
+        if (ClientConfigs.FROZEN_PEAS_3D.get()) {
             event.register(ModEntities.FROZEN_PEA_PROJECTILE.get(), context -> new Small3DBallRenderer(context,
                     modelScale, FROZEN_PEA_TEXTURE, false));
         }
 
-        if (ClientConfig.SPORES_3D.get()) {
+        if (ClientConfigs.SPORES_3D.get()) {
             event.register(ModEntities.SPORE_PROJECTILE.get(), context -> new Small3DBallRenderer(context,
                     modelScale, SPORE_TEXTURE, false));
         }

@@ -290,7 +290,10 @@
   "bloom_and_doom.subtitles.entity.plant.grows": "Planta cresce",
 
   "bloom_and_doom.configuration.pea_3d": "Ervilhas 3D",
+  "bloom_and_doom.configuration.frozen_pea_3d": "Ervilhas congeladas 3D",
   "bloom_and_doom.configuration.spore_3d": "Esporos 3D",
+
+  "bloom_and_doom.configuration.plants_lifespan": "Plantas de vida curta",
 
   "config.jade.plugin_bloom_and_doom.sun_timer": "Temporizadores de Sol",
   "config.jade.plugin_bloom_and_doom.reward_timer": "Temporizador de recompensa de Calêndula",
