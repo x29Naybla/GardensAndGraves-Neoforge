@@ -8,7 +8,7 @@ import software.bernie.geckolib.model.GeoModel;
 public class BonkChoyModel extends GeoModel<BonkChoyEntity> {
     private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "geo/entity/bonk_choy.geo.json");
     private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/bonk_choy.png");
-    private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "animations/entity/chomper.animation.json");
+    private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "animations/entity/bonk_choy.animation.json");
 
     @Override
     public ResourceLocation getModelResource(BonkChoyEntity animatable) {

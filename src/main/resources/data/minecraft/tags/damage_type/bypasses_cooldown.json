@@ -3,6 +3,7 @@
     "bloom_and_doom:pea_projectile",
     "bloom_and_doom:frozen_pea_projectile",
     "bloom_and_doom:spore_projectile",
-    "bloom_and_doom:plant_explosion"
+    "bloom_and_doom:plant_explosion",
+    "bloom_and_doom:plant_punch"
   ]
 }

@@ -105,7 +105,7 @@ public class ModEntities {
                 .add(Attributes.MAX_HEALTH, 16)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 99)
-                .add(Attributes.ATTACK_SPEED, 10)
+                .add(Attributes.ATTACK_SPEED, 30)
                 .add(Attributes.ATTACK_DAMAGE, 3)
                 .add(Attributes.ENTITY_INTERACTION_RANGE, 2);
 

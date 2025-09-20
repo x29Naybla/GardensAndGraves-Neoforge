@@ -19,4 +19,7 @@ public class ModDamageTypes {
 
     public static final ResourceKey<DamageType> PLANT_EXPLOSION =
             ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "plant_explosion"));
+
+    public static final ResourceKey<DamageType> PLANT_PUNCH =
+            ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "plant_punch"));
 }

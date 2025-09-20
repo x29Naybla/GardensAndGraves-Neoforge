@@ -1,16 +1,20 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
+import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
 import com.x29naybla.bloom_and_doom.common.registry.ModItems;
 import com.x29naybla.bloom_and_doom.common.tag.ModTags;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.level.Level;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class BonkChoyEntity extends Plant {
-    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.chomper.idle");
+    protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.bonk_choy.idle");
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
@@ -21,6 +25,9 @@ public class BonkChoyEntity extends Plant {
 
     //Goals and AI
     protected void registerGoals(){
+        goalSelector.addGoal(1, new MeleeAttackGoal(this, 1f, true));
+        targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, false, true,
+                (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE))));
         goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
