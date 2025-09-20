@@ -1,2 +1,4 @@
 changelog:
-* fixed the game not opening if Amendments isn't present
+* Smite now affects zombie players
+* created the "zombie_antidotes" tag to replace the item needed for curing zombie players being hardcoded (contains only the normal Golden Apple by default)
+* started adding the Bonk Choy (currently no attacking goal, stats uncertain)

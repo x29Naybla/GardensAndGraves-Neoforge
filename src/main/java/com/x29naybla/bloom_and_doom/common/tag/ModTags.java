@@ -47,6 +47,7 @@ public class ModTags {
         public static final TagKey<Item> SUSTAINS_WALL_NUTS = createTag("sustains_wall_nuts");
         public static final TagKey<Item> SUSTAINS_POTATO_MINES = createTag("sustains_potato_mines");
         public static final TagKey<Item> SUSTAINS_CHOMPERS = createTag("sustains_chompers");
+        public static final TagKey<Item> SUSTAINS_BONK_CHOYS = createTag("sustains_bonk_choys");
         public static final TagKey<Item> SUSTAINS_SUN_SHROOMS = createTag("sustains_sun_shrooms");
         public static final TagKey<Item> SUSTAINS_PUFF_SHROOMS = createTag("sustains_puff_shrooms");
         public static final TagKey<Item> SUSTAINS_DOOM_SHROOMS = createTag("sustains_doom_shrooms");
@@ -54,6 +55,8 @@ public class ModTags {
         public static final TagKey<Item> FLOWER_POTS = createTag("flower_pots");
 
         public static final TagKey<Item> WATERING_CANS = createTag("watering_cans");
+
+        public static final TagKey<Item> ZOMBIE_ANTIDOTE = createTag("zombie_antidote");
 
         private static TagKey<Item> createTag(String name){
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, name));

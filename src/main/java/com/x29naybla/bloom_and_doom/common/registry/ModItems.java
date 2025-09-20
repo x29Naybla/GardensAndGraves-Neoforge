@@ -42,7 +42,7 @@ public class ModItems {
     public static final DeferredItem<Item> CHOMPER_SEED_PACKET = ITEMS.register("chomper_seed_packet",
             () -> new SeedPacketItem(ModEntities.CHOMPER.get(), 6, 5, new Item.Properties()));
     public static final DeferredItem<Item> BONK_CHOY_SEED_PACKET = ITEMS.register("bonk_choy_seed_packet",
-            () -> new Item(new Item.Properties()));
+            () -> new SeedPacketItem(ModEntities.BONK_CHOY.get(), 6,5, new Item.Properties()));
 
     public static final DeferredItem<Item> SUN_SHROOM_SEED_PACKET = ITEMS.register("sun_shroom_seed_packet",
             () -> new SeedPacketItem(ModEntities.SUN_SHROOM.get(), 1, 5, new Item.Properties()));

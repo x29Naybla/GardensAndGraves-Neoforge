@@ -42,6 +42,7 @@ public class EntityTags extends EntityTypeTagsProvider {
                 .add(ModEntities.WALL_NUT.get())
                 .add(ModEntities.POTATO_MINE.get())
                 .add(ModEntities.CHOMPER.get())
+                .add(ModEntities.BONK_CHOY.get())
                 .addTag(ModTags.Entities.MUSHROOMS);
 
         tag(ModTags.Entities.POTTABLE_PLANTS)

@@ -32,6 +32,7 @@ public class ModEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<WallNutEntity>> WALL_NUT = register("wall_nut", WallNutEntity::new, 0.8f, 1.3f);
     public static final DeferredHolder<EntityType<?>, EntityType<PotatoMineEntity>> POTATO_MINE = register("potato_mine", PotatoMineEntity::new, 0.7f, 0.7f);
     public static final DeferredHolder<EntityType<?>, EntityType<ChomperEntity>> CHOMPER = register("chomper", ChomperEntity::new, 1f, 1.65f);
+    public static final DeferredHolder<EntityType<?>, EntityType<BonkChoyEntity>> BONK_CHOY = register("bonk_choy", BonkChoyEntity::new, 1f, 1f);
     public static final DeferredHolder<EntityType<?>, EntityType<SunShroomEntity>> SUN_SHROOM = register("sun_shroom", SunShroomEntity::new, 0.7f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<PuffShroomEntity>> PUFF_SHROOM = register("puff_shroom", PuffShroomEntity::new, 0.5f, 0.5f);
     public static final DeferredHolder<EntityType<?>, EntityType<DoomShroomEntity>> DOOM_SHROOM = register("doom_shroom", DoomShroomEntity::new, 0.7f, 1f);
@@ -99,6 +100,15 @@ public class ModEntities {
                 .add(Attributes.ATTACK_DAMAGE, 4)
                 .add(Attributes.ENTITY_INTERACTION_RANGE, 2);
 
+        AttributeSupplier.Builder bonkChoyAttributes = PathfinderMob.createMobAttributes()
+                .add(Attributes.MOVEMENT_SPEED,-99)
+                .add(Attributes.MAX_HEALTH, 16)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 99)
+                .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 99)
+                .add(Attributes.ATTACK_SPEED, 10)
+                .add(Attributes.ATTACK_DAMAGE, 3)
+                .add(Attributes.ENTITY_INTERACTION_RANGE, 2);
+
         AttributeSupplier.Builder puffShroomAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
                 .add(Attributes.MAX_HEALTH, 16)
@@ -123,6 +133,7 @@ public class ModEntities {
         event.put(ModEntities.WALL_NUT.get(), wallNutAttributes.build());
         event.put(ModEntities.POTATO_MINE.get(), potatoMineAttributes.build());
         event.put(ModEntities.CHOMPER.get(), chomperAttributes.build());
+        event.put(ModEntities.BONK_CHOY.get(), bonkChoyAttributes.build());
         event.put(ModEntities.SUN_SHROOM.get(), sunflowerAttributes.build());
         event.put(ModEntities.PUFF_SHROOM.get(), puffShroomAttributes.build());
         event.put(ModEntities.DOOM_SHROOM.get(), doomShroomAttributes.build());

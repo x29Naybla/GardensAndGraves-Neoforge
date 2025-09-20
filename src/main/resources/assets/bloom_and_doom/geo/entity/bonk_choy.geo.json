@@ -1,0 +1,51 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bonk_choy",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 0, -4], "size": [8, 9, 8], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "leaves",
+					"parent": "bonk_choy",
+					"pivot": [0, 9, 0],
+					"rotation": [-12.5, 0, 0],
+					"cubes": [
+						{"origin": [-5, 8, -1], "size": [10, 7, 2], "uv": [40, 0]}
+					]
+				},
+				{
+					"name": "left_arm",
+					"parent": "bonk_choy",
+					"pivot": [3, 0, -4],
+					"rotation": [-22.5, -12.5, 0],
+					"cubes": [
+						{"origin": [1, 0, -12], "size": [4, 6, 8], "uv": [1, 18]}
+					]
+				},
+				{
+					"name": "right_arm",
+					"parent": "bonk_choy",
+					"pivot": [-3, 0, 4],
+					"rotation": [22.5, -12.5, 0],
+					"cubes": [
+						{"origin": [-5, 0, 4], "size": [5, 5, 8], "uv": [27, 17]}
+					]
+				}
+			]
+		}
+	]
+}

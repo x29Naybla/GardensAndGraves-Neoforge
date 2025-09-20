@@ -56,6 +56,8 @@ public class ItemTags extends ItemTagsProvider {
                 .addTag(net.minecraft.tags.ItemTags.DIRT);
         tag(ModTags.Items.SUSTAINS_CHOMPERS)
                 .addTag(net.minecraft.tags.ItemTags.DIRT);
+        tag(ModTags.Items.SUSTAINS_BONK_CHOYS)
+                .addTag(net.minecraft.tags.ItemTags.DIRT);
         tag(ModTags.Items.SUSTAINS_POTATO_MINES)
                 .addTag(net.minecraft.tags.ItemTags.DIRT);
         tag(ModTags.Items.SUSTAINS_SUN_SHROOMS)
@@ -88,6 +90,9 @@ public class ItemTags extends ItemTagsProvider {
                 .add(ModItems.PURPLE_WATERING_CAN.get())
                 .add(ModItems.MAGENTA_WATERING_CAN.get())
                 .add(ModItems.PINK_WATERING_CAN.get());
+
+        tag(ModTags.Items.ZOMBIE_ANTIDOTE)
+                .add(Items.GOLDEN_APPLE);
 
         //Common Tags
         tag(Tags.Items.DYED_WHITE)

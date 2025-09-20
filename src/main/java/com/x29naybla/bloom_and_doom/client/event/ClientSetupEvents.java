@@ -34,6 +34,7 @@ public class ClientSetupEvents {
         event.registerEntityRenderer(ModEntities.WALL_NUT.get(), WallNutRenderer::new);
         event.registerEntityRenderer(ModEntities.POTATO_MINE.get(), PotatoMineRenderer::new);
         event.registerEntityRenderer(ModEntities.CHOMPER.get(), ChomperRenderer::new);
+        event.registerEntityRenderer(ModEntities.BONK_CHOY.get(), BonkChoyRenderer::new);
         event.registerEntityRenderer(ModEntities.SUN_SHROOM.get(), SunShroomRenderer::new);
         event.registerEntityRenderer(ModEntities.PUFF_SHROOM.get(), PuffShroomRenderer::new);
         event.registerEntityRenderer(ModEntities.DOOM_SHROOM.get(), DoomShroomRenderer::new);

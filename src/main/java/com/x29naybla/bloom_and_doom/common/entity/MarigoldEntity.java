@@ -35,8 +35,8 @@ public class MarigoldEntity extends Plant {
     protected static final RawAnimation GENERATE = RawAnimation.begin().thenPlayAndHold("animation.flower.generate");
     protected static final EntityDataAccessor<Boolean> GENERATED = SynchedEntityData.defineId(MarigoldEntity.class, EntityDataSerializers.BOOLEAN);
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
-    private static final EntityDataAccessor<Byte> DATA_PETALS_ID;
-    private static final Map<DyeColor, Integer> COLOR_BY_DYE;
+    private static final EntityDataAccessor<Byte> DATA_PETALS_ID = SynchedEntityData.defineId(MarigoldEntity.class, EntityDataSerializers.BYTE);
+    private static final Map<DyeColor, Integer> COLOR_BY_DYE = Maps.<DyeColor, Integer>newEnumMap(Arrays.stream(DyeColor.values()).collect(Collectors.toMap((p_29868_) -> p_29868_, MarigoldEntity::createMarigoldColor)));
     public int rewardTime;
     public static DyeColor dyedColor;
 
@@ -145,10 +145,5 @@ public class MarigoldEntity extends Plant {
         byte b0 = this.entityData.get(DATA_PETALS_ID);
         this.entityData.set(DATA_PETALS_ID, (byte)(b0 & 240 | dyeColor.getId() & 15));
         dyedColor = dyeColor;
-    }
-
-    static {
-        DATA_PETALS_ID = SynchedEntityData.defineId(MarigoldEntity.class, EntityDataSerializers.BYTE);
-        COLOR_BY_DYE = Maps.newEnumMap((Map) Arrays.stream(DyeColor.values()).collect(Collectors.toMap((p_29868_) -> p_29868_, MarigoldEntity::createMarigoldColor)));
     }
 }
