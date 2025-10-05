@@ -111,7 +111,7 @@
 		"animation.peashooter.shoot": {
 			"animation_length": 1,
 			"bones": {
-				"front_support": {
+				"front_left_leaf": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -133,7 +133,7 @@
 						}
 					}
 				},
-				"right_support": {
+				"front_right_leaf": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -155,7 +155,7 @@
 						}
 					}
 				},
-				"back_support": {
+				"back_right_leaf": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -177,7 +177,7 @@
 						}
 					}
 				},
-				"left_support": {
+				"back_left_leaf": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
@@ -280,14 +280,6 @@
 						},
 						"0.54": {
 							"vector": [0, 0, 0]
-						}
-					},
-					"scale": {
-						"0.0": {
-							"vector": [1, 1, 1]
-						},
-						"0.46": {
-							"vector": [1, 1, 1]
 						}
 					}
 				}

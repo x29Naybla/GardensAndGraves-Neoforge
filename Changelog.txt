@@ -4,3 +4,5 @@ changelog:
 * started adding the Bonk Choy (currently no attacking goal, stats uncertain)
 
 * new "plant_punch" damage type
+
+* updates to the models and textures of peashooters, repeaters, and snow peas
