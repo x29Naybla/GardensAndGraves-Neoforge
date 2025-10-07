@@ -5,4 +5,4 @@ changelog:
 
 * new "plant_punch" damage type
 
-* updates to the models and textures of peashooters, repeaters, and snow peas
+* updates to the models and textures of peashooters, repeaters, snow peas, sunflowers, and marigolds
