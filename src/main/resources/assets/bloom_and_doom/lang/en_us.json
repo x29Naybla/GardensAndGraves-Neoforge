@@ -34,6 +34,9 @@
   "item.bloom_and_doom.potted_potato_mine": "Potted Potato Mine",
   "item.bloom_and_doom.potted_potato_mine.desc": "Description",
 
+  "item.bloom_and_doom.potted_bonk_choy": "Potted Bonk Choy",
+  "item.bloom_and_doom.potted_bonk_choy.desc": "Description",
+
   "item.bloom_and_doom.potted_sun_shroom": "Potted Sun-shroom",
   "item.bloom_and_doom.potted_sun_shroom.desc": "Description",
   "item.bloom_and_doom.potted_puff_shroom": "Potted Puff-shroom",
@@ -66,6 +69,8 @@
   "item.bloom_and_doom.almanac": "Almanac",
   "item.bloom_and_doom.brainz_banner_pattern": "Banner Pattern",
   "item.bloom_and_doom.brainz_banner_pattern.desc": "Brainz",
+
+  "item.bloom_and_doom.zombie_wolf_spawn_egg": "Zombie Wolf Spawn Egg",
 
   "item.minecraft.tipped_arrow.effect.gng_zombification": "Arrow of Zombification",
   "item.minecraft.potion.effect.gng_zombification": "Potion of Zombification",
@@ -152,6 +157,8 @@
   "entity.bloom_and_doom.fume_shroom": "Fume-shroom",
   "entity.bloom_and_doom.hypno_shroom": "Hypno-shroom",
   "entity.bloom_and_doom.doom_shroom": "Doom-shroom",
+
+  "entity.bloom_and_doom.zombie_wolf": "Zombie Wolf",
 
   "entity.bloom_and_doom.pea": "Pea",
   "entity.bloom_and_doom.frozen_pea": "Frozen Pea",

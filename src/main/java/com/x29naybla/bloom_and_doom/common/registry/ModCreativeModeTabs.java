@@ -40,6 +40,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.POTTED_SNOW_PEA);
                         output.accept(ModItems.POTTED_REPEATER);
                         output.accept(ModItems.POTTED_POTATO_MINE);
+                        output.accept(ModItems.POTTED_BONK_CHOY);
                         output.accept(ModItems.POTTED_SUN_SHROOM);
                         output.accept(ModItems.POTTED_PUFF_SHROOM);
                         output.accept(ModItems.WHITE_WATERING_CAN);
@@ -65,6 +66,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ALMANAC);
                         output.accept(ModItems.BRAIN);
                         output.accept(ModItems.BRAINZ_BANNER_PATTERN);
+                        output.accept(ModItems.ZOMBIE_WOLF_SPAWN_EGG);
 
                     }).build());
 

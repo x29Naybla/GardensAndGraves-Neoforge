@@ -71,5 +71,8 @@ public class EntityTags extends EntityTypeTagsProvider {
         //Minecraft Tags
         tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES)
                 .add(ModEntities.SNOW_PEA.get());
+
+        tag(EntityTypeTags.ZOMBIES)
+                .add(ModEntities.ZOMBIE_WOLF.get());
     }
 }

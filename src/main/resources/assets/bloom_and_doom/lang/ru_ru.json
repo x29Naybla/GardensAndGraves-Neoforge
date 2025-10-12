@@ -34,6 +34,9 @@
   "item.bloom_and_doom.potted_potato_mine": "Картофельная мина в горшке",
   "item.bloom_and_doom.potted_potato_mine.desc": "Описание",
 
+  "item.bloom_and_doom.potted_bonk_choy": "Potted Bonk Choy",
+  "item.bloom_and_doom.potted_bonk_choy.desc": "Description",
+
   "item.bloom_and_doom.potted_sun_shroom": "Солнцегриб в горшке",
   "item.bloom_and_doom.potted_sun_shroom.desc": "Описание",
   "item.bloom_and_doom.potted_puff_shroom": "Спорогриб в горшке",
@@ -66,6 +69,8 @@
   "item.bloom_and_doom.almanac": "Альманах",
   "item.bloom_and_doom.brainz_banner_pattern": "Шаблон баннера",
   "item.bloom_and_doom.brainz_banner_pattern.desc": "Моzг",
+
+  "item.bloom_and_doom.zombie_wolf_spawn_egg": "Zombie Wolf Spawn Egg",
 
   "item.minecraft.tipped_arrow.effect.gng_zombification": "Стрела Зомбификации",
   "item.minecraft.potion.effect.gng_zombification": "Зелье Зомбификации",
@@ -152,6 +157,8 @@
   "entity.bloom_and_doom.fume_shroom": "Дымогриб",
   "entity.bloom_and_doom.hypno_shroom": "Гипногриб",
   "entity.bloom_and_doom.doom_shroom": "Гриб Судьбы",
+
+  "entity.bloom_and_doom.zombie_wolf": "Zombie Wolf",
 
   "entity.bloom_and_doom.pea": "Горошек",
   "entity.bloom_and_doom.frozen_pea": "Морозный Горошек",

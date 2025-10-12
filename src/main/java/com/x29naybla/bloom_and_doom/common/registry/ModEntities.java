@@ -37,6 +37,8 @@ public class ModEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<PuffShroomEntity>> PUFF_SHROOM = register("puff_shroom", PuffShroomEntity::new, 0.5f, 0.5f);
     public static final DeferredHolder<EntityType<?>, EntityType<DoomShroomEntity>> DOOM_SHROOM = register("doom_shroom", DoomShroomEntity::new, 0.7f, 1f);
 
+    public static final DeferredHolder<EntityType<?>, EntityType<ZombieWolfEntity>> ZOMBIE_WOLF = register("zombie_wolf", ZombieWolfEntity::new, 0.7f, 1f);
+
     @SubscribeEvent
     public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
         AttributeSupplier.Builder sunflowerAttributes = PathfinderMob.createMobAttributes()
@@ -137,6 +139,7 @@ public class ModEntities {
         event.put(ModEntities.SUN_SHROOM.get(), sunflowerAttributes.build());
         event.put(ModEntities.PUFF_SHROOM.get(), puffShroomAttributes.build());
         event.put(ModEntities.DOOM_SHROOM.get(), doomShroomAttributes.build());
+        event.put(ModEntities.ZOMBIE_WOLF.get(), ZombieWolfEntity.createAttributes().build());
     }
 
     public static final Supplier<EntityType<PeaProjectile>> PEA_PROJECTILE = ENTITY_TYPES.register("pea", () -> (

@@ -9,6 +9,7 @@ import com.x29naybla.bloom_and_doom.common.registry.ModEntities;
 import com.x29naybla.bloom_and_doom.common.registry.ModParticles;
 import com.x29naybla.bloom_and_doom.client.particle.SleepingParticles;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.entity.WolfRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
@@ -38,6 +39,8 @@ public class ClientSetupEvents {
         event.registerEntityRenderer(ModEntities.SUN_SHROOM.get(), SunShroomRenderer::new);
         event.registerEntityRenderer(ModEntities.PUFF_SHROOM.get(), PuffShroomRenderer::new);
         event.registerEntityRenderer(ModEntities.DOOM_SHROOM.get(), DoomShroomRenderer::new);
+
+        event.registerEntityRenderer(ModEntities.ZOMBIE_WOLF.get(), WolfRenderer::new);
 
         if (!ModList.get().isLoaded("amendments") || !ClientConfigs.PEAS_3D.get()) {
             event.registerEntityRenderer(ModEntities.PEA_PROJECTILE.get(), ThrownItemRenderer::new);

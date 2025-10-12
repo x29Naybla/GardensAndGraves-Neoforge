@@ -1,8 +1,4 @@
 changelog:
-* Smite now affects zombie players
-* created the "zombie_antidotes" tag to replace the item needed for curing zombie players being hardcoded (contains only the normal Golden Apple by default)
-* started adding the Bonk Choy (currently no attacking goal, stats uncertain)
-
-* new "plant_punch" damage type
-
-* updates to the models and textures of peashooters, repeaters, snow peas, sunflowers, and marigolds
+* added zombie wolves
+* added Zombie Wolf Spawn Egg
+* added Potted Bonk Choy

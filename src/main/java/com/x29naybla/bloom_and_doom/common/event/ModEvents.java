@@ -41,5 +41,8 @@ public class ModEvents {
             event.accept(ModItems.MAGENTA_WATERING_CAN);
             event.accept(ModItems.PINK_WATERING_CAN);
         }
+        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
+            event.accept(ModItems.ZOMBIE_WOLF_SPAWN_EGG);
+        }
     }
 }

@@ -34,6 +34,9 @@
   "item.bloom_and_doom.potted_potato_mine": "Batatamina envasada",
   "item.bloom_and_doom.potted_potato_mine.desc": "Descrição",
 
+  "item.bloom_and_doom.potted_bonk_choy": "Repolho-boxeador envasado",
+  "item.bloom_and_doom.potted_bonk_choy.desc": "Descrição",
+
   "item.bloom_and_doom.potted_sun_shroom": "Solargumelo envasado",
   "item.bloom_and_doom.potted_sun_shroom.desc": "Descrição",
   "item.bloom_and_doom.potted_puff_shroom": "Soprogumelo envasado",
@@ -66,6 +69,8 @@
   "item.bloom_and_doom.almanac": "Almanaque",
   "item.bloom_and_doom.brainz_banner_pattern": "Figura para estandarte",
   "item.bloom_and_doom.brainz_banner_pattern.desc": "Mioloz",
+
+  "item.bloom_and_doom.zombie_wolf_spawn_egg": "Ovo invocador de lobo zumbi",
 
   "item.minecraft.tipped_arrow.effect.gng_zombification": "Flecha de zumbificação",
   "item.minecraft.potion.effect.gng_zombification": "Poção de zumbificação",
@@ -152,6 +157,8 @@
   "entity.bloom_and_doom.fume_shroom": "Gasogumelo",
   "entity.bloom_and_doom.hypno_shroom": "Hypnogumelo",
   "entity.bloom_and_doom.doom_shroom": "Ruinagumelo",
+
+  "entity.bloom_and_doom.zombie_wolf": "Lobo zumbi",
 
   "entity.bloom_and_doom.pea": "Ervilha",
   "entity.bloom_and_doom.frozen_pea": "Ervilha congelada",

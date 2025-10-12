@@ -1,7 +1,9 @@
 package com.x29naybla.bloom_and_doom.common.effect;
 
+import com.x29naybla.bloom_and_doom.common.entity.ZombieWolfEntity;
 import com.x29naybla.bloom_and_doom.common.registry.ModEffects;
 import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
+import com.x29naybla.bloom_and_doom.common.registry.ModEntities;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -12,6 +14,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.animal.horse.ZombieHorse;
 import net.minecraft.world.entity.monster.Zoglin;
@@ -26,6 +29,8 @@ import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.event.EventHooks;
 
+import java.util.Objects;
+
 public class Zombification extends MobEffect {
     public Zombification(MobEffectCategory category, int color) {
         super(category, color);
@@ -33,7 +38,7 @@ public class Zombification extends MobEffect {
 
     @Override
     public boolean applyEffectTick(LivingEntity entity, int amplifier) {
-        if(!entity.level().isClientSide && (entity.getHealth() <= 0 || entity.getEffect(ModEffects.ZOMBIFICATION).getDuration() == 1)) {
+        if(!entity.level().isClientSide && (entity.getHealth() <= 0 || Objects.requireNonNull(entity.getEffect(ModEffects.ZOMBIFICATION)).getDuration() == 1)) {
             ServerLevel level = (ServerLevel) entity.level();
             if((entity instanceof Piglin || entity instanceof PiglinBrute)) {
                 AbstractPiglin piglin = (AbstractPiglin) entity;
@@ -82,8 +87,16 @@ public class Zombification extends MobEffect {
                 player.makeSound(SoundEvents.ZOMBIE_INFECT);
                 return true;
 
+            } else if(entity instanceof Wolf wolf) {
+                wolf.makeSound(SoundEvents.ZOMBIE_INFECT);
+                ZombieWolfEntity zWolf = wolf.convertTo(ModEntities.ZOMBIE_WOLF.get(), true);
+                if(zWolf != null) {
+                    zWolf.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
+                    EventHooks.onLivingConvert(wolf, zWolf);
+                }
+                return true;
             }
-        } else if (entity.level().isClientSide && (entity.getHealth() <= 0 || entity.getEffect(ModEffects.ZOMBIFICATION).getDuration() == 1) && entity instanceof Player player) {
+        } else if (entity.level().isClientSide && (entity.getHealth() <= 0 || Objects.requireNonNull(entity.getEffect(ModEffects.ZOMBIFICATION)).getDuration() == 1) && entity instanceof Player player) {
             player.setData(ModDataAttachments.ZOMBIE, true);
             player.makeSound(SoundEvents.ZOMBIE_INFECT);
             return true;
