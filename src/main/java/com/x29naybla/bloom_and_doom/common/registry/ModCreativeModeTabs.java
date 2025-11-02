@@ -27,6 +27,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.WALL_NUT_SEED_PACKET);
                         output.accept(ModItems.POTATO_MINE_SEED_PACKET);
                         output.accept(ModItems.JALAPENO_SEED_PACKET);
+                        output.accept(ModItems.COFFEE_BEAN_SEED_PACKET);
                         output.accept(ModItems.CHOMPER_SEED_PACKET);
                         output.accept(ModItems.BONK_CHOY_SEED_PACKET);
                         output.accept(ModItems.SUN_SHROOM_SEED_PACKET);

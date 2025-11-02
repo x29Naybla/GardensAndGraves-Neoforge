@@ -10,6 +10,7 @@
 
   "item.bloom_and_doom.potato_mine_seed_packet": "Пакет семян Картофельной Мины",
   "item.bloom_and_doom.jalapeno_seed_packet": "Пакет семян Халапеньо",
+  "item.bloom_and_doom.coffee_bean_seed_packet": "Coffee Bean Seed Packet",
   "item.bloom_and_doom.chomper_seed_packet": "Пакет семян Зубастика",
   "item.bloom_and_doom.bonk_choy_seed_packet": "Пакет семян Бонк-Чоя",
 
@@ -296,11 +297,11 @@
   "bloom_and_doom.subtitles.entity.potato_mine.explodes": "Картофельная мина взрывается",
   "bloom_and_doom.subtitles.entity.plant.grows": "Растение растёт",
 
-  "bloom_and_doom.configuration.pea_3d": "3D peas",
-  "bloom_and_doom.configuration.frozen_pea_3d": "3D frozen peas",
-  "bloom_and_doom.configuration.spore_3d": "3D spores",
+  "bloom_and_doom.configuration.pea_3d": "3D горошины",
+  "bloom_and_doom.configuration.frozen_pea_3d": "3D замороженные горошины",
+  "bloom_and_doom.configuration.spore_3d": "3D споры",
 
-  "bloom_and_doom.configuration.plants_lifespan": "Short-lived plants",
+  "bloom_and_doom.configuration.plants_lifespan": "Недолговечные растения",
 
   "config.jade.plugin_bloom_and_doom.sun_timer": "Таймер солнца",
   "config.jade.plugin_bloom_and_doom.reward_timer": "Таймер наград золотой ромашки",

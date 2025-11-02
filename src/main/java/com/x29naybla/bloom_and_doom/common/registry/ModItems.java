@@ -8,6 +8,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SpawnEggItem;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -39,6 +40,8 @@ public class ModItems {
     public static final DeferredItem<Item> POTATO_MINE_SEED_PACKET = ITEMS.register("potato_mine_seed_packet",
             () -> new SeedPacketItem(ModEntities.POTATO_MINE.get(), 1, 20, new Item.Properties()));
     public static final DeferredItem<Item> JALAPENO_SEED_PACKET = ITEMS.register("jalapeno_seed_packet",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> COFFEE_BEAN_SEED_PACKET = ITEMS.register("coffee_bean_seed_packet",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> CHOMPER_SEED_PACKET = ITEMS.register("chomper_seed_packet",
             () -> new SeedPacketItem(ModEntities.CHOMPER.get(), 6, 5, new Item.Properties()));
@@ -123,7 +126,7 @@ public class ModItems {
             () -> new BannerPatternItem(BRAINZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1)));
 
     public static final DeferredItem<SpawnEggItem> ZOMBIE_WOLF_SPAWN_EGG = ITEMS.register("zombie_wolf_spawn_egg",
-            () -> new SpawnEggItem(ModEntities.ZOMBIE_WOLF.get(), 14144467, 7969893, new Item.Properties()));
+            () -> new DeferredSpawnEggItem(ModEntities.ZOMBIE_WOLF, 14144467, 7969893, new Item.Properties()));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

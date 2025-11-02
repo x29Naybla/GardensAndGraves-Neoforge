@@ -189,6 +189,13 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 setSleeping(false);
             }
 
+            if (this instanceof SunflowerEntity) {
+                setSleeping((this.level().isNight() || this.level().isRaining())
+                        && !this.gotCoffee);
+            } else {
+                setSleeping(false);
+            }
+
             if (getSleeping()) {
                 --this.ticksForSleepyParticles;
                 if (this.ticksForSleepyParticles <= 0) {

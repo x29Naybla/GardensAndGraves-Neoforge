@@ -9,7 +9,6 @@ import software.bernie.geckolib.model.GeoModel;
 
 public class SunflowerModel extends GeoModel<SunflowerEntity> {
     private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "geo/entity/sunflower.geo.json");
-    private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/sunflower.png");
     private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "animations/entity/flower.animation.json");
 
     @Override
@@ -19,7 +18,10 @@ public class SunflowerModel extends GeoModel<SunflowerEntity> {
 
     @Override
     public ResourceLocation getTextureResource(SunflowerEntity animatable) {
-        return this.texture;
+        if (animatable.getSleeping()) {
+            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/sunflower/sunflower_sleeping.png");
+        } else
+            return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/sunflower/sunflower.png");
     }
 
     @Override
