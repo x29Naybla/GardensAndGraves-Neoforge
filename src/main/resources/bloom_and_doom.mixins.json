@@ -3,7 +3,8 @@
   "package": "com.x29naybla.bloom_and_doom.common.mixin",
   "mixins": [
     "PickedUpItemTriggerMixin",
-    "ZombieSunSensitiveMixin"
+    "ZombieSunSensitiveMixin",
+    "ArmadilloScaredByZombiePlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

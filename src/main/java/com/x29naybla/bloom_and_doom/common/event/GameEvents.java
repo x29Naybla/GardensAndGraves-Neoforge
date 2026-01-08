@@ -9,9 +9,11 @@ import com.x29naybla.bloom_and_doom.common.registry.ModItems;
 import com.x29naybla.bloom_and_doom.common.registry.ModPotions;
 import com.x29naybla.bloom_and_doom.common.registry.ModVillagers;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
@@ -248,10 +250,11 @@ public class GameEvents {
     @SubscribeEvent
     public static void zombieEntitySuffersSmite(LivingDamageEvent.Pre event){
         if(!event.getEntity().getType().is(EntityTypeTags.UNDEAD) && event.getEntity().getData(ModDataAttachments.ZOMBIE)){
-            var smite = event.getEntity().level().getServer().registryAccess().registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(Enchantments.SMITE);
-            int smiteLevel = event.getContainer().getSource().getWeaponItem().getTagEnchantments().getLevel(smite);
 
-            if(event.getContainer().getSource().getWeaponItem().is(ItemTags.WEAPON_ENCHANTABLE)){
+            if(event.getContainer().getSource().getWeaponItem() != null && event.getContainer().getSource().getWeaponItem().is(ItemTags.WEAPON_ENCHANTABLE)){
+                var smite = event.getEntity().level().getServer().registryAccess().registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(Enchantments.SMITE);
+                int smiteLevel = event.getContainer().getSource().getWeaponItem().getTagEnchantments().getLevel(smite);
+
                 event.setNewDamage((float) (event.getOriginalDamage() + (smiteLevel * 2.5)));
             }
         }

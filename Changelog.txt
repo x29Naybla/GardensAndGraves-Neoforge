@@ -7,3 +7,6 @@ changelog:
 * sunflowers will now sleep during the night and rainy days
 * slight changes to the texture of the sunflowers' faces
 * added Coffee Bean Seed Packet
+
+* armadillos now get scared by zombie players
+* fixed game-crashing bug relating to zombie players being hurt
