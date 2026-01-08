@@ -1,12 +1,2 @@
 changelog:
-* added zombie wolves
-* added Zombie Wolf Spawn Egg
-* added Potted Bonk Choy
-
-* updates to the models and textures of chompers
-* sunflowers will now sleep during the night and rainy days
-* slight changes to the texture of the sunflowers' faces
-* added Coffee Bean Seed Packet
-
-* armadillos now get scared by zombie players
-* fixed game-crashing bug relating to zombie players being hurt
+*
