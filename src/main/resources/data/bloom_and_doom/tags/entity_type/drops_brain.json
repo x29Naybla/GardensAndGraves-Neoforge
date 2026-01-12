@@ -45,10 +45,6 @@
     {
       "id": "rctmod:trainer",
       "required": false
-    },
-    {
-      "id": "arts_and_crafts:light_gray_flower_pot",
-      "required": false
     }
   ]
 }

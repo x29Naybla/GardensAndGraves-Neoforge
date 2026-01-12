@@ -41,9 +41,11 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.EnderManAngerEvent;
+import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent;
@@ -73,8 +75,12 @@ public class GameEvents {
             golem.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(golem, LivingEntity.class, true,
                     (target) -> target instanceof LivingEntity livingEntity && livingEntity.getData(ModDataAttachments.ZOMBIE)));
         }
-        if (!event.getLevel().isClientSide && event.getLevel().random.nextIntBetweenInclusive(0, 49) <= 0.75) {
-            if (event.getEntity() instanceof Zombie zombie) {
+    }
+
+    @SubscribeEvent
+    public static void entitySpawnEvent(FinalizeSpawnEvent event){
+        if (!event.getLevel().isClientSide() && event.getEntity() instanceof Zombie zombie) {
+            if (event.getLevel().getRandom().nextIntBetweenInclusive(0, 49) <= 0.75) {
                 zombie.setItemSlot(EquipmentSlot.HEAD, getZombieLeaderBannerInstance(zombie.registryAccess().lookupOrThrow(Registries.BANNER_PATTERN)));
                 zombie.setGuaranteedDrop(EquipmentSlot.HEAD);
             }
@@ -258,10 +264,11 @@ public class GameEvents {
         }
     }
 
+    static boolean fromCuring = false;
+
     @SubscribeEvent
     public static void zombiePlayerCureSelf(PlayerTickEvent.Pre event) {
         Player player = event.getEntity();
-        boolean fromCuring = false;
         if(player.getData(ModDataAttachments.ZOMBIE)) {
             if(player.hasEffect(MobEffects.WEAKNESS) && (player.getUseItem().is(ModTags.Items.ZOMBIE_ANTIDOTE) && player.getUseItemRemainingTicks() <= 1)) {
                 player.removeEffect(MobEffects.WEAKNESS);
@@ -276,6 +283,11 @@ public class GameEvents {
                 ));
                 fromCuring = true;
             }
+
+            if(fromCuring && (player.getUseItem().is(Tags.Items.DRINKS_MILK) && player.getUseItemRemainingTicks() <= 1)) {
+                fromCuring = false;
+            }
+
             if(player.hasEffect(MobEffects.DAMAGE_BOOST) && player.getEffect(MobEffects.DAMAGE_BOOST).getDuration() <= 1 && fromCuring){
                 player.removeData(ModDataAttachments.ZOMBIE);
                 player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ZOMBIE_VILLAGER_CONVERTED, SoundSource.PLAYERS);

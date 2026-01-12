@@ -123,7 +123,7 @@ public class ModItems {
     public static final DeferredItem<Item> ALMANAC = ITEMS.register("almanac",
             () -> new AlmanacItem(new Item.Properties()));
     public static final DeferredItem<Item> BRAINZ_BANNER_PATTERN = ITEMS.register("brainz_banner_pattern",
-            () -> new BannerPatternItem(BRAINZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1)));
+            () -> new BannerPatternItem(BRAINZ, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<SpawnEggItem> ZOMBIE_WOLF_SPAWN_EGG = ITEMS.register("zombie_wolf_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.ZOMBIE_WOLF, 14144467, 7969893, new Item.Properties()));

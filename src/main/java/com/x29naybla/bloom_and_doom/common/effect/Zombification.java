@@ -7,6 +7,7 @@ import com.x29naybla.bloom_and_doom.common.registry.ModEntities;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -84,7 +85,7 @@ public class Zombification extends MobEffect {
 
             } else if(entity instanceof Player player) {
                 player.setData(ModDataAttachments.ZOMBIE, true);
-                player.makeSound(SoundEvents.ZOMBIE_INFECT);
+                level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ZOMBIE_INFECT, SoundSource.PLAYERS);
                 return true;
 
             } else if(entity instanceof Wolf wolf) {
@@ -96,10 +97,6 @@ public class Zombification extends MobEffect {
                 }
                 return true;
             }
-        } else if (entity.level().isClientSide && (entity.getHealth() <= 0 || Objects.requireNonNull(entity.getEffect(ModEffects.ZOMBIFICATION)).getDuration() == 1) && entity instanceof Player player) {
-            player.setData(ModDataAttachments.ZOMBIE, true);
-            player.makeSound(SoundEvents.ZOMBIE_INFECT);
-            return true;
         }
 
         return super.applyEffectTick(entity, amplifier);

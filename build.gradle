@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.1.1'
+    id 'net.neoforged.gradle.userdev' version '7.1.20'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -45,6 +45,8 @@ base {
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+//minecraft.accessTransformers.file rootProject.file('src/main/resources/META-INF/accesstransformer.cfg')
 
 runs {
     configureEach {
@@ -91,8 +93,8 @@ dependencies {
     implementation "software.bernie.geckolib:geckolib-neoforge-1.21.1:${geckolib_version}"
     implementation "maven.modrinth:jade:${jade_version}+neoforge"
     implementation "maven.modrinth:farmers-delight:${farmersdelight_version}"
-    implementation "maven.modrinth:amendments:${amendments_version}"
-    implementation "maven.modrinth:moonlight:${moonlight_version}"
+    implementation "maven.modrinth:amendments:${amendments_version}-neoforge"
+    implementation "maven.modrinth:moonlight:${moonlight_version}-neoforge"
 }
 
 tasks.withType(ProcessResources).configureEach {
