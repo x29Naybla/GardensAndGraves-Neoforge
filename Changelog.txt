@@ -3,3 +3,8 @@ changelog:
 * fixed a bug where closing and reopening a world could cause preexisting zombies to get banners
 * fixed a bug where zombie players drinking milk in the process of curing not completely stopping it
 * fixed players turning into zombie players not playing the zombie infection sound
+
+* fixed the offspring of zombie wolves being normal wolves
+* fixed zombie wolves being able to breed
+* plants will no longer attack tamed undead pets
+* made zombie wolves attack turtle eggs and baby turtles

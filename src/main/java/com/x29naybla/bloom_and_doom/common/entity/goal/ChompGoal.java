@@ -5,6 +5,7 @@ import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
 import com.x29naybla.bloom_and_doom.common.tag.ModTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 
@@ -54,6 +55,6 @@ public final class ChompGoal extends Goal {
     }
 
     public boolean canChomp(Entity entity) {
-        return entity.getType().is(ModTags.Entities.CAN_BE_CHOMPED) || entity.getData(ModDataAttachments.ZOMBIE);
+        return (entity.getType().is(ModTags.Entities.CAN_BE_CHOMPED) || entity.getData(ModDataAttachments.ZOMBIE) && entity instanceof TamableAnimal tamable && !tamable.isTame());
     }
 }

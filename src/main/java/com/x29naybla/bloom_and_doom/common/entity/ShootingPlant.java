@@ -10,6 +10,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.RangedAttackMob;
@@ -42,7 +43,7 @@ public class ShootingPlant extends Plant implements RangedAttackMob {
     protected void registerGoals(){
         this.goalSelector.addGoal(1, new PlantShootGoal(this, 1.5F, 30, 8));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false,
-                (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE))));
+                (target) -> target instanceof LivingEntity livingEntity && ((livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE)) && livingEntity instanceof TamableAnimal tamable && !tamable.isTame())));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
