@@ -1,0 +1,22 @@
+{
+  "item.bloom_and_doom.sunflower_seed_packet": "Sunflower Seeds",
+  "item.bloom_and_doom.marigold_seed_packet": "Marigold Seeds",
+
+  "item.bloom_and_doom.peashooter_seed_packet": "Peashooter Seeds",
+  "item.bloom_and_doom.snow_pea_seed_packet": "Snow Pea Seeds",
+  "item.bloom_and_doom.repeater_seed_packet": "Repeater Seeds",
+
+  "item.bloom_and_doom.wall_nut_seed_packet": "Wall-nut",
+
+  "item.bloom_and_doom.potato_mine_seed_packet": "Potato Mine",
+  "item.bloom_and_doom.jalapeno_seed_packet": "Jalapeno Seeds",
+  "item.bloom_and_doom.coffee_bean_seed_packet": "Coffee Bean Seeds",
+  "item.bloom_and_doom.chomper_seed_packet": "Chomper Seeds",
+  "item.bloom_and_doom.bonk_choy_seed_packet": "Bonk Choy Seeds",
+
+  "item.bloom_and_doom.sun_shroom_seed_packet": "Sun-shroom Spores",
+  "item.bloom_and_doom.puff_shroom_seed_packet": "Puff-shroom Spores",
+  "item.bloom_and_doom.fume_shroom_seed_packet": "Fume-shroom Spores",
+  "item.bloom_and_doom.hypno_shroom_seed_packet": "Hypno-shroom Spores",
+  "item.bloom_and_doom.doom_shroom_seed_packet": "Doom-shroom Spores"
+}

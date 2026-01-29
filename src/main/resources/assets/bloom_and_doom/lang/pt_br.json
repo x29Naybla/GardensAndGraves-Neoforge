@@ -313,5 +313,7 @@
   "bloom_and_doom.seed_packets_timer": "Próximo pacote de sementes: ",
 
   "bloom_and_doom.gui.almanac.button.plants": "Plantas",
-  "bloom_and_doom.gui.almanac.button.zombies": "Zumbis"
+  "bloom_and_doom.gui.almanac.button.zombies": "Zumbis",
+
+  "pack.bloom_and_doom.bad_pa": "Bloom and Doom - Arte do programador"
 }

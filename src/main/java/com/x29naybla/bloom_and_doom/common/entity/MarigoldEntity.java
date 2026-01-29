@@ -52,7 +52,11 @@ public class MarigoldEntity extends Plant {
         } else {
             int i = dyeColor.getTextureDiffuseColor();
             float f = 0.75F;
-            return FastColor.ARGB32.color(255, Mth.floor((float) FastColor.ARGB32.red(i) * f), Mth.floor((float) FastColor.ARGB32.green(i) * f), Mth.floor((float) FastColor.ARGB32.blue(i) * f));
+            return FastColor.ARGB32.color(
+                    255,
+                    Mth.floor((float) FastColor.ARGB32.red(i) * f),
+                    Mth.floor((float) FastColor.ARGB32.green(i) * f),
+                    Mth.floor((float) FastColor.ARGB32.blue(i) * f));
         }
     }
 

@@ -8,3 +8,7 @@ changelog:
 * fixed zombie wolves being able to breed
 * plants will no longer attack tamed undead pets
 * made zombie wolves attack turtle eggs and baby turtles
+
+* added natural spawn for zombie wolves in all biomes normal wolves spawn in
+* baby zombie wolves don't age anymore
+* added a built-in resource pack with "Programmer Art styled" textures (still a wip)

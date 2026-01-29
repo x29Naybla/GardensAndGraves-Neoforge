@@ -313,5 +313,7 @@
   "bloom_and_doom.seed_packets_timer": "Next seed packet: ",
 
   "bloom_and_doom.gui.almanac.button.plants": "Plantes",
-  "bloom_and_doom.gui.almanac.button.zombies": "zombies"
+  "bloom_and_doom.gui.almanac.button.zombies": "zombies",
+
+  "pack.bloom_and_doom.bad_pa": "Bloom and Doom - Programmer Art"
 }

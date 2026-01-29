@@ -313,5 +313,7 @@
   "bloom_and_doom.seed_packets_timer": "Следующий пакет семян: ",
 
   "bloom_and_doom.gui.almanac.button.plants": "Растения",
-  "bloom_and_doom.gui.almanac.button.zombies": "Зомби"
+  "bloom_and_doom.gui.almanac.button.zombies": "Зомби",
+
+  "pack.bloom_and_doom.bad_pa": "Bloom and Doom - Programmer Art"
 }
