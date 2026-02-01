@@ -3,18 +3,14 @@ package com.x29naybla.bloom_and_doom;
 import com.x29naybla.bloom_and_doom.client.HiResPackSource;
 import com.x29naybla.bloom_and_doom.common.registry.*;
 import com.x29naybla.bloom_and_doom.common.loot.LootModifierInit;
-import com.x29naybla.bloom_and_doom.integration.Ammendments;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModList;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.neoforge.client.gui.ConfigurationScreen;
-import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -46,10 +42,6 @@ public class BloomAndDoom {
         ModCreativeModeTabs.register(modEventBus);
         LootModifierInit.LOOT_MODIFIERS.register(modEventBus);
 
-        if (ModList.get().isLoaded("amendments")){
-            Ammendments.init();
-        }
-
         IModFile modFile = ModLoadingContext.get().getActiveContainer().getModInfo().getOwningFile().getFile();
         modEventBus.addListener((AddPackFindersEvent event) -> {
             if (event.getPackType() == PackType.CLIENT_RESOURCES) {
@@ -59,7 +51,6 @@ public class BloomAndDoom {
 
         modContainer.registerConfig(ModConfig.Type.CLIENT, ClientConfigs.SPEC);
         modContainer.registerConfig(ModConfig.Type.COMMON, CommonConfigs.SPEC);
-        modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
 
     @SubscribeEvent
