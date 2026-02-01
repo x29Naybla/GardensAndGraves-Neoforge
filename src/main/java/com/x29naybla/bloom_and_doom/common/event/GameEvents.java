@@ -20,6 +20,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.monster.Creeper;
@@ -106,6 +107,13 @@ public class GameEvents {
                 if(attacker.getLastHurtByMob() != null) {
                     event.setCanceled(!attacker.getLastHurtByMob().is(player));
                 }
+            }
+        }
+
+        if(attacker instanceof Plant && newTarget instanceof TamableAnimal tamableAnimal && tamableAnimal.isTame()){
+            event.setCanceled(true);
+            if(attacker.getLastHurtByMob() != null) {
+                event.setCanceled(!attacker.getLastHurtByMob().is(tamableAnimal));
             }
         }
 

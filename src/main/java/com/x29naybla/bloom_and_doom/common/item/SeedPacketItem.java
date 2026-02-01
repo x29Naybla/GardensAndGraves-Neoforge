@@ -1,9 +1,6 @@
 package com.x29naybla.bloom_and_doom.common.item;
 
-import com.mojang.serialization.MapCodec;
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
-import com.x29naybla.bloom_and_doom.common.block.entity.PlanterBlockEntity;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
 import com.x29naybla.bloom_and_doom.common.entity.MarigoldEntity;
 import com.x29naybla.bloom_and_doom.common.entity.Plant;
 import com.x29naybla.bloom_and_doom.common.entity.SunShroomEntity;
@@ -13,7 +10,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerLevel;
@@ -25,13 +21,10 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
@@ -40,9 +33,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class SeedPacketItem extends Item {
-    private static final MapCodec<EntityType<?>> ENTITY_TYPE_FIELD_CODEC;
-    private final EntityType<?> defaultType;
+public class SeedPacketItem extends PlantHolderItem {
     private final int sunAmount;
     public final int cooldown;
 
@@ -128,34 +119,5 @@ public class SeedPacketItem extends Item {
             }
         }
         return InteractionResult.FAIL;
-    }
-
-    public static boolean onSubstrate(BlockGetter level, BlockPos pos) {
-        return isSubstrate(level, pos.below());
-    }
-
-    public static boolean isSubstrate(BlockGetter reader, BlockPos pos) {
-        return reader.getBlockState(pos).is(ModTags.Blocks.SUPPORTS_PLANTS);
-    }
-
-    public boolean onPlanter(BlockGetter level, BlockPos pos) {
-        return isPlanter(level, pos.below());
-    }
-
-    public boolean isPlanter(BlockGetter reader, BlockPos pos) {
-        return reader.getBlockEntity(pos) instanceof PlanterBlockEntity;
-    }
-
-    public EntityType<?> getType(ItemStack stack) {
-        CustomData customdata = stack.getOrDefault(DataComponents.ENTITY_DATA, CustomData.EMPTY);
-        return !customdata.isEmpty() ? customdata.read(ENTITY_TYPE_FIELD_CODEC).result().orElse(this.getDefaultType()) : this.getDefaultType();
-    }
-
-    protected EntityType<?> getDefaultType() {
-        return this.defaultType;
-    }
-
-    static {
-        ENTITY_TYPE_FIELD_CODEC = BuiltInRegistries.ENTITY_TYPE.byNameCodec().fieldOf("id");
     }
 }

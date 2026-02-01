@@ -8,8 +8,6 @@ import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -31,19 +29,14 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
-public class PottedPlantItem extends SeedPacketItem{
+public class PottedPlantItem extends PlantHolderItem {
     public PottedPlantItem(EntityType<? extends Mob> defaultType, Properties properties) {
-        super(defaultType, 0, 0, properties);
+        super(defaultType, properties);
     }
 
     @Override
     public int getMaxStackSize(@NotNull ItemStack stack) {
         return 1;
-    }
-
-    @Override
-    public MutableComponent getDisplayName() {
-        return Component.translatable(this.getDescriptionId() + ".desc");
     }
 
     @Override
@@ -57,20 +50,20 @@ public class PottedPlantItem extends SeedPacketItem{
         Direction direction = context.getClickedFace();
         if (level instanceof ServerLevel serverLevel) {
             Plant plant = (Plant) this.getType(stack).create(serverLevel, EntityType.createDefaultStackConfig(serverLevel, stack, context.getPlayer()), blockpos, MobSpawnType.BUCKET, false, false);
-            if(plant.onRightSubstrate(serverLevel, blockpos)) {
-                if (direction == Direction.DOWN) {
-                    return InteractionResult.FAIL;
-                } else if (player != null && player.isCrouching()) {
-                    ItemStack flowerPot = stack.get(DataComponents.BUNDLE_CONTENTS).getItemUnsafe(0);
-                    BlockItem flowerPotBlock = (BlockItem) flowerPot.getItem();
-                    serverLevel.setBlock(blockpos, flowerPotBlock.getBlock().defaultBlockState(), 3);
-                    placePlant(stack, serverLevel, context, blockpos, true);
-                    if (!player.isCreative()) player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
-                    return InteractionResult.SUCCESS;
-                } else {
-                    Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
-                    AABB aabb = this.getType(stack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
-                    if(serverLevel.noCollision(null, aabb) && serverLevel.getEntities(null, aabb).isEmpty()){
+            Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
+            AABB aabb = this.getType(stack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
+            if(serverLevel.noCollision(null, aabb) && level.getEntities(null, aabb).isEmpty()){
+                if(plant.onRightSubstrate(serverLevel, blockpos) && serverLevel.isEmptyBlock(blockpos)){
+                    if (direction == Direction.DOWN) {
+                        return InteractionResult.FAIL;
+                    } else if (player != null && player.isCrouching()) {
+                        ItemStack flowerPot = stack.get(DataComponents.BUNDLE_CONTENTS).getItemUnsafe(0);
+                        BlockItem flowerPotBlock = (BlockItem) flowerPot.getItem();
+                        serverLevel.setBlock(blockpos, flowerPotBlock.getBlock().defaultBlockState(), 3);
+                        placePlant(stack, serverLevel, context, blockpos, true);
+                        if (!player.isCreative()) player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
+                        return InteractionResult.SUCCESS;
+                    } else {
                         placePlant(stack, serverLevel, context, blockpos, false);
                         if (player != null && !player.isCreative()) {
                             ItemStack flowerPot = stack.get(DataComponents.BUNDLE_CONTENTS).getItemUnsafe(0);

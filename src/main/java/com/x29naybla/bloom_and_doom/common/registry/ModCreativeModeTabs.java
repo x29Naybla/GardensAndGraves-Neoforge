@@ -1,6 +1,7 @@
 package com.x29naybla.bloom_and_doom.common.registry;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
+import com.x29naybla.bloom_and_doom.common.item.PottedPLantItemstacks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -35,15 +36,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FUME_SHROOM_SEED_PACKET);
                         output.accept(ModItems.HYPNO_SHROOM_SEED_PACKET);
                         output.accept(ModItems.DOOM_SHROOM_SEED_PACKET);
-                        output.accept(ModItems.POTTED_SUNFLOWER);
-                        output.accept(ModItems.POTTED_MARIGOLD);
-                        output.accept(ModItems.POTTED_PEASHOOTER);
-                        output.accept(ModItems.POTTED_SNOW_PEA);
-                        output.accept(ModItems.POTTED_REPEATER);
-                        output.accept(ModItems.POTTED_POTATO_MINE);
-                        output.accept(ModItems.POTTED_BONK_CHOY);
-                        output.accept(ModItems.POTTED_SUN_SHROOM);
-                        output.accept(ModItems.POTTED_PUFF_SHROOM);
+                        output.accept(PottedPLantItemstacks.PottedSunflowerInstance());
+                        output.accept(PottedPLantItemstacks.PottedMarigoldInstance());
+                        output.accept(PottedPLantItemstacks.PottedPeashooterInstance());
+                        output.accept(PottedPLantItemstacks.PottedSnowPeaInstance());
+                        output.accept(PottedPLantItemstacks.PottedRepeaterInstance());
+                        output.accept(PottedPLantItemstacks.PottedPotatoMineInstance());
+                        output.accept(PottedPLantItemstacks.PottedBonkChoyInstance());
+                        output.accept(PottedPLantItemstacks.PottedSunShroomInstance());
+                        output.accept(PottedPLantItemstacks.PottedPuffShroomInstance());
                         output.accept(ModItems.WHITE_WATERING_CAN);
                         output.accept(ModItems.LIGHT_GRAY_WATERING_CAN);
                         output.accept(ModItems.GRAY_WATERING_CAN);

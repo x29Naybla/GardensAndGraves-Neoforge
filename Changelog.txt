@@ -1,14 +1,8 @@
 changelog:
-* changed the rarity of the Brainz Banner Pattern from rare to common
-* fixed a bug where closing and reopening a world could cause preexisting zombies to get banners
-* fixed a bug where zombie players drinking milk in the process of curing not completely stopping it
-* fixed players turning into zombie players not playing the zombie infection sound
-
-* fixed the offspring of zombie wolves being normal wolves
-* fixed zombie wolves being able to breed
-* plants will no longer attack tamed undead pets
-* made zombie wolves attack turtle eggs and baby turtles
-
-* added natural spawn for zombie wolves in all biomes normal wolves spawn in
-* baby zombie wolves don't age anymore
-* added a built-in resource pack with "Programmer Art styled" textures (still a wip)
+* fixed the Brainz Banner Pattern item not actually showing the pattern when put on a Loom
+* fixes in the Brazilian portuguese translations
+* removed the "description" from potted plant items
+* fixed potted plants taken from the creative inventory not actually having flower pots stored
+* fixed being able to infinitely keep placing potted plants in the same block
+* fixed being able to place potted plants on a block with a plant on it
+* fixed plants targeting not working properly

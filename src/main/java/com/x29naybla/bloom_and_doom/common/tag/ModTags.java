@@ -85,7 +85,7 @@ public class ModTags {
         }
     }
 
-    public static class BannerPatterns{
+    public static class BannerPatterns {
         public static final TagKey<BannerPattern> BRAINZ = createTag("pattern_item/brainz");
 
         private static TagKey<BannerPattern> createTag(String name){
