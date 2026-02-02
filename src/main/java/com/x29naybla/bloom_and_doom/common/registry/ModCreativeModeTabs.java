@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.common.registry;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
-import com.x29naybla.bloom_and_doom.common.item.PottedPLantItemstacks;
+import com.x29naybla.bloom_and_doom.common.item.PottedPlantItemstacks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -36,15 +36,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FUME_SHROOM_SEED_PACKET);
                         output.accept(ModItems.HYPNO_SHROOM_SEED_PACKET);
                         output.accept(ModItems.DOOM_SHROOM_SEED_PACKET);
-                        output.accept(PottedPLantItemstacks.PottedSunflowerInstance());
-                        output.accept(PottedPLantItemstacks.PottedMarigoldInstance());
-                        output.accept(PottedPLantItemstacks.PottedPeashooterInstance());
-                        output.accept(PottedPLantItemstacks.PottedSnowPeaInstance());
-                        output.accept(PottedPLantItemstacks.PottedRepeaterInstance());
-                        output.accept(PottedPLantItemstacks.PottedPotatoMineInstance());
-                        output.accept(PottedPLantItemstacks.PottedBonkChoyInstance());
-                        output.accept(PottedPLantItemstacks.PottedSunShroomInstance());
-                        output.accept(PottedPLantItemstacks.PottedPuffShroomInstance());
+                        output.accept(PottedPlantItemstacks.PottedSunflowerInstance());
+                        output.accept(PottedPlantItemstacks.PottedMarigoldInstance());
+                        output.accept(PottedPlantItemstacks.PottedPeashooterInstance());
+                        output.accept(PottedPlantItemstacks.PottedSnowPeaInstance());
+                        output.accept(PottedPlantItemstacks.PottedRepeaterInstance());
+                        output.accept(PottedPlantItemstacks.PottedPotatoMineInstance());
+                        output.accept(PottedPlantItemstacks.PottedBonkChoyInstance());
+                        output.accept(PottedPlantItemstacks.PottedSunShroomInstance());
+                        output.accept(PottedPlantItemstacks.PottedPuffShroomInstance());
                         output.accept(ModItems.WHITE_WATERING_CAN);
                         output.accept(ModItems.LIGHT_GRAY_WATERING_CAN);
                         output.accept(ModItems.GRAY_WATERING_CAN);

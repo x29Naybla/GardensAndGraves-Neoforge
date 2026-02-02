@@ -1,13 +1,18 @@
 package com.x29naybla.bloom_and_doom.common.item;
 
+import com.google.common.collect.Maps;
 import com.x29naybla.bloom_and_doom.common.registry.ModDataComponents;
 import com.x29naybla.bloom_and_doom.common.entity.MarigoldEntity;
 import com.x29naybla.bloom_and_doom.common.entity.Plant;
 import com.x29naybla.bloom_and_doom.common.entity.PotatoMineEntity;
+import com.x29naybla.bloom_and_doom.common.registry.ModItems;
 import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
+import net.minecraft.ChatFormatting;
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -20,7 +25,10 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
@@ -29,7 +37,29 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+import java.util.Map;
+
 public class PottedPlantItem extends PlantHolderItem {
+    private static final Map<DyeColor, Component> MARIGOLD_COLORS = Util.make(Maps.newEnumMap(DyeColor.class), map -> {
+        map.put(DyeColor.WHITE, Component.translatable("item.bloom_and_Doom.potted_marigold.white").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.LIGHT_GRAY, Component.translatable("item.bloom_and_Doom.potted_marigold.light_gray").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.GRAY, Component.translatable("item.bloom_and_Doom.potted_marigold.gray").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.BLACK, Component.translatable("item.bloom_and_Doom.potted_marigold.black").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.BROWN, Component.translatable("item.bloom_and_Doom.potted_marigold.brown").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.RED, Component.translatable("item.bloom_and_Doom.potted_marigold.red").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.ORANGE, Component.translatable("item.bloom_and_Doom.potted_marigold.orange").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.YELLOW, Component.translatable("item.bloom_and_Doom.potted_marigold.yellow").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.LIME, Component.translatable("item.bloom_and_Doom.potted_marigold.lime").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.GREEN, Component.translatable("item.bloom_and_Doom.potted_marigold.green").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.CYAN, Component.translatable("item.bloom_and_Doom.potted_marigold.cyan").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.LIGHT_BLUE, Component.translatable("item.bloom_and_Doom.potted_marigold.light_blue").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.BLUE, Component.translatable("item.bloom_and_Doom.potted_marigold.blue").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.PURPLE, Component.translatable("item.bloom_and_Doom.potted_marigold.purple").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.MAGENTA, Component.translatable("item.bloom_and_Doom.potted_marigold.magenta").withStyle(ChatFormatting.GRAY));
+        map.put(DyeColor.PINK, Component.translatable("item.bloom_and_Doom.potted_marigold.pink").withStyle(ChatFormatting.GRAY));
+    });
+
     public PottedPlantItem(EntityType<? extends Mob> defaultType, Properties properties) {
         super(defaultType, properties);
     }
@@ -37,6 +67,25 @@ public class PottedPlantItem extends PlantHolderItem {
     @Override
     public int getMaxStackSize(@NotNull ItemStack stack) {
         return 1;
+    }
+
+    public @NotNull String getDescriptionId() {
+        return this.getOrCreateDescriptionId();
+    }
+
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+        BundleContents bundlecontents = stack.get(DataComponents.BUNDLE_CONTENTS);
+
+        if (stack.is(ModItems.POTTED_MARIGOLD)) {
+            tooltipComponents.add(MARIGOLD_COLORS.get(stack.get(DataComponents.BASE_COLOR)));
+        }
+
+        if (bundlecontents != null) {
+            ItemStack flowerPot = bundlecontents.getItemUnsafe(0).getItem().getDefaultInstance();
+            String flowerPotName = flowerPot.getDisplayName().getString().substring(1, flowerPot.getDisplayName().getString().length() - 1);
+
+            tooltipComponents.add(Component.translatable(flowerPotName).withStyle(ChatFormatting.GRAY));
+        }
     }
 
     @Override

@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
 
-public class PottedPLantItemstacks {
+public class PottedPlantItemstacks {
 
     public static ItemStack PottedSunflowerInstance() {
         ItemStack itemStack = new ItemStack(ModItems.POTTED_SUNFLOWER.get());

@@ -286,7 +286,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
 
     private static void saveDefaultDataToItemTag(Plant plant, ItemStack itemStack) {
         if (plant.hasCustomName()) itemStack.set(DataComponents.CUSTOM_NAME, plant.getCustomName());
-        if (plant instanceof MarigoldEntity) itemStack.set(DataComponents.BASE_COLOR, MarigoldEntity.dyedColor);
+        if (plant instanceof MarigoldEntity marigold) itemStack.set(DataComponents.BASE_COLOR, marigold.getColor());
         if (plant.isBaby()) itemStack.set(ModDataComponents.AGE, plant.getAge());
         itemStack.set(ModDataComponents.HEALTH, plant.getHealth());
     }

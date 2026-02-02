@@ -1,8 +1,7 @@
 changelog:
-* fixed the Brainz Banner Pattern item not actually showing the pattern when put on a Loom
-* fixes in the Brazilian portuguese translations
-* removed the "description" from potted plant items
-* fixed potted plants taken from the creative inventory not actually having flower pots stored
-* fixed being able to infinitely keep placing potted plants in the same block
-* fixed being able to place potted plants on a block with a plant on it
-* fixed plants targeting not working properly
+* added a few missing translations to French and Brazilian portuguese
+* added Brazilian portuguese support for the built-in "Programmer Art styled" resource pack
+* fixed Potted Marigold items picked from the creative inventory placing brown marigolds instead of white
+* fixed potting marigolds sometimes storing the wrong color in the item
+* potted plants will now have a tooltip telling which type of Flower Pot they were potted with
+* potted marigolds will now have a tooltip telling which color they are

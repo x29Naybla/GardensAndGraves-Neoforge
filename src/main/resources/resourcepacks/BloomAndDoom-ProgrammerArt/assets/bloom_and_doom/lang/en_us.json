@@ -18,5 +18,21 @@
   "item.bloom_and_doom.puff_shroom_seed_packet": "Puff-shroom Spores",
   "item.bloom_and_doom.fume_shroom_seed_packet": "Fume-shroom Spores",
   "item.bloom_and_doom.hypno_shroom_seed_packet": "Hypno-shroom Spores",
-  "item.bloom_and_doom.doom_shroom_seed_packet": "Doom-shroom Spores"
+  "item.bloom_and_doom.doom_shroom_seed_packet": "Doom-shroom Spores",
+  "item.bloom_and_Doom.potted_marigold.white": "White Marigold",
+  "item.bloom_and_Doom.potted_marigold.light_gray": "Light-Gray Marigold",
+  "item.bloom_and_Doom.potted_marigold.gray": "Gray Marigold",
+  "item.bloom_and_Doom.potted_marigold.black": "Black Marigold",
+  "item.bloom_and_Doom.potted_marigold.brown": "Brown Marigold",
+  "item.bloom_and_Doom.potted_marigold.red": "Red Marigold",
+  "item.bloom_and_Doom.potted_marigold.orange": "Orange Marigold",
+  "item.bloom_and_Doom.potted_marigold.yellow": "Yellow Marigold",
+  "item.bloom_and_Doom.potted_marigold.lime": "Lime Marigold",
+  "item.bloom_and_Doom.potted_marigold.green": "Green Marigold",
+  "item.bloom_and_Doom.potted_marigold.cyan": "Cyan Marigold",
+  "item.bloom_and_Doom.potted_marigold.light_blue": "Light Blue Marigold",
+  "item.bloom_and_Doom.potted_marigold.blue": "Blue Marigold",
+  "item.bloom_and_Doom.potted_marigold.purple": "Purple Marigold",
+  "item.bloom_and_Doom.potted_marigold.magenta": "Magenta Marigold",
+  "item.bloom_and_Doom.potted_marigold.pink": "Pink Marigold"
 }
