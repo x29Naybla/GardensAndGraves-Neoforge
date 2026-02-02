@@ -115,7 +115,13 @@ public class SeedPacketItem extends PlantHolderItem {
                         }
                         return InteractionResult.sidedSuccess(level.isClientSide);
                     } else return InteractionResult.FAIL;
-                } else return InteractionResult.FAIL;
+                } else {
+                    context.getPlayer().displayClientMessage(Component.translatable("item.bloom_and_doom.seed_packet.bad_substrate"), true);
+                    return InteractionResult.FAIL;
+                }
+            } else if (!context.getPlayer().isCreative() && (context.getPlayer().getInventory().countItem(ModItems.SUN.get()) < sunAmount)) {
+                context.getPlayer().displayClientMessage(Component.translatable("item.bloom_and_doom.seed_packet.not_enough_sun"), true);
+                return InteractionResult.FAIL;
             }
         }
         return InteractionResult.FAIL;
