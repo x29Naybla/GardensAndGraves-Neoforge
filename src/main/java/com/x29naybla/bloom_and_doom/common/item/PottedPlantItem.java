@@ -102,7 +102,7 @@ public class PottedPlantItem extends PlantHolderItem {
             Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
             AABB aabb = this.getType(stack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
             if(serverLevel.noCollision(null, aabb) && level.getEntities(null, aabb).isEmpty()){
-                if(plant.onRightSubstrate(serverLevel, blockpos) && serverLevel.isEmptyBlock(blockpos)){
+                if(serverLevel.isEmptyBlock(blockpos)) {
                     if (direction == Direction.DOWN) {
                         return InteractionResult.FAIL;
                     } else if (player != null && player.isCrouching()) {
@@ -112,7 +112,7 @@ public class PottedPlantItem extends PlantHolderItem {
                         placePlant(stack, serverLevel, context, blockpos, true);
                         if (!player.isCreative()) player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
                         return InteractionResult.SUCCESS;
-                    } else {
+                    } else if (plant.onRightSubstrate(serverLevel, blockpos)){
                         placePlant(stack, serverLevel, context, blockpos, false);
                         if (player != null && !player.isCreative()) {
                             ItemStack flowerPot = stack.get(DataComponents.BUNDLE_CONTENTS).getItemUnsafe(0);

@@ -1,7 +1,12 @@
 changelog:
 * added a few missing translations to French and Brazilian portuguese
 * added Brazilian portuguese support for the built-in "Programmer Art styled" resource pack
-* fixed Potted Marigold items picked from the creative inventory placing brown marigolds instead of white
+* fixed marigolds placed down from Potted Marigold items picked from the creative inventory being brown instead of white
 * fixed potting marigolds sometimes storing the wrong color in the item
 * potted plants will now have a tooltip telling which type of Flower Pot they were potted with
 * potted marigolds will now have a tooltip telling which color they are
+
+* fixed servers crashing on startup (thank you, unilock and cassiancc!)
+* fixed potted plants only being able to be placed down potted only on blocks that supports plants
+* players will now receive a message if they don't have enough sun to plant a seed packet if they are in survival mode
+* players will now receive a message if they try to plant a seed packet in a block that doesn't support plants

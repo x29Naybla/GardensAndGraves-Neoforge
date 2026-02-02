@@ -1,9 +1,9 @@
 package com.x29naybla.bloom_and_doom.common.item;
 
-import com.x29naybla.bloom_and_doom.common.entity.MarigoldEntity;
 import com.x29naybla.bloom_and_doom.common.registry.ModDataComponents;
 import com.x29naybla.bloom_and_doom.common.registry.ModItems;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.BundleContents;
 import net.minecraft.world.level.block.Blocks;
@@ -22,7 +22,7 @@ public class PottedPlantItemstacks {
     public static ItemStack PottedMarigoldInstance() {
         ItemStack itemStack = new ItemStack(ModItems.POTTED_MARIGOLD.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
-        itemStack.set(DataComponents.BASE_COLOR, MarigoldEntity.dyedColor);
+        itemStack.set(DataComponents.BASE_COLOR, DyeColor.WHITE);
         itemStack.set(ModDataComponents.HEALTH, 16F);
         return itemStack;
     }
