@@ -1,7 +1,10 @@
 package com.x29naybla.bloom_and_doom.client;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
+import com.x29naybla.bloom_and_doom.client.gui.AlmanacScreen;
 import com.x29naybla.bloom_and_doom.integration.Ammendments;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
@@ -17,5 +20,9 @@ public class BloomAndDoomClient {
         }
 
         modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+    }
+
+	public static void openAtlas() {
+        Minecraft.getInstance().setScreen(new AlmanacScreen(Component.translatable(BloomAndDoom.MOD_ID + ".gui.almanac")));
     }
 }
