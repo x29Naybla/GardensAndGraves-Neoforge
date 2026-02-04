@@ -59,6 +59,8 @@ public class ModItems {
     public static final DeferredItem<Item> DOOM_SHROOM_SEED_PACKET = ITEMS.register("doom_shroom_seed_packet",
             () -> new SeedPacketItem(ModEntities.DOOM_SHROOM.get(), 7, 35, new Item.Properties()));
 
+    public static final DeferredItem<Item> POTTED_SPROUT = ITEMS.register("potted_sprout",
+            () -> new PottedPlantItem(ModEntities.SPROUT.get(), new Item.Properties()));
     public static final DeferredItem<Item> POTTED_SUNFLOWER = ITEMS.register("potted_sunflower",
             () -> new PottedPlantItem(ModEntities.SUNFLOWER.get(), new Item.Properties()));
     public static final DeferredItem<Item> POTTED_MARIGOLD = ITEMS.register("potted_marigold",

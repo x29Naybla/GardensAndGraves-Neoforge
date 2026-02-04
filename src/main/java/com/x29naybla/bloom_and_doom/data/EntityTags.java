@@ -37,6 +37,7 @@ public class EntityTags extends EntityTypeTagsProvider {
                 .add(ModEntities.DOOM_SHROOM.get());
 
         tag(ModTags.Entities.PLANTS)
+                .add(ModEntities.SPROUT.get())
                 .addTag(ModTags.Entities.FLOWERS)
                 .addTag(ModTags.Entities.PEASHOOTERS)
                 .add(ModEntities.WALL_NUT.get())
@@ -46,6 +47,7 @@ public class EntityTags extends EntityTypeTagsProvider {
                 .addTag(ModTags.Entities.MUSHROOMS);
 
         tag(ModTags.Entities.POTTABLE_PLANTS)
+                .add(ModEntities.SPROUT.get())
                 .add(ModEntities.SUNFLOWER.get())
                 .add(ModEntities.MARIGOLD.get())
                 .add(ModEntities.PEASHOOTER.get())

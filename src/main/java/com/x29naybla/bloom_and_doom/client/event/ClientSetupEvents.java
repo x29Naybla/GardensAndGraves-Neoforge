@@ -27,6 +27,7 @@ public class ClientSetupEvents {
 
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event){
+        event.registerEntityRenderer(ModEntities.SPROUT.get(), SproutRenderer::new);
         event.registerEntityRenderer(ModEntities.SUNFLOWER.get(), SunflowerRenderer::new);
         event.registerEntityRenderer(ModEntities.MARIGOLD.get(), MarigoldRenderer::new);
         event.registerEntityRenderer(ModEntities.PEASHOOTER.get(), PeashooterRenderer::new);

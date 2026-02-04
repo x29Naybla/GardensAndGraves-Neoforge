@@ -4,6 +4,7 @@ import com.x29naybla.bloom_and_doom.CommonConfigs;
 import com.x29naybla.bloom_and_doom.common.block.entity.PlanterBlockEntity;
 import com.x29naybla.bloom_and_doom.common.registry.ModDataComponents;
 import com.x29naybla.bloom_and_doom.common.registry.ModItems;
+import com.x29naybla.bloom_and_doom.common.tag.CommonTags;
 import com.x29naybla.bloom_and_doom.common.tag.ModTags;
 import com.x29naybla.bloom_and_doom.common.item.SeedPacketItem;
 import com.x29naybla.bloom_and_doom.common.registry.ModParticles;
@@ -48,6 +49,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     public int packetTime;
     public boolean fromPlanter;
     public boolean onPlanter;
+    @Nullable
     public ItemStack seedPacket;
     @Nullable
     public ItemStack pottedItem;
@@ -57,7 +59,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     private final boolean fromNight;
 
     //Properties
-    public Plant(EntityType<? extends Plant> entityType, Level level, TagKey<Item> substrate, ItemStack seedPacket, @Nullable ItemStack pottedItem) {
+    public Plant(EntityType<? extends Plant> entityType, Level level, TagKey<Item> substrate, @Nullable ItemStack seedPacket, @Nullable ItemStack pottedItem) {
         super(entityType, level);
         this.packetTime = 12000;
         this.fromPlanter = false;
@@ -105,7 +107,6 @@ public class Plant extends TamableAnimal implements GeoEntity {
     //Goals and AI
     public @NotNull InteractionResult mobInteract(Player player, @NotNull InteractionHand hand) {
         ItemStack playerHand = player.getItemInHand(InteractionHand.MAIN_HAND);
-        SeedPacketItem seedPacket = (SeedPacketItem) this.seedPacket.getItem();
 
         if(playerHand.getItem().getDefaultInstance().is(ItemTags.SHOVELS)){
 
@@ -116,7 +117,8 @@ public class Plant extends TamableAnimal implements GeoEntity {
             }
 
             return InteractionResult.SUCCESS;
-        } else if((playerHand.getItem() == seedPacket) && this.getHealth() < this.getMaxHealth() && !player.getCooldowns().isOnCooldown(this.seedPacket.getItem()) && (player.getInventory().countItem(ModItems.SUN.get()) >= seedPacket.getSunAmount() || player.isCreative())){
+        } else if (seedPacket != null && (playerHand.getItem() == this.seedPacket.getItem()) && this.getHealth() < this.getMaxHealth() && !player.getCooldowns().isOnCooldown(this.seedPacket.getItem()) && (player.getInventory().countItem(ModItems.SUN.get()) >= ((SeedPacketItem) this.seedPacket.getItem()).getSunAmount() || player.isCreative())) {
+            SeedPacketItem seedPacket = (SeedPacketItem) this.seedPacket.getItem();
             this.setHealth(this.getMaxHealth());
             playSound(ModSounds.SEED_PACKET_HEAL.get());
             player.getCooldowns().addCooldown(seedPacket, seedPacket.cooldown);
@@ -125,7 +127,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 player.getInventory().removeItem(player.getInventory().findSlotMatchingItem(ModItems.SUN.toStack()), seedPacket.getSunAmount());
             }
             return InteractionResult.SUCCESS;
-        } else if(playerHand.is(ModTags.Items.FLOWER_POTS) && this.fromPlanter && this.pottedItem != null) {
+        } else if(playerHand.is(CommonTags.Items.FLOWER_POTS) && this.fromPlanter && this.pottedItem != null) {
             saveDefaultDataToItemTag(this, this.pottedItem);
             this.pottedItem.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(playerHand.copyWithCount(1))));
 
@@ -145,6 +147,27 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 serverLevel.sendParticles(ParticleTypes.POOF, this.getX(), this.getY() + 0.5,
                         this.getZ(), 2, 0, 0, 0, 0);
             }
+            return InteractionResult.SUCCESS;
+        } else if(playerHand.isEmpty() && player.isCrouching() && this.fromPlanter && this.level().getBlockState(this.getOnPos()).is(CommonTags.Blocks.FLOWER_POTS)) {
+            saveDefaultDataToItemTag(this, this.pottedItem);
+            this.pottedItem.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(this.level().getBlockState(this.getOnPos()).getBlock().asItem().getDefaultInstance())));
+
+            if (!player.getInventory().add(this.pottedItem)) {
+                ItemEntity itemEntity = new ItemEntity(level(), this.getX(), this.getY() + 0.5, this.getZ(), this.pottedItem);
+                itemEntity.setPickUpDelay(0);
+                itemEntity.setDeltaMovement(itemEntity.getDeltaMovement().multiply(0, 0.5, 0));
+                this.level().addFreshEntity(itemEntity);
+            }
+            this.gameEvent(GameEvent.ENTITY_INTERACT);
+            player.getInventory().add(this.pottedItem);
+
+            playSound(SoundEvents.ROOTED_DIRT_PLACE);
+            this.discard();
+            if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {
+                serverLevel.sendParticles(ParticleTypes.POOF, this.getX(), this.getY() + 0.5,
+                        this.getZ(), 2, 0, 0, 0, 0);
+            }
+            this.level().removeBlock(this.getOnPos(), false);
             return InteractionResult.SUCCESS;
         }
 

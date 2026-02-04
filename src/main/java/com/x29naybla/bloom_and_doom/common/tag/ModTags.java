@@ -39,6 +39,8 @@ public class ModTags {
         public static final TagKey<Item> PLANTER_SUBSTRATES = createTag("planter_substrates");
         public static final TagKey<Item> SUSTAINS_MUSHROOMS = createTag("sustains_mushrooms");
 
+        public static final TagKey<Item> SUSTAINS_SPROUTS = createTag("sustains_sprouts");
+
         public static final TagKey<Item> SUSTAINS_SUNFLOWERS = createTag("sustains_sunflowers");
         public static final TagKey<Item> SUSTAINS_MARIGOLDS = createTag("sustains_marigolds");
         public static final TagKey<Item> SUSTAINS_PEASHOOTERS = createTag("sustains_peashooters");
@@ -51,8 +53,6 @@ public class ModTags {
         public static final TagKey<Item> SUSTAINS_SUN_SHROOMS = createTag("sustains_sun_shrooms");
         public static final TagKey<Item> SUSTAINS_PUFF_SHROOMS = createTag("sustains_puff_shrooms");
         public static final TagKey<Item> SUSTAINS_DOOM_SHROOMS = createTag("sustains_doom_shrooms");
-
-        public static final TagKey<Item> FLOWER_POTS = createTag("flower_pots");
 
         public static final TagKey<Item> WATERING_CANS = createTag("watering_cans");
 

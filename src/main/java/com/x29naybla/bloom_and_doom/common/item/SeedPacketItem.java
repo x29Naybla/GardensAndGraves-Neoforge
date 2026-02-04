@@ -18,7 +18,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
@@ -37,7 +36,7 @@ public class SeedPacketItem extends PlantHolderItem {
     private final int sunAmount;
     public final int cooldown;
 
-    public SeedPacketItem(EntityType<? extends Mob> defaultType, int sunAmount, int cooldown, Properties properties) {
+    public SeedPacketItem(EntityType<? extends Plant> defaultType, int sunAmount, int cooldown, Properties properties) {
         super(properties);
         this.defaultType = defaultType;
         this.sunAmount = sunAmount;

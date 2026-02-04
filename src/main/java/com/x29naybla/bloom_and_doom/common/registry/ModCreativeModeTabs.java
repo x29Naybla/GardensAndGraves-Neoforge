@@ -36,6 +36,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FUME_SHROOM_SEED_PACKET);
                         output.accept(ModItems.HYPNO_SHROOM_SEED_PACKET);
                         output.accept(ModItems.DOOM_SHROOM_SEED_PACKET);
+                        output.accept(PottedPlantItemstacks.PottedSproutInstance());
                         output.accept(PottedPlantItemstacks.PottedSunflowerInstance());
                         output.accept(PottedPlantItemstacks.PottedMarigoldInstance());
                         output.accept(PottedPlantItemstacks.PottedPeashooterInstance());

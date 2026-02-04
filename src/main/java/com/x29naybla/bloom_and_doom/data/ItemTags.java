@@ -42,6 +42,8 @@ public class ItemTags extends ItemTagsProvider {
                 .addOptional(ResourceLocation.parse("farmersdelight:organic_compost"))
                 .addOptional(ResourceLocation.parse("farmersdelight:rich_soil"));
 
+        tag(ModTags.Items.SUSTAINS_SPROUTS)
+                .addTag(net.minecraft.tags.ItemTags.DIRT);
         tag(ModTags.Items.SUSTAINS_SUNFLOWERS)
                 .addTag(net.minecraft.tags.ItemTags.DIRT);
         tag(ModTags.Items.SUSTAINS_MARIGOLDS)

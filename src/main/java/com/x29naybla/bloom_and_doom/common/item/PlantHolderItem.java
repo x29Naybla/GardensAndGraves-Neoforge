@@ -2,12 +2,12 @@ package com.x29naybla.bloom_and_doom.common.item;
 
 import com.mojang.serialization.MapCodec;
 import com.x29naybla.bloom_and_doom.common.block.entity.PlanterBlockEntity;
+import com.x29naybla.bloom_and_doom.common.entity.Plant;
 import com.x29naybla.bloom_and_doom.common.tag.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomData;
@@ -17,7 +17,7 @@ public class PlantHolderItem  extends Item {
     protected static final MapCodec<EntityType<?>> ENTITY_TYPE_FIELD_CODEC;
     protected EntityType<?> defaultType;
 
-    public PlantHolderItem(EntityType<? extends Mob> defaultType, Properties properties) {
+    public PlantHolderItem(EntityType<? extends Plant> defaultType, Properties properties) {
         super(properties);
         this.defaultType = defaultType;
     }

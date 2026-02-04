@@ -23,6 +23,7 @@
   "item.bloom_and_doom.seed_packet.not_enough_sun": "Você não tem Sol suficiente",
   "item.bloom_and_doom.seed_packet.bad_substrate": "Isto não pode ser plantado aqui",
 
+  "item.bloom_and_doom.potted_sprout": "Broto envasado",
   "item.bloom_and_doom.potted_sunflower": "Girassol envasado",
   "item.bloom_and_doom.potted_marigold": "Calêndula envasada",
   "item.bloom_and_Doom.potted_marigold.white": "Calêndula Branca",
@@ -149,6 +150,7 @@
 
   "entity.minecraft.villager.bloom_and_doom.gardener": "Jardineiro",
 
+  "entity.bloom_and_doom.sprout": "Broto",
   "entity.bloom_and_doom.sunflower": "Girassol",
   "entity.bloom_and_doom.marigold": "Calêndula",
 
@@ -253,6 +255,7 @@
   "tag.item.bloom_and_doom.planter_substrates": "Substratos para germinadores",
   "tag.item.bloom_and_doom.sustains_mushrooms": "Sustentam cogumelos",
 
+  "tag.item.bloom_and_doom.sustains_sprouts": "Sustentam Brotos",
   "tag.item.bloom_and_doom.sustains_sunflowers": "Sustentam Girassóis",
   "tag.item.bloom_and_doom.sustains_marigolds": "Sustentam Calêndulas",
   "tag.item.bloom_and_doom.sustains_peashooters": "Sustentam Disparervilhas",

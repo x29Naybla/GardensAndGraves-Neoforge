@@ -12,6 +12,13 @@ import java.util.List;
 
 public class PottedPlantItemstacks {
 
+    public static ItemStack PottedSproutInstance() {
+        ItemStack itemStack = new ItemStack(ModItems.POTTED_SPROUT.get());
+        itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
+        itemStack.set(ModDataComponents.HEALTH, 16F);
+        return itemStack;
+    }
+
     public static ItemStack PottedSunflowerInstance() {
         ItemStack itemStack = new ItemStack(ModItems.POTTED_SUNFLOWER.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));

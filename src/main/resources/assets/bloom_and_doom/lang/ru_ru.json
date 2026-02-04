@@ -23,6 +23,7 @@
   "item.bloom_and_doom.seed_packet.not_enough_sun": "You don't have enough Sun",
   "item.bloom_and_doom.seed_packet.bad_substrate": "This can't be planted here",
 
+  "item.bloom_and_doom.potted_sprout": "Росток в горшке",
   "item.bloom_and_doom.potted_sunflower": "Подсолнух в горшке",
   "item.bloom_and_doom.potted_marigold": "Золотая Ромашка в горшке",
   "item.bloom_and_Doom.potted_marigold.white": "White Marigold",
@@ -149,6 +150,7 @@
 
   "entity.minecraft.villager.bloom_and_doom.gardener": "Садовник",
 
+  "entity.bloom_and_doom.sprout": "Росток",
   "entity.bloom_and_doom.sunflower": "Подсолнух",
   "entity.bloom_and_doom.marigold": "Золотая Ромашка",
 
@@ -253,6 +255,7 @@
   "tag.item.bloom_and_doom.planter_substrates": "Субстраты для горшков",
   "tag.item.bloom_and_doom.sustains_mushrooms": "Поддерживает грибы",
 
+  "tag.item.bloom_and_doom.sustains_sprouts": "Sustains Sprouts",
   "tag.item.bloom_and_doom.sustains_sunflowers": "Поддерживает подсолнухи",
   "tag.item.bloom_and_doom.sustains_marigolds": "Поддерживает золотые ромашки",
   "tag.item.bloom_and_doom.sustains_peashooters": "Поддерживает горохострелов",

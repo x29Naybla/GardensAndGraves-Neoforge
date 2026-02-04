@@ -21,7 +21,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
@@ -60,7 +59,7 @@ public class PottedPlantItem extends PlantHolderItem {
         map.put(DyeColor.PINK, Component.translatable("item.bloom_and_Doom.potted_marigold.pink").withStyle(ChatFormatting.GRAY));
     });
 
-    public PottedPlantItem(EntityType<? extends Mob> defaultType, Properties properties) {
+    public PottedPlantItem(EntityType<? extends Plant> defaultType, Properties properties) {
         super(defaultType, properties);
     }
 
