@@ -1,8 +1,8 @@
 package com.x29naybla.bloom_and_doom.common.entity.goal;
 
 import com.x29naybla.bloom_and_doom.common.entity.ChomperEntity;
-import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDataAttachments;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -54,6 +54,6 @@ public final class ChompGoal extends Goal {
     }
 
     public boolean canChomp(Entity entity) {
-        return (entity.getType().is(ModTags.Entities.CAN_BE_CHOMPED) || entity.getData(ModDataAttachments.ZOMBIE));
+        return (entity.getType().is(BnDTags.Entities.CAN_BE_CHOMPED) || entity.getData(BnDDataAttachments.ZOMBIE));
     }
 }

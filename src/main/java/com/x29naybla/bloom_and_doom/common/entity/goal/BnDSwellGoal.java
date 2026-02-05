@@ -7,12 +7,12 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import javax.annotation.Nullable;
 import java.util.EnumSet;
 
-public class ModSwellGoal extends Goal{
+public class BnDSwellGoal extends Goal{
     private final ExplosivePlant explosivePlant;
     @Nullable
     private LivingEntity target;
 
-    public ModSwellGoal(ExplosivePlant explosivePlant) {
+    public BnDSwellGoal(ExplosivePlant explosivePlant) {
         this.explosivePlant = explosivePlant;
         this.setFlags(EnumSet.of(Flag.MOVE));
     }

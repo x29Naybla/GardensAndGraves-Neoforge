@@ -1,8 +1,8 @@
 package com.x29naybla.bloom_and_doom.common.entity.projectile;
 
-import com.x29naybla.bloom_and_doom.common.registry.ModDamageTypes;
-import com.x29naybla.bloom_and_doom.common.registry.ModEntities;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDEntities;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDamageTypes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EntityType;
@@ -17,18 +17,18 @@ public class PeaProjectile extends PlantProjectile {
     }
 
     public PeaProjectile(Level level, LivingEntity shooter) {
-        super(ModEntities.PEA_PROJECTILE.get(), shooter, level);
+        super(BnDEntities.PEA_PROJECTILE.get(), shooter, level);
     }
 
     public PeaProjectile(Level level, double x, double y, double z) {
-        super(ModEntities.PEA_PROJECTILE.get(), x, y, z, level);
+        super(BnDEntities.PEA_PROJECTILE.get(), x, y, z, level);
     }
 
     protected @NotNull Item getDefaultItem() {
-        return ModItems.PEA.get();
+        return BnDItems.PEA.get();
     }
 
     protected @NotNull ResourceKey<DamageType> setDamageType() {
-        return ModDamageTypes.PEA_DAMAGE;
+        return BnDDamageTypes.PEA_DAMAGE;
     }
 }

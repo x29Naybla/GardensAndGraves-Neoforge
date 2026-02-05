@@ -1,22 +1,15 @@
 package com.x29naybla.bloom_and_doom.common.event;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
-import com.x29naybla.bloom_and_doom.common.registry.ModBlocks;
-import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.item.ZombieBanner;
+import com.x29naybla.bloom_and_doom.common.registry.*;
+import com.x29naybla.bloom_and_doom.common.tag.CommonTags;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import com.x29naybla.bloom_and_doom.common.entity.*;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
-import com.x29naybla.bloom_and_doom.common.registry.ModPotions;
-import com.x29naybla.bloom_and_doom.common.registry.ModVillagers;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.EntityTypeTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -30,27 +23,25 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.npc.VillagerDataHolder;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.npc.VillagerType;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.entity.raid.Raid;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
-import net.neoforged.neoforge.event.entity.living.EnderManAngerEvent;
 import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
-import net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent;
-import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import org.jetbrains.annotations.NotNull;
 
@@ -61,12 +52,12 @@ import java.util.Map;
 import static com.x29naybla.bloom_and_doom.common.item.ZombieBanner.getZombieLeaderBannerInstance;
 
 @EventBusSubscriber(modid = BloomAndDoom.MOD_ID)
-public class GameEvents {
+public class BnDEvents {
 
     @SubscribeEvent
     public static void addAdditionalGoals(EntityJoinLevelEvent event){
         if (event.getEntity() instanceof  Monster monster){
-            if (monster.getType().is(ModTags.Entities.PLANT_ENEMIES)){
+            if (monster.getType().is(BnDTags.Entities.PLANT_ENEMIES)){
                 monster.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(monster, (WallNutEntity.class), true));
                 monster.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(monster, (PotatoMineEntity.class), true));
                 monster.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(monster, Plant.class, true));
@@ -74,7 +65,7 @@ public class GameEvents {
         }
         if (event.getEntity() instanceof AbstractGolem golem) {
             golem.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(golem, LivingEntity.class, true,
-                    (target) -> target instanceof LivingEntity livingEntity && livingEntity.getData(ModDataAttachments.ZOMBIE)));
+                    (target) -> target instanceof LivingEntity livingEntity && livingEntity.getData(BnDDataAttachments.ZOMBIE)));
         }
     }
 
@@ -101,15 +92,6 @@ public class GameEvents {
             }
         }
 
-        if(attacker instanceof Monster && newTarget instanceof Player player) {
-            if(player.getData(ModDataAttachments.ZOMBIE)) {
-                event.setCanceled(true);
-                if(attacker.getLastHurtByMob() != null) {
-                    event.setCanceled(!attacker.getLastHurtByMob().is(player));
-                }
-            }
-        }
-
         if(attacker instanceof Plant && newTarget instanceof TamableAnimal tamableAnimal && tamableAnimal.isTame()){
             event.setCanceled(true);
             if(attacker.getLastHurtByMob() != null) {
@@ -121,7 +103,7 @@ public class GameEvents {
 
     @SubscribeEvent
     public static void addGardenerTrades(VillagerTradesEvent event) {
-        if (event.getType() == ModVillagers.GARDENER.value()) {
+        if (event.getType() == BnDVillagers.GARDENER.value()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             //Novice
@@ -132,30 +114,30 @@ public class GameEvents {
 
             trades.get(1).add(new BiomeSpecificTrade(
                     new ItemCost(Items.EMERALD, 4), 1,2, 2,
-                    Map.of(VillagerType.PLAINS, ModItems.SUNFLOWER_SEED_PACKET.get(),
-                            VillagerType.SAVANNA, ModItems.SUNFLOWER_SEED_PACKET.get(),
-                            VillagerType.DESERT, ModItems.SUNFLOWER_SEED_PACKET.get(),
-                            VillagerType.JUNGLE, ModItems.SUNFLOWER_SEED_PACKET.get(),
-                            VillagerType.TAIGA, ModItems.SUN_SHROOM_SEED_PACKET.get(),
-                            VillagerType.SNOW, ModItems.SUN_SHROOM_SEED_PACKET.get(),
-                            VillagerType.SWAMP, ModItems.SUN_SHROOM_SEED_PACKET.get()))
+                    Map.of(VillagerType.PLAINS, BnDItems.SUNFLOWER_SEED_PACKET.get(),
+                            VillagerType.SAVANNA, BnDItems.SUNFLOWER_SEED_PACKET.get(),
+                            VillagerType.DESERT, BnDItems.SUNFLOWER_SEED_PACKET.get(),
+                            VillagerType.JUNGLE, BnDItems.SUNFLOWER_SEED_PACKET.get(),
+                            VillagerType.TAIGA, BnDItems.SUN_SHROOM_SEED_PACKET.get(),
+                            VillagerType.SNOW, BnDItems.SUN_SHROOM_SEED_PACKET.get(),
+                            VillagerType.SWAMP, BnDItems.SUN_SHROOM_SEED_PACKET.get()))
             );
 
             trades.get(1).add(new BiomeSpecificTrade(
                     new ItemCost(Items.EMERALD, 4), 1,2, 2,
-                    Map.of(VillagerType.PLAINS, ModItems.PEASHOOTER_SEED_PACKET.get(),
-                            VillagerType.SAVANNA, ModItems.PEASHOOTER_SEED_PACKET.get(),
-                            VillagerType.DESERT, ModItems.PEASHOOTER_SEED_PACKET.get(),
-                            VillagerType.JUNGLE, ModItems.REPEATER_SEED_PACKET.get(),
-                            VillagerType.TAIGA, ModItems.PUFF_SHROOM_SEED_PACKET.get(),
-                            VillagerType.SWAMP, ModItems.PUFF_SHROOM_SEED_PACKET.get(),
-                            VillagerType.SNOW, ModItems.SNOW_PEA_SEED_PACKET.get()))
+                    Map.of(VillagerType.PLAINS, BnDItems.PEASHOOTER_SEED_PACKET.get(),
+                            VillagerType.SAVANNA, BnDItems.PEASHOOTER_SEED_PACKET.get(),
+                            VillagerType.DESERT, BnDItems.PEASHOOTER_SEED_PACKET.get(),
+                            VillagerType.JUNGLE, BnDItems.REPEATER_SEED_PACKET.get(),
+                            VillagerType.TAIGA, BnDItems.PUFF_SHROOM_SEED_PACKET.get(),
+                            VillagerType.SWAMP, BnDItems.PUFF_SHROOM_SEED_PACKET.get(),
+                            VillagerType.SNOW, BnDItems.SNOW_PEA_SEED_PACKET.get()))
             );
 
             //Apprentice
             trades.get(2).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 12),
-                    new ItemStack(ModBlocks.PLANTER, 1), 8, 5, 0.05f
+                    new ItemStack(BnDBlocks.PLANTER, 1), 8, 5, 0.05f
             ));
 
             trades.get(2).add((entity, randomSource) -> new MerchantOffer(
@@ -165,7 +147,7 @@ public class GameEvents {
 
             trades.get(2).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 4),
-                    new ItemStack(ModItems.WALL_NUT_SEED_PACKET.get(), 1), 2, 5, 0.05f
+                    new ItemStack(BnDItems.WALL_NUT_SEED_PACKET.get(), 1), 2, 5, 0.05f
             ));
 
             //Journeyman
@@ -176,7 +158,7 @@ public class GameEvents {
 
             trades.get(3).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 7),
-                    new ItemStack(ModItems.GREEN_WATERING_CAN.get(), 1), 12, 10, 0.05f
+                    new ItemStack(BnDItems.GREEN_WATERING_CAN.get(), 1), 12, 10, 0.05f
             ));
 
             trades.get(3).add((entity, randomSource) -> new MerchantOffer(
@@ -192,24 +174,24 @@ public class GameEvents {
 
             trades.get(4).add(new BiomeSpecificTrade(
                     new ItemCost(Items.EMERALD, 3), 1,8, 15,
-                    Map.of(VillagerType.PLAINS, ModItems.PEA.get(),
-                            VillagerType.SAVANNA, ModItems.PEA.get(),
-                            VillagerType.DESERT, ModItems.PEA.get(),
-                            VillagerType.JUNGLE, ModItems.PEA.get(),
-                            VillagerType.TAIGA, ModItems.SPORE.get(),
-                            VillagerType.SWAMP, ModItems.SPORE.get(),
-                            VillagerType.SNOW, ModItems.FROZEN_PEA.get()))
+                    Map.of(VillagerType.PLAINS, BnDItems.PEA.get(),
+                            VillagerType.SAVANNA, BnDItems.PEA.get(),
+                            VillagerType.DESERT, BnDItems.PEA.get(),
+                            VillagerType.JUNGLE, BnDItems.PEA.get(),
+                            VillagerType.TAIGA, BnDItems.SPORE.get(),
+                            VillagerType.SWAMP, BnDItems.SPORE.get(),
+                            VillagerType.SNOW, BnDItems.FROZEN_PEA.get()))
             );
 
             //Master
             trades.get(5).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 12),
-                    new ItemStack(ModItems.DOOM_SHROOM_SEED_PACKET.get(), 1), 6, 30, 0.05f
+                    new ItemStack(BnDItems.DOOM_SHROOM_SEED_PACKET.get(), 1), 6, 30, 0.05f
             ));
 
             trades.get(5).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 8),
-                    new ItemStack(ModItems.MARIGOLD_SEED_PACKET.get(), 1), 6, 30, 0.05f
+                    new ItemStack(BnDItems.MARIGOLD_SEED_PACKET.get(), 1), 6, 30, 0.05f
             ));
         }
     }
@@ -246,68 +228,43 @@ public class GameEvents {
     }
 
     @SubscribeEvent
-    public static void zombiePlayerEndermanFriend(EnderManAngerEvent event){
-        if(event.getPlayer().getData(ModDataAttachments.ZOMBIE)) {
-            event.setCanceled(true);
-        }
-    }
-
-    @SubscribeEvent
-    public static void zombiePlayerSleep(CanPlayerSleepEvent event){
-        if(event.getEntity().getData(ModDataAttachments.ZOMBIE) && event.getProblem() == Player.BedSleepingProblem.NOT_SAFE) {
-            event.setProblem(null);
-        }
-    }
-
-    @SubscribeEvent
-    public static void zombieEntitySuffersSmite(LivingDamageEvent.Pre event){
-        if(!event.getEntity().getType().is(EntityTypeTags.UNDEAD) && event.getEntity().getData(ModDataAttachments.ZOMBIE)){
-
-            if(event.getContainer().getSource().getWeaponItem() != null && event.getContainer().getSource().getWeaponItem().is(ItemTags.WEAPON_ENCHANTABLE)){
-                var smite = event.getEntity().level().getServer().registryAccess().registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(Enchantments.SMITE);
-                int smiteLevel = event.getContainer().getSource().getWeaponItem().getTagEnchantments().getLevel(smite);
-
-                event.setNewDamage((float) (event.getOriginalDamage() + (smiteLevel * 2.5)));
+    public static void flowerPotOccupied(PlayerInteractEvent.RightClickBlock event){
+        Block block = event.getLevel().getBlockState(event.getPos()).getBlock();
+        if (block.defaultBlockState().is(CommonTags.Blocks.FLOWER_POTS)) {
+            List<Plant> plants = event.getLevel().getEntitiesOfClass(Plant.class, AABB.unitCubeFromLowerCorner(Vec3.atLowerCornerOf(event.getPos())));
+            if (!plants.isEmpty()) {
+                event.setCanceled(true);
             }
         }
     }
 
-    static boolean fromCuring = false;
-
     @SubscribeEvent
-    public static void zombiePlayerCureSelf(PlayerTickEvent.Pre event) {
-        Player player = event.getEntity();
-        if(player.getData(ModDataAttachments.ZOMBIE)) {
-            if(player.hasEffect(MobEffects.WEAKNESS) && (player.getUseItem().is(ModTags.Items.ZOMBIE_ANTIDOTE) && player.getUseItemRemainingTicks() <= 1)) {
-                player.removeEffect(MobEffects.WEAKNESS);
-                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ZOMBIE_VILLAGER_CURE, SoundSource.PLAYERS);
-                player.addEffect(new MobEffectInstance(
-                        MobEffects.DAMAGE_BOOST,
-                        6000,
-                        0,
-                        false,
-                        true,
-                        true
-                ));
-                fromCuring = true;
-            }
-
-            if(fromCuring && (player.getUseItem().is(Tags.Items.DRINKS_MILK) && player.getUseItemRemainingTicks() <= 1)) {
-                fromCuring = false;
-            }
-
-            if(player.hasEffect(MobEffects.DAMAGE_BOOST) && player.getEffect(MobEffects.DAMAGE_BOOST).getDuration() <= 1 && fromCuring){
-                player.removeData(ModDataAttachments.ZOMBIE);
-                player.level().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ZOMBIE_VILLAGER_CONVERTED, SoundSource.PLAYERS);
-                player.addEffect(new MobEffectInstance(
-                        MobEffects.CONFUSION,
-                        200,
-                        0,
-                        false,
-                        true,
-                        true
-                ));
-            }
+    public static void buildContents(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.insertAfter(Blocks.SMITHING_TABLE.asItem().getDefaultInstance(), BnDBlocks.POTTING_TABLE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(Raid.getLeaderBannerInstance(event.getParameters().holders().lookupOrThrow(Registries.BANNER_PATTERN)), ZombieBanner.getZombieLeaderBannerInstance(event.getParameters().holders().lookupOrThrow(Registries.BANNER_PATTERN)), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
+            event.insertAfter(Items.MUSIC_DISC_PIGSTEP.getDefaultInstance(), BnDItems.MUSIC_DISC_WABBY_WABBO.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.accept(BnDItems.WHITE_WATERING_CAN);
+            event.accept(BnDItems.LIGHT_GRAY_WATERING_CAN);
+            event.accept(BnDItems.GRAY_WATERING_CAN);
+            event.accept(BnDItems.BLACK_WATERING_CAN);
+            event.accept(BnDItems.BROWN_WATERING_CAN);
+            event.accept(BnDItems.RED_WATERING_CAN);
+            event.accept(BnDItems.ORANGE_WATERING_CAN);
+            event.accept(BnDItems.YELLOW_WATERING_CAN);
+            event.accept(BnDItems.LIME_WATERING_CAN);
+            event.accept(BnDItems.GREEN_WATERING_CAN);
+            event.accept(BnDItems.CYAN_WATERING_CAN);
+            event.accept(BnDItems.LIGHT_BLUE_WATERING_CAN);
+            event.accept(BnDItems.BLUE_WATERING_CAN);
+            event.accept(BnDItems.PURPLE_WATERING_CAN);
+            event.accept(BnDItems.MAGENTA_WATERING_CAN);
+            event.accept(BnDItems.PINK_WATERING_CAN);
+        }
+        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS){
+            event.accept(BnDItems.ZOMBIE_WOLF_SPAWN_EGG);
         }
     }
 
@@ -315,6 +272,6 @@ public class GameEvents {
     public static void onBrewingRecipeRegister(RegisterBrewingRecipesEvent event) {
         PotionBrewing.Builder builder = event.getBuilder();
 
-        builder.addMix(Potions.AWKWARD, ModItems.BRAIN.get(), ModPotions.ZOMBIFICATION);
+        builder.addMix(Potions.AWKWARD, BnDItems.BRAIN.get(), BnDPotions.ZOMBIFICATION);
     }
 }

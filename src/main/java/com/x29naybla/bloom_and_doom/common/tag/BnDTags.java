@@ -11,7 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BannerPattern;
 
-public class ModTags {
+public class BnDTags {
     public static class Blocks {
         public static final TagKey<Block> PLANTERS = createTag("planters");
         public static final TagKey<Block> SUPPORTS_PLANTS = createTag("supports_plants");

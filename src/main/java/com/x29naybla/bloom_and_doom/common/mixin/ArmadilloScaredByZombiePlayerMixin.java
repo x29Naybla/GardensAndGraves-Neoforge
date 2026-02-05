@@ -1,6 +1,6 @@
 package com.x29naybla.bloom_and_doom.common.mixin;
 
-import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDataAttachments;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.armadillo.Armadillo;
 import net.minecraft.world.entity.player.Player;
@@ -18,7 +18,7 @@ public class ArmadilloScaredByZombiePlayerMixin {
     )
 
     protected void scaredByZombiePlayer(LivingEntity entity, CallbackInfoReturnable<Boolean> cir) {
-        if (entity instanceof Player player && player.getData(ModDataAttachments.ZOMBIE)) {
+        if (entity instanceof Player player && player.getData(BnDDataAttachments.ZOMBIE)) {
             cir.setReturnValue(true);
         }
     }

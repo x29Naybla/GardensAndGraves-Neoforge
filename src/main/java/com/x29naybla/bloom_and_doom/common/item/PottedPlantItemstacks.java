@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.common.item;
 
-import com.x29naybla.bloom_and_doom.common.registry.ModDataComponents;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDataComponents;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
@@ -13,73 +13,73 @@ import java.util.List;
 public class PottedPlantItemstacks {
 
     public static ItemStack PottedSproutInstance() {
-        ItemStack itemStack = new ItemStack(ModItems.POTTED_SPROUT.get());
+        ItemStack itemStack = new ItemStack(BnDItems.POTTED_SPROUT.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
-        itemStack.set(ModDataComponents.HEALTH, 16F);
+        itemStack.set(BnDDataComponents.HEALTH, 16F);
         return itemStack;
     }
 
     public static ItemStack PottedSunflowerInstance() {
-        ItemStack itemStack = new ItemStack(ModItems.POTTED_SUNFLOWER.get());
+        ItemStack itemStack = new ItemStack(BnDItems.POTTED_SUNFLOWER.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
-        itemStack.set(ModDataComponents.HEALTH, 16F);
+        itemStack.set(BnDDataComponents.HEALTH, 16F);
         return itemStack;
     }
 
     public static ItemStack PottedMarigoldInstance() {
-        ItemStack itemStack = new ItemStack(ModItems.POTTED_MARIGOLD.get());
+        ItemStack itemStack = new ItemStack(BnDItems.POTTED_MARIGOLD.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
         itemStack.set(DataComponents.BASE_COLOR, DyeColor.WHITE);
-        itemStack.set(ModDataComponents.HEALTH, 16F);
+        itemStack.set(BnDDataComponents.HEALTH, 16F);
         return itemStack;
     }
 
     public static ItemStack PottedPeashooterInstance() {
-        ItemStack itemStack = new ItemStack(ModItems.POTTED_PEASHOOTER.get());
+        ItemStack itemStack = new ItemStack(BnDItems.POTTED_PEASHOOTER.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
-        itemStack.set(ModDataComponents.HEALTH, 16F);
+        itemStack.set(BnDDataComponents.HEALTH, 16F);
         return itemStack;
     }
 
     public static ItemStack PottedSnowPeaInstance() {
-        ItemStack itemStack = new ItemStack(ModItems.POTTED_SNOW_PEA.get());
+        ItemStack itemStack = new ItemStack(BnDItems.POTTED_SNOW_PEA.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
-        itemStack.set(ModDataComponents.HEALTH, 16F);
+        itemStack.set(BnDDataComponents.HEALTH, 16F);
         return itemStack;
     }
 
     public static ItemStack PottedRepeaterInstance() {
-        ItemStack itemStack = new ItemStack(ModItems.POTTED_REPEATER.get());
+        ItemStack itemStack = new ItemStack(BnDItems.POTTED_REPEATER.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
-        itemStack.set(ModDataComponents.HEALTH, 16F);
+        itemStack.set(BnDDataComponents.HEALTH, 16F);
         return itemStack;
     }
 
     public static ItemStack PottedPotatoMineInstance() {
-        ItemStack itemStack = new ItemStack(ModItems.POTTED_POTATO_MINE.get());
+        ItemStack itemStack = new ItemStack(BnDItems.POTTED_POTATO_MINE.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
-        itemStack.set(ModDataComponents.HEALTH, 16F);
+        itemStack.set(BnDDataComponents.HEALTH, 16F);
         return itemStack;
     }
 
     public static ItemStack PottedBonkChoyInstance() {
-        ItemStack itemStack = new ItemStack(ModItems.POTTED_BONK_CHOY.get());
+        ItemStack itemStack = new ItemStack(BnDItems.POTTED_BONK_CHOY.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
-        itemStack.set(ModDataComponents.HEALTH, 16F);
+        itemStack.set(BnDDataComponents.HEALTH, 16F);
         return itemStack;
     }
 
     public static ItemStack PottedSunShroomInstance() {
-        ItemStack itemStack = new ItemStack(ModItems.POTTED_SUN_SHROOM.get());
+        ItemStack itemStack = new ItemStack(BnDItems.POTTED_SUN_SHROOM.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
-        itemStack.set(ModDataComponents.HEALTH, 16F);
+        itemStack.set(BnDDataComponents.HEALTH, 16F);
         return itemStack;
     }
 
     public static ItemStack PottedPuffShroomInstance() {
-        ItemStack itemStack = new ItemStack(ModItems.POTTED_PUFF_SHROOM.get());
+        ItemStack itemStack = new ItemStack(BnDItems.POTTED_PUFF_SHROOM.get());
         itemStack.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(Blocks.FLOWER_POT.asItem().getDefaultInstance())));
-        itemStack.set(ModDataComponents.HEALTH, 16F);
+        itemStack.set(BnDDataComponents.HEALTH, 16F);
         return itemStack;
     }
 }

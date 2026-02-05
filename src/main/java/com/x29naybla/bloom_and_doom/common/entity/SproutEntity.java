@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
@@ -16,7 +16,7 @@ public class SproutEntity extends Plant {
 
     //Properties
     public SproutEntity(EntityType<? extends Plant> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_SPROUTS, null, ModItems.POTTED_SPROUT.toStack());
+        super(entityType, level, BnDTags.Items.SUSTAINS_SPROUTS, null, BnDItems.POTTED_SPROUT.toStack());
     }
 
     //Goals and AI

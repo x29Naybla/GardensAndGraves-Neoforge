@@ -4,8 +4,8 @@ import com.x29naybla.bloom_and_doom.BloomAndDoom;
 import com.x29naybla.bloom_and_doom.common.entity.MarigoldEntity;
 import com.x29naybla.bloom_and_doom.common.entity.Plant;
 import com.x29naybla.bloom_and_doom.common.entity.SunShroomEntity;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
-import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -66,7 +66,7 @@ public class SeedPacketItem extends PlantHolderItem {
         ItemStack stack = context.getItemInHand();
 
         if (context.getPlayer() != null) {
-            if ((context.getPlayer().getInventory().countItem(ModItems.SUN.get()) >= sunAmount) || context.getPlayer().isCreative() || onPlanter(level, blockpos)){
+            if ((context.getPlayer().getInventory().countItem(BnDItems.SUN.get()) >= sunAmount) || context.getPlayer().isCreative() || onPlanter(level, blockpos)){
                 Direction direction = context.getClickedFace();
                 if (direction == Direction.DOWN) {
                     return InteractionResult.FAIL;
@@ -74,7 +74,7 @@ public class SeedPacketItem extends PlantHolderItem {
                     ItemStack itemStack = context.getItemInHand();
                     Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
                     AABB aabb = this.getType(itemStack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
-                    if(level.noCollision(null, aabb) && level.getEntities(null, aabb).isEmpty()){
+                    if(level.noCollision(null, aabb) && level.getEntitiesOfClass(Plant.class, aabb).isEmpty()){
                         if(level instanceof ServerLevel serverLevel){
                             Entity entity = this.getType(itemStack).create(serverLevel, EntityType.createDefaultStackConfig(serverLevel, itemStack, context.getPlayer()), blockpos, MobSpawnType.SPAWN_EGG, false, false);
                             if (entity == null) {
@@ -104,12 +104,12 @@ public class SeedPacketItem extends PlantHolderItem {
                             itemStack.shrink(1);
                             context.getPlayer().getCooldowns().addCooldown(this, cooldown);
                             serverLevel.addFreshEntityWithPassengers(entity);
-                            level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.SEED_PACKER_PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
+                            level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), BnDSounds.SEED_PACKER_PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
                             entity.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());
                         }
                         if(!((context.getPlayer().isCreative() || onPlanter(level, blockpos)))){
                             if(!(this.sunAmount == 0)) {
-                                context.getPlayer().getInventory().removeItem(context.getPlayer().getInventory().findSlotMatchingItem(ModItems.SUN.toStack()), sunAmount);
+                                context.getPlayer().getInventory().removeItem(context.getPlayer().getInventory().findSlotMatchingItem(BnDItems.SUN.toStack()), sunAmount);
                             }
                         }
                         return InteractionResult.sidedSuccess(level.isClientSide);
@@ -118,7 +118,7 @@ public class SeedPacketItem extends PlantHolderItem {
                     context.getPlayer().displayClientMessage(Component.translatable("item.bloom_and_doom.seed_packet.bad_substrate"), true);
                     return InteractionResult.FAIL;
                 }
-            } else if (!context.getPlayer().isCreative() && (context.getPlayer().getInventory().countItem(ModItems.SUN.get()) < sunAmount)) {
+            } else if (!context.getPlayer().isCreative() && (context.getPlayer().getInventory().countItem(BnDItems.SUN.get()) < sunAmount)) {
                 context.getPlayer().displayClientMessage(Component.translatable("item.bloom_and_doom.seed_packet.not_enough_sun"), true);
                 return InteractionResult.FAIL;
             }

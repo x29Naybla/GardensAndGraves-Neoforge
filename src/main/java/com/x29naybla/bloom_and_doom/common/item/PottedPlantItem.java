@@ -1,12 +1,12 @@
 package com.x29naybla.bloom_and_doom.common.item;
 
 import com.google.common.collect.Maps;
-import com.x29naybla.bloom_and_doom.common.registry.ModDataComponents;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDataComponents;
 import com.x29naybla.bloom_and_doom.common.entity.MarigoldEntity;
 import com.x29naybla.bloom_and_doom.common.entity.Plant;
 import com.x29naybla.bloom_and_doom.common.entity.PotatoMineEntity;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
-import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -75,7 +75,7 @@ public class PottedPlantItem extends PlantHolderItem {
     public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
         BundleContents bundlecontents = stack.get(DataComponents.BUNDLE_CONTENTS);
 
-        if (stack.is(ModItems.POTTED_MARIGOLD)) {
+        if (stack.is(BnDItems.POTTED_MARIGOLD)) {
             tooltipComponents.add(MARIGOLD_COLORS.get(stack.get(DataComponents.BASE_COLOR)));
         }
 
@@ -100,7 +100,7 @@ public class PottedPlantItem extends PlantHolderItem {
             Plant plant = (Plant) this.getType(stack).create(serverLevel, EntityType.createDefaultStackConfig(serverLevel, stack, context.getPlayer()), blockpos, MobSpawnType.BUCKET, false, false);
             Vec3 vec3 = Vec3.atBottomCenterOf(blockpos);
             AABB aabb = this.getType(stack).getDimensions().makeBoundingBox(vec3.x(), vec3.y(), vec3.z());
-            if(serverLevel.noCollision(null, aabb) && level.getEntities(null, aabb).isEmpty()){
+            if(serverLevel.noCollision(null, aabb) && level.getEntitiesOfClass(Plant.class, aabb).isEmpty()){
                 if(serverLevel.isEmptyBlock(blockpos)) {
                     if (direction == Direction.DOWN) {
                         return InteractionResult.FAIL;
@@ -135,14 +135,14 @@ public class PottedPlantItem extends PlantHolderItem {
                     serverlevel.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.STONE_PLACE, SoundSource.BLOCKS, 1F, 0.8F);
                 } else {
                     plant.moveTo(entity.getX(), entity.getY(), entity.getZ(), 0, 0);
-                    serverlevel.playSound(null, entity.getX(), entity.getY(), entity.getZ(), ModSounds.POTTED_PLANT_PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
+                    serverlevel.playSound(null, entity.getX(), entity.getY(), entity.getZ(), BnDSounds.POTTED_PLANT_PLANT.get(), SoundSource.BLOCKS, 0.75F, 0.8F);
                 }
                 plant.setYRot(f);
                 plant.setXRot(0);
                 if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
                 if (stack.has(DataComponents.BASE_COLOR)) ((MarigoldEntity) plant).setColor(stack.get(DataComponents.BASE_COLOR));
-                if (stack.has(ModDataComponents.AGE)) plant.setAge(stack.get(ModDataComponents.AGE));
-                if (stack.has(ModDataComponents.HEALTH)) plant.setHealth(stack.get(ModDataComponents.HEALTH));
+                if (stack.has(BnDDataComponents.AGE)) plant.setAge(stack.get(BnDDataComponents.AGE));
+                if (stack.has(BnDDataComponents.HEALTH)) plant.setHealth(stack.get(BnDDataComponents.HEALTH));
                 if (plant instanceof PotatoMineEntity potatoMine) potatoMine.setArmed(true);
                 plant.fromPlanter = true;
 

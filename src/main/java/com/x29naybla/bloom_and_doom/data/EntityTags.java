@@ -1,8 +1,8 @@
 package com.x29naybla.bloom_and_doom.data;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
-import com.x29naybla.bloom_and_doom.common.registry.ModEntities;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDEntities;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
@@ -22,48 +22,48 @@ public class EntityTags extends EntityTypeTagsProvider {
     @Override
     protected void addTags(HolderLookup.@NotNull Provider provider) {
         //Bloom and Doom Tags
-        tag(ModTags.Entities.FLOWERS)
-                .add(ModEntities.SUNFLOWER.get())
-                .add(ModEntities.MARIGOLD.get());
+        tag(BnDTags.Entities.FLOWERS)
+                .add(BnDEntities.SUNFLOWER.get())
+                .add(BnDEntities.MARIGOLD.get());
 
-        tag(ModTags.Entities.PEASHOOTERS)
-                .add(ModEntities.PEASHOOTER.get())
-                .add(ModEntities.SNOW_PEA.get())
-                .add(ModEntities.REPEATER.get());
+        tag(BnDTags.Entities.PEASHOOTERS)
+                .add(BnDEntities.PEASHOOTER.get())
+                .add(BnDEntities.SNOW_PEA.get())
+                .add(BnDEntities.REPEATER.get());
 
-        tag(ModTags.Entities.MUSHROOMS)
-                .add(ModEntities.SUN_SHROOM.get())
-                .add(ModEntities.PUFF_SHROOM.get())
-                .add(ModEntities.DOOM_SHROOM.get());
+        tag(BnDTags.Entities.MUSHROOMS)
+                .add(BnDEntities.SUN_SHROOM.get())
+                .add(BnDEntities.PUFF_SHROOM.get())
+                .add(BnDEntities.DOOM_SHROOM.get());
 
-        tag(ModTags.Entities.PLANTS)
-                .add(ModEntities.SPROUT.get())
-                .addTag(ModTags.Entities.FLOWERS)
-                .addTag(ModTags.Entities.PEASHOOTERS)
-                .add(ModEntities.WALL_NUT.get())
-                .add(ModEntities.POTATO_MINE.get())
-                .add(ModEntities.CHOMPER.get())
-                .add(ModEntities.BONK_CHOY.get())
-                .addTag(ModTags.Entities.MUSHROOMS);
+        tag(BnDTags.Entities.PLANTS)
+                .add(BnDEntities.SPROUT.get())
+                .addTag(BnDTags.Entities.FLOWERS)
+                .addTag(BnDTags.Entities.PEASHOOTERS)
+                .add(BnDEntities.WALL_NUT.get())
+                .add(BnDEntities.POTATO_MINE.get())
+                .add(BnDEntities.CHOMPER.get())
+                .add(BnDEntities.BONK_CHOY.get())
+                .addTag(BnDTags.Entities.MUSHROOMS);
 
-        tag(ModTags.Entities.POTTABLE_PLANTS)
-                .add(ModEntities.SPROUT.get())
-                .add(ModEntities.SUNFLOWER.get())
-                .add(ModEntities.MARIGOLD.get())
-                .add(ModEntities.PEASHOOTER.get())
-                .add(ModEntities.SNOW_PEA.get())
-                .add(ModEntities.REPEATER.get())
-                .add(ModEntities.POTATO_MINE.get())
-                .add(ModEntities.SUN_SHROOM.get())
-                .add(ModEntities.PUFF_SHROOM.get());
+        tag(BnDTags.Entities.POTTABLE_PLANTS)
+                .add(BnDEntities.SPROUT.get())
+                .add(BnDEntities.SUNFLOWER.get())
+                .add(BnDEntities.MARIGOLD.get())
+                .add(BnDEntities.PEASHOOTER.get())
+                .add(BnDEntities.SNOW_PEA.get())
+                .add(BnDEntities.REPEATER.get())
+                .add(BnDEntities.POTATO_MINE.get())
+                .add(BnDEntities.SUN_SHROOM.get())
+                .add(BnDEntities.PUFF_SHROOM.get());
 
-        tag(ModTags.Entities.PLANT_ENEMIES)
+        tag(BnDTags.Entities.PLANT_ENEMIES)
                 .addTag(EntityTypeTags.UNDEAD)
                 .addTag(EntityTypeTags.ARTHROPOD)
                 .remove(EntityType.BEE);
 
-        tag(ModTags.Entities.PLANT_ALLAYS)
-                .addTag(ModTags.Entities.PLANTS)
+        tag(BnDTags.Entities.PLANT_ALLAYS)
+                .addTag(BnDTags.Entities.PLANTS)
                 .add(EntityType.BEE)
                 .add(EntityType.VILLAGER)
                 .add(EntityType.WANDERING_TRADER)
@@ -72,9 +72,9 @@ public class EntityTags extends EntityTypeTagsProvider {
 
         //Minecraft Tags
         tag(EntityTypeTags.FREEZE_IMMUNE_ENTITY_TYPES)
-                .add(ModEntities.SNOW_PEA.get());
+                .add(BnDEntities.SNOW_PEA.get());
 
         tag(EntityTypeTags.ZOMBIES)
-                .add(ModEntities.ZOMBIE_WOLF.get());
+                .add(BnDEntities.ZOMBIE_WOLF.get());
     }
 }

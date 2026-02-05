@@ -1,6 +1,6 @@
 package com.x29naybla.bloom_and_doom.data.loot;
 
-import com.x29naybla.bloom_and_doom.common.registry.ModBlocks;
+import com.x29naybla.bloom_and_doom.common.registry.BnDBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -17,49 +17,49 @@ public class BNDBlockLoot extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(ModBlocks.POTTING_TABLE.get());
+        dropSelf(BnDBlocks.POTTING_TABLE.get());
 
-        dropSelf(ModBlocks.PLANTER.get());
-        dropSelf(ModBlocks.WHITE_PLANTER.get());
-        dropSelf(ModBlocks.LIGHT_GRAY_PLANTER.get());
-        dropSelf(ModBlocks.GRAY_PLANTER.get());
-        dropSelf(ModBlocks.BLACK_PLANTER.get());
-        dropSelf(ModBlocks.BROWN_PLANTER.get());
-        dropSelf(ModBlocks.RED_PLANTER.get());
-        dropSelf(ModBlocks.ORANGE_PLANTER.get());
-        dropSelf(ModBlocks.YELLOW_PLANTER.get());
-        dropSelf(ModBlocks.LIME_PLANTER.get());
-        dropSelf(ModBlocks.GREEN_PLANTER.get());
-        dropSelf(ModBlocks.CYAN_PLANTER.get());
-        dropSelf(ModBlocks.LIGHT_BLUE_PLANTER.get());
-        dropSelf(ModBlocks.BLUE_PLANTER.get());
-        dropSelf(ModBlocks.PURPLE_PLANTER.get());
-        dropSelf(ModBlocks.MAGENTA_PLANTER.get());
-        dropSelf(ModBlocks.PINK_PLANTER.get());
+        dropSelf(BnDBlocks.PLANTER.get());
+        dropSelf(BnDBlocks.WHITE_PLANTER.get());
+        dropSelf(BnDBlocks.LIGHT_GRAY_PLANTER.get());
+        dropSelf(BnDBlocks.GRAY_PLANTER.get());
+        dropSelf(BnDBlocks.BLACK_PLANTER.get());
+        dropSelf(BnDBlocks.BROWN_PLANTER.get());
+        dropSelf(BnDBlocks.RED_PLANTER.get());
+        dropSelf(BnDBlocks.ORANGE_PLANTER.get());
+        dropSelf(BnDBlocks.YELLOW_PLANTER.get());
+        dropSelf(BnDBlocks.LIME_PLANTER.get());
+        dropSelf(BnDBlocks.GREEN_PLANTER.get());
+        dropSelf(BnDBlocks.CYAN_PLANTER.get());
+        dropSelf(BnDBlocks.LIGHT_BLUE_PLANTER.get());
+        dropSelf(BnDBlocks.BLUE_PLANTER.get());
+        dropSelf(BnDBlocks.PURPLE_PLANTER.get());
+        dropSelf(BnDBlocks.MAGENTA_PLANTER.get());
+        dropSelf(BnDBlocks.PINK_PLANTER.get());
 
-        dropSelf(ModBlocks.GRAVESTONE.get());
-        dropSelf(ModBlocks.GRAVESTONE_SANDSTONE.get());
+        dropSelf(BnDBlocks.GRAVESTONE.get());
+        dropSelf(BnDBlocks.GRAVESTONE_SANDSTONE.get());
 
-        dropSelf(ModBlocks.WHITE_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.LIGHT_GRAY_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.GRAY_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.BLACK_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.BROWN_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.RED_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.ORANGE_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.YELLOW_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.LIME_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.GREEN_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.CYAN_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.LIGHT_BLUE_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.BLUE_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.PURPLE_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.MAGENTA_PLASTIC_BLOCK.get());
-        dropSelf(ModBlocks.PINK_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.WHITE_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.LIGHT_GRAY_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.GRAY_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.BLACK_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.BROWN_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.RED_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.ORANGE_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.YELLOW_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.LIME_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.GREEN_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.CYAN_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.LIGHT_BLUE_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.BLUE_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.PURPLE_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.MAGENTA_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.PINK_PLASTIC_BLOCK.get());
     }
 
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
+        return BnDBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
 }

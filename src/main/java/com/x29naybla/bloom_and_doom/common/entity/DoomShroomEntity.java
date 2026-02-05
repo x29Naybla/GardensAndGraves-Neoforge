@@ -1,8 +1,8 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
-import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -16,7 +16,7 @@ public class DoomShroomEntity extends ExplosivePlant {
 
     //Properties
     public DoomShroomEntity(EntityType<? extends DoomShroomEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_DOOM_SHROOMS, ModItems.DOOM_SHROOM_SEED_PACKET.toStack(), null, 4, 180, ModSounds.DOOM);
+        super(entityType, level, BnDTags.Items.SUSTAINS_DOOM_SHROOMS, BnDItems.DOOM_SHROOM_SEED_PACKET.toStack(), null, 4, 180, BnDSounds.DOOM);
         this.isMushroom = true;
     }
 

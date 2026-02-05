@@ -9,7 +9,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.function.Supplier;
 
-public class ModDataAttachments {
+public class BnDDataAttachments {
     public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES = DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, BloomAndDoom.MOD_ID);
 
     public static final Supplier<AttachmentType<Boolean>> ZOMBIE = ATTACHMENT_TYPES.register("zombie",

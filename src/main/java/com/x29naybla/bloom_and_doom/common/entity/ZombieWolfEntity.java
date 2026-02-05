@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
-import com.x29naybla.bloom_and_doom.common.registry.ModEntities;
+import com.x29naybla.bloom_and_doom.common.registry.BnDEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -79,7 +79,7 @@ public class ZombieWolfEntity extends Wolf {
 
     @Override
     public @Nullable Wolf getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        return ModEntities.ZOMBIE_WOLF.get().create(level);
+        return BnDEntities.ZOMBIE_WOLF.get().create(level);
     }
 
     class ZombieAttackTurtleEggGoal extends RemoveBlockGoal {

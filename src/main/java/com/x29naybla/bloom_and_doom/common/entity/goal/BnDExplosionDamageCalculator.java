@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.common.entity.goal;
 
-import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDataAttachments;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.ExplosionDamageCalculator;
@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class ModExplosionDamageCalculator extends ExplosionDamageCalculator {
+public class BnDExplosionDamageCalculator extends ExplosionDamageCalculator {
     private int damage;
 
     public void setDamage(int damage){
@@ -23,7 +23,7 @@ public class ModExplosionDamageCalculator extends ExplosionDamageCalculator {
 
     @Override
     public boolean shouldDamageEntity(@NotNull Explosion explosion, Entity entity) {
-        return entity.getType().is(ModTags.Entities.PLANT_ENEMIES) || entity.getData(ModDataAttachments.ZOMBIE);
+        return entity.getType().is(BnDTags.Entities.PLANT_ENEMIES) || entity.getData(BnDDataAttachments.ZOMBIE);
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -16,7 +16,7 @@ public class WallNutEntity extends Plant {
 
     //Properties
     public WallNutEntity(EntityType<? extends WallNutEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_WALL_NUTS, ModItems.WALL_NUT_SEED_PACKET.toStack(), null);
+        super(entityType, level, BnDTags.Items.SUSTAINS_WALL_NUTS, BnDItems.WALL_NUT_SEED_PACKET.toStack(), null);
     }
 
     public boolean canCollideWith(@NotNull Entity entity) {

@@ -1,9 +1,9 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import com.x29naybla.bloom_and_doom.common.entity.projectile.SporeProjectile;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
-import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
+import com.x29naybla.bloom_and_doom.common.registry.BnDSounds;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 public class PuffShroomEntity extends ShootingPlant {
     //Properties
     public PuffShroomEntity(EntityType<? extends PuffShroomEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_PUFF_SHROOMS, ModItems.PUFF_SHROOM_SEED_PACKET.toStack(), ModItems.POTTED_PUFF_SHROOM.toStack());
+        super(entityType, level, BnDTags.Items.SUSTAINS_PUFF_SHROOMS, BnDItems.PUFF_SHROOM_SEED_PACKET.toStack(), BnDItems.POTTED_PUFF_SHROOM.toStack());
         this.isMushroom = true;
     }
 
@@ -26,7 +26,7 @@ public class PuffShroomEntity extends ShootingPlant {
         double d3 = target.getZ() - this.getZ();
         double d4 = Math.sqrt(d1 * d1 + d3 * d3) * (double)0.2F;
         spore.shoot(d1, d2 + d4, d3, 1.6F, 0F);
-        this.playSound(ModSounds.PUFF.get(), 0.5F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+        this.playSound(BnDSounds.PUFF.get(), 0.5F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level().addFreshEntity(spore);
     }
 }

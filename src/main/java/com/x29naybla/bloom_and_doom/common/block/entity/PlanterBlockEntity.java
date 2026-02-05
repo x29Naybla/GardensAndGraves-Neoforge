@@ -1,6 +1,6 @@
 package com.x29naybla.bloom_and_doom.common.block.entity;
 
-import com.x29naybla.bloom_and_doom.common.registry.ModBlockEntities;
+import com.x29naybla.bloom_and_doom.common.registry.BnDBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -37,7 +37,7 @@ public class PlanterBlockEntity extends BlockEntity {
     };
 
     public PlanterBlockEntity(BlockPos pos, BlockState blockState) {
-        super(ModBlockEntities.PLANTER_BE.get(), pos, blockState);
+        super(BnDBlockEntities.PLANTER_BE.get(), pos, blockState);
     }
 
     public void clearContents() {

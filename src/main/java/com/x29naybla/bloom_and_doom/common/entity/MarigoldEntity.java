@@ -1,9 +1,9 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
 import com.google.common.collect.Maps;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import com.x29naybla.bloom_and_doom.common.entity.goal.MarigoldGenerateGoal;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -42,7 +42,7 @@ public class MarigoldEntity extends Plant {
 
     //Properties
     public MarigoldEntity(EntityType<? extends MarigoldEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_MARIGOLDS, ModItems.MARIGOLD_SEED_PACKET.toStack(), ModItems.POTTED_MARIGOLD.toStack());
+        super(entityType, level, BnDTags.Items.SUSTAINS_MARIGOLDS, BnDItems.MARIGOLD_SEED_PACKET.toStack(), BnDItems.POTTED_MARIGOLD.toStack());
         this.rewardTime = 6000;
     }
 

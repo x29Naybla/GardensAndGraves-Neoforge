@@ -3,7 +3,7 @@ package com.x29naybla.bloom_and_doom.common.block;
 import com.mojang.serialization.MapCodec;
 import com.x29naybla.bloom_and_doom.common.block.entity.PlanterBlockEntity;
 import com.x29naybla.bloom_and_doom.common.tag.CommonTags;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import com.x29naybla.bloom_and_doom.common.entity.Plant;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -95,7 +95,7 @@ public class PlanterBlock extends BaseEntityBlock {
     protected @NotNull ItemInteractionResult useItemOn(@NotNull ItemStack itemStack, @NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult result) {
         if(level.getBlockEntity(pos) instanceof PlanterBlockEntity planter) {
             ItemStack substrate = planter.content.getStackInSlot(0);
-            if(itemStack.is(ModTags.Items.PLANTER_SUBSTRATES)) {
+            if(itemStack.is(BnDTags.Items.PLANTER_SUBSTRATES)) {
                 if(substrate.isEmpty()) {
                     if(!level.isClientSide()) level.setBlockAndUpdate(pos, state.setValue(FILLED, true));
 
@@ -149,22 +149,22 @@ public class PlanterBlock extends BaseEntityBlock {
 
             if (!state.getValue(FILLED) && (plant.is(Blocks.TWISTING_VINES) || plant.is(Blocks.TWISTING_VINES_PLANT)))
                 return TriState.FALSE;
-            if (!substrate.isEmpty() && !substrate.is(ModTags.Items.SUSTAINS_MUSHROOMS)) {
+            if (!substrate.isEmpty() && !substrate.is(BnDTags.Items.SUSTAINS_MUSHROOMS)) {
                 if (plant.is(CommonTags.Blocks.MUSHROOMS)){
                     return TriState.DEFAULT;
                 }
             }
-            if (substrate.is(ItemTags.DIRT) && plant.is(ModTags.Blocks.DIRT_SUSTAINS)){
+            if (substrate.is(ItemTags.DIRT) && plant.is(BnDTags.Blocks.DIRT_SUSTAINS)){
                  return TriState.TRUE;
-            } else if (substrate.is(ModTags.Items.SUSTAINS_MUSHROOMS) && plant.is(ModTags.Blocks.MYCELIUM_SUSTAINS)){
+            } else if (substrate.is(BnDTags.Items.SUSTAINS_MUSHROOMS) && plant.is(BnDTags.Blocks.MYCELIUM_SUSTAINS)){
                 return TriState.TRUE;
-            } else if ((substrate.is(Items.SAND) || substrate.is(Items.RED_SAND)) && plant.is(ModTags.Blocks.SAND_SUSTAINS)) {
+            } else if ((substrate.is(Items.SAND) || substrate.is(Items.RED_SAND)) && plant.is(BnDTags.Blocks.SAND_SUSTAINS)) {
                 return TriState.TRUE;
-            } else if (substrate.is(Items.SOUL_SAND) && plant.is(ModTags.Blocks.SOUL_SAND_SUSTAINS)){
+            } else if (substrate.is(Items.SOUL_SAND) && plant.is(BnDTags.Blocks.SOUL_SAND_SUSTAINS)){
                 return TriState.TRUE;
-            } else if ((substrate.is(Items.CRIMSON_NYLIUM) || substrate.is(Items.WARPED_NYLIUM)) && plant.is(ModTags.Blocks.NYLIUM_SUSTAINS)){
+            } else if ((substrate.is(Items.CRIMSON_NYLIUM) || substrate.is(Items.WARPED_NYLIUM)) && plant.is(BnDTags.Blocks.NYLIUM_SUSTAINS)){
                 return TriState.TRUE;
-            } else if (substrate.is(Items.END_STONE) && plant.is(ModTags.Blocks.END_STONE_SUSTAINS)){
+            } else if (substrate.is(Items.END_STONE) && plant.is(BnDTags.Blocks.END_STONE_SUSTAINS)){
                 return TriState.TRUE;
             }
         }

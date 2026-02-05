@@ -1,9 +1,9 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import com.x29naybla.bloom_and_doom.common.entity.goal.PlantGenerateSunGoal;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
-import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
+import com.x29naybla.bloom_and_doom.common.registry.BnDSounds;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.level.Level;
@@ -18,12 +18,12 @@ public class SunflowerEntity extends SolarPlant {
 
     //Properties
     public SunflowerEntity(EntityType<? extends SunflowerEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_SUNFLOWERS, ModItems.SUNFLOWER_SEED_PACKET.toStack(), ModItems.POTTED_SUNFLOWER.toStack(), false);
+        super(entityType, level, BnDTags.Items.SUSTAINS_SUNFLOWERS, BnDItems.SUNFLOWER_SEED_PACKET.toStack(), BnDItems.POTTED_SUNFLOWER.toStack(), false);
     }
 
     //Goals and AI
     protected void registerGoals(){
-        this.goalSelector.addGoal(1, new PlantGenerateSunGoal(this, ModSounds.SUNFLOWER_SUN.get()));
+        this.goalSelector.addGoal(1, new PlantGenerateSunGoal(this, BnDSounds.SUNFLOWER_SUN.get()));
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
     }
 

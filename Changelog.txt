@@ -4,3 +4,9 @@ changelog:
 * added some missing translations to Russian, French, and Brazilian portuguese
 * moved the "flower_pots" item tag from being under the "bloom_and_doom" namespace to "c"
 * added a "flower_pots" block tag under the "c" namespace
+
+* fixed flower pots that are supporting plants still being able to be interacted with
+* non-plant entities no longer prevent plants from being planted in that block
+* "Mod" at the beginning of class names changed to "BnD" to avoid confusion when working with multiple mods
+* Merged the two event classes in Common into a single "BnDEvents"
+* Created "BnDZombiePlayerEvents" to keep all Zombie Player related events

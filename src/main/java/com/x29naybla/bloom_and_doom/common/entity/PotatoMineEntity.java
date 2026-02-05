@@ -1,8 +1,8 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
-import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -23,7 +23,7 @@ public class PotatoMineEntity extends ExplosivePlant {
 
     //Properties
     public PotatoMineEntity(EntityType<? extends PotatoMineEntity> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_POTATO_MINES, ModItems.POTATO_MINE_SEED_PACKET.toStack(), ModItems.POTTED_POTATO_MINE.toStack(), 1, 180, ModSounds.SPUDOW);
+        super(entityType, level, BnDTags.Items.SUSTAINS_POTATO_MINES, BnDItems.POTATO_MINE_SEED_PACKET.toStack(), BnDItems.POTTED_POTATO_MINE.toStack(), 1, 180, BnDSounds.SPUDOW);
     }
 
     //Goals and AI

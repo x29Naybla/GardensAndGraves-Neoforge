@@ -1,8 +1,8 @@
 package com.x29naybla.bloom_and_doom.common.entity.projectile;
 
-import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
-import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDataAttachments;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDSounds;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -56,7 +56,7 @@ public abstract class PlantProjectile extends ThrowableItemProjectile {
     protected void onHitEntity(@NotNull EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
-        if (!(entity.getType().is(ModTags.Entities.PLANT_ALLAYS) || entity instanceof Player player && !player.getData(ModDataAttachments.ZOMBIE))){
+        if (!(entity.getType().is(BnDTags.Entities.PLANT_ALLAYS) || entity instanceof Player player && !player.getData(BnDDataAttachments.ZOMBIE))){
             entity.hurt(this.damageSources().source(setDamageType(), this, this.getOwner()), 4);
             this.level().broadcastEntityEvent(this, (byte)3);
             shouldBreak = true;
@@ -66,7 +66,7 @@ public abstract class PlantProjectile extends ThrowableItemProjectile {
     protected void onHit(@NotNull HitResult result) {
         super.onHit(result);
         if (!this.level().isClientSide && shouldBreak == true) {
-            playSound(ModSounds.SPLAT.get(), 0.25F, 1 / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+            playSound(BnDSounds.SPLAT.get(), 0.25F, 1 / (this.getRandom().nextFloat() * 0.4F + 0.8F));
             this.discard();
         }
     }

@@ -1,10 +1,10 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
-import com.x29naybla.bloom_and_doom.common.registry.ModDamageTypes;
-import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
-import com.x29naybla.bloom_and_doom.common.entity.goal.ModExplosionDamageCalculator;
-import com.x29naybla.bloom_and_doom.common.entity.goal.ModSwellGoal;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDamageTypes;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDataAttachments;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
+import com.x29naybla.bloom_and_doom.common.entity.goal.BnDExplosionDamageCalculator;
+import com.x29naybla.bloom_and_doom.common.entity.goal.BnDSwellGoal;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -49,9 +49,9 @@ public class ExplosivePlant extends Plant{
 
     //Goals and AI
     protected void registerGoals(){
-        goalSelector.addGoal(1, new ModSwellGoal(this));
+        goalSelector.addGoal(1, new BnDSwellGoal(this));
         goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, false, false,
-                (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE))));
+                (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(BnDTags.Entities.PLANT_ENEMIES) || livingEntity.getData(BnDDataAttachments.ZOMBIE))));
         goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 
@@ -83,18 +83,18 @@ public class ExplosivePlant extends Plant{
         if (this instanceof PotatoMineEntity potatoMine && !potatoMine.getArmed() || this.isBaby()){
             return;
         }
-        if (target != null && (target.hasData(ModDataAttachments.ZOMBIE) || target.getType().is(ModTags.Entities.PLANT_ENEMIES))) {
+        if (target != null && (target.hasData(BnDDataAttachments.ZOMBIE) || target.getType().is(BnDTags.Entities.PLANT_ENEMIES))) {
             super.setTarget(target);
         }
     }
 
     private void explode() {
-        ModExplosionDamageCalculator damageCalculator = new ModExplosionDamageCalculator();
+        BnDExplosionDamageCalculator damageCalculator = new BnDExplosionDamageCalculator();
         damageCalculator.setDamage(damage);
 
         if (!this.level().isClientSide) {
             this.dead = true;
-            this.level().explode(this, this.damageSources().source(ModDamageTypes.PLANT_EXPLOSION), damageCalculator, this.getX(), this.getY(), this.getZ(), this.explosionRadius, false, Level.ExplosionInteraction.NONE, ParticleTypes.EXPLOSION, ParticleTypes.EXPLOSION, sound);
+            this.level().explode(this, this.damageSources().source(BnDDamageTypes.PLANT_EXPLOSION), damageCalculator, this.getX(), this.getY(), this.getZ(), this.explosionRadius, false, Level.ExplosionInteraction.NONE, ParticleTypes.EXPLOSION, ParticleTypes.EXPLOSION, sound);
             this.triggerOnDeathMobEffects(RemovalReason.KILLED);
             this.discard();
         }

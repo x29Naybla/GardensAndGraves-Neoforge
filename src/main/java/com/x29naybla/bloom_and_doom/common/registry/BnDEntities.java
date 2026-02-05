@@ -21,7 +21,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import java.util.function.Supplier;
 
 @EventBusSubscriber(modid = BloomAndDoom.MOD_ID)
-public class ModEntities {
+public class BnDEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, BloomAndDoom.MOD_ID);
 
     public static final DeferredHolder<EntityType<?>, EntityType<SproutEntity>> SPROUT = register("sprout", SproutEntity::new, 0.7f, 0.9f);
@@ -134,20 +134,20 @@ public class ModEntities {
                 .add(Attributes.EXPLOSION_KNOCKBACK_RESISTANCE, 99)
                 .add(Attributes.ENTITY_INTERACTION_RANGE, 1);
 
-        event.put(ModEntities.SPROUT.get(), sproutAttributes.build());
-        event.put(ModEntities.SUNFLOWER.get(), sunflowerAttributes.build());
-        event.put(ModEntities.MARIGOLD.get(), marigoldAttributes.build());
-        event.put(ModEntities.PEASHOOTER.get(), peashooterAttributes.build());
-        event.put(ModEntities.SNOW_PEA.get(), snowPeashooterAttributes.build());
-        event.put(ModEntities.REPEATER.get(), repeaterAttributes.build());
-        event.put(ModEntities.WALL_NUT.get(), wallNutAttributes.build());
-        event.put(ModEntities.POTATO_MINE.get(), potatoMineAttributes.build());
-        event.put(ModEntities.CHOMPER.get(), chomperAttributes.build());
-        event.put(ModEntities.BONK_CHOY.get(), bonkChoyAttributes.build());
-        event.put(ModEntities.SUN_SHROOM.get(), sunflowerAttributes.build());
-        event.put(ModEntities.PUFF_SHROOM.get(), puffShroomAttributes.build());
-        event.put(ModEntities.DOOM_SHROOM.get(), doomShroomAttributes.build());
-        event.put(ModEntities.ZOMBIE_WOLF.get(), ZombieWolfEntity.createAttributes().build());
+        event.put(BnDEntities.SPROUT.get(), sproutAttributes.build());
+        event.put(BnDEntities.SUNFLOWER.get(), sunflowerAttributes.build());
+        event.put(BnDEntities.MARIGOLD.get(), marigoldAttributes.build());
+        event.put(BnDEntities.PEASHOOTER.get(), peashooterAttributes.build());
+        event.put(BnDEntities.SNOW_PEA.get(), snowPeashooterAttributes.build());
+        event.put(BnDEntities.REPEATER.get(), repeaterAttributes.build());
+        event.put(BnDEntities.WALL_NUT.get(), wallNutAttributes.build());
+        event.put(BnDEntities.POTATO_MINE.get(), potatoMineAttributes.build());
+        event.put(BnDEntities.CHOMPER.get(), chomperAttributes.build());
+        event.put(BnDEntities.BONK_CHOY.get(), bonkChoyAttributes.build());
+        event.put(BnDEntities.SUN_SHROOM.get(), sunflowerAttributes.build());
+        event.put(BnDEntities.PUFF_SHROOM.get(), puffShroomAttributes.build());
+        event.put(BnDEntities.DOOM_SHROOM.get(), doomShroomAttributes.build());
+        event.put(BnDEntities.ZOMBIE_WOLF.get(), ZombieWolfEntity.createAttributes().build());
     }
 
     public static final Supplier<EntityType<PeaProjectile>> PEA_PROJECTILE = ENTITY_TYPES.register("pea", () -> (

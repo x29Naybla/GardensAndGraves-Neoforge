@@ -1,9 +1,9 @@
 package com.x29naybla.bloom_and_doom.common.effect;
 
 import com.x29naybla.bloom_and_doom.common.entity.ZombieWolfEntity;
-import com.x29naybla.bloom_and_doom.common.registry.ModEffects;
-import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
-import com.x29naybla.bloom_and_doom.common.registry.ModEntities;
+import com.x29naybla.bloom_and_doom.common.registry.BnDEntities;
+import com.x29naybla.bloom_and_doom.common.registry.BnDEffects;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDataAttachments;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -39,7 +39,7 @@ public class Zombification extends MobEffect {
 
     @Override
     public boolean applyEffectTick(LivingEntity entity, int amplifier) {
-        if(!entity.level().isClientSide && (entity.getHealth() <= 0 || Objects.requireNonNull(entity.getEffect(ModEffects.ZOMBIFICATION)).getDuration() == 1)) {
+        if(!entity.level().isClientSide && (entity.getHealth() <= 0 || Objects.requireNonNull(entity.getEffect(BnDEffects.ZOMBIFICATION)).getDuration() == 1)) {
             ServerLevel level = (ServerLevel) entity.level();
             if((entity instanceof Piglin || entity instanceof PiglinBrute)) {
                 AbstractPiglin piglin = (AbstractPiglin) entity;
@@ -84,13 +84,13 @@ public class Zombification extends MobEffect {
                 return true;
 
             } else if(entity instanceof Player player) {
-                player.setData(ModDataAttachments.ZOMBIE, true);
+                player.setData(BnDDataAttachments.ZOMBIE, true);
                 level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ZOMBIE_INFECT, SoundSource.PLAYERS);
                 return true;
 
             } else if(entity instanceof Wolf wolf) {
                 wolf.makeSound(SoundEvents.ZOMBIE_INFECT);
-                ZombieWolfEntity zWolf = wolf.convertTo(ModEntities.ZOMBIE_WOLF.get(), true);
+                ZombieWolfEntity zWolf = wolf.convertTo(BnDEntities.ZOMBIE_WOLF.get(), true);
                 if(zWolf != null) {
                     zWolf.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
                     EventHooks.onLivingConvert(wolf, zWolf);

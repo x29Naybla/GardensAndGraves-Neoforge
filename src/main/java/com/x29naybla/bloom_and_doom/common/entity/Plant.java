@@ -2,13 +2,13 @@ package com.x29naybla.bloom_and_doom.common.entity;
 
 import com.x29naybla.bloom_and_doom.CommonConfigs;
 import com.x29naybla.bloom_and_doom.common.block.entity.PlanterBlockEntity;
-import com.x29naybla.bloom_and_doom.common.registry.ModDataComponents;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDataComponents;
 import com.x29naybla.bloom_and_doom.common.tag.CommonTags;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import com.x29naybla.bloom_and_doom.common.item.SeedPacketItem;
-import com.x29naybla.bloom_and_doom.common.registry.ModParticles;
-import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
+import com.x29naybla.bloom_and_doom.common.registry.BnDParticles;
+import com.x29naybla.bloom_and_doom.common.registry.BnDSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
@@ -117,14 +117,14 @@ public class Plant extends TamableAnimal implements GeoEntity {
             }
 
             return InteractionResult.SUCCESS;
-        } else if (seedPacket != null && (playerHand.getItem() == this.seedPacket.getItem()) && this.getHealth() < this.getMaxHealth() && !player.getCooldowns().isOnCooldown(this.seedPacket.getItem()) && (player.getInventory().countItem(ModItems.SUN.get()) >= ((SeedPacketItem) this.seedPacket.getItem()).getSunAmount() || player.isCreative())) {
+        } else if (seedPacket != null && (playerHand.getItem() == this.seedPacket.getItem()) && this.getHealth() < this.getMaxHealth() && !player.getCooldowns().isOnCooldown(this.seedPacket.getItem()) && (player.getInventory().countItem(BnDItems.SUN.get()) >= ((SeedPacketItem) this.seedPacket.getItem()).getSunAmount() || player.isCreative())) {
             SeedPacketItem seedPacket = (SeedPacketItem) this.seedPacket.getItem();
             this.setHealth(this.getMaxHealth());
-            playSound(ModSounds.SEED_PACKET_HEAL.get());
+            playSound(BnDSounds.SEED_PACKET_HEAL.get());
             player.getCooldowns().addCooldown(seedPacket, seedPacket.cooldown);
             if (!player.isCreative()) {
                 player.getItemInHand(hand).shrink(1);
-                player.getInventory().removeItem(player.getInventory().findSlotMatchingItem(ModItems.SUN.toStack()), seedPacket.getSunAmount());
+                player.getInventory().removeItem(player.getInventory().findSlotMatchingItem(BnDItems.SUN.toStack()), seedPacket.getSunAmount());
             }
             return InteractionResult.SUCCESS;
         } else if(playerHand.is(CommonTags.Items.FLOWER_POTS) && this.fromPlanter && this.pottedItem != null) {
@@ -148,7 +148,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
                         this.getZ(), 2, 0, 0, 0, 0);
             }
             return InteractionResult.SUCCESS;
-        } else if(playerHand.isEmpty() && player.isCrouching() && this.fromPlanter && this.level().getBlockState(this.getOnPos()).is(CommonTags.Blocks.FLOWER_POTS)) {
+        } else if(playerHand.isEmpty() && this.fromPlanter && this.level().getBlockState(this.getOnPos()).is(CommonTags.Blocks.FLOWER_POTS)) {
             saveDefaultDataToItemTag(this, this.pottedItem);
             this.pottedItem.set(DataComponents.BUNDLE_CONTENTS, new BundleContents(List.of(this.level().getBlockState(this.getOnPos()).getBlock().asItem().getDefaultInstance())));
 
@@ -207,7 +207,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
                 setSleeping(!this.level().isNight()
                         && !this.gotCoffee
                         && !this.level().getBlockState(this.getOnPos()).is(BlockTags.MUSHROOM_GROW_BLOCK)
-                        && (!(this.level().getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity planterBlock) || !planterBlock.content.getStackInSlot(0).is(ModTags.Items.SUSTAINS_MUSHROOMS)));
+                        && (!(this.level().getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity planterBlock) || !planterBlock.content.getStackInSlot(0).is(BnDTags.Items.SUSTAINS_MUSHROOMS)));
             } else {
                 setSleeping(false);
             }
@@ -222,7 +222,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
             if (getSleeping()) {
                 --this.ticksForSleepyParticles;
                 if (this.ticksForSleepyParticles <= 0) {
-                    ((ServerLevel) level()).sendParticles(ModParticles.SLEEPING_PARTICLES.get(), this.getX(), this.getY() + this.getEyeHeight() + 0.3,
+                    ((ServerLevel) level()).sendParticles(BnDParticles.SLEEPING_PARTICLES.get(), this.getX(), this.getY() + this.getEyeHeight() + 0.3,
                             this.getZ(), 1, 0, 0, 0, 0.0004);
                     this.ticksForSleepyParticles = 40;
                 }
@@ -234,12 +234,12 @@ public class Plant extends TamableAnimal implements GeoEntity {
     }
 
     public boolean onRightSubstrate(BlockGetter reader, BlockPos pos) {
-        return reader.getBlockState(pos.below()).is(ModTags.Blocks.SUPPORTS_PLANTS) ||
+        return reader.getBlockState(pos.below()).is(BnDTags.Blocks.SUPPORTS_PLANTS) ||
                 (reader.getBlockEntity(pos.below()) instanceof PlanterBlockEntity planter && planter.content.getStackInSlot(0).is(this.substrate));
     }
 
     public void ageUp(int amount, boolean forced){
-        playSound(ModSounds.PLANT_GROW.get());
+        playSound(BnDSounds.PLANT_GROW.get());
     }
 
     public void expire(SoundEvent sound){
@@ -310,7 +310,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     private static void saveDefaultDataToItemTag(Plant plant, ItemStack itemStack) {
         if (plant.hasCustomName()) itemStack.set(DataComponents.CUSTOM_NAME, plant.getCustomName());
         if (plant instanceof MarigoldEntity marigold) itemStack.set(DataComponents.BASE_COLOR, marigold.getColor());
-        if (plant.isBaby()) itemStack.set(ModDataComponents.AGE, plant.getAge());
-        itemStack.set(ModDataComponents.HEALTH, plant.getHealth());
+        if (plant.isBaby()) itemStack.set(BnDDataComponents.AGE, plant.getAge());
+        itemStack.set(BnDDataComponents.HEALTH, plant.getHealth());
     }
 }

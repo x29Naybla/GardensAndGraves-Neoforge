@@ -9,7 +9,7 @@ import net.minecraft.world.entity.npc.VillagerProfession;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class ModVillagers {
+public class BnDVillagers {
     public static final DeferredRegister<PoiType> POI_TYPES =
             DeferredRegister.create(BuiltInRegistries.POINT_OF_INTEREST_TYPE, BloomAndDoom.MOD_ID);
 
@@ -17,12 +17,12 @@ public class ModVillagers {
             DeferredRegister.create(BuiltInRegistries.VILLAGER_PROFESSION, BloomAndDoom.MOD_ID);
 
     public static final Holder<PoiType> GARDENER_POI = POI_TYPES.register("gardener_poi",
-            () -> new PoiType(ImmutableSet.copyOf(ModBlocks.POTTING_TABLE.get().getStateDefinition().getPossibleStates()), 1, 1));
+            () -> new PoiType(ImmutableSet.copyOf(BnDBlocks.POTTING_TABLE.get().getStateDefinition().getPossibleStates()), 1, 1));
 
     public static final Holder<VillagerProfession> GARDENER = VILLAGER_PROFESSIONS.register("gardener",
             () -> new VillagerProfession("gardener", holder -> holder.value() == GARDENER_POI.value(),
                     poiTypeHolder -> poiTypeHolder.value() == GARDENER_POI.value(), ImmutableSet.of(), ImmutableSet.of(),
-                    ModSounds.GARDENER_WORK.get()));
+                    BnDSounds.GARDENER_WORK.get()));
 
     public static void register(IEventBus eventBus) {
         POI_TYPES.register(eventBus);

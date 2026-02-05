@@ -2,11 +2,11 @@ package com.x29naybla.bloom_and_doom.client.event;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
 import com.x29naybla.bloom_and_doom.ClientConfigs;
-import com.x29naybla.bloom_and_doom.common.registry.ModBlockEntities;
+import com.x29naybla.bloom_and_doom.common.registry.BnDEntities;
+import com.x29naybla.bloom_and_doom.common.registry.BnDBlockEntities;
 import com.x29naybla.bloom_and_doom.client.renderer.block.PlanterBlockEntityRenderer;
 import com.x29naybla.bloom_and_doom.client.renderer.entity.*;
-import com.x29naybla.bloom_and_doom.common.registry.ModEntities;
-import com.x29naybla.bloom_and_doom.common.registry.ModParticles;
+import com.x29naybla.bloom_and_doom.common.registry.BnDParticles;
 import com.x29naybla.bloom_and_doom.client.particle.SleepingParticles;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.client.renderer.entity.WolfRenderer;
@@ -22,40 +22,40 @@ public class ClientSetupEvents {
 
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(ModBlockEntities.PLANTER_BE.get(), PlanterBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(BnDBlockEntities.PLANTER_BE.get(), PlanterBlockEntityRenderer::new);
     }
 
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event){
-        event.registerEntityRenderer(ModEntities.SPROUT.get(), SproutRenderer::new);
-        event.registerEntityRenderer(ModEntities.SUNFLOWER.get(), SunflowerRenderer::new);
-        event.registerEntityRenderer(ModEntities.MARIGOLD.get(), MarigoldRenderer::new);
-        event.registerEntityRenderer(ModEntities.PEASHOOTER.get(), PeashooterRenderer::new);
-        event.registerEntityRenderer(ModEntities.SNOW_PEA.get(), SnowPeashooterRenderer::new);
-        event.registerEntityRenderer(ModEntities.REPEATER.get(), RepeaterRenderer::new);
-        event.registerEntityRenderer(ModEntities.WALL_NUT.get(), WallNutRenderer::new);
-        event.registerEntityRenderer(ModEntities.POTATO_MINE.get(), PotatoMineRenderer::new);
-        event.registerEntityRenderer(ModEntities.CHOMPER.get(), ChomperRenderer::new);
-        event.registerEntityRenderer(ModEntities.BONK_CHOY.get(), BonkChoyRenderer::new);
-        event.registerEntityRenderer(ModEntities.SUN_SHROOM.get(), SunShroomRenderer::new);
-        event.registerEntityRenderer(ModEntities.PUFF_SHROOM.get(), PuffShroomRenderer::new);
-        event.registerEntityRenderer(ModEntities.DOOM_SHROOM.get(), DoomShroomRenderer::new);
+        event.registerEntityRenderer(BnDEntities.SPROUT.get(), SproutRenderer::new);
+        event.registerEntityRenderer(BnDEntities.SUNFLOWER.get(), SunflowerRenderer::new);
+        event.registerEntityRenderer(BnDEntities.MARIGOLD.get(), MarigoldRenderer::new);
+        event.registerEntityRenderer(BnDEntities.PEASHOOTER.get(), PeashooterRenderer::new);
+        event.registerEntityRenderer(BnDEntities.SNOW_PEA.get(), SnowPeashooterRenderer::new);
+        event.registerEntityRenderer(BnDEntities.REPEATER.get(), RepeaterRenderer::new);
+        event.registerEntityRenderer(BnDEntities.WALL_NUT.get(), WallNutRenderer::new);
+        event.registerEntityRenderer(BnDEntities.POTATO_MINE.get(), PotatoMineRenderer::new);
+        event.registerEntityRenderer(BnDEntities.CHOMPER.get(), ChomperRenderer::new);
+        event.registerEntityRenderer(BnDEntities.BONK_CHOY.get(), BonkChoyRenderer::new);
+        event.registerEntityRenderer(BnDEntities.SUN_SHROOM.get(), SunShroomRenderer::new);
+        event.registerEntityRenderer(BnDEntities.PUFF_SHROOM.get(), PuffShroomRenderer::new);
+        event.registerEntityRenderer(BnDEntities.DOOM_SHROOM.get(), DoomShroomRenderer::new);
 
-        event.registerEntityRenderer(ModEntities.ZOMBIE_WOLF.get(), WolfRenderer::new);
+        event.registerEntityRenderer(BnDEntities.ZOMBIE_WOLF.get(), WolfRenderer::new);
 
         if (!ModList.get().isLoaded("amendments") || !ClientConfigs.PEAS_3D.get()) {
-            event.registerEntityRenderer(ModEntities.PEA_PROJECTILE.get(), ThrownItemRenderer::new);
+            event.registerEntityRenderer(BnDEntities.PEA_PROJECTILE.get(), ThrownItemRenderer::new);
         }
         if (!ModList.get().isLoaded("amendments") || !ClientConfigs.FROZEN_PEAS_3D.get()) {
-            event.registerEntityRenderer(ModEntities.FROZEN_PEA_PROJECTILE.get(), ThrownItemRenderer::new);
+            event.registerEntityRenderer(BnDEntities.FROZEN_PEA_PROJECTILE.get(), ThrownItemRenderer::new);
         }
         if (!ModList.get().isLoaded("amendments") || !ClientConfigs.SPORES_3D.get()) {
-            event.registerEntityRenderer(ModEntities.SPORE_PROJECTILE.get(), ThrownItemRenderer::new);
+            event.registerEntityRenderer(BnDEntities.SPORE_PROJECTILE.get(), ThrownItemRenderer::new);
         }
     }
 
     @SubscribeEvent
     public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
-        event.registerSpriteSet(ModParticles.SLEEPING_PARTICLES.get(), SleepingParticles.Provider::new);
+        event.registerSpriteSet(BnDParticles.SLEEPING_PARTICLES.get(), SleepingParticles.Provider::new);
     }
 }

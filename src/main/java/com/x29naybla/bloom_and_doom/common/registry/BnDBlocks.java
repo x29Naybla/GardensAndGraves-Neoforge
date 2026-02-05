@@ -15,7 +15,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class ModBlocks {
+public class BnDBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(BloomAndDoom.MOD_ID);
 
     public static final DeferredBlock<Block> POTTING_TABLE = registerBlock("potting_table",
@@ -101,7 +101,7 @@ public class ModBlocks {
     }
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        BnDItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus){

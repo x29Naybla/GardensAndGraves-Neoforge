@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.common.entity.goal;
 
 import com.x29naybla.bloom_and_doom.common.entity.MarigoldEntity;
-import com.x29naybla.bloom_and_doom.common.registry.ModSounds;
+import com.x29naybla.bloom_and_doom.common.registry.BnDSounds;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -40,7 +40,7 @@ public class MarigoldGenerateGoal extends Goal {
             this.plant.setGenerated(true);
         }
         if (!this.plant.level().isClientSide && this.plant.rewardTime == 0) {
-            this.plant.playSound(ModSounds.MONEYFALLS.get(), 1.0F, (this.plant.getRandom().nextFloat() - this.plant.getRandom().nextFloat()) * 0.2F + 1.0F);
+            this.plant.playSound(BnDSounds.MONEYFALLS.get(), 1.0F, (this.plant.getRandom().nextFloat() - this.plant.getRandom().nextFloat()) * 0.2F + 1.0F);
             if(this.plant.getRandom().nextInt(1, 4) <= 1){
                 this.plant.spawnAtLocation(Items.GOLD_NUGGET);
                 if(this.plant.getRandom().nextInt(1, 4) <= 2){

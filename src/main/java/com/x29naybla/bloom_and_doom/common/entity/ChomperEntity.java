@@ -1,8 +1,8 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
 import com.x29naybla.bloom_and_doom.common.entity.goal.ChompGoal;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -27,7 +27,7 @@ public class ChomperEntity extends Plant {
 
     //Properties
     public ChomperEntity(EntityType<? extends Plant> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_CHOMPERS, ModItems.CHOMPER_SEED_PACKET.toStack(), null);
+        super(entityType, level, BnDTags.Items.SUSTAINS_CHOMPERS, BnDItems.CHOMPER_SEED_PACKET.toStack(), null);
     }
 
     //Goals and AI

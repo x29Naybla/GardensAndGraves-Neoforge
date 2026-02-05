@@ -2,7 +2,7 @@ package com.x29naybla.bloom_and_doom.integration;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
 import com.x29naybla.bloom_and_doom.ClientConfigs;
-import com.x29naybla.bloom_and_doom.common.registry.ModEntities;
+import com.x29naybla.bloom_and_doom.common.registry.BnDEntities;
 import net.mehvahdjukaar.amendments.client.renderers.Small3DBallRenderer;
 import net.mehvahdjukaar.moonlight.api.misc.EventCalled;
 import net.mehvahdjukaar.moonlight.api.platform.ClientHelper;
@@ -22,17 +22,17 @@ public class Ammendments {
     private static void registerEntityRenderers(ClientHelper.EntityRendererEvent event) {
         float modelScale = 0.75f;
         if (ClientConfigs.PEAS_3D.get()) {
-            event.register(ModEntities.PEA_PROJECTILE.get(), context -> new Small3DBallRenderer(context,
+            event.register(BnDEntities.PEA_PROJECTILE.get(), context -> new Small3DBallRenderer(context,
                     modelScale, PEA_TEXTURE, false));
         }
 
         if (ClientConfigs.FROZEN_PEAS_3D.get()) {
-            event.register(ModEntities.FROZEN_PEA_PROJECTILE.get(), context -> new Small3DBallRenderer(context,
+            event.register(BnDEntities.FROZEN_PEA_PROJECTILE.get(), context -> new Small3DBallRenderer(context,
                     modelScale, FROZEN_PEA_TEXTURE, false));
         }
 
         if (ClientConfigs.SPORES_3D.get()) {
-            event.register(ModEntities.SPORE_PROJECTILE.get(), context -> new Small3DBallRenderer(context,
+            event.register(BnDEntities.SPORE_PROJECTILE.get(), context -> new Small3DBallRenderer(context,
                     modelScale, SPORE_TEXTURE, false));
         }
     }

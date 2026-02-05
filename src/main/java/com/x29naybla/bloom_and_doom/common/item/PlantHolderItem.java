@@ -3,7 +3,7 @@ package com.x29naybla.bloom_and_doom.common.item;
 import com.mojang.serialization.MapCodec;
 import com.x29naybla.bloom_and_doom.common.block.entity.PlanterBlockEntity;
 import com.x29naybla.bloom_and_doom.common.entity.Plant;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -31,7 +31,7 @@ public class PlantHolderItem  extends Item {
     }
 
     public static boolean isSubstrate(BlockGetter reader, BlockPos pos) {
-        return reader.getBlockState(pos).is(ModTags.Blocks.SUPPORTS_PLANTS);
+        return reader.getBlockState(pos).is(BnDTags.Blocks.SUPPORTS_PLANTS);
     }
 
     public boolean onPlanter(BlockGetter level, BlockPos pos) {

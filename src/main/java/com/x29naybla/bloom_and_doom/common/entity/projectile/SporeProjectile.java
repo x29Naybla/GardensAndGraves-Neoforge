@@ -1,8 +1,8 @@
 package com.x29naybla.bloom_and_doom.common.entity.projectile;
 
-import com.x29naybla.bloom_and_doom.common.registry.ModDamageTypes;
-import com.x29naybla.bloom_and_doom.common.registry.ModEntities;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDamageTypes;
+import com.x29naybla.bloom_and_doom.common.registry.BnDEntities;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.EntityType;
@@ -17,18 +17,18 @@ public class SporeProjectile extends PlantProjectile {
     }
 
     public SporeProjectile(Level level, LivingEntity shooter) {
-        super(ModEntities.SPORE_PROJECTILE.get(), shooter, level);
+        super(BnDEntities.SPORE_PROJECTILE.get(), shooter, level);
     }
 
     public SporeProjectile(Level level, double x, double y, double z) {
-        super(ModEntities.SPORE_PROJECTILE.get(), x, y, z, level);
+        super(BnDEntities.SPORE_PROJECTILE.get(), x, y, z, level);
     }
 
     protected @NotNull Item getDefaultItem() {
-        return ModItems.SPORE.get();
+        return BnDItems.SPORE.get();
     }
 
     protected @NotNull ResourceKey<DamageType> setDamageType() {
-        return ModDamageTypes.SPORE_DAMAGE;
+        return BnDDamageTypes.SPORE_DAMAGE;
     }
 }

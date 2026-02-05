@@ -23,23 +23,23 @@ public class BloomAndDoom {
     public BloomAndDoom(IEventBus modEventBus, ModContainer modContainer) {
         NeoForge.EVENT_BUS.register(this);
 
-        ModEntities.ENTITY_TYPES.register(modEventBus);
-        ModEffects.MOB_EFFECTS.register(modEventBus);
-        ModPotions.POTIONS.register(modEventBus);
-        ModParticles.PARTICLE_TYPES.register(modEventBus);
-        ModDataAttachments.ATTACHMENT_TYPES.register(modEventBus);
+        BnDEntities.ENTITY_TYPES.register(modEventBus);
+        BnDEffects.MOB_EFFECTS.register(modEventBus);
+        BnDPotions.POTIONS.register(modEventBus);
+        BnDParticles.PARTICLE_TYPES.register(modEventBus);
+        BnDDataAttachments.ATTACHMENT_TYPES.register(modEventBus);
 
-        ModItems.register(modEventBus);
-        ModDataComponents.register(modEventBus);
+        BnDItems.register(modEventBus);
+        BnDDataComponents.register(modEventBus);
 
-        ModBlocks.register(modEventBus);
-        ModBlockEntities.register(modEventBus);
+        BnDBlocks.register(modEventBus);
+        BnDBlockEntities.register(modEventBus);
 
-        ModVillagers.POI_TYPES.register(modEventBus);
-        ModVillagers.VILLAGER_PROFESSIONS.register(modEventBus);
+        BnDVillagers.POI_TYPES.register(modEventBus);
+        BnDVillagers.VILLAGER_PROFESSIONS.register(modEventBus);
 
-        ModSounds.register(modEventBus);
-        ModCreativeModeTabs.register(modEventBus);
+        BnDSounds.register(modEventBus);
+        BnDCreativeModeTabs.register(modEventBus);
         LootModifierInit.LOOT_MODIFIERS.register(modEventBus);
 
         IModFile modFile = ModLoadingContext.get().getActiveContainer().getModInfo().getOwningFile().getFile();

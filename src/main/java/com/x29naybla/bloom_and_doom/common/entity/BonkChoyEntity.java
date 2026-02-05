@@ -1,8 +1,8 @@
 package com.x29naybla.bloom_and_doom.common.entity;
 
-import com.x29naybla.bloom_and_doom.common.registry.ModDataAttachments;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
-import com.x29naybla.bloom_and_doom.common.tag.ModTags;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDDataAttachments;
+import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
@@ -20,14 +20,14 @@ public class BonkChoyEntity extends Plant {
 
     //Properties
     public BonkChoyEntity(EntityType<? extends Plant> entityType, Level level) {
-        super(entityType, level, ModTags.Items.SUSTAINS_BONK_CHOYS, ModItems.CHOMPER_SEED_PACKET.toStack(), ModItems.POTTED_BONK_CHOY.toStack());
+        super(entityType, level, BnDTags.Items.SUSTAINS_BONK_CHOYS, BnDItems.CHOMPER_SEED_PACKET.toStack(), BnDItems.POTTED_BONK_CHOY.toStack());
     }
 
     //Goals and AI
     protected void registerGoals(){
         goalSelector.addGoal(1, new MeleeAttackGoal(this, 1f, true));
         goalSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, false, true,
-                (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(ModTags.Entities.PLANT_ENEMIES) || livingEntity.getData(ModDataAttachments.ZOMBIE))));
+                (target) -> target instanceof LivingEntity livingEntity && (livingEntity.getType().is(BnDTags.Entities.PLANT_ENEMIES) || livingEntity.getData(BnDDataAttachments.ZOMBIE))));
         goalSelector.addGoal(3, new RandomLookAroundGoal(this));
     }
 

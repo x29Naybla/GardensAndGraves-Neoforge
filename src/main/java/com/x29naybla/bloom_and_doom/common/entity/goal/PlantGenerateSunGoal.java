@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.common.entity.goal;
 
 import com.x29naybla.bloom_and_doom.common.entity.SolarPlant;
-import com.x29naybla.bloom_and_doom.common.registry.ModItems;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -47,7 +47,7 @@ public class PlantGenerateSunGoal extends Goal {
                 }
                 if (!this.plant.level().isClientSide && this.plant.sunTime <= 0) {
                     this.plant.playSound(this.sound, 1.0F, (this.plant.getRandom().nextFloat() - this.plant.getRandom().nextFloat()) * 0.2F + 1.0F);
-                    this.plant.spawnAtLocation(ModItems.SUN);
+                    this.plant.spawnAtLocation(BnDItems.SUN);
                     this.plant.gameEvent(GameEvent.ENTITY_PLACE);
                     if (this.plant.isBaby()) {
                         this.plant.sunTime = plant.maxSunTime*2;

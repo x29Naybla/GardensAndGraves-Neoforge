@@ -1,7 +1,7 @@
 package com.x29naybla.bloom_and_doom.data;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
-import com.x29naybla.bloom_and_doom.data.advancement.BNDAdvancementGenerator;
+import com.x29naybla.bloom_and_doom.data.advancement.BnDAdvancementGenerator;
 import com.x29naybla.bloom_and_doom.data.loot.BNDBlockLoot;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -38,6 +38,6 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new EntityTags(packOutput, lookupProvider, existingFileHelper));
 
-        generator.addProvider(event.includeClient(), new AdvancementProvider(packOutput, lookupProvider, existingFileHelper, List.of(new BNDAdvancementGenerator())));
+        generator.addProvider(event.includeClient(), new AdvancementProvider(packOutput, lookupProvider, existingFileHelper, List.of(new BnDAdvancementGenerator())));
     }
 }
