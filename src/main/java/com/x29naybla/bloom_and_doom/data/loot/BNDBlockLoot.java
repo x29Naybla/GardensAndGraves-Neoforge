@@ -41,21 +41,37 @@ public class BNDBlockLoot extends BlockLootSubProvider {
         dropSelf(BnDBlocks.GRAVESTONE_SANDSTONE.get());
 
         dropSelf(BnDBlocks.WHITE_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.WHITE_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.LIGHT_GRAY_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.LIGHT_GRAY_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.GRAY_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.GRAY_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.BLACK_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.BLACK_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.BROWN_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.BROWN_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.RED_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.RED_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.ORANGE_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.ORANGE_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.YELLOW_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.YELLOW_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.LIME_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.LIME_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.GREEN_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.GREEN_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.CYAN_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.CYAN_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.LIGHT_BLUE_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.LIGHT_BLUE_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.BLUE_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.BLUE_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.PURPLE_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.PURPLE_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.MAGENTA_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.MAGENTA_PLASTIC_STAIRS.get());
         dropSelf(BnDBlocks.PINK_PLASTIC_BLOCK.get());
+        dropSelf(BnDBlocks.PINK_PLASTIC_STAIRS.get());
     }
 
     @Override

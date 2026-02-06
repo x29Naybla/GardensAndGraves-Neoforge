@@ -244,7 +244,41 @@ public class BnDEvents {
             event.insertAfter(Blocks.SMITHING_TABLE.asItem().getDefaultInstance(), BnDBlocks.POTTING_TABLE.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.insertAfter(Raid.getLeaderBannerInstance(event.getParameters().holders().lookupOrThrow(Registries.BANNER_PATTERN)), ZombieBanner.getZombieLeaderBannerInstance(event.getParameters().holders().lookupOrThrow(Registries.BANNER_PATTERN)), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
-        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES){
+        if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
+            event.accept(BnDBlocks.WHITE_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.WHITE_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.LIGHT_GRAY_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.LIGHT_GRAY_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.GRAY_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.GRAY_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.BLACK_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.BLACK_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.BROWN_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.BROWN_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.RED_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.RED_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.ORANGE_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.ORANGE_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.YELLOW_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.YELLOW_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.LIME_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.LIME_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.GREEN_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.GREEN_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.CYAN_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.CYAN_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.LIGHT_BLUE_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.LIGHT_BLUE_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.BLUE_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.BLUE_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.PURPLE_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.PURPLE_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.MAGENTA_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.MAGENTA_PLASTIC_STAIRS);
+            event.accept(BnDBlocks.PINK_PLASTIC_BLOCK);
+            event.accept(BnDBlocks.PINK_PLASTIC_STAIRS);
+        }
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.insertAfter(Items.MUSIC_DISC_PIGSTEP.getDefaultInstance(), BnDItems.MUSIC_DISC_WABBY_WABBO.toStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.accept(BnDItems.WHITE_WATERING_CAN);
             event.accept(BnDItems.LIGHT_GRAY_WATERING_CAN);

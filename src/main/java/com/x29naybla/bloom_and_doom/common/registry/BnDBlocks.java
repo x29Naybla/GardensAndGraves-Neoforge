@@ -8,6 +8,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -63,36 +64,84 @@ public class BnDBlocks {
 
     public static final DeferredBlock<Block> WHITE_PLASTIC_BLOCK = registerBlock("white_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> WHITE_PLASTIC_STAIRS = registerBlock("white_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.WHITE_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> LIGHT_GRAY_PLASTIC_BLOCK = registerBlock("light_gray_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> LIGHT_GRAY_PLASTIC_STAIRS = registerBlock("light_gray_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.LIGHT_GRAY_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> GRAY_PLASTIC_BLOCK = registerBlock("gray_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> GRAY_PLASTIC_STAIRS = registerBlock("gray_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.GRAY_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> BLACK_PLASTIC_BLOCK = registerBlock("black_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> BLACK_PLASTIC_STAIRS = registerBlock("black_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.BLACK_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> BROWN_PLASTIC_BLOCK = registerBlock("brown_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> BROWN_PLASTIC_STAIRS = registerBlock("brown_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.BROWN_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> RED_PLASTIC_BLOCK = registerBlock("red_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> RED_PLASTIC_STAIRS = registerBlock("red_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.RED_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> ORANGE_PLASTIC_BLOCK = registerBlock("orange_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> ORANGE_PLASTIC_STAIRS = registerBlock("orange_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.ORANGE_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> YELLOW_PLASTIC_BLOCK = registerBlock("yellow_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> YELLOW_PLASTIC_STAIRS = registerBlock("yellow_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.YELLOW_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> LIME_PLASTIC_BLOCK = registerBlock("lime_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> LIME_PLASTIC_STAIRS = registerBlock("lime_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.LIME_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> GREEN_PLASTIC_BLOCK = registerBlock("green_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> GREEN_PLASTIC_STAIRS = registerBlock("green_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.GREEN_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> CYAN_PLASTIC_BLOCK = registerBlock("cyan_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> CYAN_PLASTIC_STAIRS = registerBlock("cyan_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.CYAN_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> LIGHT_BLUE_PLASTIC_BLOCK = registerBlock("light_blue_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> LIGHT_BLUE_PLASTIC_STAIRS = registerBlock("light_blue_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.LIGHT_BLUE_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> BLUE_PLASTIC_BLOCK = registerBlock("blue_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> BLUE_PLASTIC_STAIRS = registerBlock("blue_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.BLUE_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> PURPLE_PLASTIC_BLOCK = registerBlock("purple_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> PURPLE_PLASTIC_STAIRS = registerBlock("purple_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.PURPLE_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> MAGENTA_PLASTIC_BLOCK = registerBlock("magenta_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> MAGENTA_PLASTIC_STAIRS = registerBlock("magenta_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.MAGENTA_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<Block> PINK_PLASTIC_BLOCK = registerBlock("pink_plastic_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<StairBlock> PINK_PLASTIC_STAIRS = registerBlock("pink_plastic_stairs",
+            () -> new StairBlock(BnDBlocks.PINK_PLASTIC_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

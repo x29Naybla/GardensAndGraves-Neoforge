@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "bloom_and_doom:block/yellow_plastic_block",
+    "side": "bloom_and_doom:block/yellow_plastic_block",
+    "top": "bloom_and_doom:block/yellow_plastic_block"
+  }
+}

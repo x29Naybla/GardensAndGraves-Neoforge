@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "plastic_blocks",
+  "ingredients": [
+    {
+      "item": "minecraft:red_dye"
+    },
+    [
+      {
+        "item": "bloom_and_doom:black_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:blue_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:brown_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:cyan_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:gray_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:green_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:light_blue_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:light_gray_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:lime_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:magenta_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:orange_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:pink_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:purple_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:yellow_plastic_block"
+      },
+      {
+        "item": "bloom_and_doom:white_plastic_block"
+      }
+    ]
+  ],
+  "result": {
+    "count": 1,
+    "id": "bloom_and_doom:red_plastic_block"
+  }
+}

@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.entity.BannerPattern;
 public class BnDTags {
     public static class Blocks {
         public static final TagKey<Block> PLANTERS = createTag("planters");
+        public static final TagKey<Block> PLASTIC_BLOCKS = createTag("plastic_blocks");
         public static final TagKey<Block> SUPPORTS_PLANTS = createTag("supports_plants");
         public static final TagKey<Block> SUSTAINS_MUSHROOMS = createTag("sustains_mushrooms");
 

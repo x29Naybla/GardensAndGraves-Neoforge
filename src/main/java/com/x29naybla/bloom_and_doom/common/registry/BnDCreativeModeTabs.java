@@ -97,21 +97,37 @@ public class BnDCreativeModeTabs {
                         output.accept(BnDBlocks.PINK_PLANTER);
 
                         output.accept(BnDBlocks.WHITE_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.WHITE_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.LIGHT_GRAY_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.LIGHT_GRAY_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.GRAY_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.GRAY_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.BLACK_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.BLACK_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.BROWN_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.BROWN_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.RED_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.RED_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.ORANGE_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.ORANGE_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.YELLOW_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.YELLOW_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.LIME_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.LIME_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.GREEN_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.GREEN_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.CYAN_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.CYAN_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.LIGHT_BLUE_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.LIGHT_BLUE_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.BLUE_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.BLUE_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.PURPLE_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.PURPLE_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.MAGENTA_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.MAGENTA_PLASTIC_STAIRS);
                         output.accept(BnDBlocks.PINK_PLASTIC_BLOCK);
+                        output.accept(BnDBlocks.PINK_PLASTIC_STAIRS);
 
                         output.accept(BnDBlocks.GRAVESTONE);
                         output.accept(BnDBlocks.GRAVESTONE_SANDSTONE);

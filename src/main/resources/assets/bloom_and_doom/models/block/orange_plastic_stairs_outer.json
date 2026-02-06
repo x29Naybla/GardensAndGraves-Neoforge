@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "bloom_and_doom:block/orange_plastic_block",
+    "side": "bloom_and_doom:block/orange_plastic_block",
+    "top": "bloom_and_doom:block/orange_plastic_block"
+  }
+}

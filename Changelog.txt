@@ -10,3 +10,11 @@ changelog:
 * "Mod" at the beginning of class names changed to "BnD" to avoid confusion when working with multiple mods
 * Merged the two event classes in Common into a single "BnDEvents"
 * Created "BnDZombiePlayerEvents" to keep all Zombie Player related events
+
+* slightly changed the textures of: Peashooter Seed Packet, Potted Peashooter, Snow Pea Seed Packet, Potted Snow Pea, Repeater Seed Packet, Potted Repeater
+* changed the textures of all blocks of plastic
+* fixed missing tags causing blocks of plastic to not be mineable
+* added plastic stairs and their recipes
+* added dyeing recipes for all blocks of plastic
+* renamed watering can recipes to include a "dye_" at the beginning
+* added blocks of plastic and plastic stairs to the "Colored Blocks" tab in the creative inventory

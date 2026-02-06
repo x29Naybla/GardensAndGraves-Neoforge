@@ -100,10 +100,12 @@ public class ItemTags extends ItemTagsProvider {
         tag(Tags.Items.DYED_WHITE)
                 .add(BnDBlocks.WHITE_PLANTER.asItem())
                 .add(BnDBlocks.WHITE_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.WHITE_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.WHITE_WATERING_CAN.get());
         tag(Tags.Items.DYED_LIGHT_GRAY)
                 .add(BnDBlocks.LIGHT_GRAY_PLANTER.asItem())
                 .add(BnDBlocks.LIGHT_GRAY_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.LIGHT_GRAY_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.LIGHT_GRAY_WATERING_CAN.get());
         tag(Tags.Items.DYED_GRAY)
                 .add(BnDBlocks.GRAY_PLANTER.asItem())
@@ -112,54 +114,67 @@ public class ItemTags extends ItemTagsProvider {
         tag(Tags.Items.DYED_BLACK)
                 .add(BnDBlocks.BLACK_PLANTER.asItem())
                 .add(BnDBlocks.BLACK_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.GRAY_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.BLACK_WATERING_CAN.get());
         tag(Tags.Items.DYED_BROWN)
                 .add(BnDBlocks.BROWN_PLANTER.asItem())
                 .add(BnDBlocks.BROWN_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.BROWN_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.BROWN_WATERING_CAN.get());
         tag(Tags.Items.DYED_RED)
                 .add(BnDBlocks.RED_PLANTER.asItem())
                 .add(BnDBlocks.RED_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.RED_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.RED_WATERING_CAN.get());
         tag(Tags.Items.DYED_ORANGE)
                 .add(BnDBlocks.ORANGE_PLANTER.asItem())
                 .add(BnDBlocks.ORANGE_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.ORANGE_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.ORANGE_WATERING_CAN.get());
         tag(Tags.Items.DYED_YELLOW)
                 .add(BnDBlocks.YELLOW_PLANTER.asItem())
                 .add(BnDBlocks.YELLOW_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.YELLOW_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.YELLOW_WATERING_CAN.get());
         tag(Tags.Items.DYED_LIME)
                 .add(BnDBlocks.LIME_PLANTER.asItem())
                 .add(BnDBlocks.LIME_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.LIME_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.LIME_WATERING_CAN.get());
         tag(Tags.Items.DYED_GREEN)
                 .add(BnDBlocks.GREEN_PLANTER.asItem())
                 .add(BnDBlocks.GREEN_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.GREEN_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.GREEN_WATERING_CAN.get());
         tag(Tags.Items.DYED_CYAN)
                 .add(BnDBlocks.CYAN_PLANTER.asItem())
                 .add(BnDBlocks.CYAN_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.CYAN_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.CYAN_WATERING_CAN.get());
         tag(Tags.Items.DYED_LIGHT_BLUE)
                 .add(BnDBlocks.LIGHT_BLUE_PLANTER.asItem())
                 .add(BnDBlocks.LIGHT_BLUE_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.LIGHT_BLUE_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.LIGHT_BLUE_WATERING_CAN.get());
         tag(Tags.Items.DYED_BLUE)
                 .add(BnDBlocks.BLUE_PLANTER.asItem())
                 .add(BnDBlocks.BLUE_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.BLUE_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.BLUE_WATERING_CAN.get());
         tag(Tags.Items.DYED_PURPLE)
                 .add(BnDBlocks.PURPLE_PLANTER.asItem())
                 .add(BnDBlocks.PURPLE_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.PURPLE_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.PURPLE_WATERING_CAN.get());
         tag(Tags.Items.DYED_MAGENTA)
                 .add(BnDBlocks.MAGENTA_PLANTER.asItem())
                 .add(BnDBlocks.MAGENTA_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.MAGENTA_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.MAGENTA_WATERING_CAN.get());
         tag(Tags.Items.DYED_PINK)
                 .add(BnDBlocks.PINK_PLANTER.asItem())
                 .add(BnDBlocks.PINK_PLASTIC_BLOCK.asItem())
+                .add(BnDBlocks.PINK_PLASTIC_STAIRS.asItem())
                 .add(BnDItems.PINK_WATERING_CAN.get());
 
 
