@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "bloom_and_doom:block/black_plastic_block"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "plastic_wall",
+  "key": {
+    "#": {
+      "item": "bloom_and_doom:pink_plastic_block"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "bloom_and_doom:pink_plastic_wall"
+  }
+}

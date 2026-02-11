@@ -3,6 +3,9 @@
     "bloom_and_doom:magenta_planter",
     "bloom_and_doom:magenta_plastic_block",
     "bloom_and_doom:magenta_plastic_stairs",
+    "bloom_and_doom:magenta_plastic_slab",
+    "bloom_and_doom:magenta_plastic_wall",
+    "bloom_and_doom:magenta_plastic",
     "bloom_and_doom:magenta_watering_can"
   ]
 }

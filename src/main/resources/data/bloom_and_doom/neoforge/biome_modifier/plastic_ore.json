@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "bloom_and_doom:plastic_ore",
+  "step": "underground_ores"
+}

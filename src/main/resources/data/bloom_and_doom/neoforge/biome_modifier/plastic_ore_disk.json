@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#bloom_and_doom:generates_plastic_disks",
+  "features": "bloom_and_doom:disk_plastic_ore",
+  "step": "top_layer_modification"
+}

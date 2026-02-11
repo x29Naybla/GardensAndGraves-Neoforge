@@ -1,6 +1,9 @@
 {
   "values": [
     "bloom_and_doom:gray_planter",
-    "bloom_and_doom:gray_plastic_block"
+    "bloom_and_doom:gray_plastic_block",
+    "bloom_and_doom:gray_plastic_stairs",
+    "bloom_and_doom:gray_plastic_slab",
+    "bloom_and_doom:gray_plastic_wall"
   ]
 }

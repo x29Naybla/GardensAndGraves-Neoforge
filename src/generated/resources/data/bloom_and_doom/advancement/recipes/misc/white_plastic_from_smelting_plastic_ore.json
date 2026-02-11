@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_plastic_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bloom_and_doom:plastic_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bloom_and_doom:white_plastic_from_smelting_plastic_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_plastic_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bloom_and_doom:white_plastic_from_smelting_plastic_ore"
+    ]
+  }
+}

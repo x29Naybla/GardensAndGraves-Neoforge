@@ -17,4 +17,19 @@ changelog:
 * added plastic stairs and their recipes
 * added dyeing recipes for all blocks of plastic
 * renamed watering can recipes to include a "dye_" at the beginning
-* added blocks of plastic and plastic stairs to the "Colored Blocks" tab in the creative inventory
+* added blocks of plastic and plastic stairs to the "Colored Blocks" creative inventory tab
+* added plastic stairs to the "B&D Blocks" creative inventory tab
+
+* added a Plastic Ore block, that upon breaking drops Plastic Chunks
+* added Plastic ore to worldgen, generating at the bottom of the oceans, beaches, and underground
+* added plastic items to all 16 colors
+* added recipe to smelt/blast Plastic Ore/Plastic Chunks into White Plastic
+* added plastic slabs and their recipes
+* added plastic walls and their recipes
+* added plastic slabs and plastic walls to the "Colored Blocks" and to the "B&D Blocks" tabs in the creative inventory
+* changed the textures of watering cans to resemble plastic more and be less metallic
+* added recipes for all colored watering cans using their respective colored plastic item
+* moved the position of watering cans in the "Tools & Utilities" creative inventory tab
+* added compat to Arts and Craft's paintbrushes
+* fixed capitalization issues in the Brazilian Portuguese translations
+* fixed the recipe for Brainz Banner Pattern being unlocked in the recipe book by acquiring any item

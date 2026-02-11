@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "bloom_and_doom:block/brown_plastic_block",
+    "side": "bloom_and_doom:block/brown_plastic_slab_side",
+    "top": "bloom_and_doom:block/brown_plastic_block"
+  }
+}

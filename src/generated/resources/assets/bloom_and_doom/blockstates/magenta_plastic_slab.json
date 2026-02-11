@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "bloom_and_doom:block/magenta_plastic_slab"
+    },
+    "type=double": {
+      "model": "bloom_and_doom:block/magenta_plastic_slab_double"
+    },
+    "type=top": {
+      "model": "bloom_and_doom:block/magenta_plastic_slab_top"
+    }
+  }
+}

@@ -1,8 +1,6 @@
 package com.x29naybla.bloom_and_doom.data;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
-import com.x29naybla.bloom_and_doom.data.advancement.BnDAdvancementGenerator;
-import com.x29naybla.bloom_and_doom.data.loot.BNDBlockLoot;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -30,6 +28,7 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(BNDBlockLoot::new, LootContextParamSets.BLOCK)), lookupProvider));
+        generator.addProvider(event.includeServer(), new BnDRecipeProvider(packOutput, lookupProvider));
 
         BlockTagsProvider blockTagsProvider = new BlockTags(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
@@ -39,5 +38,8 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new EntityTags(packOutput, lookupProvider, existingFileHelper));
 
         generator.addProvider(event.includeClient(), new AdvancementProvider(packOutput, lookupProvider, existingFileHelper, List.of(new BnDAdvancementGenerator())));
+
+        generator.addProvider(event.includeClient(), new BnDItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new BnDBlockStateProvider(packOutput, existingFileHelper));
     }
 }

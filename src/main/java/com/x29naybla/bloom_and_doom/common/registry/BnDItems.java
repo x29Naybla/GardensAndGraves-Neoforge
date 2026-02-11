@@ -22,6 +22,41 @@ public class BnDItems {
     public static final DeferredItem<Item> BRAIN = ITEMS.register("brain",
             () -> new Item(new Item.Properties().food(FoodValues.BRAIN)));
 
+    public static final DeferredItem<Item> PLASTIC_CHUNKS = ITEMS.register("plastic_chunks",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> WHITE_PLASTIC = ITEMS.register("white_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> LIGHT_GRAY_PLASTIC = ITEMS.register("light_gray_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GRAY_PLASTIC = ITEMS.register("gray_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BLACK_PLASTIC = ITEMS.register("black_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BROWN_PLASTIC = ITEMS.register("brown_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RED_PLASTIC = ITEMS.register("red_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> ORANGE_PLASTIC = ITEMS.register("orange_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> YELLOW_PLASTIC = ITEMS.register("yellow_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> LIME_PLASTIC = ITEMS.register("lime_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GREEN_PLASTIC = ITEMS.register("green_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CYAN_PLASTIC = ITEMS.register("cyan_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> LIGHT_BLUE_PLASTIC = ITEMS.register("light_blue_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BLUE_PLASTIC = ITEMS.register("blue_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PURPLE_PLASTIC = ITEMS.register("purple_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MAGENTA_PLASTIC = ITEMS.register("magenta_plastic",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PINK_PLASTIC = ITEMS.register("pink_plastic",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> SUNFLOWER_SEED_PACKET = ITEMS.register("sunflower_seed_packet",
             () -> new SeedPacketItem(BnDEntities.SUNFLOWER.get(), 2, 5, new Item.Properties()));
     public static final DeferredItem<Item> MARIGOLD_SEED_PACKET = ITEMS.register("marigold_seed_packet",

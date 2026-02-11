@@ -6,7 +6,7 @@
       "tag": "minecraft:planks"
     },
     "@": {
-      "tag": "bloom_and_doom:flower_pots"
+      "tag": "c:flower_pots"
     }
   },
   "pattern": [

@@ -1,0 +1,22 @@
+{
+  "blocks": "#bloom_and_doom:planters",
+  "mappings": {
+    "arts_and_crafts:white_paintbrush": "bloom_and_doom:white_planter",
+    "arts_and_crafts:light_gray_paintbrush": "bloom_and_doom:light_gray_planter",
+    "arts_and_crafts:gray_paintbrush": "bloom_and_doom:gray_planter",
+    "arts_and_crafts:black_paintbrush": "bloom_and_doom:black_planter",
+    "arts_and_crafts:brown_paintbrush": "bloom_and_doom:brown_planter",
+    "arts_and_crafts:red_paintbrush": "bloom_and_doom:red_planter",
+    "arts_and_crafts:orange_paintbrush": "bloom_and_doom:orange_planter",
+    "arts_and_crafts:yellow_paintbrush": "bloom_and_doom:yellow_planter",
+    "arts_and_crafts:lime_paintbrush": "bloom_and_doom:lime_planter",
+    "arts_and_crafts:green_paintbrush": "bloom_and_doom:green_planter",
+    "arts_and_crafts:cyan_paintbrush": "bloom_and_doom:cyan_planter",
+    "arts_and_crafts:light_blue_paintbrush": "bloom_and_doom:light_blue_planter",
+    "arts_and_crafts:blue_paintbrush": "bloom_and_doom:blue_planter",
+    "arts_and_crafts:purple_paintbrush": "bloom_and_doom:purple_planter",
+    "arts_and_crafts:magenta_paintbrush": "bloom_and_doom:magenta_planter",
+    "arts_and_crafts:pink_paintbrush": "bloom_and_doom:pink_planter",
+    "arts_and_crafts:bleachdew_paintbrush": "bloom_and_doom:planter"
+  }
+}

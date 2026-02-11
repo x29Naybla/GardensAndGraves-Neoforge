@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "bloom_and_doom:block/green_plastic_block",
+    "side": "bloom_and_doom:block/green_plastic_slab_side"
+  }
+}

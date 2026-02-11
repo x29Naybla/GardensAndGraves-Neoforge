@@ -1,7 +1,11 @@
 {
   "values": [
     "#bloom_and_doom:planters",
+    "bloom_and_doom:plastic_ore",
     "#bloom_and_doom:plastic_blocks",
+    "#bloom_and_doom:plastic_stairs",
+    "#bloom_and_doom:plastic_slabs",
+    "#bloom_and_doom:plastic_walls",
     "#bloom_and_doom:gravestones"
   ]
 }

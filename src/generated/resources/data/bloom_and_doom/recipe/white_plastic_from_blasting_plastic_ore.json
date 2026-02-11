@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "plastic",
+  "ingredient": {
+    "item": "bloom_and_doom:plastic_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "bloom_and_doom:white_plastic"
+  }
+}

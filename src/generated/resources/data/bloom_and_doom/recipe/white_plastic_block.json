@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "plastic_block",
+  "key": {
+    "#": {
+      "item": "bloom_and_doom:white_plastic"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 4,
+    "id": "bloom_and_doom:white_plastic_block"
+  }
+}

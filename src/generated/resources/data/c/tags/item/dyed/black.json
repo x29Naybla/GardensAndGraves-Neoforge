@@ -2,7 +2,10 @@
   "values": [
     "bloom_and_doom:black_planter",
     "bloom_and_doom:black_plastic_block",
-    "bloom_and_doom:gray_plastic_stairs",
+    "bloom_and_doom:black_plastic_stairs",
+    "bloom_and_doom:black_plastic_slab",
+    "bloom_and_doom:black_plastic_wall",
+    "bloom_and_doom:black_plastic",
     "bloom_and_doom:black_watering_can"
   ]
 }

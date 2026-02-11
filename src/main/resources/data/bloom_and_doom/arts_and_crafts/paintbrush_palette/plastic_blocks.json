@@ -1,0 +1,21 @@
+{
+  "blocks": "#bloom_and_doom:plastic_blocks",
+  "mappings": {
+    "arts_and_crafts:white_paintbrush": "bloom_and_doom:white_plastic_block",
+    "arts_and_crafts:light_gray_paintbrush": "bloom_and_doom:light_gray_plastic_block",
+    "arts_and_crafts:gray_paintbrush": "bloom_and_doom:gray_plastic_block",
+    "arts_and_crafts:black_paintbrush": "bloom_and_doom:black_plastic_block",
+    "arts_and_crafts:brown_paintbrush": "bloom_and_doom:brown_plastic_block",
+    "arts_and_crafts:red_paintbrush": "bloom_and_doom:red_plastic_block",
+    "arts_and_crafts:orange_paintbrush": "bloom_and_doom:orange_plastic_block",
+    "arts_and_crafts:yellow_paintbrush": "bloom_and_doom:yellow_plastic_block",
+    "arts_and_crafts:lime_paintbrush": "bloom_and_doom:lime_plastic_block",
+    "arts_and_crafts:green_paintbrush": "bloom_and_doom:green_plastic_block",
+    "arts_and_crafts:cyan_paintbrush": "bloom_and_doom:cyan_plastic_block",
+    "arts_and_crafts:light_blue_paintbrush": "bloom_and_doom:light_blue_plastic_block",
+    "arts_and_crafts:blue_paintbrush": "bloom_and_doom:blue_plastic_block",
+    "arts_and_crafts:purple_paintbrush": "bloom_and_doom:purple_plastic_block",
+    "arts_and_crafts:magenta_paintbrush": "bloom_and_doom:magenta_plastic_block",
+    "arts_and_crafts:pink_paintbrush": "bloom_and_doom:pink_plastic_block"
+  }
+}

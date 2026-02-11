@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "plastic",
+  "ingredients": [
+    {
+      "item": "bloom_and_doom:pink_plastic_block"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "bloom_and_doom:pink_plastic"
+  }
+}

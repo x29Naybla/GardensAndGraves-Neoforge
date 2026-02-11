@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "plastic",
+  "ingredient": {
+    "item": "bloom_and_doom:plastic_chunks"
+  },
+  "result": {
+    "count": 1,
+    "id": "bloom_and_doom:white_plastic"
+  }
+}

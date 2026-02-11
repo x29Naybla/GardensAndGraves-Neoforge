@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "bloom_and_doom:block/purple_plastic_block"
+  }
+}
