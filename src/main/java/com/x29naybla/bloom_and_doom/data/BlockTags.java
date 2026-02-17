@@ -106,7 +106,6 @@ public class BlockTags extends BlockTagsProvider {
                 .add(BnDBlocks.RED_PLASTIC_WALL.get())
                 .add(BnDBlocks.ORANGE_PLASTIC_WALL.get())
                 .add(BnDBlocks.YELLOW_PLASTIC_WALL.get())
-                .add(BnDBlocks.LIME_PLASTIC_SLAB.get())
                 .add(BnDBlocks.LIME_PLASTIC_WALL.get())
                 .add(BnDBlocks.GREEN_PLASTIC_WALL.get())
                 .add(BnDBlocks.CYAN_PLASTIC_WALL.get())
@@ -115,6 +114,24 @@ public class BlockTags extends BlockTagsProvider {
                 .add(BnDBlocks.PURPLE_PLASTIC_WALL.get())
                 .add(BnDBlocks.MAGENTA_PLASTIC_WALL.get())
                 .add(BnDBlocks.PINK_PLASTIC_WALL.get());
+
+        tag(BnDTags.Blocks.TRAFFIC_CONES)
+                .add(BnDBlocks.WHITE_TRAFFIC_CONE.get())
+                .add(BnDBlocks.LIGHT_GRAY_TRAFFIC_CONE.get())
+                .add(BnDBlocks.GRAY_TRAFFIC_CONE.get())
+                .add(BnDBlocks.BLACK_TRAFFIC_CONE.get())
+                .add(BnDBlocks.BROWN_TRAFFIC_CONE.get())
+                .add(BnDBlocks.RED_TRAFFIC_CONE.get())
+                .add(BnDBlocks.ORANGE_TRAFFIC_CONE.get())
+                .add(BnDBlocks.YELLOW_TRAFFIC_CONE.get())
+                .add(BnDBlocks.LIME_TRAFFIC_CONE.get())
+                .add(BnDBlocks.GREEN_TRAFFIC_CONE.get())
+                .add(BnDBlocks.CYAN_TRAFFIC_CONE.get())
+                .add(BnDBlocks.LIGHT_BLUE_TRAFFIC_CONE.get())
+                .add(BnDBlocks.BLUE_TRAFFIC_CONE.get())
+                .add(BnDBlocks.PURPLE_TRAFFIC_CONE.get())
+                .add(BnDBlocks.MAGENTA_TRAFFIC_CONE.get())
+                .add(BnDBlocks.PINK_TRAFFIC_CONE.get());
 
         tag(BnDTags.Blocks.SUPPORTS_PLANTS)
                 .addTag(net.minecraft.tags.BlockTags.DIRT)
@@ -186,97 +203,113 @@ public class BlockTags extends BlockTagsProvider {
                 .add(BnDBlocks.WHITE_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.WHITE_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.WHITE_PLASTIC_SLAB.get())
-                .add(BnDBlocks.WHITE_PLASTIC_WALL.get());
+                .add(BnDBlocks.WHITE_PLASTIC_WALL.get())
+                .add(BnDBlocks.WHITE_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_LIGHT_GRAY)
                 .add(BnDBlocks.LIGHT_GRAY_PLANTER.get())
                 .add(BnDBlocks.LIGHT_GRAY_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.LIGHT_GRAY_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.LIGHT_GRAY_PLASTIC_SLAB.get())
-                .add(BnDBlocks.LIGHT_GRAY_PLASTIC_WALL.get());
+                .add(BnDBlocks.LIGHT_GRAY_PLASTIC_WALL.get())
+                .add(BnDBlocks.LIGHT_GRAY_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_GRAY)
                 .add(BnDBlocks.GRAY_PLANTER.get())
                 .add(BnDBlocks.GRAY_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.GRAY_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.GRAY_PLASTIC_SLAB.get())
-                .add(BnDBlocks.GRAY_PLASTIC_WALL.get());
+                .add(BnDBlocks.GRAY_PLASTIC_WALL.get())
+                .add(BnDBlocks.GRAY_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_BLACK)
                 .add(BnDBlocks.BLACK_PLANTER.get())
                 .add(BnDBlocks.BLACK_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.BLACK_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.BLACK_PLASTIC_SLAB.get())
-                .add(BnDBlocks.BLACK_PLASTIC_WALL.get());
+                .add(BnDBlocks.BLACK_PLASTIC_WALL.get())
+                .add(BnDBlocks.BLACK_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_BROWN)
                 .add(BnDBlocks.BROWN_PLANTER.get())
                 .add(BnDBlocks.BROWN_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.BROWN_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.BROWN_PLASTIC_SLAB.get())
-                .add(BnDBlocks.BROWN_PLASTIC_WALL.get());
+                .add(BnDBlocks.BROWN_PLASTIC_WALL.get())
+                .add(BnDBlocks.BROWN_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_RED)
                 .add(BnDBlocks.RED_PLANTER.get())
                 .add(BnDBlocks.RED_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.RED_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.RED_PLASTIC_SLAB.get())
-                .add(BnDBlocks.RED_PLASTIC_WALL.get());
+                .add(BnDBlocks.RED_PLASTIC_WALL.get())
+                .add(BnDBlocks.RED_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_ORANGE)
                 .add(BnDBlocks.ORANGE_PLANTER.get())
                 .add(BnDBlocks.ORANGE_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.ORANGE_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.ORANGE_PLASTIC_SLAB.get())
-                .add(BnDBlocks.ORANGE_PLASTIC_WALL.get());
+                .add(BnDBlocks.ORANGE_PLASTIC_WALL.get())
+                .add(BnDBlocks.ORANGE_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_YELLOW)
                 .add(BnDBlocks.YELLOW_PLANTER.get())
                 .add(BnDBlocks.YELLOW_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.YELLOW_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.YELLOW_PLASTIC_SLAB.get())
-                .add(BnDBlocks.YELLOW_PLASTIC_WALL.get());
+                .add(BnDBlocks.YELLOW_PLASTIC_WALL.get())
+                .add(BnDBlocks.YELLOW_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_LIME)
                 .add(BnDBlocks.LIME_PLANTER.get())
                 .add(BnDBlocks.LIME_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.LIME_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.LIME_PLASTIC_SLAB.get())
-                .add(BnDBlocks.LIME_PLASTIC_WALL.get());
+                .add(BnDBlocks.LIME_PLASTIC_WALL.get())
+                .add(BnDBlocks.LIME_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_GREEN)
                 .add(BnDBlocks.GREEN_PLANTER.get())
                 .add(BnDBlocks.GREEN_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.GREEN_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.GREEN_PLASTIC_SLAB.get())
-                .add(BnDBlocks.GREEN_PLASTIC_WALL.get());
+                .add(BnDBlocks.GREEN_PLASTIC_WALL.get())
+                .add(BnDBlocks.GREEN_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_CYAN)
                 .add(BnDBlocks.CYAN_PLANTER.get())
                 .add(BnDBlocks.CYAN_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.CYAN_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.CYAN_PLASTIC_SLAB.get())
-                .add(BnDBlocks.CYAN_PLASTIC_WALL.get());
+                .add(BnDBlocks.CYAN_PLASTIC_WALL.get())
+                .add(BnDBlocks.CYAN_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_LIGHT_BLUE)
                 .add(BnDBlocks.LIGHT_BLUE_PLANTER.get())
                 .add(BnDBlocks.LIGHT_BLUE_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.LIGHT_BLUE_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.LIGHT_BLUE_PLASTIC_SLAB.get())
-                .add(BnDBlocks.LIGHT_BLUE_PLASTIC_WALL.get());
+                .add(BnDBlocks.LIGHT_BLUE_PLASTIC_WALL.get())
+                .add(BnDBlocks.LIGHT_BLUE_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_BLUE)
                 .add(BnDBlocks.BLUE_PLANTER.get())
                 .add(BnDBlocks.BLUE_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.BLUE_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.BLUE_PLASTIC_SLAB.get())
-                .add(BnDBlocks.BLUE_PLASTIC_WALL.get());
+                .add(BnDBlocks.BLUE_PLASTIC_WALL.get())
+                .add(BnDBlocks.BLUE_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_PURPLE)
                 .add(BnDBlocks.PURPLE_PLANTER.get())
                 .add(BnDBlocks.PURPLE_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.PURPLE_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.PURPLE_PLASTIC_SLAB.get())
-                .add(BnDBlocks.PURPLE_PLASTIC_WALL.get());
+                .add(BnDBlocks.PURPLE_PLASTIC_WALL.get())
+                .add(BnDBlocks.PURPLE_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_MAGENTA)
                 .add(BnDBlocks.MAGENTA_PLANTER.get())
                 .add(BnDBlocks.MAGENTA_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.MAGENTA_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.MAGENTA_PLASTIC_SLAB.get())
-                .add(BnDBlocks.MAGENTA_PLASTIC_WALL.get());
+                .add(BnDBlocks.MAGENTA_PLASTIC_WALL.get())
+                .add(BnDBlocks.MAGENTA_TRAFFIC_CONE.get());
         tag(Tags.Blocks.DYED_PINK)
                 .add(BnDBlocks.PINK_PLANTER.get())
                 .add(BnDBlocks.PINK_PLASTIC_BLOCK.get())
                 .add(BnDBlocks.PINK_PLASTIC_STAIRS.get())
                 .add(BnDBlocks.PINK_PLASTIC_SLAB.get())
-                .add(BnDBlocks.PINK_PLASTIC_WALL.get());
+                .add(BnDBlocks.PINK_PLASTIC_WALL.get())
+                .add(BnDBlocks.PINK_TRAFFIC_CONE.get());
 
         tag(CommonTags.Blocks.MUSHROOMS)
                 .add(Blocks.BROWN_MUSHROOM)

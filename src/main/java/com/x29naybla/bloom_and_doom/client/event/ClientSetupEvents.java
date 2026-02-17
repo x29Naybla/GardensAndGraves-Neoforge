@@ -6,6 +6,7 @@ import com.x29naybla.bloom_and_doom.common.registry.BnDEntities;
 import com.x29naybla.bloom_and_doom.common.registry.BnDBlockEntities;
 import com.x29naybla.bloom_and_doom.client.renderer.block.PlanterBlockEntityRenderer;
 import com.x29naybla.bloom_and_doom.client.renderer.entity.*;
+import com.x29naybla.bloom_and_doom.common.registry.BnDItemProperties;
 import com.x29naybla.bloom_and_doom.common.registry.BnDParticles;
 import com.x29naybla.bloom_and_doom.client.particle.SleepingParticles;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -14,11 +15,16 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 @EventBusSubscriber(modid = BloomAndDoom.MOD_ID, value = Dist.CLIENT)
 public class ClientSetupEvents {
+    @SubscribeEvent
+    public static void onClientSetup(FMLClientSetupEvent event) {
+        BnDItemProperties.addCustomItemProperties();
+    }
 
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {

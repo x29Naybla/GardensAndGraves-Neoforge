@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bloom_and_doom:item/light_gray_traffic_cone"
+  },
+  "overrides": [
+    {
+      "model": "bloom_and_doom:block/light_gray_traffic_cone",
+      "predicate": {
+        "bloom_and_doom:equipped": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "parent":"bloom_and_doom:block/white_traffic_cone",
+  "textures":{
+    "1": "bloom_and_doom:block/light_gray_traffic_cone_bottom",
+    "2": "bloom_and_doom:block/light_gray_traffic_cone_side",
+    "3": "bloom_and_doom:block/light_gray_traffic_cone_top",
+    "particle": "bloom_and_doom:block/light_gray_plastic_block"
+  }
+}

@@ -103,6 +103,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.WHITE_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.WHITE_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.WHITE_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.WHITE_TRAFFIC_CONE.asItem())
                 .add(BnDItems.WHITE_PLASTIC.get())
                 .add(BnDItems.WHITE_WATERING_CAN.get());
         tag(Tags.Items.DYED_LIGHT_GRAY)
@@ -111,6 +112,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.LIGHT_GRAY_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.LIGHT_GRAY_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.LIGHT_GRAY_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.LIGHT_GRAY_TRAFFIC_CONE.asItem())
                 .add(BnDItems.LIGHT_GRAY_PLASTIC.get())
                 .add(BnDItems.LIGHT_GRAY_WATERING_CAN.get());
         tag(Tags.Items.DYED_GRAY)
@@ -119,6 +121,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.GRAY_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.GRAY_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.GRAY_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.GRAY_TRAFFIC_CONE.asItem())
                 .add(BnDItems.GRAY_PLASTIC.get())
                 .add(BnDItems.GRAY_WATERING_CAN.get());
         tag(Tags.Items.DYED_BLACK)
@@ -127,6 +130,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.BLACK_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.BLACK_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.BLACK_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.BLACK_TRAFFIC_CONE.asItem())
                 .add(BnDItems.BLACK_PLASTIC.get())
                 .add(BnDItems.BLACK_WATERING_CAN.get());
         tag(Tags.Items.DYED_BROWN)
@@ -135,6 +139,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.BROWN_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.BROWN_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.BROWN_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.BROWN_TRAFFIC_CONE.asItem())
                 .add(BnDItems.BROWN_PLASTIC.get())
                 .add(BnDItems.BROWN_WATERING_CAN.get());
         tag(Tags.Items.DYED_RED)
@@ -143,6 +148,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.RED_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.RED_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.RED_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.RED_TRAFFIC_CONE.asItem())
                 .add(BnDItems.RED_PLASTIC.get())
                 .add(BnDItems.RED_WATERING_CAN.get());
         tag(Tags.Items.DYED_ORANGE)
@@ -151,6 +157,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.ORANGE_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.ORANGE_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.ORANGE_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.ORANGE_TRAFFIC_CONE.asItem())
                 .add(BnDItems.ORANGE_PLASTIC.get())
                 .add(BnDItems.ORANGE_WATERING_CAN.get());
         tag(Tags.Items.DYED_YELLOW)
@@ -159,6 +166,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.YELLOW_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.YELLOW_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.YELLOW_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.YELLOW_TRAFFIC_CONE.asItem())
                 .add(BnDItems.YELLOW_PLASTIC.get())
                 .add(BnDItems.YELLOW_WATERING_CAN.get());
         tag(Tags.Items.DYED_LIME)
@@ -167,6 +175,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.LIME_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.LIME_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.LIME_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.LIME_TRAFFIC_CONE.asItem())
                 .add(BnDItems.LIME_PLASTIC.get())
                 .add(BnDItems.LIME_WATERING_CAN.get());
         tag(Tags.Items.DYED_GREEN)
@@ -175,6 +184,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.GREEN_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.GREEN_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.GREEN_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.GREEN_TRAFFIC_CONE.asItem())
                 .add(BnDItems.GREEN_PLASTIC.get())
                 .add(BnDItems.GREEN_WATERING_CAN.get());
         tag(Tags.Items.DYED_CYAN)
@@ -183,6 +193,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.CYAN_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.CYAN_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.CYAN_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.CYAN_TRAFFIC_CONE.asItem())
                 .add(BnDItems.CYAN_PLASTIC.get())
                 .add(BnDItems.CYAN_WATERING_CAN.get());
         tag(Tags.Items.DYED_LIGHT_BLUE)
@@ -191,6 +202,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.LIGHT_BLUE_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.LIGHT_BLUE_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.LIGHT_BLUE_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.LIGHT_BLUE_TRAFFIC_CONE.asItem())
                 .add(BnDItems.LIGHT_BLUE_PLASTIC.get())
                 .add(BnDItems.LIGHT_BLUE_WATERING_CAN.get());
         tag(Tags.Items.DYED_BLUE)
@@ -199,6 +211,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.BLUE_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.BLUE_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.BLUE_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.BLUE_TRAFFIC_CONE.asItem())
                 .add(BnDItems.BLUE_PLASTIC.get())
                 .add(BnDItems.BLUE_WATERING_CAN.get());
         tag(Tags.Items.DYED_PURPLE)
@@ -207,6 +220,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.PURPLE_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.PURPLE_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.PURPLE_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.PURPLE_TRAFFIC_CONE.asItem())
                 .add(BnDItems.PURPLE_PLASTIC.get())
                 .add(BnDItems.PURPLE_WATERING_CAN.get());
         tag(Tags.Items.DYED_MAGENTA)
@@ -215,6 +229,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.MAGENTA_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.MAGENTA_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.MAGENTA_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.MAGENTA_TRAFFIC_CONE.asItem())
                 .add(BnDItems.MAGENTA_PLASTIC.get())
                 .add(BnDItems.MAGENTA_WATERING_CAN.get());
         tag(Tags.Items.DYED_PINK)
@@ -223,6 +238,7 @@ public class ItemTags extends ItemTagsProvider {
                 .add(BnDBlocks.PINK_PLASTIC_STAIRS.asItem())
                 .add(BnDBlocks.PINK_PLASTIC_SLAB.asItem())
                 .add(BnDBlocks.PINK_PLASTIC_WALL.asItem())
+                .add(BnDBlocks.PINK_TRAFFIC_CONE.asItem())
                 .add(BnDItems.PINK_PLASTIC.get())
                 .add(BnDItems.PINK_WATERING_CAN.get());
 

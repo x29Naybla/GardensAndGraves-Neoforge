@@ -18,6 +18,7 @@ public class BnDTags {
         public static final TagKey<Block> PLASTIC_STAIRS = createTag("plastic_stairs");
         public static final TagKey<Block> PLASTIC_SLABS = createTag("plastic_slabs");
         public static final TagKey<Block> PLASTIC_WALLS = createTag("plastic_walls");
+        public static final TagKey<Block> TRAFFIC_CONES = createTag("traffic_cones");
         public static final TagKey<Block> SUPPORTS_PLANTS = createTag("supports_plants");
         public static final TagKey<Block> SUSTAINS_MUSHROOMS = createTag("sustains_mushrooms");
 

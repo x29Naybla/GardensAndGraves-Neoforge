@@ -49,96 +49,112 @@ public class BNDBlockLoot extends BlockLootSubProvider {
         add(BnDBlocks.WHITE_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.WHITE_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.WHITE_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.WHITE_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.LIGHT_GRAY_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.LIGHT_GRAY_PLASTIC_STAIRS.get());
         add(BnDBlocks.LIGHT_GRAY_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.LIGHT_GRAY_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.LIGHT_GRAY_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.LIGHT_GRAY_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.GRAY_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.GRAY_PLASTIC_STAIRS.get());
         add(BnDBlocks.GRAY_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.GRAY_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.GRAY_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.GRAY_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.BLACK_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.BLACK_PLASTIC_STAIRS.get());
         add(BnDBlocks.BLACK_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.BLACK_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.BLACK_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.BLACK_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.BROWN_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.BROWN_PLASTIC_STAIRS.get());
         add(BnDBlocks.BROWN_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.BROWN_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.BROWN_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.BROWN_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.RED_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.RED_PLASTIC_STAIRS.get());
         add(BnDBlocks.RED_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.RED_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.RED_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.RED_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.ORANGE_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.ORANGE_PLASTIC_STAIRS.get());
         add(BnDBlocks.ORANGE_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.ORANGE_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.ORANGE_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.ORANGE_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.YELLOW_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.YELLOW_PLASTIC_STAIRS.get());
         add(BnDBlocks.YELLOW_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.YELLOW_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.YELLOW_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.YELLOW_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.LIME_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.LIME_PLASTIC_STAIRS.get());
         add(BnDBlocks.LIME_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.LIME_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.LIME_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.LIME_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.GREEN_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.GREEN_PLASTIC_STAIRS.get());
         add(BnDBlocks.GREEN_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.GREEN_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.GREEN_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.GREEN_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.CYAN_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.CYAN_PLASTIC_STAIRS.get());
         add(BnDBlocks.CYAN_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.CYAN_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.CYAN_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.CYAN_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.LIGHT_BLUE_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.LIGHT_BLUE_PLASTIC_STAIRS.get());
         add(BnDBlocks.LIGHT_BLUE_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.LIGHT_BLUE_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.LIGHT_BLUE_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.LIGHT_BLUE_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.BLUE_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.BLUE_PLASTIC_STAIRS.get());
         add(BnDBlocks.BLUE_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.BLUE_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.BLUE_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.BLUE_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.PURPLE_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.PURPLE_PLASTIC_STAIRS.get());
         add(BnDBlocks.PURPLE_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.PURPLE_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.PURPLE_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.PURPLE_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.MAGENTA_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.MAGENTA_PLASTIC_STAIRS.get());
         add(BnDBlocks.MAGENTA_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.MAGENTA_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.MAGENTA_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.MAGENTA_TRAFFIC_CONE.get());
 
         dropSelf(BnDBlocks.PINK_PLASTIC_BLOCK.get());
         dropSelf(BnDBlocks.PINK_PLASTIC_STAIRS.get());
         add(BnDBlocks.PINK_PLASTIC_SLAB.get(),
                 block -> createSlabItemTable(BnDBlocks.PINK_PLASTIC_SLAB.get()));
         dropSelf(BnDBlocks.PINK_PLASTIC_WALL.get());
+        dropSelf(BnDBlocks.PINK_TRAFFIC_CONE.get());
     }
 
     @Override

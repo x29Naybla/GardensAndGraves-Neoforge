@@ -306,6 +306,134 @@ public class BnDRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_water_bucket", has(Items.WATER_BUCKET))
                 .group("watering_can").save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.WHITE_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.WHITE_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.WHITE_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.LIGHT_GRAY_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.LIGHT_GRAY_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.LIGHT_GRAY_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.GRAY_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.GRAY_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.GRAY_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.BLACK_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.BLACK_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.BLACK_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.BROWN_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.BROWN_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.BROWN_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.RED_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.RED_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.RED_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.ORANGE_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.ORANGE_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.ORANGE_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.YELLOW_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.YELLOW_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.YELLOW_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.LIME_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.LIME_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.LIME_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.GREEN_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.GREEN_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.GREEN_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.CYAN_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.CYAN_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.CYAN_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.LIGHT_BLUE_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.LIGHT_BLUE_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.LIGHT_BLUE_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.BLUE_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.BLUE_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.BLUE_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.PURPLE_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.PURPLE_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.PURPLE_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.MAGENTA_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.MAGENTA_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.MAGENTA_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, BnDBlocks.PINK_TRAFFIC_CONE, 2)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', BnDItems.PINK_PLASTIC)
+                .unlockedBy("has_plastic", has(BnDItems.PINK_PLASTIC))
+                .group("traffic_cone").save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BnDItems.WHITE_PLASTIC, 1)
                 .requires(BnDBlocks.WHITE_PLASTIC_BLOCK)
                 .unlockedBy("has_plastic_block", has(BnDBlocks.WHITE_PLASTIC_BLOCK))

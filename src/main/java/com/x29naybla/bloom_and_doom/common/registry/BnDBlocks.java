@@ -4,10 +4,14 @@ import com.x29naybla.bloom_and_doom.BloomAndDoom;
 import com.x29naybla.bloom_and_doom.common.block.GravestoneBlock;
 import com.x29naybla.bloom_and_doom.common.block.PlanterBlock;
 import com.x29naybla.bloom_and_doom.common.block.PottingTableBlock;
+import com.x29naybla.bloom_and_doom.common.block.TrafficConeBlock;
+import com.x29naybla.bloom_and_doom.common.item.TrafficConeItem;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -72,156 +76,236 @@ public class BnDBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
     public static final DeferredBlock<WallBlock> WHITE_PLASTIC_WALL = registerBlock("white_plastic_wall",
             () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> WHITE_TRAFFIC_CONE = registerTrafficConeBlock("white_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.WHITE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> LIGHT_GRAY_PLASTIC_BLOCK = registerBlock("light_gray_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_GRAY_CONCRETE)));
     public static final DeferredBlock<StairBlock> LIGHT_GRAY_PLASTIC_STAIRS = registerBlock("light_gray_plastic_stairs",
             () -> new StairBlock(BnDBlocks.LIGHT_GRAY_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_GRAY_CONCRETE)));
     public static final DeferredBlock<SlabBlock> LIGHT_GRAY_PLASTIC_SLAB = registerBlock("light_gray_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_GRAY_CONCRETE)));
     public static final DeferredBlock<WallBlock> LIGHT_GRAY_PLASTIC_WALL = registerBlock("light_gray_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_GRAY_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> LIGHT_GRAY_TRAFFIC_CONE = registerTrafficConeBlock("light_gray_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.LIGHT_GRAY)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> GRAY_PLASTIC_BLOCK = registerBlock("gray_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_CONCRETE)));
     public static final DeferredBlock<StairBlock> GRAY_PLASTIC_STAIRS = registerBlock("gray_plastic_stairs",
             () -> new StairBlock(BnDBlocks.GRAY_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_CONCRETE)));
     public static final DeferredBlock<SlabBlock> GRAY_PLASTIC_SLAB = registerBlock("gray_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_CONCRETE)));
     public static final DeferredBlock<WallBlock> GRAY_PLASTIC_WALL = registerBlock("gray_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GRAY_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> GRAY_TRAFFIC_CONE = registerTrafficConeBlock("gray_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.GRAY)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> BLACK_PLASTIC_BLOCK = registerBlock("black_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_CONCRETE)));
     public static final DeferredBlock<StairBlock> BLACK_PLASTIC_STAIRS = registerBlock("black_plastic_stairs",
             () -> new StairBlock(BnDBlocks.BLACK_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_CONCRETE)));
     public static final DeferredBlock<SlabBlock> BLACK_PLASTIC_SLAB = registerBlock("black_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_CONCRETE)));
     public static final DeferredBlock<WallBlock> BLACK_PLASTIC_WALL = registerBlock("black_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLACK_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> BLACK_TRAFFIC_CONE = registerTrafficConeBlock("black_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.BLACK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> BROWN_PLASTIC_BLOCK = registerBlock("brown_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_CONCRETE)));
     public static final DeferredBlock<StairBlock> BROWN_PLASTIC_STAIRS = registerBlock("brown_plastic_stairs",
             () -> new StairBlock(BnDBlocks.BROWN_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_CONCRETE)));
     public static final DeferredBlock<SlabBlock> BROWN_PLASTIC_SLAB = registerBlock("brown_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_CONCRETE)));
     public static final DeferredBlock<WallBlock> BROWN_PLASTIC_WALL = registerBlock("brown_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> BROWN_TRAFFIC_CONE = registerTrafficConeBlock("brown_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.BROWN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> RED_PLASTIC_BLOCK = registerBlock("red_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_CONCRETE)));
     public static final DeferredBlock<StairBlock> RED_PLASTIC_STAIRS = registerBlock("red_plastic_stairs",
             () -> new StairBlock(BnDBlocks.RED_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.RED_CONCRETE)));
     public static final DeferredBlock<SlabBlock> RED_PLASTIC_SLAB = registerBlock("red_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_CONCRETE)));
     public static final DeferredBlock<WallBlock> RED_PLASTIC_WALL = registerBlock("red_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> RED_TRAFFIC_CONE = registerTrafficConeBlock("red_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.RED)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> ORANGE_PLASTIC_BLOCK = registerBlock("orange_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_CONCRETE)));
     public static final DeferredBlock<StairBlock> ORANGE_PLASTIC_STAIRS = registerBlock("orange_plastic_stairs",
             () -> new StairBlock(BnDBlocks.ORANGE_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_CONCRETE)));
     public static final DeferredBlock<SlabBlock> ORANGE_PLASTIC_SLAB = registerBlock("orange_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_CONCRETE)));
     public static final DeferredBlock<WallBlock> ORANGE_PLASTIC_WALL = registerBlock("orange_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> ORANGE_TRAFFIC_CONE = registerTrafficConeBlock("orange_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.ORANGE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> YELLOW_PLASTIC_BLOCK = registerBlock("yellow_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_CONCRETE)));
     public static final DeferredBlock<StairBlock> YELLOW_PLASTIC_STAIRS = registerBlock("yellow_plastic_stairs",
             () -> new StairBlock(BnDBlocks.YELLOW_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_CONCRETE)));
     public static final DeferredBlock<SlabBlock> YELLOW_PLASTIC_SLAB = registerBlock("yellow_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_CONCRETE)));
     public static final DeferredBlock<WallBlock> YELLOW_PLASTIC_WALL = registerBlock("yellow_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.YELLOW_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> YELLOW_TRAFFIC_CONE = registerTrafficConeBlock("yellow_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.YELLOW)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> LIME_PLASTIC_BLOCK = registerBlock("lime_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.LIME_CONCRETE)));
     public static final DeferredBlock<StairBlock> LIME_PLASTIC_STAIRS = registerBlock("lime_plastic_stairs",
             () -> new StairBlock(BnDBlocks.LIME_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.LIME_CONCRETE)));
     public static final DeferredBlock<SlabBlock> LIME_PLASTIC_SLAB = registerBlock("lime_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LIME_CONCRETE)));
     public static final DeferredBlock<WallBlock> LIME_PLASTIC_WALL = registerBlock("lime_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LIME_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> LIME_TRAFFIC_CONE = registerTrafficConeBlock("lime_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.LIME)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> GREEN_PLASTIC_BLOCK = registerBlock("green_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GREEN_CONCRETE)));
     public static final DeferredBlock<StairBlock> GREEN_PLASTIC_STAIRS = registerBlock("green_plastic_stairs",
             () -> new StairBlock(BnDBlocks.GREEN_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.GREEN_CONCRETE)));
     public static final DeferredBlock<SlabBlock> GREEN_PLASTIC_SLAB = registerBlock("green_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GREEN_CONCRETE)));
     public static final DeferredBlock<WallBlock> GREEN_PLASTIC_WALL = registerBlock("green_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GREEN_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> GREEN_TRAFFIC_CONE = registerTrafficConeBlock("green_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.GREEN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> CYAN_PLASTIC_BLOCK = registerBlock("cyan_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.CYAN_CONCRETE)));
     public static final DeferredBlock<StairBlock> CYAN_PLASTIC_STAIRS = registerBlock("cyan_plastic_stairs",
             () -> new StairBlock(BnDBlocks.CYAN_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CYAN_CONCRETE)));
     public static final DeferredBlock<SlabBlock> CYAN_PLASTIC_SLAB = registerBlock("cyan_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CYAN_CONCRETE)));
     public static final DeferredBlock<WallBlock> CYAN_PLASTIC_WALL = registerBlock("cyan_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CYAN_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> CYAN_TRAFFIC_CONE = registerTrafficConeBlock("cyan_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.CYAN)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> LIGHT_BLUE_PLASTIC_BLOCK = registerBlock("light_blue_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_BLUE_CONCRETE)));
     public static final DeferredBlock<StairBlock> LIGHT_BLUE_PLASTIC_STAIRS = registerBlock("light_blue_plastic_stairs",
             () -> new StairBlock(BnDBlocks.LIGHT_BLUE_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_BLUE_CONCRETE)));
     public static final DeferredBlock<SlabBlock> LIGHT_BLUE_PLASTIC_SLAB = registerBlock("light_blue_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_BLUE_CONCRETE)));
     public static final DeferredBlock<WallBlock> LIGHT_BLUE_PLASTIC_WALL = registerBlock("light_blue_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.LIGHT_BLUE_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> LIGHT_BLUE_TRAFFIC_CONE = registerTrafficConeBlock("light_blue_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.LIGHT_BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> BLUE_PLASTIC_BLOCK = registerBlock("blue_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_CONCRETE)));
     public static final DeferredBlock<StairBlock> BLUE_PLASTIC_STAIRS = registerBlock("blue_plastic_stairs",
             () -> new StairBlock(BnDBlocks.BLUE_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_CONCRETE)));
     public static final DeferredBlock<SlabBlock> BLUE_PLASTIC_SLAB = registerBlock("blue_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_CONCRETE)));
     public static final DeferredBlock<WallBlock> BLUE_PLASTIC_WALL = registerBlock("blue_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BLUE_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> BLUE_TRAFFIC_CONE = registerTrafficConeBlock("blue_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.BLUE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> PURPLE_PLASTIC_BLOCK = registerBlock("purple_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.PURPLE_CONCRETE)));
     public static final DeferredBlock<StairBlock> PURPLE_PLASTIC_STAIRS = registerBlock("purple_plastic_stairs",
             () -> new StairBlock(BnDBlocks.PURPLE_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.PURPLE_CONCRETE)));
     public static final DeferredBlock<SlabBlock> PURPLE_PLASTIC_SLAB = registerBlock("purple_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PURPLE_CONCRETE)));
     public static final DeferredBlock<WallBlock> PURPLE_PLASTIC_WALL = registerBlock("purple_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PURPLE_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> PURPLE_TRAFFIC_CONE = registerTrafficConeBlock("purple_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.PURPLE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> MAGENTA_PLASTIC_BLOCK = registerBlock("magenta_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MAGENTA_CONCRETE)));
     public static final DeferredBlock<StairBlock> MAGENTA_PLASTIC_STAIRS = registerBlock("magenta_plastic_stairs",
             () -> new StairBlock(BnDBlocks.MAGENTA_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.MAGENTA_CONCRETE)));
     public static final DeferredBlock<SlabBlock> MAGENTA_PLASTIC_SLAB = registerBlock("magenta_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MAGENTA_CONCRETE)));
     public static final DeferredBlock<WallBlock> MAGENTA_PLASTIC_WALL = registerBlock("magenta_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MAGENTA_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> MAGENTA_TRAFFIC_CONE = registerTrafficConeBlock("magenta_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.MAGENTA)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     public static final DeferredBlock<Block> PINK_PLASTIC_BLOCK = registerBlock("pink_plastic_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_CONCRETE)));
     public static final DeferredBlock<StairBlock> PINK_PLASTIC_STAIRS = registerBlock("pink_plastic_stairs",
             () -> new StairBlock(BnDBlocks.PINK_PLASTIC_BLOCK.get().defaultBlockState(),
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_CONCRETE)));
     public static final DeferredBlock<SlabBlock> PINK_PLASTIC_SLAB = registerBlock("pink_plastic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_CONCRETE)));
     public static final DeferredBlock<WallBlock> PINK_PLASTIC_WALL = registerBlock("pink_plastic_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CONCRETE)));
+            () -> new WallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_CONCRETE)));
+    public static final DeferredBlock<TrafficConeBlock> PINK_TRAFFIC_CONE = registerTrafficConeBlock("pink_traffic_cone",
+            () -> new TrafficConeBlock(BlockBehaviour.Properties.of()
+                    .mapColor(DyeColor.PINK)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .strength(1.8F)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
@@ -229,8 +313,18 @@ public class BnDBlocks {
         return toReturn;
     }
 
+    private static <T extends Block> DeferredBlock<T> registerTrafficConeBlock(String name, Supplier<T> block){
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerTrafficConeBlockItem(name, toReturn);
+        return toReturn;
+    }
+
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){
         BnDItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+
+    private static <T extends Block> void registerTrafficConeBlockItem(String name, DeferredBlock<T> block){
+        BnDItems.ITEMS.register(name, () -> new TrafficConeItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus){

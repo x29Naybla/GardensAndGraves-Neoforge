@@ -33,3 +33,7 @@ changelog:
 * added compat to Arts and Craft's paintbrushes
 * fixed capitalization issues in the Brazilian Portuguese translations
 * fixed the recipe for Brainz Banner Pattern being unlocked in the recipe book by acquiring any item
+
+* fixed colored plastic blocks appearing white on the map instead of their respective colors
+* added traffic cones and their recipes
+* sprouts will grow into baby plants

@@ -45,7 +45,7 @@ import java.util.List;
 public class Plant extends TamableAnimal implements GeoEntity {
     public static final EntityDataAccessor<Boolean> DATA_IS_SLEEPING = SynchedEntityData.defineId(Plant.class, EntityDataSerializers.BOOLEAN);
     protected int ticksForSleepyParticles;
-    protected TagKey<Item> substrate;
+    public TagKey<Item> substrate;
     public int packetTime;
     public boolean fromPlanter;
     public boolean onPlanter;
@@ -63,7 +63,6 @@ public class Plant extends TamableAnimal implements GeoEntity {
         super(entityType, level);
         this.packetTime = 12000;
         this.fromPlanter = false;
-        this.onPlanter = level.getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity;
         this.seedPacket = seedPacket;
         this.pottedItem = pottedItem;
         this.isMushroom = false;
@@ -177,32 +176,41 @@ public class Plant extends TamableAnimal implements GeoEntity {
     @Override
     public void aiStep() {
         super.aiStep();
-        if(fromPlanter && onPlanter){
-            if (!this.level().isClientSide && this.isAlive() && !this.isBaby() && --this.packetTime <= 0) {
-                this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-                this.spawnAtLocation(this.seedPacket);
-                this.gameEvent(GameEvent.ENTITY_PLACE);
-                this.packetTime = 12000;
-            }
-        } else if (!fromPlanter) {
-            if (CommonConfigs.PLANTS_LIFESPAN.get()) {
-                if (fromDay && this.level().isNight()) {
-                    expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
-                }
-
-                if (fromNight && this.level().isDay()) {
-                    expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
-                }
-            }
-        }
-
-        if(this.level().getBlockState(this.getOnPos()).is(Blocks.AIR) ||
-                this.level().getBlockState(this.getOnPos()).is(Blocks.CAVE_AIR) ||
-                this.level().getBlockState(this.getOnPos()).is(Blocks.VOID_AIR)) {
-            this.expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
-        }
-
         if (!this.level().isClientSide) {
+            this.onPlanter = (this.level().getBlockEntity(this.blockPosition().below()) instanceof PlanterBlockEntity planter && planter.content.getStackInSlot(0).is(this.substrate));
+
+            if(this.fromPlanter && onPlanter) {
+                if (this.isAlive() && !this.isBaby() && --this.packetTime <= 0) {
+                    this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+                    this.spawnAtLocation(this.seedPacket);
+                    this.gameEvent(GameEvent.ENTITY_PLACE);
+                    this.packetTime = 12000;
+                }
+            }
+
+            if (this.isAlive() && this.isBaby()) {
+                int i = this.getAge();
+                if (!onPlanter) this.setAge(--i);
+            }
+
+            if (!fromPlanter) {
+                if (CommonConfigs.PLANTS_LIFESPAN.get()) {
+                    if (fromDay && this.level().isNight()) {
+                        expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
+                    }
+
+                    if (fromNight && this.level().isDay()) {
+                        expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
+                    }
+                }
+            }
+
+            if(this.level().getBlockState(this.getOnPos()).is(Blocks.AIR) ||
+                    this.level().getBlockState(this.getOnPos()).is(Blocks.CAVE_AIR) ||
+                    this.level().getBlockState(this.getOnPos()).is(Blocks.VOID_AIR)) {
+                this.expire(SoundEvents.ITEM_FRAME_REMOVE_ITEM);
+            }
+
             if (this.isMushroom) {
                 setSleeping(!this.level().isNight()
                         && !this.gotCoffee
@@ -243,7 +251,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
     }
 
     public void expire(SoundEvent sound){
-        this.spawnAtLocation(this.seedPacket);
+        if (this.seedPacket != null) this.spawnAtLocation(this.seedPacket);
         playSound(sound);
         this.discard();
         if (!level().isClientSide && level() instanceof ServerLevel serverLevel) {

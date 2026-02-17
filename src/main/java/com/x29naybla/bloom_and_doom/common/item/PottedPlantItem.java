@@ -1,6 +1,7 @@
 package com.x29naybla.bloom_and_doom.common.item;
 
 import com.google.common.collect.Maps;
+import com.x29naybla.bloom_and_doom.common.entity.SproutEntity;
 import com.x29naybla.bloom_and_doom.common.registry.BnDDataComponents;
 import com.x29naybla.bloom_and_doom.common.entity.MarigoldEntity;
 import com.x29naybla.bloom_and_doom.common.entity.Plant;
@@ -38,6 +39,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Map;
+
+import static net.minecraft.world.entity.AgeableMob.BABY_START_AGE;
 
 public class PottedPlantItem extends PlantHolderItem {
     private static final Map<DyeColor, Component> MARIGOLD_COLORS = Util.make(Maps.newEnumMap(DyeColor.class), map -> {
@@ -141,7 +144,9 @@ public class PottedPlantItem extends PlantHolderItem {
                 plant.setXRot(0);
                 if (stack.has(DataComponents.CUSTOM_NAME)) plant.setCustomName(stack.getHoverName());
                 if (stack.has(DataComponents.BASE_COLOR)) ((MarigoldEntity) plant).setColor(stack.get(DataComponents.BASE_COLOR));
-                if (stack.has(BnDDataComponents.AGE)) plant.setAge(stack.get(BnDDataComponents.AGE));
+                if (stack.has(BnDDataComponents.AGE)) {
+                    plant.setAge(stack.get(BnDDataComponents.AGE));
+                } else if (plant instanceof SproutEntity) plant.setAge(BABY_START_AGE);
                 if (stack.has(BnDDataComponents.HEALTH)) plant.setHealth(stack.get(BnDDataComponents.HEALTH));
                 if (plant instanceof PotatoMineEntity potatoMine) potatoMine.setArmed(true);
                 plant.fromPlanter = true;
