@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "entity": "bloom_and_doom:doom_shroom",
+    "priority": 1
+  },
+  "label": {
+    "icon": "bloom_and_doom:gui/almanac/plant_icons/doom_shroom"
+  },
+  "page": {
+    "display": "bloom_and_doom:gui/almanac/plant_photos/doom_shroom_display",
+    "found": "bloom_and_doom.almanac.doom_shroom.found",
+    "description": [
+      "bloom_and_doom.almanac.doom_shroom.description.1",
+      "bloom_and_doom.almanac.doom_shroom.description.2"
+    ],
+    "photos": [
+      {
+        "key": "doom_shroom_1",
+        "texture": "bloom_and_doom:gui/almanac/plant_photos/doom_shroom_1",
+        "caption": "bloom_and_doom.almanac.doom_shroom.photo.1",
+        "availability": {
+          "unlocked": true
+        }
+      },
+      {
+        "key": "doom_shroom_2",
+        "texture": "bloom_and_doom:gui/almanac/plant_photos/doom_shroom_2",
+        "caption": "bloom_and_doom.almanac.doom_shroom.photo.2",
+        "availability": {
+          "unlocked": true
+        }
+      }
+    ]
+  }
+}

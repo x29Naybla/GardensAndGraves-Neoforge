@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "entity": "bloom_and_doom:wall_nut",
+    "priority": 5
+  },
+  "label": {
+    "icon": "bloom_and_doom:gui/almanac/plant_icons/wall_nut"
+  },
+  "page": {
+    "display": "bloom_and_doom:gui/almanac/plant_photos/wall_nut_display",
+    "found": "bloom_and_doom.almanac.wall_nut.found",
+    "description": [
+      "bloom_and_doom.almanac.wall_nut.description.1",
+      "bloom_and_doom.almanac.wall_nut.description.2"
+    ],
+    "photos": [
+      {
+        "key": "wall_nut_1",
+        "texture": "bloom_and_doom:gui/almanac/plant_photos/wall_nut_1",
+        "caption": "bloom_and_doom.almanac.wall_nut.photo.1",
+        "availability": {
+          "unlocked": true
+        }
+      },
+      {
+        "key": "wall_nut_2",
+        "texture": "bloom_and_doom:gui/almanac/plant_photos/wall_nut_2",
+        "caption": "bloom_and_doom.almanac.wall_nut.photo.2",
+        "availability": {
+          "unlocked": true
+        }
+      },
+      {
+        "key": "wall_nut_3",
+        "texture": "bloom_and_doom:gui/almanac/plant_photos/wall_nut_3",
+        "caption": "bloom_and_doom.almanac.wall_nut.photo.3",
+        "availability": {
+          "unlocked": true
+        }
+      }
+    ]
+  }
+}

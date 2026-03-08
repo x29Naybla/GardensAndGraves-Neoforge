@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "entity": "bloom_and_doom:sunflower",
+    "priority": 0
+  },
+  "label": {
+    "icon": "bloom_and_doom:gui/almanac/plant_icons/sunflower"
+  },
+  "page": {
+    "display": "bloom_and_doom:gui/almanac/plant_photos/sunflower_display",
+    "found": "bloom_and_doom.almanac.sunflower.found",
+    "description": [
+      "bloom_and_doom.almanac.sunflower.description.1",
+      "bloom_and_doom.almanac.sunflower.description.2",
+      "${sunflower_sleepy}"
+    ],
+    "photos": [
+      {
+        "key": "sunflower_1",
+        "texture": "bloom_and_doom:gui/almanac/plant_photos/sunflower_1",
+        "caption": "bloom_and_doom.almanac.sunflower.photo.1",
+        "availability": {
+          "unlocked": true
+        }
+      },
+      {
+        "key": "sunflower_sleepy",
+        "texture": "bloom_and_doom:gui/almanac/plant_photos/sunflower_sleepy",
+        "caption": "bloom_and_doom.almanac.sunflower.photo.sleepy",
+        "availability": {
+          "unlocked": false,
+          "visibility": "missing",
+          "advancement": "bloom_and_doom:almanac/sleepy_sunflower"
+        }
+      }
+    ]
+  }
+}

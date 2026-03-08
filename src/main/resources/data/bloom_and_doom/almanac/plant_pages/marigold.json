@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "entity": "bloom_and_doom:marigold",
+    "priority": 1
+  },
+  "label": {
+    "icon": "bloom_and_doom:gui/almanac/plant_icons/marigold"
+  },
+  "page": {
+    "display": "bloom_and_doom:gui/almanac/plant_photos/marigold_display",
+    "found": "bloom_and_doom.almanac.marigold.found",
+    "description": [
+      "bloom_and_doom.almanac.marigold.description.1",
+      "bloom_and_doom.almanac.marigold.description.2"
+    ],
+    "photos": [
+      {
+        "key": "marigold_1",
+        "texture": "bloom_and_doom:gui/almanac/plant_photos/marigold_1",
+        "caption": "bloom_and_doom.almanac.marigold.photo.1",
+        "availability": {
+          "unlocked": true
+        }
+      }
+    ]
+  }
+}

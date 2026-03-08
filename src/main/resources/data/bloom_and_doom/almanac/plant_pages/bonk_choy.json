@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "entity": "bloom_and_doom:bonk_choy",
+    "priority": 8
+  },
+  "label": {
+    "icon": "bloom_and_doom:gui/almanac/plant_icons/bonk_choy"
+  },
+  "page": {
+    "display": "bloom_and_doom:gui/almanac/plant_photos/bonk_choy_display",
+    "found": "bloom_and_doom.almanac.bonk_choy.found",
+    "description": [
+      "bloom_and_doom.almanac.bonk_choy.description.1",
+      "bloom_and_doom.almanac.bonk_choy.description.2"
+    ],
+    "photos": [
+      {
+        "key": "bonk_choy_1",
+        "texture": "bloom_and_doom:gui/almanac/plant_photos/bonk_choy_1",
+        "caption": "bloom_and_doom.almanac.bonk_choy.photo.1",
+        "availability": {
+          "unlocked": true
+        }
+      }
+    ]
+  }
+}

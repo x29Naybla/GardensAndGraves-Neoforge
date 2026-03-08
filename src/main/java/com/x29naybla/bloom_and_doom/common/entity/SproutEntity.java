@@ -34,16 +34,32 @@ public class SproutEntity extends Plant {
         super.aiStep();
     }
 
+    //GeckoLib
     @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
-        compound.putInt("Age", this.age);
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
+        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::animController));
     }
 
+    protected <E extends SproutEntity> PlayState animController(final AnimationState<E> event) {
+        return PlayState.CONTINUE;
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return geoCache;
+    }
+
+    //Data
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         this.setAge(compound.getInt("Age"));
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag compound) {
+        super.addAdditionalSaveData(compound);
+        compound.putInt("Age", this.age);
     }
 
     @Override
@@ -87,20 +103,5 @@ public class SproutEntity extends Plant {
                 this.discard();
             }
         }
-    }
-
-    //GeckoLib
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::animController));
-    }
-
-    protected <E extends SproutEntity> PlayState animController(final AnimationState<E> event) {
-        return PlayState.CONTINUE;
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return geoCache;
     }
 }

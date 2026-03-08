@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "entity": "bloom_and_doom:snow_pea",
+    "priority": 3
+  },
+  "label": {
+    "icon": "bloom_and_doom:gui/almanac/plant_icons/snow_pea"
+  },
+  "page": {
+    "display": "bloom_and_doom:gui/almanac/plant_photos/snow_pea_display",
+    "found": "bloom_and_doom.almanac.snow_pea.found",
+    "description": [
+      "bloom_and_doom.almanac.snow_pea.description.1",
+      "bloom_and_doom.almanac.snow_pea.description.2"
+    ],
+    "photos": [
+      {
+        "key": "snow_pea_1",
+        "texture": "bloom_and_doom:gui/almanac/plant_photos/snow_pea_1",
+        "caption": "bloom_and_doom.almanac.snow_pea.photo.1",
+        "availability": {
+          "unlocked": true
+        }
+      }
+    ]
+  }
+}

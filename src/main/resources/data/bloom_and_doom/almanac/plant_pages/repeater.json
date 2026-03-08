@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "entity": "bloom_and_doom:repeater",
+    "priority": 4
+  },
+  "label": {
+    "icon": "bloom_and_doom:gui/almanac/plant_icons/repeater"
+  },
+  "page": {
+    "display": "bloom_and_doom:gui/almanac/plant_photos/repeater_display",
+    "found": "bloom_and_doom.almanac.repeater.found",
+    "description": [
+      "bloom_and_doom.almanac.repeater.description.1",
+      "bloom_and_doom.almanac.repeater.description.2"
+    ],
+    "photos": [
+      {
+        "key": "repeater_1",
+        "texture": "bloom_and_doom:gui/almanac/plant_photos/repeater_1",
+        "caption": "bloom_and_doom.almanac.repeater.photo.1",
+        "availability": {
+          "unlocked": true
+        }
+      }
+    ]
+  }
+}

@@ -37,3 +37,7 @@ changelog:
 * fixed colored plastic blocks appearing white on the map instead of their respective colors
 * added traffic cones and their recipes
 * sprouts will grow into baby plants
+
+* changed planter textures from being a single image into one for each face
+* better organized the SproutEntity class
+* started getting the plant pages ready for the almanac implementation
