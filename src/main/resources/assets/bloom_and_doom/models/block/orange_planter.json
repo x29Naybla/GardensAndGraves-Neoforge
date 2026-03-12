@@ -4,7 +4,6 @@
 		"0": "bloom_and_doom:block/orange_planter_top",
 		"1": "bloom_and_doom:block/orange_planter_side",
 		"2": "bloom_and_doom:block/orange_planter_bottom",
-		"3": "bloom_and_doom:block/orange_planter_inside",
 		"particle": "minecraft:block/orange_terracotta"
 	}
 }

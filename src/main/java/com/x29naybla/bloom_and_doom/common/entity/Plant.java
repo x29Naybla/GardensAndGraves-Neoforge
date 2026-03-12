@@ -216,15 +216,11 @@ public class Plant extends TamableAnimal implements GeoEntity {
                         && !this.gotCoffee
                         && !this.level().getBlockState(this.getOnPos()).is(BlockTags.MUSHROOM_GROW_BLOCK)
                         && (!(this.level().getBlockEntity(this.getOnPos()) instanceof PlanterBlockEntity planterBlock) || !planterBlock.content.getStackInSlot(0).is(BnDTags.Items.SUSTAINS_MUSHROOMS)));
-            } else {
-                setSleeping(false);
             }
 
             if (this instanceof SunflowerEntity) {
                 setSleeping((this.level().isNight() || this.level().isRaining())
                         && !this.gotCoffee);
-            } else {
-                setSleeping(false);
             }
 
             if (getSleeping()) {

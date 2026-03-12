@@ -41,3 +41,9 @@ changelog:
 * changed planter textures from being a single image into one for each face
 * better organized the SproutEntity class
 * started getting the plant pages ready for the almanac implementation
+
+* retextured planters
+* removed zombie horses and skeleton horses from the "Plant Enemies" tag
+* fixed mushrooms sleeping behaviour not working as intended
+* fixed Bonk Choy be assigned Chomper's seed packet when middle-clicked
+* fixed zombie wolves being affected by the zombification effect
