@@ -88,7 +88,7 @@ public class Zombification extends MobEffect {
                 level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ZOMBIE_INFECT, SoundSource.PLAYERS);
                 return true;
 
-            } else if(entity instanceof Wolf wolf) {
+            } else if(entity instanceof Wolf wolf && !(wolf instanceof ZombieWolfEntity)) {
                 wolf.makeSound(SoundEvents.ZOMBIE_INFECT);
                 ZombieWolfEntity zWolf = wolf.convertTo(BnDEntities.ZOMBIE_WOLF.get(), true);
                 if(zWolf != null) {

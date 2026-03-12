@@ -3,13 +3,11 @@
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
 	"render_type": "minecraft:cutout",
-	"texture_size": [16, 16],
 	"textures": {
 		"0": "bloom_and_doom:block/planter_top",
 		"1": "bloom_and_doom:block/planter_side",
 		"2": "bloom_and_doom:block/planter_bottom",
-		"3": "bloom_and_doom:block/planter_inside",
-		"particle": "minecraft:block/terracotta"
+		"particle": "block/terracotta"
 	},
 	"elements": [
 		{
@@ -34,7 +32,7 @@
 			"faces": {
 				"north": {"uv": [2, 4, 14, 15], "texture": "#1"},
 				"east": {"uv": [3.5, 5.25, 3.75, 8], "texture": "#missing"},
-				"south": {"uv": [1, 4, 15, 15], "texture": "#3"},
+				"south": {"uv": [1, 4, 15, 15], "texture": "#1"},
 				"west": {"uv": [0.25, 5.25, 0.5, 8], "texture": "#missing"},
 				"up": {"uv": [3.5, 3.75, 0.5, 3.5], "texture": "#missing"},
 				"down": {"uv": [7.75, 7.75, 4.75, 8], "texture": "#missing"}
@@ -46,7 +44,7 @@
 			"to": [14, 12, 15],
 			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 1]},
 			"faces": {
-				"north": {"uv": [1, 4, 15, 15], "texture": "#3"},
+				"north": {"uv": [1, 4, 15, 15], "texture": "#1"},
 				"east": {"uv": [0.25, 5.25, 0.5, 8], "texture": "#missing"},
 				"south": {"uv": [2, 4, 14, 15], "texture": "#1"},
 				"west": {"uv": [3.5, 5.25, 3.75, 8], "texture": "#missing"},
@@ -61,7 +59,7 @@
 			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 1]},
 			"faces": {
 				"north": {"uv": [14, 4, 15, 15], "texture": "#1"},
-				"east": {"uv": [1, 4, 15, 15], "texture": "#3"},
+				"east": {"uv": [1, 4, 15, 15], "texture": "#1"},
 				"south": {"uv": [1, 4, 2, 15], "texture": "#1"},
 				"west": {"uv": [1, 4, 15, 15], "texture": "#1"},
 				"up": {"uv": [3.75, 3.75, 3.5, 0.25], "texture": "#missing"},
@@ -77,7 +75,7 @@
 				"north": {"uv": [1, 4, 2, 15], "texture": "#1"},
 				"east": {"uv": [1, 4, 15, 15], "texture": "#1"},
 				"south": {"uv": [14, 4, 15, 15], "texture": "#1"},
-				"west": {"uv": [1, 4, 15, 15], "texture": "#3"},
+				"west": {"uv": [1, 4, 15, 15], "texture": "#1"},
 				"up": {"uv": [0.5, 3.75, 0.25, 0.25], "texture": "#missing"},
 				"down": {"uv": [4.75, 4.5, 4.5, 8], "texture": "#missing"}
 			}
@@ -90,7 +88,7 @@
 			"faces": {
 				"north": {"uv": [2, 0, 14, 4], "texture": "#1"},
 				"east": {"uv": [3.5, 4.25, 4, 5.25], "texture": "#missing"},
-				"south": {"uv": [1, 0, 15, 4], "texture": "#3"},
+				"south": {"uv": [1, 0, 15, 4], "texture": "#1"},
 				"west": {"uv": [0, 4.25, 0.5, 5.25], "texture": "#missing"},
 				"up": {"uv": [14, 16, 2, 14], "texture": "#0"},
 				"down": {"uv": [14, 14, 2, 16], "texture": "#2"}
@@ -102,7 +100,7 @@
 			"to": [14, 16, 16],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 12, 0]},
 			"faces": {
-				"north": {"uv": [1, 0, 15, 4], "texture": "#3"},
+				"north": {"uv": [1, 0, 15, 4], "texture": "#1"},
 				"east": {"uv": [0, 4.25, 0.5, 5.25], "texture": "#missing"},
 				"south": {"uv": [2, 0, 14, 4], "texture": "#1"},
 				"west": {"uv": [3.5, 4.25, 4, 5.25], "texture": "#missing"},
@@ -117,7 +115,7 @@
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 12, 0]},
 			"faces": {
 				"north": {"uv": [14, 0, 16, 4], "texture": "#1"},
-				"east": {"uv": [0, 0, 16, 4], "texture": "#3"},
+				"east": {"uv": [0, 0, 16, 4], "texture": "#1"},
 				"south": {"uv": [0, 0, 2, 4], "texture": "#1"},
 				"west": {"uv": [0, 0, 16, 4], "texture": "#1"},
 				"up": {"uv": [16, 16, 14, 0], "texture": "#0"},
@@ -133,7 +131,7 @@
 				"north": {"uv": [0, 0, 2, 4], "texture": "#1"},
 				"east": {"uv": [0, 0, 16, 4], "texture": "#1"},
 				"south": {"uv": [14, 0, 16, 4], "texture": "#1"},
-				"west": {"uv": [0, 0, 16, 4], "texture": "#3"},
+				"west": {"uv": [0, 0, 16, 4], "texture": "#1"},
 				"up": {"uv": [2, 16, 0, 0], "texture": "#0"},
 				"down": {"uv": [14, 0, 16, 16], "texture": "#2"}
 			}

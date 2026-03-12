@@ -1,5 +1,7 @@
 {
   "remove": [
+    "minecraft:skeleton_horse",
+    "minecraft:zombie_horse",
     "minecraft:bee"
   ],
   "values": [

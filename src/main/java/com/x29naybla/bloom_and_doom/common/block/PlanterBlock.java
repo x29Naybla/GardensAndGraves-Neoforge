@@ -40,6 +40,7 @@ import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.Configuration;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.MathUtils;
 
 import java.util.stream.Stream;
@@ -184,7 +185,7 @@ public class PlanterBlock extends BaseEntityBlock {
                         Block aboveBlock = aboveState.getBlock();
 
                         // Do nothing if the plant is unaffected by rich soil
-                        if (aboveState.is(vectorwing.farmersdelight.common.tag.ModTags.UNAFFECTED_BY_RICH_SOIL)) {
+                        if (aboveState.is(ModTags.UNAFFECTED_BY_RICH_SOIL)) {
                             return;
                         }
 

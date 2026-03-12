@@ -20,7 +20,7 @@ public class BonkChoyEntity extends Plant {
 
     //Properties
     public BonkChoyEntity(EntityType<? extends Plant> entityType, Level level) {
-        super(entityType, level, BnDTags.Items.SUSTAINS_BONK_CHOYS, BnDItems.CHOMPER_SEED_PACKET.toStack(), BnDItems.POTTED_BONK_CHOY.toStack());
+        super(entityType, level, BnDTags.Items.SUSTAINS_BONK_CHOYS, BnDItems.BONK_CHOY_SEED_PACKET.toStack(), BnDItems.POTTED_BONK_CHOY.toStack());
     }
 
     //Goals and AI

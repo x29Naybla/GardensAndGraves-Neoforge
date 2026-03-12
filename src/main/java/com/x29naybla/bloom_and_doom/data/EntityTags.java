@@ -60,6 +60,8 @@ public class EntityTags extends EntityTypeTagsProvider {
         tag(BnDTags.Entities.PLANT_ENEMIES)
                 .addTag(EntityTypeTags.UNDEAD)
                 .addTag(EntityTypeTags.ARTHROPOD)
+                .remove(EntityType.SKELETON_HORSE)
+                .remove(EntityType.ZOMBIE_HORSE)
                 .remove(EntityType.BEE);
 
         tag(BnDTags.Entities.PLANT_ALLAYS)
