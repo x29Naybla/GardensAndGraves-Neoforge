@@ -45,7 +45,7 @@ public class BloomAndDoom {
         IModFile modFile = ModLoadingContext.get().getActiveContainer().getModInfo().getOwningFile().getFile();
         modEventBus.addListener((AddPackFindersEvent event) -> {
             if (event.getPackType() == PackType.CLIENT_RESOURCES) {
-                event.addRepositorySource(new HiResPackSource(modFile, PackType.CLIENT_RESOURCES, "BloomAndDoom-ProgrammerArt", Component.translatable("pack.bloom_and_doom.bad_pa")));
+                event.addRepositorySource(new HiResPackSource(modFile, PackType.CLIENT_RESOURCES, "GardenerPixels", Component.translatable("pack.bloom_and_doom.gardener_pixels")));
             }
         });
 

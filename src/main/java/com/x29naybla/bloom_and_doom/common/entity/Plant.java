@@ -178,8 +178,9 @@ public class Plant extends TamableAnimal implements GeoEntity {
         super.aiStep();
         if (!this.level().isClientSide) {
             this.onPlanter = (this.level().getBlockEntity(this.blockPosition().below()) instanceof PlanterBlockEntity planter && planter.content.getStackInSlot(0).is(this.substrate));
+            boolean onFlowerPot = (this.level().getBlockState(this.getOnPos()).is(CommonTags.Blocks.FLOWER_POTS));
 
-            if(this.fromPlanter && onPlanter) {
+            if(this.fromPlanter && onPlanter && !onFlowerPot) {
                 if (this.isAlive() && !this.isBaby() && --this.packetTime <= 0) {
                     this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
                     this.spawnAtLocation(this.seedPacket);
@@ -190,7 +191,7 @@ public class Plant extends TamableAnimal implements GeoEntity {
 
             if (this.isAlive() && this.isBaby()) {
                 int i = this.getAge();
-                if (!onPlanter) this.setAge(--i);
+                if (!onPlanter || onFlowerPot) this.setAge(--i);
             }
 
             if (!fromPlanter) {

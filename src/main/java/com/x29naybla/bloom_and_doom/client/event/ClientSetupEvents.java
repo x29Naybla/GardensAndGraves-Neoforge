@@ -37,7 +37,7 @@ public class ClientSetupEvents {
         event.registerEntityRenderer(BnDEntities.SUNFLOWER.get(), SunflowerRenderer::new);
         event.registerEntityRenderer(BnDEntities.MARIGOLD.get(), MarigoldRenderer::new);
         event.registerEntityRenderer(BnDEntities.PEASHOOTER.get(), PeashooterRenderer::new);
-        event.registerEntityRenderer(BnDEntities.SNOW_PEA.get(), SnowPeashooterRenderer::new);
+        event.registerEntityRenderer(BnDEntities.SNOW_PEA.get(), SnowPeaRenderer::new);
         event.registerEntityRenderer(BnDEntities.REPEATER.get(), RepeaterRenderer::new);
         event.registerEntityRenderer(BnDEntities.WALL_NUT.get(), WallNutRenderer::new);
         event.registerEntityRenderer(BnDEntities.POTATO_MINE.get(), PotatoMineRenderer::new);

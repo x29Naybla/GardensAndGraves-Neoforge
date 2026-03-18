@@ -398,6 +398,7 @@
   "bloom_and_doom.subtitles.entity.potato_mine.explodes": "Batatamina explode",
   "bloom_and_doom.subtitles.entity.plant.grows": "Planta cresce",
 
+  "bloom_and_doom.configuration.new_baby_models": "Modelos novos para bebês",
   "bloom_and_doom.configuration.pea_3d": "Ervilhas 3D",
   "bloom_and_doom.configuration.frozen_pea_3d": "Ervilhas congeladas 3D",
   "bloom_and_doom.configuration.spore_3d": "Esporos 3D",
@@ -416,5 +417,5 @@
   "bloom_and_doom.gui.almanac.button.plants": "Plantas",
   "bloom_and_doom.gui.almanac.button.zombies": "Zumbis",
 
-  "pack.bloom_and_doom.bad_pa": "Bloom and Doom - Arte do Programador"
+  "pack.bloom_and_doom.gardener_pixels": "Pixels da Jardineira"
 }

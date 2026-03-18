@@ -24,7 +24,7 @@ import java.util.function.Supplier;
 public class BnDEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(Registries.ENTITY_TYPE, BloomAndDoom.MOD_ID);
 
-    public static final DeferredHolder<EntityType<?>, EntityType<SproutEntity>> SPROUT = register("sprout", SproutEntity::new, 0.7f, 0.9f);
+    public static final DeferredHolder<EntityType<?>, EntityType<SproutEntity>> SPROUT = register("sprout", SproutEntity::new, 0.3f, 0.4f);
     public static final DeferredHolder<EntityType<?>, EntityType<SunflowerEntity>> SUNFLOWER = register("sunflower", SunflowerEntity::new, 0.7f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<MarigoldEntity>> MARIGOLD = register("marigold", MarigoldEntity::new, 0.7f, 0.9f);
     public static final DeferredHolder<EntityType<?>, EntityType<PeashooterEntity>> PEASHOOTER = register("peashooter", PeashooterEntity::new, 0.5f, 0.9f);
@@ -69,7 +69,7 @@ public class BnDEntities {
                 .add(Attributes.ATTACK_DAMAGE, 2)
                 .add(Attributes.ENTITY_INTERACTION_RANGE, 9);
 
-        AttributeSupplier.Builder snowPeashooterAttributes = PathfinderMob.createMobAttributes()
+        AttributeSupplier.Builder snowPeaAttributes = PathfinderMob.createMobAttributes()
                 .add(Attributes.MOVEMENT_SPEED,-99)
                 .add(Attributes.MAX_HEALTH, 16)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 99)
@@ -138,7 +138,7 @@ public class BnDEntities {
         event.put(BnDEntities.SUNFLOWER.get(), sunflowerAttributes.build());
         event.put(BnDEntities.MARIGOLD.get(), marigoldAttributes.build());
         event.put(BnDEntities.PEASHOOTER.get(), peashooterAttributes.build());
-        event.put(BnDEntities.SNOW_PEA.get(), snowPeashooterAttributes.build());
+        event.put(BnDEntities.SNOW_PEA.get(), snowPeaAttributes.build());
         event.put(BnDEntities.REPEATER.get(), repeaterAttributes.build());
         event.put(BnDEntities.WALL_NUT.get(), wallNutAttributes.build());
         event.put(BnDEntities.POTATO_MINE.get(), potatoMineAttributes.build());

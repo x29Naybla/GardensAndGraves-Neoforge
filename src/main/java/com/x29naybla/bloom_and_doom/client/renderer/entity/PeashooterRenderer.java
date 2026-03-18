@@ -1,6 +1,7 @@
 package com.x29naybla.bloom_and_doom.client.renderer.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.x29naybla.bloom_and_doom.ClientConfigs;
 import com.x29naybla.bloom_and_doom.client.model.entity.PeashooterModel;
 import com.x29naybla.bloom_and_doom.common.entity.PeashooterEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -14,7 +15,7 @@ public class PeashooterRenderer extends GeoEntityRenderer<PeashooterEntity> {
 
     @Override
     public void render(PeashooterEntity animatable, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-        if (animatable.isBaby()) {
+        if (animatable.isBaby() && !ClientConfigs.NEW_BABY_MODELS.get()) {
             poseStack.scale(0.6F, 0.6F, 0.6F);
         } else {
             poseStack.scale(1F, 1F, 1F);

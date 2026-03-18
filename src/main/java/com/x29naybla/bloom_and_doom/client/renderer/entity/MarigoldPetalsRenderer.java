@@ -3,6 +3,7 @@ package com.x29naybla.bloom_and_doom.client.renderer.entity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
+import com.x29naybla.bloom_and_doom.ClientConfigs;
 import com.x29naybla.bloom_and_doom.common.entity.MarigoldEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -18,12 +19,6 @@ import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 public class MarigoldPetalsRenderer extends GeoRenderLayer<MarigoldEntity> {
     public MarigoldPetalsRenderer(GeoRenderer<MarigoldEntity> entityRendererIn) {
         super(entityRendererIn);
-    }
-    private static final ResourceLocation PETALS = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "geo/entity/marigold.geo.json");
-
-
-    public ResourceLocation getTextureResource() {
-        return ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/marigold/marigold_petals.png");
     }
 
     @Override
@@ -50,8 +45,10 @@ public class MarigoldPetalsRenderer extends GeoRenderLayer<MarigoldEntity> {
                 i = marigold.getColor().getTextureDiffuseColor();
             }
 
-            RenderType renderType1 = RenderType.entityCutoutNoCull(getTextureResource());
-            this.getRenderer().actuallyRender(poseStack, marigold, bakedModel, renderType, bufferSource, bufferSource.getBuffer(renderType1), true, partialTick, packedLight, OverlayTexture.NO_OVERLAY, i);
+            RenderType renderType1 = RenderType.entityCutoutNoCull(ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/marigold/marigold_petals.png"));
+            RenderType renderType2 = RenderType.entityCutoutNoCull(ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/marigold/marigold_petals_baby.png"));
+            if(marigold.isBaby() && ClientConfigs.NEW_BABY_MODELS.get()) this.getRenderer().actuallyRender(poseStack, marigold, bakedModel, renderType, bufferSource, bufferSource.getBuffer(renderType2), true, partialTick, packedLight, OverlayTexture.NO_OVERLAY, i);
+            else this.getRenderer().actuallyRender(poseStack, marigold, bakedModel, renderType, bufferSource, bufferSource.getBuffer(renderType1), true, partialTick, packedLight, OverlayTexture.NO_OVERLAY, i);
         }
     }
 }

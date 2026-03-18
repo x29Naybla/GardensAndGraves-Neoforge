@@ -1,6 +1,7 @@
 package com.x29naybla.bloom_and_doom.client.model.entity;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
+import com.x29naybla.bloom_and_doom.ClientConfigs;
 import com.x29naybla.bloom_and_doom.common.entity.PeashooterEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.animation.AnimationState;
@@ -8,18 +9,20 @@ import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.model.GeoModel;
 
 public class PeashooterModel extends GeoModel<PeashooterEntity> {
-    private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "geo/entity/peashooter.geo.json");
-    private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/peashooter.png");
+    private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "geo/entity/peashooter/peashooter.geo.json");
+    private final ResourceLocation model_baby = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "geo/entity/peashooter/peashooter_baby.geo.json");
+    private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/peashooter/peashooter.png");
+    private final ResourceLocation texture_baby = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "textures/entity/peashooter/peashooter_baby.png");
     private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(BloomAndDoom.MOD_ID, "animations/entity/peashooter.animation.json");
 
     @Override
     public ResourceLocation getModelResource(PeashooterEntity animatable) {
-        return this.model;
+        if (animatable.isBaby() && ClientConfigs.NEW_BABY_MODELS.get()) return this.model_baby; else return this.model;
     }
 
     @Override
     public ResourceLocation getTextureResource(PeashooterEntity animatable) {
-        return this.texture;
+        if (animatable.isBaby() && ClientConfigs.NEW_BABY_MODELS.get()) return this.texture_baby; else return this.texture;
     }
 
     @Override
@@ -31,14 +34,16 @@ public class PeashooterModel extends GeoModel<PeashooterEntity> {
     public void setCustomAnimations(PeashooterEntity animatable, long instanceId, AnimationState animationState) {
         GeoBone head = this.getAnimationProcessor().getBone("head");
 
-        if (animatable.isBaby()) {
-            head.setScaleX(1.6F);
-            head.setScaleY(1.6F);
-            head.setScaleZ(1.6F);
-        } else {
-            head.setScaleX(1.0F);
-            head.setScaleY(1.0F);
-            head.setScaleZ(1.0F);
+        if (!ClientConfigs.NEW_BABY_MODELS.get()) {
+            if (animatable.isBaby()) {
+                head.setScaleX(1.6F);
+                head.setScaleY(1.6F);
+                head.setScaleZ(1.6F);
+            } else {
+                head.setScaleX(1.0F);
+                head.setScaleY(1.0F);
+                head.setScaleZ(1.0F);
+            }
         }
     }
 }

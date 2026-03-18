@@ -1,0 +1,47 @@
+{
+  "parent": "bloom_and_doom:main/planters",
+  "criteria": {
+    "sunflower_planted_on_planter": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "#bloom_and_doom:planters",
+                "state": {
+                  "filled": "true"
+                }
+              }
+            }
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "items": "bloom_and_doom:sunflower_seed_packet"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:item_used_on_block"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "bloom_and_doom.advancement.sunny_day.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "bloom_and_doom:sunflower_seed_packet"
+    },
+    "title": {
+      "translate": "bloom_and_doom.advancement.sunny_day"
+    }
+  },
+  "requirements": [
+    [
+      "sunflower_planted_on_planter"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

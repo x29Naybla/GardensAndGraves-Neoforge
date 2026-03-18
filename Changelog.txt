@@ -1,7 +1,7 @@
 changelog:
 * added potted sprouts
 * added sprouts
-* added some missing translations to Russian, French, and Brazilian portuguese
+* added some missing translations to Russian, French, and Brazilian Portuguese
 * moved the "flower_pots" item tag from being under the "bloom_and_doom" namespace to "c"
 * added a "flower_pots" block tag under the "c" namespace
 
@@ -47,3 +47,14 @@ changelog:
 * fixed mushrooms sleeping behaviour not working as intended
 * fixed Bonk Choy be assigned Chomper's seed packet when middle-clicked
 * fixed zombie wolves being affected by the zombification effect
+-- 0.1.0 pre-release 1--
+
+* fixed a small error on the position of the mouth in the models of the Peashooter, Snow Pea, and Repeater
+* moved all textures of plants into subfolders
+* moved all models of plants into subfolders
+* added new baby models and textures for the Sunflower, Marigold, Peashooter, Snow Pea, Repeater, and Wall-nut to match the new babies from 26.1
+* added a config to enable the new baby models, disabled by default
+* Wall-nut hurt stages now are calculated based on the mob's max health instead of being set to specific values
+* fixed planters' broken textures with the "Bloom and Doom - Programmer Art" resourcepack
+* renamed the "Bloom and Doom - Programmer Art" resourcepack to "Gardener Pixels"
+* fixed potted plants placed on top of planters counting as if it was planted on it

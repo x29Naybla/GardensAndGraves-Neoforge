@@ -1,5 +1,5 @@
 {
-  "parent": "bloom_and_doom:main/planters",
+  "parent": "bloom_and_doom:main/sunny_day",
   "criteria": {
     "sun": {
       "conditions": {

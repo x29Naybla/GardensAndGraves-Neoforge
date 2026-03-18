@@ -7,7 +7,7 @@
 		"0": "bloom_and_doom:block/planter_top",
 		"1": "bloom_and_doom:block/planter_side",
 		"2": "bloom_and_doom:block/planter_bottom",
-		"particle": "block/terracotta"
+		"particle": "minecraft:block/terracotta"
 	},
 	"elements": [
 		{

@@ -2,6 +2,7 @@ package com.x29naybla.bloom_and_doom.integration.jade;
 
 import com.x29naybla.bloom_and_doom.common.block.entity.PlanterBlockEntity;
 import com.x29naybla.bloom_and_doom.common.entity.Plant;
+import com.x29naybla.bloom_and_doom.common.tag.CommonTags;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -20,7 +21,7 @@ public enum SeedPacketsTimerProvider implements IEntityComponentProvider, IServe
         CompoundTag compound = entityAccessor.getServerData();
         Plant plant = (Plant) entityAccessor.getEntity();
 
-        if (compound.contains("hasSeedPacket") && compound.contains("SeedPacketsTimer") && compound.getBoolean("isFromPlanter") && compound.getBoolean("onPlanter") && !(plant.isBaby())) {
+        if (compound.contains("hasSeedPacket") && compound.contains("SeedPacketsTimer") && compound.getBoolean("isFromPlanter") && compound.getBoolean("onPlanter") && !(compound.getBoolean("onFlowerPot")) && !(plant.isBaby())) {
             iTooltip.add(Component.translatable("bloom_and_doom.seed_packets_timer", entityAccessor.getServerData().getInt("SeedPacketsTimer")));
             iTooltip.append(IThemeHelper.get().seconds(compound.getInt("SeedPacketsTimer"), 20));
         }
@@ -35,6 +36,7 @@ public enum SeedPacketsTimerProvider implements IEntityComponentProvider, IServe
             compoundTag.putBoolean("hasSeedPacket", true);
         }
         compoundTag.putBoolean("onPlanter", (plant.level().getBlockEntity(plant.blockPosition().below()) instanceof PlanterBlockEntity planter && planter.content.getStackInSlot(0).is(plant.substrate)));
+        compoundTag.putBoolean("onFlowerPot", (plant.level().getBlockState(plant.getOnPos()).is(CommonTags.Blocks.FLOWER_POTS)));
     }
 
     @Override

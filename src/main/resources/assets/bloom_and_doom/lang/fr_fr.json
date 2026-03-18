@@ -398,6 +398,7 @@
   "bloom_and_doom.subtitles.entity.potato_mine.explodes": "Potato Mine explodes",
   "bloom_and_doom.subtitles.entity.plant.grows": "Plant grows",
 
+  "bloom_and_doom.configuration.new_baby_models": "New baby models",
   "bloom_and_doom.configuration.pea_3d": "3D peas",
   "bloom_and_doom.configuration.frozen_pea_3d": "3D frozen peas",
   "bloom_and_doom.configuration.spore_3d": "Spores 3D",
@@ -416,5 +417,5 @@
   "bloom_and_doom.gui.almanac.button.plants": "Plantes",
   "bloom_and_doom.gui.almanac.button.zombies": "zombies",
 
-  "pack.bloom_and_doom.bad_pa": "Bloom and Doom - Programmer Art"
+  "pack.bloom_and_doom.gardener_pixels": "Gardener Pixels"
 }

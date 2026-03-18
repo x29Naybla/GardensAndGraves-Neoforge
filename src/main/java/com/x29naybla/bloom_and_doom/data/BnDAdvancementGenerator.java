@@ -1,6 +1,7 @@
 package com.x29naybla.bloom_and_doom.data;
 
 import com.x29naybla.bloom_and_doom.BloomAndDoom;
+import com.x29naybla.bloom_and_doom.common.block.PlanterBlock;
 import com.x29naybla.bloom_and_doom.common.registry.BnDItems;
 import com.x29naybla.bloom_and_doom.common.registry.BnDBlocks;
 import com.x29naybla.bloom_and_doom.common.tag.BnDTags;
@@ -21,6 +22,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 import java.util.function.Consumer;
+
+import static net.minecraft.advancements.critereon.ItemUsedOnLocationTrigger.TriggerInstance.itemUsedOnBlock;
 
 public class BnDAdvancementGenerator implements AdvancementProvider.AdvancementGenerator{
     @Override
@@ -54,7 +57,18 @@ public class BnDAdvancementGenerator implements AdvancementProvider.AdvancementG
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/planters"));
 
-        AdvancementHolder first_sun = getAdvancement(planters, BnDItems.SUN, "first_sun", AdvancementType.TASK, true, true, false)
+        AdvancementHolder sunny_day = getAdvancement(planters, BnDItems.SUNFLOWER_SEED_PACKET, "sunny_day", AdvancementType.TASK, true, true, false)
+                .addCriterion("sunflower_planted_on_planter", itemUsedOnBlock(
+                        LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block()
+                                .of(BnDTags.Blocks.PLANTERS)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PlanterBlock.FILLED, true))
+                        ),
+                        ItemPredicate.Builder.item().of(BnDItems.SUNFLOWER_SEED_PACKET)
+                ))
+                .requirements(AdvancementRequirements.Strategy.OR)
+                .save(consumer, getNameId("main/sunny_day"));
+
+        AdvancementHolder first_sun = getAdvancement(sunny_day, BnDItems.SUN, "first_sun", AdvancementType.TASK, true, true, false)
                 .addCriterion("sun", InventoryChangeTrigger.TriggerInstance.hasItems(BnDItems.SUN))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getNameId("main/first_sun"));

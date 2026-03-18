@@ -9,6 +9,10 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public class ClientConfigs {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
+    public static final ModConfigSpec.BooleanValue NEW_BABY_MODELS = BUILDER
+            .comment("Makes baby plants have the style of the new babies from the 26.1 drop")
+            .define("new_baby_models", false);
+
     public static final ModConfigSpec.BooleanValue PEAS_3D = BUILDER
             .comment("Makes peas render in 3D (Amendments compat)")
             .define("pea_3d", true);
